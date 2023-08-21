@@ -1,0 +1,51 @@
+project:
+  type: book
+
+book:
+  title: "Complex Systems in Psychology"
+  author: "Han van der Maas"
+  date: "7/30/2023"
+  search: true
+  repo-url: https://github.com/tasospsy/complexity_book
+  #repo-actions: [edit]
+  downloads: [pdf, epub]
+  sidebar:
+    style: docked
+    #background: light
+  chapters:
+    - index.qmd
+    - ch1.qmd
+    - ch2.qmd
+    - ch3.qmd
+    - ch4.qmd
+    - references.qmd
+
+
+bibliography: [referencesBBT.bib]
+
+
+format:
+  html:
+    theme: cosmo
+    number-depth: 4
+    toc-depth: 4
+    code-copy: true
+    crossref:
+      chapters: true
+  pdf:
+    documentclass: scrbook
+    number-depth: 4
+    toc-depth: 4
+    include-in-header: 
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body: 
+      text: |
+        \printindex
+    #highlight-style: github
+    #fontfamily: 
+    crossref:
+      chapters: true
+editor: source
+

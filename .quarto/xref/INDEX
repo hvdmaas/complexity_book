@@ -1,0 +1,41 @@
+{
+  "index.qmd": {
+    "index.html": "d3b059fc"
+  },
+  "intro.qmd": {
+    "intro.html": "86025581"
+  },
+  "summary.qmd": {
+    "summary.html": "f80c7fbf"
+  },
+  "references.qmd": {
+    "references.html": "ba1d383c"
+  },
+  "TestBBT.md": {
+    "TestBBT.html": "014ed50e"
+  },
+  "ch1.md": {
+    "ch1.html": "43d6a01c"
+  },
+  "ch3.md": {
+    "ch3.html": "f3e71757"
+  },
+  "ch2.md": {
+    "ch2.html": "1fc4e06b"
+  },
+  "ch4.md": {
+    "ch4.html": "11f43cf0"
+  },
+  "ch2.qmd": {
+    "ch2.html": "ac2d0d40"
+  },
+  "ch3.qmd": {
+    "ch3.html": "fc82fe15"
+  },
+  "ch1.qmd": {
+    "ch1.html": "9ac8dd1b"
+  },
+  "ch4.qmd": {
+    "ch4.html": "958a6465"
+  }
+}
