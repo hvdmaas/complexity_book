@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Complex Systems in Psychology - 4&nbsp; Self-organization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./ch3.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Complex Systems in Psychology</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Foreword</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#key-examples-from-the-natural-sciences" id="toc-key-examples-from-the-natural-sciences" class="nav-link active" data-scroll-target="#key-examples-from-the-natural-sciences"><span class="header-section-number">4.1</span> Key examples from the natural sciences</a>
+  <ul>
+  <li><a href="#physics" id="toc-physics" class="nav-link" data-scroll-target="#physics"><span class="header-section-number">4.1.1</span> Physics</a></li>
+  <li><a href="#chemistry" id="toc-chemistry" class="nav-link" data-scroll-target="#chemistry"><span class="header-section-number">4.1.2</span> Chemistry</a></li>
+  <li><a href="#biology" id="toc-biology" class="nav-link" data-scroll-target="#biology"><span class="header-section-number">4.1.3</span> Biology</a></li>
+  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"><span class="header-section-number">4.1.4</span> Computer science</a></li>
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks"><span class="header-section-number">4.1.5</span> Neural networks</a></li>
+  <li><a href="#the-concept-of-self-organization" id="toc-the-concept-of-self-organization" class="nav-link" data-scroll-target="#the-concept-of-self-organization"><span class="header-section-number">4.1.6</span> The concept of self-organization</a></li>
+  </ul></li>
+  <li><a href="#netlogo" id="toc-netlogo" class="nav-link" data-scroll-target="#netlogo"><span class="header-section-number">4.2</span> NetLogo</a>
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.2.1</span> Examples</a></li>
+  <li><a href="#a-bit-of-netlogo-programming" id="toc-a-bit-of-netlogo-programming" class="nav-link" data-scroll-target="#a-bit-of-netlogo-programming"><span class="header-section-number">4.2.2</span> A bit of NetLogo programming</a>
+  <ul class="collapse">
+  <li><a href="#game-of-life" id="toc-game-of-life" class="nav-link" data-scroll-target="#game-of-life"><span class="header-section-number">4.2.2.1</span> Game of Life</a></li>
+  <li><a href="#the-ising-model" id="toc-the-ising-model" class="nav-link" data-scroll-target="#the-ising-model"><span class="header-section-number">4.2.2.2</span> The Ising model</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#self-organization-in-psychology-and-social-systems." id="toc-self-organization-in-psychology-and-social-systems." class="nav-link" data-scroll-target="#self-organization-in-psychology-and-social-systems."><span class="header-section-number">4.3</span> Self-organization in psychology and social systems.</a>
+  <ul>
+  <li><a href="#the-brain" id="toc-the-brain" class="nav-link" data-scroll-target="#the-brain"><span class="header-section-number">4.3.1</span> The brain</a></li>
+  <li><a href="#visual-illusions" id="toc-visual-illusions" class="nav-link" data-scroll-target="#visual-illusions"><span class="header-section-number">4.3.2</span> Visual illusions</a></li>
+  <li><a href="#motor-action" id="toc-motor-action" class="nav-link" data-scroll-target="#motor-action"><span class="header-section-number">4.3.3</span> Motor action</a></li>
+  <li><a href="#robotics" id="toc-robotics" class="nav-link" data-scroll-target="#robotics"><span class="header-section-number">4.3.4</span> Robotics</a></li>
+  <li><a href="#psychological-disorders" id="toc-psychological-disorders" class="nav-link" data-scroll-target="#psychological-disorders"><span class="header-section-number">4.3.5</span> Psychological disorders</a></li>
+  <li><a href="#social-relations" id="toc-social-relations" class="nav-link" data-scroll-target="#social-relations"><span class="header-section-number">4.3.6</span> Social relations</a></li>
+  <li><a href="#collective-intelligence" id="toc-collective-intelligence" class="nav-link" data-scroll-target="#collective-intelligence"><span class="header-section-number">4.3.7</span> Collective Intelligence</a></li>
+  <li><a href="#game-theory" id="toc-game-theory" class="nav-link" data-scroll-target="#game-theory"><span class="header-section-number">4.3.8</span> Game theory</a></li>
+  <li><a href="#self-organization-in-organizations" id="toc-self-organization-in-organizations" class="nav-link" data-scroll-target="#self-organization-in-organizations"><span class="header-section-number">4.3.9</span> Self-organization in organizations</a></li>
+  </ul></li>
+  <li><a href="#zooming-out" id="toc-zooming-out" class="nav-link" data-scroll-target="#zooming-out"><span class="header-section-number">4.4</span> Zooming out</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.5</span> Exercises</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In the introduction, I suggested that complex systems have three intriguing key properties. We have seen chaos and phase transitions and will now focus on the third, self-organization. Self-organization is captivating because it reveals the remarkable ability of complex systems to generate order and structure without external control or intervention.</p>
+<p>Unlike chaos and phase transitions, self-organization lacks a universally accepted formal definition. The definition most people agree on is that self-organization, or spontaneous order, is a process in which global order emerges from local interactions between parts of an initially disordered complex system. These local interactions are often fast, while the global behavior takes place on a slower time scale. Self-organization takes place in an open system, which means that energy, such as heat or food, can be absorbed. Finally, some feedback between the global and local properties seems to be essential. Self-organization occurs in many physical, chemical, biological, and human systems. Examples of self-organization include the laser, turbulence in fluids, convection cells in fluid dynamics, chemical oscillations, flocking, neural waves, and illegal drug markets. For a systematic review of research on self-organizing systems, see <span class="citation" data-cites="kalantariEmergencePhenomenaSelforganizing2020">(<a href="references.html#ref-kalantariEmergencePhenomenaSelforganizing2020" role="doc-biblioref">Kalantari, Nazemi, and Masoumi 2020</a>)</span>. There are many great online videos. I recommend “The Surprising Secret of Synchronization” as an introduction. For a short history of self-organization research, I refer to the Wikipedia page.</p>
+<p>Self-organization plays an essential role in psychological and social processes. It operates in our neural system at the neuronal level, but also in higher cognition. In human interactions, self-organization is a key mechanism, for example, in opinion polarization, a topic we will discuss in detail in Chapter 7. The main goal of this chapter is to provide an understanding of self-organization processes in different sciences, and in psychology in particular. I will do this by providing examples from many different scientific fields. None of these examples will be discussed in detail. It is important to be aware of these key examples, as they can inspire new lines of research in psychology. One can easily find more details with the references provided.</p>
+<p>This is also a practical chapter. We will learn to simulate self-organizing processes in neural and social systems using agent-based models. To this end, we will use R and another tool, NetLogo. NetLogo is an open-source programming language developed by Uri Wilenski <span class="citation" data-cites="wilenskyIntroductionAgentbasedModeling2015">(<a href="references.html#ref-wilenskyIntroductionAgentbasedModeling2015" role="doc-biblioref">Wilensky and Rand 2015</a>)</span>. There are (advanced) alternatives, but as a general tool NetLogo is very useful and fun to work with.</p>
+<p>I start with an overview of self-organization processes in the natural sciences, then I will introduce NetLogo and some examples, and I will end with an overview of the application of self-organization in different areas of psychology.</p>
+<section id="key-examples-from-the-natural-sciences" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="key-examples-from-the-natural-sciences"><span class="header-section-number">4.1</span> Key examples from the natural sciences</h2>
+<section id="physics" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="physics"><span class="header-section-number">4.1.1</span> Physics</h3>
+<p>One physical example of self-organization is the laser. An important founder of complex systems theory is Herman Haken <span class="citation" data-cites="hakenSynergetics1977">(<a href="references.html#ref-hakenSynergetics1977" role="doc-biblioref">Herman Haken 1977</a>)</span>. He developed synergetics, a specific approach to the study of self-organization and complexity in systems that is also popular in psychology. Synergetics originated in Haken’s work on lasers. We will not discuss lasers in detail here, but the phenomenon is fascinating. Light from an ordinary lamp is irregular (unsynchronized). By increasing the energy in a laser, a transition to powerful coherent light occurs. In the field of synergetics, the order parameter is the term used to describe the coherent laser light wave that emerges. It is a measure that signifies how ordered or structured a system is. The individual atoms within this system move in a manner that aligns with this emergent property, which is known as enslavement. Interestingly, the motion of these atoms contributes to the formation of the order parameter, i.e., the laser light wave. Conversely, the laser light wave dominates the movement of the individual atoms. This interaction exhibits a cyclical cause-and-effect relationship or strong emergence (cf. <a href="ch1.html#fig-ch1-img4">Figure&nbsp;<span>1.4</span></a>). Synergetics has been applied, as we will see later, to perception <span class="citation" data-cites="hakenSynergeticsPsychology1992">(<a href="references.html#ref-hakenSynergeticsPsychology1992" role="doc-biblioref">Hermann Haken 1992</a>)</span> and coordinated human movement <span class="citation" data-cites="fuchsCoordinationDynamicsSynergetics2018">(<a href="references.html#ref-fuchsCoordinationDynamicsSynergetics2018" role="doc-biblioref">Fuchs and Kelso 2018</a>)</span>.</p>
+<p>Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. This very simple model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences. In the standard 2d version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. Only when the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet. These are the temperature of the magnet and the external magnetic field. The lower the temperature the more the spins align. At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect. The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). With an external field we can force the spins to be all up or all down. This external field could be caused another magnet.</p>
+<div id="fig-ch4-img1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image1.jpg" style="width:1.44807in;height:2.46919in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: Schematic picture of the magnet</figcaption>
+</figure>
+</div>
+<p>The main model equations of the Ising model are:</p>
+<p><span id="eq-ch4-1"><span class="math display">\[
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{&lt; i,j &gt;}^{}{x_{i}x_{j}} \tag{4.1}\]</span></span> 17</p>
+<p><span id="eq-ch4-2"><span class="math display">\[
+P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}. \tag{4.2}\]</span></span> 18</p>
+<p>The first equation defines the energy of a given state vector <span class="math inline">\(\mathbf{x}\)</span> (for <span class="math inline">\(n\)</span> spins with states -1 and 1). The notation <span class="math inline">\(&lt; i,j &gt;\)</span> in the summation means that we sum over all neighboring, or linked, pairs.</p>
+<p>The external field and temperature are <span class="math inline">\(\tau\)</span> and <span class="math inline">\(\frac{1}{\beta}\)</span>, respectively. The first equation simply states that nodes congruent with the external field lower the energy. Also, neighboring nodes$$with equal spins lower the energy. Suppose we have only four connected positive spins (top row of <a href="#fig-ch4-img1">Figure&nbsp;<span>4.1</span></a>) and no external field, then we have <span class="math inline">\(\mathbf{x} = (1,1,1,1)\)</span> and <span class="math inline">\(H = - 6\)</span>. This is also the case for <span class="math inline">\(\mathbf{x} = ( - 1, - 1, - 1, - 1)\)</span>, but any other state has a higher energy.</p>
+<p>The second equation defines the probability of a certain state (e.g., all spins up). This probability requires a normalization,<span class="math inline">\(Z\)</span>, to ensure that the probabilities over all possible states sum up to 1. For large systems (<span class="math inline">\(N &gt; 20\)</span>), the computation of <span class="math inline">\(Z\)</span> is a substantive issue as the number of possible states grows exponentially. If the temperature is very high, that is, <span class="math inline">\(\beta\)</span> is close to zero, <span class="math inline">\(\exp\left( - \beta H\left( \mathbf{x} \right) \right)\)</span> will be 1 for all possible states, and the spins will behave randomly. The differences in energy between states do not matter anymore.</p>
+<p>The randomness of the behavior is captured by the concept of entropy. Entropy is a measure of the degree of disorder or randomness in a system. To explain this a bit better we need to distinguish the micro- and macrostate of an Ising system. The microstate is defined by the configuration <span class="math inline">\(\mathbf{x}\)</span> of spins, while the macrostate is determined by the sum of spins (similar to how magnetization is defined). The Boltzmann entropy is a function of the number of ways (<span class="math inline">\(W\)</span>) a particular macrostate can be realized. For <span class="math inline">\(\sum_{}^{}x = 4\)</span> there is only one way (<span class="math inline">\(\mathbf{x} = 1,1,1,1)\)</span>. But for <span class="math inline">\(\sum_{}^{}x = 0\)</span>, there are 6 ways (<span class="math inline">\(W = 6\)</span>). The Boltzmann entropies (<span class="math inline">\(\ln W)\)</span> for these two cases are 0 and 1.79, respectively. The concept of entropy will be important in later discussions.</p>
+<p>In the simulation of this model, we take a random spin, calculate the energy of the current <span class="math inline">\(\mathbf{x}\)</span> and the <span class="math inline">\(\mathbf{x}\)</span> with that particular spin flipped. The difference in energy determines the probability of a flip:</p>
+<p><span id="eq-ch4-3"><span class="math display">\[
+P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}. \tag{4.3}\]</span></span> 19</p>
+<p>If we do these flips repeatedly, we find equilibria of the model. This is called the Glauber dynamics (more efficient algorithms do exist). The beauty of these algorithms is that the normalization constant Z falls out of the equation. In this way we can simulate Ising systems with <span class="math inline">\(N\)</span> much larger than 20.</p>
+<p>In the case of a fully connected Ising network (also called the Curie-Weiss model), the emergent behavior, what is called the mean field behavior, can be described by the cusp (Section 3.2.3; <span class="citation" data-cites="abeCuspSingularityMean2017 postonCatastropheTheoryIts2014">(<a href="references.html#ref-abeCuspSingularityMean2017" role="doc-biblioref">Abe et al. 2017</a>; <a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>)</span>. The external field is the normal variable and temperature acts as a splitting variable. The relationship to self-organization is that when we cool a hot magnet, at some threshold the spins begin to align and soon are all up or down. This is the pitchfork bifurcation, creating order out of disorder.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In the 2D Ising model (see <a href="#fig-ch4-img1">Figure&nbsp;<span>4.1</span></a>), the connections are sparse (only local) and more complicated (self-organizing) behavior occurs. We will simulate this in NetLogo later in this chapter and as a model of attitudes in chapter 6.</p>
+</section>
+<section id="chemistry" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="chemistry"><span class="header-section-number">4.1.2</span> Chemistry</h3>
+<p>Another founder of self-organizing systems research is Ilya Prigogine. Prigogine won the 1977 Nobel Prize in Chemistry for his work on self-organization in dissipative systems. These are systems far from thermodynamic equilibrium (due to high energy input) in which complex, sometimes chaotic, structures form due to long-range correlations between interacting particles. One notable example of such behavior is the Belousov-Zhabotinsky reaction, an intriguing nonlinear chemical oscillator, which I mentioned earlier.</p>
+<p>Collaborating with Stengers, he authored the influential book “Order out of Chaos” in 1978. This work significantly influenced the scientific community, particularly through their formulation of the second law of thermodynamics. This law states that the total entropy of an isolated system always increases over time and never decreases, meaning that spontaneous processes in nature tend to move towards a state of increasing disorder or randomness. Another way of stating the second law is that heat flows spontaneously from hot objects to cold objects, and not the other way around, unless external work is applied to the system. A more appealing example might be the student room that never naturally becomes clean and tidy, but rather the opposite.</p>
+<p><span class="citation" data-cites="stengersOrderOutChaos1978">(<a href="references.html#ref-stengersOrderOutChaos1978" role="doc-biblioref">Stengers and Prigogine 1978</a>)</span> argued that while entropy may indeed decrease in a closed system, the process of self-organization in such systems can create ordered structures that compensate for the entropy increase, resulting in a net increase in what they called “local entropy”. Prigogine and his colleagues placed particular emphasis on irreversible transitions, highlighting their importance in understanding complex systems. While the catastrophe models we previously discussed exhibited symmetrical transitions (sudden jumps in the business card are symmetric), Prigogine’s research revealed that this symmetry does not always hold true.</p>
+<p>To illustrate this point, consider the analogy of frying an egg. The process of transforming raw eggs into a fried form represents a transition, but it is impossible to reverse this change and “unfry” the egg. Prigogine linked these irreversible transitions to a profound question regarding the direction of time, commonly known as the arrow of time. Although a fascinating topic in itself, we will not explore it further here.</p>
+</section>
+<section id="biology" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="biology"><span class="header-section-number">4.1.3</span> Biology</h3>
+<p>There is no shortage of founders of complex systems science. Another fantastic book is Kaufmann’s Origin of Order <span class="citation" data-cites="kauffmanOriginsOrderSelfOrganization1993">(<a href="references.html#ref-kauffmanOriginsOrderSelfOrganization1993" role="doc-biblioref">Kauffman 1993</a>)</span>, which introduces the concept of self-organization into evolutionary theory. He argues that the small incremental steps in neo-Darwinistic processes cannot fully explain natural evolution. If you want to know about adaptive walks and niche hopping in rugged fitness landscapes, you need to read his book. Another influential theory is that of punctuated equilibria, which proposes that species undergo long periods of stability interrupted by relatively short bursts of rapid evolutionary change <span class="citation" data-cites="eldredgePunctuatedEquilibriaAlternative1972">(<a href="references.html#ref-eldredgePunctuatedEquilibriaAlternative1972" role="doc-biblioref">Eldredge and Gould 1972</a>)</span>.</p>
+<p>A neat example of the role of self-organization in evolution is the work on spiral wave structures in prebiotic evolution by <span class="citation" data-cites="boerlijstSpiralWaveStructure1991">(<a href="references.html#ref-boerlijstSpiralWaveStructure1991" role="doc-biblioref">Boerlijst and Hogeweg 1991</a>)</span>. This work builds on the classic work of <span class="citation" data-cites="eigenHypercycle1979">(<a href="references.html#ref-eigenHypercycle1979" role="doc-biblioref">Eigen and Schuster 1979</a>)</span> on the information threshold. Evolution requires the copying of long molecules. But in a system of self-replicating molecules, the length of the molecules is limited by the accuracy of replication, which is related to the mutation rate. Eigen and Schuster showed that this threshold can be overcome if such molecules are organized in a cycle in which each molecule catalyzes its nearest neighbor (a hypercycle). However, the hypercycle was shown to be vulnerable to parasites. These are molecules that benefit from one neighbor but do not help another. This molecule will outcompete the others and we are back to the limited one-molecule system.</p>
+<p>What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular automaton (CA). A CA is basically a two-dimensional grid of cells, where cells interact with their neighbors, as in the Ising model. In the hypercycle simulation, cells could be empty (dead) or filled with one out of several colors. Colors die with some probability but are also copied to empty cells with a probability that depends on whether there is a catalyzing color in the local neighborhood. One of the colors is a parasite, catalyzed by one color, but not catalyzing any other colors. The amazing effect, and you will see this later using NetLogo, is that moving global spirals emerge that isolate the parasites so that a stable hypercycle prevails.</p>
+<p>Many examples of self-organization come from ecosystem biology. We will see simulations of flocking below, but I would also like to mention ants. <!--
+![An example of the ant bridge](media/ch4/image2.jpg){#fig-ch4-img2 width="2.1534722222222222in" height="1.1263888888888889in"}
+--></p>
+<p>Ants exhibit amazing forms of globally organized behavior. They build bridges, nests, and rafts, and they fight off predators. I once saw a documentary on an ant nest that somehow decided to move to another location 50 meters away. Ant colonies utilize pheromones and swarm intelligence to relocate to a new location. Scouts search for potential sites, leaving pheromone trails. If a promising location is found, more ants follow the trail, reinforcing the signal. Unsuitable sites result in fading trails. Once a decision is made, the colony collectively moves to the chosen site, transporting their brood and establishing a new nest.</p>
+<p>It is not a strange idea to think of an ant society as a living organism. Note that all this behavior is self-organized. In other words, there is clearly no super ant or management team that has a blueprint for building bridges and telling the rest of the ants to do certain things. The same is true of flocks of birds. There is no bird that chirps commands to move collectively to the left, to the right, or to split up. It is also clear that this is true of our brain. Each neuron is not intelligent at all. Our intelligence is based on the collective behavior of billions of neurons.</p>
+</section>
+<section id="computer-science" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="computer-science"><span class="header-section-number">4.1.4</span> Computer science</h3>
+<p>Another crucially important area of research on self-organisation has been computer science. A simple but utterly amazing example is the work on Conways’ game of life <span class="citation" data-cites="berlekampWinningWaysYour2004">(<a href="references.html#ref-berlekampWinningWaysYour2004" role="doc-biblioref">Berlekamp, Conway, and Guy 2004</a>)</span>. The rules are depicted in <a href="#fig-ch4-img3">Figure&nbsp;<span>4.2</span></a>.</p>
+<div id="fig-ch4-img3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image3.jpg" style="width:4.6891in;height:2.26241in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: The rules of the Game of Life</figcaption>
+</figure>
+</div>
+<p>For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.</p>
+<p>A great tool for playing around with the Game of Life is Golly, which is freely available for computers and mobile phones. I ask you to download and open Golly, draw some random lines, press Enter and see what happens. Often you will see it converging to a stable state (with oscillating sub-patterns). Occasionally you will see walkers or gliders (zoom out). These are patterns that move around the field.</p>
+<p>Random initial patterns rarely lead to anything remarkable, but by choosing special initial states, surprising results can be achieved. First, take a look at the Life within Patterns folder. Take, for example, the line-puffer superstable or the spaceship types. One of my favorites is the metapixel-galaxy in the HashLife folder. Note that with + and - you can speed up and slow down the simulation. What this does is simulate the game of life in the game of life! Zoom in and zoom out to see what really happens. I’ve seen this many times and I’m still amazed. A small childish experiment is to disturb the metapixel galaxy in a few cells. This leads to a big disturbance and a collapse of the pattern.</p>
+<p>It is even possible to create the (universal) Turing machine in the Game of Life <span class="citation" data-cites="rendellGameLifeUniversal2016">(<a href="references.html#ref-rendellGameLifeUniversal2016" role="doc-biblioref">Rendell 2016</a>)</span>. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm. This raises the question of whether we can build self-organizing intelligent systems in this way. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section).</p>
+<div id="fig-ch4-img4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image4.jpg" style="width:3.58125in;height:3.44167in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: The Turing Machine built in the Game of Life</figcaption>
+</figure>
+</div>
+<p>Another root of complex systems theory and the role of self-organization in computational systems is cybernetics <span class="citation" data-cites="ashbyIntroductionCybernetics1956 wienerCyberneticsControlCommunication2019">(<a href="references.html#ref-ashbyIntroductionCybernetics1956" role="doc-biblioref">Ashby 1956</a>; <a href="references.html#ref-wienerCyberneticsControlCommunication2019" role="doc-biblioref">Wiener 2019</a>)</span>. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener’s book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.</p>
+<p>The interest in self-organization is not only theoretical. In optimization, the search for the best parameters of a model describing some data, techniques inspired by cellular automata and self-organization have been applied <span class="citation" data-cites="langtonComputationEdgeChaos1990 xueNovelSwarmIntelligence2020">(<a href="references.html#ref-langtonComputationEdgeChaos1990" role="doc-biblioref">Langton 1990</a>; <a href="references.html#ref-xueNovelSwarmIntelligence2020" role="doc-biblioref">Xue and Shen 2020</a>)</span>. I have always been fascinated with genetic algorithms <span class="citation" data-cites="hollandGeneticAlgorithms1992 mitchellIntroductionGeneticAlgorithms1998">(<a href="references.html#ref-hollandGeneticAlgorithms1992" role="doc-biblioref">Holland 1992a</a>; <a href="references.html#ref-mitchellIntroductionGeneticAlgorithms1998" role="doc-biblioref">Mitchell 1998</a>)</span>, where the solution to a problem (sets of parameter values) are individuals in an evolving population. Through mutation and crossover, better individuals evolve. This is a slow but very robust way of optimizing, preventing convergence to local minima. John Henry Holland is considered one of the founding fathers of the complex systems approach in the United States. He has written a number of influential books on complex systems. His most famous book, Adaptation in natural and artificial systems: an introductory analysis with applications to biology, control theory, and artificial intelligence <span class="citation" data-cites="hollandAdaptationNaturalArtificial1992">(<a href="references.html#ref-hollandAdaptationNaturalArtificial1992" role="doc-biblioref">Holland 1992b</a>)</span>, has been cited over 75,000 times.</p>
+<p>A self-organizing algorithm that has played a large role in my work is the Elo rating system developed for chess competitions <span class="citation" data-cites="eloRatingChessplayersPresent1978">(<a href="references.html#ref-eloRatingChessplayersPresent1978" role="doc-biblioref">Elo 1978</a>)</span>. Based on the outcomes of games, ratings of chess players are estimated, which in turn are used to match players in future games. The ratings converge over time, but adjusted when players suddenly improve their skills. We have adapted this system for use in online learning systems where children play against math and language exercises <span class="citation" data-cites="marisSpeedaccuracyResponseModels2012">(<a href="references.html#ref-marisSpeedaccuracyResponseModels2012" role="doc-biblioref">Maris and van&nbsp;der Maas 2012</a>)</span>. The ratings of children and exercises are estimated on the fly in a large-scale educational system <span class="citation" data-cites="brinkhuisLearningItHappens2018 klinkenbergComputerAdaptivePractice2011">(<a href="references.html#ref-brinkhuisLearningItHappens2018" role="doc-biblioref">Brinkhuis et al. 2018</a>; <a href="references.html#ref-klinkenbergComputerAdaptivePractice2011" role="doc-biblioref">Klinkenberg, Straatemeier, and van der Maas 2011</a>)</span>.</p>
+</section>
+<section id="neural-networks" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="neural-networks"><span class="header-section-number">4.1.5</span> Neural networks</h3>
+<p>The current revolution in AI, which is having a huge impact on our daily lives, is due to a number of ‘self-organizing’ computational techniques. Undoubtedly, deep learning neural networks have played the largest role. A serious overview of the field of neural networks is clearly beyond the scope of this book, but one cannot understand the role of complex systems in psychology without knowing at least the basics of artificial neural networks (ANN), i.e., networks of artificial neurons.</p>
+<p>Artificial neurons are characterized by their response to input from other neurons in the network, which is typically weighted and summed before being passed through an activation function. This activation function may produce either a binary output or a continuous value that reflects the level of activation of the neuron. The input could be images, for example, and the output could be a classification of these images. The important thing is that neural networks learn from examples.</p>
+<p>Unsupervised learning is based on the structure of the input. A famous unsupervised learning rule is the Hebb rule <span class="citation" data-cites="hebbOrganizationBehaviorNeuropsychological1949">(<a href="references.html#ref-hebbOrganizationBehaviorNeuropsychological1949" role="doc-biblioref">Hebb 1949</a>)</span>, which states that what fires together, wires together. Thus, neurons that correlate in activity strengthen their connection (and otherwise connections decay). In supervised learning connections are updated based on the mismatch between model output and intended output (the supervised output). Backpropagation is a mechanism to update specific connections such that this mismatch or error is minimized over time. These are just two of the learning mechanisms used in modern ANNs.</p>
+<p>Modern large language models large language models, like GPT, differ from traditional backpropagation networks in terms of their architecture, training objective, pre-training process, scale, and application. Large language models use transformer architectures, undergo unsupervised pre-training followed by supervised fine-tuning, are trained on massive amounts of unlabeled data, are much larger in size, and are primarily used for natural language processing tasks.</p>
+<p>An interesting unsupervised model is the Boltzmann machine. It is basically an Ising model (see section 4.1.1) where the connections between nodes have continuous values. These weights can be updated according to the Hebbian rule. A simple setup of the Boltzmann machine is to take a network of connected artificial neurons, present the inputs to be learned in some sequence by setting the states of these neurons equal to the input. The Hebb rule should change the weights between neurons so that the Boltzmann machine builds a memory for these input states. This is the training phase. In the test phase, we present partial states by setting some, but not all, nodes to the values of a particular learned input pattern. By the Glauber’s dynamics, we update the remaining states that should take on the values belonging to the pattern. This pattern completion task is typical for ANN’s.</p>
+<p>This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM we stack many of these layers, which can be trained in pairs. I recommend Timo Matzen’s R package for a hands-on explanation (https://github.com/TimoMatzen/RBM). Other famous approaches are the Kohonen self-organizing maps and the Hopfield neural network.</p>
+<div id="fig-ch4-img5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image5.jpg" style="width:3.22083in;height:1.79097in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.4: The deep learning restricted Boltzmann machine</figcaption>
+</figure>
+</div>
+<p>In supervised learning, connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the output neurons. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true. In this case the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagating rule for multi-layer networks, such that they can learn this non-linear classification from examples. We will do a simple simulation in NetLogo later. Although extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.</p>
+<p>All these models were known at the end of the 20th century, but their usefulness was limited. This has changed due to some improvements in algorithms but especially in hardware. Current deep-learning ANNs consist of tens of layers within billions of nodes, trained on billions of inputs using dedicated parallel processors (e.g., <span class="citation" data-cites="schmidhuberDeepLearningNeural2015">(<a href="references.html#ref-schmidhuberDeepLearningNeural2015" role="doc-biblioref">Schmidhuber 2015</a>)</span>.</p>
+<p>Neural networks are at the heart of the AI revolution, but other developments have also played a key role. Reinforcement learning is essential in AI systems that need to behave or act on the environment. Examples are game engines, robots, and self-driving cars. Note that the study of reinforcement learning also has its roots in psychology (see Chapter 1 of <span class="citation" data-cites="suttonReinforcementLearningSecond2018">(<a href="references.html#ref-suttonReinforcementLearningSecond2018" role="doc-biblioref">Sutton and Barto 2018</a>)</span>.</p>
+<p>I was most amazed by the construction and performance of AlphaZero chess. AlphaZero chess <span class="citation" data-cites="silverGeneralReinforcementLearning2018">(<a href="references.html#ref-silverGeneralReinforcementLearning2018" role="doc-biblioref">Silver et al. 2018</a>)</span> combines a deep learning neural network that evaluates positions and predicts next moves with a variant of reinforcement learning (Monte Carlo tree search). Amazingly, AlphaZero learns chess over millions of self-played games. This approach is a radical departure from classic chess programs, where brute force search and built-in indexes of openings and endgames were the key to success. AlphaZero Chess is a self-organizing chess program with a phase transition in learning after 64000 training steps (see fig.7 in <span class="citation" data-cites="mcgrathAcquisitionChessKnowledge2022">(<a href="references.html#ref-mcgrathAcquisitionChessKnowledge2022" role="doc-biblioref">McGrath et al. 2022</a>)</span>. For an analysis of the interrelations between psychology and modern AI, I refer to <span class="citation" data-cites="vandermaasHowMuchIntelligence2021">(<a href="references.html#ref-vandermaasHowMuchIntelligence2021" role="doc-biblioref">Han L. J. van der Maas, Snoek, and Stevenson 2021</a>)</span>.</p>
+</section>
+<section id="the-concept-of-self-organization" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="the-concept-of-self-organization"><span class="header-section-number">4.1.6</span> The concept of self-organization</h3>
+<p>I trust that you now possess some understanding of self-organization and its applications across various scientific fields. Self-organization is a generally applicable concept that transcends various disciplines, yet it maintains strong connections with specific examples within each discipline.</p>
+<p>As previously mentioned, the precise definition of self-organization remains under discussion, and a range of criteria continue to be debated. Key questions, such as the degree of order necessary for a system to be deemed self-organized, whether any external influences are permissible, whether a degree of randomness within the system is acceptable, and whether the emergent state must be irreversible, are among the issues that lack definitive resolutions.</p>
+<p>This ambiguity in the definition isn’t unusual for psychologists, as many non-formal concepts lack strict definitions. The value of the self-organization concept is primarily found in its concrete examples, its broad applicability, such as in the field of artificial intelligence, and our capability to create simulations of it. The focus of the next section will be on such simulations.</p>
+</section>
+</section>
+<section id="netlogo" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="netlogo"><span class="header-section-number">4.2</span> NetLogo</h2>
+<section id="examples" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">4.2.1</span> Examples</h3>
+<p>NetLogo <span class="citation" data-cites="wilenskyIntroductionAgentbasedModeling2015">(<a href="references.html#ref-wilenskyIntroductionAgentbasedModeling2015" role="doc-biblioref">Wilensky and Rand 2015</a>)</span> is based on Logo, a revolutionary educational programming language from the early days of computer languages, in which an on-screen turtle, a cursor, could be moved around to create graphics. The turtle is still there, but there is much more that you can do with NetLogo.</p>
+<p>I strongly recommend that you download and install NetLogo for the next part of this chapter.</p>
+<p><em>The Ising model:</em></p>
+<p>When you start NetLogo, you see an interface with a black area (the world), a 33 by 33 matrix of patches (cells). You can change the world using the settings (see top right). Interface and Code are the most important tabs.</p>
+<p>First, we open the Model library (menu ‘File: Model Library’) and find and open ‘Ising’. Click on ‘setup’ and ‘go’. That is all. Verify that high temperature indeed causes random spin behavior. Also verify that lowering the temperature causes a pitchfork bifurcation. The random state becomes unstable and all spins become either positive or negative (light or dark blue). Now go to settings and set max-pxcor and max-pycor to 200 and patch size to 1. With these settings you will see self-organized global patterns, constantly moving clusters of positive and negative spins.</p>
+<p><em>Hypercycles:</em></p>
+<p>Some models are available in NetLogo, others can be found on the website of NetLogo (see Community). Download Hypercycle by Maarten Boerlijst and read the information. You have to run the model with 8 species for 20000 iterations or ticks (to speed up, deselect view updates) and then add parasites. The spirals keep the growth of the parasites under control. If you do this earlier, the parasites will quickly take over. I think this is a beautiful example of functional self-organization. The implementation in the form of a cellular automata is essential for the success of this model. If we implement this model in the form of coupled differential equations, the parasite will simply win.</p>
+<p><em>Flocking:</em></p>
+<p>NetLogo 3D allows us to create three-dimensional plots of self-organizing patterns. Start NetLogo 3D and load the flocking model 3D Alternate. I recommend editing the Population slider by ‘right-clicking’ it and setting the max to 1000. This will result in more realistic swarms. Play around with the controls and don’t kill all the birds.</p>
+<p><em>Traffic:</em></p>
+<p>In the models library of NetLogo (not 3D) you will find ‘Traffic 2 Lanes’. Run the model with 20 cars and notice that the congestion actually moves backwards. Play around with the number of cars as well. Is there a clear threshold where you get congestion as you slowly increase the number of cars? And what happens when you decrease the number of cars? Is there a threshold where congestion dissipates? I hope you see that finding hysteresis in this way is quite difficult. There are clearly sudden changes, but finding hysteresis requires very precise and patient experimentation.</p>
+<p><em>Neural networks:</em></p>
+<p>In the Model Library you will find a perceptron and a multilayer network. Start with the perceptron. Set the target function to ‘and’, train the model for a few seconds, and test the perceptron. You will see that it correctly classifies 11 as 1 and the other patterns as -1. The graph on the bottom right is particularly instructive. It shows how the patterns are separated. The perceptron can do linear separation. This is sufficient for most of the logical rules that can be learned, but not for the XOR. You will see that the linear separation just jumps around and the XOR cannot be learned. Also train the multilayer model on the XOR. Another nice tool to play around with can be found on the internet by searching for ‘A Neural Network Playground’.</p>
+<p>Of course, these are just illustrative tools. But building serious deep learning ANNs is not that hard either. Many resources and books are available (e.g., <span class="citation" data-cites="ghatakDeepLearning2019">(<a href="references.html#ref-ghatakDeepLearning2019" role="doc-biblioref">Ghatak 2019</a>)</span>.</p>
+<p><em>The sandpile model:</em></p>
+<p><span class="citation" data-cites="bakSelforganizedCriticality1988">(<a href="references.html#ref-bakSelforganizedCriticality1988" role="doc-biblioref">Bak, Tang, and Wiesenfeld 1988</a>)</span> introduced the concept of self-organized criticality. In systems such as the Ising model, there are parameters (e.g., temperature) that must be precisely tuned for the system to reach criticality. The Bak-Tang-Wiesenfeld sandpile model exhibits critical phenomena without any parameters. In the sandpile model, grains of sand are added to the center of the pile. When the difference in height between the center column and its neighbors exceeds a critical value, a grain of sand rolls to that neighboring location. This occasionally results in avalanches. The point is that no matter how we start, we get to a critical state where these avalanches occur. Thus, the sandpile model spontaneously evolves toward its critical point, which is why this phenomenon has been called self-organized criticality.</p>
+<p>The NetLogo model ‘Sandpile’ in the Models library demonstrates this behavior (use ‘setup uniform’, ‘center’ drop location and ‘animate avalanches’). We now drop grains of sand onto the center of a table, one at a time, creating avalanches. The plots on the right show an important characteristic of self-organized criticality. The frequencies of avalanche sizes and durations follow a power law. This means that the log-log plot should be linear, which can be verified by running the model for some time. One of the key features of power law distributions is that they exhibit a high degree of variability or heterogeneity. This means that there are many small events or phenomena, and a few very large ones, with a smooth distribution of sizes in between. Power law systems are scale invariant, meaning that we see the same behavior at any scale of the sand pile. For this reason, they are sometimes called ‘scale-free distributions’.</p>
+<p><em>Other models:</em></p>
+<p>I recommend running a few other models (e.g., sunflowers, beatbox, and the B-Z reaction). One thing we haven’t done yet is click on the Code tab. Read the code for the B-Z reaction and notice one thing: it is surprisingly short!</p>
+</section>
+<section id="a-bit-of-netlogo-programming" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="a-bit-of-netlogo-programming"><span class="header-section-number">4.2.2</span> A bit of NetLogo programming</h3>
+<p>I find NetLogo programming very easy and very hard at the same time. Hard because it requires a different way of thinking. Uri Wilensky’s examples are often extremely elegant and much shorter than my clumsy code. NetLogo resembles object-oriented programming languages, quite different from (base) R. There are three types of objects, the patches, which refer to cells in a world grid (CA), turtles, which are agents that move around, and links, which connect turtles. Note that turtles are not necessarily turtles. We have already seen turtles in the form of neural nodes and cars.</p>
+<p>In NetLogo, you “ask” objects to do something. A typical line would be:</p>
+<p><code>ask turtles with [pcolor = red] set pcolor green</code></p>
+<p>This would make red turtles green. To get started, I highly recommend watching the videos on the NetLogo page ‘The Beginner’s Guide to NetLogo Programming’ and following these examples. Here we make our own Game of Life.</p>
+<section id="game-of-life" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="game-of-life"><span class="header-section-number">4.2.2.1</span> Game of Life</h4>
+<p>The first thing to do is to create two buttons in the interface, a setup and a go button. In Command, name them setup and go. In the settings of the go button, select ‘forever’. Now we go to the Code tab and define these two functions as:</p>
+<pre><code>to setup
+  clear-all
+  reset-ticks
+end
+
+to go
+  tick
+end</code></pre>
+<p>Ticks count the iterations in NetLogo, and with this code we are really just resetting things. Now add this last line to setup (with “;” we add comments to code):</p>
+<pre><code>ask patches
+    [set pcolor one-of [white blue]] ; white is dead, blue is alive</code></pre>
+<p>To do a synchronous update, we need to store the update state in a temporary variable called new-state. Put this line at the top of your code</p>
+<p><code>patches-own [new-state]</code></p>
+<p>In the ‘go’ function, we add the life rules.</p>
+<pre><code>ask patches[
+  if(count(neighbors with [pcolor = blue]) &gt; 3) [set new-state white]
+  if(count(neighbors with [pcolor = blue]) &lt; 2) [set new-state white]
+  if(count(neighbors with [pcolor = blue]) = 3) [set new-state blue]
+]
+
+ask patches [set pcolor new-state]</code></pre>
+<p>The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.</p>
+<p>In the help menu, you will find the very useful NetLogo dictionary. Just reading through this dictionary will teach you a lot of useful tricks. NetLogo is similar to R in the sense that you should use the built-in functions as much as possible.</p>
+</section>
+<section id="the-ising-model" class="level4" data-number="4.2.2.2">
+<h4 data-number="4.2.2.2" class="anchored" data-anchor-id="the-ising-model"><span class="header-section-number">4.2.2.2</span> The Ising model</h4>
+<p>Building a NetLogo from scratch requires quite some experience, adapting a program is much easier. The Ising model in NetLogo was not complete, as there is no slider for the external field. Try to add this yourself. Add a slider for the external field ‘tau’. The code only needs to be changed in this line (study <a href="#eq-ch4-1">Equation&nbsp;<span>4.1</span></a>):</p>
+<p><code>let Ediff 2 * spin * sum [ spin ] of neighbors4</code></p>
+<p>If successful, you can test for hysteresis and divergence. For tau = 0, decreasing the temperature should give the pitchfork bifurcation. For a positive temperature (say 1.5), moving tau up and down should give hysteresis.</p>
+<p>Actually, this should work better if all spins are connected to all spins. To do this, ‘neighbors4’ should be replaced by ‘patches’. To normalize the effect of so many spins, it is recommended to use:</p>
+<p><code>let 0.001 * Ediff 2 * spin * sum [ spin ] of patches</code></p>
+<p>Now you should see hysteresis and the pitchfork better. However, in this case the typical self-organized patterning that occurred in the Ising model with only local interactions is not present.</p>
+</section>
+</section>
+</section>
+<section id="self-organization-in-psychology-and-social-systems." class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="self-organization-in-psychology-and-social-systems."><span class="header-section-number">4.3</span> Self-organization in psychology and social systems.</h2>
+<p>In the final section of this chapter, I provide illustrations of research on self-organization within various psychological systems, spanning several subfields of psychology. The discussion begins with an exploration of self-organization in the context of the brain and concludes with an examination of its implications within human organizations. In the final part of the chapter, I offer specific case studies to illustrate self-organization, while also referencing relevant literature to guide further exploration in other areas.</p>
+<section id="the-brain" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="the-brain"><span class="header-section-number">4.3.1</span> The brain</h3>
+<p>Many different psychological and social processes involve self-organization. As discussed above, at the lowest level it plays a role in neural systems. Self-organization in the brain is an active area of research <span class="citation" data-cites="breakspearDynamicModelsLargescale2017 chialvoEmergentComplexNeural2010 cocchiCriticalityBrainSynthesis2017 ooyenRewiringBrainComputational2017 plenzSelfOrganizedCriticalityBrain2021">(<a href="references.html#ref-breakspearDynamicModelsLargescale2017" role="doc-biblioref">Breakspear 2017</a>; <a href="references.html#ref-chialvoEmergentComplexNeural2010" role="doc-biblioref">Chialvo 2010</a>; <a href="references.html#ref-cocchiCriticalityBrainSynthesis2017" role="doc-biblioref">Cocchi et al. 2017</a>; <a href="references.html#ref-ooyenRewiringBrainComputational2017" role="doc-biblioref">Ooyen and Butz-Ostendorf 2017</a>; <a href="references.html#ref-plenzSelfOrganizedCriticalityBrain2021" role="doc-biblioref">Plenz et al. 2021</a>)</span>. <span class="citation" data-cites="dresp-langleySevenPropertiesSelfOrganization2020">(<a href="references.html#ref-dresp-langleySevenPropertiesSelfOrganization2020" role="doc-biblioref">Dresp-Langley 2020</a>)</span> distinguished seven key properties of self-organization clearly identified in brain systems: 1) modular connectivity, 2) unsupervised learning, 3) adaptive ability, 4) functional resiliency, 5) functional plasticity, 6) from-local-to-global functional organization, and 7) dynamic system growth.</p>
+<p>A key example is Walter Freeman’s work on the representation of odors in the brain <span class="citation" data-cites="skardaHowBrainsMake1987">(<a href="references.html#ref-skardaHowBrainsMake1987" role="doc-biblioref">Skarda and Freeman 1987</a>)</span>. He used EEG measurements to support his nonlinear system model of the brain. Freeman’s theory proposes that the brain operates through the generation of dynamic patterns of electrical activity, which he called “attractors”. These attractors represent stable states of neural activity that arise spontaneously from the interactions between large populations of neurons.</p>
+<p>Another influential theory was proposed by neuroscientist Gerald Edelman. His theory of Neural Darwinism suggests that the development of the brain’s neural connections is based on a process of competition and selection, rather than being pre-wired in the genes <span class="citation" data-cites="edelmanNeuralDarwinismTheory1987">(<a href="references.html#ref-edelmanNeuralDarwinismTheory1987" role="doc-biblioref">Edelman 1987</a>)</span>. According to Edelman’s theory, the brain is a complex, dynamic system made up of many interconnected neurons that constantly interact with each other and the outside world. The process of competition and selection occurs through the formation of ensembles of neurons that respond to specific stimuli or experiences. Over time, the connections between neurons in successful ensembles become stronger, while those in unsuccessful ensembles weaken or disappear.</p>
+<p>It has also been claimed that self-organized criticality (SOC, see the Sandpile model in Section 4.2.1) plays a role in the brain <span class="citation" data-cites="bakSelforganizedCriticality1988">(<a href="references.html#ref-bakSelforganizedCriticality1988" role="doc-biblioref">Bak, Tang, and Wiesenfeld 1988</a>)</span>. It is hypothesized that when a system is close to criticality, small perturbations can have large, cascading effects, which can allow the system to rapidly switch between different states of activity in response to changes in the environment. One of the key pieces of evidence for SOC in the brain comes from studies of the distribution of sizes of neural activity events, which has been found to follow a power law distribution, but alternative explanations have been provided <span class="citation" data-cites="bedardDoesFrequencyScaling2006">(<a href="references.html#ref-bedardDoesFrequencyScaling2006" role="doc-biblioref">Bédard, Kröger, and Destexhe 2006</a>)</span>. This is a technical area of research with many methodological challenges <span class="citation" data-cites="lurieQuestionsControversiesStudy2020 obyrneHowCriticalBrain2022">(<a href="references.html#ref-lurieQuestionsControversiesStudy2020" role="doc-biblioref">Lurie et al. 2020</a>; <a href="references.html#ref-obyrneHowCriticalBrain2022" role="doc-biblioref">O’Byrne and Jerbi 2022</a>)</span>.</p>
+<p>A promising general approach to understanding the so called “predictive” brain functions is the free energy account <span class="citation" data-cites="clarkWhateverNextPredictive2013">(<a href="references.html#ref-clarkWhateverNextPredictive2013" role="doc-biblioref">Clark 2013</a>)</span>, which implements a form of self-organization <span class="citation" data-cites="fristonFreeenergyPrincipleRough2009">(<a href="references.html#ref-fristonFreeenergyPrincipleRough2009" role="doc-biblioref">Friston 2009</a>)</span>. The idea is that the brain is constantly making predictions about the sensory inputs it receives from the environment. The brain is not simply reacting to the world around us but is actively generating predictions about what we will see, hear, feel, and experience, based on our past experiences and knowledge. The predictive brain theory suggests that the brain’s predictions are generated through a process of hierarchical inference, in which information from lower-level sensory areas is combined and integrated in higher-level areas to generate more complex predictions about the world. These predictions are then compared to the incoming sensory inputs, and any discrepancies between the predictions and the actual inputs are used to update the predictions and improve the brain’s accuracy over time.</p>
+</section>
+<section id="visual-illusions" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="visual-illusions"><span class="header-section-number">4.3.2</span> Visual illusions</h3>
+<p>From the earliest days of psychology as a scientific discipline, researchers were interested in the organizational properties of perception. Gestalt psychologists such as Wertheimer and Koffka claimed that we perceive whole patterns or configurations, not just individual components. One might say that visual perception was one of the first applications of self-organization, even before anything like complexity science existed. The Gestalt psychologist formulated a number of Gestalt principles such as grouping, proximity, similarity, and continuity. A review of a century of research and an analysis of their current role in vision research is provided by <span class="citation" data-cites="wagemansCenturyGestaltPsychology2012">(<a href="references.html#ref-wagemansCenturyGestaltPsychology2012" role="doc-biblioref">Wagemans et al. 2012</a>)</span>. Much of the modeling of the self-organizing processes in perception has been done in the tradition of synergetics. Excellent sources include <span class="citation" data-cites="kelsoDynamicPatternsSelforganization1995 kruseAmbiguityMindNature2012">(<a href="references.html#ref-kelsoDynamicPatternsSelforganization1995" role="doc-biblioref">J. A. Scott Kelso 1995</a>; <a href="references.html#ref-kruseAmbiguityMindNature2012" role="doc-biblioref">Kruse and Stadler 2012</a>)</span>. <span class="citation" data-cites="grossbergNeuralDynamicsGestalt2012">(<a href="references.html#ref-grossbergNeuralDynamicsGestalt2012" role="doc-biblioref">Grossberg and Pinna 2012</a>)</span> discuss neural implementations of the Gestalt principles.</p>
+<p>Another related approach is the ecological approach to visual perception by <span class="citation" data-cites="gibsonEcologicalApproachVisual2014">(<a href="references.html#ref-gibsonEcologicalApproachVisual2014" role="doc-biblioref">Gibson 2014</a>)</span>. In Gibson’s approach, perception is not just a process of analyzing sensory input, but an active process that involves the perceiver’s relationship to the environment, including the perception of affordances (i.e., opportunities for action) in the environment that guide and shape perception.</p>
+<p>A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The Optical Illusion model in NetLogo’s model library illustrates some of them. Check out the codes for each illusion, they are extremely short and elegant.</p>
+<div id="fig-ch4-img6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image6.jpg" style="width:2.30901in;height:1.80727in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.5: The ‘Kindergarten’ Illusion from The Optical Illusion model in NetLogo</figcaption>
+</figure>
+</div>
+<p>In Chapter 3, I provided examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download ‘Motion Quartet’ from the NetLogo community website and explore hysteresis in your own perception.</p>
+</section>
+<section id="motor-action" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="motor-action"><span class="header-section-number">4.3.3</span> Motor action</h3>
+<p>Many body motions are periodic in nature, think of walking, swimming, dancing, and galloping. Key to these motions is the synchronization of the movements of body parts. A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. <a href="#fig-ch4-img7">Figure&nbsp;<span>4.6</span></a> explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.</p>
+<div id="fig-ch4-img7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image7.jpg" style="width:6.26389in;height:2.52153in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.6: The finger movement task. Two fingers move up and down (x<sub>1</sub> and x<sub>2</sub>). They can move in phase or out of phase with a phase difference of 0 and <span class="math inline">\(\pi\)</span> (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference<span class="math inline">\(\ \varphi\)</span> of 0 or <span class="math inline">\(\pi\)</span> (<span class="math inline">\(- \pi\)</span> is the same state) or only one stable state (a phase difference of 0). Coupling strength (<span class="math inline">\(b/a\)</span>) and heterogeneity (<span class="math inline">\(\Delta w)\)</span> are control variables. Adapted from Haken et al.&nbsp;(1985) and Kelso (2021)</figcaption>
+</figure>
+</div>
+<p>The Haken–Kelso–Bunz (HKB) model, developed in the tradition of synergetics, explains the phase transition between in phase and anti-phase motions in a way we have seen in the previous chapter (the phenomenological cusp model). They set-up a potential function in the form of</p>
+<p><span id="eq-ch4-4"><span class="math display">\[
+V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi} \tag{4.4}\]</span></span> 20</p>
+<p>Where <span class="math inline">\(\varphi\)</span> is the order or behavioral variable, the phase difference between the two fingers. The main control parameter is <span class="math inline">\(b/a\)</span>. According to <span class="citation" data-cites="kelsoHakenKelsoBunz2021">(<a href="references.html#ref-kelsoHakenKelsoBunz2021" role="doc-biblioref">J. A. Scott Kelso 2021</a>)</span> coupling strength (<span class="math inline">\(b/a\)</span>) corresponds to the velocity or frequency of the oscillations in the experiments. <span class="math inline">\(\Delta w\)</span> is the difference (heterogeneity, diversity) between the natural frequencies of the individual oscillatory elements. In the finger movement task this parameter is expected to be 0. The behavior of this protentional function is cusp like. It has two stable states 0 and <span class="math inline">\(\pm \pi\)</span>, and increasing and decreasing the frequency leads to hysteresis. The effects of <span class="math inline">\(\Delta w\)</span> is similar to the fold catastrophe (see Chapter 3).</p>
+<p>This potential function is proposed as the simplest form that explains the experimental results. This is why I would call this a phenomenological model. However, <span class="citation" data-cites="hakenTheoreticalModelPhase1985">(<a href="references.html#ref-hakenTheoreticalModelPhase1985" role="doc-biblioref">H. Haken, Kelso, and Bunz 1985</a>)</span> also present a more mechanistic model, a combination of Van der Pol and Rayleigh oscillators <span class="citation" data-cites="alderisioEntrainmentSynchronizationNetworks2016">(<a href="references.html#ref-alderisioEntrainmentSynchronizationNetworks2016" role="doc-biblioref">Alderisio, Bardy, and di Bernardo 2016</a>)</span>. The stochastic variant of the HKB model also predicts early warnings such as critical slowing down (see the catastrophe flags, Section 3.3.2). The presence of critical slowing down and other flags has been confirmed experimentally <span class="citation" data-cites="kelsoNonequilibriumPhaseTransitions1986">(<a href="references.html#ref-kelsoNonequilibriumPhaseTransitions1986" role="doc-biblioref">J. A. S. Kelso, Scholz, and Schöner 1986</a>)</span>.</p>
+<p>One difference with the catastrophe approach is that the synergetic models that incorporate hysteresis typically do not have a splitting control variable. The concept of structural stability, which is fundamental to catastrophe theory, is not used in synergetics. What the splitting factor might be in this model is not so clear. I have never understood why coupling strength <span class="math inline">\(b/a\)</span> (see <a href="#fig-ch4-img7">Figure&nbsp;<span>4.6</span></a>) and the frequency of the oscillations are equated in the basic version of the HKB model (see also <span class="citation" data-cites="beekModelingRhythmicInterlimb2002">(<a href="references.html#ref-beekModelingRhythmicInterlimb2002" role="doc-biblioref">P. J. Beek, Peper, and Daffertshofer 2002</a>)</span>. Clearly, uncoupled oscillators would have a rather random phase difference. Strengthening the coupling would lead to a kind of pitchfork bifurcation.</p>
+<p>This coupling/uncoupling is a also a phenomenon in the visual coordination of rhythmic movements between people. <span class="citation" data-cites="schmidtPhaseTransitionsCritical1990">(<a href="references.html#ref-schmidtPhaseTransitionsCritical1990" role="doc-biblioref">Schmidt, Carello, and Turvey 1990</a>)</span> used an experimental paradigm in which two people swing a leg up and down, while sitting side by side. A metronome was used to manipulate the frequency of the swing. Clear jumps from out-of-phase to in-phase movement were demonstrated.</p>
+<p><span class="citation" data-cites="kelsoHakenKelsoBunz2021">(<a href="references.html#ref-kelsoHakenKelsoBunz2021" role="doc-biblioref">J. A. Scott Kelso 2021</a>)</span> provide an overview of the impressive amount of work on the HKB model. <span class="citation" data-cites="reppSensorimotorSynchronizationReview2013">(<a href="references.html#ref-reppSensorimotorSynchronizationReview2013" role="doc-biblioref">Repp and Su 2013</a>)</span> review empirical work in many different motor domains. Interestingly, learning motor tasks sometimes involves learning to couple movements (walking), and sometimes the uncoupling of movements (to drum more complex rhythms). Juggling is a fascinating case that has been studied in great detail <span class="citation" data-cites="beekScienceJuggling1995">(<a href="references.html#ref-beekScienceJuggling1995" role="doc-biblioref">Peter J. Beek and Lewbel 1995</a>)</span>. Another popular mathematical approach to synchronization phenomena is the Kuramoto model <span class="citation" data-cites="acebronKuramotoModelSimple2005">(<a href="references.html#ref-acebronKuramotoModelSimple2005" role="doc-biblioref">Acebrón et al. 2005</a>)</span> with the synchronous flashing of fireflies as a basic example. A second-order multi-adaptive neural agent to interpersonal synchrony can be found in <span class="citation" data-cites="hendrikseModelingEmergingInterpersonal2023">(<a href="references.html#ref-hendrikseModelingEmergingInterpersonal2023" role="doc-biblioref">Hendrikse, Treur, and Koole 2023</a>)</span>.</p>
+</section>
+<section id="robotics" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="robotics"><span class="header-section-number">4.3.4</span> Robotics</h3>
+<p>A major challenge in robotics is to build walking robots. Bipedal robots have evolved from clumsy mechanical walkers to flexible dynamic walkers and runners. Current legged robots can walk on slippery, uneven natural terrain, jump, do backflips, recover from rear shocks, and dance (see some videos on humanoid robots such as Atlas, Asimo). These successes are based on a combination of new technologies, but the principles of self-organization play a key role. An important concept is dynamic stability. In old-school robots, the path and momentum of each step had to be precisely calculated in advance to keep the robot’s center of mass continuously balanced at every point. A dynamically stable robot maintains balance the same way a human does: by catching itself mid-fall with each step <span class="citation" data-cites="pavlusClumsyQuestPerfect2016">(<a href="references.html#ref-pavlusClumsyQuestPerfect2016" role="doc-biblioref">Pavlus 2016</a>)</span>.</p>
+<p>An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply <span class="citation" data-cites="mcgeerPassiveWalkingKnees1990 reherDynamicWalkingAgile2021">(<a href="references.html#ref-mcgeerPassiveWalkingKnees1990" role="doc-biblioref">McGeer 1990</a>; <a href="references.html#ref-reherDynamicWalkingAgile2021" role="doc-biblioref">Reher and Ames 2021</a>)</span>. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork, Strandbeest, by Theo Jansen. His YouTube videos are strongly recommended. <!--
+![Beach Beast" \| www.strandbeest.com/ IMG_4285.jpg \| Robbert van den Beld \| Flickr](media/ch4/image8.jpg){#fig-ch4-img8 width="4.790972222222222in" height="2.6979166666666665in"}
+--> ### Developmental processes</p>
+<p>The early roots of interest in nonlinear dynamics and self-organization can be found in the seminal work of the French psychologist Jean Piaget. In order to understand the origin of knowledge, he studied the origin of intelligence in the child <span class="citation" data-cites="piagetOriginsIntelligenceChildren1952">(<a href="references.html#ref-piagetOriginsIntelligenceChildren1952" role="doc-biblioref">Piaget 1952</a>)</span>. His theorizing was inspired by both biological models and observations of children solving puzzles. He saw cognitive development as the building of structures on earlier knowledge structures in a process of equilibration. The idea was that the child would assimilate or accommodate to potentially conflicting external information.</p>
+<p>In the case of assimilation, the child modifies the information to fit the current cognitive structure, while in the case of accommodation, the structure is modified. Such a modification could be the addition of an exception to the rule (‘Longer sausages of clay normally weigh more, but not when this professor rolls the clay ball into a sausage’). In the long run, this does not work, the cognitive conflicts intensify, and the cognitive structure is destabilized. In this state of disequilibrium, a new structure can be formed on top of the earlier structure. An example of this is the conservation task I introduced in the introduction of Chapter 3. The pre-operational structure, in which form and quantity are equated, leads to incorrect predictions in the conservation anticipation task. The child may ignore this (assimilation), create an ad hoc rule for this exception (accommodation), but the cognitive conflict is not resolved, and the pre-operational structure becomes unstable. This instability allows the formation of the more advanced concrete operational structure in which form and quantity are independent constructs. Piaget argued that cognitive development is a spontaneous, natural process that occurs as children interact with the world around them.</p>
+<p>I would say that this is self-organization theory avant la letter, as was the case for the Gestalt psychologists. I see my own work in developmental psychology (e.g., <span class="citation" data-cites="saviWiringIntelligence2019 vandermaasDynamicalModelGeneral2006 vandermaasStagewiseCognitiveDevelopment1992">(<a href="references.html#ref-saviWiringIntelligence2019" role="doc-biblioref">Savi et al. 2019</a>; <a href="references.html#ref-vandermaasDynamicalModelGeneral2006" role="doc-biblioref">Van Der Maas et al. 2006</a>; <a href="references.html#ref-vandermaasStagewiseCognitiveDevelopment1992" role="doc-biblioref">Van der Maas and Molenaar 1992</a>)</span> as a formalization of these classical ideas of Piaget. The idea of stages and equilibrium lived on in neo-Piagetian theories.</p>
+<p>In the late twentieth century developmental theories inspired by work in embodied cognition, nonlinear dynamics, synergetics and neural networks (e.g., Edelman’s neural Darwinism) became popular. A key example is Esther Thelen’s work on the development of walking and reaching <span class="citation" data-cites="thelenMotorDevelopmentNew1995">(<a href="references.html#ref-thelenMotorDevelopmentNew1995" role="doc-biblioref">Thelen 1995</a>)</span>. Another famous Piagetian task, the A not B error plays a central role in this. The A-not-B error typically occurs in a simple game where an adult hides an object in a known location (A) in front of the infant several times. After a few trials, the adult hides the object in a new location (B) while the infant is watching. Despite watching the object being hidden in the new location, infants tend to continue searching for the object in the old location (A).</p>
+<p>The book by Thelen and Smith <span class="citation" data-cites="thelenDynamicSystemsApproach1994">(<a href="references.html#ref-thelenDynamicSystemsApproach1994" role="doc-biblioref">Thelen and Smith 1994</a>)</span> had a strong influence on developmental psychology, although I was rather critical in my youthful enthusiasm <span class="citation" data-cites="vandermaasMetaphor1995">(<a href="references.html#ref-vandermaasMetaphor1995" role="doc-biblioref">H. L. J. van der Maas 1995</a>)</span>. Concrete mathematical dynamical models for A not B error have been developed in Dynamic Field theory <span class="citation" data-cites="schonerDynamicThinkingPrimer2016">(<a href="references.html#ref-schonerDynamicThinkingPrimer2016" role="doc-biblioref">Schöner and Spencer 2016</a>)</span>. Dynamic field theory posits that cognitive processes are represented as dynamic fields, which are patterns of neural activity that evolve over time. These fields can be thought of as distributed representations that encode information about specific aspects of a task or behavior. For example, there may be a dynamic field representing the position of an object in space or the intended movement trajectory of a limb. In this theory, complex behaviors arise from the coordination and integration of multiple dynamic fields. Dynamic Field theory is a very active area of research (more information on https://dynamicfieldtheory.org/).</p>
+<p>Finally, I note that some recent work considers the educational system itself as a complex system <span class="citation" data-cites="jacobsonEducationComplexSystem2019 lemkeComplexSystemsEducational2008">(<a href="references.html#ref-jacobsonEducationComplexSystem2019" role="doc-biblioref">Jacobson, Levin, and Kapur 2019</a>; <a href="references.html#ref-lemkeComplexSystemsEducational2008" role="doc-biblioref">Lemke and Sabelli 2008</a>)</span>.</p>
+</section>
+<section id="psychological-disorders" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="psychological-disorders"><span class="header-section-number">4.3.5</span> Psychological disorders</h3>
+<p>Somewhat dated but interesting reviews of the application of the self-organization concept in clinical psychology are provided by <span class="citation" data-cites="bartonChaosSelfOrganizationPsychology1994">(<a href="references.html#ref-bartonChaosSelfOrganizationPsychology1994" role="doc-biblioref">Barton 1994</a>)</span> and <span class="citation" data-cites="ayersApplicationChaosTheory1997">(<a href="references.html#ref-ayersApplicationChaosTheory1997" role="doc-biblioref">Ayers 1997</a>)</span>. A recent review is provided by <span class="citation" data-cites="olthofComplexityTheoryPsychopathology2023">(<a href="references.html#ref-olthofComplexityTheoryPsychopathology2023" role="doc-biblioref">Olthof et al. 2023</a>)</span>. Barton’s review begins: “There is perhaps no other area in which chaos theory, nonlinear dynamics, and self-organizing systems are so intuitively appealing yet so analytically difficult as in clinical psychology.” Ayers also concludes that most applications in this field have been rather metaphorical.</p>
+<p>In recent work, both the modelling and the empirical work have become more concrete <span class="citation" data-cites="schiepekSelfOrganizationClinicalPsychology2009">(<a href="references.html#ref-schiepekSelfOrganizationClinicalPsychology2009" role="doc-biblioref">Schiepek and Perlitz 2009</a>)</span>. In later chapters I will discuss the mathematical model of marriage <span class="citation" data-cites="gottmanMathematicsMarriageDynamic2002">(<a href="references.html#ref-gottmanMathematicsMarriageDynamic2002" role="doc-biblioref">Gottman et al. 2002</a>)</span> and the network approach to psychopathology <span class="citation" data-cites="borsboomNetworkTheoryMental2017 cramerComorbidityNetworkPerspective2010">(<a href="references.html#ref-borsboomNetworkTheoryMental2017" role="doc-biblioref">Borsboom 2017</a>; <a href="references.html#ref-cramerComorbidityNetworkPerspective2010" role="doc-biblioref">Cramer et al. 2010</a>)</span>.</p>
+<p>The network approach to psychological disorders suggests that psychological disorders arise from complex interactions among symptoms, rather than being caused by a single underlying factor. It views disorders as interconnected networks of symptoms, where each symptom influences and is influenced by other symptoms. This approach emphasizes the dynamic nature of psychological disorders and highlights the importance of understanding the relationships between symptoms in order to effectively diagnose and treat them. Network modeling is accompanied by a new family of statistical techniques <span class="citation" data-cites="epskampEstimatingPsychologicalNetworks2018">(<a href="references.html#ref-epskampEstimatingPsychologicalNetworks2018" role="doc-biblioref">Epskamp, Borsboom, and Fried 2018</a>)</span>. An introduction to these techniques is given in chapter 6.</p>
+</section>
+<section id="social-relations" class="level3" data-number="4.3.6">
+<h3 data-number="4.3.6" class="anchored" data-anchor-id="social-relations"><span class="header-section-number">4.3.6</span> Social relations</h3>
+<p>A key publication in this area is the book on Dynamical Systems in Social Psychology, edited by <span class="citation" data-cites="vallacherDynamicalSystemsSocial1994">(<a href="references.html#ref-vallacherDynamicalSystemsSocial1994" role="doc-biblioref">Vallacher and Nowak 1994</a>)</span>. Concepts such as dissonance <span class="citation" data-cites="festingerTheoryCognitiveDissonance1962">(<a href="references.html#ref-festingerTheoryCognitiveDissonance1962" role="doc-biblioref">Festinger 1962</a>)</span>, balance <span class="citation" data-cites="heiderAttitudesCognitiveOrganization1946">(<a href="references.html#ref-heiderAttitudesCognitiveOrganization1946" role="doc-biblioref">Heider 1946</a>)</span>, and harmony <span class="citation" data-cites="smolenskyInformationProcessingDynamical1986">(<a href="references.html#ref-smolenskyInformationProcessingDynamical1986" role="doc-biblioref">Smolensky 1986</a>)</span> reflect the idea that we optimize internal consistency when forming attitudes and knowledge. A formal implementation of these ideas was proposed using PDP-type connectionist models (e.g., <span class="citation" data-cites="monroeGeneralConnectionistModel2008">(<a href="references.html#ref-monroeGeneralConnectionistModel2008" role="doc-biblioref">Monroe and Read 2008</a>)</span>. Our own model <span class="citation" data-cites="dalegeAccurateBeingNoisy2020 dalegeAttitudinalEntropyAE2018 dalegeFormalizedAccountAttitudes2016">(<a href="references.html#ref-dalegeAccurateBeingNoisy2020" role="doc-biblioref">Dalege and van der Maas 2020</a>; <a href="references.html#ref-dalegeAttitudinalEntropyAE2018" role="doc-biblioref">Dalege et al. 2018</a>, <a href="references.html#ref-dalegeFormalizedAccountAttitudes2016" role="doc-biblioref">2016</a>)</span> is based on the Ising model and the Boltzmann machine, as in Smolensky’s proposal, which can be fitted to data. I will explain this work in more detail in Chapter 6.</p>
+<p>A simple but famous example of social self-organization concerns pedestrian dynamics as studied by <span class="citation" data-cites="helbingSocialForceModel1995">(<a href="references.html#ref-helbingSocialForceModel1995" role="doc-biblioref">Helbing and Molnár 1995</a>)</span>. They proposed a simple physics-based model for panic evacuation. For an excellent overview of crowd simulation, I again, refer to Wikipedia. Some of this work is rooted in the social sciences. An example in NetLogo is the model “Path”.</p>
+<p>Famous is the work of the sociologist Mark Granovetter <span class="citation" data-cites="granovetterStrengthWeakTies1973">(<a href="references.html#ref-granovetterStrengthWeakTies1973" role="doc-biblioref">M. Granovetter 1973</a>)</span> on strong and weak ties in social networks (belonging to the best cited paper in the history of the social sciences). The idea is that weak ties in social networks are often more valuable than strong ties, as they provide access to new information and opportunities that may not be available within one’s close circle of friends and acquaintances.</p>
+<p>Another of his contributions is the threshold model of collective behavior <span class="citation" data-cites="granovetterThresholdModelsCollective1978">(<a href="references.html#ref-granovetterThresholdModelsCollective1978" role="doc-biblioref">Mark Granovetter 1978</a>)</span>. I like to explain this work using the “Guy starts dance party” video on YouTube. The idea is that people have some threshold, between 0 and 1, to join the dancers. These thresholds have some distribution, a flexible one is the beta distribution. With this R-code we can simulate this effect:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># number of persons</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>interations <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>threshold <span class="ot">&lt;-</span> <span class="fu">rbeta</span>(n,<span class="dv">1</span>,<span class="dv">2</span>) <span class="co"># sample individual thresholds for dancing</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(threshold,<span class="at">col=</span><span class="st">'grey'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>dancers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,n) <span class="co"># nobody dances</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>dancers[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="co"># but one guy</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>number_of_dancers <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,interations) <span class="co"># keep track of number of dancers</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>interations)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  number_of_dancers[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(dancers) <span class="co"># keep track of number of dancers</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  dancers[threshold<span class="sc">&lt;</span>(number_of_dancers[i]<span class="sc">/</span>n)] <span class="ot">&lt;-</span> <span class="dv">1</span> </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># if my threshold &lt; proportion of dancers, I dance</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(number_of_dancers,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">ylab=</span><span class="st">'#dancers'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>),<span class="at">type=</span><span class="st">'b'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Depending on the parameters of the beta distribution you will see a phase transition to collective dancing. This basic setup can be extended in many ways.</p>
+<p>Another classic contribution, explained in more detail in Chapter 7, is Schelling’s agent-based model of segregation <span class="citation" data-cites="schellingDynamicModelsSegregation1971">(<a href="references.html#ref-schellingDynamicModelsSegregation1971" role="doc-biblioref">Schelling 1971</a>)</span>. The idea is that even if individuals have only a small preference for in-group neighbors, segregated societies will form. For a broad overview of complex systems research on human cooperation, I refer to <span class="citation" data-cites="percStatisticalPhysicsHuman2017">(<a href="references.html#ref-percStatisticalPhysicsHuman2017" role="doc-biblioref">Perc et al. 2017</a>)</span>.</p>
+</section>
+<section id="collective-intelligence" class="level3" data-number="4.3.7">
+<h3 data-number="4.3.7" class="anchored" data-anchor-id="collective-intelligence"><span class="header-section-number">4.3.7</span> Collective Intelligence</h3>
+<p>Collective intelligence research examines how groups can collectively outperform individual members in problem solving, decision making, and idea generation. One famous concept is the idea of the wisdom of crowds <span class="citation" data-cites="surowieckiWisdomCrowds2005">(<a href="references.html#ref-surowieckiWisdomCrowds2005" role="doc-biblioref">Surowiecki 2005</a>)</span>. A key example, often cited to illustrate the wisdom of the crowds, is the “Guess the Weight of the Ox” contest that took place at the West of England Fat Stock and Poultry Exhibition in 1906. While individual guesses varied widely, the average guess was remarkably close to the actual weight of the ox. The average guess was only one pound off the actual weight, which was 1,198 pounds.</p>
+<p>However, there is a fine line between the wisdom of the crowd and the stupidity of the crowd <span class="citation" data-cites="galesicCollectiveIntelligenceCollective2023">(<a href="references.html#ref-galesicCollectiveIntelligenceCollective2023" role="doc-biblioref">Galesic et al. 2023</a>)</span>. It is extremely useful to know when that line is crossed. The wisdom of crowds tends to work when there is a diverse group of independent individuals, each making their own judgments or estimates about a particular question or problem. It is more likely to be effective when the group is large, has a wide range of knowledge and perspectives, and the judgments are made independently, without undue influence from others <span class="citation" data-cites="brushConflictsInterestImprove2018 centolaNetworkScienceCollective2022">(<a href="references.html#ref-brushConflictsInterestImprove2018" role="doc-biblioref">Brush, Krakauer, and Flack 2018</a>; <a href="references.html#ref-centolaNetworkScienceCollective2022" role="doc-biblioref">Centola 2022</a>)</span>. There is an extensive and up-to-date Wikipedia on collective intelligence, discussing findings from various disciplines, the idea of a collective intelligence factor c, biological examples (swarm intelligence), and an overview of applications (such as open source software, crowdsourcing, the Delphi technique and Wikipedia itself).</p>
+</section>
+<section id="game-theory" class="level3" data-number="4.3.8">
+<h3 data-number="4.3.8" class="anchored" data-anchor-id="game-theory"><span class="header-section-number">4.3.8</span> Game theory</h3>
+<p>Of particular importance is game theory, which consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner’s dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to tell. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix). In this game, loyalty to one’s friend is irrational, an outcome related to the tragedy of the commons <span class="citation" data-cites="hardinTragedyCommons1968">(<a href="references.html#ref-hardinTragedyCommons1968" role="doc-biblioref">Hardin 1968</a>)</span>. The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.</p>
+<div id="fig-ch4-img9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image9.jpg" style="width:1.83969in;height:1.79483in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.7: The prisoner’s dilemma</figcaption>
+</figure>
+</div>
+<p>A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory (Nash) equilibrium. A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players. The public goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public good games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students when they are working in groups on an assignment that the problem of this one student doing nothing happens because nice, hard-working students refuse to betray their fellow students to me. These nice, hard-working students are what are called second-order free riders <span class="citation" data-cites="fowlerSecondorderFreeridingProblem2005">(<a href="references.html#ref-fowlerSecondorderFreeridingProblem2005" role="doc-biblioref">Fowler 2005</a>)</span>.</p>
+</section>
+<section id="self-organization-in-organizations" class="level3" data-number="4.3.9">
+<h3 data-number="4.3.9" class="anchored" data-anchor-id="self-organization-in-organizations"><span class="header-section-number">4.3.9</span> Self-organization in organizations</h3>
+<p>Translating this basic research into real-world applications is far from straightforward <span class="citation" data-cites="andersonPerspectiveComplexityTheory1999 morelLookingGlassComplexity1999">(<a href="references.html#ref-andersonPerspectiveComplexityTheory1999" role="doc-biblioref">Anderson 1999</a>; <a href="references.html#ref-morelLookingGlassComplexity1999" role="doc-biblioref">Morel and Ramanujam 1999</a>)</span>. Human organizations can be placed on a scale from extreme hierarchy to radical forms of self-organization <span class="citation" data-cites="volberdaCoevolutionaryDynamicsFirms2003">(<a href="references.html#ref-volberdaCoevolutionaryDynamicsFirms2003" role="doc-biblioref">Volberda and Lewin 2003</a>)</span>. Note also that our economic system is a mixture of self-organization (pure capitalism) and top-down regulation (through laws, taxes and other regulations). Black markets are critical cases of unregulated self-organized systems <span class="citation" data-cites="tesfatsionAgentBasedComputationalEconomics2002">(<a href="references.html#ref-tesfatsionAgentBasedComputationalEconomics2002" role="doc-biblioref">Tesfatsion 2002</a>)</span>.</p>
+<p>A concrete modeling example is the team assembly model by <span class="citation" data-cites="guimeraTeamAssemblyMechanisms2005">(<a href="references.html#ref-guimeraTeamAssemblyMechanisms2005" role="doc-biblioref">Guimerà et al. 2005</a>)</span>. They study how the way creative teams self-assemble determine the structure of collaboration networks. The idea is that effective teams find a balance between being large enough to allow for specialization and efficient division of labor among members, while also being small enough to avoid excessive costs associated with coordinating group efforts. Agents in the model have only a few basic characteristics that influence their behavior: whether they are a newcomer or incumbent and what previous connections they have with other agents if they are incumbents.</p>
+<p>Three parameters that can be adjusted to influence behavior in the baseline assembly model: the team size, the probability of choosing an incumbent (<span class="math inline">\(p\)</span>), and the probability of choosing a previous collaborator (<span class="math inline">\(q\)</span>). The two probability parameters signify assumptions about agent motivations for team member selection. Low incumbent probability leads to preference for newcomers and new ideas, while high incumbent probability means a focus on experience. Low collaborator probability prioritizes experienced strangers, and high collaborator probability prioritizes previous collaborators. The model is part of the build in NetLogo models (“team assembly”). By simulating the model, it can be shown that the emergence of a large, connected community of practitioners can be described as a phase transition.</p>
+<p><span class="citation" data-cites="guimeraTeamAssemblyMechanisms2005">(<a href="references.html#ref-guimeraTeamAssemblyMechanisms2005" role="doc-biblioref">Guimerà et al. 2005</a>)</span> estimated the parameters <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only the field of astronomy had a very dense collaboration structure. In the other fields the estimates of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> of teams publishing in certain journals correlated well with impact factor. Interestingly, <span class="math inline">\(p\)</span> correlates positively and <span class="math inline">\(q\)</span> negatively with impact.</p>
+<div id="fig-ch4-img10" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="media/ch4/image10.jpg" style="width:3.84275in;height:3.26591in" class="figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.8: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="zooming-out" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="zooming-out"><span class="header-section-number">4.4</span> Zooming out</h2>
+<p>I hope I have succeeded in giving an organized and practical overview of a very disorganized and interdisciplinary field of research. For each subfield, I have provided key references that should help you find recent and specialized contributions. I find the examples of self-organization in the natural sciences fascinating and inspiring. I hope I have also shown that applications of this concept in psychology and the social sciences hold great promise. In the next chapters, I will present more concrete examples.</p>
+<p>I believe that understanding models requires working with models, for example through simulation. NetLogo is a great tool for this, although there are many alternatives available <span class="citation" data-cites="abarAgentBasedModelling2017">(<a href="references.html#ref-abarAgentBasedModelling2017" role="doc-biblioref">Abar et al. 2017</a>)</span>. I haven’t mentioned all the uses of NetLogo, but it’s good to know about the BehaviorSpace option. BehaviorSpace runs models repeatedly and in parallel (without visualization), systematically varying model settings and parameters, and recording the results of each model run. These results can then be further analyzed in R. An example will be provided in chapter 7.</p>
+</section>
+<section id="exercises" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">4.5</span> Exercises</h2>
+<ol type="1">
+<li><p>What does the rice cooker have to do with the Ising model?</p></li>
+<li><p>What is the Boltzmann entropy for the state <span class="math inline">\(\sum_{}^{}x = 0\)</span> in an Ising model (with nodes states -1 and 1) with 10 nodes and no external field? (*).</p></li>
+<li><p>Go to the webpage ‘A Neural Network Playground’. What is the minimal network to solve the XOR with 100% success? Use only the x1 and x2 feature. (*)</p></li>
+<li><p>In the Granovetter model (Section 4.3.7), people may also stop dancing (with probability .1). Add this to the model. What changes? (*)</p></li>
+<li><p>Add the external field to the Ising model in NetLogo (neighbors4 case). Report the changed line in the NetLogo code. What did you change in the interface?<br>
+Set the temperature to 1.5. Change tau slowly. At which values of tau do the hysteresis jumps occur? (*)</p></li>
+<li><p>Test whether the Ising model is indeed a cusp. Run the Ising model in NetLogo using the BehaviorSpace tool. Use the model in which all spins are connected to all spins (see Section 4.2.2.2). Vary tau (-.3 to .3 in .05 increments) and temperature (0 to 3, in .5 increments). One iteration per combination of parameter values is sufficient. Stop after 10000 ticks and collect only the final magnetization. Import the data into R and fit the cusp. Which cusp model best describes the data? (**)</p></li>
+<li><p>Open the Sandpile 3D model in NetLogo3D. Grains of sand fall at random place. Change one line of code such that they all fall in the middle. What did you change? (*)</p></li>
+<li><p>Download ‘Motion Quartet’ from the NetLogo community website and explore hysteresis in your own perception. What could be a splitting variable? (*)</p></li>
+<li><p>Implement the Granovetter model in NetLogo (max 40 lines of code) (**)</p></li>
+</ol>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-abarAgentBasedModelling2017" class="csl-entry" role="listitem">
+Abar, Sameera, Georgios K. Theodoropoulos, Pierre Lemarinier, and Gregory M. P. O’Hare. 2017. <span>“Agent <span>Based Modelling</span> and <span>Simulation</span> Tools: <span>A</span> Review of the State-of-Art Software.”</span> <em>Computer Science Review</em> 24 (May): 13–33. <a href="https://doi.org/10.1016/j.cosrev.2017.03.001">https://doi.org/10.1016/j.cosrev.2017.03.001</a>.
+</div>
+<div id="ref-abeCuspSingularityMean2017" class="csl-entry" role="listitem">
+Abe, Yayoi, Muneyuki Ishida, Erika Nozawa, Takayoshi Ootsuka, and Ryoko Yahagi. 2017. <span>“Cusp Singularity in Mean Field <span>Ising</span> Model.”</span> <em>European Journal of Physics</em> 38 (6): 065102. <a href="https://doi.org/10.1088/1361-6404/aa82fc">https://doi.org/10.1088/1361-6404/aa82fc</a>.
+</div>
+<div id="ref-acebronKuramotoModelSimple2005" class="csl-entry" role="listitem">
+Acebrón, Juan A., L. L. Bonilla, Conrad J. Pérez Vicente, Félix Ritort, and Renato Spigler. 2005. <span>“The <span>Kuramoto</span> Model: <span>A</span> Simple Paradigm for Synchronization Phenomena.”</span> <em>Reviews of Modern Physics</em> 77 (1): 137–85. <a href="https://doi.org/10.1103/RevModPhys.77.137">https://doi.org/10.1103/RevModPhys.77.137</a>.
+</div>
+<div id="ref-alderisioEntrainmentSynchronizationNetworks2016" class="csl-entry" role="listitem">
+Alderisio, Francesco, Benoît G. Bardy, and Mario di Bernardo. 2016. <span>“Entrainment and Synchronization in Networks of <span>Rayleigh</span>van Der <span>Pol</span> Oscillators with Diffusive and <span>Haken</span> Couplings.”</span> <em>Biological Cybernetics</em> 110 (2): 151–69. <a href="https://doi.org/10.1007/s00422-016-0685-7">https://doi.org/10.1007/s00422-016-0685-7</a>.
+</div>
+<div id="ref-andersonPerspectiveComplexityTheory1999" class="csl-entry" role="listitem">
+Anderson, Philip. 1999. <span>“Perspective: <span>Complexity Theory</span> and <span>Organization Science</span>.”</span> <em>Organization Science</em> 10 (3): 216–32. <a href="https://doi.org/10.1287/orsc.10.3.216">https://doi.org/10.1287/orsc.10.3.216</a>.
+</div>
+<div id="ref-ashbyIntroductionCybernetics1956" class="csl-entry" role="listitem">
+Ashby, W. R. 1956. <span>“An Introduction to Cybernetics.”</span> <em>An Introduction to Cybernetics.</em>
+</div>
+<div id="ref-ayersApplicationChaosTheory1997" class="csl-entry" role="listitem">
+Ayers, Susan. 1997. <span>“The <span>Application</span> of <span>Chaos Theory</span> to <span>Psychology</span>.”</span> <em>Theory &amp; Psychology</em> 7 (June): 373. <a href="https://doi.org/10.1177/0959354397073005">https://doi.org/10.1177/0959354397073005</a>.
+</div>
+<div id="ref-bakSelforganizedCriticality1988" class="csl-entry" role="listitem">
+Bak, Per, Chao Tang, and Kurt Wiesenfeld. 1988. <span>“Self-Organized Criticality.”</span> <em>Physical Review A</em> 38 (1): 364–74. <a href="https://doi.org/10.1103/PhysRevA.38.364">https://doi.org/10.1103/PhysRevA.38.364</a>.
+</div>
+<div id="ref-bartonChaosSelfOrganizationPsychology1994" class="csl-entry" role="listitem">
+Barton, Scott. 1994. <span>“Chaos, <span>Self-Organization</span>, and <span>Psychology</span>.”</span> <em>American Psychologist</em>. <a href="https://doi.org/10.1037/0003-066X.49.1.5">https://doi.org/10.1037/0003-066X.49.1.5</a>.
+</div>
+<div id="ref-bedardDoesFrequencyScaling2006" class="csl-entry" role="listitem">
+Bédard, C., H. Kröger, and A. Destexhe. 2006. <span>“Does the $1/f$ <span>Frequency Scaling</span> of <span>Brain Signals Reflect Self-Organized Critical States</span>?”</span> <em>Physical Review Letters</em> 97 (11): 118102. <a href="https://doi.org/10.1103/PhysRevLett.97.118102">https://doi.org/10.1103/PhysRevLett.97.118102</a>.
+</div>
+<div id="ref-beekModelingRhythmicInterlimb2002" class="csl-entry" role="listitem">
+Beek, P. J, C. E Peper, and A Daffertshofer. 2002. <span>“Modeling <span>Rhythmic Interlimb Coordination</span>: <span>Beyond</span> the <span>Haken</span>.”</span> <em>Brain and Cognition</em> 48 (1): 149–65. <a href="https://doi.org/10.1006/brcg.2001.1310">https://doi.org/10.1006/brcg.2001.1310</a>.
+</div>
+<div id="ref-beekScienceJuggling1995" class="csl-entry" role="listitem">
+Beek, Peter J., and Arthur Lewbel. 1995. <span>“The <span>Science</span> of <span>Juggling</span>.”</span> <em>Scientific American</em> 273 (5): 92–97. <a href="https://doi.org/10.1038/scientificamerican1195-92">https://doi.org/10.1038/scientificamerican1195-92</a>.
+</div>
+<div id="ref-berlekampWinningWaysYour2004" class="csl-entry" role="listitem">
+Berlekamp, Elwyn R., John H. Conway, and Richard K. Guy. 2004. <em>Winning <span>Ways</span> for <span>Your Mathematical Plays</span>, <span>Volume</span> 4</em>. 2nd ed. <span>New York</span>: <span>A K Peters/CRC Press</span>. <a href="https://doi.org/10.1201/9780429487309">https://doi.org/10.1201/9780429487309</a>.
+</div>
+<div id="ref-boerlijstSpiralWaveStructure1991" class="csl-entry" role="listitem">
+Boerlijst, M. C., and P. Hogeweg. 1991. <span>“Spiral Wave Structure in Pre-Biotic Evolution: <span>Hypercycles</span> Stable Against Parasites.”</span> <em>Physica D: Nonlinear Phenomena</em> 48 (1): 17–28. <a href="https://doi.org/10.1016/0167-2789(91)90049-F">https://doi.org/10.1016/0167-2789(91)90049-F</a>.
+</div>
+<div id="ref-borsboomNetworkTheoryMental2017" class="csl-entry" role="listitem">
+Borsboom, Denny. 2017. <span>“A Network Theory of Mental Disorders.”</span> <em>World Psychiatry</em> 16 (1): 5–13. <a href="https://doi.org/10.1002/wps.20375">https://doi.org/10.1002/wps.20375</a>.
+</div>
+<div id="ref-breakspearDynamicModelsLargescale2017" class="csl-entry" role="listitem">
+Breakspear, Michael. 2017. <span>“Dynamic Models of Large-Scale Brain Activity.”</span> <em>Nature Neuroscience</em> 20 (3): 340–52. <a href="https://doi.org/10.1038/nn.4497">https://doi.org/10.1038/nn.4497</a>.
+</div>
+<div id="ref-brinkhuisLearningItHappens2018" class="csl-entry" role="listitem">
+Brinkhuis, Matthieu J. S., Alexander O. Savi, Abe D. Hofman, Frederik Coomans, Han L. J. van der Maas, and Gunter Maris. 2018. <span>“Learning <span>As It Happens</span>: <span>A Decade</span> of <span>Analyzing</span> and <span>Shaping</span> a <span>Large-Scale Online Learning System</span>.”</span> <em>Journal of Learning Analytics</em> 5 (2): 29–46. <a href="https://doi.org/10.18608/jla.2018.52.3">https://doi.org/10.18608/jla.2018.52.3</a>.
+</div>
+<div id="ref-brushConflictsInterestImprove2018" class="csl-entry" role="listitem">
+Brush, Eleanor R., David C. Krakauer, and Jessica C. Flack. 2018. <span>“Conflicts of Interest Improve Collective Computation of Adaptive Social Structures.”</span> <em>Science Advances</em> 4 (1): e1603311. <a href="https://doi.org/10.1126/sciadv.1603311">https://doi.org/10.1126/sciadv.1603311</a>.
+</div>
+<div id="ref-centolaNetworkScienceCollective2022" class="csl-entry" role="listitem">
+Centola, Damon. 2022. <span>“The Network Science of Collective Intelligence.”</span> <em>Trends in Cognitive Sciences</em> 26 (11): 923–41. <a href="https://doi.org/10.1016/j.tics.2022.08.009">https://doi.org/10.1016/j.tics.2022.08.009</a>.
+</div>
+<div id="ref-chialvoEmergentComplexNeural2010" class="csl-entry" role="listitem">
+Chialvo, Dante R. 2010. <span>“Emergent Complex Neural Dynamics.”</span> <em>Nature Physics</em> 6 (10): 744–50. <a href="https://doi.org/10.1038/nphys1803">https://doi.org/10.1038/nphys1803</a>.
+</div>
+<div id="ref-clarkWhateverNextPredictive2013" class="csl-entry" role="listitem">
+Clark, Andy. 2013. <span>“Whatever Next? <span>Predictive</span> Brains, Situated Agents, and the Future of Cognitive Science.”</span> <em>Behavioral and Brain Sciences</em> 36 (3): 181–204. <a href="https://doi.org/10.1017/S0140525X12000477">https://doi.org/10.1017/S0140525X12000477</a>.
+</div>
+<div id="ref-cocchiCriticalityBrainSynthesis2017" class="csl-entry" role="listitem">
+Cocchi, Luca, Leonardo L. Gollo, Andrew Zalesky, and Michael Breakspear. 2017. <span>“Criticality in the Brain: <span>A</span> Synthesis of Neurobiology, Models and Cognition.”</span> <em>Progress in Neurobiology</em> 158 (November): 132–52. <a href="https://doi.org/10.1016/j.pneurobio.2017.07.002">https://doi.org/10.1016/j.pneurobio.2017.07.002</a>.
+</div>
+<div id="ref-cramerComorbidityNetworkPerspective2010" class="csl-entry" role="listitem">
+Cramer, Angélique O. J., Lourens J. Waldorp, Han L. J. van der Maas, and Denny Borsboom. 2010. <span>“Comorbidity: A Network Perspective.”</span> <em>The Behavioral and Brain Sciences</em> 33 (2-3): 137-150; discussion 150-193. <a href="https://doi.org/10.1017/S0140525X09991567">https://doi.org/10.1017/S0140525X09991567</a>.
+</div>
+<div id="ref-dalegeFormalizedAccountAttitudes2016" class="csl-entry" role="listitem">
+Dalege, Jonas, Denny Borsboom, Frenk van Harreveld, Helma van den Berg, Mark Conner, and Han L. J. van der Maas. 2016. <span>“Toward a Formalized Account of Attitudes: <span>The Causal Attitude Network</span> (<span>CAN</span>) Model.”</span> <em>Psychological Review</em> 123 (1): 2–22. <a href="https://doi.org/10.1037/a0039802">https://doi.org/10.1037/a0039802</a>.
+</div>
+<div id="ref-dalegeAttitudinalEntropyAE2018" class="csl-entry" role="listitem">
+Dalege, Jonas, Denny Borsboom, Frenk van Harreveld, and Han L. J. van der Maas. 2018. <span>“The <span>Attitudinal Entropy</span> (<span>AE</span>) Framework as a General Theory of Individual Attitudes.”</span> <em>Psychological Inquiry</em> 29 (4): 175–93. <a href="https://doi.org/10.1080/1047840X.2018.1537246">https://doi.org/10.1080/1047840X.2018.1537246</a>.
+</div>
+<div id="ref-dalegeAccurateBeingNoisy2020" class="csl-entry" role="listitem">
+Dalege, Jonas, and Han L. J. van der Maas. 2020. <span>“Accurate by Being Noisy: <span>A</span> Formal Network Model of Implicit Measures of Attitudes.”</span> <em>Social Cognition</em> 38 (Suppl): S26–41. <a href="https://doi.org/10.1521/soco.2020.38.supp.s26">https://doi.org/10.1521/soco.2020.38.supp.s26</a>.
+</div>
+<div id="ref-dresp-langleySevenPropertiesSelfOrganization2020" class="csl-entry" role="listitem">
+Dresp-Langley, Birgitta. 2020. <span>“Seven <span>Properties</span> of <span>Self-Organization</span> in the <span>Human Brain</span>.”</span> <em>Big Data and Cognitive Computing</em> 2 (4): 10.
+</div>
+<div id="ref-edelmanNeuralDarwinismTheory1987" class="csl-entry" role="listitem">
+Edelman, Gerald M. 1987. <em>Neural <span>Darwinism</span>: <span>The</span> Theory of Neuronal Group Selection</em>. Neural <span>Darwinism</span>: <span>The</span> Theory of Neuronal Group Selection. <span>New York, NY, US</span>: <span>Basic Books</span>.
+</div>
+<div id="ref-eigenHypercycle1979" class="csl-entry" role="listitem">
+Eigen, Manfred, and Peter Schuster. 1979. <em>The <span>Hypercycle</span></em>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-67247-7">https://doi.org/10.1007/978-3-642-67247-7</a>.
+</div>
+<div id="ref-eldredgePunctuatedEquilibriaAlternative1972" class="csl-entry" role="listitem">
+Eldredge, Niles, and Stephen Jay Gould. 1972. <span>“Punctuated <span>Equilibria</span>: <span>An Alternative</span> to <span>Phyletic Gradualism</span>.”</span> In <em>Models in <span>Paleobiology</span></em>, edited by Thomas J. M. Schopf, 82–115. <span>Freeman Cooper</span>.
+</div>
+<div id="ref-eloRatingChessplayersPresent1978" class="csl-entry" role="listitem">
+Elo, Arpad E. 1978. <em>The Rating of Chessplayers, Past and Present</em>. <span>New York</span>: <span>Arco Pub</span>.
+</div>
+<div id="ref-epskampEstimatingPsychologicalNetworks2018" class="csl-entry" role="listitem">
+Epskamp, Sacha, Denny Borsboom, and Eiko I. Fried. 2018. <span>“Estimating Psychological Networks and Their Accuracy: <span>A</span> Tutorial Paper.”</span> <em>Behavior Research Methods</em> 50 (1): 195–212. <a href="https://doi.org/10.3758/s13428-017-0862-1">https://doi.org/10.3758/s13428-017-0862-1</a>.
+</div>
+<div id="ref-festingerTheoryCognitiveDissonance1962" class="csl-entry" role="listitem">
+Festinger, Leon. 1962. <em>A Theory of Cognitive Dissonance</em>. A Theory of Cognitive Dissonance. <span>Palo Alto, CA, US</span>: <span>Stanford Univer. Press</span>.
+</div>
+<div id="ref-fowlerSecondorderFreeridingProblem2005" class="csl-entry" role="listitem">
+Fowler, James H. 2005. <span>“Second-Order Free-Riding Problem Solved?”</span> <em>Nature</em> 437 (7058): E8–8. <a href="https://doi.org/10.1038/nature04201">https://doi.org/10.1038/nature04201</a>.
+</div>
+<div id="ref-fristonFreeenergyPrincipleRough2009" class="csl-entry" role="listitem">
+Friston, Karl. 2009. <span>“The Free-Energy Principle: A Rough Guide to the Brain?”</span> <em>Trends in Cognitive Sciences</em> 13 (7): 293–301. <a href="https://doi.org/10.1016/j.tics.2009.04.005">https://doi.org/10.1016/j.tics.2009.04.005</a>.
+</div>
+<div id="ref-fuchsCoordinationDynamicsSynergetics2018" class="csl-entry" role="listitem">
+Fuchs, Armin, and Scott Kelso. 2018. <span>“Coordination <span>Dynamics</span> and <span>Synergetics</span>: <span>From Finger Movements</span> to <span>Brain Patterns</span> and <span>Ballet Dancing</span>.”</span> In <em>Complexity and <span>Synergetics</span></em>, 301–16. <a href="https://doi.org/10.1007/978-3-319-64334-2_23">https://doi.org/10.1007/978-3-319-64334-2_23</a>.
+</div>
+<div id="ref-galesicCollectiveIntelligenceCollective2023" class="csl-entry" role="listitem">
+Galesic, Mirta, Daniel Barkoczi, Andrew M. Berdahl, Dora Biro, Giuseppe Carbone, Ilaria Giannoccaro, Robert L. Goldstone, et al. 2023. <span>“Beyond Collective Intelligence: <span>Collective</span> Adaptation.”</span> <em>Journal of The Royal Society Interface</em> 20 (200): 20220736. <a href="https://doi.org/10.1098/rsif.2022.0736">https://doi.org/10.1098/rsif.2022.0736</a>.
+</div>
+<div id="ref-ghatakDeepLearning2019" class="csl-entry" role="listitem">
+Ghatak, Abhijit. 2019. <em>Deep <span>Learning</span> with <span>R</span></em>. <span>Singapore</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-981-13-5850-0">https://doi.org/10.1007/978-981-13-5850-0</a>.
+</div>
+<div id="ref-gibsonEcologicalApproachVisual2014" class="csl-entry" role="listitem">
+Gibson, James J. 2014. <em>The <span>Ecological Approach</span> to <span>Visual Perception</span>: <span>Classic Edition</span></em>. <span>New York</span>: <span>Psychology Press</span>. <a href="https://doi.org/10.4324/9781315740218">https://doi.org/10.4324/9781315740218</a>.
+</div>
+<div id="ref-gottmanMathematicsMarriageDynamic2002" class="csl-entry" role="listitem">
+Gottman, John M., James D. Murray, Catherine C. Swanson, Rebecca Tyson, and Kristin R. Swanson. 2002. <em>The Mathematics of Marriage: <span>Dynamic</span> Nonlinear Models</em>. The Mathematics of Marriage: <span>Dynamic</span> Nonlinear Models. <span>Cambridge, MA, US</span>: <span>MIT Press</span>.
+</div>
+<div id="ref-granovetterStrengthWeakTies1973" class="csl-entry" role="listitem">
+Granovetter, M. 1973. <span>“The Strength of Weak Ties.”</span> <em>American Journal of Sociology</em> 78 (6): 1360–80. <a href="https://doi.org/10.1086/225469">https://doi.org/10.1086/225469</a>.
+</div>
+<div id="ref-granovetterThresholdModelsCollective1978" class="csl-entry" role="listitem">
+Granovetter, Mark. 1978. <span>“Threshold <span>Models</span> of <span>Collective Behavior</span>.”</span> <em>The American Journal of Sociology</em> 83 (6): 1420–43. <a href="https://doi.org/10.1086/226707">https://doi.org/10.1086/226707</a>.
+</div>
+<div id="ref-grossbergNeuralDynamicsGestalt2012" class="csl-entry" role="listitem">
+Grossberg, Stephen, and Baingio Pinna. 2012. <span>“Neural <span>Dynamics</span> of <span>Gestalt Principles</span> of <span>Perceptual Organization</span>: <span>From Grouping</span> to <span>Shape</span> and <span>Meaning</span>.”</span> <em>GESTALT THEORY</em> 34.
+</div>
+<div id="ref-guimeraTeamAssemblyMechanisms2005" class="csl-entry" role="listitem">
+Guimerà, Roger, Brian Uzzi, Jarrett Spiro, and Luís A. Nunes Amaral. 2005. <span>“Team <span>Assembly Mechanisms Determine Collaboration Network Structure</span> and <span>Team Performance</span>.”</span> <em>Science</em> 308 (5722): 697–702. <a href="https://doi.org/10.1126/science.1106340">https://doi.org/10.1126/science.1106340</a>.
+</div>
+<div id="ref-hakenSynergetics1977" class="csl-entry" role="listitem">
+Haken, Herman. 1977. <span>“Synergetics.”</span> <em>Physics Bulletin</em> 28 (9): 412. <a href="https://doi.org/10.1088/0031-9112/28/9/027">https://doi.org/10.1088/0031-9112/28/9/027</a>.
+</div>
+<div id="ref-hakenSynergeticsPsychology1992" class="csl-entry" role="listitem">
+Haken, Hermann. 1992. <span>“Synergetics in <span>Psychology</span>.”</span> In <em>Self-<span>Organization</span> and <span>Clinical Psychology</span>: <span>Empirical Approaches</span> to <span>Synergetics</span> in <span>Psychology</span></em>, edited by Wolfgang Tschacher, Günter Schiepek, and Ewald Johannes Brunner, 32–54. Springer <span>Series</span> in <span>Synergetics</span>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-77534-5_2">https://doi.org/10.1007/978-3-642-77534-5_2</a>.
+</div>
+<div id="ref-hakenTheoreticalModelPhase1985" class="csl-entry" role="listitem">
+Haken, H., J. A. S. Kelso, and H. Bunz. 1985. <span>“A Theoretical Model of Phase Transitions in Human Hand Movements.”</span> <em>Biological Cybernetics</em> 51 (5): 347–56. <a href="https://doi.org/10.1007/BF00336922">https://doi.org/10.1007/BF00336922</a>.
+</div>
+<div id="ref-hardinTragedyCommons1968" class="csl-entry" role="listitem">
+Hardin, Garrett. 1968. <span>“The <span>Tragedy</span> of the <span>Commons</span>”</span> 162.
+</div>
+<div id="ref-hebbOrganizationBehaviorNeuropsychological1949" class="csl-entry" role="listitem">
+Hebb, D. O. 1949. <em>The Organization of Behavior; a Neuropsychological Theory</em>. The Organization of Behavior; a Neuropsychological Theory. <span>Oxford, England</span>: <span>Wiley</span>.
+</div>
+<div id="ref-heiderAttitudesCognitiveOrganization1946" class="csl-entry" role="listitem">
+Heider, Fritz. 1946. <span>“Attitudes and <span>Cognitive Organization</span>.”</span> <em>The Journal of Psychology</em> 21 (1): 107–12. <a href="https://doi.org/10.1080/00223980.1946.9917275">https://doi.org/10.1080/00223980.1946.9917275</a>.
+</div>
+<div id="ref-helbingSocialForceModel1995" class="csl-entry" role="listitem">
+Helbing, Dirk, and Péter Molnár. 1995. <span>“Social Force Model for Pedestrian Dynamics.”</span> <em>Physical Review E</em> 51 (5): 4282–86. <a href="https://doi.org/10.1103/PhysRevE.51.4282">https://doi.org/10.1103/PhysRevE.51.4282</a>.
+</div>
+<div id="ref-hendrikseModelingEmergingInterpersonal2023" class="csl-entry" role="listitem">
+Hendrikse, Sophie, Jan Treur, and Sander Koole. 2023. <span>“Modeling <span>Emerging Interpersonal Synchrony</span> and Its <span>Related Adaptive Short-Term Affiliation</span> and <span>Long-Term Bonding</span>: <span>A Second-Order Multi-Adaptive Neural Agent Model</span>.”</span> <em>International Journal of Neural Systems</em>, April. <a href="https://doi.org/10.1142/S0129065723500387">https://doi.org/10.1142/S0129065723500387</a>.
+</div>
+<div id="ref-hollandGeneticAlgorithms1992" class="csl-entry" role="listitem">
+Holland, John H. 1992a. <span>“Genetic <span>Algorithms</span>.”</span> <em>Scientific American</em> 267 (1): 66–73. <a href="https://doi.org/10.1038/scientificamerican0792-66">https://doi.org/10.1038/scientificamerican0792-66</a>.
+</div>
+<div id="ref-hollandAdaptationNaturalArtificial1992" class="csl-entry" role="listitem">
+———. 1992b. <em>Adaptation in <span>Natural</span> and <span>Artificial Systems</span>: <span>An Introductory Analysis</span> with <span>Applications</span> to <span>Biology</span>, <span>Control</span>, and <span>Artificial Intelligence</span></em>. <span>MIT Press</span>.
+</div>
+<div id="ref-jacobsonEducationComplexSystem2019" class="csl-entry" role="listitem">
+Jacobson, Michael J., James A. Levin, and Manu Kapur. 2019. <span>“Education as a <span>Complex System</span>: <span>Conceptual</span> and <span>Methodological Implications</span>.”</span> <em>Educational Researcher</em> 48 (2): 112–19. <a href="https://doi.org/10.3102/0013189X19826958">https://doi.org/10.3102/0013189X19826958</a>.
+</div>
+<div id="ref-kalantariEmergencePhenomenaSelforganizing2020" class="csl-entry" role="listitem">
+Kalantari, Somayeh, Eslam Nazemi, and Behrooz Masoumi. 2020. <span>“Emergence Phenomena in Self-Organizing Systems: A Systematic Literature Review of Concepts, Researches, and Future Prospects.”</span> <em>Journal of Organizational Computing and Electronic Commerce</em> 30 (3): 224–65. <a href="https://doi.org/10.1080/10919392.2020.1748977">https://doi.org/10.1080/10919392.2020.1748977</a>.
+</div>
+<div id="ref-kauffmanOriginsOrderSelfOrganization1993" class="csl-entry" role="listitem">
+Kauffman, Stuart A. 1993. <em>The <span>Origins</span> of <span>Order</span>: <span>Self-Organization</span> and <span>Selection</span> in <span>Evolution</span></em>. 1st edition. <span>New York</span>: <span>Oxford University Press</span>.
+</div>
+<div id="ref-kelsoDynamicPatternsSelforganization1995" class="csl-entry" role="listitem">
+Kelso, J. A. Scott. 1995. <em>Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior</em>. Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior. <span>Cambridge, MA, US</span>: <span>The MIT Press</span>.
+</div>
+<div id="ref-kelsoHakenKelsoBunz2021" class="csl-entry" role="listitem">
+———. 2021. <span>“The <span>Haken</span> (<span>HKB</span>) Model: From Matter to Movement to Mind.”</span> <em>Biological Cybernetics</em> 115 (4): 305–22. <a href="https://doi.org/10.1007/s00422-021-00890-w">https://doi.org/10.1007/s00422-021-00890-w</a>.
+</div>
+<div id="ref-kelsoNonequilibriumPhaseTransitions1986" class="csl-entry" role="listitem">
+Kelso, J. A. S., J. P. Scholz, and G. Schöner. 1986. <span>“Nonequilibrium Phase Transitions in Coordinated Biological Motion: Critical Fluctuations.”</span> <em>Physics Letters A</em> 118 (6): 279–84. <a href="https://doi.org/10.1016/0375-9601(86)90359-2">https://doi.org/10.1016/0375-9601(86)90359-2</a>.
+</div>
+<div id="ref-klinkenbergComputerAdaptivePractice2011" class="csl-entry" role="listitem">
+Klinkenberg, S., M Straatemeier, and H. van der Maas. 2011. <span>“Computer Adaptive Practice of <span>Maths</span> Ability Using a New Item Response Model for on the Fly Ability and Difficulty Estimation.”</span> <em>Computers &amp; Education</em> 57: 1813–24.
+</div>
+<div id="ref-kruseAmbiguityMindNature2012" class="csl-entry" role="listitem">
+Kruse, Peter, and Michael Stadler. 2012. <em>Ambiguity in <span>Mind</span> and <span>Nature</span>: <span>Multistable Cognitive Phenomena</span></em>. <span>Springer Science &amp; Business Media</span>.
+</div>
+<div id="ref-langtonComputationEdgeChaos1990" class="csl-entry" role="listitem">
+Langton, Chris G. 1990. <span>“Computation at the Edge of Chaos: <span>Phase</span> Transitions and Emergent Computation.”</span> <em>Physica D: Nonlinear Phenomena</em> 42 (1): 12–37. <a href="https://doi.org/10.1016/0167-2789(90)90064-V">https://doi.org/10.1016/0167-2789(90)90064-V</a>.
+</div>
+<div id="ref-lemkeComplexSystemsEducational2008" class="csl-entry" role="listitem">
+Lemke, Jay L., and Nora H. Sabelli. 2008. <span>“Complex <span>Systems</span> and <span>Educational Change</span>: <span>Towards</span> a <span>New Research Agenda</span>.”</span> In <em>Complexity <span>Theory</span> and the <span>Philosophy</span> of <span>Education</span></em>, 112–23. <span>John Wiley &amp; Sons, Ltd</span>. <a href="https://doi.org/10.1002/9781444307351.ch8">https://doi.org/10.1002/9781444307351.ch8</a>.
+</div>
+<div id="ref-lurieQuestionsControversiesStudy2020" class="csl-entry" role="listitem">
+Lurie, Daniel J., Daniel Kessler, Danielle S. Bassett, Richard F. Betzel, Michael Breakspear, Shella Kheilholz, Aaron Kucyi, et al. 2020. <span>“Questions and Controversies in the Study of Time-Varying Functional Connectivity in Resting <span class="nocase">fMRI</span>.”</span> <em>Network Neuroscience</em> 4 (1): 30–69. <a href="https://doi.org/10.1162/netn_a_00116">https://doi.org/10.1162/netn_a_00116</a>.
+</div>
+<div id="ref-marisSpeedaccuracyResponseModels2012" class="csl-entry" role="listitem">
+Maris, Gunter, and Han van&nbsp;der Maas. 2012. <span>“Speed-Accuracy Response Models: <span>Scoring</span> Rules Based on Response Time and Accuracy.”</span> <em>Psychometrika</em> 77 (4): 615–33. <a href="https://doi.org/10.1007/s11336-012-9288-y">https://doi.org/10.1007/s11336-012-9288-y</a>.
+</div>
+<div id="ref-mcgeerPassiveWalkingKnees1990" class="csl-entry" role="listitem">
+McGeer, T. 1990. <span>“Passive Walking with Knees.”</span> In<em>, <span>IEEE International Conference</span> on <span>Robotics</span> and <span>Automation Proceedings</span></em>, 1640–1645 vol.3. <a href="https://doi.org/10.1109/ROBOT.1990.126245">https://doi.org/10.1109/ROBOT.1990.126245</a>.
+</div>
+<div id="ref-mcgrathAcquisitionChessKnowledge2022" class="csl-entry" role="listitem">
+McGrath, Thomas, Andrei Kapishnikov, Nenad Tomašev, Adam Pearce, Martin Wattenberg, Demis Hassabis, Been Kim, Ulrich Paquet, and Vladimir Kramnik. 2022. <span>“Acquisition of Chess Knowledge in <span>AlphaZero</span>.”</span> <em>Proceedings of the National Academy of Sciences</em> 119 (47): e2206625119. <a href="https://doi.org/10.1073/pnas.2206625119">https://doi.org/10.1073/pnas.2206625119</a>.
+</div>
+<div id="ref-mitchellIntroductionGeneticAlgorithms1998" class="csl-entry" role="listitem">
+Mitchell, Melanie. 1998. <em>An <span>Introduction</span> to <span>Genetic Algorithms</span></em>. <span>MIT Press</span>.
+</div>
+<div id="ref-monroeGeneralConnectionistModel2008" class="csl-entry" role="listitem">
+Monroe, Brian M., and Stephen J. Read. 2008. <span>“A General Connectionist Model of Attitude Structure and Change: <span>The ACS</span> (<span>Attitudes</span> as <span>Constraint Satisfaction</span>) Model.”</span> <em>Psychological Review</em> 115: 733–59. <a href="https://doi.org/10.1037/0033-295X.115.3.733">https://doi.org/10.1037/0033-295X.115.3.733</a>.
+</div>
+<div id="ref-morelLookingGlassComplexity1999" class="csl-entry" role="listitem">
+Morel, Benoit, and Rangaraj Ramanujam. 1999. <span>“Through the <span>Looking Glass</span> of <span>Complexity</span>: <span>The Dynamics</span> of <span>Organizations</span> as <span>Adaptive</span> and <span>Evolving Systems</span>.”</span> <em>Organization Science</em> 10 (3): 278–93. <a href="https://doi.org/10.1287/orsc.10.3.278">https://doi.org/10.1287/orsc.10.3.278</a>.
+</div>
+<div id="ref-obyrneHowCriticalBrain2022" class="csl-entry" role="listitem">
+O’Byrne, Jordan, and Karim Jerbi. 2022. <span>“How Critical Is Brain Criticality?”</span> <em>Trends in Neurosciences</em> 45 (11): 820–37. <a href="https://doi.org/10.1016/j.tins.2022.08.007">https://doi.org/10.1016/j.tins.2022.08.007</a>.
+</div>
+<div id="ref-olthofComplexityTheoryPsychopathology2023" class="csl-entry" role="listitem">
+Olthof, Merlijn, Fred Hasselman, Freek Oude Maatman, Anna M. T. Bosman, and Anna Lichtwarck-Aschoff. 2023. <span>“Complexity Theory of Psychopathology.”</span> <em>Journal of Psychopathology and Clinical Science</em> 132: 314–23. <a href="https://doi.org/10.1037/abn0000740">https://doi.org/10.1037/abn0000740</a>.
+</div>
+<div id="ref-ooyenRewiringBrainComputational2017" class="csl-entry" role="listitem">
+Ooyen, Arjen van, and Markus Butz-Ostendorf. 2017. <em>The <span>Rewiring Brain</span>: <span>A Computational Approach</span> to <span>Structural Plasticity</span> in the <span>Adult Brain</span></em>. <span>Academic Press</span>.
+</div>
+<div id="ref-pavlusClumsyQuestPerfect2016" class="csl-entry" role="listitem">
+Pavlus, John. 2016. <span>“The <span>Clumsy Quest</span> to <span>Perfect</span> the <span>Walking Robot</span>.”</span> <em>Scientific American</em>. https://www.scientificamerican.com/article/the-clumsy-quest-to-perfect-the-walking-robot/. <a href="https://doi.org/10.1038/scientificamerican0716-60">https://doi.org/10.1038/scientificamerican0716-60</a>.
+</div>
+<div id="ref-percStatisticalPhysicsHuman2017" class="csl-entry" role="listitem">
+Perc, Matjaž, Jillian J. Jordan, David G. Rand, Zhen Wang, Stefano Boccaletti, and Attila Szolnoki. 2017. <span>“Statistical Physics of Human Cooperation.”</span> <em>Physics Reports</em>, Statistical physics of human cooperation, 687 (May): 1–51. <a href="https://doi.org/10.1016/j.physrep.2017.05.004">https://doi.org/10.1016/j.physrep.2017.05.004</a>.
+</div>
+<div id="ref-piagetOriginsIntelligenceChildren1952" class="csl-entry" role="listitem">
+Piaget, Jean. 1952. <em>The Origins of Intelligence in Children</em>. Edited by Margaret Cook. The Origins of Intelligence in Children. <span>New York, NY, US</span>: <span>W W Norton &amp; Co</span>. <a href="https://doi.org/10.1037/11494-000">https://doi.org/10.1037/11494-000</a>.
+</div>
+<div id="ref-plenzSelfOrganizedCriticalityBrain2021" class="csl-entry" role="listitem">
+Plenz, Dietmar, Tiago L. Ribeiro, Stephanie R. Miller, Patrick A. Kells, Ali Vakili, and Elliott L. Capek. 2021. <span>“Self-<span>Organized Criticality</span> in the <span>Brain</span>.”</span> <em>Frontiers in Physics</em> 9. <a href="https://doi.org/10.3389/fphy.2021.639389">https://doi.org/10.3389/fphy.2021.639389</a>.
+</div>
+<div id="ref-postonCatastropheTheoryIts2014" class="csl-entry" role="listitem">
+Poston, Tim, and Ian Stewart. 2014. <em>Catastrophe <span>Theory</span> and <span>Its Applications</span></em>. <span>Courier Corporation</span>.
+</div>
+<div id="ref-reherDynamicWalkingAgile2021" class="csl-entry" role="listitem">
+Reher, Jenna, and Aaron D. Ames. 2021. <span>“Dynamic <span>Walking</span>: <span>Toward Agile</span> and <span>Efficient Bipedal Robots</span>.”</span> <em>Annual Review of Control, Robotics, and Autonomous Systems</em> 4 (1): 535–72. <a href="https://doi.org/10.1146/annurev-control-071020-045021">https://doi.org/10.1146/annurev-control-071020-045021</a>.
+</div>
+<div id="ref-rendellGameLifeUniversal2016" class="csl-entry" role="listitem">
+Rendell, Paul. 2016. <span>“Game of <span>Life Universal Turing Machine</span>.”</span> In <em>Turing <span>Machine Universality</span> of the <span>Game</span> of <span>Life</span></em>, edited by Paul Rendell, 71–89. Emergence, <span>Complexity</span> and <span>Computation</span>. <span>Cham</span>: <span>Springer International Publishing</span>. <a href="https://doi.org/10.1007/978-3-319-19842-2_5">https://doi.org/10.1007/978-3-319-19842-2_5</a>.
+</div>
+<div id="ref-reppSensorimotorSynchronizationReview2013" class="csl-entry" role="listitem">
+Repp, Bruno H., and Yi-Huang Su. 2013. <span>“Sensorimotor Synchronization: <span>A</span> Review of Recent Research (2006).”</span> <em>Psychonomic Bulletin &amp; Review</em> 20 (3): 403–52. <a href="https://doi.org/10.3758/s13423-012-0371-2">https://doi.org/10.3758/s13423-012-0371-2</a>.
+</div>
+<div id="ref-saviWiringIntelligence2019" class="csl-entry" role="listitem">
+Savi, Alexander O., Maarten Marsman, Han L. J. van der Maas, and Gunter K. J. Maris. 2019. <span>“The <span>Wiring</span> of <span>Intelligence</span>.”</span> <em>Perspectives on Psychological Science</em> 14 (6): 1034–61. <a href="https://doi.org/10.1177/1745691619866447">https://doi.org/10.1177/1745691619866447</a>.
+</div>
+<div id="ref-schellingDynamicModelsSegregation1971" class="csl-entry" role="listitem">
+Schelling, Thomas C. 1971. <span>“Dynamic Models of Segregation.”</span> <em>The Journal of Mathematical Sociology</em> 1 (2): 143–86. <a href="https://doi.org/10.1080/0022250X.1971.9989794">https://doi.org/10.1080/0022250X.1971.9989794</a>.
+</div>
+<div id="ref-schiepekSelfOrganizationClinicalPsychology2009" class="csl-entry" role="listitem">
+Schiepek, Günter, and Volker Perlitz. 2009. <span>“Self-<span>Organization</span> in <span>Clinical Psychology</span>.”</span> In <em>Synergetics</em>, edited by Axel Hutt and Hermann Haken, 263–85. <span>New York, NY</span>: <span>Springer US</span>. <a href="https://doi.org/10.1007/978-1-0716-0421-2_472">https://doi.org/10.1007/978-1-0716-0421-2_472</a>.
+</div>
+<div id="ref-schmidhuberDeepLearningNeural2015" class="csl-entry" role="listitem">
+Schmidhuber, Jürgen. 2015. <span>“Deep Learning in Neural Networks: <span>An</span> Overview.”</span> <em>Neural Networks</em> 61 (January): 85–117. <a href="https://doi.org/10.1016/j.neunet.2014.09.003">https://doi.org/10.1016/j.neunet.2014.09.003</a>.
+</div>
+<div id="ref-schmidtPhaseTransitionsCritical1990" class="csl-entry" role="listitem">
+Schmidt, R. C., C. Carello, and M. T. Turvey. 1990. <span>“Phase Transitions and Critical Fluctuations in the Visual Coordination of Rhythmic Movements Between People.”</span> <em>Journal of Experimental Psychology. Human Perception and Performance</em> 16 (2): 227–47. <a href="https://doi.org/10.1037//0096-1523.16.2.227">https://doi.org/10.1037//0096-1523.16.2.227</a>.
+</div>
+<div id="ref-schonerDynamicThinkingPrimer2016" class="csl-entry" role="listitem">
+Schöner, Gregor, and John P. Spencer. 2016. <em>Dynamic Thinking: <span>A</span> Primer on Dynamic Field Theory</em>. <span>Oxford University Press</span>.
+</div>
+<div id="ref-silverGeneralReinforcementLearning2018" class="csl-entry" role="listitem">
+Silver, David, Thomas Hubert, Julian Schrittwieser, Ioannis Antonoglou, Matthew Lai, Arthur Guez, Marc Lanctot, et al. 2018. <span>“A General Reinforcement Learning Algorithm That Masters Chess, Shogi, and <span>Go</span> Through Self-Play.”</span> <em>Science</em> 362 (6419): 1140–44. <a href="https://doi.org/10.1126/science.aar6404">https://doi.org/10.1126/science.aar6404</a>.
+</div>
+<div id="ref-skardaHowBrainsMake1987" class="csl-entry" role="listitem">
+Skarda, Christine A., and Walter J. Freeman. 1987. <span>“How Brains Make Chaos in Order to Make Sense of the World.”</span> <em>Behavioral and Brain Sciences</em> 10 (2): 161–73. <a href="https://doi.org/10.1017/S0140525X00047336">https://doi.org/10.1017/S0140525X00047336</a>.
+</div>
+<div id="ref-smolenskyInformationProcessingDynamical1986" class="csl-entry" role="listitem">
+Smolensky, Paul. 1986. <span>“Information <span>Processing</span> in <span>Dynamical Systems</span>: <span>Foundations</span> of <span>Harmony Theory</span>.”</span>
+</div>
+<div id="ref-stengersOrderOutChaos1978" class="csl-entry" role="listitem">
+Stengers, Isabelle, and Ilya Prigogine. 1978. <em>Order <span>Out</span> of <span>Chaos</span>: <span>Man</span>’s <span>New Dialogue</span> with <span>Nature</span></em>. <span>London</span>.
+</div>
+<div id="ref-surowieckiWisdomCrowds2005" class="csl-entry" role="listitem">
+Surowiecki, James. 2005. <em>The <span>Wisdom</span> of <span>Crowds</span></em>. <span>Knopf Doubleday Publishing Group</span>.
+</div>
+<div id="ref-suttonReinforcementLearningSecond2018" class="csl-entry" role="listitem">
+Sutton, Richard S., and Andrew G. Barto. 2018. <em>Reinforcement <span>Learning</span>, Second Edition: <span>An Introduction</span></em>. <span>MIT Press</span>.
+</div>
+<div id="ref-tesfatsionAgentBasedComputationalEconomics2002" class="csl-entry" role="listitem">
+Tesfatsion, Leigh. 2002. <span>“Agent-<span>Based Computational Economics</span>: <span>Growing Economies From</span> the <span>Bottom Up</span>.”</span> <em>Artificial Life</em> 8 (1): 55–82. <a href="https://doi.org/10.1162/106454602753694765">https://doi.org/10.1162/106454602753694765</a>.
+</div>
+<div id="ref-thelenMotorDevelopmentNew1995" class="csl-entry" role="listitem">
+Thelen, Esther. 1995. <span>“Motor Development: <span>A</span> New Synthesis.”</span> <em>American Psychologist</em> 50: 79–95. <a href="https://doi.org/10.1037/0003-066X.50.2.79">https://doi.org/10.1037/0003-066X.50.2.79</a>.
+</div>
+<div id="ref-thelenDynamicSystemsApproach1994" class="csl-entry" role="listitem">
+Thelen, Esther, and Linda B. Smith. 1994. <em>A <span>Dynamic Systems Approach</span> to the <span>Development</span> of <span>Cognition</span> and <span>Action</span></em>. <span>MIT Press</span>.
+</div>
+<div id="ref-vallacherDynamicalSystemsSocial1994" class="csl-entry" role="listitem">
+Vallacher, Robin R., and Andrzej Nowak, eds. 1994. <em>Dynamical Systems in Social Psychology</em>. Dynamical Systems in Social Psychology. <span>San Diego, CA, US</span>: <span>Academic Press</span>.
+</div>
+<div id="ref-vandermaasMetaphor1995" class="csl-entry" role="listitem">
+van der Maas, H. L. J. 1995. <span>“Beyond the Metaphor?”</span> <em>Cognitive Development</em> 10.
+</div>
+<div id="ref-vandermaasDynamicalModelGeneral2006" class="csl-entry" role="listitem">
+Van Der Maas, Han L. J., Conor V. Dolan, Raoul P. P. P. Grasman, Jelte M. Wicherts, Hilde M. Huizenga, and Maartje E. J. Raijmakers. 2006. <span>“A Dynamical Model of General Intelligence: <span>The</span> Positive Manifold of Intelligence by Mutualism.”</span> <em>Psychological Review</em> 113 (4): 842–61. <a href="https://doi.org/c3jm44">https://doi.org/c3jm44</a>.
+</div>
+<div id="ref-vandermaasHowMuchIntelligence2021" class="csl-entry" role="listitem">
+van der Maas, Han L. J., Lukas Snoek, and Claire E. Stevenson. 2021. <span>“How Much Intelligence Is There in Artificial Intelligence? <span>A</span> 2020 Update.”</span> <em>Intelligence</em> 87 (July): 101548. <a href="https://doi.org/10.1016/j.intell.2021.101548">https://doi.org/10.1016/j.intell.2021.101548</a>.
+</div>
+<div id="ref-vandermaasStagewiseCognitiveDevelopment1992" class="csl-entry" role="listitem">
+Van der Maas, Han L., and Peter C. Molenaar. 1992. <span>“Stagewise Cognitive Development: <span>An</span> Application of Catastrophe Theory.”</span> <em>Psychological Review</em> 99 (3): 395–417. <a href="https://doi.org/10.1037/0033-295X.99.3.395">https://doi.org/10.1037/0033-295X.99.3.395</a>.
+</div>
+<div id="ref-volberdaCoevolutionaryDynamicsFirms2003" class="csl-entry" role="listitem">
+Volberda, Henk W., and Arie Y. Lewin. 2003. <span>“Co-Evolutionary <span>Dynamics Within</span> and <span>Between Firms</span>: <span>From Evolution</span> to <span class="nocase">Co-evolution</span>.”</span> <em>Journal of Management Studies</em> 40 (8): 2111–36. <a href="https://doi.org/10.1046/j.1467-6486.2003.00414.x">https://doi.org/10.1046/j.1467-6486.2003.00414.x</a>.
+</div>
+<div id="ref-wagemansCenturyGestaltPsychology2012" class="csl-entry" role="listitem">
+Wagemans, Johan, James H. Elder, Michael Kubovy, Stephen E. Palmer, Mary A. Peterson, Manish Singh, and Rüdiger von der Heydt. 2012. <span>“A Century of <span>Gestalt</span> Psychology in Visual Perception: <span>I</span>. <span>Perceptual</span> Grouping and Figureground Organization.”</span> <em>Psychological Bulletin</em> 138: 1172–1217. <a href="https://doi.org/10.1037/a0029333">https://doi.org/10.1037/a0029333</a>.
+</div>
+<div id="ref-wienerCyberneticsControlCommunication2019" class="csl-entry" role="listitem">
+Wiener, Norbert. 2019. <em>Cybernetics or <span>Control</span> and <span>Communication</span> in the <span>Animal</span> and the <span>Machine</span>, <span>Reissue</span> of the 1961 Second Edition</em>. <span>MIT Press</span>.
+</div>
+<div id="ref-wilenskyIntroductionAgentbasedModeling2015" class="csl-entry" role="listitem">
+Wilensky, Uri, and William Rand. 2015. <em>An Introduction to Agent-Based Modeling: Modeling Natural, Social, and Engineered Complex Systems with <span>NetLogo</span></em>. <span>Cambridge, Massachusetts</span>: <span>The MIT Press</span>.
+</div>
+<div id="ref-xueNovelSwarmIntelligence2020" class="csl-entry" role="listitem">
+Xue, Jiankai, and Bo Shen. 2020. <span>“A Novel Swarm Intelligence Optimization Approach: Sparrow Search Algorithm.”</span> <em>Systems Science &amp; Control Engineering</em> 8 (1): 22–34. <a href="https://doi.org/10.1080/21642583.2019.1708830">https://doi.org/10.1080/21642583.2019.1708830</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>An extremely useful application of this principle is the rice cooker!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>In a synchronous update, all cells of the cellular automata update their state simultaneously. This implies that the new state of each cell at a given time step depends only on the states of its neighbors at the previous time step. In asynchronous update, cells update their state one at a time, rather than all at once. The order in which cells update can be deterministic (in a sequence), or it can be stochastic (random). These two different update schemes can lead to very different behaviors in cellular automata.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
