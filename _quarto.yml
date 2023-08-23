@@ -22,7 +22,7 @@ book:
 
 
 bibliography: [referencesBBT.bib]
-
+csl: chicago-author-date.csl
 
 format:
   html:
