@@ -9809,7 +9809,7 @@
             "author": [
                 {
                     "family": "Kelso",
-                    "given": "J. A. Scott"
+                    "given": "J. A. S."
                 }
             ],
             "collection-title": "Dynamic patterns: The self-organization of brain and behavior",
@@ -9846,7 +9846,7 @@
             "author": [
                 {
                     "family": "Kelso",
-                    "given": "J. A. Scott"
+                    "given": "J. A. S."
                 }
             ],
             "container-title": "Biological Cybernetics",
@@ -14714,8 +14714,7 @@
                     "given": "Axel"
                 },
                 {
-                    "family": "Haken",
-                    "given": "Hermann"
+                    "family": "Haken"
                 }
             ],
             "id": "schiepekSelfOrganizationClinicalPsychology2009",
@@ -18148,6 +18147,57 @@
             "title": "Applying an attitude network approach to consumer behaviour towards plastic",
             "type": "article-journal",
             "volume": "69"
+        },
+        {
+            "URL": "http://search.ebscohost.com/login.aspx?direct=true&AuthType=ip,sso&db=eric&AN=EJ984113&site=ehost-live&custid=s1098328",
+            "author": [
+                {
+                    "family": "Fortunato-Tavares",
+                    "given": "Talita"
+                },
+                {
+                    "dropping-particle": "de",
+                    "family": "Andrade",
+                    "given": "Claudia R. F."
+                },
+                {
+                    "family": "Befi-Lopes",
+                    "given": "Debora M."
+                },
+                {
+                    "family": "Hestvik",
+                    "given": "Arild"
+                },
+                {
+                    "family": "Epstein",
+                    "given": "Baila"
+                },
+                {
+                    "family": "Tornyova",
+                    "given": "Lidiya"
+                },
+                {
+                    "family": "Schwartz",
+                    "given": "Richard G."
+                }
+            ],
+            "container-title": "Journal of Speech, Language, and Hearing Research",
+            "id": "fortunato-tavares2012",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012,
+                        8,
+                        1
+                    ]
+                ]
+            },
+            "note": "Publisher: Journal of Speech, Language, and Hearing Research",
+            "page": "1097-1111",
+            "title": "Syntactic structural assignment in brazilian portuguese-speaking children with specific language impairment",
+            "type": "article-journal",
+            "volume": "55"
         }
     ],
     "project_biblios": [

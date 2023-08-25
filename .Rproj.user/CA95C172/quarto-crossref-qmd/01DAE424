@@ -3,16 +3,30 @@
         {
             "file": "ch2.qmd",
             "type": "fig",
+            "id": "ch2-img6",
+            "suffix": "",
+            "title": "The butterfly effect: A small difference in initial state causes divergence in the long run."
+        },
+        {
+            "file": "ch2.qmd",
+            "type": "fig",
+            "id": "ch2-img2",
+            "suffix": "",
+            "title": "The r=2 case"
+        },
+        {
+            "file": "ch2.qmd",
+            "type": "fig",
             "id": "ch2-img4",
             "suffix": "",
             "title": "Qualitative different behavior of the logistic map for different values of r."
         },
         {
             "file": "ch2.qmd",
-            "type": "fig",
-            "id": "ch2-img6",
-            "suffix": "",
-            "title": "The butterfly effect: A small difference in initial state causes divergence in the long run."
+            "type": "eq",
+            "id": "ch2",
+            "suffix": "-2",
+            "title": ""
         },
         {
             "file": "ch2.qmd",
@@ -24,9 +38,23 @@
         {
             "file": "ch2.qmd",
             "type": "fig",
-            "id": "ch2-img2",
+            "id": "ch2-img3",
             "suffix": "",
-            "title": "The r=2 case"
+            "title": "Illustration of stable and unstable fixed points. For many initial values, X = .5 is an attractor. X = 0 is an unstable fixed point. Only if we start exactly at 0 do we stay there."
+        },
+        {
+            "file": "ch2.qmd",
+            "type": "eq",
+            "id": "ch2",
+            "suffix": "-3",
+            "title": ""
+        },
+        {
+            "file": "ch2.qmd",
+            "type": "eq",
+            "id": "ch2",
+            "suffix": "-4",
+            "title": ""
         },
         {
             "file": "ch2.qmd",
@@ -52,37 +80,9 @@
         {
             "file": "ch2.qmd",
             "type": "fig",
-            "id": "ch2-img3",
-            "suffix": "",
-            "title": "Illustration of stable and unstable fixed points. For many initial values, X = .5 is an attractor. X = 0 is an unstable fixed point. Only if we start exactly at 0 do we stay there."
-        },
-        {
-            "file": "ch2.qmd",
-            "type": "eq",
-            "id": "ch2",
-            "suffix": "-3",
-            "title": ""
-        },
-        {
-            "file": "ch2.qmd",
-            "type": "eq",
-            "id": "ch2",
-            "suffix": "-2",
-            "title": ""
-        },
-        {
-            "file": "ch2.qmd",
-            "type": "fig",
             "id": "ch2-img1",
             "suffix": "",
             "title": "Exponential growth"
-        },
-        {
-            "file": "ch2.qmd",
-            "type": "eq",
-            "id": "ch2",
-            "suffix": "-4",
-            "title": ""
         }
     ]
 }

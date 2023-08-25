@@ -208,7 +208,7 @@ $$ {#eq-ch2-4}
 
 Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map wiki page. The amazing three-dimensional bifurcation diagram may be more challenging.
 
-Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin [@stefanRPubsFractals2020].
+Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin @stefanRPubsFractals2020.
 
 ## Detecting chaos in psychophysiological data
 
