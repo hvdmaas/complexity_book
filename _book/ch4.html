@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,10 +17,9 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -47,19 +46,48 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
+    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -73,7 +101,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -110,12 +139,10 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -124,16 +151,11 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -141,117 +163,108 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems in Psychology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
 </div>
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Foreword</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Foreword</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./ch1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></span></a>
+  <a href="./ch2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></span></a>
+  <a href="./ch3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></span></a>
+  <a href="./ch4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-examples-from-the-natural-sciences" id="toc-key-examples-from-the-natural-sciences" class="nav-link active" data-scroll-target="#key-examples-from-the-natural-sciences"><span class="header-section-number">4.1</span> Key examples from the natural sciences</a>
+  <li><a href="#key-examples-from-the-natural-sciences" id="toc-key-examples-from-the-natural-sciences" class="nav-link active" data-scroll-target="#key-examples-from-the-natural-sciences"><span class="toc-section-number">4.1</span>  Key examples from the natural sciences</a>
   <ul>
-  <li><a href="#physics" id="toc-physics" class="nav-link" data-scroll-target="#physics"><span class="header-section-number">4.1.1</span> Physics</a></li>
-  <li><a href="#chemistry" id="toc-chemistry" class="nav-link" data-scroll-target="#chemistry"><span class="header-section-number">4.1.2</span> Chemistry</a></li>
-  <li><a href="#biology" id="toc-biology" class="nav-link" data-scroll-target="#biology"><span class="header-section-number">4.1.3</span> Biology</a></li>
-  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"><span class="header-section-number">4.1.4</span> Computer science</a></li>
-  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks"><span class="header-section-number">4.1.5</span> Neural networks</a></li>
-  <li><a href="#the-concept-of-self-organization" id="toc-the-concept-of-self-organization" class="nav-link" data-scroll-target="#the-concept-of-self-organization"><span class="header-section-number">4.1.6</span> The concept of self-organization</a></li>
+  <li><a href="#physics" id="toc-physics" class="nav-link" data-scroll-target="#physics"><span class="toc-section-number">4.1.1</span>  Physics</a></li>
+  <li><a href="#chemistry" id="toc-chemistry" class="nav-link" data-scroll-target="#chemistry"><span class="toc-section-number">4.1.2</span>  Chemistry</a></li>
+  <li><a href="#biology" id="toc-biology" class="nav-link" data-scroll-target="#biology"><span class="toc-section-number">4.1.3</span>  Biology</a></li>
+  <li><a href="#computer-science" id="toc-computer-science" class="nav-link" data-scroll-target="#computer-science"><span class="toc-section-number">4.1.4</span>  Computer science</a></li>
+  <li><a href="#neural-networks" id="toc-neural-networks" class="nav-link" data-scroll-target="#neural-networks"><span class="toc-section-number">4.1.5</span>  Neural networks</a></li>
+  <li><a href="#the-concept-of-self-organization" id="toc-the-concept-of-self-organization" class="nav-link" data-scroll-target="#the-concept-of-self-organization"><span class="toc-section-number">4.1.6</span>  The concept of self-organization</a></li>
   </ul></li>
-  <li><a href="#netlogo" id="toc-netlogo" class="nav-link" data-scroll-target="#netlogo"><span class="header-section-number">4.2</span> NetLogo</a>
+  <li><a href="#netlogo" id="toc-netlogo" class="nav-link" data-scroll-target="#netlogo"><span class="toc-section-number">4.2</span>  NetLogo</a>
   <ul>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">4.2.1</span> Examples</a></li>
-  <li><a href="#a-bit-of-netlogo-programming" id="toc-a-bit-of-netlogo-programming" class="nav-link" data-scroll-target="#a-bit-of-netlogo-programming"><span class="header-section-number">4.2.2</span> A bit of NetLogo programming</a>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="toc-section-number">4.2.1</span>  Examples</a></li>
+  <li><a href="#a-bit-of-netlogo-programming" id="toc-a-bit-of-netlogo-programming" class="nav-link" data-scroll-target="#a-bit-of-netlogo-programming"><span class="toc-section-number">4.2.2</span>  A bit of NetLogo programming</a>
   <ul class="collapse">
-  <li><a href="#game-of-life" id="toc-game-of-life" class="nav-link" data-scroll-target="#game-of-life"><span class="header-section-number">4.2.2.1</span> Game of Life</a></li>
-  <li><a href="#the-ising-model" id="toc-the-ising-model" class="nav-link" data-scroll-target="#the-ising-model"><span class="header-section-number">4.2.2.2</span> The Ising model</a></li>
+  <li><a href="#game-of-life" id="toc-game-of-life" class="nav-link" data-scroll-target="#game-of-life"><span class="toc-section-number">4.2.2.1</span>  Game of Life</a></li>
+  <li><a href="#the-ising-model" id="toc-the-ising-model" class="nav-link" data-scroll-target="#the-ising-model"><span class="toc-section-number">4.2.2.2</span>  The Ising model</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#self-organization-in-psychology-and-social-systems." id="toc-self-organization-in-psychology-and-social-systems." class="nav-link" data-scroll-target="#self-organization-in-psychology-and-social-systems."><span class="header-section-number">4.3</span> Self-organization in psychology and social systems.</a>
+  <li><a href="#self-organization-in-psychology-and-social-systems." id="toc-self-organization-in-psychology-and-social-systems." class="nav-link" data-scroll-target="#self-organization-in-psychology-and-social-systems."><span class="toc-section-number">4.3</span>  Self-organization in psychology and social systems.</a>
   <ul>
-  <li><a href="#the-brain" id="toc-the-brain" class="nav-link" data-scroll-target="#the-brain"><span class="header-section-number">4.3.1</span> The brain</a></li>
-  <li><a href="#visual-illusions" id="toc-visual-illusions" class="nav-link" data-scroll-target="#visual-illusions"><span class="header-section-number">4.3.2</span> Visual illusions</a></li>
-  <li><a href="#motor-action" id="toc-motor-action" class="nav-link" data-scroll-target="#motor-action"><span class="header-section-number">4.3.3</span> Motor action</a></li>
-  <li><a href="#robotics" id="toc-robotics" class="nav-link" data-scroll-target="#robotics"><span class="header-section-number">4.3.4</span> Robotics</a></li>
-  <li><a href="#psychological-disorders" id="toc-psychological-disorders" class="nav-link" data-scroll-target="#psychological-disorders"><span class="header-section-number">4.3.5</span> Psychological disorders</a></li>
-  <li><a href="#social-relations" id="toc-social-relations" class="nav-link" data-scroll-target="#social-relations"><span class="header-section-number">4.3.6</span> Social relations</a></li>
-  <li><a href="#collective-intelligence" id="toc-collective-intelligence" class="nav-link" data-scroll-target="#collective-intelligence"><span class="header-section-number">4.3.7</span> Collective Intelligence</a></li>
-  <li><a href="#game-theory" id="toc-game-theory" class="nav-link" data-scroll-target="#game-theory"><span class="header-section-number">4.3.8</span> Game theory</a></li>
-  <li><a href="#self-organization-in-organizations" id="toc-self-organization-in-organizations" class="nav-link" data-scroll-target="#self-organization-in-organizations"><span class="header-section-number">4.3.9</span> Self-organization in organizations</a></li>
+  <li><a href="#the-brain" id="toc-the-brain" class="nav-link" data-scroll-target="#the-brain"><span class="toc-section-number">4.3.1</span>  The brain</a></li>
+  <li><a href="#visual-illusions" id="toc-visual-illusions" class="nav-link" data-scroll-target="#visual-illusions"><span class="toc-section-number">4.3.2</span>  Visual illusions</a></li>
+  <li><a href="#motor-action" id="toc-motor-action" class="nav-link" data-scroll-target="#motor-action"><span class="toc-section-number">4.3.3</span>  Motor action</a></li>
+  <li><a href="#robotics" id="toc-robotics" class="nav-link" data-scroll-target="#robotics"><span class="toc-section-number">4.3.4</span>  Robotics</a></li>
+  <li><a href="#psychological-disorders" id="toc-psychological-disorders" class="nav-link" data-scroll-target="#psychological-disorders"><span class="toc-section-number">4.3.5</span>  Psychological disorders</a></li>
+  <li><a href="#social-relations" id="toc-social-relations" class="nav-link" data-scroll-target="#social-relations"><span class="toc-section-number">4.3.6</span>  Social relations</a></li>
+  <li><a href="#collective-intelligence" id="toc-collective-intelligence" class="nav-link" data-scroll-target="#collective-intelligence"><span class="toc-section-number">4.3.7</span>  Collective Intelligence</a></li>
+  <li><a href="#game-theory" id="toc-game-theory" class="nav-link" data-scroll-target="#game-theory"><span class="toc-section-number">4.3.8</span>  Game theory</a></li>
+  <li><a href="#self-organization-in-organizations" id="toc-self-organization-in-organizations" class="nav-link" data-scroll-target="#self-organization-in-organizations"><span class="toc-section-number">4.3.9</span>  Self-organization in organizations</a></li>
   </ul></li>
-  <li><a href="#zooming-out" id="toc-zooming-out" class="nav-link" data-scroll-target="#zooming-out"><span class="header-section-number">4.4</span> Zooming out</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">4.5</span> Exercises</a></li>
+  <li><a href="#zooming-out" id="toc-zooming-out" class="nav-link" data-scroll-target="#zooming-out"><span class="toc-section-number">4.4</span>  Zooming out</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">4.5</span>  Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -260,7 +273,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></h1>
 </div>
 
 
@@ -289,7 +302,7 @@ div.csl-indent {
 <div id="fig-ch4-img1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image1.jpg" style="width:1.44807in;height:2.46919in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.1: Schematic picture of the magnet</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: Schematic picture of the magnet</figcaption><p></p>
 </figure>
 </div>
 <p>The main model equations of the Ising model are:</p>
@@ -332,7 +345,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 <div id="fig-ch4-img3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image3.jpg" style="width:4.6891in;height:2.26241in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.2: The rules of the Game of Life</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: The rules of the Game of Life</figcaption><p></p>
 </figure>
 </div>
 <p>For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.</p>
@@ -342,7 +355,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 <div id="fig-ch4-img4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image4.jpg" style="width:3.58125in;height:3.44167in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.3: The Turing Machine built in the Game of Life</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: The Turing Machine built in the Game of Life</figcaption><p></p>
 </figure>
 </div>
 <p>Another root of complex systems theory and the role of self-organization in computational systems is cybernetics <span class="citation" data-cites="ashbyIntroductionCybernetics1956 wienerCyberneticsControlCommunication2019">(<a href="references.html#ref-ashbyIntroductionCybernetics1956" role="doc-biblioref">Ashby 1956</a>; <a href="references.html#ref-wienerCyberneticsControlCommunication2019" role="doc-biblioref">Wiener 2019</a>)</span>. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener’s book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.</p>
@@ -360,7 +373,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 <div id="fig-ch4-img5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image5.jpg" style="width:3.22083in;height:1.79097in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.4: The deep learning restricted Boltzmann machine</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: The deep learning restricted Boltzmann machine</figcaption><p></p>
 </figure>
 </div>
 <p>In supervised learning, connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the output neurons. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true. In this case the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagating rule for multi-layer networks, such that they can learn this non-linear classification from examples. We will do a simple simulation in NetLogo later. Although extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.</p>
@@ -462,7 +475,7 @@ ask patches [set pcolor new-state]</code></pre>
 <div id="fig-ch4-img6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image6.jpg" style="width:2.30901in;height:1.80727in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.5: The ‘Kindergarten’ Illusion from The Optical Illusion model in NetLogo</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.5: The ‘Kindergarten’ Illusion from The Optical Illusion model in NetLogo</figcaption><p></p>
 </figure>
 </div>
 <p>In Chapter 3, I provided examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download ‘Motion Quartet’ from the NetLogo community website and explore hysteresis in your own perception.</p>
@@ -473,7 +486,11 @@ ask patches [set pcolor new-state]</code></pre>
 <div id="fig-ch4-img7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image7.jpg" style="width:6.26389in;height:2.52153in" class="figure-img"></p>
+<<<<<<< HEAD
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.6: The finger movement task. Two fingers move up and down (x<sub>1</sub> and x<sub>2</sub>). They can move in phase or out of phase with a phase difference of 0 and <span class="math inline">\(\pi\)</span> (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference<span class="math inline">\(\ \varphi\)</span> of 0 or <span class="math inline">\(\pi\)</span> (<span class="math inline">\(- \pi\)</span> is the same state) or only one stable state (a phase difference of 0). Coupling strength (<span class="math inline">\(b/a\)</span>) and heterogeneity (<span class="math inline">\(\Delta w)\)</span> are control variables. Adapted from Haken et al.&nbsp;(1985) and Kelso (2021)</figcaption><p></p>
+=======
 <figcaption class="figure-caption">Figure&nbsp;4.6: The finger movement task. Two fingers move up and down (x<sub>1</sub> and x<sub>2</sub>). They can move in phase or out of phase with a phase difference of 0 and <span class="math inline">\(\pi\)</span> (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference<span class="math inline">\(\ \varphi\)</span> of 0 or <span class="math inline">\(\pi\)</span> (<span class="math inline">\(- \pi\)</span> is the same state) or only one stable state (a phase difference of 0). Coupling strength (<span class="math inline">\(b/a\)</span>) and heterogeneity (<span class="math inline">\(\Delta w)\)</span> are control variables. Adapted from <span class="citation" data-cites="hakenTheoreticalModelPhase1985">H. Haken, Kelso, and Bunz (<a href="references.html#ref-hakenTheoreticalModelPhase1985" role="doc-biblioref">1985</a>)</span> and <span class="citation" data-cites="kelsoHakenKelsoBunz2021">Kelso (<a href="references.html#ref-kelsoHakenKelsoBunz2021" role="doc-biblioref">2021</a>)</span>.</figcaption>
+>>>>>>> e60a22938bdf7b88f432c2b1ec9a143f8a65eec9
 </figure>
 </div>
 <p>The Haken–Kelso–Bunz (HKB) model, developed in the tradition of synergetics, explains the phase transition between in phase and anti-phase motions in a way we have seen in the previous chapter (the phenomenological cusp model). They set-up a potential function in the form of</p>
@@ -541,7 +558,7 @@ V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi} \tag{4.4}\]</spa
 <div id="fig-ch4-img9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image9.jpg" style="width:1.83969in;height:1.79483in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.7: The prisoner’s dilemma</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.7: The prisoner’s dilemma</figcaption><p></p>
 </figure>
 </div>
 <p>A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory (Nash) equilibrium. A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players. The public goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public good games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students when they are working in groups on an assignment that the problem of this one student doing nothing happens because nice, hard-working students refuse to betray their fellow students to me. These nice, hard-working students are what are called second-order free riders <span class="citation" data-cites="fowlerSecondorderFreeridingProblem2005">(<a href="references.html#ref-fowlerSecondorderFreeridingProblem2005" role="doc-biblioref">Fowler 2005</a>)</span>.</p>
@@ -555,7 +572,7 @@ V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi} \tag{4.4}\]</spa
 <div id="fig-ch4-img10" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4/image10.jpg" style="width:3.84275in;height:3.26591in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4.8: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.8: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.</figcaption><p></p>
 </figure>
 </div>
 </section>
@@ -581,326 +598,336 @@ Set the temperature to 1.5. Change tau slowly. At which values of tau do the hys
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-abarAgentBasedModelling2017" class="csl-entry" role="listitem">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-abarAgentBasedModelling2017" class="csl-entry" role="doc-biblioentry">
 Abar, Sameera, Georgios K. Theodoropoulos, Pierre Lemarinier, and Gregory M. P. O’Hare. 2017. <span>“Agent <span>Based Modelling</span> and <span>Simulation</span> Tools: <span>A</span> Review of the State-of-Art Software.”</span> <em>Computer Science Review</em> 24 (May): 13–33. <a href="https://doi.org/10.1016/j.cosrev.2017.03.001">https://doi.org/10.1016/j.cosrev.2017.03.001</a>.
 </div>
-<div id="ref-abeCuspSingularityMean2017" class="csl-entry" role="listitem">
+<div id="ref-abeCuspSingularityMean2017" class="csl-entry" role="doc-biblioentry">
 Abe, Yayoi, Muneyuki Ishida, Erika Nozawa, Takayoshi Ootsuka, and Ryoko Yahagi. 2017. <span>“Cusp Singularity in Mean Field <span>Ising</span> Model.”</span> <em>European Journal of Physics</em> 38 (6): 065102. <a href="https://doi.org/10.1088/1361-6404/aa82fc">https://doi.org/10.1088/1361-6404/aa82fc</a>.
 </div>
-<div id="ref-acebronKuramotoModelSimple2005" class="csl-entry" role="listitem">
+<div id="ref-acebronKuramotoModelSimple2005" class="csl-entry" role="doc-biblioentry">
 Acebrón, Juan A., L. L. Bonilla, Conrad J. Pérez Vicente, Félix Ritort, and Renato Spigler. 2005. <span>“The <span>Kuramoto</span> Model: <span>A</span> Simple Paradigm for Synchronization Phenomena.”</span> <em>Reviews of Modern Physics</em> 77 (1): 137–85. <a href="https://doi.org/10.1103/RevModPhys.77.137">https://doi.org/10.1103/RevModPhys.77.137</a>.
 </div>
-<div id="ref-alderisioEntrainmentSynchronizationNetworks2016" class="csl-entry" role="listitem">
+<div id="ref-alderisioEntrainmentSynchronizationNetworks2016" class="csl-entry" role="doc-biblioentry">
 Alderisio, Francesco, Benoît G. Bardy, and Mario di Bernardo. 2016. <span>“Entrainment and Synchronization in Networks of <span>Rayleigh</span>van Der <span>Pol</span> Oscillators with Diffusive and <span>Haken</span> Couplings.”</span> <em>Biological Cybernetics</em> 110 (2): 151–69. <a href="https://doi.org/10.1007/s00422-016-0685-7">https://doi.org/10.1007/s00422-016-0685-7</a>.
 </div>
-<div id="ref-andersonPerspectiveComplexityTheory1999" class="csl-entry" role="listitem">
+<div id="ref-andersonPerspectiveComplexityTheory1999" class="csl-entry" role="doc-biblioentry">
 Anderson, Philip. 1999. <span>“Perspective: <span>Complexity Theory</span> and <span>Organization Science</span>.”</span> <em>Organization Science</em> 10 (3): 216–32. <a href="https://doi.org/10.1287/orsc.10.3.216">https://doi.org/10.1287/orsc.10.3.216</a>.
 </div>
-<div id="ref-ashbyIntroductionCybernetics1956" class="csl-entry" role="listitem">
+<div id="ref-ashbyIntroductionCybernetics1956" class="csl-entry" role="doc-biblioentry">
 Ashby, W. R. 1956. <span>“An Introduction to Cybernetics.”</span> <em>An Introduction to Cybernetics.</em>
 </div>
-<div id="ref-ayersApplicationChaosTheory1997" class="csl-entry" role="listitem">
+<div id="ref-ayersApplicationChaosTheory1997" class="csl-entry" role="doc-biblioentry">
 Ayers, Susan. 1997. <span>“The <span>Application</span> of <span>Chaos Theory</span> to <span>Psychology</span>.”</span> <em>Theory &amp; Psychology</em> 7 (June): 373. <a href="https://doi.org/10.1177/0959354397073005">https://doi.org/10.1177/0959354397073005</a>.
 </div>
-<div id="ref-bakSelforganizedCriticality1988" class="csl-entry" role="listitem">
+<div id="ref-bakSelforganizedCriticality1988" class="csl-entry" role="doc-biblioentry">
 Bak, Per, Chao Tang, and Kurt Wiesenfeld. 1988. <span>“Self-Organized Criticality.”</span> <em>Physical Review A</em> 38 (1): 364–74. <a href="https://doi.org/10.1103/PhysRevA.38.364">https://doi.org/10.1103/PhysRevA.38.364</a>.
 </div>
-<div id="ref-bartonChaosSelfOrganizationPsychology1994" class="csl-entry" role="listitem">
+<div id="ref-bartonChaosSelfOrganizationPsychology1994" class="csl-entry" role="doc-biblioentry">
 Barton, Scott. 1994. <span>“Chaos, <span>Self-Organization</span>, and <span>Psychology</span>.”</span> <em>American Psychologist</em>. <a href="https://doi.org/10.1037/0003-066X.49.1.5">https://doi.org/10.1037/0003-066X.49.1.5</a>.
 </div>
-<div id="ref-bedardDoesFrequencyScaling2006" class="csl-entry" role="listitem">
+<div id="ref-bedardDoesFrequencyScaling2006" class="csl-entry" role="doc-biblioentry">
 Bédard, C., H. Kröger, and A. Destexhe. 2006. <span>“Does the $1/f$ <span>Frequency Scaling</span> of <span>Brain Signals Reflect Self-Organized Critical States</span>?”</span> <em>Physical Review Letters</em> 97 (11): 118102. <a href="https://doi.org/10.1103/PhysRevLett.97.118102">https://doi.org/10.1103/PhysRevLett.97.118102</a>.
 </div>
-<div id="ref-beekModelingRhythmicInterlimb2002" class="csl-entry" role="listitem">
+<div id="ref-beekModelingRhythmicInterlimb2002" class="csl-entry" role="doc-biblioentry">
 Beek, P. J, C. E Peper, and A Daffertshofer. 2002. <span>“Modeling <span>Rhythmic Interlimb Coordination</span>: <span>Beyond</span> the <span>Haken</span>.”</span> <em>Brain and Cognition</em> 48 (1): 149–65. <a href="https://doi.org/10.1006/brcg.2001.1310">https://doi.org/10.1006/brcg.2001.1310</a>.
 </div>
-<div id="ref-beekScienceJuggling1995" class="csl-entry" role="listitem">
+<div id="ref-beekScienceJuggling1995" class="csl-entry" role="doc-biblioentry">
 Beek, Peter J., and Arthur Lewbel. 1995. <span>“The <span>Science</span> of <span>Juggling</span>.”</span> <em>Scientific American</em> 273 (5): 92–97. <a href="https://doi.org/10.1038/scientificamerican1195-92">https://doi.org/10.1038/scientificamerican1195-92</a>.
 </div>
-<div id="ref-berlekampWinningWaysYour2004" class="csl-entry" role="listitem">
+<div id="ref-berlekampWinningWaysYour2004" class="csl-entry" role="doc-biblioentry">
 Berlekamp, Elwyn R., John H. Conway, and Richard K. Guy. 2004. <em>Winning <span>Ways</span> for <span>Your Mathematical Plays</span>, <span>Volume</span> 4</em>. 2nd ed. <span>New York</span>: <span>A K Peters/CRC Press</span>. <a href="https://doi.org/10.1201/9780429487309">https://doi.org/10.1201/9780429487309</a>.
 </div>
-<div id="ref-boerlijstSpiralWaveStructure1991" class="csl-entry" role="listitem">
+<div id="ref-boerlijstSpiralWaveStructure1991" class="csl-entry" role="doc-biblioentry">
 Boerlijst, M. C., and P. Hogeweg. 1991. <span>“Spiral Wave Structure in Pre-Biotic Evolution: <span>Hypercycles</span> Stable Against Parasites.”</span> <em>Physica D: Nonlinear Phenomena</em> 48 (1): 17–28. <a href="https://doi.org/10.1016/0167-2789(91)90049-F">https://doi.org/10.1016/0167-2789(91)90049-F</a>.
 </div>
-<div id="ref-borsboomNetworkTheoryMental2017" class="csl-entry" role="listitem">
+<div id="ref-borsboomNetworkTheoryMental2017" class="csl-entry" role="doc-biblioentry">
 Borsboom, Denny. 2017. <span>“A Network Theory of Mental Disorders.”</span> <em>World Psychiatry</em> 16 (1): 5–13. <a href="https://doi.org/10.1002/wps.20375">https://doi.org/10.1002/wps.20375</a>.
 </div>
-<div id="ref-breakspearDynamicModelsLargescale2017" class="csl-entry" role="listitem">
+<div id="ref-breakspearDynamicModelsLargescale2017" class="csl-entry" role="doc-biblioentry">
 Breakspear, Michael. 2017. <span>“Dynamic Models of Large-Scale Brain Activity.”</span> <em>Nature Neuroscience</em> 20 (3): 340–52. <a href="https://doi.org/10.1038/nn.4497">https://doi.org/10.1038/nn.4497</a>.
 </div>
-<div id="ref-brinkhuisLearningItHappens2018" class="csl-entry" role="listitem">
+<div id="ref-brinkhuisLearningItHappens2018" class="csl-entry" role="doc-biblioentry">
 Brinkhuis, Matthieu J. S., Alexander O. Savi, Abe D. Hofman, Frederik Coomans, Han L. J. van der Maas, and Gunter Maris. 2018. <span>“Learning <span>As It Happens</span>: <span>A Decade</span> of <span>Analyzing</span> and <span>Shaping</span> a <span>Large-Scale Online Learning System</span>.”</span> <em>Journal of Learning Analytics</em> 5 (2): 29–46. <a href="https://doi.org/10.18608/jla.2018.52.3">https://doi.org/10.18608/jla.2018.52.3</a>.
 </div>
-<div id="ref-brushConflictsInterestImprove2018" class="csl-entry" role="listitem">
+<div id="ref-brushConflictsInterestImprove2018" class="csl-entry" role="doc-biblioentry">
 Brush, Eleanor R., David C. Krakauer, and Jessica C. Flack. 2018. <span>“Conflicts of Interest Improve Collective Computation of Adaptive Social Structures.”</span> <em>Science Advances</em> 4 (1): e1603311. <a href="https://doi.org/10.1126/sciadv.1603311">https://doi.org/10.1126/sciadv.1603311</a>.
 </div>
-<div id="ref-centolaNetworkScienceCollective2022" class="csl-entry" role="listitem">
+<div id="ref-centolaNetworkScienceCollective2022" class="csl-entry" role="doc-biblioentry">
 Centola, Damon. 2022. <span>“The Network Science of Collective Intelligence.”</span> <em>Trends in Cognitive Sciences</em> 26 (11): 923–41. <a href="https://doi.org/10.1016/j.tics.2022.08.009">https://doi.org/10.1016/j.tics.2022.08.009</a>.
 </div>
-<div id="ref-chialvoEmergentComplexNeural2010" class="csl-entry" role="listitem">
+<div id="ref-chialvoEmergentComplexNeural2010" class="csl-entry" role="doc-biblioentry">
 Chialvo, Dante R. 2010. <span>“Emergent Complex Neural Dynamics.”</span> <em>Nature Physics</em> 6 (10): 744–50. <a href="https://doi.org/10.1038/nphys1803">https://doi.org/10.1038/nphys1803</a>.
 </div>
-<div id="ref-clarkWhateverNextPredictive2013" class="csl-entry" role="listitem">
+<div id="ref-clarkWhateverNextPredictive2013" class="csl-entry" role="doc-biblioentry">
 Clark, Andy. 2013. <span>“Whatever Next? <span>Predictive</span> Brains, Situated Agents, and the Future of Cognitive Science.”</span> <em>Behavioral and Brain Sciences</em> 36 (3): 181–204. <a href="https://doi.org/10.1017/S0140525X12000477">https://doi.org/10.1017/S0140525X12000477</a>.
 </div>
-<div id="ref-cocchiCriticalityBrainSynthesis2017" class="csl-entry" role="listitem">
+<div id="ref-cocchiCriticalityBrainSynthesis2017" class="csl-entry" role="doc-biblioentry">
 Cocchi, Luca, Leonardo L. Gollo, Andrew Zalesky, and Michael Breakspear. 2017. <span>“Criticality in the Brain: <span>A</span> Synthesis of Neurobiology, Models and Cognition.”</span> <em>Progress in Neurobiology</em> 158 (November): 132–52. <a href="https://doi.org/10.1016/j.pneurobio.2017.07.002">https://doi.org/10.1016/j.pneurobio.2017.07.002</a>.
 </div>
-<div id="ref-cramerComorbidityNetworkPerspective2010" class="csl-entry" role="listitem">
+<div id="ref-cramerComorbidityNetworkPerspective2010" class="csl-entry" role="doc-biblioentry">
 Cramer, Angélique O. J., Lourens J. Waldorp, Han L. J. van der Maas, and Denny Borsboom. 2010. <span>“Comorbidity: A Network Perspective.”</span> <em>The Behavioral and Brain Sciences</em> 33 (2-3): 137-150; discussion 150-193. <a href="https://doi.org/10.1017/S0140525X09991567">https://doi.org/10.1017/S0140525X09991567</a>.
 </div>
-<div id="ref-dalegeFormalizedAccountAttitudes2016" class="csl-entry" role="listitem">
+<div id="ref-dalegeFormalizedAccountAttitudes2016" class="csl-entry" role="doc-biblioentry">
 Dalege, Jonas, Denny Borsboom, Frenk van Harreveld, Helma van den Berg, Mark Conner, and Han L. J. van der Maas. 2016. <span>“Toward a Formalized Account of Attitudes: <span>The Causal Attitude Network</span> (<span>CAN</span>) Model.”</span> <em>Psychological Review</em> 123 (1): 2–22. <a href="https://doi.org/10.1037/a0039802">https://doi.org/10.1037/a0039802</a>.
 </div>
-<div id="ref-dalegeAttitudinalEntropyAE2018" class="csl-entry" role="listitem">
+<div id="ref-dalegeAttitudinalEntropyAE2018" class="csl-entry" role="doc-biblioentry">
 Dalege, Jonas, Denny Borsboom, Frenk van Harreveld, and Han L. J. van der Maas. 2018. <span>“The <span>Attitudinal Entropy</span> (<span>AE</span>) Framework as a General Theory of Individual Attitudes.”</span> <em>Psychological Inquiry</em> 29 (4): 175–93. <a href="https://doi.org/10.1080/1047840X.2018.1537246">https://doi.org/10.1080/1047840X.2018.1537246</a>.
 </div>
-<div id="ref-dalegeAccurateBeingNoisy2020" class="csl-entry" role="listitem">
+<div id="ref-dalegeAccurateBeingNoisy2020" class="csl-entry" role="doc-biblioentry">
 Dalege, Jonas, and Han L. J. van der Maas. 2020. <span>“Accurate by Being Noisy: <span>A</span> Formal Network Model of Implicit Measures of Attitudes.”</span> <em>Social Cognition</em> 38 (Suppl): S26–41. <a href="https://doi.org/10.1521/soco.2020.38.supp.s26">https://doi.org/10.1521/soco.2020.38.supp.s26</a>.
 </div>
-<div id="ref-dresp-langleySevenPropertiesSelfOrganization2020" class="csl-entry" role="listitem">
+<div id="ref-dresp-langleySevenPropertiesSelfOrganization2020" class="csl-entry" role="doc-biblioentry">
 Dresp-Langley, Birgitta. 2020. <span>“Seven <span>Properties</span> of <span>Self-Organization</span> in the <span>Human Brain</span>.”</span> <em>Big Data and Cognitive Computing</em> 2 (4): 10.
 </div>
-<div id="ref-edelmanNeuralDarwinismTheory1987" class="csl-entry" role="listitem">
+<div id="ref-edelmanNeuralDarwinismTheory1987" class="csl-entry" role="doc-biblioentry">
 Edelman, Gerald M. 1987. <em>Neural <span>Darwinism</span>: <span>The</span> Theory of Neuronal Group Selection</em>. Neural <span>Darwinism</span>: <span>The</span> Theory of Neuronal Group Selection. <span>New York, NY, US</span>: <span>Basic Books</span>.
 </div>
-<div id="ref-eigenHypercycle1979" class="csl-entry" role="listitem">
+<div id="ref-eigenHypercycle1979" class="csl-entry" role="doc-biblioentry">
 Eigen, Manfred, and Peter Schuster. 1979. <em>The <span>Hypercycle</span></em>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-67247-7">https://doi.org/10.1007/978-3-642-67247-7</a>.
 </div>
-<div id="ref-eldredgePunctuatedEquilibriaAlternative1972" class="csl-entry" role="listitem">
+<div id="ref-eldredgePunctuatedEquilibriaAlternative1972" class="csl-entry" role="doc-biblioentry">
 Eldredge, Niles, and Stephen Jay Gould. 1972. <span>“Punctuated <span>Equilibria</span>: <span>An Alternative</span> to <span>Phyletic Gradualism</span>.”</span> In <em>Models in <span>Paleobiology</span></em>, edited by Thomas J. M. Schopf, 82–115. <span>Freeman Cooper</span>.
 </div>
-<div id="ref-eloRatingChessplayersPresent1978" class="csl-entry" role="listitem">
+<div id="ref-eloRatingChessplayersPresent1978" class="csl-entry" role="doc-biblioentry">
 Elo, Arpad E. 1978. <em>The Rating of Chessplayers, Past and Present</em>. <span>New York</span>: <span>Arco Pub</span>.
 </div>
-<div id="ref-epskampEstimatingPsychologicalNetworks2018" class="csl-entry" role="listitem">
+<div id="ref-epskampEstimatingPsychologicalNetworks2018" class="csl-entry" role="doc-biblioentry">
 Epskamp, Sacha, Denny Borsboom, and Eiko I. Fried. 2018. <span>“Estimating Psychological Networks and Their Accuracy: <span>A</span> Tutorial Paper.”</span> <em>Behavior Research Methods</em> 50 (1): 195–212. <a href="https://doi.org/10.3758/s13428-017-0862-1">https://doi.org/10.3758/s13428-017-0862-1</a>.
 </div>
-<div id="ref-festingerTheoryCognitiveDissonance1962" class="csl-entry" role="listitem">
+<div id="ref-festingerTheoryCognitiveDissonance1962" class="csl-entry" role="doc-biblioentry">
 Festinger, Leon. 1962. <em>A Theory of Cognitive Dissonance</em>. A Theory of Cognitive Dissonance. <span>Palo Alto, CA, US</span>: <span>Stanford Univer. Press</span>.
 </div>
-<div id="ref-fowlerSecondorderFreeridingProblem2005" class="csl-entry" role="listitem">
+<div id="ref-fowlerSecondorderFreeridingProblem2005" class="csl-entry" role="doc-biblioentry">
 Fowler, James H. 2005. <span>“Second-Order Free-Riding Problem Solved?”</span> <em>Nature</em> 437 (7058): E8–8. <a href="https://doi.org/10.1038/nature04201">https://doi.org/10.1038/nature04201</a>.
 </div>
-<div id="ref-fristonFreeenergyPrincipleRough2009" class="csl-entry" role="listitem">
+<div id="ref-fristonFreeenergyPrincipleRough2009" class="csl-entry" role="doc-biblioentry">
 Friston, Karl. 2009. <span>“The Free-Energy Principle: A Rough Guide to the Brain?”</span> <em>Trends in Cognitive Sciences</em> 13 (7): 293–301. <a href="https://doi.org/10.1016/j.tics.2009.04.005">https://doi.org/10.1016/j.tics.2009.04.005</a>.
 </div>
-<div id="ref-fuchsCoordinationDynamicsSynergetics2018" class="csl-entry" role="listitem">
+<div id="ref-fuchsCoordinationDynamicsSynergetics2018" class="csl-entry" role="doc-biblioentry">
 Fuchs, Armin, and Scott Kelso. 2018. <span>“Coordination <span>Dynamics</span> and <span>Synergetics</span>: <span>From Finger Movements</span> to <span>Brain Patterns</span> and <span>Ballet Dancing</span>.”</span> In <em>Complexity and <span>Synergetics</span></em>, 301–16. <a href="https://doi.org/10.1007/978-3-319-64334-2_23">https://doi.org/10.1007/978-3-319-64334-2_23</a>.
 </div>
-<div id="ref-galesicCollectiveIntelligenceCollective2023" class="csl-entry" role="listitem">
+<div id="ref-galesicCollectiveIntelligenceCollective2023" class="csl-entry" role="doc-biblioentry">
 Galesic, Mirta, Daniel Barkoczi, Andrew M. Berdahl, Dora Biro, Giuseppe Carbone, Ilaria Giannoccaro, Robert L. Goldstone, et al. 2023. <span>“Beyond Collective Intelligence: <span>Collective</span> Adaptation.”</span> <em>Journal of The Royal Society Interface</em> 20 (200): 20220736. <a href="https://doi.org/10.1098/rsif.2022.0736">https://doi.org/10.1098/rsif.2022.0736</a>.
 </div>
-<div id="ref-ghatakDeepLearning2019" class="csl-entry" role="listitem">
+<div id="ref-ghatakDeepLearning2019" class="csl-entry" role="doc-biblioentry">
 Ghatak, Abhijit. 2019. <em>Deep <span>Learning</span> with <span>R</span></em>. <span>Singapore</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-981-13-5850-0">https://doi.org/10.1007/978-981-13-5850-0</a>.
 </div>
-<div id="ref-gibsonEcologicalApproachVisual2014" class="csl-entry" role="listitem">
+<div id="ref-gibsonEcologicalApproachVisual2014" class="csl-entry" role="doc-biblioentry">
 Gibson, James J. 2014. <em>The <span>Ecological Approach</span> to <span>Visual Perception</span>: <span>Classic Edition</span></em>. <span>New York</span>: <span>Psychology Press</span>. <a href="https://doi.org/10.4324/9781315740218">https://doi.org/10.4324/9781315740218</a>.
 </div>
-<div id="ref-gottmanMathematicsMarriageDynamic2002" class="csl-entry" role="listitem">
+<div id="ref-gottmanMathematicsMarriageDynamic2002" class="csl-entry" role="doc-biblioentry">
 Gottman, John M., James D. Murray, Catherine C. Swanson, Rebecca Tyson, and Kristin R. Swanson. 2002. <em>The Mathematics of Marriage: <span>Dynamic</span> Nonlinear Models</em>. The Mathematics of Marriage: <span>Dynamic</span> Nonlinear Models. <span>Cambridge, MA, US</span>: <span>MIT Press</span>.
 </div>
-<div id="ref-granovetterStrengthWeakTies1973" class="csl-entry" role="listitem">
+<div id="ref-granovetterStrengthWeakTies1973" class="csl-entry" role="doc-biblioentry">
 Granovetter, M. 1973. <span>“The Strength of Weak Ties.”</span> <em>American Journal of Sociology</em> 78 (6): 1360–80. <a href="https://doi.org/10.1086/225469">https://doi.org/10.1086/225469</a>.
 </div>
-<div id="ref-granovetterThresholdModelsCollective1978" class="csl-entry" role="listitem">
+<div id="ref-granovetterThresholdModelsCollective1978" class="csl-entry" role="doc-biblioentry">
 Granovetter, Mark. 1978. <span>“Threshold <span>Models</span> of <span>Collective Behavior</span>.”</span> <em>The American Journal of Sociology</em> 83 (6): 1420–43. <a href="https://doi.org/10.1086/226707">https://doi.org/10.1086/226707</a>.
 </div>
-<div id="ref-grossbergNeuralDynamicsGestalt2012" class="csl-entry" role="listitem">
+<div id="ref-grossbergNeuralDynamicsGestalt2012" class="csl-entry" role="doc-biblioentry">
 Grossberg, Stephen, and Baingio Pinna. 2012. <span>“Neural <span>Dynamics</span> of <span>Gestalt Principles</span> of <span>Perceptual Organization</span>: <span>From Grouping</span> to <span>Shape</span> and <span>Meaning</span>.”</span> <em>GESTALT THEORY</em> 34.
 </div>
-<div id="ref-guimeraTeamAssemblyMechanisms2005" class="csl-entry" role="listitem">
+<div id="ref-guimeraTeamAssemblyMechanisms2005" class="csl-entry" role="doc-biblioentry">
 Guimerà, Roger, Brian Uzzi, Jarrett Spiro, and Luís A. Nunes Amaral. 2005. <span>“Team <span>Assembly Mechanisms Determine Collaboration Network Structure</span> and <span>Team Performance</span>.”</span> <em>Science</em> 308 (5722): 697–702. <a href="https://doi.org/10.1126/science.1106340">https://doi.org/10.1126/science.1106340</a>.
 </div>
-<div id="ref-hakenSynergetics1977" class="csl-entry" role="listitem">
+<div id="ref-hakenSynergetics1977" class="csl-entry" role="doc-biblioentry">
 Haken, Herman. 1977. <span>“Synergetics.”</span> <em>Physics Bulletin</em> 28 (9): 412. <a href="https://doi.org/10.1088/0031-9112/28/9/027">https://doi.org/10.1088/0031-9112/28/9/027</a>.
 </div>
-<div id="ref-hakenSynergeticsPsychology1992" class="csl-entry" role="listitem">
+<div id="ref-hakenSynergeticsPsychology1992" class="csl-entry" role="doc-biblioentry">
 Haken, Hermann. 1992. <span>“Synergetics in <span>Psychology</span>.”</span> In <em>Self-<span>Organization</span> and <span>Clinical Psychology</span>: <span>Empirical Approaches</span> to <span>Synergetics</span> in <span>Psychology</span></em>, edited by Wolfgang Tschacher, Günter Schiepek, and Ewald Johannes Brunner, 32–54. Springer <span>Series</span> in <span>Synergetics</span>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-77534-5_2">https://doi.org/10.1007/978-3-642-77534-5_2</a>.
 </div>
-<div id="ref-hakenTheoreticalModelPhase1985" class="csl-entry" role="listitem">
+<div id="ref-hakenTheoreticalModelPhase1985" class="csl-entry" role="doc-biblioentry">
 Haken, H., J. A. S. Kelso, and H. Bunz. 1985. <span>“A Theoretical Model of Phase Transitions in Human Hand Movements.”</span> <em>Biological Cybernetics</em> 51 (5): 347–56. <a href="https://doi.org/10.1007/BF00336922">https://doi.org/10.1007/BF00336922</a>.
 </div>
-<div id="ref-hardinTragedyCommons1968" class="csl-entry" role="listitem">
+<div id="ref-hardinTragedyCommons1968" class="csl-entry" role="doc-biblioentry">
 Hardin, Garrett. 1968. <span>“The <span>Tragedy</span> of the <span>Commons</span>”</span> 162.
 </div>
-<div id="ref-hebbOrganizationBehaviorNeuropsychological1949" class="csl-entry" role="listitem">
+<div id="ref-hebbOrganizationBehaviorNeuropsychological1949" class="csl-entry" role="doc-biblioentry">
 Hebb, D. O. 1949. <em>The Organization of Behavior; a Neuropsychological Theory</em>. The Organization of Behavior; a Neuropsychological Theory. <span>Oxford, England</span>: <span>Wiley</span>.
 </div>
-<div id="ref-heiderAttitudesCognitiveOrganization1946" class="csl-entry" role="listitem">
+<div id="ref-heiderAttitudesCognitiveOrganization1946" class="csl-entry" role="doc-biblioentry">
 Heider, Fritz. 1946. <span>“Attitudes and <span>Cognitive Organization</span>.”</span> <em>The Journal of Psychology</em> 21 (1): 107–12. <a href="https://doi.org/10.1080/00223980.1946.9917275">https://doi.org/10.1080/00223980.1946.9917275</a>.
 </div>
-<div id="ref-helbingSocialForceModel1995" class="csl-entry" role="listitem">
+<div id="ref-helbingSocialForceModel1995" class="csl-entry" role="doc-biblioentry">
 Helbing, Dirk, and Péter Molnár. 1995. <span>“Social Force Model for Pedestrian Dynamics.”</span> <em>Physical Review E</em> 51 (5): 4282–86. <a href="https://doi.org/10.1103/PhysRevE.51.4282">https://doi.org/10.1103/PhysRevE.51.4282</a>.
 </div>
-<div id="ref-hendrikseModelingEmergingInterpersonal2023" class="csl-entry" role="listitem">
+<div id="ref-hendrikseModelingEmergingInterpersonal2023" class="csl-entry" role="doc-biblioentry">
 Hendrikse, Sophie, Jan Treur, and Sander Koole. 2023. <span>“Modeling <span>Emerging Interpersonal Synchrony</span> and Its <span>Related Adaptive Short-Term Affiliation</span> and <span>Long-Term Bonding</span>: <span>A Second-Order Multi-Adaptive Neural Agent Model</span>.”</span> <em>International Journal of Neural Systems</em>, April. <a href="https://doi.org/10.1142/S0129065723500387">https://doi.org/10.1142/S0129065723500387</a>.
 </div>
-<div id="ref-hollandGeneticAlgorithms1992" class="csl-entry" role="listitem">
+<div id="ref-hollandGeneticAlgorithms1992" class="csl-entry" role="doc-biblioentry">
 Holland, John H. 1992a. <span>“Genetic <span>Algorithms</span>.”</span> <em>Scientific American</em> 267 (1): 66–73. <a href="https://doi.org/10.1038/scientificamerican0792-66">https://doi.org/10.1038/scientificamerican0792-66</a>.
 </div>
-<div id="ref-hollandAdaptationNaturalArtificial1992" class="csl-entry" role="listitem">
+<div id="ref-hollandAdaptationNaturalArtificial1992" class="csl-entry" role="doc-biblioentry">
 ———. 1992b. <em>Adaptation in <span>Natural</span> and <span>Artificial Systems</span>: <span>An Introductory Analysis</span> with <span>Applications</span> to <span>Biology</span>, <span>Control</span>, and <span>Artificial Intelligence</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-jacobsonEducationComplexSystem2019" class="csl-entry" role="listitem">
+<div id="ref-jacobsonEducationComplexSystem2019" class="csl-entry" role="doc-biblioentry">
 Jacobson, Michael J., James A. Levin, and Manu Kapur. 2019. <span>“Education as a <span>Complex System</span>: <span>Conceptual</span> and <span>Methodological Implications</span>.”</span> <em>Educational Researcher</em> 48 (2): 112–19. <a href="https://doi.org/10.3102/0013189X19826958">https://doi.org/10.3102/0013189X19826958</a>.
 </div>
-<div id="ref-kalantariEmergencePhenomenaSelforganizing2020" class="csl-entry" role="listitem">
+<div id="ref-kalantariEmergencePhenomenaSelforganizing2020" class="csl-entry" role="doc-biblioentry">
 Kalantari, Somayeh, Eslam Nazemi, and Behrooz Masoumi. 2020. <span>“Emergence Phenomena in Self-Organizing Systems: A Systematic Literature Review of Concepts, Researches, and Future Prospects.”</span> <em>Journal of Organizational Computing and Electronic Commerce</em> 30 (3): 224–65. <a href="https://doi.org/10.1080/10919392.2020.1748977">https://doi.org/10.1080/10919392.2020.1748977</a>.
 </div>
-<div id="ref-kauffmanOriginsOrderSelfOrganization1993" class="csl-entry" role="listitem">
+<div id="ref-kauffmanOriginsOrderSelfOrganization1993" class="csl-entry" role="doc-biblioentry">
 Kauffman, Stuart A. 1993. <em>The <span>Origins</span> of <span>Order</span>: <span>Self-Organization</span> and <span>Selection</span> in <span>Evolution</span></em>. 1st edition. <span>New York</span>: <span>Oxford University Press</span>.
 </div>
+<<<<<<< HEAD
+<div id="ref-kelsoDynamicPatternsSelforganization1995" class="csl-entry" role="doc-biblioentry">
+Kelso, J. A. Scott. 1995. <em>Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior</em>. Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior. <span>Cambridge, MA, US</span>: <span>The MIT Press</span>.
+=======
 <div id="ref-kelsoDynamicPatternsSelforganization1995" class="csl-entry" role="listitem">
 Kelso, J. A. S. 1995. <em>Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior</em>. Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior. <span>Cambridge, MA, US</span>: <span>The MIT Press</span>.
+>>>>>>> e60a22938bdf7b88f432c2b1ec9a143f8a65eec9
 </div>
-<div id="ref-kelsoHakenKelsoBunz2021" class="csl-entry" role="listitem">
+<div id="ref-kelsoHakenKelsoBunz2021" class="csl-entry" role="doc-biblioentry">
 ———. 2021. <span>“The <span>Haken</span> (<span>HKB</span>) Model: From Matter to Movement to Mind.”</span> <em>Biological Cybernetics</em> 115 (4): 305–22. <a href="https://doi.org/10.1007/s00422-021-00890-w">https://doi.org/10.1007/s00422-021-00890-w</a>.
 </div>
-<div id="ref-kelsoNonequilibriumPhaseTransitions1986" class="csl-entry" role="listitem">
+<div id="ref-kelsoNonequilibriumPhaseTransitions1986" class="csl-entry" role="doc-biblioentry">
 Kelso, J. A. S., J. P. Scholz, and G. Schöner. 1986. <span>“Nonequilibrium Phase Transitions in Coordinated Biological Motion: Critical Fluctuations.”</span> <em>Physics Letters A</em> 118 (6): 279–84. <a href="https://doi.org/10.1016/0375-9601(86)90359-2">https://doi.org/10.1016/0375-9601(86)90359-2</a>.
 </div>
-<div id="ref-klinkenbergComputerAdaptivePractice2011" class="csl-entry" role="listitem">
+<div id="ref-klinkenbergComputerAdaptivePractice2011" class="csl-entry" role="doc-biblioentry">
 Klinkenberg, S., M Straatemeier, and H. van der Maas. 2011. <span>“Computer Adaptive Practice of <span>Maths</span> Ability Using a New Item Response Model for on the Fly Ability and Difficulty Estimation.”</span> <em>Computers &amp; Education</em> 57: 1813–24.
 </div>
-<div id="ref-kruseAmbiguityMindNature2012" class="csl-entry" role="listitem">
+<div id="ref-kruseAmbiguityMindNature2012" class="csl-entry" role="doc-biblioentry">
 Kruse, Peter, and Michael Stadler. 2012. <em>Ambiguity in <span>Mind</span> and <span>Nature</span>: <span>Multistable Cognitive Phenomena</span></em>. <span>Springer Science &amp; Business Media</span>.
 </div>
-<div id="ref-langtonComputationEdgeChaos1990" class="csl-entry" role="listitem">
+<div id="ref-langtonComputationEdgeChaos1990" class="csl-entry" role="doc-biblioentry">
 Langton, Chris G. 1990. <span>“Computation at the Edge of Chaos: <span>Phase</span> Transitions and Emergent Computation.”</span> <em>Physica D: Nonlinear Phenomena</em> 42 (1): 12–37. <a href="https://doi.org/10.1016/0167-2789(90)90064-V">https://doi.org/10.1016/0167-2789(90)90064-V</a>.
 </div>
-<div id="ref-lemkeComplexSystemsEducational2008" class="csl-entry" role="listitem">
+<div id="ref-lemkeComplexSystemsEducational2008" class="csl-entry" role="doc-biblioentry">
 Lemke, Jay L., and Nora H. Sabelli. 2008. <span>“Complex <span>Systems</span> and <span>Educational Change</span>: <span>Towards</span> a <span>New Research Agenda</span>.”</span> In <em>Complexity <span>Theory</span> and the <span>Philosophy</span> of <span>Education</span></em>, 112–23. <span>John Wiley &amp; Sons, Ltd</span>. <a href="https://doi.org/10.1002/9781444307351.ch8">https://doi.org/10.1002/9781444307351.ch8</a>.
 </div>
-<div id="ref-lurieQuestionsControversiesStudy2020" class="csl-entry" role="listitem">
+<div id="ref-lurieQuestionsControversiesStudy2020" class="csl-entry" role="doc-biblioentry">
 Lurie, Daniel J., Daniel Kessler, Danielle S. Bassett, Richard F. Betzel, Michael Breakspear, Shella Kheilholz, Aaron Kucyi, et al. 2020. <span>“Questions and Controversies in the Study of Time-Varying Functional Connectivity in Resting <span class="nocase">fMRI</span>.”</span> <em>Network Neuroscience</em> 4 (1): 30–69. <a href="https://doi.org/10.1162/netn_a_00116">https://doi.org/10.1162/netn_a_00116</a>.
 </div>
-<div id="ref-marisSpeedaccuracyResponseModels2012" class="csl-entry" role="listitem">
+<div id="ref-marisSpeedaccuracyResponseModels2012" class="csl-entry" role="doc-biblioentry">
 Maris, Gunter, and Han van&nbsp;der Maas. 2012. <span>“Speed-Accuracy Response Models: <span>Scoring</span> Rules Based on Response Time and Accuracy.”</span> <em>Psychometrika</em> 77 (4): 615–33. <a href="https://doi.org/10.1007/s11336-012-9288-y">https://doi.org/10.1007/s11336-012-9288-y</a>.
 </div>
-<div id="ref-mcgeerPassiveWalkingKnees1990" class="csl-entry" role="listitem">
+<div id="ref-mcgeerPassiveWalkingKnees1990" class="csl-entry" role="doc-biblioentry">
 McGeer, T. 1990. <span>“Passive Walking with Knees.”</span> In<em>, <span>IEEE International Conference</span> on <span>Robotics</span> and <span>Automation Proceedings</span></em>, 1640–1645 vol.3. <a href="https://doi.org/10.1109/ROBOT.1990.126245">https://doi.org/10.1109/ROBOT.1990.126245</a>.
 </div>
-<div id="ref-mcgrathAcquisitionChessKnowledge2022" class="csl-entry" role="listitem">
+<div id="ref-mcgrathAcquisitionChessKnowledge2022" class="csl-entry" role="doc-biblioentry">
 McGrath, Thomas, Andrei Kapishnikov, Nenad Tomašev, Adam Pearce, Martin Wattenberg, Demis Hassabis, Been Kim, Ulrich Paquet, and Vladimir Kramnik. 2022. <span>“Acquisition of Chess Knowledge in <span>AlphaZero</span>.”</span> <em>Proceedings of the National Academy of Sciences</em> 119 (47): e2206625119. <a href="https://doi.org/10.1073/pnas.2206625119">https://doi.org/10.1073/pnas.2206625119</a>.
 </div>
-<div id="ref-mitchellIntroductionGeneticAlgorithms1998" class="csl-entry" role="listitem">
+<div id="ref-mitchellIntroductionGeneticAlgorithms1998" class="csl-entry" role="doc-biblioentry">
 Mitchell, Melanie. 1998. <em>An <span>Introduction</span> to <span>Genetic Algorithms</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-monroeGeneralConnectionistModel2008" class="csl-entry" role="listitem">
+<div id="ref-monroeGeneralConnectionistModel2008" class="csl-entry" role="doc-biblioentry">
 Monroe, Brian M., and Stephen J. Read. 2008. <span>“A General Connectionist Model of Attitude Structure and Change: <span>The ACS</span> (<span>Attitudes</span> as <span>Constraint Satisfaction</span>) Model.”</span> <em>Psychological Review</em> 115: 733–59. <a href="https://doi.org/10.1037/0033-295X.115.3.733">https://doi.org/10.1037/0033-295X.115.3.733</a>.
 </div>
-<div id="ref-morelLookingGlassComplexity1999" class="csl-entry" role="listitem">
+<div id="ref-morelLookingGlassComplexity1999" class="csl-entry" role="doc-biblioentry">
 Morel, Benoit, and Rangaraj Ramanujam. 1999. <span>“Through the <span>Looking Glass</span> of <span>Complexity</span>: <span>The Dynamics</span> of <span>Organizations</span> as <span>Adaptive</span> and <span>Evolving Systems</span>.”</span> <em>Organization Science</em> 10 (3): 278–93. <a href="https://doi.org/10.1287/orsc.10.3.278">https://doi.org/10.1287/orsc.10.3.278</a>.
 </div>
-<div id="ref-obyrneHowCriticalBrain2022" class="csl-entry" role="listitem">
+<div id="ref-obyrneHowCriticalBrain2022" class="csl-entry" role="doc-biblioentry">
 O’Byrne, Jordan, and Karim Jerbi. 2022. <span>“How Critical Is Brain Criticality?”</span> <em>Trends in Neurosciences</em> 45 (11): 820–37. <a href="https://doi.org/10.1016/j.tins.2022.08.007">https://doi.org/10.1016/j.tins.2022.08.007</a>.
 </div>
-<div id="ref-olthofComplexityTheoryPsychopathology2023" class="csl-entry" role="listitem">
+<div id="ref-olthofComplexityTheoryPsychopathology2023" class="csl-entry" role="doc-biblioentry">
 Olthof, Merlijn, Fred Hasselman, Freek Oude Maatman, Anna M. T. Bosman, and Anna Lichtwarck-Aschoff. 2023. <span>“Complexity Theory of Psychopathology.”</span> <em>Journal of Psychopathology and Clinical Science</em> 132: 314–23. <a href="https://doi.org/10.1037/abn0000740">https://doi.org/10.1037/abn0000740</a>.
 </div>
-<div id="ref-ooyenRewiringBrainComputational2017" class="csl-entry" role="listitem">
+<div id="ref-ooyenRewiringBrainComputational2017" class="csl-entry" role="doc-biblioentry">
 Ooyen, Arjen van, and Markus Butz-Ostendorf. 2017. <em>The <span>Rewiring Brain</span>: <span>A Computational Approach</span> to <span>Structural Plasticity</span> in the <span>Adult Brain</span></em>. <span>Academic Press</span>.
 </div>
-<div id="ref-pavlusClumsyQuestPerfect2016" class="csl-entry" role="listitem">
+<div id="ref-pavlusClumsyQuestPerfect2016" class="csl-entry" role="doc-biblioentry">
 Pavlus, John. 2016. <span>“The <span>Clumsy Quest</span> to <span>Perfect</span> the <span>Walking Robot</span>.”</span> <em>Scientific American</em>. https://www.scientificamerican.com/article/the-clumsy-quest-to-perfect-the-walking-robot/. <a href="https://doi.org/10.1038/scientificamerican0716-60">https://doi.org/10.1038/scientificamerican0716-60</a>.
 </div>
-<div id="ref-percStatisticalPhysicsHuman2017" class="csl-entry" role="listitem">
+<div id="ref-percStatisticalPhysicsHuman2017" class="csl-entry" role="doc-biblioentry">
 Perc, Matjaž, Jillian J. Jordan, David G. Rand, Zhen Wang, Stefano Boccaletti, and Attila Szolnoki. 2017. <span>“Statistical Physics of Human Cooperation.”</span> <em>Physics Reports</em>, Statistical physics of human cooperation, 687 (May): 1–51. <a href="https://doi.org/10.1016/j.physrep.2017.05.004">https://doi.org/10.1016/j.physrep.2017.05.004</a>.
 </div>
-<div id="ref-piagetOriginsIntelligenceChildren1952" class="csl-entry" role="listitem">
+<div id="ref-piagetOriginsIntelligenceChildren1952" class="csl-entry" role="doc-biblioentry">
 Piaget, Jean. 1952. <em>The Origins of Intelligence in Children</em>. Edited by Margaret Cook. The Origins of Intelligence in Children. <span>New York, NY, US</span>: <span>W W Norton &amp; Co</span>. <a href="https://doi.org/10.1037/11494-000">https://doi.org/10.1037/11494-000</a>.
 </div>
-<div id="ref-plenzSelfOrganizedCriticalityBrain2021" class="csl-entry" role="listitem">
+<div id="ref-plenzSelfOrganizedCriticalityBrain2021" class="csl-entry" role="doc-biblioentry">
 Plenz, Dietmar, Tiago L. Ribeiro, Stephanie R. Miller, Patrick A. Kells, Ali Vakili, and Elliott L. Capek. 2021. <span>“Self-<span>Organized Criticality</span> in the <span>Brain</span>.”</span> <em>Frontiers in Physics</em> 9. <a href="https://doi.org/10.3389/fphy.2021.639389">https://doi.org/10.3389/fphy.2021.639389</a>.
 </div>
-<div id="ref-postonCatastropheTheoryIts2014" class="csl-entry" role="listitem">
+<div id="ref-postonCatastropheTheoryIts2014" class="csl-entry" role="doc-biblioentry">
 Poston, Tim, and Ian Stewart. 2014. <em>Catastrophe <span>Theory</span> and <span>Its Applications</span></em>. <span>Courier Corporation</span>.
 </div>
-<div id="ref-reherDynamicWalkingAgile2021" class="csl-entry" role="listitem">
+<div id="ref-reherDynamicWalkingAgile2021" class="csl-entry" role="doc-biblioentry">
 Reher, Jenna, and Aaron D. Ames. 2021. <span>“Dynamic <span>Walking</span>: <span>Toward Agile</span> and <span>Efficient Bipedal Robots</span>.”</span> <em>Annual Review of Control, Robotics, and Autonomous Systems</em> 4 (1): 535–72. <a href="https://doi.org/10.1146/annurev-control-071020-045021">https://doi.org/10.1146/annurev-control-071020-045021</a>.
 </div>
-<div id="ref-rendellGameLifeUniversal2016" class="csl-entry" role="listitem">
+<div id="ref-rendellGameLifeUniversal2016" class="csl-entry" role="doc-biblioentry">
 Rendell, Paul. 2016. <span>“Game of <span>Life Universal Turing Machine</span>.”</span> In <em>Turing <span>Machine Universality</span> of the <span>Game</span> of <span>Life</span></em>, edited by Paul Rendell, 71–89. Emergence, <span>Complexity</span> and <span>Computation</span>. <span>Cham</span>: <span>Springer International Publishing</span>. <a href="https://doi.org/10.1007/978-3-319-19842-2_5">https://doi.org/10.1007/978-3-319-19842-2_5</a>.
 </div>
-<div id="ref-reppSensorimotorSynchronizationReview2013" class="csl-entry" role="listitem">
+<div id="ref-reppSensorimotorSynchronizationReview2013" class="csl-entry" role="doc-biblioentry">
 Repp, Bruno H., and Yi-Huang Su. 2013. <span>“Sensorimotor Synchronization: <span>A</span> Review of Recent Research (2006).”</span> <em>Psychonomic Bulletin &amp; Review</em> 20 (3): 403–52. <a href="https://doi.org/10.3758/s13423-012-0371-2">https://doi.org/10.3758/s13423-012-0371-2</a>.
 </div>
-<div id="ref-saviWiringIntelligence2019" class="csl-entry" role="listitem">
+<div id="ref-saviWiringIntelligence2019" class="csl-entry" role="doc-biblioentry">
 Savi, Alexander O., Maarten Marsman, Han L. J. van der Maas, and Gunter K. J. Maris. 2019. <span>“The <span>Wiring</span> of <span>Intelligence</span>.”</span> <em>Perspectives on Psychological Science</em> 14 (6): 1034–61. <a href="https://doi.org/10.1177/1745691619866447">https://doi.org/10.1177/1745691619866447</a>.
 </div>
-<div id="ref-schellingDynamicModelsSegregation1971" class="csl-entry" role="listitem">
+<div id="ref-schellingDynamicModelsSegregation1971" class="csl-entry" role="doc-biblioentry">
 Schelling, Thomas C. 1971. <span>“Dynamic Models of Segregation.”</span> <em>The Journal of Mathematical Sociology</em> 1 (2): 143–86. <a href="https://doi.org/10.1080/0022250X.1971.9989794">https://doi.org/10.1080/0022250X.1971.9989794</a>.
 </div>
+<<<<<<< HEAD
+<div id="ref-schiepekSelfOrganizationClinicalPsychology2009" class="csl-entry" role="doc-biblioentry">
+Schiepek, Günter, and Volker Perlitz. 2009. <span>“Self-<span>Organization</span> in <span>Clinical Psychology</span>.”</span> In <em>Synergetics</em>, edited by Axel Hutt and Hermann Haken, 263–85. <span>New York, NY</span>: <span>Springer US</span>. <a href="https://doi.org/10.1007/978-1-0716-0421-2_472">https://doi.org/10.1007/978-1-0716-0421-2_472</a>.
+=======
 <div id="ref-schiepekSelfOrganizationClinicalPsychology2009" class="csl-entry" role="listitem">
 Schiepek, Günter, and Volker Perlitz. 2009. <span>“Self-<span>Organization</span> in <span>Clinical Psychology</span>.”</span> In <em>Synergetics</em>, edited by Axel Hutt and Haken, 263–85. <span>New York, NY</span>: <span>Springer US</span>. <a href="https://doi.org/10.1007/978-1-0716-0421-2_472">https://doi.org/10.1007/978-1-0716-0421-2_472</a>.
+>>>>>>> e60a22938bdf7b88f432c2b1ec9a143f8a65eec9
 </div>
-<div id="ref-schmidhuberDeepLearningNeural2015" class="csl-entry" role="listitem">
+<div id="ref-schmidhuberDeepLearningNeural2015" class="csl-entry" role="doc-biblioentry">
 Schmidhuber, Jürgen. 2015. <span>“Deep Learning in Neural Networks: <span>An</span> Overview.”</span> <em>Neural Networks</em> 61 (January): 85–117. <a href="https://doi.org/10.1016/j.neunet.2014.09.003">https://doi.org/10.1016/j.neunet.2014.09.003</a>.
 </div>
-<div id="ref-schmidtPhaseTransitionsCritical1990" class="csl-entry" role="listitem">
+<div id="ref-schmidtPhaseTransitionsCritical1990" class="csl-entry" role="doc-biblioentry">
 Schmidt, R. C., C. Carello, and M. T. Turvey. 1990. <span>“Phase Transitions and Critical Fluctuations in the Visual Coordination of Rhythmic Movements Between People.”</span> <em>Journal of Experimental Psychology. Human Perception and Performance</em> 16 (2): 227–47. <a href="https://doi.org/10.1037//0096-1523.16.2.227">https://doi.org/10.1037//0096-1523.16.2.227</a>.
 </div>
-<div id="ref-schonerDynamicThinkingPrimer2016" class="csl-entry" role="listitem">
+<div id="ref-schonerDynamicThinkingPrimer2016" class="csl-entry" role="doc-biblioentry">
 Schöner, Gregor, and John P. Spencer. 2016. <em>Dynamic Thinking: <span>A</span> Primer on Dynamic Field Theory</em>. <span>Oxford University Press</span>.
 </div>
-<div id="ref-silverGeneralReinforcementLearning2018" class="csl-entry" role="listitem">
+<div id="ref-silverGeneralReinforcementLearning2018" class="csl-entry" role="doc-biblioentry">
 Silver, David, Thomas Hubert, Julian Schrittwieser, Ioannis Antonoglou, Matthew Lai, Arthur Guez, Marc Lanctot, et al. 2018. <span>“A General Reinforcement Learning Algorithm That Masters Chess, Shogi, and <span>Go</span> Through Self-Play.”</span> <em>Science</em> 362 (6419): 1140–44. <a href="https://doi.org/10.1126/science.aar6404">https://doi.org/10.1126/science.aar6404</a>.
 </div>
-<div id="ref-skardaHowBrainsMake1987" class="csl-entry" role="listitem">
+<div id="ref-skardaHowBrainsMake1987" class="csl-entry" role="doc-biblioentry">
 Skarda, Christine A., and Walter J. Freeman. 1987. <span>“How Brains Make Chaos in Order to Make Sense of the World.”</span> <em>Behavioral and Brain Sciences</em> 10 (2): 161–73. <a href="https://doi.org/10.1017/S0140525X00047336">https://doi.org/10.1017/S0140525X00047336</a>.
 </div>
-<div id="ref-smolenskyInformationProcessingDynamical1986" class="csl-entry" role="listitem">
+<div id="ref-smolenskyInformationProcessingDynamical1986" class="csl-entry" role="doc-biblioentry">
 Smolensky, Paul. 1986. <span>“Information <span>Processing</span> in <span>Dynamical Systems</span>: <span>Foundations</span> of <span>Harmony Theory</span>.”</span>
 </div>
-<div id="ref-stengersOrderOutChaos1978" class="csl-entry" role="listitem">
+<div id="ref-stengersOrderOutChaos1978" class="csl-entry" role="doc-biblioentry">
 Stengers, Isabelle, and Ilya Prigogine. 1978. <em>Order <span>Out</span> of <span>Chaos</span>: <span>Man</span>’s <span>New Dialogue</span> with <span>Nature</span></em>. <span>London</span>.
 </div>
-<div id="ref-surowieckiWisdomCrowds2005" class="csl-entry" role="listitem">
+<div id="ref-surowieckiWisdomCrowds2005" class="csl-entry" role="doc-biblioentry">
 Surowiecki, James. 2005. <em>The <span>Wisdom</span> of <span>Crowds</span></em>. <span>Knopf Doubleday Publishing Group</span>.
 </div>
-<div id="ref-suttonReinforcementLearningSecond2018" class="csl-entry" role="listitem">
+<div id="ref-suttonReinforcementLearningSecond2018" class="csl-entry" role="doc-biblioentry">
 Sutton, Richard S., and Andrew G. Barto. 2018. <em>Reinforcement <span>Learning</span>, Second Edition: <span>An Introduction</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-tesfatsionAgentBasedComputationalEconomics2002" class="csl-entry" role="listitem">
+<div id="ref-tesfatsionAgentBasedComputationalEconomics2002" class="csl-entry" role="doc-biblioentry">
 Tesfatsion, Leigh. 2002. <span>“Agent-<span>Based Computational Economics</span>: <span>Growing Economies From</span> the <span>Bottom Up</span>.”</span> <em>Artificial Life</em> 8 (1): 55–82. <a href="https://doi.org/10.1162/106454602753694765">https://doi.org/10.1162/106454602753694765</a>.
 </div>
-<div id="ref-thelenMotorDevelopmentNew1995" class="csl-entry" role="listitem">
+<div id="ref-thelenMotorDevelopmentNew1995" class="csl-entry" role="doc-biblioentry">
 Thelen, Esther. 1995. <span>“Motor Development: <span>A</span> New Synthesis.”</span> <em>American Psychologist</em> 50: 79–95. <a href="https://doi.org/10.1037/0003-066X.50.2.79">https://doi.org/10.1037/0003-066X.50.2.79</a>.
 </div>
-<div id="ref-thelenDynamicSystemsApproach1994" class="csl-entry" role="listitem">
+<div id="ref-thelenDynamicSystemsApproach1994" class="csl-entry" role="doc-biblioentry">
 Thelen, Esther, and Linda B. Smith. 1994. <em>A <span>Dynamic Systems Approach</span> to the <span>Development</span> of <span>Cognition</span> and <span>Action</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-vallacherDynamicalSystemsSocial1994" class="csl-entry" role="listitem">
+<div id="ref-vallacherDynamicalSystemsSocial1994" class="csl-entry" role="doc-biblioentry">
 Vallacher, Robin R., and Andrzej Nowak, eds. 1994. <em>Dynamical Systems in Social Psychology</em>. Dynamical Systems in Social Psychology. <span>San Diego, CA, US</span>: <span>Academic Press</span>.
 </div>
-<div id="ref-vandermaasMetaphor1995" class="csl-entry" role="listitem">
+<div id="ref-vandermaasMetaphor1995" class="csl-entry" role="doc-biblioentry">
 van der Maas, H. L. J. 1995. <span>“Beyond the Metaphor?”</span> <em>Cognitive Development</em> 10.
 </div>
-<div id="ref-vandermaasDynamicalModelGeneral2006" class="csl-entry" role="listitem">
+<div id="ref-vandermaasDynamicalModelGeneral2006" class="csl-entry" role="doc-biblioentry">
 Van Der Maas, Han L. J., Conor V. Dolan, Raoul P. P. P. Grasman, Jelte M. Wicherts, Hilde M. Huizenga, and Maartje E. J. Raijmakers. 2006. <span>“A Dynamical Model of General Intelligence: <span>The</span> Positive Manifold of Intelligence by Mutualism.”</span> <em>Psychological Review</em> 113 (4): 842–61. <a href="https://doi.org/c3jm44">https://doi.org/c3jm44</a>.
 </div>
-<div id="ref-vandermaasHowMuchIntelligence2021" class="csl-entry" role="listitem">
+<div id="ref-vandermaasHowMuchIntelligence2021" class="csl-entry" role="doc-biblioentry">
 van der Maas, Han L. J., Lukas Snoek, and Claire E. Stevenson. 2021. <span>“How Much Intelligence Is There in Artificial Intelligence? <span>A</span> 2020 Update.”</span> <em>Intelligence</em> 87 (July): 101548. <a href="https://doi.org/10.1016/j.intell.2021.101548">https://doi.org/10.1016/j.intell.2021.101548</a>.
 </div>
-<div id="ref-vandermaasStagewiseCognitiveDevelopment1992" class="csl-entry" role="listitem">
+<div id="ref-vandermaasStagewiseCognitiveDevelopment1992" class="csl-entry" role="doc-biblioentry">
 Van der Maas, Han L., and Peter C. Molenaar. 1992. <span>“Stagewise Cognitive Development: <span>An</span> Application of Catastrophe Theory.”</span> <em>Psychological Review</em> 99 (3): 395–417. <a href="https://doi.org/10.1037/0033-295X.99.3.395">https://doi.org/10.1037/0033-295X.99.3.395</a>.
 </div>
-<div id="ref-volberdaCoevolutionaryDynamicsFirms2003" class="csl-entry" role="listitem">
+<div id="ref-volberdaCoevolutionaryDynamicsFirms2003" class="csl-entry" role="doc-biblioentry">
 Volberda, Henk W., and Arie Y. Lewin. 2003. <span>“Co-Evolutionary <span>Dynamics Within</span> and <span>Between Firms</span>: <span>From Evolution</span> to <span class="nocase">Co-evolution</span>.”</span> <em>Journal of Management Studies</em> 40 (8): 2111–36. <a href="https://doi.org/10.1046/j.1467-6486.2003.00414.x">https://doi.org/10.1046/j.1467-6486.2003.00414.x</a>.
 </div>
-<div id="ref-wagemansCenturyGestaltPsychology2012" class="csl-entry" role="listitem">
+<div id="ref-wagemansCenturyGestaltPsychology2012" class="csl-entry" role="doc-biblioentry">
 Wagemans, Johan, James H. Elder, Michael Kubovy, Stephen E. Palmer, Mary A. Peterson, Manish Singh, and Rüdiger von der Heydt. 2012. <span>“A Century of <span>Gestalt</span> Psychology in Visual Perception: <span>I</span>. <span>Perceptual</span> Grouping and Figureground Organization.”</span> <em>Psychological Bulletin</em> 138: 1172–1217. <a href="https://doi.org/10.1037/a0029333">https://doi.org/10.1037/a0029333</a>.
 </div>
-<div id="ref-wienerCyberneticsControlCommunication2019" class="csl-entry" role="listitem">
+<div id="ref-wienerCyberneticsControlCommunication2019" class="csl-entry" role="doc-biblioentry">
 Wiener, Norbert. 2019. <em>Cybernetics or <span>Control</span> and <span>Communication</span> in the <span>Animal</span> and the <span>Machine</span>, <span>Reissue</span> of the 1961 Second Edition</em>. <span>MIT Press</span>.
 </div>
-<div id="ref-wilenskyIntroductionAgentbasedModeling2015" class="csl-entry" role="listitem">
+<div id="ref-wilenskyIntroductionAgentbasedModeling2015" class="csl-entry" role="doc-biblioentry">
 Wilensky, Uri, and William Rand. 2015. <em>An Introduction to Agent-Based Modeling: Modeling Natural, Social, and Engineered Complex Systems with <span>NetLogo</span></em>. <span>Cambridge, Massachusetts</span>: <span>The MIT Press</span>.
 </div>
-<div id="ref-xueNovelSwarmIntelligence2020" class="csl-entry" role="listitem">
+<div id="ref-xueNovelSwarmIntelligence2020" class="csl-entry" role="doc-biblioentry">
 Xue, Jiankai, and Bo Shen. 2020. <span>“A Novel Swarm Intelligence Optimization Approach: Sparrow Search Algorithm.”</span> <em>Systems Science &amp; Control Engineering</em> 8 (1): 22–34. <a href="https://doi.org/10.1080/21642583.2019.1708830">https://doi.org/10.1080/21642583.2019.1708830</a>.
 </div>
 </div>
@@ -941,23 +968,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -1022,92 +1035,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
