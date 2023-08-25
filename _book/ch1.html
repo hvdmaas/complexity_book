@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,15 +17,14 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -39,7 +38,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -76,8 +76,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -88,16 +87,11 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
       </button>
     </div>
   </nav>
@@ -105,93 +99,84 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems in Psychology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
 </div>
     </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Foreword</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Foreword</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="./ch1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></span></a>
+  <a href="./ch2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></span></a>
+  <a href="./ch3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Transitions in complex systems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ch4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></span></a>
+  <a href="./ch4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-are-complex-systems" id="toc-what-are-complex-systems" class="nav-link active" data-scroll-target="#what-are-complex-systems"><span class="header-section-number">1.1</span> What are complex systems?</a></li>
-  <li><a href="#psychology-and-the-social-sciences" id="toc-psychology-and-the-social-sciences" class="nav-link" data-scroll-target="#psychology-and-the-social-sciences"><span class="header-section-number">1.2</span> Psychology and the social sciences</a></li>
-  <li><a href="#emergentism" id="toc-emergentism" class="nav-link" data-scroll-target="#emergentism"><span class="header-section-number">1.3</span> Emergentism</a></li>
-  <li><a href="#theory-construction-methodology" id="toc-theory-construction-methodology" class="nav-link" data-scroll-target="#theory-construction-methodology"><span class="header-section-number">1.4</span> Theory construction methodology</a></li>
-  <li><a href="#a-limited-number-of-equilibria" id="toc-a-limited-number-of-equilibria" class="nav-link" data-scroll-target="#a-limited-number-of-equilibria"><span class="header-section-number">1.5</span> A limited number of equilibria</a></li>
-  <li><a href="#networks-are-everywhere" id="toc-networks-are-everywhere" class="nav-link" data-scroll-target="#networks-are-everywhere"><span class="header-section-number">1.6</span> Networks are everywhere</a></li>
-  <li><a href="#other-work-and-sources" id="toc-other-work-and-sources" class="nav-link" data-scroll-target="#other-work-and-sources"><span class="header-section-number">1.7</span> Other work and sources</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">1.8</span> Exercises</a></li>
+  <li><a href="#what-are-complex-systems" id="toc-what-are-complex-systems" class="nav-link active" data-scroll-target="#what-are-complex-systems"><span class="toc-section-number">1.1</span>  What are complex systems?</a></li>
+  <li><a href="#psychology-and-the-social-sciences" id="toc-psychology-and-the-social-sciences" class="nav-link" data-scroll-target="#psychology-and-the-social-sciences"><span class="toc-section-number">1.2</span>  Psychology and the social sciences</a></li>
+  <li><a href="#emergentism" id="toc-emergentism" class="nav-link" data-scroll-target="#emergentism"><span class="toc-section-number">1.3</span>  Emergentism</a></li>
+  <li><a href="#theory-construction-methodology" id="toc-theory-construction-methodology" class="nav-link" data-scroll-target="#theory-construction-methodology"><span class="toc-section-number">1.4</span>  Theory construction methodology</a></li>
+  <li><a href="#a-limited-number-of-equilibria" id="toc-a-limited-number-of-equilibria" class="nav-link" data-scroll-target="#a-limited-number-of-equilibria"><span class="toc-section-number">1.5</span>  A limited number of equilibria</a></li>
+  <li><a href="#networks-are-everywhere" id="toc-networks-are-everywhere" class="nav-link" data-scroll-target="#networks-are-everywhere"><span class="toc-section-number">1.6</span>  Networks are everywhere</a></li>
+  <li><a href="#other-work-and-sources" id="toc-other-work-and-sources" class="nav-link" data-scroll-target="#other-work-and-sources"><span class="toc-section-number">1.7</span>  Other work and sources</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="toc-section-number">1.8</span>  Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -200,7 +185,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
 </div>
 
 
@@ -217,7 +202,6 @@ div.csl-indent {
 
 <section id="what-are-complex-systems" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-are-complex-systems"><span class="header-section-number">1.1</span> What are complex systems?</h2>
-<p><strong>Markdown</strong> allows you to write using…</p>
 <p>Some things in life are simple. When you open the tap, water starts to flow. If you open it further, it flows faster, and if you close it, it stops. Cause-and-effect relationships like this are clear and roughly linear. Such relationships are rare in psychology. Let’s take fear as an example. A fear stimulus, for example a barking dog, can lead to fear and flight, but also to anger and attack. Whether the stimulus is perceived as fearful might depend on subtle differences in context. It has also been debated whether the flight response precedes the feeling of fear or vice versa. Fear could also suddenly change into a panic attack. In psychology, cause and effect relationships are rarely simple, and effects are often non-linear.</p>
 <p>These difficulties are not unique to psychology <span class="citation" data-cites="weaverScienceComplexity1948">(<a href="references.html#ref-weaverScienceComplexity1948" role="doc-biblioref">Weaver 1948</a>)</span>. Many systems studied in physics, chemistry, and biology show such complex behavior. They are complex systems. Unfortunately, there is no full consensus on the definition of a complex system <span class="citation" data-cites="ladymanWhatComplexSystem2013 mitchellComplexityGuidedTour2009">(<a href="references.html#ref-ladymanWhatComplexSystem2013" role="doc-biblioref">Ladyman, Lambert, and Wiesner 2013</a>; <a href="references.html#ref-mitchellComplexityGuidedTour2009" role="doc-biblioref">Mitchell 2009</a>)</span>, but some criteria can be specified <span class="citation" data-cites="simonArchitectureComplexity1962">(<a href="references.html#ref-simonArchitectureComplexity1962" role="doc-biblioref">Simon 1962</a>)</span>. First, complex systems are made up of many smaller interacting subsystems. These interactions are typically local and fast, as between neurons in our brain. Second, complex systems are open systems, meaning that energy can be absorbed from the environment. Third, complex systems have three types of emergent phenomena. They are fundamentally unpredictable (chaos), they can change very suddenly (phase transitions), and they exhibit globally organized behavior on a slow time scale (self-organization). These remarkable behavioral properties will be discussed in depth in chapters 2, 3 and 4. In this introduction I will present some key examples of complex systems, introduce some general concepts, and discuss the applicability to psychology. I start with the brain.</p>
 <p>The brain can be considered the ultimate complex system. Compared to computers, brains are extremely energy efficient, but they do consume energy (the equivalent of a light bulb according to <span class="citation" data-cites="attwellNeuralBasisFunctional2002">(<a href="references.html#ref-attwellNeuralBasisFunctional2002" role="doc-biblioref">Attwell and Iadecola 2002</a>)</span>. About a hundred billion neurons interact with thousands of other neurons in their neighborhood. Fast local interactions somehow form global waves of electrical activity that make up thought processes and even consciousness. The letters you are reading activate retinal neurons that initiate a cascade of electrical waves across billions of neurons that somehow create your understanding of this text <span class="citation" data-cites="robertsMetastableBrainWaves2019 schonerDynamicsNeuralPopulations2020">(<a href="references.html#ref-robertsMetastableBrainWaves2019" role="doc-biblioref">Roberts et al. 2019</a>; <a href="references.html#ref-schonerDynamicsNeuralPopulations2020" role="doc-biblioref">Schöner 2020</a>)</span>. How is this possible? For me, this is the most fascinating scientific question of all time. It’s the main reason why I’m a psychologist and not a physicist. It is also an extremely difficult question. But we can learn a lot by studying similar systems in physics, chemistry, and biology. Many physical, chemical, and biological systems fall into this category of complex systems.</p>
@@ -225,7 +209,7 @@ div.csl-indent {
 <div id="fig-ch1-img1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch1/image1.jpg" style="width:3.11597in;height:2.63958in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.1: A flock of birds</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.1: A flock of birds</figcaption><p></p>
 </figure>
 </div>
 <p>The units or subsystems of a complex system are not necessarily biological systems. Tornados, for example, are made up of air molecules that also interact locally. Tornadoes are unpredictable, self-organizing, global weather phenomena. A famous chemical example is the Belousov-Zhabotinsky reaction, a chemical oscillator <span class="citation" data-cites="kuramotoChemicalTurbulence1984">(<a href="references.html#ref-kuramotoChemicalTurbulence1984" role="doc-biblioref">Kuramoto 1984</a>)</span>. Again, watching a YouTube video is highly recommended.</p>
@@ -233,7 +217,7 @@ div.csl-indent {
 <div id="fig-ch1-img2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch1/image2.jpg" style="width:6.26389in;height:2.10139in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.2: The transitions between clear and turbid states of shallow lakes do not occur at the same phosphorus load. This delay in jumps is called hysteresis. Hysteresis explains why transitions are often difficult to reverse. This concept is discussed in detail in Chapter 3.</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: The transitions between clear and turbid states of shallow lakes do not occur at the same phosphorus load. This delay in jumps is called hysteresis. Hysteresis explains why transitions are often difficult to reverse. This concept is discussed in detail in Chapter 3.</figcaption><p></p>
 </figure>
 </div>
 <p>A breakthrough occurred in the 1980s. Catching all the fish proved to be a very effective intervention. The ecologists caught almost all the fish with nets during the winter. In the spring, a new, healthy equilibrium emerged, characterized by aquatic plants, other fish species and clear water. This new state is often stable for long periods of time. Remarkably, the analysis of the cause, the phosphorus load, was not part of the solution: although the increasing phosphorus load is the primary cause of the transition towards a turbid state, decreasing the phosphorus lead does not cause the system to transition back into the clear state. The dogma of intervention, that the cause of the problem is the key to the solution, does not necessarily apply to complex systems. What this means for our thinking about depressed patients will be discussed later.</p>
@@ -246,7 +230,7 @@ div.csl-indent {
 <div id="fig-ch1-img3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch1/image3.jpg" style="width:2.91875in;height:2.90694in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.3: An overview of the toolbox of complex system science (source: Wikipedia)</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.3: An overview of the toolbox of complex system science (source: Wikipedia)</figcaption><p></p>
 </figure>
 </div>
 <p>This is all unfortunate because not only our brains, but every subject in our field seems to have the characteristics of a complex system. Any social system is a complex system, made up of individuals interacting to produce emergent phenomena such as cultures and economics. The human brain, the most complex system we know, is embedded in different hierarchies of very complex social systems such as families, education, economies, and cultures. We need the toolbox!</p>
@@ -267,7 +251,7 @@ div.csl-indent {
 <div id="fig-ch1-img4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch1/image4.jpg" style="width:2.85742in;height:2.77537in" class="figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1.4: An illustration of downwards or circular causation in flocks due to a predator responding to the emerging patterns of the flock and subsequently influencing the flight of individual birds. (adapted from <a href="https://arxiv.org/abs/1108.1682" class="uri">https://arxiv.org/abs/1108.1682</a>).</figcaption>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.4: An illustration of downwards or circular causation in flocks due to a predator responding to the emerging patterns of the flock and subsequently influencing the flight of individual birds. (adapted from <a href="https://arxiv.org/abs/1108.1682" class="uri">https://arxiv.org/abs/1108.1682</a>).</figcaption><p></p>
 </figure>
 </div>
 <p>In my view, the arguments against strong emergence and downward causation may be difficult to entirely dismiss, yet they seem rather futile. Our minds, encompassing conscious thought, self-awareness, reasoning abilities, natural language comprehension, emotions, and attitudes, are not mere artifacts and cannot be simply reduced to intricate patterns of neural activity. These mental constructs possess their own causal influence, and psychology stands as a scientific discipline in its own right.</p>
@@ -311,122 +295,122 @@ div.csl-indent {
 </ol>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-andersonMoreDifferent1972" class="csl-entry" role="listitem">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-andersonMoreDifferent1972" class="csl-entry" role="doc-biblioentry">
 Anderson, P. W. 1972. <span>“More <span>Is Different</span>.”</span> <em>Science</em> 177 (4047): 393–96. <a href="https://doi.org/10.1126/science.177.4047.393">https://doi.org/10.1126/science.177.4047.393</a>.
 </div>
-<div id="ref-attwellNeuralBasisFunctional2002" class="csl-entry" role="listitem">
+<div id="ref-attwellNeuralBasisFunctional2002" class="csl-entry" role="doc-biblioentry">
 Attwell, David, and Costantino Iadecola. 2002. <span>“The Neural Basis of Functional Brain Imaging Signals.”</span> <em>Trends in Neurosciences</em> 25 (12): 621–25. <a href="https://doi.org/10.1016/S0166-2236(02)02264-6">https://doi.org/10.1016/S0166-2236(02)02264-6</a>.
 </div>
-<div id="ref-barceloFundamentalsTrafficSimulation2010" class="csl-entry" role="listitem">
+<div id="ref-barceloFundamentalsTrafficSimulation2010" class="csl-entry" role="doc-biblioentry">
 Barceló, Jaume, ed. 2010. <em>Fundamentals of <span>Traffic Simulation</span></em>. Vol. 145. International <span>Series</span> in <span>Operations Research</span> &amp; <span>Management Science</span>. <span>New York, NY</span>: <span>Springer New York</span>. <a href="https://doi.org/10.1007/978-1-4419-6142-6">https://doi.org/10.1007/978-1-4419-6142-6</a>.
 </div>
-<div id="ref-bechtelExplanationMechanistAlternative2005" class="csl-entry" role="listitem">
+<div id="ref-bechtelExplanationMechanistAlternative2005" class="csl-entry" role="doc-biblioentry">
 Bechtel, William, and Adele Abrahamsen. 2005. <span>“Explanation: A Mechanist Alternative.”</span> <em>Studies in History and Philosophy of Science Part C: Studies in History and Philosophy of Biological and Biomedical Sciences</em>, Mechanisms in biology, 36 (2): 421–41. <a href="https://doi.org/10.1016/j.shpsc.2005.03.010">https://doi.org/10.1016/j.shpsc.2005.03.010</a>.
 </div>
-<div id="ref-bertalanffyGeneralSystemTheory1969" class="csl-entry" role="listitem">
+<div id="ref-bertalanffyGeneralSystemTheory1969" class="csl-entry" role="doc-biblioentry">
 Bertalanffy, Ludwig Von. 1969. <em>General <span>System Theory</span>: <span>Foundations</span>, <span>Development</span>, <span>Applications</span></em>. Revised edition. <span>New York, NY</span>: <span>George Braziller Inc.</span>
 </div>
-<div id="ref-borsboomTheoryConstructionMethodology2021" class="csl-entry" role="listitem">
+<div id="ref-borsboomTheoryConstructionMethodology2021" class="csl-entry" role="doc-biblioentry">
 Borsboom, Denny, Han L J van der Maas, Jonas Dalege, Rogier A Kievit, and Brian D Haig. 2021. <span>“Theory <span>Construction Methodology</span>: <span>A Practical Framework</span> for <span>Building Theories</span> in <span>Psychology</span>.”</span> <em>Perspectives on Psychological Science</em> 16 (4): 756–66. <a href="https://doi.org/10.1177/1745691620969647">https://doi.org/10.1177/1745691620969647</a>.
 </div>
-<div id="ref-castellanoNonlinearVoterModel2009" class="csl-entry" role="listitem">
+<div id="ref-castellanoNonlinearVoterModel2009" class="csl-entry" role="doc-biblioentry">
 Castellano, Claudio, Miguel A. Muñoz, and Romualdo Pastor-Satorras. 2009. <span>“Nonlinear $q$-Voter Model.”</span> <em>Physical Review E</em> 80 (4): 041129. <a href="https://doi.org/10.1103/PhysRevE.80.041129">https://doi.org/10.1103/PhysRevE.80.041129</a>.
 </div>
-<div id="ref-chalmersStrongWeakEmergence2006" class="csl-entry" role="listitem">
+<div id="ref-chalmersStrongWeakEmergence2006" class="csl-entry" role="doc-biblioentry">
 Chalmers, David J. 2006. <span>“Strong and Weak Emergence.”</span> https://philpapers.org/rec/chasaw.
 </div>
-<div id="ref-demooijDynamicsSleepExploring2020" class="csl-entry" role="listitem">
+<div id="ref-demooijDynamicsSleepExploring2020" class="csl-entry" role="doc-biblioentry">
 de Mooij, Susanne M. M., Tessa F. Blanken, Raoul P. P. P. Grasman, Jennifer R. Ramautar, Eus J. W. Van Someren, and Han L. J. van der Maas. 2020. <span>“Dynamics of Sleep: <span>Exploring</span> Critical Transitions and Early Warning Signals.”</span> <em>Computer Methods and Programs in Biomedicine</em> 193 (September): 105448. <a href="https://doi.org/10.1016/j.cmpb.2020.105448">https://doi.org/10.1016/j.cmpb.2020.105448</a>.
 </div>
-<div id="ref-epskampIntermediateStableStates2022" class="csl-entry" role="listitem">
+<div id="ref-epskampIntermediateStableStates2022" class="csl-entry" role="doc-biblioentry">
 Epskamp, Sacha, Han L. J. van der Maas, Roseann E. Peterson, Hanna M. van Loo, Steven H. Aggen, and Kenneth S. Kendler. 2022. <span>“Intermediate Stable States in Substance Use.”</span> <em>Addictive Behaviors</em> 129 (June): 107252. <a href="https://doi.org/10.1016/j.addbeh.2022.107252">https://doi.org/10.1016/j.addbeh.2022.107252</a>.
 </div>
-<div id="ref-eronenTheoryCrisisPsychology2021" class="csl-entry" role="listitem">
+<div id="ref-eronenTheoryCrisisPsychology2021" class="csl-entry" role="doc-biblioentry">
 Eronen, Markus I., and Laura F. Bringmann. 2021. <span>“The <span>Theory Crisis</span> in <span>Psychology</span>: <span>How</span> to <span>Move Forward</span>.”</span> <em>Perspectives on Psychological Science</em> 16 (4): 779–88. <a href="https://doi.org/10.1177/1745691620970586">https://doi.org/10.1177/1745691620970586</a>.
 </div>
-<div id="ref-flackCoarsegrainingDownwardCausation2017" class="csl-entry" role="listitem">
+<div id="ref-flackCoarsegrainingDownwardCausation2017" class="csl-entry" role="doc-biblioentry">
 Flack, Jessica C. 2017. <span>“Coarse-Graining as a Downward Causation Mechanism.”</span> <em>Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</em> 375 (2109): 20160338. <a href="https://doi.org/10.1098/rsta.2016.0338">https://doi.org/10.1098/rsta.2016.0338</a>.
 </div>
-<div id="ref-fodorSpecialSciencesDisunity1974" class="csl-entry" role="listitem">
+<div id="ref-fodorSpecialSciencesDisunity1974" class="csl-entry" role="doc-biblioentry">
 Fodor, J. A. 1974. <span>“Special Sciences (or: <span>The</span> Disunity of Science as a Working Hypothesis).”</span> <em>Synthese</em> 28 (2): 97–115. <a href="https://doi.org/10.1007/BF00485230">https://doi.org/10.1007/BF00485230</a>.
 </div>
-<div id="ref-grauwinComplexSystemsScience2012" class="csl-entry" role="listitem">
+<div id="ref-grauwinComplexSystemsScience2012" class="csl-entry" role="doc-biblioentry">
 Grauwin, Sebastian, Guillaume Beslon, Éric Fleury, Sara Franceschelli, Celine Robardet, Jean-Baptiste Rouquier, and Pablo Jensen. 2012. <span>“Complex Systems Science: <span>Dreams</span> of Universality, Interdisciplinarity Reality.”</span> <em>Journal of the American Society for Information Science and Technology</em> 63 (7): 1327–38. <a href="https://doi.org/10.1002/asi.22644">https://doi.org/10.1002/asi.22644</a>.
 </div>
-<div id="ref-guastelloChaosComplexityPsychology2008" class="csl-entry" role="listitem">
+<div id="ref-guastelloChaosComplexityPsychology2008" class="csl-entry" role="doc-biblioentry">
 Guastello, Stephen J., Matthijs Koopmans, and David Pincus. 2008. <em>Chaos and <span>Complexity</span> in <span>Psychology</span>: <span>The Theory</span> of <span>Nonlinear Dynamical Systems</span></em>. <span>Cambridge University Press</span>.
 </div>
-<div id="ref-haigInvestigatingPsychologicalWorld2014" class="csl-entry" role="listitem">
+<div id="ref-haigInvestigatingPsychologicalWorld2014" class="csl-entry" role="doc-biblioentry">
 Haig, Brian D. 2014. <em>Investigating the <span>Psychological World</span>: <span>Scientific Method</span> in the <span>Behavioral Sciences</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-heathNonlinearDynamicsTechniques2000" class="csl-entry" role="listitem">
+<div id="ref-heathNonlinearDynamicsTechniques2000" class="csl-entry" role="doc-biblioentry">
 Heath, Richard A. 2000. <em>Nonlinear <span>Dynamics</span>: <span>Techniques</span> and <span>Applications</span> in <span>Psychology</span></em>. 1st edition. <span>Mahwah, N.J</span>: <span>Psychology Press</span>.
 </div>
-<div id="ref-hoelQuantifyingCausalEmergence2013" class="csl-entry" role="listitem">
+<div id="ref-hoelQuantifyingCausalEmergence2013" class="csl-entry" role="doc-biblioentry">
 Hoel, Erik P., Larissa Albantakis, and Giulio Tononi. 2013. <span>“Quantifying Causal Emergence Shows That Macro Can Beat Micro.”</span> <em>Proceedings of the National Academy of Sciences</em> 110 (49): 19790–95. <a href="https://doi.org/10.1073/pnas.1314922110">https://doi.org/10.1073/pnas.1314922110</a>.
 </div>
-<div id="ref-kelsoDynamicPatternsSelforganization1995" class="csl-entry" role="listitem">
+<div id="ref-kelsoDynamicPatternsSelforganization1995" class="csl-entry" role="doc-biblioentry">
 Kelso, J. A. Scott. 1995. <em>Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior</em>. Dynamic Patterns: <span>The</span> Self-Organization of Brain and Behavior. <span>Cambridge, MA, US</span>: <span>The MIT Press</span>.
 </div>
-<div id="ref-kimEmergenceCoreIdeas2006" class="csl-entry" role="listitem">
+<div id="ref-kimEmergenceCoreIdeas2006" class="csl-entry" role="doc-biblioentry">
 Kim, Jaegwon. 2006. <span>“Emergence: <span>Core</span> Ideas and Issues.”</span> <em>Synthese</em> 151 (3): 547–59. <a href="https://doi.org/10.1007/s11229-006-9025-0">https://doi.org/10.1007/s11229-006-9025-0</a>.
 </div>
-<div id="ref-krakauerSymmetrySimplicityBroken2023" class="csl-entry" role="listitem">
+<div id="ref-krakauerSymmetrySimplicityBroken2023" class="csl-entry" role="doc-biblioentry">
 Krakauer, David C. 2023. <span>“Symmetrysimplicity, Broken Symmetrycomplexity.”</span> <em>Interface Focus</em> 13 (3): 20220075. <a href="https://doi.org/10.1098/rsfs.2022.0075">https://doi.org/10.1098/rsfs.2022.0075</a>.
 </div>
-<div id="ref-kuramotoChemicalTurbulence1984" class="csl-entry" role="listitem">
+<div id="ref-kuramotoChemicalTurbulence1984" class="csl-entry" role="doc-biblioentry">
 Kuramoto, Yoshiki. 1984. <span>“Chemical <span>Turbulence</span>.”</span> In <em>Chemical <span>Oscillations</span>, <span>Waves</span>, and <span>Turbulence</span></em>, edited by Yoshiki Kuramoto, 111–40. Springer <span>Series</span> in <span>Synergetics</span>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-69689-3_7">https://doi.org/10.1007/978-3-642-69689-3_7</a>.
 </div>
-<div id="ref-ladymanWhatComplexSystem2013" class="csl-entry" role="listitem">
+<div id="ref-ladymanWhatComplexSystem2013" class="csl-entry" role="doc-biblioentry">
 Ladyman, James, James Lambert, and Karoline Wiesner. 2013. <span>“What Is a Complex System?”</span> <em>European Journal for Philosophy of Science</em> 3 (1): 33–67. <a href="https://doi.org/10.1007/s13194-012-0056-8">https://doi.org/10.1007/s13194-012-0056-8</a>.
 </div>
-<div id="ref-leggioTypologiesAlcoholDependence2009" class="csl-entry" role="listitem">
+<div id="ref-leggioTypologiesAlcoholDependence2009" class="csl-entry" role="doc-biblioentry">
 Leggio, Lorenzo, George A. Kenna, Miriam Fenton, Erica Bonenfant, and Robert M. Swift. 2009. <span>“Typologies of <span>Alcohol Dependence</span>. <span>From Jellinek</span> to <span>Genetics</span> and <span>Beyond</span>.”</span> <em>Neuropsychology Review</em> 19 (1): 115–29. <a href="https://doi.org/10.1007/s11065-008-9080-z">https://doi.org/10.1007/s11065-008-9080-z</a>.
 </div>
-<div id="ref-lumsdenTestTheory1976" class="csl-entry" role="listitem">
+<div id="ref-lumsdenTestTheory1976" class="csl-entry" role="doc-biblioentry">
 Lumsden, James. 1976. <span>“Test Theory.”</span> <em>Annual Review of Psychology</em> 27: 251–80. <a href="https://doi.org/10.1146/annurev.ps.27.020176.001343">https://doi.org/10.1146/annurev.ps.27.020176.001343</a>.
 </div>
-<div id="ref-michellMeasurementPsychologyCritical1999" class="csl-entry" role="listitem">
+<div id="ref-michellMeasurementPsychologyCritical1999" class="csl-entry" role="doc-biblioentry">
 Michell, Joel. 1999. <em>Measurement in <span>Psychology</span>: <span>A Critical History</span> of a <span>Methodological Concept</span></em>. <span>Cambridge University Press</span>.
 </div>
-<div id="ref-mitchellComplexityGuidedTour2009" class="csl-entry" role="listitem">
+<div id="ref-mitchellComplexityGuidedTour2009" class="csl-entry" role="doc-biblioentry">
 Mitchell, Melanie. 2009. <em>Complexity: <span>A Guided Tour</span></em>. <span>Oxford University Press</span>.
 </div>
-<div id="ref-portMindMotionExplorations1995" class="csl-entry" role="listitem">
+<div id="ref-portMindMotionExplorations1995" class="csl-entry" role="doc-biblioentry">
 Port, Robert F., and Timothy Van Gelder. 1995. <em>Mind as <span>Motion</span>: <span>Explorations</span> in the <span>Dynamics</span> of <span>Cognition</span></em>. <span>MIT Press</span>.
 </div>
-<div id="ref-robertsMetastableBrainWaves2019" class="csl-entry" role="listitem">
+<div id="ref-robertsMetastableBrainWaves2019" class="csl-entry" role="doc-biblioentry">
 Roberts, James A., Leonardo L. Gollo, Romesh G. Abeysuriya, Gloria Roberts, Philip B. Mitchell, Mark W. Woolrich, and Michael Breakspear. 2019. <span>“Metastable Brain Waves.”</span> <em>Nature Communications</em> 10 (1): 1056. <a href="https://doi.org/10.1038/s41467-019-08999-0">https://doi.org/10.1038/s41467-019-08999-0</a>.
 </div>
-<div id="ref-robinaughNetworkApproachPsychopathology2020" class="csl-entry" role="listitem">
+<div id="ref-robinaughNetworkApproachPsychopathology2020" class="csl-entry" role="doc-biblioentry">
 Robinaugh, Donald J., Ria H. A. Hoekstra, Emma R. Toner, and Denny Borsboom. 2020. <span>“The Network Approach to Psychopathology: A Review of the Literature 2008 and an Agenda for Future Research.”</span> <em>Psychological Medicine</em> 50 (3): 353–66. <a href="https://doi.org/10.1017/S0033291719003404">https://doi.org/10.1017/S0033291719003404</a>.
 </div>
-<div id="ref-schefferEcologyShallowLakes2004" class="csl-entry" role="listitem">
+<div id="ref-schefferEcologyShallowLakes2004" class="csl-entry" role="doc-biblioentry">
 Scheffer, Marten. 2004. <em>Ecology of <span>Shallow Lakes</span></em>. <span>Dordrecht</span>: <span>Springer Netherlands</span>. <a href="https://doi.org/10.1007/978-1-4020-3154-0">https://doi.org/10.1007/978-1-4020-3154-0</a>.
 </div>
-<div id="ref-schonerDynamicsNeuralPopulations2020" class="csl-entry" role="listitem">
+<div id="ref-schonerDynamicsNeuralPopulations2020" class="csl-entry" role="doc-biblioentry">
 Schöner, Gregor. 2020. <span>“The <span>Dynamics</span> of <span>Neural Populations Capture</span> the <span>Laws</span> of the <span>Mind</span>.”</span> <em>Topics in Cognitive Science</em> 12 (4): 1257–71. <a href="https://doi.org/10.1111/tops.12453">https://doi.org/10.1111/tops.12453</a>.
 </div>
-<div id="ref-scottSocialNetworkAnalysis2011" class="csl-entry" role="listitem">
+<div id="ref-scottSocialNetworkAnalysis2011" class="csl-entry" role="doc-biblioentry">
 Scott, John. 2011. <span>“Social Network Analysis: Developments, Advances, and Prospects.”</span> <em>Social Network Analysis and Mining</em> 1 (1): 21–26. <a href="https://doi.org/10.1007/s13278-010-0012-6">https://doi.org/10.1007/s13278-010-0012-6</a>.
 </div>
-<div id="ref-serraComplexSystemsCognitive1990" class="csl-entry" role="listitem">
+<div id="ref-serraComplexSystemsCognitive1990" class="csl-entry" role="doc-biblioentry">
 Serra, Roberto, and Gianni Zanarini. 1990. <em>Complex <span>Systems</span> and <span>Cognitive Processes</span></em>. <span>Berlin, Heidelberg</span>: <span>Springer</span>. <a href="https://doi.org/10.1007/978-3-642-46678-6">https://doi.org/10.1007/978-3-642-46678-6</a>.
 </div>
-<div id="ref-simonArchitectureComplexity1962" class="csl-entry" role="listitem">
+<div id="ref-simonArchitectureComplexity1962" class="csl-entry" role="doc-biblioentry">
 Simon, Herbert A. 1962. <span>“The <span>Architecture</span> of <span>Complexity</span>.”</span> <em>Proceedings of the American Philosophical Society</em> 106 (6): 467–82. <a href="https://www.jstor.org/stable/985254">https://www.jstor.org/stable/985254</a>.
 </div>
-<div id="ref-snijdersStatisticalEvaluationSocial2001" class="csl-entry" role="listitem">
+<div id="ref-snijdersStatisticalEvaluationSocial2001" class="csl-entry" role="doc-biblioentry">
 Snijders, Tom A. B. 2001. <span>“The <span>Statistical Evaluation</span> of <span>Social Network Dynamics</span>.”</span> <em>Sociological Methodology</em> 31 (1): 361–95. <a href="https://doi.org/10.1111/0081-1750.00099">https://doi.org/10.1111/0081-1750.00099</a>.
 </div>
-<div id="ref-treiberCongestedTrafficStates2000" class="csl-entry" role="listitem">
+<div id="ref-treiberCongestedTrafficStates2000" class="csl-entry" role="doc-biblioentry">
 Treiber, Martin, Ansgar Hennecke, and Dirk Helbing. 2000. <span>“Congested Traffic States in Empirical Observations and Microscopic Simulations.”</span> <em>Physical Review E</em> 62 (2): 1805–24. <a href="https://doi.org/10.1103/PhysRevE.62.1805">https://doi.org/10.1103/PhysRevE.62.1805</a>.
 </div>
-<div id="ref-vandermaasMetaphor1995" class="csl-entry" role="listitem">
+<div id="ref-vandermaasMetaphor1995" class="csl-entry" role="doc-biblioentry">
 van der Maas, H. L. J. 1995. <span>“Beyond the Metaphor?”</span> <em>Cognitive Development</em> 10.
 </div>
-<div id="ref-weaverScienceComplexity1948" class="csl-entry" role="listitem">
+<div id="ref-weaverScienceComplexity1948" class="csl-entry" role="doc-biblioentry">
 Weaver, Warren. 1948. <span>“Science and <span>Complexity</span>.”</span> <em>American Scientist</em> 36 (4): 536–44. <a href="https://www.jstor.org/stable/27826254">https://www.jstor.org/stable/27826254</a>.
 </div>
 </div>
@@ -460,23 +444,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -541,92 +511,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
