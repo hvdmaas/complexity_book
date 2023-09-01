@@ -4,6 +4,8 @@
 .Ruserdata
 **/.DS_Store
 .DS_Store
-/.quarto/
+.quarto/
 /env/
 .Rproj.user
+
+/.quarto/
