@@ -1,6 +1,6 @@
 project:
   type: book
-  #output-dir: docs #for publishing in github pages
+  output-dir: docs #for publishing in github pages
 book:
   title: "Complex Systems in Psychology"
   author: "Han van der Maas"
