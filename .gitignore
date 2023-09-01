@@ -7,3 +7,5 @@
 .quarto/
 /env/
 .Rproj.user
+
+/.quarto/
