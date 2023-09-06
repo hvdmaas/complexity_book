@@ -8,7 +8,7 @@ In my opinion, the applicability of chaos theory to psychology and social scienc
 
 Chaos theory consists of many deep mathematical results, but understanding the basics of chaos is not so hard. Below I will explain chaos in difference equations at a very basic level of mathematics and programming. The elementary example is the famous logistic map, usually introduced as a model of population growth, for instance, of rabbits. Suppose we have rabbits on an island, and they start to multiply, what would be a mathematical model for such a process?
 
-Population growth is a typical example of a dynamical system, it is a model of change. In general, in a dynamical system, the change or growth of a variable (say $X$) depends on the current state and some parameters. Time plays a very special role. We can use discrete or continuous time steps. In the first case, which is the focus of this chapter, we use difference equations; in the second, we use difference equations. In the logistic map, time is discrete (population growth takes place in generations). The simplest model for the population growth of rabbits is:
+Population growth is a typical example of a dynamical system, it is a model of change. In general, in a dynamical system, the change or growth of a variable (say $X$) depends on the current state and some parameters. Time plays a very special role. We can use discrete or continuous time steps. In the first case, which is the focus of this chapter, we use difference equations; in the second case, we use differential equations. In the logistic map, time is discrete (population growth takes place in generations). The simplest model for the population growth of rabbits is:
 
 $$
 X_{t + 1} = rX_{t}$$ {#eq-ch2-1}
@@ -81,7 +81,7 @@ So 0 and $(r - 1)/r$ are fixed points. Indeed for $r = 2$, we have seen that 0 a
 
 I will not explain why, however, the rule is that the fixed point is stable if the absolute value of the derivative in the fixed-point value is less than 1.[^ch2-2] For $r = 2$ the fixed points are 0 and .5. $\left| f^{'}\left( X^{*} = 0 \right) \right| = |2 - 0| = 2$, which is greater than 1 and thus $X^{*} = 0$ is unstable. $\left| f^{'}\left( X^{*} = .5 \right) \right| = |2 - 2 \times 2 \times .5| = 0$, which is less than 1 and thus $X^{*} = .5$ is stable. You can check for yourself that $X^{*}$=$\frac{r - 1}{r}$ is stable for $1 < r < 3$, both with the r-code and with the absolute value of the derivative.
 
-[^ch2-2]: Why this is not too difficult to understand. If you google 'fixed points of difference equations', you will quickly arrive at stackexchange.com, where several insightful explanations are given.
+[^ch2-2]: Why this is, is not too difficult to understand. If you google 'fixed points of difference equations', you will quickly arrive at stackexchange.com, where several insightful explanations are given.
 
 ## Limit cycles
 
@@ -124,7 +124,7 @@ Note that some uncertainty about the exact value of the initial state is always 
 The Lyapunov coefficient quantifies chaos. The idea is to take two very close initial conditions with a difference of $\varepsilon$. In the next iteration this difference might be smaller, the same, or bigger. In the last case the time series diverge, which is typical for chaos. The Lyapunov coefficient is defined as:
 
 $$
-{\lambda_{L} = \lim_{n \rightarrow \infty}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}$$ {#eq-ch2-3}
+{\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}$$ {#eq-ch2-3}
 
 where $f^{'}\left( X_{i} \right) = r - 2rX$ for the logistic map and $\lambda_{L} > 0$ indicates chaos. You may verify in a simulation that $\lambda_{L} > 0$ for \$r = 4,\$indicating chaos.
 
@@ -222,14 +222,16 @@ There exist many techniques for chaos detection in times series. There are sever
 
 1)  For r=3.5, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 
-2)  In the bifurcation plot, you can zoom in by changing r.range to seq(3.4, 4, by=0.0001)), perhaps also changing cex=.01 to a lower value. Now zoom in on the interval of r between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of r. (\*)
+2)  In the bifurcation plot, you can zoom in by changing r.range to seq(3.4, 4, by=0.0001)), perhaps also changing cex=.01 to a lower value. Now zoom in on the interval of r between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of r. Provide your r-code and figure (\*).
 
-3)  Reproduce the first image from the Henon map wiki page (\*).
+3)  Reproduce the first image from the Henon map wiki page. Provide your r-code and figure (\*).
 
-4)  Make the bifurcation diagram of the Ricker model (see wiki). What is the advantage of this model over the logistic map?
+4)  Make the bifurcation diagram of the Ricker model (see wiki). Provide your r-code and figure. What is the advantage of this model over the logistic map?
 
 5)  Also reproduce the three-dimensional bifurcation diagram of the Henon map (\*\*).
 
 6)  Verify that for r=4 the DChaos package gives the Lyapunov coefficient equal to the one calculated with the derivative (@eq-ch2-3) (\*\*).
 
 7)  Use the Rmusic library (installed with devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
+
+8)  Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (\*).
