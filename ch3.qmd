@@ -102,7 +102,7 @@ $$ V(X) = {- aX - \frac{1}{2}bX^{2} + \frac{1}{4}X}^{4}. $$ {#eq-ch3-4}
 
 The half and quarter are added to make later derivations a little easier. The highest power is now 4. The first two terms contain the control variables $a$ and $b$, known as the normal and splitting variables. You might ask why there is no third order term. The non-technical answer is that such a term would not change the qualitative behavior of the bifurcation. Catastrophe theory studies bifurcations that are structurally stable, meaning that perturbing the equations (and not just the parameters) does not fundamentally change the behavior [see Section 3.2.6 and @stewartCatastropheTheoryPhysics1982 for further explication].
 
-It is advisable to do some minimal research on this equation yourself, using a tool like WolframAlpha or GeoGebra (paste f(X)=a X-(1/2) b X\^2+(1/4) X\^4). For example, set $a = 1$ and $b = 3$ and look at the graph of the potential function. Think in terms of the ball moving to a stable fixed point. What you should see is that there are three fixed points, of which the middle one is unstable. This bistability is important. Again, there is a relationship to unpredictability. Although you know the potential function and the values of $a$ and $b$, you are still not sure where the ball is. It could be in either of the minima.
+It is advisable to do some minimal research on this equation yourself, using an online graphic claculator tool like Desmos or GeoGebra (paste f(X)=a X-(1/2) b X\^2+(1/4) X\^4). For example, set $a = 1$ and $b = 3$ and look at the graph of the potential function. Think in terms of the ball moving to a stable fixed point. What you should see is that there are three fixed points, of which the middle one is unstable. This bistability is important. Again, there is a relationship to unpredictability. Although you know the potential function and the values of $a$ and $b$, you are still not sure where the ball is. It could be in either of the minima.
 
 Other typical behavior occurs when we slowly vary $a\ ($up and down from -2 to 2), for a positive $b$ value ($b = 2).$ This is shown in Figure 19. At about $a = 1.5$ we see the sudden jump. The left fixed point loses its stability and the ball rolls to the other minimum.
 
@@ -508,7 +508,7 @@ I also recommend the BBC documentary "Case Study Catastrophe Theory Maths Founda
 
 3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to zero. (\*\*)
 
-4)  Some insight into the butterfly catastrophe $V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}$ can be gained by entering the equation in the online graphing calculator GeoGebra. Set a, b, c, d to 0, -5, 0, 5. Then start varying a and c. What is the difference in the effect of these two parameters on the attractors? (\*)
+4)  Some insight into the butterfly catastrophe $V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}$ can be gained by entering the equation in free online graphing calculators such as DesMos or GeoGebra. Set a, b, c, d to 0, -5, 0, 5. Then start varying a and c. What is the difference in the effect of these two parameters on the attractors? (\*)
 
 5)  Set up a phenomenological cusp for falling in love. Follow my guidelines (see Section 3.3.1). (\*\*)
 
