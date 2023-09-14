@@ -528,4 +528,3 @@ What is the best fitting cusp model (according to the BIC) for this tricky data 
 
 8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasmanFittingCuspCatastrophe2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
 
-9)  Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (\*\*)
