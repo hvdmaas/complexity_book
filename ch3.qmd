@@ -504,9 +504,9 @@ I also recommend the BBC documentary "Case Study Catastrophe Theory Maths Founda
 
 1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to zero. Show this. (\*)
 
-2)  In Zeeman's dog aggression model fear and rage are 'rotated' control variables. How can we translate this to a model with unrotated axes? What would be the definitions of the normal and splitting axis in terms of fear and rage? (\*)
+2)  In Zeeman's dog aggression model fear and rage are 'rotated' control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
 
-3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to zero. (\*\*)
+3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to zero. Plot the bifurcation lines in GeoGebra or Desmos. (\*\*)
 
 4)  Some insight into the butterfly catastrophe $V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}$ can be gained by entering the equation in free online graphing calculators such as DesMos or GeoGebra. Set a, b, c, d to 0, -5, 0, 5. Then start varying a and c. What is the difference in the effect of these two parameters on the attractors? (\*)
 
@@ -524,7 +524,7 @@ I also recommend the BBC documentary "Case Study Catastrophe Theory Maths Founda
     data <- data.frame(z,x,y) # collect variables in data
     ```
 
-What is the best fitting cusp model (according to the BIC) for this tricky data set? (\*\*)
+What is the best fitting cusp model (according to the BIC) for this tricky data set? Why? (\*\*)
 
 8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasmanFittingCuspCatastrophe2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
 
