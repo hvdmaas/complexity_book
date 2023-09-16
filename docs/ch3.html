@@ -206,6 +206,18 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./ch5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Psychological Network Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -471,7 +483,8 @@ V^{'}(X) = {- a - bX + X}^{3} = 0.
 <p>The first part is the logistic growth equation. <span class="math inline">\(N\)</span> will grow to <span class="math inline">\(K\)</span> at a rate <span class="math inline">\(r_{b}\)</span>. Note that this is a differential equation, not a difference equation. There is no chaos in logistic growth in continuous time. The second part is the predation function and has a concave shape flattening out at <span class="math inline">\(B\)</span>. The curvature of this function is determined by <span class="math inline">\(A\)</span>. High <span class="math inline">\(A\)</span> makes the concave shape less steep, meaning that predation rather slowly reacts to the increase in budworms (more about the construction of this model later).</p>
 <p>The analytical approach to this model is to reparametrize the model so that it takes the form of a cusp. Such reparameterizations are not so easy to do yourself. The idea is to create a smaller set of new variables that are functions of the model parameters. For this model a convenient reparameterization is</p>
 <p><span id="eq-ch3-8"><span class="math display">\[
-r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}. \tag{3.8}\]</span></span></p>
+r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
+\tag{3.8}\]</span></span></p>
 <p>Using these two ‘constructed’ control variables, we can depict the bifurcation lines of the cusp as:</p>
 <div id="fig-ch3-img16" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -853,8 +866,8 @@ $$ {#eq-ch3-12} -->
 <h2 data-number="3.5" class="anchored" data-anchor-id="exercises"><span class="header-section-number">3.5</span> Exercises</h2>
 <ol type="1">
 <li><p>The equilibria of the fold are <span class="math inline">\(X = \pm \sqrt{\frac{a}{3}}\)</span>. This can can be checked by setting the first derivative to zero. Show this. (*)</p></li>
-<li><p>In Zeeman’s dog aggression model fear and rage are ‘rotated’ control variables. How can we translate this to a model with unrotated axes? What would be the definitions of the normal and splitting axis in terms of fear and rage? (*)</p></li>
-<li><p>Derive the equation for the bifurcation lines of the cusp (<span class="math inline">\(27a^{2} = 4b^{3})\)</span>, by setting the first and second derivatives to zero. (**)</p></li>
+<li><p>In Zeeman’s dog aggression model fear and rage are ‘rotated’ control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (*)</p></li>
+<li><p>Derive the equation for the bifurcation lines of the cusp (<span class="math inline">\(27a^{2} = 4b^{3})\)</span>, by setting the first and second derivatives to zero. Plot the bifurcation lines in GeoGebra or Desmos. (**)</p></li>
 <li><p>Some insight into the butterfly catastrophe <span class="math inline">\(V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}\)</span> can be gained by entering the equation in free online graphing calculators such as DesMos or GeoGebra. Set a, b, c, d to 0, -5, 0, 5. Then start varying a and c.&nbsp;What is the difference in the effect of these two parameters on the attractors? (*)</p></li>
 <li><p>Set up a phenomenological cusp for falling in love. Follow my guidelines (see Section 3.3.1). (**)</p></li>
 <li><p>Check whether indeed the Bentler data fit better with when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (*)</p></li>
@@ -866,10 +879,9 @@ $$ {#eq-ch3-12} -->
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(z,x,y) <span class="co"># collect variables in data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ol>
-<p>What is the best fitting cusp model (according to the BIC) for this tricky data set? (**)</p>
+<p>What is the best fitting cusp model (according to the BIC) for this tricky data set? Why? (**)</p>
 <ol start="8" type="1">
-<li><p>Build a Zeeman machine, collect data and fit the cusp <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">(see Example III of <a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">Grasman, van der Maas, and Wagenmakers 2009</a>)</span>. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (**)</p></li>
-<li><p>Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (**)</p></li>
+<li>Build a Zeeman machine, collect data and fit the cusp <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">(see Example III of <a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">Grasman, van der Maas, and Wagenmakers 2009</a>)</span>. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (**)</li>
 </ol>
 
 
