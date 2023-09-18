@@ -478,7 +478,7 @@ resource\ depletion
 <div id="fig-ch6-img8-old-77" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch6/image8.jpg" class="img-fluid figure-img" style="width:6.26389in"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.8: The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. From: <span class="citation" data-cites="borsboomSmallWorldPsychopathology2011">(<a href="references.html#ref-borsboomSmallWorldPsychopathology2011" role="doc-biblioref">Borsboom et al. 2011</a>)</span>.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.8: The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. From: [@borsboomSmallWorldPsychopathology2011].</figcaption>
 </figure>
 </div>
 <p>This lack of theoretical progress encouraged the development of network theory <span class="citation" data-cites="cramerComorbidityNetworkPerspective2010 cramerMajorDepressionComplex2016">(<a href="references.html#ref-cramerComorbidityNetworkPerspective2010" role="doc-biblioref">Cramer et al. 2010</a>; <a href="references.html#ref-cramerMajorDepressionComplex2016" role="doc-biblioref"><strong>cramerMajorDepressionComplex2016?</strong></a>)</span>. As mentioned in the introduction of this chapter, this line of research has become very popular. Most of this work consists of data analytic studies. In the simplest case, a questionnaire asking about the severity of symptoms is administered to a group of people, sometimes patients, sometimes a mixture of people who do and do not suffer from a disorder. A variety of psychometric approaches, discussed later in this chapter, are used to fit networks to the data. In this way, one learns to understand the structure of psychopathological networks. For example, comorbidity is modeled by bridging symptoms between network clusters <span class="citation" data-cites="cramerComorbidityNetworkPerspective2010 jonesBridgeCentralityNetwork2021">(<a href="references.html#ref-cramerComorbidityNetworkPerspective2010" role="doc-biblioref">Cramer et al. 2010</a>; <a href="references.html#ref-jonesBridgeCentralityNetwork2021" role="doc-biblioref">Jones, Ma, and McNally 2021</a>)</span>. In the case of major depression and generalized anxiety disorder, sleep problems seem to be a typical bridge symptom <span class="citation" data-cites="blankenRoleStabilizingCommunicating2018">(<a href="references.html#ref-blankenRoleStabilizingCommunicating2018" role="doc-biblioref">Blanken et al. 2018</a>)</span>.</p>
@@ -612,7 +612,7 @@ P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x}
 <figcaption class="figure-caption">Figure&nbsp;6.14: Through Hebbian learning, a random (unbalanced) network becomes balanced.</figcaption>
 </figure>
 </div>
-<p>In this case we want to update the nodes values using the Glauber dynamics (Equation <span class="math inline">\(19\)</span>), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.</p>
+<p>In this case we want to update the nodes values using the Glauber dynamics (<a href="ch4.html#eq-ch4-3">Equation&nbsp;<span>4.3</span></a>), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.</p>
 <p>Due to Hebbian learning, the network evolves from an unbalanced network (random connections) to a consistently balanced network. Without learning, we need high attention to make the attitude network behave consistently. In the Learning Ising Attitude Model (LIMA), weights increase during periods of high attention. The advantage is that in later instances less attention is required for consistent network behavior <span class="citation" data-cites="dalegeFormalApproachAttitude2020">(chapter 8 of <a href="references.html#ref-dalegeFormalApproachAttitude2020" role="doc-biblioref">J. Dalege 2020</a>)</span>. In this way we can develop stable consistent attitudes.</p>
 </section>
 <section id="the-stability-of-attitudes-and-entropy-measures" class="level4" data-number="6.3.3.4">
@@ -629,12 +629,12 @@ P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x}
 <p><span id="eq-ch6-8-old-49"><span class="math display">\[\begin{array}{r}
 H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{&lt; i,j &gt;}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
 \end{array} \tag{6.8}\]</span></span></p>
-<p>You can compare this to equation <span class="math inline">\(17\)</span>. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.</p>
+<p>You can compare this to <a href="ch4.html#eq-ch4-1">Equation&nbsp;<span>4.1</span></a>. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.</p>
 <p>The dynamics of this model are more complicated. It resembles the butterfly catastrophe <span class="citation" data-cites="dattaguptaTricriticalPointQualitative1981">(<a href="references.html#ref-dattaguptaTricriticalPointQualitative1981" role="doc-biblioref">Dattagupta 1981</a>)</span>, which has a tricritical point. The potential function has three stable fixed points for some sets of parameters (see Section 3.2.5 and the exercise about the butterfly catastrophe). This is relevant to the modeling of attitudes because it opens up the possibility to have involved stable inbetween attitude positions (see <a href="#fig-ch6-img15-old-84">Figure&nbsp;<span>6.15</span></a>). In the Ising attitude model highly involved persons always radicalize, but this more advanced model allows for involved non-partisan positions.</p>
 <div id="fig-ch6-img15-old-84" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch6/image15.jpg" class="img-fluid figure-img" style="width:5.48611in"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.15: The butterfly catastrophe, <span class="math inline">\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}\)</span>, associated with the tricritical Ising model. The potential function can have three minima (<span class="math inline">\(a = c = 0, d = 5, b\)</span> varies from 1 to -7).</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.15: The butterfly catastrophe, $V(X) = \{- aX - \\frac{1}{2}bX^{2} - \\frac{1}{3}cX^{3} - \\frac{1}{4}dX^{4} + \\frac{1}{6}X}^{6}$, associated with the tricritical Ising model. The potential function can have three minima (a = c = 0, d = 5, b varies from 1 to -7).</figcaption>
 </figure>
 </div>
 </section>
@@ -859,9 +859,6 @@ Borsboom, Denny. 2008. <span>“Psychometric Perspectives on Diagnostic Systems.
 </div>
 <div id="ref-borsboomBrainDisordersNot2019" class="csl-entry" role="listitem">
 Borsboom, Denny, Angélique O. J. Cramer, and Annemarie Kalis. 2019/ed. <span>“Brain Disorders? <span>Not</span> Really: <span>Why</span> Network Structures Block Reductionism in Psychopathology Research.”</span> <em>Behavioral and Brain Sciences</em> 42 (2019/ed): e2. <a href="https://doi.org/10.1017/S0140525X17002266">https://doi.org/10.1017/S0140525X17002266</a>.
-</div>
-<div id="ref-borsboomSmallWorldPsychopathology2011" class="csl-entry" role="listitem">
-Borsboom, Denny, Angélique O. J. Cramer, Verena D. Schmittmann, Sacha Epskamp, and Lourens J. Waldorp. 2011. <span>“The <span>Small World</span> of <span>Psychopathology</span>.”</span> <em>PLOS ONE</em> 6 (11): e27407. <a href="https://doi.org/10.1371/journal.pone.0027407">https://doi.org/10.1371/journal.pone.0027407</a>.
 </div>
 <div id="ref-borsboomFalseAlarmComprehensive2017" class="csl-entry" role="listitem">
 Borsboom, Denny, Eiko I. Fried, Sacha Epskamp, Lourens J. Waldorp, Claudia D. van Borkulo, Han L. J. van der Maas, and Angélique O. J. Cramer. 2017. <span>“False Alarm? <span>A</span> Comprehensive Reanalysis of <span>‘<span>Evidence</span> That Psychopathology Symptom Networks Have Limited Replicability’</span> by <span>Forbes</span>, <span>Wright</span>, <span>Markon</span>, and <span>Krueger</span> (2017).”</span> <em>Journal of Abnormal Psychology</em> 126: 989–99. <a href="https://doi.org/10.1037/abn0000306">https://doi.org/10.1037/abn0000306</a>.
