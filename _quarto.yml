@@ -32,14 +32,14 @@ format:
   html:
     theme: cosmo
     number-depth: 4
-    toc-depth: 4
+    toc-depth: 8
     code-copy: true
     crossref:
       chapters: true
   pdf:
     documentclass: scrbook
     number-depth: 4
-    toc-depth: 4
+    toc-depth: 8
     include-in-header: 
       text: |
         \usepackage{makeidx}
