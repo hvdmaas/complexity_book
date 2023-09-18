@@ -23,7 +23,7 @@ psychophysics in psychology. What I like about it is that it emphasizes
 the intention to arrive at a formalized, mathematically stated theory of
 social processes, often based on formalisms first developed in physics.
 An alternative label would be computational social science or
-agent-based modeling (Goldstone & Janssen, 2005).
+agent-based modeling \[@goldstoneComputationalModelsCollective2005\].
 
 In my broad definition of sociophysics, it deals with many different
 systems and processes. Examples that I have already discussed are the
@@ -36,39 +36,43 @@ includes work on segregation, cooperation, crime, economic systems, and
 much more. I will present some key examples and then turn to models of
 the social dynamics of opinions.
 
-Some important follow-up books to read are (Bowles & Gintis, 2011) on
-cooperation and altruism, (Durlauf & Young, 2001) on modeling social
-economics, the work of (Epstein, 2006, 2014; Epstein & Axtell, 1996)on
-building artificial societies and (Miller & Page, 2007) on computation
+Some important follow-up books to read are
+\[@bowlesCooperativeSpeciesHuman2011\] on cooperation and altruism,
+\[@durlaufSocialDynamics2001\] on modeling social economics, the work of
+\[@epsteinAgentZeroNeurocognitive2014;
+\@epsteinGenerativeSocialScience2006;
+\@epsteinGrowingArtificialSocieties1996\]on building artificial
+societies and \[@millerComplexAdaptiveSystems2007\] on computation
 models of social life. There are also some excellent review articles on
-this area of research (Castellano, Fortunato, et al., 2009; Noorazar,
-2020; Proskurnikov & Tempo, 2017). A less mathematically focused review
-is provided by (Flache et al., 2017).
+this area of research \[@castellanoStatisticalPhysicsSocial2009;
+\@noorazarRecentAdvancesOpinion2020;
+\@proskurnikovTutorialModelingAnalysis2017\]. A less mathematically
+focused review is provided by \[@flacheModelsSocialInfluence2017\].
 
 ## Some famous examples
 
 ### Segregation
 
 The most famous computational model for studying segregation is
-Schelling\'s model (Schelling, 1971). The simplified version of this
-model assumes a two-dimensional space, a cellular automaton as in
-NetLogo, where each location or cell is occupied by one of two types of
-agents or is empty. The density parameter determines how many locations
-are occupied. Agents stay at their location if a certain percentage of
-their 8 neighbors, $B$, are of the same type as the agent. So, if
-$B = 0\%$, nobody moves. For values of B close to 100%, everybody moves
-all the time. What Schelling showed with his model was that even low
-levels of intolerance, near 30%, lead to segregation. Thus, even if
-people can accept up to 70% of \"foreign\" neighbors, segregation still
-occurs.
+Schelling\'s model \[@schellingDynamicModelsSegregation1971\]. The
+simplified version of this model assumes a two-dimensional space, a
+cellular automaton as in NetLogo, where each location or cell is
+occupied by one of two types of agents or is empty. The density
+parameter determines how many locations are occupied. Agents stay at
+their location if a certain percentage of their 8 neighbors, $B$, are of
+the same type as the agent. So, if $B = 0\%$, nobody moves. For values
+of B close to 100%, everybody moves all the time. What Schelling showed
+with his model was that even low levels of intolerance, near 30%, lead
+to segregation. Thus, even if people can accept up to 70% of \"foreign\"
+neighbors, segregation still occurs.
 
 The NetLogo model Segregation (Social Science sample model) demonstrates
 this model. Especially at high densities, transitions between the
 unsegregated state, the segregated state and a mixed state where agents
-keep moving can be seen (Gauvin et al., 2009). Instead of playing around
-with the sliders we use the BehavioralSpace option. Figure 89 shows the
-settings for this option, the R-code and the results. Note that without
-visualizations NetLogo is pretty fast.
+keep moving can be seen \[@gauvinPhaseDiagramSchelling2009\]. Instead of
+playing around with the sliders we use the BehavioralSpace option.
+Figure 89 shows the settings for this option, the R-code and the
+results. Note that without visualizations NetLogo is pretty fast.
 
 One concept we saw in Chapter 4, in the context of Haken\'s work, was
 that of the order parameter. The order parameter literally measures the
@@ -76,10 +80,11 @@ order in the system. Finding an appropriate order parameter is not
 always easy, and multiple definitions are often possible. We look for
 one that captures the qualitative phenomena in the model, such as sudden
 changes and hysteresis. In the NetLogo simulation, I used the percentage
-of similar neighbors. (Gauvin et al., 2009) propose two, probably
-better, order parameters, a segregation coefficient, which requires the
-identification of clusters, and the density of unwanted locations, which
-better distinguishes between the three states of the system.
+of similar neighbors. \[@gauvinPhaseDiagramSchelling2009\] propose two,
+probably better, order parameters, a segregation coefficient, which
+requires the identification of clusters, and the density of unwanted
+locations, which better distinguishes between the three states of the
+system.
 
 ![](media/image1.png){width="4.717858705161855in"
 height="3.903477690288714in"}
@@ -90,17 +95,19 @@ intolerance on segregation.
 Of course, this is only an initial model that can be extended in many
 ways, some of which are already explored in Schelling\'s original paper.
 For an interesting historical sketch of this line of research, see
-(Hegselmann, 2017). A different NetLogo model inspired by Schelling\'s
-research is called \"Party.\" In this model, party-goers experience
-discomfort and change their groups if their current group consists of a
-disproportionate number of individuals of the opposite sex.
+\[@hegselmannThomasSchellingJames2017\]. A different NetLogo model
+inspired by Schelling\'s research is called \"Party.\" In this model,
+party-goers experience discomfort and change their groups if their
+current group consists of a disproportionate number of individuals of
+the opposite sex.
 
 ### The evolution of language: The naming game
 
 Languages are complex systems that emerge in a self-organizing cultural
-process (Steels, 1995). Steels developed the naming game (Figure 90) to
-study the evolution of language (for a review see, (Chen & Lou, 2019).
-(Castellano, Fortunato, et al., 2009) provides a brief review.
+process \[@steelsSelfOrganizingSpatialVocabulary1995\]. Steels developed
+the naming game (Figure 90) to study the evolution of language (for a
+review see, \[@chenNamingGameModels2019\].
+\[@castellanoStatisticalPhysicsSocial2009\] provides a brief review.
 
 ![](media/image2.png){width="3.355262467191601in"
 height="2.038079615048119in"}
@@ -184,12 +191,12 @@ difficult in a fully connected network.
 
 ### Cultural dynamics: The Axelrod model
 
-(Axelrod, 1997) introduced an influential model of cultural diffusion
-based on the effects of social interactions and homophily. Homophily
-refers to the tendency or preference for individuals to associate or
-connect with others who are similar to themselves. In Axelrod's model,
-individuals become more similar through interactions but only if they
-already share some cultural features.
+\[@axelrodDisseminationCultureModel1997\] introduced an influential
+model of cultural diffusion based on the effects of social interactions
+and homophily. Homophily refers to the tendency or preference for
+individuals to associate or connect with others who are similar to
+themselves. In Axelrod's model, individuals become more similar through
+interactions but only if they already share some cultural features.
 
 In the model, agents have F cultural features (e.g., beliefs, habits),
 each of which has Q possible nominal values. Agents are organized in
@@ -206,11 +213,12 @@ The combination of interaction and homophily creates a self-reinforcing
 dynamic that often leads to global convergence toward a single culture.
 However, for certain choices of F and Q, the model converges to a state
 of diversity. In the simulation below, I use the number of remaining
-cultures as a simple order parameter. (Castellano et al., 2000) present
-detailed analyses of the phase transitions in this model using more
-advanced order parameters. As you can imagine, this model can be
-extended in many ways, for instance by introducing ordinal instead of
-nominal states (Macy et al., 2006).
+cultures as a simple order parameter.
+\[@castellanoNonequilibriumPhaseTransition2000\] present detailed
+analyses of the phase transitions in this model using more advanced
+order parameters. As you can imagine, this model can be extended in many
+ways, for instance by introducing ordinal instead of nominal states
+\[@macyWhatSustainsStable2006\].
 
 The following R-code of this model generates the left plot in Figure 92.
 You can play with the values to see different cases.
@@ -275,14 +283,14 @@ social network. Modelers make different choices here, often fully
 connected networks are assumed because they allow an analytical
 approach, others use random networks, lattices, small world networks,
 etc. The problem is that we don\'t really know how real social networks
-work, except that they are incredibly complex (Newman & Park, 2003).
-Second, you need to define some interaction rules. For example, two
-agents might end up in the middle after a discussion, or one agent might
-copy the other\'s state, or one agent might take over the majority vote
-in its local neighborhood. Finally, you have to define opinion. A major
-division in social contagion models is whether opinions are defined as
-discrete or continuous. I will first discuss several discrete opinion
-models.
+work, except that they are incredibly complex
+\[@newmanWhySocialNetworks2003\]. Second, you need to define some
+interaction rules. For example, two agents might end up in the middle
+after a discussion, or one agent might copy the other\'s state, or one
+agent might take over the majority vote in its local neighborhood.
+Finally, you have to define opinion. A major division in social
+contagion models is whether opinions are defined as discrete or
+continuous. I will first discuss several discrete opinion models.
 
 ### Discrete opinion models 
 
@@ -297,31 +305,33 @@ system depends on the topology of the network, i.e., its dimension
 (either $d = 1$ (on a line), $d = 2$ (a lattice) or $d > 2)$ and its
 size $N$. In more than 2 dimensions and with infinite size, the voter
 system does not converge, but in other cases it converges to a state of
-all -1s or all 1s (Castellano, Fortunato, et al., 2009; Redner, 2019).
-The probability of ending up in the +1 state is equal to the initial
-probability of +1s. How long it takes to converge can also be derived
-analytically. The convergence time is proportional to $N^{2}$, for
-voters on a line ($d = 1$), $NlnN$ for $d = 2$, and $N$ for $d > 2$.
+all -1s or all 1s \[@castellanoStatisticalPhysicsSocial2009;
+\@rednerRealityinspiredVoterModels2019\]. The probability of ending up
+in the +1 state is equal to the initial probability of +1s. How long it
+takes to converge can also be derived analytically. The convergence time
+is proportional to $N^{2}$, for voters on a line ($d = 1$), $NlnN$ for
+$d = 2$, and $N$ for $d > 2$.
 
 In the heterogeneous voter model, each agent A copies the opinion of
 agent B with some probability $r_{i}$. In this way, one can study the
 effect of stubborn voters (with low $r_{i}$). It turns out that the
 small group of stubborn individuals (sometimes called zealots) can
 overcome the majority opinion. Many other variants have been analyzed,
-such as adding memory and noise to the voters (Castellano, Fortunato, et
-al., 2009). It is also possible to consider three groups, left, center,
-and right, where left and right do not interact. In this case, depending
-on the initial proportion, we end up in a state of full consensus in one
-of the states or with a mixture of extremists without centrists (Redner,
-2019). Finally, the topology of the social network plays a role. In
-general, consensus is reached quickly in scale free networks with broad
-degree distributions.
+such as adding memory and noise to the voters
+\[@castellanoStatisticalPhysicsSocial2009\]. It is also possible to
+consider three groups, left, center, and right, where left and right do
+not interact. In this case, depending on the initial proportion, we end
+up in a state of full consensus in one of the states or with a mixture
+of extremists without centrists
+\[@rednerRealityinspiredVoterModels2019\]. Finally, the topology of the
+social network plays a role. In general, consensus is reached quickly in
+scale free networks with broad degree distributions.
 
-Another approach has been proposed by (Martins, 2008). The Continuous
-Opinions and Discrete Actions (CODA) model combines discrete and
-continuous aspects of opinion dynamics. Agents act discretely but update
-their continuous opinions based on observations of other agents'
-discrete actions.
+Another approach has been proposed by
+\[@martinsContinuousOpinionsDiscrete2008\]. The Continuous Opinions and
+Discrete Actions (CODA) model combines discrete and continuous aspects
+of opinion dynamics. Agents act discretely but update their continuous
+opinions based on observations of other agents' discrete actions.
 
 There are two choice options, A and B, and agent $i$ has some subjective
 probability $p_{i}$ that A is the best option, and ${1 - p}_{i}$ for B.
@@ -332,27 +342,30 @@ choose A when A is the best option with a probability $a$ that is larger
 than .5. In running the model, it is convenient to work with the
 log-odds of probabilities, $v_{i} = ln\frac{p_{i}}{1 - p_{i}}$. Using
 the Bayes' theorem, we can update $v_{i}$ to $v_{i} + a$ when agent j
-chooses A and to $v_{i} - a$ if the choice is B. (Martins, 2008)
-integrates these decision rules with the voter model, showing extreme
-forms of polarization, i.e., a strongly bimodal distribution of
-opinions.
+chooses A and to $v_{i} - a$ if the choice is B.
+\[@martinsContinuousOpinionsDiscrete2008\] integrates these decision
+rules with the voter model, showing extreme forms of polarization, i.e.,
+a strongly bimodal distribution of opinions.
 
 #### More discrete opinion models: majority type models
 
 In the voter and in the Axelrod models, interactions are limited to two
 agents. When multiple neighbors have an impact on each agent, many new
-options arise. One option is the Ising model (Galam et al., 1982).
-Agents switch sides with a probability that depends on the states of
-their neighbors. The temperature variable in the Ising model is
-translated into randomness in the model. The external field is now
-interpreted as an external social field. In this way one can explain
-phase transitions and hysteresis in opinion dynamics.
+options arise. One option is the Ising model
+\[@galamSociophysicsNewApproach1982\]. Agents switch sides with a
+probability that depends on the states of their neighbors. The
+temperature variable in the Ising model is translated into randomness in
+the model. The external field is now interpreted as an external social
+field. In this way one can explain phase transitions and hysteresis in
+opinion dynamics.
 
-Another, deeply analyzed, option is the majority model (Galam, 2008;
-Redner, 2019). Here, a random group of voters is selected and all voters
-in this group adopt the local majority opinion. This process can be
-repeated until convergence to one opinion is reached (which will always
-happen in a finite population). (Galam, 2008) sets up this process in a
+Another, deeply analyzed, option is the majority model
+\[@galamSociophysicsReviewGalam2008;
+\@rednerRealityinspiredVoterModels2019\]. Here, a random group of voters
+is selected and all voters in this group adopt the local majority
+opinion. This process can be repeated until convergence to one opinion
+is reached (which will always happen in a finite population).
+\[@galamSociophysicsReviewGalam2008\] sets up this process in a
 hierarchical fashion (see Figure 93). Alternatively, only one voter
 could be influenced by the majority vote in its neighborhood. This
 corresponds to the Ising model with zero temperature.
@@ -363,12 +376,12 @@ height="2.5610542432195977in"}
 
 Figure 93: Bottom-up voting in hierarchical systems in the Galam model.
 
-Another case is the q-voter model (Castellano, Muñoz, et al., 2009;
-Jędrzejewski & Sznajd-Weron, 2019). Here, agents change their opinions
-only if all q-voters selected from the neighborhood agree on the other
-opinion. When $q = 1$, this reduces to the standard voter model. The
-q-voter model generally allows for a higher degree of opinion diversity
-compared to the basic voter model. The q-voter model has been
+Another case is the q-voter model \[@castellanoNonlinearVoterModel2009;
+\@jedrzejewskiStatisticalPhysicsOpinion2019\]. Here, agents change their
+opinions only if all q-voters selected from the neighborhood agree on
+the other opinion. When $q = 1$, this reduces to the standard voter
+model. The q-voter model generally allows for a higher degree of opinion
+diversity compared to the basic voter model. The q-voter model has been
 implemented in NetLogo ("qvoter_WS" in the models online available).
 
 In the basic Snzadj model, agents are placed on a line, and two
@@ -378,16 +391,16 @@ neighbor. Thus (?,1,1,?) becomes (1,1,1,1) and (?,-1,1,?) becomes
 (1,-1,1,-1). This can converge to a state of all 1s, all -1s, or a
 sequence of 1 and -1 pairs. The latter state is reached with a
 probability of 0.5. This model has also been extended in many ways, such
-as adding an election process (Sznajd-Weron et al., 2021).
+as adding an election process \[@sznajd-weronReviewSznajdModel2021\].
 
 #### Social Impact theory
 
 The last discrete model I mention here is the Social Impact Model, which
-is based on (Latané, 1981) psychological theory of social impact. Latané
-introduced many ideas and concepts from complex systems theory into
-social psychology. His psychological theory is firmly grounded in social
-psychology and supported by all kinds of evidence (Karau & Williams,
-1993).
+is based on \[@latanePsychologySocialImpact1981\] psychological theory
+of social impact. Latané introduced many ideas and concepts from complex
+systems theory into social psychology. His psychological theory is
+firmly grounded in social psychology and supported by all kinds of
+evidence \[@karauSocialLoafingMetaanalytic1993\].
 
 In this theory, opinion change depends on social impact $I$. Opinions
 $X$ are either -1 or 1. Social impact is a function of the
@@ -411,10 +424,10 @@ external field$\ H$, as in the Ising model. The dynamics of opinions is:
 $$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H_{i}\rbrack$$
 
 Thus, opinion of agents become -1 if X$(t)I_{i}(t) + H_{i}$ is negative,
-and vice versa. (Lewenstein et al., 1992) present analytical mean-field
-solutions for fully connected networks. Without individual fields, the
-model ends up with an infinite number of stationary opinion states, one
-of which is usually dominant.
+and vice versa. \[@lewensteinStatisticalMechanicsSocial1992\] present
+analytical mean-field solutions for fully connected networks. Without
+individual fields, the model ends up with an infinite number of
+stationary opinion states, one of which is usually dominant.
 
 In the presence of individual fields, some minority opinions can become
 metastable. These metastable opinions may persist for some time, but
@@ -423,7 +436,8 @@ smaller clusters. These smaller clusters can also persist for a long
 time before shrinking again, and the process repeats itself, resulting
 in what could be called staircase behavior. Such a model can explain why
 small minority groups (such as flat-earth beliefs) often persist for
-long periods of time, against all odds (Douglas et al., 2017).
+long periods of time, against all odds
+\[@douglasPsychologyConspiracyTheories2017\].
 
 ![Afbeelding met grafiek Automatisch gegenereerde
 beschrijving](media/image6.png){width="6.726847112860892in"
@@ -437,8 +451,8 @@ series. The Social Impact Model can be found in the online NetLogo
 models.
 
 Extensions of this model include learning, leadership, external
-influences and identity effects (for a review, see (Holyst et al.,
-2001).
+influences and identity effects (for a review, see
+\[@holystSocialImpactModels2001\].
 
 ### Continuous opinion models
 
@@ -446,16 +460,16 @@ influences and identity effects (for a review, see (Holyst et al.,
 
 Another line of research, with its own history, starts from the
 assumption that opinions are continuous variables for a recent review
-see, (Noorazar, 2020). A classical model is the DeGroot model, where
-agents are connected in a weighted network. At each iteration, an
-agent\'s opinion is set equal to the weighted average of all connected
-agents in the network. Thus opinions tend to converge. The
-Friedkin-Johnson model (Friedkin & Johnsen, 1990) is an extension that
-includes a confidence level for each agent. This confidence of the agent
-in his own opinion reduces the effect of others. Clustering or
-polarization in these linear models can only occur if parts of the
-network are unconnected. The Friedkin-Johnson model can be efficiently
-simulated with Grind (using the method=\'euler\' option) by:
+see, \[@noorazarRecentAdvancesOpinion2020\]. A classical model is the
+DeGroot model, where agents are connected in a weighted network. At each
+iteration, an agent\'s opinion is set equal to the weighted average of
+all connected agents in the network. Thus opinions tend to converge. The
+Friedkin-Johnson model \[@friedkinSocialInfluenceOpinions1990\] is an
+extension that includes a confidence level for each agent. This
+confidence of the agent in his own opinion reduces the effect of others.
+Clustering or polarization in these linear models can only occur if
+parts of the network are unconnected. The Friedkin-Johnson model can be
+efficiently simulated with Grind (using the method=\'euler\' option) by:
 
     FJ <- function(t, state, parms){
       with(as.list(c(state,parms)),{
@@ -480,7 +494,8 @@ connected network of agents.
 
 With an additional bias mechanism, in which confirming evidence is
 weighted more heavily relative to disconfirming evidence, polarization
-can also occur in connected networks (Dandekar et al., 2013).
+can also occur in connected networks
+\[@dandekarBiasedAssimilationHomophily2013\].
 
 #### Bounded confidence
 
@@ -491,9 +506,10 @@ to accept and consider opinions that differ from their own and will only
 update their opinions if they are within a certain range or \"bound\" of
 similarity.
 
-A simple but very interesting model is the Deffuant model (Deffuant et
-al., 2000). The initial opinions of *n* agents are randomly set to
-values between 0 and 1. At each step two agents $i$ and $j$ meet. If
+A simple but very interesting model is the Deffuant model
+\[@deffuantMixingBeliefsInteracting2000\]. The initial opinions of *n*
+agents are randomly set to values between 0 and 1. At each step two
+agents $i$ and $j$ meet. If
 $\left\lceil X_{i}(t) - X_{j}(t) \right\rceil > \epsilon$ nothing
 happens because the difference in opinion exceeds the bound $\epsilon$.
 Otherwise, they exchange opinions according to:
@@ -511,9 +527,10 @@ $\mu = .5$. However, the choice of the bound $\epsilon$ makes a big
 difference. For $\epsilon = 0,$ all agents stick to their positions, for
 $\epsilon > .5$, they all converge to $X = .5$. For intermediate values
 different forms of clustering occur (Figure 96). It has been shown that
-the topology of the network does not make much difference (Fortunato,
-2004). A drawback of this model is that it converges slowly. A fast but
-not entirely accurate code to simulate this model is: [^1]
+the topology of the network does not make much difference
+\[@fortunatoUniversalityThresholdComplete2004\]. A drawback of this
+model is that it converges slowly. A fast but not entirely accurate code
+to simulate this model is: [^1]
 
     set.seed(20)
     layout(matrix(1:4, 2, 2))
@@ -541,23 +558,24 @@ boundaries.
 With this code you can explore many scenarios and variants. One
 interesting option is to have agents with different boundaries. It turns
 out that adding some open-minded agents helps prevent polarization
-(Weisbuch et al., 2002). Also, adding some noise to X at each time step
-reduces polarization (Zhang & Zhao, 2018). One can also lower the bound
-with the number of interactions. This increases the polarization
-(Weisbuch et al., 2002). One case I find interesting is increasing the
-bound after polarization emerged for a low bound. This gives hysteresis.
-A bound of 0.5 is sometimes insufficient to reduce polarization.
-(Castellano, Fortunato, et al., 2009) review some other extensions (the
-role propaganda, for instance).
+\[@weisbuchMeetDiscussSegregate2002\]. Also, adding some noise to X at
+each time step reduces polarization \[@zhangRobustConsensusNoisy2018\].
+One can also lower the bound with the number of interactions. This
+increases the polarization \[@weisbuchMeetDiscussSegregate2002\]. One
+case I find interesting is increasing the bound after polarization
+emerged for a low bound. This gives hysteresis. A bound of 0.5 is
+sometimes insufficient to reduce polarization.
+\[@castellanoStatisticalPhysicsSocial2009\] review some other extensions
+(the role propaganda, for instance).
 
-Another well-known model is the Hegselmann-Krause (HK) model (Hegselmann
-& Krause, 2002). This model is very similar to the Deffuant model, but
-instead of communicating with one other agent, they communicate with all
-connected agents, but only if the difference in opinion with these
-agents is small enough. Thus, agents average the opinion of all
-connected agents for which the difference in opinion is less than the
-bound. This model is an extension of the DeGroot model and can be
-simulated by adding two lines to the FJ code
+Another well-known model is the Hegselmann-Krause (HK) model
+\[@rainerOpinionDynamicsBounded2002\]. This model is very similar to the
+Deffuant model, but instead of communicating with one other agent, they
+communicate with all connected agents, but only if the difference in
+opinion with these agents is small enough. Thus, agents average the
+opinion of all connected agents for which the difference in opinion is
+less than the bound. This model is an extension of the DeGroot model and
+can be simulated by adding two lines to the FJ code
 
 `    accepted ``<-`` ``abs``(``outer``(X,X,``'-'``)) ``<`` bound ``# acceptable neighbors`\
 `    M ``<-`` accepted ``*`` M`
@@ -571,38 +589,42 @@ Figure 97: Clustering in the Hegselmann & Krause model.
 
 Again, many extensions have been studied. A recent paper studies the
 case where the network topology is a function of cognitive dissonance in
-opinions (Li et al., 2020). (Baumann et al., 2020) present a continuous
-opinion model of echo chambers. Of particular interest is the
-multidimensional case (Lorenz, 2007). When agents accept interaction
+opinions \[@liOpinionDynamicsModel2020\].
+\[@baumannModelingEchoChambers2020\] present a continuous opinion model
+of echo chambers. Of particular interest is the multidimensional case
+\[@lorenzContinuousOpinionDynamics2007\]. When agents accept interaction
 based on the minimum distance along one dimension. Consensus can be
 reached more easily. The idea of bounded confidence has been associated
 with the concept of the latitude of acceptance as proposed in Social
-Judgment Theory (Sherif & Hovland, 1961). This theory also proposes a
-latitude of rejectance. There are two bounds, a lower and an upper
-bound. Below the lower bound, agents reduce their differences, between
-the bounds they ignore each other, and if they differ more than the
-upper bound, they increase their differences. This scenario has been
-investigated in (Jager & Amblard, 2005).
+Judgment Theory \[@sherifSocialJudgmentAssimilation1961\]. This theory
+also proposes a latitude of rejectance. There are two bounds, a lower
+and an upper bound. Below the lower bound, agents reduce their
+differences, between the bounds they ignore each other, and if they
+differ more than the upper bound, they increase their differences. This
+scenario has been investigated in
+\[@jagerUniformityBipolarizationPluriformity2005\].
 
 In the online library of NetLogo you can find the model "BC", which
 simulates both the standard Deffuant and the HK models.
 
 ### Empirical verification
 
-(Castellano, Fortunato, et al., 2009) note a striking imbalance between
-empirical evidence and theoretical models, in favor of the latter. It is
-not that there are no empirical data on the dynamics of opinions. Data
-come from studies on voting behavior, multi-country panel surveys,
-social media and laboratory studies (for a review see (Peralta et al.,
-2022). The problem seems to be that these data do not discriminate
-between models. Most of the data fits all opinion models, supporting the
-general modeling approach but not specific models. This relates to the
-point that current opinion models are difficult to falsify because they
-lack specificity and are too flexibility. (Flache et al., 2017) argue
-that the field suffers from a lack of systematic comparison of competing
-models. The theory construction approach outlined by (Borsboom et al.,
-2021) may be helpful here. We need a list of generally agreed phenomena
-that all models are supposed to explain.
+\[@castellanoStatisticalPhysicsSocial2009\] note a striking imbalance
+between empirical evidence and theoretical models, in favor of the
+latter. It is not that there are no empirical data on the dynamics of
+opinions. Data come from studies on voting behavior, multi-country panel
+surveys, social media and laboratory studies (for a review see
+\[@peraltaOpinionDynamicsSocial2022\]. The problem seems to be that
+these data do not discriminate between models. Most of the data fits all
+opinion models, supporting the general modeling approach but not
+specific models. This relates to the point that current opinion models
+are difficult to falsify because they lack specificity and are too
+flexibility. \[@flacheModelsSocialInfluence2017\] argue that the field
+suffers from a lack of systematic comparison of competing models. The
+theory construction approach outlined by
+\[@borsboomTheoryConstructionMethodology2021\] may be helpful here. We
+need a list of generally agreed phenomena that all models are supposed
+to explain.
 
 ## Psychosocial models
 
@@ -610,26 +632,28 @@ In the introduction to this chapter, I said that psychology is the
 victim of the simplifications necessary to develop sociophysics models.
 In this section we explore ways to make these models a bit more
 psychologically realistic. Several existing models already include
-additional psychological variables (Jager, 2017). The Social Impact
-model is a good example since it incorporates persuasiveness and
-supportiveness of agents to determine opinion change. The model is also
-based on a well-known theory in social psychology. Other models include
-stubbornness, cognitive dissonance, and confidence (Castellano,
-Fortunato, et al., 2009). All of these parameters are used to modify the
-interactions between agents.
+additional psychological variables
+\[@jagerEnhancingRealismSimulation2017\]. The Social Impact model is a
+good example since it incorporates persuasiveness and supportiveness of
+agents to determine opinion change. The model is also based on a
+well-known theory in social psychology. Other models include
+stubbornness, cognitive dissonance, and confidence
+\[@castellanoStatisticalPhysicsSocial2009\]. All of these parameters are
+used to modify the interactions between agents.
 
-Here I will discuss the model proposed in (van der Maas et al., 2020),
-which uses three dynamic variables to describe agents: information,
-involvement and opinion. Individual agents are described by the cusp
-catastrophe as shown in Figure 25. This is somewhat similar to the work
-of (Sobkowicz, 2012), who used the cusp model for the individual agent,
-using emotion and information as dynamic control variables. As in our
-model, interactions between agents change both opinions and the control
-variables. For example, agitation spreads across agents. However, in his
-opinion model, Sobkowicz reduces the cusp dynamics to a three-state
-system, where opinions are either -1, 0 or 1. We will not adopt this
-simplification, as much of the interesting dynamics (hysteresis within
-agents) are lost.
+Here I will discuss the model proposed in
+\[@vandermaasPolarizationIndividualsHierarchical2020\], which uses three
+dynamic variables to describe agents: information, involvement and
+opinion. Individual agents are described by the cusp catastrophe as
+shown in Figure 25. This is somewhat similar to the work of
+\[@sobkowiczDiscreteModelOpinion2012\], who used the cusp model for the
+individual agent, using emotion and information as dynamic control
+variables. As in our model, interactions between agents change both
+opinions and the control variables. For example, agitation spreads
+across agents. However, in his opinion model, Sobkowicz reduces the cusp
+dynamics to a three-state system, where opinions are either -1, 0 or 1.
+We will not adopt this simplification, as much of the interesting
+dynamics (hysteresis within agents) are lost.
 
 ### Networks of attitude networks
 
@@ -637,17 +661,20 @@ Our starting point is the Ising Attitude Model explained in Chapter 6.
 In this model, attitudes or opinions are conceptualized as networks of
 feelings, behaviors, and beliefs about the issue. This new view of
 attitudes has been well received in the literature and applied to a
-number of attitudes (e.g., (Chambon et al., 2022; Turner-Zwinkels &
-Brandt, 2022; Zwicker et al., 2020). The idea is to use this attitude
+number of attitudes (e.g., \[@chambonUnderstandingChangeCOVID192022;
+\@turner-zwinkelsBeliefSystemNetworks2022;
+\@zwickerApplyingAttitudeNetwork2020\]. The idea is to use this attitude
 network model as a model for individual agents.
 
 The resulting model becomes very complex, it is a networks of networks
 model. This is not a new idea. Hierarchical or multilayer network
-models, such as multilayer neural networks ((Treur, 2019) and multilayer
-voter models (Masuda, 2014), have been applied in many domains (for a
-review, see (Boccaletti et al., 2014). However, such a model contains an
-enormous number of parameters and is hard to study. We take a simpler
-approach.
+models, such as multilayer neural networks
+(\[@treurNetworkOrientedModelingAdaptive2019\] and multilayer voter
+models \[@masudaVoterModelTwoclique2014\], have been applied in many
+domains (for a review, see
+\[@boccalettiStructureDynamicsMultilayer2014\]. However, such a model
+contains an enormous number of parameters and is hard to study. We take
+a simpler approach.
 
 As discussed in Section 6.3.3.1, the average behavior of the spins in
 the Ising model (the mean field) can be represented as a cusp
@@ -672,7 +699,8 @@ makes assumptions about a) the topology of the network, b) the
 interactions between agents, and c) the definition of opinion.
 
 The qualitative results of the HIOM do not depend on the topology of the
-social network. In (van der Maas et al., 2020) the results are
+social network. In
+\[@vandermaasPolarizationIndividualsHierarchical2020\] the results are
 replicated for different topologies (e.g., 2d lattices, stochastic block
 models). However, as in other opinion models, more subtle results (e.g.,
 convergence speed) are likely to depend on the network topology. For
@@ -696,12 +724,13 @@ Ising Attitude Model. First, this model assumes that attitude nodes
 (representing feelings, beliefs and behaviors towards the attitude
 object) are binary (-1,1). This is clearly debatable. Nodes might be
 better defined as (0,1) nodes, (-1,0,1) nodes, or even continuous value
-nodes as in the XY model (Kosterlitz, 1974). Second, we assume
+nodes as in the XY model
+\[@kosterlitzCriticalPropertiesTwodimensional1974\]. Second, we assume
 undirected pairwise interactions between nodes, whereas there is much to
 be said for directed effects. Third, attitude networks should be
 reasonably balanced (see Section 6.3.3.3). To some extent, these
 assumptions can be relaxed without breaking the link to the cusp (see
-the appendix of (van der Maas et al., 2020).
+the appendix of \[@vandermaasPolarizationIndividualsHierarchical2020\].
 
 In the HIOM, information and attention are updated based on interactions
 between agents. Information and attention are two orthogonal axes in the
@@ -832,9 +861,9 @@ In the standard setup, you can see that high attention (set
 difference in information (set decay_I to .5), the polarization remains
 even if the difference in underlying information is 0. Only if you also
 decrease attention (set %active-agents low), the polarization
-disappears. This is the first simulation described in (van der Maas et
-al., 2020). The second and third simulation are described in the next
-two sections.
+disappears. This is the first simulation described in
+\[@vandermaasPolarizationIndividualsHierarchical2020\]. The second and
+third simulation are described in the next two sections.
 
 #### The persuasion paradox
 
@@ -880,7 +909,8 @@ vegetarian point of view who actually eats meat. I claim to be such a
 vegetarian, but this position is not generally accepted in my local
 environment.
 
-The scenario, simulated in (van der Maas et al., 2020), consists of a
+The scenario, simulated in
+\[@vandermaasPolarizationIndividualsHierarchical2020\], consists of a
 majority of low-involved meat eaters and highly involved vegetarians.
 The meat eaters refuse to talk to the vegetarians due to bounded
 confidence, leading to increased polarization.
@@ -903,8 +933,8 @@ to polarization. In the lower panels, some vegetarians are perturbed
 towards meat eating. These perturbed agents have I \< 0 and O \> 0,
 which is possible because A \> 0 (hysteresis). Since O \> 0, these
 agents can exchange information with meat eaters, leading to the spread
-of vegetarianism. For simulation details, see (van der Maas et al.,
-2020).
+of vegetarianism. For simulation details, see
+\[@vandermaasPolarizationIndividualsHierarchical2020\].
 
 #### Variants of the HIOM
 
@@ -935,17 +965,17 @@ decreases, this translates into fewer connections.
 
 A more radical simplification that still uses the attention/involvement
 idea is a voter model with three votes (leftist, centrist, and
-rightist), as in the constrained 3-state voter model (Redner, 2019).
-Leftists and rightists don\'t talk to each other (bounded confidence),
-but they do talk to the centrists. What we add to this model is
-attention. Extremists (left and right) have high attention, while
-centrists have low attention. As in the HIOM, more attentive agents are
-more persuasive, so centrists tend to become more extreme due to
-interactions. On the other hand, attention is costly and there is a
-probability that extremists spontaneously decay to the centrist
-position. Such a model can be studied analytically. This voter type
-model has no within-subject hysteresis and will show less interesting
-behavior.
+rightist), as in the constrained 3-state voter model
+\[@rednerRealityinspiredVoterModels2019\]. Leftists and rightists don\'t
+talk to each other (bounded confidence), but they do talk to the
+centrists. What we add to this model is attention. Extremists (left and
+right) have high attention, while centrists have low attention. As in
+the HIOM, more attentive agents are more persuasive, so centrists tend
+to become more extreme due to interactions. On the other hand, attention
+is costly and there is a probability that extremists spontaneously decay
+to the centrist position. Such a model can be studied analytically. This
+voter type model has no within-subject hysteresis and will show less
+interesting behavior.
 
 What I also like less is that the HIOM is not complex enough. A huge
 simplification is that we have left out the fact that we have more than
@@ -972,10 +1002,11 @@ model (see Section 6.3.3.5), where the attitude nodes have three states
 (-1, 0, 1) instead of only two. The resulting dynamic equation is the
 butterfly catastrophe which has four instead of two control variables.
 Building this in the HIOM will be a challenge. The Blume Capel model has
-also been proposed as a between person opinion model (Barbaro et al.,
-2013; Ferri et al., 2022). My dislike in this case is based on limited
-evidence. Demonstration with data that increased involvement can lead to
-trimodal distribution is needed.
+also been proposed as a between person opinion model
+\[@barbaroTerritorialDevelopmentsBased2013;
+\@ferriEquilibriumDynamicsThreestate2022\]. My dislike in this case is
+based on limited evidence. Demonstration with data that increased
+involvement can lead to trimodal distribution is needed.
 
 ### Cascading transitions in other psychosocial systems
 
@@ -998,14 +1029,15 @@ will also apply this model to collective learning processes.
 ## Psychosociophysics
 
 Neglecting the social world while attempting to model complex
-psychological processes may lead to inaccurate outcomes (Sobkowicz,
-2020). It is crucial for psychologists engaged in modeling to
-familiarize themselves with prominent sociophysics modeling techniques.
-The objective of this chapter was to offer a comprehensive overview of
-these models, but it is important to note that this review is not
-exhaustive. As new models continue to emerge, the foundational knowledge
-provided here will, hopefully, enable readers to stay informed and
-assess their applicability to psychological inquiries.
+psychological processes may lead to inaccurate outcomes
+\[@sobkowiczWhitherNowOpinion2020\]. It is crucial for psychologists
+engaged in modeling to familiarize themselves with prominent
+sociophysics modeling techniques. The objective of this chapter was to
+offer a comprehensive overview of these models, but it is important to
+note that this review is not exhaustive. As new models continue to
+emerge, the foundational knowledge provided here will, hopefully, enable
+readers to stay informed and assess their applicability to psychological
+inquiries.
 
 Similarly, excluding psychological factors while modeling the social
 world can be counterproductive. It is essential to emphasize the need
