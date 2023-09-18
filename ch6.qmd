@@ -26,7 +26,7 @@ Nodes can be in the center of a network or in the periphery. This should not be 
 
 There are many methods available in R for creating and visualizing networks and for computing properties of networks. The igraph and qgraph libraries are very useful. It is a good idea to do a bit of experimentation with this R code below by varying the parameter values.
 
-``` R
+``` r
 library(igraph);library(qgraph)
 g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
 plot(g1) # an undirected network with 3 nodes
@@ -111,18 +111,18 @@ j \neq i
 \end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W$$
 
 $$\begin{array}{r}
-K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i} 42)
-\end{array}$$
+K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i}
+\end{array}$$ {#eq-ch6-1-old-42}
 
-Where $X_{i}\ldots X_{w}\$denote the cognitive processes, $a$ the growth rates, $K$ the limited resources for each $X$ (a weighted sum of a genetic ($G$) and an environmental ($E$) part), and $M$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age (see the 2006 paper).
+Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $a$ the growth rates, $K$ the limited resources for each $X$ (a weighted sum of a genetic ($G$) and an environmental ($E$) part), and $M$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age (see the 2006 paper).
 
-![The mutualism model. The self-loops, depicted in red, have an excitatory (\$aX\$) and an inhibitory part (\$- aX\^{2}/K\$).](media/ch6/image6.jpg){#fig-ch6-img6-old-75 width="2.333862642169729in"}
+![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/image6.jpg){#fig-ch6-img6-old-75 width="2.333862642169729in"}
 
 When $M$ contains mostly negative values, the model is known as a competitive Lotka-Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka-Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we not see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
 
 The mutualism model in Grind is specified as follows:
 
-``` R
+``` r
 mutualism <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:nr_var]
@@ -134,7 +134,7 @@ mutualism <- function(t, state, parms){
 
 A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (tmax=60) for each person. We can then compute the correlations and check if they are positive. For each person, we resample $a$, $K$ and the initial values of $X$, but $M$ is the same across persons. Note that the M-values should not be set to high because we then end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
 
-``` R
+``` r
 layout(matrix(1:2,1,2))
 nr_var <- 12 # number of tests, abilities (W)
 nr_of_pp <- 500
@@ -157,7 +157,7 @@ hist(cor(data)[cor(data)<1],main='positive manifold',
      xlab='between test correlations',col='lightgreen') # positive manifold
 ```
 
-![A typical run of the mutualism model for one subject and the distribution of correlations between \$X\$ values across subjects.](media/ch6/image7.jpg){#fig-ch6-img7-old-76 width="3.1872594050743657in"}
+![A typical run of the mutualism model for one subject and the distribution of correlations between $X$ values across subjects.](media/ch6/image7.jpg){#fig-ch6-img7-old-76 width="3.1872594050743657in"}
 
 #### Abnormal development
 
@@ -170,8 +170,8 @@ The growth of the resource $r_{j}$ consists of two parts. The first part models 
 $$\frac{dX_{i}\ }{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}})$$
 
 $$\begin{array}{r}
-\frac{dR_{j}\ }{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}} 43)
-\end{array}$$
+\frac{dR_{j}\ }{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}
+\end{array}$$ {#eq-ch6-2-old-43}
 
 What has been shown for this and related models is that you will not get more species surviving than there are resources. Another famous quote from Robert May is "There is no comfortable theorem assuring that increased diversity and complexity beget enhanced community stability; rather, as a mathematical generality, the opposite is true. The task, then, is to elucidate the devious strategies which make for stability in enduring natural systems. There will be no one simple answer to these questions." Thus, given a limited number of resources (time, money, educational support), we should expect early specialization in only a few skills.
 
@@ -188,9 +188,9 @@ $$
 \frac{dR_{j}}{dt} = r\left( r_{\max} - R_{j} \right) - R_{j}\sum_{i = 1}^{W}{b_{ij}\frac{dX_{i}}{dt}}\ \left\{ \begin{array}{r}
 growth - dependent\  \\
 resource\ depletion
-\end{array} \right\}\# 44) \\
+\end{array} \right\} \\
 \end{array}
-$$
+$$ {#eq-ch6-3-old-44}
 
 #### The wiring of intelligence
 
@@ -208,7 +208,7 @@ As with the mutualism model, this is an alternative to the common cause view. De
 
 [^ch6-1]: The original title of this paper was "No reason to p," but the editor did not think it was funny.
 
-![The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. From: \[\@borsboomSmallWorldPsychopathology2011\].](media/ch6/image8.jpg){#fig-ch6-img8-old-77 width="6.263888888888889in"}
+![The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. From: [@borsboomSmallWorldPsychopathology2011].](media/ch6/image8.jpg){#fig-ch6-img8-old-77 width="6.263888888888889in"}
 
 This lack of theoretical progress encouraged the development of network theory [@cramerComorbidityNetworkPerspective2010; @cramerMajorDepressionComplex2016]. As mentioned in the introduction of this chapter, this line of research has become very popular. Most of this work consists of data analytic studies. In the simplest case, a questionnaire asking about the severity of symptoms is administered to a group of people, sometimes patients, sometimes a mixture of people who do and do not suffer from a disorder. A variety of psychometric approaches, discussed later in this chapter, are used to fit networks to the data. In this way, one learns to understand the structure of psychopathological networks. For example, comorbidity is modeled by bridging symptoms between network clusters [@cramerComorbidityNetworkPerspective2010; @jonesBridgeCentralityNetwork2021]. In the case of major depression and generalized anxiety disorder, sleep problems seem to be a typical bridge symptom [@blankenRoleStabilizingCommunicating2018].
 
@@ -247,12 +247,12 @@ The basic assumptions of the Ising Attitude Model are that nodes are binary (e.g
 Given these simplifying assumptions, which can be relaxed in various ways, we arrive at the random field Ising model @fytasReviewRecentDevelopments2018. This model is not too different from the Ising model described in Chapter 4, except that the first term now has two components, a general external effect ($\tau$) and an effect of node-specific (\$t\_{i})\\ \$thresholds ('I just like the taste of chicken a lot'). The random field Ising attitude model can then be defined as:
 
 $$\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{< ij >}^{}{{W_{ij}x}_{i}x_{j}} 45)
-\end{array}$$
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{< ij >}^{}{{W_{ij}x}_{i}x_{j}}
+\end{array}$$ {#eq-ch6-4-old-45}
 
 $$\begin{array}{r}
-P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x} \right) \right)}{Z} 46)
-\end{array}$$
+P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x} \right) \right)}{Z}
+\end{array}$$ {#eq-ch6-5-old-46}
 
 Another difference from the original Ising model introduced in Chapter 4 is that the interactions are now weighted and can even be negative. The main problem is the same. To compute the probability of a state, one has to compute $Z$, which is the $\sum_{< \mathbf{x} >}^{}{exp( - AH\left( \mathbf{x} \right))}$, i.e., a sum over all possible states ($2^{n}$). For large values of $n$ this is not feasible. One solution is to take a random initial state and use Glauber dynamics to update the states until an equilibrium state is reached. The Glauber algorithm does not require $Z$. There are faster but less intuitive algorithms, the most popular being the Metropolis-Hastings algorithm, which is a slight modification of the Glauber dynamics presented in Chapter 4.
 
@@ -268,7 +268,7 @@ This mean-field approximation is very robust. In @vandermaasPolarizationIndividu
 
 The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($W$), which for the Curie Wiess model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$ is the inverse of the temperature ($1/T$).
 
-``` R
+``` r
 library("IsingSampler")
 n <- 10 # nodes
 W <- matrix(.1,n,n); diag(W)=0
@@ -286,7 +286,7 @@ hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 
 In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds. Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
-``` R
+``` r
 layout(1)
 N <- 400
 n <- 10
@@ -312,14 +312,14 @@ These connectionist attitude models are capable of "learning", i.e., adjusting t
 
 *\
 *$$\begin{array}{r}
-\mathrm{\Delta}W_{i,j} = \epsilon\left( 1 - \left| W_{i,j} \right| \right)x_{i}x_{j} - \lambda W_{i,j} 47)
-\end{array}$$
+\mathrm{\Delta}W_{i,j} = \epsilon\left( 1 - \left| W_{i,j} \right| \right)x_{i}x_{j} - \lambda W_{i,j}
+\end{array}$$ {#eq-ch6-6-old-47}
 
 Weights will grow to 1 if the nodes they connect are consistently either both 1 or both -1. If they consistently differ in value, the weight grows to -1. If the nodes behave inconsistently, the weight shrinks to 0.
 
 In R, this can be implemented as follows:
 
-``` R
+``` r
 library(qgraph)
 hamiltonian=function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
 glauber_step = function(x,n,t,w,beta)
@@ -361,24 +361,24 @@ So, adding Hebbion learning to the Ising attitude model leads to stable and cons
 [^ch6-2]: Assuming that all the attitude states (items) are reencoded as positive (or negative) valued items.
 
 $$\begin{array}{r}
- - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}} 48)
-\end{array}$$
+ - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}
+\end{array}$$ {#eq-ch6-7-old-48}
 
-Note that we sum over all microstate ($2^{n})$. For small networks we can compute this measure using the IsingEntrophy() function of the IsingSampler package. There is much more to say about the different entropy measures. For instance, Shannon entropy (a measure in information theory) and Gibbs entropy have the same mathematical definition but are derived from completely different lines of reasoning. An introduction to the discussion on entropy measures can be found at Entropy page of Wikipedia.
+Note that we sum over all microstate ($2^{n})$. For small networks we can compute this measure using the `IsingEntrophy()` function of the IsingSampler package. There is much more to say about the different entropy measures. For instance, Shannon entropy (a measure in information theory) and Gibbs entropy have the same mathematical definition but are derived from completely different lines of reasoning. An introduction to the discussion on entropy measures can be found at Entropy page of Wikipedia.
 
 #### Tricriticality
 
 A new direction of research concerns Ising type models with trichotomic node values (-1,0,1). In physics this case is known as the tricritical Ising model or the Blume Capel model [@saulTricriticalBehaviorBlumeCapel1974]. In physics, the states +1 and -1 could represent the spin of a particle pointing up or down, while 0 could represent a non-magnetic or spinless state. In an attitude model, +1 and -1 may represent pro and con beliefs, while 0 represents a neutral belief. The Hamiltonian of the model includes a penalty for the -1 and +1 states:
 
 $$\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}\#
-\end{array}49)$$
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
+\end{array}$$ {#eq-ch6-8-old-49}
 
 You can compare this to equation $17$. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.
 
 The dynamics of this model are more complicated. It resembles the butterfly catastrophe [@dattaguptaTricriticalPointQualitative1981], which has a tricritical point. The potential function has three stable fixed points for some sets of parameters (see Section 3.2.5 and the exercise about the butterfly catastrophe). This is relevant to the modeling of attitudes because it opens up the possibility to have involved stable inbetween attitude positions (see @fig-ch6-img15-old-84). In the Ising attitude model highly involved persons always radicalize, but this more advanced model allows for involved non-partisan positions.
 
-![The butterfly catastrophe, \$V(X) = {- aX - \\frac{1}{2}bX\^{2} - \\frac{1}{3}cX\^{3} - \\frac{1}{4}dX\^{4} + \\frac{1}{6}X}\^{6}\$, associated with the tricritical Ising model. The potential function can have three minima (a = c = 0, d = 5, b varies from 1 to -7).](media/ch6/image15.jpg){#fig-ch6-img15-old-84 width="5.486111111111111in"}
+![The butterfly catastrophe, $V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}$, associated with the tricritical Ising model. The potential function can have three minima ($a = c = 0, d = 5, b$ varies from 1 to -7).](media/ch6/image15.jpg){#fig-ch6-img15-old-84 width="5.486111111111111in"}
 
 ## Psychometric network techniques
 
@@ -404,7 +404,7 @@ Finally, I mention semantic network analysis again. A recent review of statistic
 
 In the section on the mutualism model, I provided code to simulate data. These data can be fitted using JASP. By re-running the previous code and adding
 
-``` R
+``` r
 write.table(file='mutualism.txt',data,ro=F,sep='\t') # write data for JASP
 ```
 
@@ -414,7 +414,7 @@ Mutualism is an alternative explanation for the positive manifold, which means t
 
 As discussed, cross-sectional networks do not provide information about the direction of effects. We can illustrate this as follows.
 
-``` R
+``` r
 M[,1] <- .2 # strong influence of X1 on all others
 M[2,] <- .2 # strong influence on X2 by all others
 M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
@@ -422,7 +422,7 @@ M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 
 If we rerun the code and create a centrality plot in JASP, we will see the risks of centrality analysis in cross-sectional networks. Node 2 is the most central, but we know from the simulation that this is because it is influenced by all the others. The node with the most causal power (node 1) does not turn out to be an important central node. With time series data, we can estimate the direction of the effects. We do this in R:
 
-``` R
+``` r
 library("graphicalVAR")
 # make time series for one persons with some stochastic effects
 data <- run(odes=mutualism, tmax=1000,table=T,timeplot = (i==1),legend=F, after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
@@ -439,7 +439,7 @@ The results are shown in @fig-ch6-img16-old-85. Only the time-series approach pr
 
 The M-matrix can take different forms. The typical multifactor structure can be achieved with a block structure.
 
-``` R
+``` r
 set.seed(1)
 factors <- 3
 M <- matrix(0,nr_var,nr_var)
@@ -460,7 +460,7 @@ In JASP, you can perform network and confirmatory factor analysis. In the latter
 
 With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
 
-``` R
+``` r
 library("IsingSampler")
 library("IsingFit")
 set.seed(1)
@@ -481,7 +481,7 @@ plot(thresholds,type='p',bty='n',xlab='node',ylab='Threshold',cex=2,cex.lab=1.5)
 
 ![The true (original) and the estimated Ising model are in good agreement. The thresholds are also well estimated from the data.](media/ch6/image18.jpg){#fig-ch6-img18-old-87 width="3.9345406824146982in"}
 
-An empirical example is provided in@dalegeNetworkAnalysisAttitudes2017. The open-access data (N = 5728) come from the American National Election Study (ANES) of 2012 on evaluative reactions toward Barack Obama. The items and abbreviations are:
+An empirical example is provided in\@dalegeNetworkAnalysisAttitudes2017. The open-access data (N = 5728) come from the American National Election Study (ANES) of 2012 on evaluative reactions toward Barack Obama. The items and abbreviations are:
 
 | **Items tapping beliefs**             | **Abbreviation** |
 |:--------------------------------------|:-----------------|
@@ -501,7 +501,7 @@ An empirical example is provided in@dalegeNetworkAnalysisAttitudes2017. The open
 
 We can use Isingfit and add community detection:
 
-``` R
+``` r
 Obama <- read.table("data/Obama.txt",header=T) # see book data folder
 ObamaFit <- IsingFit(Obama,plot=F)
 ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 'undirected', weighted = TRUE,     add.colnames = FALSE)
