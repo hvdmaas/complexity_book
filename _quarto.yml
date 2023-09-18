@@ -20,6 +20,7 @@ book:
     - ch4.qmd
     - ch5.qmd
     - ch6.qmd
+    - ch7.qmd
     - references.qmd
 
 
@@ -49,5 +50,5 @@ format:
     #fontfamily: 
     crossref:
       chapters: true
-editor: source
+editor: visual
 
