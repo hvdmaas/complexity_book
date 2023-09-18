@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./ch8.html" rel="next">
 <link href="./ch6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -220,6 +220,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./ch7.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sociophysics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -492,7 +498,7 @@ div.csl-indent {
 <p><span id="eq-ch7-2-old-51"><span class="math display">\[\begin{array}{r}
 X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)
 \end{array} \tag{7.2}\]</span></span></p>
-<p>So, if <span class="math inline">\(\mu = .5\)</span>, they find each other in the middle. If <span class="math inline">\(\mu = 1\)</span>, they take each other’s position, as in the voter model. The value of <span class="math inline">\(\mu\)</span> does not make much difference but the model converges fastest with <span class="math inline">\(\mu = .5\)</span>. However, the choice of the bound <span class="math inline">\(\epsilon\)</span> makes a big difference. For <span class="math inline">\(\epsilon = 0,\)</span> all agents stick to their positions, for <span class="math inline">\(\epsilon &gt; .5\)</span>, they all converge to <span class="math inline">\(X = .5\)</span>. For intermediate values different forms of clustering occur (@fig-ch7-img8-old-96). It has been shown that the topology of the network does not make much difference <span class="citation" data-cites="fortunatoUniversalityThresholdComplete2004">(<a href="references.html#ref-fortunatoUniversalityThresholdComplete2004" role="doc-biblioref">Fortunato 2004</a>)</span>. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>So, if <span class="math inline">\(\mu = .5\)</span>, they find each other in the middle. If <span class="math inline">\(\mu = 1\)</span>, they take each other’s position, as in the voter model. The value of <span class="math inline">\(\mu\)</span> does not make much difference but the model converges fastest with <span class="math inline">\(\mu = .5\)</span>. However, the choice of the bound <span class="math inline">\(\epsilon\)</span> makes a big difference. For <span class="math inline">\(\epsilon = 0,\)</span> all agents stick to their positions, for <span class="math inline">\(\epsilon &gt; .5\)</span>, they all converge to <span class="math inline">\(X = .5\)</span>. For intermediate values different forms of clustering occur (<a href="#fig-ch7-img8-old-96">Figure&nbsp;<span>7.8</span></a>). It has been shown that the topology of the network does not make much difference <span class="citation" data-cites="fortunatoUniversalityThresholdComplete2004">(<a href="references.html#ref-fortunatoUniversalityThresholdComplete2004" role="doc-biblioref">Fortunato 2004</a>)</span>. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>iter <span class="ot">&lt;-</span> <span class="dv">50</span>; mu <span class="ot">&lt;-</span> .<span class="dv">5</span>; n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
@@ -589,9 +595,9 @@ I_{i} = {{decay}_{I}\ (I}_{i} + Ν(m_{I},s_{I}))
 <ul>
 <li><p>For each agent randomly choose a neighbor as partner in the interaction.</p></li>
 <li><p>Add attention to both agents (<a href="#eq-ch7-5-old-54">Equation&nbsp;<span>7.5</span></a>, <span class="math inline">\(+ \ d_{A}u_{i}\)</span>).</p></li>
-<li><p>Exchange information ( <a href="#eq-ch7-6-old-55">Equation&nbsp;<span>7.6</span></a>).</p></li>
+<li><p>Exchange information (<a href="#eq-ch7-6-old-55">Equation&nbsp;<span>7.6</span></a>).</p></li>
 </ul></li>
-<li><p>Apply decay in <span class="math inline">\(A\)</span> to all agents (@eq-ch7-5-old-54, <span class="math inline">\({\ decay}_{A}A_{i}\)</span>).</p></li>
+<li><p>Apply decay in <span class="math inline">\(A\)</span> to all agents (<a href="#eq-ch7-5-old-54">Equation&nbsp;<span>7.5</span></a>, <span class="math inline">\({\ decay}_{A}A_{i}\)</span>).</p></li>
 <li><p>Add noise and apply decay in I to all agents (<a href="#eq-ch7-6-old-55">Equation&nbsp;<span>7.6</span></a>, <span class="math inline">\({decay_{I}\ (I}_{i} + Ν(0,s_{I})\)</span>).</p></li>
 <li><p>Update opinion <span class="math inline">\(O\)</span> in all agents (<a href="#eq-ch7-3-old-52">Equation&nbsp;<span>7.3</span></a>).</p></li>
 </ul></li>
@@ -608,7 +614,7 @@ I_{i} = {{decay}_{I}\ (I}_{i} + Ν(m_{I},s_{I}))
 </section>
 <section id="the-persuasion-paradox" class="level4" data-number="7.4.1.4">
 <h4 data-number="7.4.1.4" class="anchored" data-anchor-id="the-persuasion-paradox"><span class="header-section-number">7.4.1.4</span> The persuasion paradox</h4>
-<p>Suppose we have a network of conservative but low attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists’ opinion to spread quickly. They initiate all interactions (according to <a href="#eq-ch7-4-old-53">Equation&nbsp;<span>7.4</span></a>) and have much more impact on their interaction partners than vice versa (@eq-ch7-6-old-55). However, this is not what happens. This scenario leads to polarization. The attention of the conservatives is raised, and people get a strong opinion against the activists. <a href="#fig-ch7-img11-old-99">Figure&nbsp;<span>7.11</span></a> shows this effect, which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selection ‘setup-black-pete’ and ‘add-activists’. Activists can now be added by clicking in the world. Vary persuasion <span class="math inline">\(p\)</span> and <span class="math inline">\(d_{A}\ (\)</span>da) to see different effects.</p>
+<p>Suppose we have a network of conservative but low attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists’ opinion to spread quickly. They initiate all interactions (according to <a href="#eq-ch7-4-old-53">Equation&nbsp;<span>7.4</span></a>) and have much more impact on their interaction partners than vice versa (<a href="#eq-ch7-6-old-55">Equation&nbsp;<span>7.6</span></a>). However, this is not what happens. This scenario leads to polarization. The attention of the conservatives is raised, and people get a strong opinion against the activists. <a href="#fig-ch7-img11-old-99">Figure&nbsp;<span>7.11</span></a> shows this effect, which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selection ‘setup-black-pete’ and ‘add-activists’. Activists can now be added by clicking in the world. Vary persuasion <span class="math inline">\(p\)</span> and <span class="math inline">\(d_{A}\ (\)</span>da) to see different effects.</p>
 <p>What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. Without a cusp for the individual opinion dynamics, this form of polarization would not occur.</p>
 <div id="fig-ch7-img11-old-99" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -654,8 +660,8 @@ I_{i} = {{decay}_{I}\ (I}_{i} + Ν(m_{I},s_{I}))
 <section id="exercises" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.6</span> Exercises</h2>
 <ol type="1">
-<li><p>Re-run the Schelling simulation (@fig-ch7-img1-old-89) with density of 50 instead of 97. Are the results different? Submit your plot. (*)</p></li>
-<li><p>Implement the equations (@eq-ch7-1-old-50) for the simple naming game in Grind. Show that the case where all three options A, B, and AB coexist is an unstable fixed point. (**)</p></li>
+<li><p>Re-run the Schelling simulation (<a href="#fig-ch7-img1-old-89">Figure&nbsp;<span>7.1</span></a>) with density of 50 instead of 97. Are the results different? Submit your plot. (*)</p></li>
+<li><p>Implement the equations (<a href="#eq-ch7-1-old-50">Equation&nbsp;<span>7.1</span></a>) for the simple naming game in Grind. Show that the case where all three options A, B, and AB coexist is an unstable fixed point. (**)</p></li>
 <li><p>What happens in the Axelrod model when F=10 and Q=1. Why? (*)</p></li>
 <li><p>Implement the 1d voter model in either R or NetLogo (using the BehaviorSpace and R for data analysis). Check that the probability of convergence to a state is equal to its initial proportion. Then check that the convergence time is a quadratic function of N by plotting the square root of this time versus N. Take the average of these times for at least 20 runs. (**)</p></li>
 <li><p>In the Social Impact model, does the staircase behavior depend on the max-h parameter? (*)</p></li>
@@ -1079,8 +1085,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch8.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Epilogue</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
