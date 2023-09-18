@@ -154,7 +154,7 @@ A famous example of a system of three coupled differential equations is the SIR 
 
 ### Fitting models: stochasticity versus noise
 
-Grind includes an option to fit dynamical systems models. With `fit()`, based on the modFit function from the FME package [@soetaert2010], one can estimate the model parameters given a data set. These functions also provide confidence intervals, allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.
+Grind includes an option to fit dynamical systems models. With `fit()`, based on the `modFit()` function from the FME package [@soetaert2010], one can estimate the model parameters given a data set. These functions also provide confidence intervals, allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.
 
 I will illustrate the use of `fit()` on three data sets created with the original Lotka-Volterra model from the previous section. The first data set is the deterministic data set, the data that follows directly from the code above. The second one is created using a stochastic Lotka-Volterra model. How this works will be explained in the next section. The third is a deterministic data set with measurement error. We will see that the last two cases are very different.
 
@@ -237,7 +237,7 @@ high <- newton(s=c(X=1)) # again starting from X = 1
 continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 ```
 
-![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable \$a\$ until a bifurcation point is found](media/ch5/image3.jpg){#fig-ch5-img3-old-51 width="3.1288517060367456in"}
+![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found](media/ch5/image3.jpg){#fig-ch5-img3-old-51 width="3.1288517060367456in"}
 
 Another great tool in R is the deBif package by Andre M. de Roos. This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
 
@@ -799,7 +799,7 @@ To make this model work we need to make one adjustment. We replace $\sum_{j \neq
 
 The code to simulate this model is:
 
-``` R
+``` r
 set.seed(1)
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
