@@ -2,7 +2,7 @@
 # -------------------------------------------------------------------------
 # chapter 2 R- Figures ----------------------------------------------------
 # -------------------------------------------------------------------------
-source("final-theme.R")
+source("r-figures-code/final-theme.R")
 
 # fig 2.1 -----------------------------------------------------------------
 
@@ -20,7 +20,7 @@ ggplot(tibble(x), aes(x = row_number(x), y = x))+
   labs(x= 'time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
 
-ggsave('fig-ch2-img1.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img1.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
 dev.off()
 # Fig 2.2 -----------------------------------------------------------------
 
@@ -35,7 +35,7 @@ ggplot(tibble(time = rep(1:n), x = x), aes(x = time, y = x))+
   geom_point(shape = 21, fill = colors[4], size = 2, stroke = 1, color = 'white')+
   labs(x= 'time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
-ggsave('fig-ch2-img2.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img2.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
 dev.off()
 # -------------------------------------------------------------------------
 # Fig 2.3 -----------------------------------------------------------------
@@ -56,7 +56,7 @@ ggmatplot(x,plot_type = "line", color = 'black',
           linewidth = .2, linetype = 1, xlab = "time",ylab = 'x')+ theme_minimal()+
   theme1 + theme(legend.position = 'none')
 
-ggsave('fig-ch2-img3.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img3.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
 dev.off()
 
 
@@ -85,7 +85,7 @@ ggsave(plot = p, 'fig-ch2-img4.jpg', width = 7, height = 5, units = 'in', dpi = 
 
 # fig 2.5 -----------------------------------------------------------------
  tmpFun(r = 4, n = 100)
- ggsave('fig-ch2-img5.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ ggsave('media/ch2/fig-ch2-img5.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
  dev.off()
 
 # fig 2.6 -----------------------------------------------------------------
@@ -104,7 +104,7 @@ ggsave(plot = p, 'fig-ch2-img4.jpg', width = 7, height = 5, units = 'in', dpi = 
    #geom_point(shape = 21, fill = colors[4], size = 1.5, stroke = 0.75, color = 'white')+
    labs(title = paste0('r = ',r), x= 'time') + scale_x_continuous(breaks=seq(0,n,5))+
    theme_minimal() + theme1 
- ggsave('fig-ch2-img6.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ ggsave('media/ch2/fig-ch2-img6.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
  dev.off()
 
 
@@ -157,7 +157,7 @@ Phase_plots <- ggplot(phase_data_joined, aes(x = Xt, y = `Xt+1`, color = name)) 
   theme_minimal() + theme1 + theme(legend.position = 'none')
 
 Time_n_Phase <- Time_plots / Phase_plots
-ggsave('fig-ch2-img7.jpg', width = 6, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img7.jpg', width = 6, height = 4, units = 'in', dpi = 300)
 dev.off()
 
 
@@ -176,5 +176,5 @@ r <- sort(rep(r.range, m))
 ggplot(tibble(equilibria, r), aes( x= r, y = equilibria)) +
   geom_point( alpha = .1, shape = 20, size = .01)+
   theme_minimal() + theme1 
-ggsave('fig-ch2-img8.jpg', width = 8, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img8.jpg', width = 8, height = 4, units = 'in', dpi = 300)
 dev.off()

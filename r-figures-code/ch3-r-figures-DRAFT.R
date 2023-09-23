@@ -37,7 +37,7 @@ p2 <- ptmp(a = 0, point.x = 0, point.y = 1.1)
 p3 <- ptmp(a = 2, point.x = 0.8, point.y = -.2)
 p <- p1 + p2 + p3
 p
-ggsave('fig-ch3-img4.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img4.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
 
 # fig 3.5 -----------------------------------------------------------------
