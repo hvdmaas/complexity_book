@@ -561,13 +561,13 @@ But we can also think of other ways. A simple, but not easy to implement, proced
 
 5)  Compute the Gibbs entropy for the learning Ising model during the learning process. Show in a plot that learning minimizes the Gibbs entropy. (\*\*)
 
-6)  Install and open JASP (jasp-stats.org). Open the data library: 6. Factor. Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model?
+6)  Install and open JASP (jasp-stats.org). Open the data library: 6. Factor. Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
 
 7)  Read the blog 'How to Perform a Network Analysis in JASP' (<https://jasp-stats.org/2018/03/20/perform-network-analysis-jasp/>. Reproduce the top plots of @fig-ch6-img16-old-85. Generate the data using the R-code in the chapter, import the data into JASP and perform the network analysis. (\*)
 
 8)  Study the R-code for the case where the M-matrix consists of three blocks. Generate the data and import into JASP. Fit the confirmatory 3 factor model. Does it fit? Add V1 to the second instead of the first factor. How do you see the misfit? (\*)
 
-9)  How can you generate data for a higher order factor model using the mutualism model? What should be changed in the code of the M matrix for the case of three blocks? Show that the three-factor solution (assuming uncorrelated factors) does not fit the resulting data. Fit a higher order factor model and report the p-value of the goodness of fit. How does the network plot change?
+9)  How can you generate data for a higher order factor model using the mutualism model? What should be changed in the code of the M matrix for the case of three blocks? Show that the three-factor solution (assuming uncorrelated factors) does not fit the resulting data. Fit a higher order factor model and report the p-value of the goodness of fit. How does the network plot change? (\*\*)
 
 10) Generate data for a network in a cycle (v1 -\> v2 -\> v3...v12 -\> v1). Fit a network and an exploratory factor model. Does this work? What does this tell us about the relationship between the class of all network models and all factor models? (\*\*)
 
