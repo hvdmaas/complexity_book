@@ -106,7 +106,7 @@ For @eq-ch5-1-old-21, the logistic function, we also want to know the equilibria
 I note that the continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in chapter 2. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:
 
 ``` r
-dX <- r*X*(1-X) – X 
+dX <- r*X*(1-X) - X 
 ```
 
 and use `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
@@ -172,9 +172,9 @@ data_error[,2:3] <- data_error[,2:3]+
   matrix(rnorm(2*n,0,2),,2) # measurement error 
 #fit & plot
 s<- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
-f_deter<- fit(data_deterministic,main='deterministic')
-f_stoch<- fit(data_stochastic,main='stochastic')
-f_error<- fit(data_error,main='error')
+f_deter<- fit(odes=LV,data_deterministic,main='deterministic')
+f_stoch<- fit(odes=LV,data_stochastic,main='stochastic')
+f_error<- fit(odes=LV,data_error,main='error')
 pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
 pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
 barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
