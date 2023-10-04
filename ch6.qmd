@@ -565,7 +565,7 @@ But we can also think of other ways. A simple, but not easy to implement, proced
 
 7)  Read the blog 'How to Perform a Network Analysis in JASP' (<https://jasp-stats.org/2018/03/20/perform-network-analysis-jasp/>. Reproduce the top plots of @fig-ch6-img16-old-85. Generate the data using the R-code in the chapter, import the data into JASP and perform the network analysis. (\*)
 
-8)  Study the R-code for the case where the M-matrix consists of three blocks. Generate the data and import into JASP. Fit the confirmatory 3 factor model. Does it fit? Add V1 to the second instead of the first factor. How do you see the misfit? (\*)
+8)  Study the R-code for the case where the M-matrix consists of three blocks. Generate the data and import into JASP. Apply exploratory factor analysis, check the fit for 1 to 3 factor and report the p-values. Fit the confirmatory 3 factor model. Does it fit? Add V1 to the second instead of the first factor. How do you see the misfit? (\*)
 
 9)  How can you generate data for a higher order factor model using the mutualism model? What should be changed in the code of the M matrix for the case of three blocks? Show that the three-factor solution (assuming uncorrelated factors) does not fit the resulting data. Fit a higher order factor model and report the p-value of the goodness of fit. How does the network plot change? (\*\*)
 
