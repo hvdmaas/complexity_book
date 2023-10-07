@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -110,8 +110,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -132,7 +131,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Self-organization</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -146,7 +145,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems in Psychology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -378,7 +377,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 <p>The current revolution in AI, which is having a huge impact on our daily lives, is due to a number of ‘self-organizing’ computational techniques. Undoubtedly, deep learning neural networks have played the largest role. A serious overview of the field of neural networks is clearly beyond the scope of this book, but one cannot understand the role of complex systems in psychology without knowing at least the basics of artificial neural networks (ANN), i.e., networks of artificial neurons.</p>
 <p>Artificial neurons are characterized by their response to input from other neurons in the network, which is typically weighted and summed before being passed through an activation function. This activation function may produce either a binary output or a continuous value that reflects the level of activation of the neuron. The input could be images, for example, and the output could be a classification of these images. The important thing is that neural networks learn from examples.</p>
 <p>Unsupervised learning is based on the structure of the input. A famous unsupervised learning rule is the Hebb rule <span class="citation" data-cites="hebbOrganizationBehaviorNeuropsychological1949">(<a href="references.html#ref-hebbOrganizationBehaviorNeuropsychological1949" role="doc-biblioref">Hebb 1949</a>)</span>, which states that what fires together, wires together. Thus, neurons that correlate in activity strengthen their connection (and otherwise connections decay). In supervised learning connections are updated based on the mismatch between model output and intended output (the supervised output). Backpropagation is a mechanism to update specific connections such that this mismatch or error is minimized over time. These are just two of the learning mechanisms used in modern ANNs.</p>
-<p>Modern large language models large language models, like GPT, differ from traditional backpropagation networks in terms of their architecture, training objective, pre-training process, scale, and application. Large language models use transformer architectures, undergo unsupervised pre-training followed by supervised fine-tuning, are trained on massive amounts of unlabeled data, are much larger in size, and are primarily used for natural language processing tasks.</p>
+<p>Modern large language models, like GPT, differ from traditional backpropagation networks in terms of their architecture, training objective, pre-training process, scale, and application. Large language models use transformer architectures, undergo unsupervised pre-training followed by supervised fine-tuning, are trained on massive amounts of unlabeled data, are much larger in size, and are primarily used for natural language processing tasks.</p>
 <p>An interesting unsupervised model is the Boltzmann machine. It is basically an Ising model (see section 4.1.1) where the connections between nodes have continuous values. These weights can be updated according to the Hebbian rule. A simple setup of the Boltzmann machine is to take a network of connected artificial neurons, present the inputs to be learned in some sequence by setting the states of these neurons equal to the input. The Hebb rule should change the weights between neurons so that the Boltzmann machine builds a memory for these input states. This is the training phase. In the test phase, we present partial states by setting some, but not all, nodes to the values of a particular learned input pattern. By the Glauber’s dynamics, we update the remaining states that should take on the values belonging to the pattern. This pattern completion task is typical for ANN’s.</p>
 <p>This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM we stack many of these layers, which can be trained in pairs. I recommend Timo Matzen’s R package for a hands-on explanation (https://github.com/TimoMatzen/RBM). Other famous approaches are the Kohonen self-organizing maps and the Hopfield neural network.</p>
 <div id="fig-ch4-img5" class="quarto-figure quarto-figure-center anchored">
@@ -415,7 +414,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 <p><em>Traffic:</em></p>
 <p>In the models library of NetLogo (not 3D) you will find ‘Traffic 2 Lanes’. Run the model with 20 cars and notice that the congestion actually moves backwards. Play around with the number of cars as well. Is there a clear threshold where you get congestion as you slowly increase the number of cars? And what happens when you decrease the number of cars? Is there a threshold where congestion dissipates? I hope you see that finding hysteresis in this way is quite difficult. There are clearly sudden changes, but finding hysteresis requires very precise and patient experimentation.</p>
 <p><em>Neural networks:</em></p>
-<p>In the Model Library you will find a perceptron and a multilayer network. Start with the perceptron. Set the target function to ‘and’, train the model for a few seconds, and test the perceptron. You will see that it correctly classifies 11 as 1 and the other patterns as -1. The graph on the bottom right is particularly instructive. It shows how the patterns are separated. The perceptron can do linear separation. This is sufficient for most of the logical rules that can be learned, but not for the XOR. You will see that the linear separation just jumps around and the XOR cannot be learned. Also train the multilayer model on the XOR. Another nice tool to play around with can be found on the internet by searching for ‘A Neural Network Playground’.</p>
+<p>In the Model Library you will find a perceptron and a multilayer network. Start with the perceptron. Set the target function to ‘and’, train the model for a few seconds, and test the perceptron. You will see that it correctly classifies 11 as 1 and the other patterns as -1. The graph on the bottom right is particularly instructive. It shows how the patterns are separated. The perceptron can do linear separation. This is sufficient for most of the logical rules that can be learned, but not for the XOR. This is a logical operator whose output is true (1) when either of two inputs are true but not both.You will see that the linear separation just jumps around and the XOR cannot be learned. Also train the multilayer model on the XOR. Another nice tool to play around with can be found on the internet by searching for ‘A Neural Network Playground’.</p>
 <p>Of course, these are just illustrative tools. But building serious deep learning ANNs is not that hard either. Many resources and books are available <span class="citation" data-cites="ghatakDeepLearning2019">(e.g., <a href="references.html#ref-ghatakDeepLearning2019" role="doc-biblioref">Ghatak 2019</a>)</span>.</p>
 <p><em>The sandpile model:</em></p>
 <p><span class="citation" data-cites="bakSelforganizedCriticality1988">Bak, Tang, and Wiesenfeld (<a href="references.html#ref-bakSelforganizedCriticality1988" role="doc-biblioref">1988</a>)</span> introduced the concept of self-organized criticality. In systems such as the Ising model, there are parameters (e.g., temperature) that must be precisely tuned for the system to reach criticality. The Bak-Tang-Wiesenfeld sandpile model exhibits critical phenomena without any parameters. In the sandpile model, grains of sand are added to the center of the pile. When the difference in height between the center column and its neighbors exceeds a critical value, a grain of sand rolls to that neighboring location. This occasionally results in avalanches. The point is that no matter how we start, we get to a critical state where these avalanches occur. Thus, the sandpile model spontaneously evolves toward its critical point, which is why this phenomenon has been called self-organized criticality.</p>
@@ -552,7 +551,7 @@ V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi} \tag{4.4}\]</spa
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(number_of_dancers,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">ylab=</span><span class="st">'#dancers'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>),<span class="at">type=</span><span class="st">'b'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Depending on the parameters of the beta distribution you will see a phase transition to collective dancing. This basic setup can be extended in many ways.</p>
-<p>Another classic contribution, explained in more detail in Chapter 7, is Schelling’s agent-based model of segregation <span class="citation" data-cites="schellingDynamicModelsSegregation1971">(<a href="references.html#ref-schellingDynamicModelsSegregation1971" role="doc-biblioref">Schelling 1971</a>)</span>. The idea is that even if individuals have only a small preference for in-group neighbors, segregated societies will form. For a broad overview of complex systems research on human cooperation, I refer to <span class="citation" data-cites="percStatisticalPhysicsHuman2017">Perc et al. (<a href="references.html#ref-percStatisticalPhysicsHuman2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>Another classic contribution, explained in more detail in Chapter 7, is Schelling’s agent-based model of segregation <span class="citation" data-cites="schellingDynamicModelsSegregation1971">(<a href="references.html#ref-schellingDynamicModelsSegregation1971" role="doc-biblioref">Schelling 1971</a>)</span>. The idea is that even if individuals have only a small preference for in-group neighbors, segregated societies will form. For a broad overview of complex systems research on human cooperation, I refer to <span class="citation" data-cites="percStatisticalPhysicsHuman2017">Perc et al. (<a href="references.html#ref-percStatisticalPhysicsHuman2017" role="doc-biblioref">2017</a>)</span>. A recent book on modeling social behavior using Netlogo is written by Smaldino <span class="citation" data-cites="smaldino2023">(<a href="references.html#ref-smaldino2023" role="doc-biblioref">Smaldino 2023</a>)</span>.</p>
 </section>
 <section id="collective-intelligence" class="level3" data-number="4.3.7">
 <h3 data-number="4.3.7" class="anchored" data-anchor-id="collective-intelligence"><span class="header-section-number">4.3.7</span> Collective Intelligence</h3>
@@ -875,6 +874,9 @@ Silver, David, Thomas Hubert, Julian Schrittwieser, Ioannis Antonoglou, Matthew 
 </div>
 <div id="ref-skardaHowBrainsMake1987" class="csl-entry" role="listitem">
 Skarda, Christine A., and Walter J. Freeman. 1987. <span>“How Brains Make Chaos in Order to Make Sense of the World.”</span> <em>Behavioral and Brain Sciences</em> 10 (2): 161–73. <a href="https://doi.org/10.1017/S0140525X00047336">https://doi.org/10.1017/S0140525X00047336</a>.
+</div>
+<div id="ref-smaldino2023" class="csl-entry" role="listitem">
+Smaldino, Paul. 2023. <em>Modeling Social Behavior: Mathematical and Agent-Based Models of Social Dynamics and Cultural Evolution</em>. Princeton University Press.
 </div>
 <div id="ref-smolenskyInformationProcessingDynamical1986" class="csl-entry" role="listitem">
 Smolensky, Paul. 1986. <span>“Information <span>Processing</span> in <span>Dynamical Systems</span>: <span>Foundations</span> of <span>Harmony Theory</span>.”</span>

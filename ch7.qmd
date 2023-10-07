@@ -30,7 +30,9 @@ Languages are complex systems that emerge in a self-organizing cultural process 
 
 ![The naming game (adapted from Castellano et al., 2009). The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word.](media/ch7/image2.jpg){#fig-ch7-img2-old-90 width="3.355262467191601in"}
 
-The game begins with blank lists for all agents. In the first round, the speakers invent a new unique word, assuming that the possibilities are endless. We assume that there is only one object to name and that the social network is fully connected. The R code to simulate this process is:
+The game begins with blank lists for all agents. In the first round, the speakers invent a new unique word, assuming that the possibilities are endless. We assume that there is only one object to name and that the social network is fully connected. Two agents are randomly selected from a population: one as the "speaker" and the other as the "hearer." The speaker chooses a word from her vocabulary for the object. If the hearer is unfamiliar with the word, she incorporates it into her lexicon. If she recognizes the word, both clear their vocabularies, retaining only the word that was spoken.
+
+The R code to simulate this process is:
 
 ``` r
 resample <- function(x, ...) x[sample.int(length(x), ...)]
