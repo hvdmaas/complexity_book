@@ -8,7 +8,7 @@ I use the somewhat controversial term sociophysics as a label for this very dive
 
 In my broad definition of sociophysics, it deals with many different systems and processes. Examples that I have already discussed are the synchronization of movement, in the swinging of legs in a two-person system, or even in a crowd of people fleeing a fire in a building. Granovetter's threshold model of joining a dancing crowd is another example. Many papers deal with the spread of opinions, fashions, rumors, etc. This will be the main topic of this chapter. But this field also includes work on segregation, cooperation, crime, economic systems, and much more. I will present some key examples and then turn to models of the social dynamics of opinions.
 
-Some important follow-up books to read are @bowlesCooperativeSpeciesHuman2011 on cooperation and altruism, @durlaufSocialDynamics2001 on modeling social economics, the work of @epsteinAgentZeroNeurocognitive2014; @epsteinGenerativeSocialScience2006; @epsteinGrowingArtificialSocieties1996 on building artificial societies and @millerComplexAdaptiveSystems2007 on computation models of social life. There are also some excellent review articles on this area of research [@castellanoStatisticalPhysicsSocial2009; @noorazarRecentAdvancesOpinion2020; @proskurnikovTutorialModelingAnalysis2017]. A less mathematically focused review is provided by @flacheModelsSocialInfluence2017.
+Some important follow-up books to read are @smaldino2023 on modeling social behavior, @bowlesCooperativeSpeciesHuman2011 on cooperation and altruism, @durlaufSocialDynamics2001 on modeling social economics, the work of @epsteinAgentZeroNeurocognitive2014; @epsteinGenerativeSocialScience2006; @epsteinGrowingArtificialSocieties1996 on building artificial societies and @millerComplexAdaptiveSystems2007 on computation models of social life. There are also some excellent review articles on this area of research [@castellanoStatisticalPhysicsSocial2009; @noorazarRecentAdvancesOpinion2020; @proskurnikovTutorialModelingAnalysis2017]. A less mathematically focused review is provided by @flacheModelsSocialInfluence2017.
 
 ## Some famous examples
 
@@ -237,7 +237,7 @@ With this code you can explore many scenarios and variants. One interesting opti
 
 Another well-known model is the Hegselmann-Krause (HK) model [@rainerOpinionDynamicsBounded2002]. This model is very similar to the Deffuant model, but instead of communicating with one other agent, they communicate with all connected agents, but only if the difference in opinion with these agents is small enough. Thus, agents average the opinion of all connected agents for which the difference in opinion is less than the bound. This model is an extension of the DeGroot model and can be simulated by adding two lines to the FJ code,
 
-``` R
+``` r
 accapted <- abs(outer(X,X,'-')) < bound # acceptable neighbors
 M <- accepted * M
 ```
@@ -252,7 +252,7 @@ In the online library of NetLogo you can find the model "BC", which simulates bo
 
 ### Empirical verification
 
-@castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multi-country panel surveys, social media and laboratory studies \[for a review, see @peraltaOpinionDynamicsSocial2022\]. The problem seems to be that these data do not discriminate between models. Most of the data fits all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed phenomena that all models are supposed to explain.
+@castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multi-country panel surveys, social media and laboratory studies [for a review, see @peraltaOpinionDynamicsSocial2022]. The problem seems to be that these data do not discriminate between models. Most of the data fits all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed phenomena that all models are supposed to explain.
 
 ## Psychosocial models
 

@@ -350,7 +350,7 @@ plot(number_of_dancers,xlab='time',ylab='#dancers',ylim=c(0,1000),type='b',bty='
 
 Depending on the parameters of the beta distribution you will see a phase transition to collective dancing. This basic setup can be extended in many ways.
 
-Another classic contribution, explained in more detail in Chapter 7, is Schelling's agent-based model of segregation [@schellingDynamicModelsSegregation1971]. The idea is that even if individuals have only a small preference for in-group neighbors, segregated societies will form. For a broad overview of complex systems research on human cooperation, I refer to @percStatisticalPhysicsHuman2017.
+Another classic contribution, explained in more detail in Chapter 7, is Schelling's agent-based model of segregation [@schellingDynamicModelsSegregation1971]. The idea is that even if individuals have only a small preference for in-group neighbors, segregated societies will form. For a broad overview of complex systems research on human cooperation, I refer to @percStatisticalPhysicsHuman2017. A recent book on modeling social behavior using Netlogo is written by Smaldino [@smaldino2023].
 
 ### Collective Intelligence
 

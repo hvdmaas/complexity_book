@@ -49,7 +49,7 @@ centralityPlot(qgraph(adj)) # note centrality() gives more indices
 
 ### Network types
 
-Simple networks do not have cycles. An example of an undirected acyclic graph is one with nodes on a line (but not a circle). Connected undirected acyclic graph are trees; if they are partially un-connected, they are forests. Directed acyclic graphs, such as family trees and citation networks, are called DAGs. Most current neutral networks are feedforward networks without cycles, but so-called recurrent networks have cycles.
+Simple networks do not have cycles. An example of an undirected acyclic graph is one with nodes on a line (but not a circle). Connected undirected acyclic graph are trees; if they are partially un-connected, they are forests. Directed acyclic graphs, such as family trees and citation networks, are called DAGs. Most current neural networks are feedforward networks without cycles, but so-called recurrent networks have cycles.
 
 Igraph has an amazing number of functions for creating specific networks. Some examples are shown in @fig-ch6-img3-old-72.
 
@@ -118,7 +118,7 @@ Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $a$ the growth rates,
 
 ![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/image6.jpg){#fig-ch6-img6-old-75 width="2.333862642169729in"}
 
-When $M$ contains mostly negative values, the model is known as a competitive Lotka-Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka-Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we not see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
+When $M$ contains mostly negative values, the model is known as a competitive Lotka-Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka-Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
 
 The mutualism model in Grind is specified as follows:
 
@@ -230,7 +230,7 @@ This suggests a distinction between perturbations and interventions. With interv
 
 ### Ising attitude model
 
-The network approach has been applied to many other domains outside of intelligence research and the study of psychopathology. Examples include emotion [@langeEmotionsOverlappingCausal2021], personality [@costantiniStateARtPersonality2015], interest [@sachisthalIntroducingScienceInterest2019], and organizational behavior [@loweryBalancingActPerformance2021]. One area where it has been developed into a new theory is attitude research.
+The network approach has been applied to many other domains outside of intelligence research and the study of psychopathology. Examples include emotion [@langeEmotionsOverlappingCausal2021], personality [@costantiniStateARtPersonality2015; @cramer2012], interest [@sachisthalIntroducingScienceInterest2019], and organizational behavior [@loweryBalancingActPerformance2021]. One area where it has been developed into a new theory is attitude research.
 
 People have many attitudes, about food, politics, other people, horror movies, the police, etc. They help us make decisions and guide our behavior. Attitudes can be very stable and multifaceted, but they can also be inconsistent and inconsequential. Social psychology has studied attitudes for a long time, and many insights and theories have been developed.
 
