@@ -2,7 +2,24 @@
 # chapter 5 R- Figures ----------------------------------------------------
 # -------------------------------------------------------------------------
 source("r-figures-code/final-theme.R")
+source("r-figures-code/plane2T.R")
 library(Grind)
+
+# antiRun function --------------------------------------------------------
+
+antiRun <- function(data, point = FALSE, psize = .4, lsize = .25, ...){
+  dots <- list(...)
+  p <- data %>% 
+    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
+    ggplot() +
+    geom_line(aes(time, val, linetype = par, color = par, group = par), linewidth = lsize, ...) +
+    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
+    theme_minimal() + theme1+
+    theme(legend.position = 'right')
+  if(point) pl <- p + geom_point(aes(time, val, shape = par, color = par), size = psize, ...)
+  ifelse(point, return(pl), return(p))
+}
 
 # fig 5.1 -----------------------------------------------------------------
 
@@ -44,10 +61,10 @@ plotfun <- function(datas){
   datas %>% 
     pivot_longer(c('N','P'), names_to = 'par', values_to = 'val') %>% 
     ggplot()+
-    geom_line(aes(time, val, color = par), linewidth = .5)+
-    geom_point(aes(time, val, shape = par, color = par), size = 1)+
-    scale_color_manual(values = c(colors[1],colors[2]))+
-    labs(y = 'Density', color = '', shape = '', 
+    geom_line(aes(time, val, color = par, linetype = par), linewidth = .4)+
+    geom_point(aes(time, val, shape = par, color = par), size = .5)+
+    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+    labs(y = 'Density', color = '', shape = '', linetype = '', x = 'Time', 
          title = title)+
     theme_minimal() + theme1+
     theme(legend.position = 'right')
@@ -73,10 +90,13 @@ p4 <- bardata %>%
   facet_wrap(~param, nrow = 1)+
   theme_minimal() + theme1+
   theme(axis.text.x = element_blank(), 
-        strip.text = element_text(colour = "grey10", size = 15))
+        strip.text = element_text(colour = "grey10", size = 15),
+        legend.key.size = unit(0.1, 'in'),
+        legend.text=element_text(size=12),
+        legend.position = 'right')
 
-p <- (p1 + p2) / (p3 + p4 )
-p
+plot1 <- (p1 + p2) / (p3 + p4 )
+plot1
 
 ggsave('media/ch5/fig-ch5-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
 
@@ -97,7 +117,7 @@ p1 <- dat %>%
   theme_minimal() + theme1
 #plot(data,type='l',bty='n')
 #barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
-p2 <- data %>% dplyr::select(X) %>% ggplot() + 
+p2 <- dat %>% dplyr::select(X) %>% ggplot() + 
   geom_histogram(aes(X), color = '#634611', fill = '#E4D5B6', linewidth = .2) +
   coord_flip() + labs(x = '', y='')+
   scale_y_continuous(breaks = c(1,1000))+
@@ -147,20 +167,20 @@ p <- ggplot(data.frame(x = seq(0, 5, by = 0.01)), aes(x = x)) +
   stat_function(fun = h1, args = list(0,.2), geom = "line",
                 linetype = "solid", linewidth = .4)+ 
   stat_function(fun = h2, args = list(.1,1), geom = "line",
-                linetype = "dashed",linewidth = .4, color = colors[1])+ 
+                linetype = "dashed",linewidth = .4, color = ncolors[1])+ 
   stat_function(fun = h3, args = list(.5,1), geom = "line",
-                linetype = "dotdash", linewidth = .4, color = colors[2])+ 
+                linetype = "dotdash", linewidth = .4, color = ncolors[2])+ 
   stat_function(fun = h4, args = list(.5,1), geom = "line",
-                linetype = "dotted",linewidth = .4, color = colors[3])+
+                linetype = "dotted",linewidth = .4, color = ncolors[3])+
   labs(y='Predation',x='N', title = 'Hollings functional responses') +
   theme_minimal() + theme1
 p + annotate('text',x=3.6,y=.58,label=expression(paste('Type I: ', Rho==Beta*Nu)), size = 6)+
     annotate('text',x=.3 ,y=.97,label=expression(paste('Type II: ',Rho==frac(Beta*Nu,Alpha+Nu))),
-             color = colors[1], size = 6)+
+             color = ncolors[1], size = 6)+
     annotate('text',x=2.7,y=.85,label=expression(paste('Type III: ',Rho==frac(Beta*Nu^2,Alpha+Nu^2))),
-             color = colors[2], size = 6)+
+             color = ncolors[2], size = 6)+
     annotate('text',x=4.2,y=.35,label=expression(paste('Type IV: ',Rho==frac(Beta*Nu,Alpha+Nu^2))),
-             color = colors[3], size = 6)
+             color = ncolors[3], size = 6)
   
 ggsave('media/ch5/fig-ch5-img5-old-53.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
@@ -191,7 +211,7 @@ data <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 
 #matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 library(ggmatplot)
-ggmatplot(data[, 2:(n+1)], plot_type = "line", color = colors[3],
+ggmatplot(data[, 2:(n+1)], plot_type = "line", color = ncolors[3],
           linewidth = .15, linetype = 1, xlab = "time",ylab = 'x') + 
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
@@ -211,41 +231,29 @@ layout(1)
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
 s <- c(R=0.1,J=.1) 
 dat1 <- run(table=TRUE, timeplot = FALSE)
-plotfun <- function(dat){
-  dat %>% 
-    pivot_longer(c('R','J'), names_to = 'par', values_to = 'val') %>% 
-    ggplot() +
-    geom_line(aes(time, val, color = par), linewidth = .25)+
-    #geom_point(aes(time, val, shape = par, color = par), size = 1)+
-    scale_color_manual(values = c(colors[1],colors[2]))+
-    labs(y = 'Density', color = '', shape = '') +
-    theme_minimal() + theme1+
-    theme(legend.position = 'right')
-}
 #Grind::timePlot(data_deterministic)
-p1 <- plotfun(dat1)
-
+p1 <- antiRun(dat1)
 #plane(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
 
 p <- c(a=-.2,b=-1,c=1,d=0) # parameters
 dat2 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
-p2 <- plotfun(dat2)
+p2 <- antiRun(dat2)
 #plane(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
 
 p <- c(a=-.1,b=-1,c=1,d=0.1) # parameters
 dat3 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
-p3 <- plotfun(dat3)
+p3 <- antiRun(dat3)
 #plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 
 p <- p1 / p2 / p3
 p
 
-ggsave('media/ch5/fig-ch5-img9-old-57.png', width = 3, height = 5, units = 'in', dpi = 300)
-
+ggsave('media/ch5/fig-ch5-img9-old-57_1of2.png', width = 3, height = 5, units = 'in', dpi = 300)
 
 # plane 2 -----------------------------------------------------------------
-png('media/ch5/plane2ADD_fig5_9.png', width = 2.5, height = 5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img9-old-57_2of2.png', width = 2.5, height = 5, units = 'in', res = 300)
 layout(matrix(1:3,3,1,byrow=T))
+par(mar=c(5,4,1,2))
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
 plane2(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
 
@@ -254,10 +262,7 @@ plane2(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
 
 p <- c(a=-.1,b=-1,c=1,d=0.1)
 plane2(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
-
-
-
-
+dev.off()
 
 # fig 5.10 ----------------------------------------------------------------
 influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
@@ -273,7 +278,7 @@ a=-8
 infPlot <- function(b) {
   ggplot() +
   stat_function(fun = function(x) influence(x, a, b), geom = "line", linewidth = .5,
-                color = colors[3]) +
+                color = ncolors[3]) +
   labs(x = 'W', y = 'H') +
   scale_x_continuous(limits = c(-3,3), n.breaks = 6) + theme_minimal()+
   theme1 + theme(legend.position = 'none')
@@ -314,19 +319,7 @@ for(b in c(Inf,0,1)){
 }
 dat
 datt <- sapply(dat, bind_rows, simplify = FALSE)
-antiRun <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
-  dots <- list(...)
-  p <- data %>% 
-    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
-    ggplot() +
-    geom_point(aes(time, val, shape = par, color = par), size = psize, ...)+
-    scale_color_manual(values = c(colors[1],colors[2]))+
-    labs(y = 'Density', x = 'Time', color = '', shape = '', ...) +
-    theme_minimal() + theme1+
-    theme(legend.position = 'right')
-  if(line) pl <- p + geom_line(aes(time, val, color = par, group = par), linewidth = lsize, ...)
-  ifelse(line, return(pl), return(p))
-}
+
 p1 <- antiRun(datt[[1]])
 p2 <- antiRun(datt[[2]])
 p3 <- antiRun(datt[[3]])
@@ -492,12 +485,12 @@ antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
   p <- data %>% 
     pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
     ggplot() +
-    #geom_point(aes(time, val, shape = par), color = colors[3], size = psize, ...)+
-    #scale_color_manual(values = c(colors[3]))+
+    #geom_point(aes(time, val, shape = par), color = ncolors[3], size = psize, ...)+
+    #scale_color_manual(values = c(ncolors[3]))+
     labs(y = 'Density', x = 'Time', color = '', shape = '', ...) +
     theme_minimal() + theme1+
     theme(legend.position = 'none', ...)
-  if(line) pl <- p + geom_line(aes(time, val, group = par),color = colors[3], linewidth = lsize, ...)
+  if(line) pl <- p + geom_line(aes(time, val, group = par),color = ncolors[3], linewidth = lsize, ...)
   ifelse(line, return(pl), return(p))
 }
 pl <- antiRuntmp(dat)

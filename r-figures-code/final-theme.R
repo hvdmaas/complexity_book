@@ -20,6 +20,9 @@ font_families()
 
 # Important objects
 colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
+ncolors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
+             "#44AA99", "#CC6677",                       #5,6
+             "#117733", "#88CCEE", "#AA4499" )          #7,8,9
 cfont <- "CMU-bright"
 # -------------------------------------------------------------------------
 
@@ -34,7 +37,7 @@ V4 <- 22 # Axes text size. orig-13 --OK
 V5 <- 26 # Axes title size. orig-20
 V6 <- .25 #Axes linewidth
 V7 <- 22 # Legend title size. orig-14
-V8 <- 20 # Legend text size. orig-11
+V8 <- 16 # Legend text size. orig-11
 
 ## RUN it, NOT CHANGE IT
 theme1 <- theme(# GENERAL
@@ -59,7 +62,7 @@ theme1 <- theme(# GENERAL
   legend.text = element_text(size = V8),
   legend.key.size = unit(0.1, 'in'),
   # MARGINS
-  plot.margin = unit(c(1,1,1,1), "lines"),
+  plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"),
   #plot.tag.position = 'right',
   #plot.tag = element_text(
   #  size = 13,                     # Font size

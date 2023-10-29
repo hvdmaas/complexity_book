@@ -2,7 +2,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
                     npixels = 500, state = s, parms = p, odes = model, x = 1, 
                     y = 2, time = 0, grid = 5, eps = 0, show = NULL, portrait = FALSE, 
                     vector = FALSE, add = FALSE, legend = TRUE, zero = TRUE,
-                    lwd = 2, col = "black", pch = 20, bty='n', ...) 
+                    lwd = 1, col = "black", pch = 20, bty='n', ...) 
 {
   
   
@@ -16,6 +16,9 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   
   # Important objects
   colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
+  ncolors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
+               "#44AA99", "#CC6677",                       #5,6
+               "#117733", "#88CCEE", "#AA4499" )          #7,8,9
   cfont <- "CMU-bright"
   
   dots <- list(...)
@@ -58,7 +61,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
     axis(2, at = NULL, labels = TRUE, tcl = 0)
     if (legend) 
       legend("topright", legend = names(state)[ishows], 
-             col = colors[ishows], lty = 1, lwd = lwd, cex = sizeLegend)
+             col = ncolors[ishows], lty = 1, lwd = lwd, cex = sizeLegend)
 
   }
   vstate <- as.list(state)
@@ -72,7 +75,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
                                          1, i * npixels2)]
   }
   for (i in ishows) contour(xc, yc, outer(xc, yc, FUN, i), 
-                            levels = 0, drawlabels = FALSE, add = TRUE, col = colors[i], 
+                            levels = 0, drawlabels = FALSE, add = TRUE, col = ncolors[i], 
                             lwd = lwd)
   if (portrait | vector) {
     if (logx) {
