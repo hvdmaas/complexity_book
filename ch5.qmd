@@ -470,7 +470,7 @@ $$\begin{array}{r}
 I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 \end{array}$$ {#eq-ch5-12-old-32}
 
-I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses de not interact.[^ch5-4]
+I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses do not interact.[^ch5-4]
 
 [^ch5-4]: I follow the definition and notation of the original source, but this model is clearly not restricted to heterosexual relationships.
 
