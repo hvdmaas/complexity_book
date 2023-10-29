@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -110,7 +110,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -131,7 +132,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sociophysics</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -145,7 +146,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Complex Systems in Psychology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -335,7 +336,8 @@ div.csl-indent {
 <figcaption class="figure-caption">Figure&nbsp;7.2: The naming game (adapted from Castellano et al., 2009). The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word.</figcaption>
 </figure>
 </div>
-<p>The game begins with blank lists for all agents. In the first round, the speakers invent a new unique word, assuming that the possibilities are endless. We assume that there is only one object to name and that the social network is fully connected. The R code to simulate this process is:</p>
+<p>The game begins with blank lists for all agents. In the first round, the speakers invent a new unique word, assuming that the possibilities are endless. We assume that there is only one object to name and that the social network is fully connected. Two agents are randomly selected from a population: one as the “speaker” and the other as the “hearer.” The speaker chooses a word from her vocabulary for the object. If the hearer is unfamiliar with the word, she incorporates it into her lexicon. If she recognizes the word, both clear their vocabularies, retaining only the word that was spoken.</p>
+<p>The R code to simulate this process is:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>resample <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ...) x[<span class="fu">sample.int</span>(<span class="fu">length</span>(x), ...)]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, n)</span>
@@ -543,7 +545,7 @@ X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)
 <section id="psychosocial-models" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="psychosocial-models"><span class="header-section-number">7.4</span> Psychosocial models</h2>
 <p>In the introduction to this chapter, I said that psychology is the victim of the simplifications necessary to develop sociophysics models. In this section we explore ways to make these models a bit more psychologically realistic. Several existing models already include additional psychological variables <span class="citation" data-cites="jagerEnhancingRealismSimulation2017">(<a href="references.html#ref-jagerEnhancingRealismSimulation2017" role="doc-biblioref">Jager 2017</a>)</span>. The Social Impact model is a good example since it incorporates persuasiveness and supportiveness of agents to determine opinion change. The model is also based on a well-known theory in social psychology. Other models include stubbornness, cognitive dissonance, and confidence <span class="citation" data-cites="castellanoStatisticalPhysicsSocial2009">(<a href="references.html#ref-castellanoStatisticalPhysicsSocial2009" role="doc-biblioref"><strong>castellanoStatisticalPhysicsSocial2009?</strong></a>)</span>. All of these parameters are used to modify the interactions between agents.</p>
-<p>Here I will discuss the model proposed in <span class="citation" data-cites="vandermaasPolarizationIndividualsHierarchical2020">(<a href="references.html#ref-vandermaasPolarizationIndividualsHierarchical2020" role="doc-biblioref"><strong>vandermaasPolarizationIndividualsHierarchical2020?</strong></a>)</span>, which uses three dynamic variables to describe agents: information, involvement and opinion. Individual agents are described by the cusp catastrophe as shown in <a href="ch3.html#fig-ch3-img13">Figure&nbsp;<span>3.12</span></a> . This is somewhat similar to the work of <span class="citation" data-cites="sobkowiczDiscreteModelOpinion2012">(<a href="references.html#ref-sobkowiczDiscreteModelOpinion2012" role="doc-biblioref"><strong>sobkowiczDiscreteModelOpinion2012?</strong></a>)</span>, who used the cusp model for the individual agent, using emotion and information as dynamic control variables. As in our model, interactions between agents change both opinions and the control variables. For example, agitation spreads across agents. However, in his opinion model, Sobkowicz reduces the cusp dynamics to a three-state system, where opinions are either -1, 0 or 1. We will not adopt this simplification, as much of the interesting dynamics (hysteresis within agents) are lost.</p>
+<p>Here I will discuss the model proposed in <span class="citation" data-cites="vandermaasPolarizationIndividualsHierarchical2020">(<a href="references.html#ref-vandermaasPolarizationIndividualsHierarchical2020" role="doc-biblioref"><strong>vandermaasPolarizationIndividualsHierarchical2020?</strong></a>)</span>, which uses three dynamic variables to describe agents: information, involvement and opinion. Individual agents are described by the cusp catastrophe as shown in <span class="quarto-unresolved-ref">?fig-ch3-img13</span> . This is somewhat similar to the work of <span class="citation" data-cites="sobkowiczDiscreteModelOpinion2012">(<a href="references.html#ref-sobkowiczDiscreteModelOpinion2012" role="doc-biblioref"><strong>sobkowiczDiscreteModelOpinion2012?</strong></a>)</span>, who used the cusp model for the individual agent, using emotion and information as dynamic control variables. As in our model, interactions between agents change both opinions and the control variables. For example, agitation spreads across agents. However, in his opinion model, Sobkowicz reduces the cusp dynamics to a three-state system, where opinions are either -1, 0 or 1. We will not adopt this simplification, as much of the interesting dynamics (hysteresis within agents) are lost.</p>
 <section id="networks-of-attitude-networks" class="level3" data-number="7.4.1">
 <h3 data-number="7.4.1" class="anchored" data-anchor-id="networks-of-attitude-networks"><span class="header-section-number">7.4.1</span> Networks of attitude networks</h3>
 <p>Our starting point is the Ising Attitude Model explained in Chapter 6. In this model, attitudes or opinions are conceptualized as networks of feelings, behaviors, and beliefs about the issue. This new view of attitudes has been well received in the literature and applied to a number of attitudes <span class="citation" data-cites="chambonUnderstandingChangeCOVID192022 turner-zwinkelsBeliefSystemNetworks2022 zwickerApplyingAttitudeNetwork2020">(e.g., <a href="references.html#ref-chambonUnderstandingChangeCOVID192022" role="doc-biblioref">Chambon et al. 2022</a>; <a href="references.html#ref-turner-zwinkelsBeliefSystemNetworks2022" role="doc-biblioref">Turner-Zwinkels and Brandt 2022</a>; <a href="references.html#ref-zwickerApplyingAttitudeNetwork2020" role="doc-biblioref">Zwicker et al. 2020</a>)</span>. The idea is to use this attitude network model as a model for individual agents.</p>
