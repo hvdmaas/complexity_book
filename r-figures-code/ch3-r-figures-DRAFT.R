@@ -21,7 +21,7 @@ ptmp <- function(a, point.x , point.y){
   ggplot(data.frame(x = c(-3, 3)), aes(x = x)) +
     stat_function(fun = v, args = list(a = a), geom = "line", linewidth = .5) + 
     geom_point(data = data.frame(x = point.x, y = point.y), aes(x, y), shape = 16, size = 2.5, color = "black")+
-    scale_x_continuous(limits = c(-3,3))+
+    
     labs(y = expression(paste('V(X) = -', alpha, 'x + ',x^{3})),
          title = bquote(alpha == .(a)))+
     theme_minimal()+
