@@ -44,7 +44,7 @@ theme1 <- theme(# GENERAL
   plot.background = element_rect(fill = "white", color = NA), #background color
   text = element_text(family = cfont, color = "grey10"), # color of all text in the plot 
   strip.text = element_text(colour = "grey10", size = V1), # specs of the text inside plot
-  plot.title = element_text(hjust = 0.5, color = "grey10", size = V2), # specs of the title
+  plot.title = element_text(hjust = 0.5, color = "grey10", size = V2, face = "bold"), # specs of the title
   # GRID
   panel.grid.major.x = element_line(linewidth = V3), # change the grid layout
   panel.grid.major.y = element_line(linewidth = V3), # change the grid layout

@@ -7,12 +7,12 @@ library(Grind)
 
 # antiRun function --------------------------------------------------------
 
-antiRun <- function(data, point = FALSE, psize = .4, lsize = .25, ...){
+antiRun <- function(data, point = FALSE, psize = .4, lsize = .25, grp = NULL,  ...){
   dots <- list(...)
   p <- data %>% 
     pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
     ggplot() +
-    geom_line(aes(time, val, linetype = par, color = par, group = par), linewidth = lsize, ...) +
+    geom_line(aes(time, val, linetype = par, color = par), linewidth = lsize, ...) +
     scale_color_manual(values = c(ncolors[1],ncolors[2]))+
     labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
     theme_minimal() + theme1+
@@ -46,9 +46,9 @@ data_error[,2:3] <- data_error[,2:3]+
 #fit & plot
 r <- .5 # growth rate
 s<- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
-f_deter<-  fit(odes=LV,data_deterministic,main='deterministic')
-f_stoch<- fit(odes=LV,data_stochastic,main='stochastic', timeplot =T)
-f_error<- fit(odes=LV,data_error,main='error')
+f_deter<-  fit(odes=LV,data_deterministic,main='deterministic', timeplot = FALSE)
+f_stoch<- fit(odes=LV,data_stochastic,main='stochastic', timeplot = FALSE)
+f_error<- fit(odes=LV,data_error,main='error', timeplot = FALSE)
 #pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
 #pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
 #barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
@@ -62,7 +62,7 @@ plotfun <- function(datas){
     pivot_longer(c('N','P'), names_to = 'par', values_to = 'val') %>% 
     ggplot()+
     geom_line(aes(time, val, color = par, linetype = par), linewidth = .4)+
-    geom_point(aes(time, val, shape = par, color = par), size = .5)+
+    geom_point(aes(time, val, shape = par, color = par), size = 1)+
     scale_color_manual(values = c(ncolors[1],ncolors[2]))+
     labs(y = 'Density', color = '', shape = '', linetype = '', x = 'Time', 
          title = title)+
@@ -107,20 +107,26 @@ model <- function(t, state, parms){
     return(list(dX))
   })
 }
+p <- c(a=0,b=1); s <- c(X=.1)
+#run(ymin=-1)
+s[1] <- -.1
+#run(add=T)
 #layout(t(c(1,1,1,1)))
 dat <- run(table=T,tmax=1000,method='euler',tstep=.1,after="state<-state+
             rnorm(1,mean=0,sd=0.4)*sqrt(tstep)",ymax=2,ymin=-2,timeplot=F)
 p1 <- dat %>% 
   ggplot(aes(time, X))+
-  geom_line(linewidth = .1, color = '#634611') +
+  geom_line(linewidth = .1, color = ncolors[4]) +
   scale_y_continuous(breaks = seq(-1.5, 1.5, .5))+
+  labs(x='Time')+
   theme_minimal() + theme1
 #plot(data,type='l',bty='n')
 #barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 p2 <- dat %>% dplyr::select(X) %>% ggplot() + 
-  geom_histogram(aes(X), color = '#634611', fill = '#E4D5B6', linewidth = .2) +
+  geom_histogram(aes(X), fill = ncolors[4], color = 'white', linewidth = .2) +
   coord_flip() + labs(x = '', y='')+
   scale_y_continuous(breaks = c(1,1000))+
+  labs(y = 'Frequency')+
   theme_minimal() + theme1
 p2
 library(cowplot)
@@ -207,11 +213,11 @@ s <- c(x_init,v_init)
 
 m <- diag(1, n, n); m= rbind(m[-1,],0) # order cars
 # simulation with front car suddenly breaking at t = 150
-data <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
+dat <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 
 #matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 library(ggmatplot)
-ggmatplot(data[, 2:(n+1)], plot_type = "line", color = ncolors[3],
+ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[3],
           linewidth = .15, linetype = 1, xlab = "time",ylab = 'x') + 
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
@@ -278,7 +284,7 @@ a=-8
 infPlot <- function(b) {
   ggplot() +
   stat_function(fun = function(x) influence(x, a, b), geom = "line", linewidth = .5,
-                color = ncolors[3]) +
+                color = ncolors[4]) +
   labs(x = 'W', y = 'H') +
   scale_x_continuous(limits = c(-3,3), n.breaks = 6) + theme_minimal()+
   theme1 + theme(legend.position = 'none')
@@ -301,10 +307,10 @@ for(b in c(Inf,0,1)){
   for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
 }
 dev.off()
+
 ## COLUMN 3 - PHASE
 #layout(matrix(1:9,3,3,byrow=T))
 #par(mar=c(4,4,1,2))
-
 influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
 #
@@ -317,17 +323,29 @@ for(b in c(Inf,0,1)){
     dat[[n]][[i]] <- run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,ymax=2,add=(i>1),legend=F,
         table=TRUE, timeplot = FALSE)
 }
-dat
 datt <- sapply(dat, bind_rows, simplify = FALSE)
 
-p1 <- antiRun(datt[[1]])
-p2 <- antiRun(datt[[2]])
-p3 <- antiRun(datt[[3]])
+# make antiRun2 because of Time groups
+antiRun2 <- function(data, lsize = .25, ...){
+  data %>% 
+    mutate(grp = rep(1:100, each = 51)) %>% 
+    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val', ...) %>% 
+    ggplot() +
+    geom_line(aes(time, val, color = par, group = grp), linewidth = lsize, ...) +
+    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
+    theme_minimal() + theme1+
+    theme(legend.position = 'none')
+}
+
+p1 <- antiRun2(datt[[1]])
+p2 <- antiRun2(datt[[2]])
+p3 <- antiRun2(datt[[3]])
 plot3 <- p1/p2/p3
 plot3
 ggsave('media/ch5/fig-ch5-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 
-
+## HERE 2/11
 # fig 5.11 ----------------------------------------------------------------
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
