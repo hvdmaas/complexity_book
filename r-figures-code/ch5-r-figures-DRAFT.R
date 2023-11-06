@@ -311,7 +311,6 @@ dev.off()
 ## COLUMN 3 - PHASE
 #layout(matrix(1:9,3,3,byrow=T))
 #par(mar=c(4,4,1,2))
-influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
 #
 dat <- list()
@@ -329,9 +328,10 @@ datt <- sapply(dat, bind_rows, simplify = FALSE)
 antiRun2 <- function(data, lsize = .25, ...){
   data %>% 
     mutate(grp = rep(1:100, each = 51)) %>% 
+    #filter(grp ==5) %>% 
     pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val', ...) %>% 
     ggplot() +
-    geom_line(aes(time, val, color = par, group = grp), linewidth = lsize, ...) +
+    geom_line(aes(time, val, color = par, group = interaction(par, grp)), linewidth = lsize, ...) +
     scale_color_manual(values = c(ncolors[1],ncolors[2]))+
     labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
     theme_minimal() + theme1+
