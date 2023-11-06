@@ -331,7 +331,7 @@ antiRun2 <- function(data, lsize = .25, ...){
     #filter(grp ==5) %>% 
     pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val', ...) %>% 
     ggplot() +
-    geom_line(aes(time, val, color = par, group = interaction(par, grp)), linewidth = lsize, ...) +
+    geom_line(aes(time, val, color = par, group = interaction(par, grp), linetype = par), linewidth = lsize, ...) +
     scale_color_manual(values = c(ncolors[1],ncolors[2]))+
     labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
     theme_minimal() + theme1+
@@ -345,7 +345,7 @@ plot3 <- p1/p2/p3
 plot3
 ggsave('media/ch5/fig-ch5-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 
-## HERE 2/11
+
 # fig 5.11 ----------------------------------------------------------------
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
@@ -359,7 +359,7 @@ s <- c(X = 0.01, Y = 0.01)
 dat <- run(method = "euler", tstep = 1,
            table=TRUE, timeplot = FALSE)
 p1 <- antiRun(dat)
-layout(matrix(1:4,2,2))
+#layout(matrix(1:4,2,2))
 
 
 p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
@@ -498,6 +498,7 @@ dat <- run(after="if(t==33)parms<-c(1,rep(-.3,N-1));
            if(t==66)parms<-rep(-.3,N);
            state<-state+rnorm(N,mean=0,sd=0.05)",
            table=TRUE, timeplot = FALSE)
+
 antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
   dots <- list(...)
   p <- data %>% 
@@ -508,7 +509,7 @@ antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
     labs(y = 'Density', x = 'Time', color = '', shape = '', ...) +
     theme_minimal() + theme1+
     theme(legend.position = 'none', ...)
-  if(line) pl <- p + geom_line(aes(time, val, group = par),color = ncolors[3], linewidth = lsize, ...)
+  if(line) pl <- p + geom_line(aes(time, val, group = par),color = ncolors[4], linewidth = lsize, ...)
   ifelse(line, return(pl), return(p))
 }
 pl <- antiRuntmp(dat)
