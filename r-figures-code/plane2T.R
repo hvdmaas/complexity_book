@@ -2,24 +2,21 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
                     npixels = 500, state = s, parms = p, odes = model, x = 1, 
                     y = 2, time = 0, grid = 5, eps = 0, show = NULL, portrait = FALSE, 
                     vector = FALSE, add = FALSE, legend = TRUE, zero = TRUE,
-                    lwd = 1, col = "black", pch = 20, bty='n', ...) 
+                    lwd = 1, col = "gray20", pch = 20, bty='n', ...) 
 {
   
-  
   font_add(family = "CMU-bright", regular = "cmunbmr.ttf")
-  font_add_google('EB Garamond')
   showtext_auto()
   #Check if font was added
   font_families()
   
   # Colors ------------------------------------------------------------------
-  
   # Important objects
-  colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
+  #colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
   ncolors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
                "#44AA99", "#CC6677",                       #5,6
                "#117733", "#88CCEE", "#AA4499" )          #7,8,9
-  cfont <- "CMU-bright"
+  #cfont <- "CMU-bright"
   
   dots <- list(...)
   if (!is.null(dots)) {
@@ -54,14 +51,14 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   if (!add) {
     do.call("plot", c(list(1, 1, type = "n", xlim = c(xmin, 
                                                       xmax), ylim = c(ymin, ymax), xlab = xvar, ylab = yvar, 
-                           log = log, font.main = font.main, font.sub = font.sub, bty = 'n', font = 2, family = "CMU-bright", axes = FALSE), 
+                           log = log, font.main = font.main, font.sub = font.sub, bty = 'n',  cex.lab = 1.5, family = "CMU-bright", axes = FALSE), 
                       dots[names(dots) %in% args_plot]))
     
-    axis(1, at = NULL, labels = TRUE, tcl = 0)
-    axis(2, at = NULL, labels = TRUE, tcl = 0)
+    axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) # custom x
+    axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) # custom y
     if (legend) 
       legend("topright", legend = names(state)[ishows], 
-             col = ncolors[ishows], lty = 1, lwd = lwd, cex = sizeLegend)
+             col = ncolors[ishows],lwd = lwd, cex = sizeLegend, lty = 2:100)
 
   }
   vstate <- as.list(state)
@@ -76,7 +73,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   }
   for (i in ishows) contour(xc, yc, outer(xc, yc, FUN, i), 
                             levels = 0, drawlabels = FALSE, add = TRUE, col = ncolors[i], 
-                            lwd = lwd)
+                            lwd = lwd, lty = i+1)
   if (portrait | vector) {
     if (logx) {
       dx <- (log10(xmax) - log10(xmin))/grid
@@ -103,7 +100,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
           state[y] <- 10^((j - 1) * dy + dy/2 + log10(ymin))
         else state[y] <- (j - 1) * dy + dy/2 + ymin
         if (portrait) {
-          points(state[x], state[y], pch = pch)
+          points(state[x], state[y], pch = pch, col = col)
           nsol <- do.call("run", c(list(state = state, 
                                         parms = parms, odes = odes, timeplot = FALSE, 
                                         table = TRUE), dots_run))
@@ -113,14 +110,14 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
           dt <- sign(unlist(odes(time, state, parms)))
           if (logx) 
             lines(c(state[x], state[x] * vx^dt[x]), c(state[y], 
-                                                      state[y]))
+                                                      state[y]), lwd=.5, col = col)
           else lines(c(state[x], state[x] + vx * dt[x]), 
-                     c(state[y], state[y]))
+                     c(state[y], state[y]),lwd=.5, col = col)
           if (logy) 
             lines(c(state[x], state[x]), c(state[y], 
-                                           state[y] * vy^dt[y]))
+                                           state[y] * vy^dt[y]),lwd=.5, col = col)
           else lines(c(state[x], state[x]), c(state[y], 
-                                              state[y] + vy * dt[y]))
+                                              state[y] + vy * dt[y]),lwd=.5, col = col)
         }
       }
     }
