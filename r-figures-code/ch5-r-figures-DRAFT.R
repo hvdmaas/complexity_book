@@ -233,42 +233,61 @@ model <- function(t, state, parms) {
     return(list(c(dR, dJ)))
   })
 }
-layout(1)
+
+# Using base2 -------------------------------------------------------------
+png('media/ch5/fig-ch5-img9-old-57b.png', width = 6, height = 4, units = 'in', res = 300)
+layout(matrix(1:6,3,2,byrow=T))
+par(mar=c(4.5,5,1,2)) #bott left top right
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
 s <- c(R=0.1,J=.1) 
-dat1 <- run(table=TRUE, timeplot = FALSE)
-#Grind::timePlot(data_deterministic)
-p1 <- antiRun(dat1)
-#plane(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
-
-p <- c(a=-.2,b=-1,c=1,d=0) # parameters
-dat2 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
-p2 <- antiRun(dat2)
-#plane(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
-
-p <- c(a=-.1,b=-1,c=1,d=0.1) # parameters
-dat3 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
-p3 <- antiRun(dat3)
-#plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
-
-p <- p1 / p2 / p3
-p
-
-ggsave('media/ch5/fig-ch5-img9-old-57_1of2.png', width = 3, height = 5, units = 'in', dpi = 300)
-
-# plane 2 -----------------------------------------------------------------
-png('media/ch5/fig-ch5-img9-old-57_2of2.png', width = 2.5, height = 5, units = 'in', res = 300)
-layout(matrix(1:3,3,1,byrow=T))
-par(mar=c(5,4,1,2))
-p <- c(a=-1,b=1,c=.5,d=-1) # parameters
+#debug(run2)
+run2()
 plane2(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
-
 p <- c(a=-.2,b=-1,c=1,d=0) # parameters
+run2(ymin=-.2,legend=F)
 plane2(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
-
-p <- c(a=-.1,b=-1,c=1,d=0.1)
+p <- c(a=-.1,b=-1,c=1,d=0.1) # parameters
+run2(ymin=-.2,legend=F)
 plane2(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 dev.off()
+
+# using ggplot + plane2 ---------------------------------------------------
+#layout(1)
+#p <- c(a=-1,b=1,c=.5,d=-1) # parameters
+#s <- c(R=0.1,J=.1) 
+#dat1 <- run(table=TRUE, timeplot = FALSE)
+##Grind::timePlot(data_deterministic)
+#p1 <- antiRun(dat1)
+##plane(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
+#
+#p <- c(a=-.2,b=-1,c=1,d=0) # parameters
+#dat2 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
+#p2 <- antiRun(dat2)
+##plane(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
+#
+#p <- c(a=-.1,b=-1,c=1,d=0.1) # parameters
+#dat3 <- run(ymin=-.2,legend=F, table=TRUE, timeplot = FALSE)
+#p3 <- antiRun(dat3)
+##plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
+#
+#p <- p1 / p2 / p3
+#p
+#
+#ggsave('media/ch5/fig-ch5-img9-old-57_1of2.png', width = 3, height = 5, units = 'in', dpi = 300)
+#
+## plane 2 -----------------------------------------------------------------
+#png('media/ch5/fig-ch5-img9-old-57_2of2.png', width = 2.5, height = 5, units = 'in', res = 300)
+#layout(matrix(1:3,3,1,byrow=T))
+#par(mar=c(5,4,1,2))
+#p <- c(a=-1,b=1,c=.5,d=-1) # parameters
+#plane2(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
+#
+#p <- c(a=-.2,b=-1,c=1,d=0) # parameters
+#plane2(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
+#
+#p <- c(a=-.1,b=-1,c=1,d=0.1)
+#plane2(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
+#dev.off()
 
 # fig 5.10 ----------------------------------------------------------------
 influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
@@ -279,71 +298,90 @@ model <- function(t, state, parms) {
     return(list(c(dW,dH)))
   })
 }
-## COLUMN 1 - INFLUENCE FUNCTION
-a=-8
-infPlot <- function(b) {
-  ggplot() +
-  stat_function(fun = function(x) influence(x, a, b), geom = "line", linewidth = .5,
-                color = ncolors[4]) +
-  labs(x = 'W', y = 'H') +
-  scale_x_continuous(limits = c(-3,3), n.breaks = 6) + theme_minimal()+
-  theme1 + theme(legend.position = 'none')
-}
-p1 <- infPlot(b = Inf)
-p2 <- infPlot(b = 0)
-p3 <- infPlot(b = 1)
-plot1 <- p1 / p2 / p3
-plot1
-ggsave('media/ch5/fig-ch5-img10-old-58_1of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
-dev.off()
-## COLUMN 2 - nullclines
-png('media/ch5/fig-ch5-img10-old-58_2of3.png', width = 2.5, height = 5, units = 'in', res = 300)
-layout(matrix(1:3,3,1,byrow=T))
-par(mar=c(4,4,1,2))
-for(b in c(Inf,0,1)){
-  p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=b)
-  s <- c(W=0,H=0)
-  plane2(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
-  for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
-}
-dev.off()
 
-## COLUMN 3 - PHASE
-#layout(matrix(1:9,3,3,byrow=T))
-#par(mar=c(4,4,1,2))
+# using base2
+png('media/ch5/fig-ch5-img10-old-58b.png', width = 7, height = 4.5, units = 'in', res = 300)
+layout(matrix(1:9,3,3,byrow=T))
+par(mar=c(4,4,1,2))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
-#
-dat <- list()
+s <- c(W=0,H=0)
 for(b in c(Inf,0,1)){
   p['b']<- b
-  if(is.infinite(b)) n = 1; if(b==0) n = 2; if(b==1) n = 3
-  dat[[n]] <- list()
+  curve2(influence(x,-8,b),-3,3,xlab='W',ylab='H',lwd=1)
+  plane2(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
+  for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
   for (i in 1:100)
-    dat[[n]][[i]] <- run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,ymax=2,add=(i>1),legend=F,
-        table=TRUE, timeplot = FALSE)
+    run2(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,ymax=2,add=(i>1),
+         legend=F)
 }
-datt <- sapply(dat, bind_rows, simplify = FALSE)
+dev.off()
 
-# make antiRun2 because of Time groups
-antiRun2 <- function(data, lsize = .25, ...){
-  data %>% 
-    mutate(grp = rep(1:100, each = 51)) %>% 
-    #filter(grp ==5) %>% 
-    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val', ...) %>% 
-    ggplot() +
-    geom_line(aes(time, val, color = par, group = interaction(par, grp), linetype = par), linewidth = lsize, ...) +
-    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
-    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
-    theme_minimal() + theme1+
-    theme(legend.position = 'none')
-}
-
-p1 <- antiRun2(datt[[1]])
-p2 <- antiRun2(datt[[2]])
-p3 <- antiRun2(datt[[3]])
-plot3 <- p1/p2/p3
-plot3
-ggsave('media/ch5/fig-ch5-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
+## COMB w/ GGPLOT
+## COLUMN 1 - INFLUENCE FUNCTION
+#a=-8
+#infPlot <- function(b) {
+#  ggplot() +
+#  stat_function(fun = function(x) influence(x, a, b), geom = "line", linewidth = .5,
+#                color = ncolors[4]) +
+#  labs(x = 'W', y = 'H') +
+#  scale_x_continuous(limits = c(-3,3), n.breaks = 6) + theme_minimal()+
+#  theme1 + theme(legend.position = 'none')
+#}
+#p1 <- infPlot(b = Inf)
+#p2 <- infPlot(b = 0)
+#p3 <- infPlot(b = 1)
+#plot1 <- p1 / p2 / p3
+#plot1
+#ggsave('media/ch5/fig-ch5-img10-old-58_1of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
+#dev.off()
+### COLUMN 2 - nullclines
+#png('media/ch5/fig-ch5-img10-old-58_2of3.png', width = 2.5, height = 5, units = 'in', res = 300)
+#layout(matrix(1:3,3,1,byrow=T))
+#par(mar=c(4,4,1,2))
+#for(b in c(Inf,0,1)){
+#  p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=b)
+#  s <- c(W=0,H=0)
+#  plane2(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
+#  for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
+#}
+#dev.off()
+#
+### COLUMN 3 - PHASE
+##layout(matrix(1:9,3,3,byrow=T))
+##par(mar=c(4,4,1,2))
+#p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
+##
+#dat <- list()
+#for(b in c(Inf,0,1)){
+#  p['b']<- b
+#  if(is.infinite(b)) n = 1; if(b==0) n = 2; if(b==1) n = 3
+#  dat[[n]] <- list()
+#  for (i in 1:100)
+#    dat[[n]][[i]] <- run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,ymax=2,add=(i>1),legend=F,
+#        table=TRUE, timeplot = FALSE)
+#}
+#datt <- sapply(dat, bind_rows, simplify = FALSE)
+#
+## make antiRun2 because of Time groups
+#antiRun2 <- function(data, lsize = .25, ...){
+#  data %>% 
+#    mutate(grp = rep(1:100, each = 51)) %>% 
+#    #filter(grp ==5) %>% 
+#    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val', ...) %>% 
+#    ggplot() +
+#    geom_line(aes(time, val, color = par, group = interaction(par, grp), linetype = par), linewidth = lsize, ...) +
+#    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+#    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
+#    theme_minimal() + theme1+
+#    theme(legend.position = 'none')
+#}
+#
+#p1 <- antiRun2(datt[[1]])
+#p2 <- antiRun2(datt[[2]])
+#p3 <- antiRun2(datt[[3]])
+#plot3 <- p1/p2/p3
+#plot3
+#ggsave('media/ch5/fig-ch5-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 
 
 # fig 5.11 ----------------------------------------------------------------
@@ -354,39 +392,55 @@ model <- function(t, state, parms) {
     return(list(c(dX, dY)))
   }) 
 }
+
+## Using base2
+png('media/ch5/fig-ch5-img11-old-59b.png', width = 8, height = 5, units = 'in', res = 300)
+layout(matrix(1:4,2,2))
+par(mar=c(4,4,1,2))
+# Set parameter values and run the model:
 p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
 s <- c(X = 0.01, Y = 0.01)
-dat <- run(method = "euler", tstep = 1,
-           table=TRUE, timeplot = FALSE)
-p1 <- antiRun(dat)
+run2(method = "euler", tstep = 1, c.legend.pos = 'bottomright')
+plane2(portrait = TRUE,grid=4, legend = FALSE)
+p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
+s <- c(X = 0.0126, Y = 0.01)
+run2(tmax = 1500, method = "euler", tstep = 1)
+plane2(portrait = TRUE,grid=4, legend = FALSE)
+dev.off()
+
+#p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
+#s <- c(X = 0.01, Y = 0.01)
+#dat <- run(method = "euler", tstep = 1,
+#           table=TRUE, timeplot = FALSE)
+#p1 <- antiRun(dat)
 #layout(matrix(1:4,2,2))
 
-
-p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
-s <- c(X = 0.0126, Y = 0.01)
-dat2 <- run(tmax = 1000, method = "euler", tstep = 1,
-    table=TRUE, timeplot = FALSE)
-p2 <- antiRun(dat2)
-halfp <- p1+p2
-halfp
-ggsave('media/ch5/fig-ch5-img11-old-59_1of2.png', width = 6, height = 3, units = 'in', dpi = 300)
-dev.off()
-## plane2 row
-png('media/ch5/fig-ch5-img11-old-59_2of2.png', width = 10, height = 5, units = 'in', res = 300)
-layout(matrix(1:2,1,2))
-p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
-s <- c(X = 0.01, Y = 0.01)
-plane2(portrait = TRUE,grid=4)
-p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
-s <- c(X = 0.0126, Y = 0.01)
-plane2(portrait = TRUE,grid=4)
-
-dev.off()
+## COMB GGPLOT 
+#p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
+#s <- c(X = 0.0126, Y = 0.01)
+#dat2 <- run(tmax = 1000, method = "euler", tstep = 1,
+#    table=TRUE, timeplot = FALSE)
+#p2 <- antiRun(dat2)
+#halfp <- p1+p2
+#halfp
+#ggsave('media/ch5/fig-ch5-img11-old-59_1of2.png', width = 6, height = 3, units = 'in', dpi = 300)
+#dev.off()
+### plane2 row
+#png('media/ch5/fig-ch5-img11-old-59_2of2.png', width = 10, height = 5, units = 'in', res = 300)
+#layout(matrix(1:2,1,2))
+#p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
+#s <- c(X = 0.01, Y = 0.01)
+#plane2(portrait = TRUE,grid=4)
+#p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
+#s <- c(X = 0.0126, Y = 0.01)
+#plane2(portrait = TRUE,grid=4)
+#
+#dev.off()
 
 # -------------------------------------------------------------------------
 
 # fig 5.13 ----------------------------------------------------------------
-
+png('media/ch5/fig-ch5-img13-old-61b.png', width = 7, height = 5, units = 'in', res = 300)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dA <- -A + b*T  
@@ -396,18 +450,29 @@ model <- function(t, state, parms) {
 }
 p <- c(b=1, alpha=12, beta=-.7) 
 s <- c(A=0, T=0) 
-#1
-png('media/ch5/fig-ch5-img13-old-61_1of2.png', width = 8, height = 4, units = 'in', res = 300)
+# arousal increase for time t in 20:30, leads to panic, which after some time ('30 min') disappears
+layout(1:2)
+par(mar=c(4,4,1,2))
 plane2(vector=T,xmin=0,ymin=0,xmax=1,ymax=1.1,legend=F) 
 newton(s=c(A=0,T=0),plot=T)
 newton(s=c(A=0.8,T=.8),plot=T)
 newton(s=c(A=1,T=1),plot=T);
+run2(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)")
 dev.off()
-#2
-dat <- run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)",
-    table=TRUE, timeplot = FALSE)
-antiRun(dat, line = TRUE, psize = .4)
-ggsave('media/ch5/fig-ch5-img13-old-61_2of2.png', width = 5, height = 2.5, units = 'in', dpi = 300)
+
+
+#1
+#png('media/ch5/fig-ch5-img13-old-61_1of2.png', width = 8, height = 4, units = 'in', res = 300)
+#plane2(vector=T,xmin=0,ymin=0,xmax=1,ymax=1.1,legend=F) 
+#newton(s=c(A=0,T=0),plot=T)
+#newton(s=c(A=0.8,T=.8),plot=T)
+#newton(s=c(A=1,T=1),plot=T);
+#dev.off()
+##2
+#dat <- run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)",
+#    table=TRUE, timeplot = FALSE)
+#antiRun(dat, line = TRUE, psize = .4)
+#ggsave('media/ch5/fig-ch5-img13-old-61_2of2.png', width = 5, height = 2.5, units = 'in', dpi = 300)
 
 # 5.14 --------------------------------------------------------------------
 model <- function(t, state, parms){
@@ -417,28 +482,39 @@ model <- function(t, state, parms){
     return(list(c(dX,da)))
   })
 }
-
+png('media/ch5/fig-ch5-img14-old-62b.png', width = 7, height = 4.5, units = 'in', res = 300)
 s <- c(X=.1,a=0); # initial state and parameter values
-#1
+layout(matrix(1:4,2,2,byrow=T))
+par(mar=c(4,4,3,2))
 p <- c(e=.05,b=-.5)
-dat1 <- run(ymin=-.1,main='b = -.5',legend=F,
-            table=TRUE, timeplot = FALSE)
-p1 <- antiRun(dat1, title = 'b = -.5')
+run2(ymin=-.1,main='b = -.5',legend=TRUE, c.legend.pos = 'bottomright')
+plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = -.5', legend = FALSE)
 p <- c(e=.05,b=1)
-dat2 <- run(ymin=-1.5,main='b = 1',legend=F,
-            table=TRUE, timeplot = FALSE)
-p2 <- antiRun(dat2, title = 'b = 1')
-p1/p2
-ggsave('media/ch5/fig-ch5-img14-old-62_1of2.png', width = 3.5, height = 5, units = 'in', dpi = 300)
+run2(ymin=-1.5,main='b = 1',legend=TRUE, c.legend.pos = 'bottomright')
+plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1', legend = FALSE)
+dev.off()
+## COMB
+#s <- c(X=.1,a=0); # initial state and parameter values
+##1
+#p <- c(e=.05,b=-.5)
+#dat1 <- run(ymin=-.1,main='b = -.5',legend=F,
+#            table=TRUE, timeplot = FALSE)
+#p1 <- antiRun(dat1, title = 'b = -.5')
+#p <- c(e=.05,b=1)
+#dat2 <- run(ymin=-1.5,main='b = 1',legend=F,
+#            table=TRUE, timeplot = FALSE)
+#p2 <- antiRun(dat2, title = 'b = 1')
+#p1/p2
+#ggsave('media/ch5/fig-ch5-img14-old-62_1of2.png', width = 3.5, height = 5, units = 'in', dpi = 300)
 
 #2
-png('media/ch5/fig-ch5-img14-old-62_2of2.png', width = 5.5, height = 8, units = 'in', res = 300)
-layout(matrix(1:2,2,1))
-p <- c(e=.05,b=-.5)
-plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = -.5')
-p <- c(e=.05,b=1)
-plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
-dev.off()
+#png('media/ch5/fig-ch5-img14-old-62_2of2.png', width = 5.5, height = 8, units = 'in', res = 300)
+#layout(matrix(1:2,2,1))
+#p <- c(e=.05,b=-.5)
+#plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = -.5')
+#p <- c(e=.05,b=1)
+#plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
+#dev.off()
 
 # 5. 16 -------------------------------------------------------------------
 model <- function(t, state, parms) {
@@ -450,7 +526,7 @@ model <- function(t, state, parms) {
 }
 
 s <- c(X=0,Y=0) 
-png('media/ch5/fig-ch5-img16-old-64.png', width = 8, height = 6, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img16-old-64b.png', width = 8, height = 6, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 for(i in c('a','b','c','d'))
 {
@@ -464,16 +540,46 @@ for(i in c('a','b','c','d'))
     newton(c(X=0,Y=0),plot=T)
 }
 dev.off()
-# fig 5.17 --------------------------------------------------------------------
 
+# fig 5.17 --------------------------------------------------------------------
+png('media/ch5/fig-ch5-img17-old-65b.png', width = 6, height = 4, units = 'in', res = 300)
+layout(1)
 s <- c(X=0.1,Y=.1) 
 p <- c(a=1,b=1,c=-1,d=1)
-dat <- run(tmax=20,tstep=0.1,ymin=-2,ymax=2,
-    table=TRUE, timeplot = FALSE)
-antiRun(dat)
-ggsave('media/ch5/fig-ch5-img17-old-65.png', width = 5, height = 2.5, units = 'in', dpi = 300)
+run2(tmax=20,tstep=0.1,ymin=-2,ymax=2)
+dev.off()
 
 # fig 5.19 ----------------------------------------------------------------
+#set.seed(1)
+#model <- function(t, state, parms){
+#  with(as.list(c(state,parms)),{
+#    X <- state[1:N]
+#    b0_i <- parms[1:N]
+#    dX <- -X^3 + a0_i + a_ij %*% X + b0_i*X + (X * b_ij %*%  abs(X))  # note abs(X)
+#    return(list(dX))
+#  })
+#}
+#N=10 # 10 necker cubes
+#X <- runif(N,-0.1,0.1) # initial state of X
+#a0_i <- rep(0,N) # no  bias in percepts
+#a_ij <- matrix(.02,N,N) # small couplings (normal)
+#diag(a_ij) <-  0 # set diagonal of a to 0
+#b0_i <- rep(-.3,N) # attention initially low
+#b_ij <- matrix(.2,N,N) # some spread of attention (splitting)
+#diag(b_ij) <- 0 # set diagonal of b to 0
+#
+#s <- X;p <- c(b0_i) # required for grind
+#png('media/ch5/fig-ch5-img19-old-67b.png', width = 6.5, height = 4, units = 'in', res = 300)
+#run2(after="if(t==33)parms<-c(1,rep(-.3,N-1));
+#           if(t==66)parms<-rep(-.3,N);
+#           state<-state+rnorm(N,mean=0,sd=0.05)",ymin=-1,ymax=2.5,
+#    main='',ylab='X',legend=F)
+#b0_i <- rep(-.3,100); b0_i[34:66]=1 # for plotting attention
+#lines(b0_i,lwd=1.5,lty=3, color = 'grey10')
+#text(80,1.4,'Percepts', family = "CMU-bright")
+#text(80,-.5,'Attention', family = "CMU-bright" )
+#dev.off()
+## COMB 
 set.seed(1)
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
@@ -523,5 +629,5 @@ pl1 <- pl + geom_line(data = data.frame(
 pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 9, family = cfont) +
   annotate("text", x = 80, y = -0.5, label = 'Attention', size = 9, family = cfont)
 pl2
-ggsave('media/ch5/fig-ch5-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch5/fig-ch5-img19-old-67.png', width = 5, height = 2.5, units = 'in', dpi = 300)
 
