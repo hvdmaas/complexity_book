@@ -32,7 +32,7 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
     plot(1, 1, type = "n", xlim = c(tmin, tmax), ylim = c(ymin, ymax), 
          log = log, xlab = xlab, ylab = ylab, main = main, sub = sub, 
          font.main = font.main, font.sub = font.sub, 
-         bty = 'n', family = "CMU-bright", axes = FALSE, cex.lab = 1.5 ,# Tasos' addition
+         bty = 'n', family = "CMU-bright", axes = FALSE, cex.lab = 1.2 ,# Tasos' addition
          ...)
     axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1)  # custom axis
     axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1)  #    -//-
