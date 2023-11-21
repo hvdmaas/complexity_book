@@ -49,10 +49,10 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
     if (legend) {
       if (identical(draw, lines)) 
         legend("topright", legend = colnames[ishows], 
-               col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend)
+               col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
       else legend("topright", legend = colnames[ishows], 
                   col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, 
-                  pch = 1:100)
+                  pch = 1:100, bty = 'n')
     }
     return()
   }
@@ -65,15 +65,13 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
   if (legend) {
     if (identical(draw, lines)) 
       legend("topright", legend = colnames[ishows], col = colors[ishows], 
-             lty = 2:100, lwd = lwd, cex = sizeLegend)
+             lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
     else legend("topright", legend = colnames[ishows], col = colors[ishows], 
-                lty = 2:100, lwd = lwd, cex = sizeLegend, pch = ishows)
+                lty = 2:100, lwd = lwd, cex = sizeLegend, pch = ishows, bty = 'n')
   }
 }
 environment(timePlot2) <- asNamespace('Grind')
-
-timePlot2(dat1)
-run2()
+#timePlot2(dat1)
 # 'run2' function ---------------------------------------------------------
 run2 <- function (tmax = 100, tstep = 1, state = s, parms = p, odes = model, 
           ymin = 0, ymax = NULL, log = "", x = 1, y = 2, xlab = "Time", 
@@ -166,4 +164,4 @@ run2 <- function (tmax = 100, tstep = 1, state = s, parms = p, odes = model,
   return(f)
 }
 environment(run2) <- asNamespace('Grind')
-run2()
+#run2()
