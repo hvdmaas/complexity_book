@@ -7,7 +7,7 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
                        log = "", xlab = "Time", ylab = "Density", show = NULL, 
                        legend = TRUE, draw = lines, lwd = 1, add = FALSE, 
                        main = NULL, sub = NULL, recolor = FALSE, colMap = NULL, 
-                       pchMap = NULL, bty = 'n', ...) {
+                       pchMap = NULL, bty = 'n', c.legend.pos = NULL, ...) {
   
   font_add(family = "CMU-bright", regular = "cmunbmr.ttf")
   showtext_auto()
@@ -47,10 +47,11 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
                                         lty =i+1,
                                         lwd = lwd, pch = i)
     if (legend) {
+      if(is.null(c.legend.pos)) c.legend.pos = 'topright'
       if (identical(draw, lines)) 
-        legend("topright", legend = colnames[ishows], 
+        legend(c.legend.pos, legend = colnames[ishows], 
                col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
-      else legend("topright", legend = colnames[ishows], 
+      else legend(c.legend.pos, legend = colnames[ishows], 
                   col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, 
                   pch = 1:100, bty = 'n')
     }
@@ -63,10 +64,11 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
          lwd = lwd, pch = k, lty =i+1)
   }
   if (legend) {
+    if(is.null(c.legend.pos)) c.legend.pos = 'topright'
     if (identical(draw, lines)) 
-      legend("topright", legend = colnames[ishows], col = colors[ishows], 
+      legend(c.legend.pos, legend = colnames[ishows], col = colors[ishows], 
              lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
-    else legend("topright", legend = colnames[ishows], col = colors[ishows], 
+    else legend(c.legend.pos, legend = colnames[ishows], col = colors[ishows], 
                 lty = 2:100, lwd = lwd, cex = sizeLegend, pch = ishows, bty = 'n')
   }
 }
@@ -79,7 +81,7 @@ run2 <- function (tmax = 100, tstep = 1, state = s, parms = p, odes = model,
           arrest = NULL, after = NULL, tweak = NULL, timeplot = TRUE, 
           traject = FALSE, table = FALSE, add = FALSE, legend = TRUE, 
           solution = FALSE, delay = FALSE, lwd = 1, col = "grey5", 
-          pch = 20, ...) 
+          pch = 20, c.legend.pos = NULL, ...) 
 {
   if (delay & (solution | !is.null(after))) 
     stop("Don't use solution or after with delay equations")
@@ -152,7 +154,7 @@ run2 <- function (tmax = 100, tstep = 1, state = s, parms = p, odes = model,
                                tmax = tmax, ymin = ymin, ymax = ymax, log = log, 
                                add = add, xlab = xlab, ylab = ylab, show = show, 
                                draw = draw, lwd = lwd, legend = legend, font.main = font.main, 
-                               font.sub = font.sub), dots[names(dots) %in% args_plot]))
+                               font.sub = font.sub, c.legend.pos = c.legend.pos), dots[names(dots) %in% args_plot]))
   if (traject) {
     points(nsol[1, x + 1], nsol[1, y + 1], pch = pch)
     lines(nsol[, x + 1], nsol[, y + 1], lwd = lwd, col = col)
