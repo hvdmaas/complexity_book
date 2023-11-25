@@ -140,24 +140,24 @@ fit2 <- function (datas = data, state = s, parms = p, odes = model,
       imain <- main[min(length(main), iset)]
       isub <- sub[min(length(sub), iset)]
       if (is.null(show)) {
-        timePlot(nsol, tmin = tmin, tmax = tmaxi, ymin = ymini, 
+        timePlot2(nsol, tmin = tmin, tmax = tmaxi, ymin = ymini, 
                  ymax = ymaxi, log = log, main = imain, sub = isub, 
                  add = ifelse(iset > 1, add, FALSE), xlab = xlab, 
                  ylab = ylab, font.main = font.main, font.sub = font.sub, 
                  legend = legend, c.legend.pos = c.legend.pos)
-        timePlot(data, draw = points, add = TRUE, legend = FALSE, 
+        timePlot2(data, draw = points, add = TRUE, legend = FALSE, 
                  lwd = 1.5, colMap = index(colnames, solnames), 
                  pchMap = pchMap, c.legend.pos = c.legend.pos)
       }
       else {
         for (i in show) {
-          timePlot(nsol, tmin = tmin, tmax = tmaxi, 
+          timePlot2(nsol, tmin = tmin, tmax = tmaxi, 
                    ymin = ymini, ymax = ymaxi, log = log, show = i, 
                    main = imain, sub = isub, xlab = xlab, ylab = ylab, 
                    font.main = font.main, font.sub = font.sub, 
                    legend = legend, c.legend.pos = c.legend.pos)
           if (i %in% colnames) 
-            timePlot(data, draw = points, add = TRUE, 
+            timePlot2(data, draw = points, add = TRUE, 
                      legend = FALSE, lwd = 1.5, show = i, colMap = index(colnames, 
                                                                          solnames), pchMap = pchMap, c.legend.pos = c.legend.pos)
         }
