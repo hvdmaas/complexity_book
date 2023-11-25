@@ -2,8 +2,13 @@
 # chapter 5 R- Figures ----------------------------------------------------
 # -------------------------------------------------------------------------
 source("r-figures-code/final-theme.R")
-source("r-figures-code/plane2T.R")
 library(Grind)
+
+source("r-figures-code/plane2T.R")
+source("r-figures-code/run2_and_timePlot2.R")
+source("r-figures-code/curve2.R")
+source("r-figures-code/fit2.R")
+
 
 # antiRun function --------------------------------------------------------
 
@@ -31,9 +36,13 @@ LV <- function(t, state, parms) {
     return(list(c(dN, dP)))
   })
 }
-##
+
+png('media/ch5/fig-ch5-img1-old-49b.png', width = 8, height = 5, units = 'in', res = 300)
+
+## base 2
 set.seed(1)
 layout(matrix(1:4,2,2,byrow=T))
+par(mar=c(4.5,5,1,2)) 
 p <- c(a=1.1,b=.4,c=.1,d=0.4) # p is a named vector of parameters
 s <- c(N=10,P=10)             # s is the state
 n <- 30
@@ -44,59 +53,86 @@ data_error <- run(odes=LV,n,table=T,timeplot =F)
 data_error[,2:3] <- data_error[,2:3]+
   matrix(rnorm(2*n,0,2),,2) # measurement error 
 #fit & plot
-r <- .5 # growth rate
 s<- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
-f_deter<-  fit(odes=LV,data_deterministic,main='deterministic', timeplot = FALSE)
-f_stoch<- fit(odes=LV,data_stochastic,main='stochastic', timeplot = FALSE)
-f_error<- fit(odes=LV,data_error,main='error', timeplot = FALSE)
-#pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
-#pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
-#barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
-#        legend.text=c('deterministic','stochastic','error'),
-#        args.legend=c(x=13))
+f_deter<- fit2(odes=LV,data_deterministic,main='deterministic', legend = FALSE)
+f_stoch<- fit2(odes=LV,data_stochastic,main='stochastic', legend = FALSE)
+f_error<- fit2(odes=LV,data_error,main='error', legend = FALSE)
 
-plotfun <- function(datas){
-  strng <- deparse(substitute(datas))
-  title <- str_remove(strng, 'data_')
-  datas %>% 
-    pivot_longer(c('N','P'), names_to = 'par', values_to = 'val') %>% 
-    ggplot()+
-    geom_line(aes(time, val, color = par, linetype = par), linewidth = .4)+
-    geom_point(aes(time, val, shape = par, color = par), size = 1)+
-    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
-    labs(y = 'Density', color = '', shape = '', linetype = '', x = 'Time', 
-         title = title)+
-    theme_minimal() + theme1+
-    theme(legend.position = 'right')
-}
-#Grind::timePlot(data_deterministic)
-p1 <- plotfun(data_deterministic)
-#Grind::timePlot(data_stochastic)
-p2 <- plotfun(data_stochastic)
-#Grind::timePlot(data_error)
-p3 <- plotfun(data_error)
+pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
+pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
 
-# bar plot
-bardata <- bind_rows(f_deter$par[3:6], f_stoch$par[3:6], f_error$par[3:6]) %>% 
-  bind_cols(.,'Residuals' = c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma)) %>% 
-  add_column(set = c('deterministic','stochastic','error'))
-
-p4 <- bardata %>% 
-  pivot_longer(c('a','b','c','d','Residuals'), names_to = 'param', values_to = 'val') %>% 
-  ggplot()+
-  geom_col(aes(set, val, fill = set))+
-  labs(y = '', x = '', fill = '')+
-  scale_fill_manual(values = c('#E4D5B6', '#A6761D', '#634611'))+
-  facet_wrap(~param, nrow = 1)+
-  theme_minimal() + theme1+
-  theme(axis.text.x = element_blank(), 
-        strip.text = element_text(colour = "grey10", size = 15),
-        legend.key.size = unit(0.1, 'in'),
-        legend.text=element_text(size=12),
-        legend.position = 'right')
-
-plot1 <- (p1 + p2) / (p3 + p4 )
-plot1
+barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'), 
+        bty = 'n', family = "CMU-bright", axes = FALSE, cex.lab = 1.2,
+        legend = c('deterministic','stochastic','error'), 
+        args.legend=c( bty = 'n', x = 'top'))
+axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) 
+dev.off()
+## GGPLOT
+#set.seed(1)
+#layout(matrix(1:4,2,2,byrow=T))
+#p <- c(a=1.1,b=.4,c=.1,d=0.4) # p is a named vector of parameters
+#s <- c(N=10,P=10)             # s is the state
+#n <- 30
+#data_deterministic <- run(odes=LV,n,table=T,timeplot =F) # deterministic data
+#data_stochastic <- run(odes=LV,n,table=T,after="state<-state+rnorm(2,0,.1)",
+#                       timeplot =F) # add stochasticity
+#data_error <- run(odes=LV,n,table=T,timeplot =F)
+#data_error[,2:3] <- data_error[,2:3]+
+#  matrix(rnorm(2*n,0,2),,2) # measurement error 
+##fit & plot
+#r <- .5 # growth rate
+#s<- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
+#f_deter<-  fit(odes=LV,data_deterministic,main='deterministic', timeplot = FALSE)
+#f_stoch<- fit(odes=LV,data_stochastic,main='stochastic', timeplot = FALSE)
+#f_error<- fit(odes=LV,data_error,main='error', timeplot = FALSE)
+##pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
+##pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
+##barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
+##        legend.text=c('deterministic','stochastic','error'),
+##        args.legend=c(x=13))
+#
+#plotfun <- function(datas){
+#  strng <- deparse(substitute(datas))
+#  title <- str_remove(strng, 'data_')
+#  datas %>% 
+#    pivot_longer(c('N','P'), names_to = 'par', values_to = 'val') %>% 
+#    ggplot()+
+#    geom_line(aes(time, val, color = par, linetype = par), linewidth = .4)+
+#    geom_point(aes(time, val, shape = par, color = par), size = 1)+
+#    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+#    labs(y = 'Density', color = '', shape = '', linetype = '', x = 'Time', 
+#         title = title)+
+#    theme_minimal() + theme1+
+#    theme(legend.position = 'right')
+#}
+##Grind::timePlot(data_deterministic)
+#p1 <- plotfun(data_deterministic)
+##Grind::timePlot(data_stochastic)
+#p2 <- plotfun(data_stochastic)
+##Grind::timePlot(data_error)
+#p3 <- plotfun(data_error)
+#
+## bar plot
+#bardata <- bind_rows(f_deter$par[3:6], f_stoch$par[3:6], f_error$par[3:6]) %>% 
+#  bind_cols(.,'Residuals' = c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma)) %>% 
+#  add_column(set = c('deterministic','stochastic','error'))
+#
+#p4 <- bardata %>% 
+#  pivot_longer(c('a','b','c','d','Residuals'), names_to = 'param', values_to = 'val') %>% 
+#  ggplot()+
+#  geom_col(aes(set, val, fill = set))+
+#  labs(y = '', x = '', fill = '')+
+#  scale_fill_manual(values = c('#E4D5B6', '#A6761D', '#634611'))+
+#  facet_wrap(~param, nrow = 1)+
+#  theme_minimal() + theme1+
+#  theme(axis.text.x = element_blank(), 
+#        strip.text = element_text(colour = "grey10", size = 15),
+#        legend.key.size = unit(0.1, 'in'),
+#        legend.text=element_text(size=12),
+#        legend.position = 'right')
+#
+#plot1 <- (p1 + p2) / (p3 + p4 )
+#plot1
 
 ggsave('media/ch5/fig-ch5-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
 
