@@ -2,8 +2,9 @@
 # chapter 6 R- Figures ----------------------------------------------------
 # -------------------------------------------------------------------------
 source("r-figures-code/final-theme.R")
-source("r-figures-code/plane2T.R")
 library(Grind)
+library(IsingSampler)
+library(igraph);library(qgraph)
 # fig 6.1 -----------------------------------------------------------------
 
 # GOOGLE
@@ -12,7 +13,7 @@ library(Grind)
 
 # fig 6.2 -----------------------------------------------------------------
 
-library(igraph);library(qgraph)
+
 g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
 plot(g1) # an undirected network with 3 nodes
 g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
@@ -29,14 +30,22 @@ png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 4, height = 3, units = 'in
 qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6]))
 dev.off()
 
+library(png)
+library(grid)
+library(gridExtra)
+p1 <- readPNG("media/ch6/fig-ch6-img2-old-71_1of2.png")
+p1g <- rasterGrob(p1)
+
+p2 <- centralityPlot(qgraph(adj)) + theme_minimal() + theme1 # note centrality() gives more indices
 edge_density(fcn) # indeed 1
-edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE)) # indeed .2
-centralityPlot(qgraph(adj)) + theme_minimal() + theme1 # note centrality() gives more indices
-ggsave('media/ch6/fig-ch6-img2-old-71_2of2.jpg', width = 4, height = 4, units = 'in', dpi = 300)
+edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))
+
+png('media/ch6/fig-ch6-img2-old-71b.png', width = 13, height = 6, units = 'in', res = 300)
+grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(1, 1.5)))
+dev.off()
 
 # -------------------------------------------------------------------------
 # fig 6.3 -----------------------------------------------------------------
-library(igraph);library(qgraph)
 png('media/ch6/fig-ch6-img3-old-72.png', width = 10, height = 7, units = 'in', res = 300)
 
 layout(matrix(1:6,2,3))
@@ -96,8 +105,8 @@ M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.4,.6)),8,8)
 M[diag(8)==1] <-  -.1
 qgraph(M,diag=T,layout='circle',labels=paste('x',1:8,sep='',col=''), 
        edge.color = ifelse(M > 0, ncolors[5], ncolors[6]))
-text(-.3,.3,'M',cex=3)
-text(-.7,1,expression(a*X*(1-X/K)),cex=1.5)
+text(-.3,.3,'M',cex=3, family = cfont)
+text(-.7,1,expression(a*X*(1-X/K)),cex=1.5,family = cfont)
 dev.off()
 
 
@@ -157,7 +166,7 @@ ggsave('media/ch6/fig-ch6-img7-old-76.jpg', width = 6, height = 3.5, units = 'in
 
 
 # 6.12 --------------------------------------------------------------------
-library("IsingSampler")
+
 n <- 10 # nodes
 W <- matrix(.1,n,n); diag(W)=0
 tau <- 0
@@ -196,5 +205,123 @@ for(beta in beta.range)
   data <- IsingSampler(N, W, nIter = 100, thresholds, beta = beta, responses = c(-1, 1))
   dat <- c(dat,sum(thresholds*apply(data,2,sum))) # a simple measure of alignment
 }
-plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
 
+tibble(x = beta.range, y = dat) %>% 
+  ggplot() +
+  geom_point(aes(x = x, y = y), shape = 1, size = 1)+
+  labs(x = 'Beta', 
+       y = 'Alignment with thresholds')+
+  theme_minimal() + theme1
+ggsave('media/ch6/fig-ch6-img13-old-82.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+
+# fig 6.14 ------------------------------------------------------------------
+hamiltonian <- function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
+glauber_step <- function(x,n,t,w,beta)
+{
+  i = sample(1:n,size=1) # take a random node
+  x_new=x;x_new[i]=x_new[i]*-1 # construct new state with flipped node
+  p=1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  # update probability
+  if(runif(1)<p) x=x_new # update state
+  return(x)
+}
+
+png('media/ch6/fig-ch6-img14-old-83.png', width = 7, height = 4, units = 'in', res = 300)
+layout(t(1:2))
+epsilon <- .002;lambda <- .002 # low values = slow time scale
+n <- 10
+W <- matrix(rnorm(n^2,0,.1),n,n); W <- pmax(W,t(W)) # to make W symmetric
+diag(W) <- 0
+qgraph(W, edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+       mar = c(3,3,5,3))
+title('before learning', family = cfont)
+thresholds <- rep(.2, n)
+x <- sample(c(-1,1),n,replace=T)
+for(i in 1:500)
+{
+  x <- glauber_step(x,n,thresholds,W,beta=2)
+  W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W # Hebbian learning
+  diag(W) <- 0
+}
+round(W,2)
+qgraph(W, edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+       mar = c(3,3,5,3))
+title('after learning', family = cfont)
+dev.off()
+
+# fig 6.15 ----------------------------------------------------------------
+
+f <- function(x,a,b,c,d) (1/6)*x^6-.25*d*x^4-(1/3)*c*x^3-.5*b*x^2-a*x
+layout(matrix(1:9,1,9))
+par(mar=c(1,1,1,1))
+a=0;c=0;d=5
+for(b in 1:-7)
+  curve(f(x,a,b,c,d),-2.8,2.8,axes=F,bty='n',ylab='',xlab='')
+
+# fig 6.16 ----------------------------------------------------------------
+mutualism <- function(t, state, parms){
+  with(as.list(c(state,parms)),{
+    X <- state[1:nr_var]
+    dX <- a*X*(1-X/k) + a*(X * M %*% X)/k # using matrix multiplication
+    return(list(dX))
+  })
+}
+
+## Cross-Sectional (A)
+
+## The mutualism simulated data
+nr_var <- 12 # number of tests, abilities (W)
+nr_of_pp <- 500
+data <- matrix(0,nr_of_pp,nr_var) # to collect the data in the simulation
+M <- matrix(.05,nr_var,nr_var)
+##
+M[,1] <- .2 # strong influence of X1 on all others
+M[2,] <- .2 # strong influence on X2 by all others
+M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
+
+for(i in 1:nr_of_pp)
+{
+  # sample a,K, starting values X from normal distributions for each person separately
+  # note M is constant over persons.
+  a <- rnorm(nr_var,.2,.05) 
+  k <- rnorm(nr_var,10,2)
+  x0 <- rnorm(nr_var,2,0.1) # initial state of X
+  s  <- x0;p <- c() # required for grind
+  data[i,] <- run(odes=mutualism ,tmax=60, timeplot = (i==1),legend=F) # collect data (end points)
+  #plot person 1 only
+}
+simdat <- data
+
+cormat <- cor_auto(simdat) #cor matrix
+
+nw <- EBICglasso(cormat, nrow(simdat),gamma = 0.5) #EBIC
+qnw <- qgraph(nw, layout = 'spring', directed = FALSE,
+       edge.color = ifelse(nw > 0, ncolors[5], ncolors[6]))
+
+centralityPlot(qnw,include = c( "Betweenness","Closeness","Strength", "ExpectedInfluence")) 
+
+## Time series
+library("graphicalVAR")
+# make time series for one persons with some stochastic effects
+data <- run(odes=mutualism, table = T, tmax=1000,timeplot = (i==1),legend=F, after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
+data <- data[,-1]
+colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
+fit <- graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
+
+png('media/ch6/fig-ch6-img16-old-85B1.png', width = 5, height = 5, units = 'in', res = 300)
+par(mar=c(3,3,3,3))
+plot(fit,"PDC", titles = FALSE,
+     edge.color = ncolors[5],
+     mar = c(6,6,8,6))
+title("Partial Directed Correlations", family = cfont)
+dev.off()
+library(png)
+library(grid)
+library(gridExtra)
+B1 <- readPNG("media/ch6/fig-ch6-img16-old-85B1.png")
+B1g <- rasterGrob(B1)
+
+B2 <- centralityPlot(fit$PDC) + theme_minimal() + theme1 + 
+  theme(text = element_text(family = cfont, color = "grey10", size = 15))
+png('media/ch6/fig-ch6-img16-old-85B.png', width = 12, height = 5, units = 'in', res = 300)
+grid.arrange(arrangeGrob(B1g, B2, ncol = 2, widths = c(1, 1)))
+dev.off()

@@ -356,7 +356,7 @@ Due to Hebbian learning, the network evolves from an unbalanced network (random 
 
 #### The stability of attitudes and entropy measures
 
-So, adding Hebbion learning to the Ising attitude model leads to stable and consistent attitudes. Computing the Gibbs entropy is the best way to quantify this [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in Section 4.1.1 as the log of the number of ways (W) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates X. It is defined as:
+So, adding Hebbian learning to the Ising attitude model leads to stable and consistent attitudes. Computing the Gibbs entropy is the best way to quantify this [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in Section 4.1.1 as the log of the number of ways (W) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates X. It is defined as:
 
 [^ch6-2]: Assuming that all the attitude states (items) are reencoded as positive (or negative) valued items.
 
