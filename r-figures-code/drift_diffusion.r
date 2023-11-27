@@ -62,4 +62,7 @@ g3=ggplot(h2,aes(x=rt)) +
         axis.title.y=element_blank(),
         axis.text.y=element_blank(),
         axis.ticks.y=element_blank())
+
+jpeg('dd.jpg',h=800,w=1600,quality = 75)
 g2/g1/g3 + plot_layout(heights = c(1, 5,1))
+dev.off()
