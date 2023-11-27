@@ -469,9 +469,9 @@ W <- matrix(runif(n^2,0.5,2),n,n); # random positive matrix
 W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),replace=T),n,n) # delete 90% of nodes
 W <- pmax(W,t(W)) # make symmetric 
 diag(W) <- 0
-n <- 1000
+ndata <- 1000
 thresholds <- rnorm(n,0,1) 
-data <- IsingSampler(n, W, thresholds, beta = .5, responses = c(-1, 1))
+data <- IsingSampler(ndata, W, thresholds, beta = .5, responses = c(-1, 1))
 fit <- IsingFit(data,family='binomial', plot=FALSE)
 layout(t(1:3))
 qgraph(W,fade = FALSE);title("Original network",cex.main=2)
