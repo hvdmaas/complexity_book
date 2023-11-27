@@ -253,7 +253,7 @@ dat <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 
 #matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 library(ggmatplot)
-ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[3],
+ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[4],
           linewidth = .15, linetype = 1, xlab = "time",ylab = 'x') + 
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
