@@ -92,16 +92,17 @@ p <- result$x %>% data.frame(x) %>%
      ggplot(aes(x))+
       geom_histogram(aes(y=..density..), 
                  color = 'grey20', fill = 'grey80', linewidth = .3)+
-    geom_density(color = colors[2], adjust = 2/3, linewidth = .3)+
+    geom_density(color = ncolors[2], adjust = 2/3, linewidth = .3)+
   coord_flip()+
     theme1+theme_void()
 p
 ## add custom image
 library(png) 
-glass_png <- readPNG('media/ch3/glasses.png')
+glass_png <- readPNG('media/ch3/glasses2.png')
 library(cowplot)
 glasses <- ggdraw() +
-  draw_image(glass_png,  x = 0, y = 0, scale = 0.9)
+  draw_image(glass_png,  x = 0, y = 0, scale = 0.9)+
+  draw_text('Up/down', x = 0.61, y = 0.7, size = 35, color = "black", family = cfont)
 # Plot + image
 combined_plot <- plot_grid(
   glasses, p, ncol = 2, rel_widths = c(2/3, 1/3))
@@ -142,7 +143,7 @@ p <- plotdat %>%
   geom_vline(xintercept = 0, linetype = 'dotted')+
   ylim(600, 1400) +
   scale_x_continuous(n.breaks = 6) +
-  scale_color_manual(values = c(colors[1:2]))+
+  scale_color_manual(values = c(ncolors[1:2]))+
   labs( x=expression(beta),
         y='BIC', 
         color = '', 
@@ -154,7 +155,7 @@ p + annotate("text", x=-.5, y=800, label="no hysteresis",
   annotate("text", x=.5, y=800, label="hysteresis",
            color="grey20", size = 7) 
 
-ggsave('media/ch3/fig-ch3-img21-old-33.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img23-old-35.jpg', width = 6, height = 3.5, units = 'in', dpi = 300)
 
 # fig 3.24 ----------------------------------------------------------------
 
