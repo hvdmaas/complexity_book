@@ -8,26 +8,34 @@ library(igraph);library(qgraph)
 # fig 6.1 -----------------------------------------------------------------
 
 # GOOGLE
-
-# 
+library(readxl)
+scholar_statistics <- read_excel("r-figures-code/scholar statistics.xlsx")
+scholar_statistics %>% ggplot()+
+  geom_line(aes(Year, Citations), linewidth = .5,color = 'grey15')+
+  geom_point(aes(Year, Citations), size = 2, shape = 21, stroke = 1, 
+             color = 'white', fill = 'grey15')+
+  scale_x_continuous(breaks = scholar_statistics$Year)+
+  theme_minimal()+theme1
+ggsave('media/ch6/fig-ch6-img1-old-70.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
 # fig 6.2 -----------------------------------------------------------------
 
 
-g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
-plot(g1) # an undirected network with 3 nodes
-g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
-plot(g2) # an directed network with self-excitation on node 3
-get.adjacency(g2) # weight matrix
-fcn <- make_full_graph(10) # a fully connected network
-plot(fcn, vertex.size=10, vertex.label=NA)
+#g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
+#plot(g1) # an undirected network with 3 nodes
+#g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
+#plot(g2) # an directed network with self-excitation on node 3
+#get.adjacency(g2) # weight matrix
+#fcn <- make_full_graph(10) # a fully connected network
+#plot(fcn, vertex.size=10, vertex.label=NA)
 layout(1)
 set.seed(1)
 adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
 adj <- adj*sample(0:1,100,replace=T,prob=c(.8,.2)) # set 80% to 0
 
 png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 4, height = 3, units = 'in', res = 300)
-qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6]))
+qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6]),
+       negDashed = TRUE)
 dev.off()
 
 library(png)
@@ -36,21 +44,28 @@ library(gridExtra)
 p1 <- readPNG("media/ch6/fig-ch6-img2-old-71_1of2.png")
 p1g <- rasterGrob(p1)
 
-p2 <- centralityPlot(qgraph(adj)) + theme_minimal() + theme1 # note centrality() gives more indices
+p2 <- centralityPlot(qgraph(adj)) theme_minimal() +
+  theme(text = element_text(family = cfont, color = "grey10"),
+        panel.grid.major.x = element_line(linewidth = V3), # change the grid layout
+        panel.grid.major.y = element_line(linewidth = V3), # change the grid layout
+        panel.grid.minor.x = element_blank(), # remove the grid layout
+        panel.grid.minor.y = element_blank())
 edge_density(fcn) # indeed 1
 edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))
 
-png('media/ch6/fig-ch6-img2-old-71b.png', width = 13, height = 6, units = 'in', res = 300)
-grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(1, 1.5)))
+png('media/ch6/fig-ch6-img2-old-71b.png', width = 14, height = 7, units = 'in', res = 300)
+grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(1, 1.3)))
 dev.off()
 
 # -------------------------------------------------------------------------
 # fig 6.3 -----------------------------------------------------------------
-png('media/ch6/fig-ch6-img3-old-72.png', width = 10, height = 7, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img3-old-72.png', width = 8, height = 11, units = 'in', res = 300)
 
-layout(matrix(1:6,2,3))
+layout(matrix(1:6,3,2))
 par(mar=c(1,1,1,1))
+par(family = cfont, cex = 1.1)
 plot(make_star(10, mode = "out"),main="make_star", 
+     main.family = cfont,
      vertex.color = ncolors[1], 
      edge.color = 'grey50',
      vertex.frame.color = 'grey50',
@@ -100,13 +115,17 @@ dev.off()
 # fig 6.6 -----------------------------------------------------------------
 png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
 set.seed(1)
+layout(1)
+par(mar=c(4,4,4,4))
 M <- matrix(rnorm(8^2,0.1,0.0),8,8)
 M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.4,.6)),8,8)
 M[diag(8)==1] <-  -.1
 qgraph(M,diag=T,layout='circle',labels=paste('x',1:8,sep='',col=''), 
-       edge.color = ifelse(M > 0, ncolors[5], ncolors[6]))
+       edge.color = ifelse(M > 0, ncolors[5], ncolors[6]), 
+       edge.width = .75,negDashed = TRUE, 
+       mar = c(5,5,5,5))
 text(-.3,.3,'M',cex=3, family = cfont)
-text(-.7,1,expression(a*X*(1-X/K)),cex=1.5,family = cfont)
+text(-.7,1.1,expression(a*X*(1-X/K)),cex=1.5)
 dev.off()
 
 
@@ -146,7 +165,7 @@ pplist[[1]] # One person all Time points (61) all abilities (12)
 dat1 <- pplist[[1]] %>% 
   pivot_longer(colnames(.)[-1], names_to = 'ab', values_to = 'val') %>% 
   ggplot() +
-  geom_line(aes(time, val, color = ab), linewidth = .25) +
+  geom_line(aes(time, val, group = ab), color = 'grey5',linewidth = .25) +
   labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '') +
   ylim(c(NA,30))+
   theme_minimal() + theme1+
@@ -156,7 +175,7 @@ tmpdata <- lapply(pplist, function(x) x[61,-1])
 dataT <- do.call(rbind,tmpdata)
 histplot <- tibble('x' = cor(dataT)[cor(dataT)<1]) %>% 
   ggplot() +
-  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[3])+
+  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[4])+
   labs(title = 'Positive Manifold' ,x = 'Between test correlations')+
   theme_minimal() + theme1+
   theme(legend.position = 'none')
@@ -176,7 +195,7 @@ thresholds <- rep(tau, n)
 dat1 <- IsingSampler(N, W, nIter=100, thresholds, beta = .1, responses = c(-1, 1))
 hist1 <- tibble(x = apply(dat1,1,sum)) %>% 
   ggplot() +
-  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[3])+
+  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[4])+
   labs(title = 'beta = .1' ,x = 'sum of x')+
   theme_minimal() + theme1+
   theme(legend.position = 'none')
@@ -184,7 +203,7 @@ hist1
 dat2 <- IsingSampler(N, W, nIter=100, thresholds, beta = 2, responses = c(-1, 1))
 hist2 <- tibble(x = apply(dat2,1,sum)) %>% 
   ggplot() +
-  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[3])+
+  geom_histogram(aes(x), bins = 10, col = 'white', fill = ncolors[4])+
   labs(title = 'beta = 2' ,x = 'sum of x')+
   theme_minimal() + theme1+
   theme(legend.position = 'none')
@@ -289,16 +308,29 @@ for(i in 1:nr_of_pp)
   data[i,] <- run(odes=mutualism ,tmax=60, timeplot = (i==1),legend=F) # collect data (end points)
   #plot person 1 only
 }
-simdat <- data
 
-cormat <- cor_auto(simdat) #cor matrix
+cormat <- cor_auto(data) #cor matrix
 
-nw <- EBICglasso(cormat, nrow(simdat),gamma = 0.5) #EBIC
-qnw <- qgraph(nw, layout = 'spring', directed = FALSE,
+nw <- EBICglasso(cormat, nrow(data),gamma = 0.5) #EBIC
+
+png('media/ch6/fig-ch6-img16-old-85A1.png', width = 6, height = 6, units = 'in', res = 300)
+qnw <- qgraph(nw, layout = 'spring',
        edge.color = ifelse(nw > 0, ncolors[5], ncolors[6]))
+dev.off()
 
-centralityPlot(qnw,include = c( "Betweenness","Closeness","Strength", "ExpectedInfluence")) 
-
+A1 <- readPNG("media/ch6/fig-ch6-img16-old-85A1.png")
+A1g <- rasterGrob(A1)
+A2 <- centralityPlot(qnw,include = c( "Betweenness","Closeness","Strength", "ExpectedInfluence"),
+                     scale = "z-scores") +
+  theme_minimal() +
+  theme(text = element_text(family = cfont, color = "grey10"),
+        panel.grid.major.x = element_line(linewidth = V3), # change the grid layout
+        panel.grid.major.y = element_line(linewidth = V3), # change the grid layout
+        panel.grid.minor.x = element_blank(), # remove the grid layout
+        panel.grid.minor.y = element_blank())
+png('media/ch6/fig-ch6-img16-old-85A.png', width = 8, height = 4, units = 'in', res = 300)
+grid.arrange(arrangeGrob(A1g, A2, ncol = 2, widths = c(1, 1.5)))
+dev.off()
 ## Time series
 library("graphicalVAR")
 # make time series for one persons with some stochastic effects
@@ -307,21 +339,24 @@ data <- data[,-1]
 colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
 fit <- graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
 
-png('media/ch6/fig-ch6-img16-old-85B1.png', width = 5, height = 5, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img16-old-85B1.png', width = 6, height = 6, units = 'in', res = 300)
 par(mar=c(3,3,3,3))
 plot(fit,"PDC", titles = FALSE,
      edge.color = ncolors[5],
      mar = c(6,6,8,6))
 title("Partial Directed Correlations", family = cfont)
 dev.off()
-library(png)
-library(grid)
-library(gridExtra)
+
 B1 <- readPNG("media/ch6/fig-ch6-img16-old-85B1.png")
 B1g <- rasterGrob(B1)
 
-B2 <- centralityPlot(fit$PDC) + theme_minimal() + theme1 + 
-  theme(text = element_text(family = cfont, color = "grey10", size = 15))
-png('media/ch6/fig-ch6-img16-old-85B.png', width = 12, height = 5, units = 'in', res = 300)
-grid.arrange(arrangeGrob(B1g, B2, ncol = 2, widths = c(1, 1)))
+B2 <- centralityPlot(fit$PDC) +
+  theme_minimal() +
+  theme(text = element_text(family = cfont, color = "grey10"),
+        panel.grid.major.x = element_line(linewidth = V3), # change the grid layout
+        panel.grid.major.y = element_line(linewidth = V3), # change the grid layout
+        panel.grid.minor.x = element_blank(), # remove the grid layout
+        panel.grid.minor.y = element_blank())
+png('media/ch6/fig-ch6-img16-old-85B.png', width = 8, height = 4, units = 'in', res = 300)
+grid.arrange(arrangeGrob(B1g, B2, ncol = 2, widths = c(1, 1.5)))
 dev.off()
