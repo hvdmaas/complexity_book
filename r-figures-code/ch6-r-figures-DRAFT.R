@@ -360,3 +360,61 @@ B2 <- centralityPlot(fit$PDC) +
 png('media/ch6/fig-ch6-img16-old-85B.png', width = 8, height = 4, units = 'in', res = 300)
 grid.arrange(arrangeGrob(B1g, B2, ncol = 2, widths = c(1, 1.5)))
 dev.off()
+
+# g.17 --------------------------------------------------------------------
+
+#
+
+# fig 6.18 ----------------------------------------------------------------
+
+library(IsingSampler)
+library(IsingFit)
+set.seed(1)
+n <- 8
+W <- matrix(runif(n^2,0.5,2),n,n); # random positive matrix
+W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),replace=T),n,n) # delete 90% of nodes
+W <- pmax(W,t(W)) # make symmetric 
+diag(W) <- 0
+ndata <- 1000
+thresholds <- rnorm(n,0,1) 
+data <- IsingSampler(ndata, W, thresholds, beta = .5, responses = c(-1, 1))
+fit <- IsingFit(data,family='binomial', plot=FALSE)
+png('media/ch6/fig-ch6-img18-old-87.png', width = 8, height = 4, units = 'in', res = 300)
+layout(t(1:3))
+qgraph(W,fade = FALSE,
+       edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+       negDashed = TRUE,
+       mar = c(3,3,5,3))
+title("Original network",cex.main=2, family = cfont)
+qgraph(fit$weiadj,fade = FALSE,
+       edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+       negDashed = TRUE, mar = c(3,3,5,3))
+title("Estimated network",cex.main=2, family = cfont)
+plot(thresholds,
+     type='p',bty='n',
+     xlab='node',ylab='Threshold',
+     cex=2,cex.lab=1.5, axes = FALSE, family = cfont)
+axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)  # custom axis
+axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont) 
+lines(fit[[2]],lwd=1.5)
+dev.off()
+
+# fig 6.19 ----------------------------------------------------------------
+layout(1)
+Obama <- read.table("data/Obama.txt",header=T) # see book data folder
+ObamaFit <- IsingFit(Obama,plot=F)
+ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 'undirected', weighted = TRUE,     add.colnames = FALSE)
+ObamaCom <- cluster_walktrap(ObamaiGraph)
+png('media/ch6/fig-ch6-img19-old-88.png', width = 6, height = 4, units = 'in', res = 300)
+
+qgraph(ObamaFit$weiadj, 
+       layout = 'spring', 
+       cut = .8, groups = communities(ObamaCom), 
+       legend = FALSE,
+       edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+       color = c(ncolors[9],
+                 ncolors[7],
+                 ncolors[3],
+                 ncolors[8]),
+       negDashed = TRUE)
+dev.off()
