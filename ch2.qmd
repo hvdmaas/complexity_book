@@ -8,7 +8,7 @@
 
 Chaos is one of the three most spectacular phenomena in complex systems and as psychologists we should know the basic results of chaos theory. It is also great fun to learn about chaos and it allows me to introduce many key concepts that we need in later chapters.
 
-In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its implications for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa.
+In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its **fundamental** implication for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa. **How this works will become clear in this chapter.**
 
 ## The population growth of rabbits
 
@@ -225,25 +225,25 @@ Fractals are another topic for further study. Another look at Wikipedia is recom
 
 Chaos theory and the logistic map were popularized about 50 years ago, and since then researchers have been looking for chaos in all kinds of time series [@ayersApplicationChaosTheory1997; @robertsonChaosTheoryPsychology2014; @schiepek2017]. One idea behind this work is the hypothesis that chaos might be healthy [@poolItHealthyBe1989] or be helpful. It would be helpful in learning algorithms, such as neutral networks, to prevent getting stuck in local minima [@bertschingerRealTimeComputationEdge2004]. My very first publication was about chaos in neural networks [@vandermaasNoteChaoticBehavior1990].
 
-There exist many techniques for chaos detection in times series. This is an active area of research and new methods are proposed regularly [@zanin2022]. There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020]. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
+There exist many techniques for chaos detection in times series. **This is an active area of research, with new methods being proposed on a regular basis [@zanin2022].** There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020]. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
 
-These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. This is all but easy because these signals are inevitably contaminated with noise [@rosso2007].
+**These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. This is all but easy because these signals are inevitably contaminated with noise [@rosso2007].**
 
-Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.
+**Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.**
 
 ## Exercises
 
 1)  For r=3.5, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 
-2)  In the bifurcation plot, you can zoom in by changing r.range to seq(3.4, 4, by=0.0001)), perhaps also changing cex=.01 to a lower value. Now zoom in on the interval of r between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of r. Provide your r-code and figure (\*).
+2)  In the section on bifurcation diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the r's on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change 'cex = 0.01' to a lower value. Zoom in on the interval of r between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of r. (\*)
 
 3)  Reproduce the first image from the Henon map wiki page. Provide your r-code and figure (\*).
 
-4)  Make the bifurcation diagram of the Ricker model (see wiki). Provide your r-code and figure. What is the advantage of this model over the logistic map?
+4)  Make the bifurcation diagram of the Ricker model (see wiki). Provide your r-code and figure. Why is this model considered a more realistic representation of population growth than the logistic map?
 
 5)  Also reproduce the three-dimensional bifurcation diagram of the Henon map (\*\*).
 
-6)  Verify that for r=4 the DChaos package gives the Lyapunov coefficient equal to the one calculated with the derivative (@eq-ch2-3) (\*\*).
+6)  Have a look at the definition of the Lyapunov coefficient in Section **2.4**. Calculate this Lyapunov coefficient for the logistic map where r = 4 using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
 
 7)  Use the Rmusic library (installed with devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
