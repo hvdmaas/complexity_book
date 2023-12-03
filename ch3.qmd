@@ -6,7 +6,7 @@ My dissertation research was on the theory of Piaget, who proposed a stage theor
 
 There are many conservation tasks, but the setup is always the same. For example, you show a child two equal balls of clay, ask for confirmation that they weigh the same, roll one into a sausage shape, and then ask again for confirmation of equal weight. A non-conserving child will now claim that the longer sausage weighs more. One can **also** do this with two rows of coins (spreading one row out) or two glasses of water (pouring the water from one glass into a smaller longer glass). It is actually a fascinating task, a real fun task to do with children between 5 and 8 years old.
 
-From the 1960's to the 1980's, this was a topic of major interest in developmental psychology, and thousands of papers were published on the subject. A key question was whether there was **really** a stage transition, and there was a lot of confusion about what a transition actually was. It was my task to clarify this and to prove Piaget's hypothesis. I think I succeeded in clarifying the question, but whether I succeeded in proving the stage theory is debatable.[^ch3-1]
+From the 1960's to the 1980's, this was a topic of major interest in developmental psychology, and hundreds of papers were published on the subject . A key question was whether there was **really** a stage transition, and there was a lot of confusion about what a transition actually was. It was my task to clarify this and to prove Piaget's hypothesis. I think I succeeded in clarifying the question, but whether I succeeded in proving the stage theory is debatable.[^ch3-1]
 
 [^ch3-1]: Learning a particular conservation task does seem to be rather sudden, but there could easily be two years between learning conservation of number and conservation of volume [@kreitlerHorizontalDecalageProblem1989] . This is inconsistent with the stage theory.
 
@@ -94,7 +94,7 @@ Another way to visualize this is making a bifurcation diagram as we did for the 
 
 This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, The Seduction of Curves [@mcrobieSeductionCurvesLines2017], McRobie shows that whenever we see an edge, we see a fold. @fig-ch3-img6-old-18 is from the book where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.
 
-![The fold in drawings [from, @mcrobieSeductionCurvesLines2017].](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="2.540321522309711in" height="3.640939413823272in"}
+![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="2.540321522309711in" height="3.640939413823272in"}
 
 The fold catastrophe has been studied in fields ranging from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher order catastrophes are composed of folds. The fold catastrophe is also known as a saddle node, tangential or blue-sky bifurcation. It is an example of a second order phase transition.
 
@@ -110,7 +110,7 @@ It is advisable to do some minimal research on this equation yourself, using an 
 
 Other typical behavior occurs when we slowly vary $a\ ($up and down from -2 to 2), for a positive $b$ value ($b = 2).$ This is shown in @fig-ch3-img7-old-19. At about $a = 1.5$ we see the sudden jump. The left fixed point loses its stability and the ball rolls to the other minimum.
 
-![The change in the potential function of the cusp by varying $a$.](media/ch3/image7.jpg){#fig-ch3-img7-old-19 width="6.263888888888889in" height="1.3263888888888888in"}
+![The change in the potential function of the cusp by varying $a$. Note that the jump to the other state does not happen at $a=0$ but is delayed and depends on the direction of the change in $a$. This delay is called hysteresis.](media/ch3/image7.jpg){#fig-ch3-img7-old-19 width="6.263888888888889in" height="1.3263888888888888in"}
 
 Now consider what will happen if we decrease $a$ from 2 to -2. In this case the ball will stay in the right minimum until $a = - 1.5$. Where the jump takes place depends on the direction of the change in $a$, the normal variable. This lagging behind, or resistance to change, is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for $a = 0.5$ in @fig-ch3-img7-old-19) is often called a metastable or locally stable state. Metastable states appear to be stable for some time but are not in their globally stable state.
 
@@ -118,7 +118,7 @@ Now consider what will happen if we decrease $a$ from 2 to -2. In this case the 
 
 Another very interesting pattern occurs when $a = 0$ and $b$ is increased.
 
-![The change in the potential function of the cusp by varying $b$.](media/ch3/image8.jpg){#fig-ch3-img8-old-20 width="6.263888888888889in" height="1.3243055555555556in"}
+![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/image8.jpg){#fig-ch3-img8-old-20 width="6.263888888888889in" height="1.3243055555555556in"}
 
 For low $b$ there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation.
 
@@ -152,7 +152,7 @@ To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). 
 
 This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water. We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
-<!---![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/image12.jpg){#fig-ch3-img12-old-24 width="0.2in" height="0.2in"}--->
+<!---![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/image12.jpg){#fig-ch3-img12-old-24 width="0.2in" height="0.2in"}---> TASOS : what happens here?
 
 A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion.
 
@@ -194,7 +194,7 @@ Another one we have already seen is the period doubling bifurcation. This happen
 
 The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles. The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation (see Wikipedia). @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
 
-A case that we will analyze further in Chapter 5 is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is
+**One model that I will use as a psychological model in Chapter 5** is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is
 
 $$
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
@@ -214,7 +214,7 @@ Using these two 'constructed' control variables, we can depict the bifurcation l
 
 ![The bifurcation diagram of the Spruce Budworm model (Copied from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/image16.jpg){#fig-ch3-img16-old-28 width="3.2531408573928258in" height="2.981314523184602in"}
 
-Later we will discuss a psychological example of a mechanistic approach, but these are rare. The phenomenological approach is much more common. Phenomenological models are less persuasive than mechanistic models. One disadvantage of phenomenological models is that they may not provide a deep understanding of the underlying mechanisms that drive the system. Phenomenological models are often used to describe the behavior of a system without providing an explanation of how the behavior arises. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.
+Later we will discuss a psychological example of a mechanistic approach, **but as far as models of transitions are concerned,** these are rare. The phenomenological approach is much more common. Phenomenological models are less persuasive than mechanistic models. One disadvantage of phenomenological models is that they may not provide a deep understanding of the underlying mechanisms that drive the system. Phenomenological models are often used to describe the behavior of a system without providing an explanation of how the behavior arises. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.
 
 I suggest some guidelines for setting up a phenomenological cusp model. First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in-between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.
 
@@ -226,7 +226,7 @@ There is another issue here. In some phenomenological models the control variabl
 
 The control variables are fear and rage (see @fig-ch3-img17-old-29). In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
-There are many other examples of phenomenological cusp model in psychology. For example, cusp models have been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006; @witkiewitzNonnormalityDivergencePosttreatment2007], for performance in work and sports [@cohenCriticalElaborationEmpirical2003; @guastelloCuspCatastropheModels2019; @hardyTestingPredictionsCusp1996] and for humor [@paulosMathematicsHumor2008]. More examples can easily be found online.[^ch3-3]
+There are many other examples of phenomenological cusp model in psychology. For example, cusp models have been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006; @witkiewitzNonnormalityDivergencePosttreatment2007], for performance in work and sports [@cohenCriticalElaborationEmpirical2003; @guastelloCuspCatastropheModels2019; @hardyTestingPredictionsCusp1996] and for humor [@paulosMathematicsHumor2008].[^ch3-3]
 
 [^ch3-3]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
