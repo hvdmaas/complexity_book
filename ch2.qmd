@@ -2,9 +2,15 @@
 
 ## Introduction
 
+**There are many reasons why prediction is difficult in psychology. It can be due to a lack of precise models, inadequate measurement, environmental influences, large individual differences, to name a few. Complexity science adds another source of unpredictability.**
+
+**Suppose we have immense amounts of biological and psychological data on large numbers of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.**
+
 Chaos is one of the three most spectacular phenomena in complex systems and as psychologists we should know the basic results of chaos theory. It is also great fun to learn about chaos and it allows me to introduce many key concepts that we need in later chapters.
 
-In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its implications for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction is impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa.
+In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its implications for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa.
+
+## The population growth of rabbits
 
 Chaos theory consists of many deep mathematical results, but understanding the basics of chaos is not so hard. Below I will explain chaos in difference equations at a very basic level of mathematics and programming. The elementary example is the famous logistic map, usually introduced as a model of population growth, for instance, of rabbits. Suppose we have rabbits on an island, and they start to multiply, what would be a mathematical model for such a process?
 
@@ -219,9 +225,11 @@ Fractals are another topic for further study. Another look at Wikipedia is recom
 
 Chaos theory and the logistic map were popularized about 50 years ago, and since then researchers have been looking for chaos in all kinds of time series [@ayersApplicationChaosTheory1997; @robertsonChaosTheoryPsychology2014; @schiepek2017]. One idea behind this work is the hypothesis that chaos might be healthy [@poolItHealthyBe1989] or be helpful. It would be helpful in learning algorithms, such as neutral networks, to prevent getting stuck in local minima [@bertschingerRealTimeComputationEdge2004]. My very first publication was about chaos in neural networks [@vandermaasNoteChaoticBehavior1990].
 
-Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009] and EMG [@leiDetectingNonlinearityAction2001]. This is all but easy because these signals are inevitably contaminated with noise. I'm not aware of any recent meta-analyses of these different lines of research but there are still appearing new papers on this topic.
+There exist many techniques for chaos detection in times series. This is an active area of research and new methods are proposed regularly [@zanin2022]. There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020]. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
 
-There exist many techniques for chaos detection in times series. There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020]. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
+These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. This is all but easy because these signals are inevitably contaminated with noise [@rosso2007].
+
+Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.
 
 ## Exercises
 
