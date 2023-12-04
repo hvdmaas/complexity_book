@@ -30,7 +30,7 @@ Discontinuous phase transitions such as melting and freezing occur in many syste
 
 Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception. **Building and testing models of these psychological transitions is challenging but rewarding. These transitions represent significant changes, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies. During these transitions, there is a profound change in psychological systems.**
 
-![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts.](media/ch3/image2.jpg){#fig-ch3-img2-old-14 width="3.6770024059492563in" height="1.2100339020122484in"}
+![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts. Multistable perception is a much studied psychological phenomenon that is still not fully understood.](media/ch3/image2.jpg){#fig-ch3-img2-old-14 width="3.6770024059492563in" height="1.2100339020122484in"}
 
 ## Bifurcation and Catastrophe theory
 
@@ -50,7 +50,7 @@ $$
 V(X) = X^{2}
 $$ {#eq-ch3-1-old-5}
 
-![The quadratic potential function](media/ch3/image3.jpg){#fig-ch3-img3-old-15 width="2.695424321959755in" height="1.917276902887139in"}
+![The quadratic potential function. **A boll rolls to the minimum value of** $V(X)$**. It's change is defined by the derivative of the potential function.**](media/ch3/image3.jpg){#fig-ch3-img3-old-15 width="2.695424321959755in" height="1.917276902887139in"}
 
 You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function. We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are $V^{'}(X) = 2X$ and $V^{''}(X) = 2$, respectively. At $X = 0$ we find the minimum.
 
@@ -74,7 +74,7 @@ $$ {#eq-ch3-3-old-7}
 
 This function has a degenerate critical (bifurcation) point at $X = 0,\ \ a = 0$, because at this point $V^{'}(X) = - a + 3X^{2} = 0$ and $V^{''}(X) = 6X = 0$, so both the first and second derivative are zero. What makes this point so special? This is illustrated in @fig-ch3-img4-old-16.
 
-![A bifurcation at $a = 0$: the equilibria change in qualitative way.](media/ch3/image4.jpg){#fig-ch3-img4-old-16 width="3.985962379702537in" height="2.6466786964129483in"}
+![A bifurcation at $a = 0$: the equilibria change qualitatively. **For** $a<0$ **there is no equilibrium, for** $a>0$ **we have a minimum and a maximum.**](media/ch3/image4.jpg){#fig-ch3-img4-old-16 width="3.985962379702537in" height="2.6466786964129483in"}
 
 ```{r eval = FALSE}
 layout(t(1:3))
@@ -90,13 +90,13 @@ The middle figure depicts the case just in between these two cases. Here the equ
 
 Another way to visualize this is making a bifurcation diagram as we did for the logistic map. On the x-axis we put $a$, from -1 to 2. On the y-axis we plot $X^{*}$, the fixed points of @eq-ch3-3-old-7. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in @fig-ch3-img5-old-17.
 
-![The bifurcation diagram of the fold catastrophe](media/ch3/image5.jpg){#fig-ch3-img5-old-17 width="4.277777777777778in" height="2.6805555555555554in"}
+![The bifurcation diagram of the fold catastrophe. Similar to what's shown in the preceding figure, when $a=0$, there is a dramatic alteration in the equilibrium landscape. Suddenly, both a stable and an unstable equilibrium emerge, seemingly from nowhere.](media/ch3/image5.jpg){#fig-ch3-img5-old-17 width="4.277777777777778in" height="2.6805555555555554in"}
 
 This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, The Seduction of Curves [@mcrobieSeductionCurvesLines2017], McRobie shows that whenever we see an edge, we see a fold. @fig-ch3-img6-old-18 is from the book where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.
 
-![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="2.540321522309711in" height="3.640939413823272in"}
+![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. **The fold line separates the parts that can be seen from the parts that are hidden.**](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="2.540321522309711in" height="3.640939413823272in"}
 
-The fold catastrophe has been studied in fields ranging from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher order catastrophes are composed of folds. The fold catastrophe is also known as a saddle node, tangential or blue-sky bifurcation. It is an example of a second order phase transition.
+The fold catastrophe has been studied in fields ranging from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher order catastrophes are composed of folds. The fold catastrophe is also known as a saddle node, tangential or blue-sky bifurcation. It is an example of a second order phase transition. **It is not accompanied by sudden jumps in behavior.**
 
 ### The cusp catastrophe
 
@@ -110,15 +110,17 @@ It is advisable to do some minimal research on this equation yourself, using an 
 
 Other typical behavior occurs when we slowly vary $a\ ($up and down from -2 to 2), for a positive $b$ value ($b = 2).$ This is shown in @fig-ch3-img7-old-19. At about $a = 1.5$ we see the sudden jump. The left fixed point loses its stability and the ball rolls to the other minimum.
 
-![The change in the potential function of the cusp by varying $a$. Note that the jump to the other state does not happen at $a=0$ but is delayed and depends on the direction of the change in $a$. This delay is called hysteresis.](media/ch3/image7.jpg){#fig-ch3-img7-old-19 width="6.263888888888889in" height="1.3263888888888888in"}
+![The change in the potential function of the cusp by varying $a$. **Note that the jump to the other state does not happen at** $a=0$ **but is delayed and depends on the direction of the change in** $a$**. This delay is called hysteresis.**](media/ch3/image7.jpg){#fig-ch3-img7-old-19 width="6.263888888888889in" height="1.3263888888888888in"}
 
 Now consider what will happen if we decrease $a$ from 2 to -2. In this case the ball will stay in the right minimum until $a = - 1.5$. Where the jump takes place depends on the direction of the change in $a$, the normal variable. This lagging behind, or resistance to change, is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for $a = 0.5$ in @fig-ch3-img7-old-19) is often called a metastable or locally stable state. Metastable states appear to be stable for some time but are not in their globally stable state.
+
+**In his classic paper on the Psychophysical Law ([@stevens1957], Stevens reports hysteresis effects in perceptual judgments when properties such as brightness and loudness are systematically varied from low to high and vice versa. In this paper he says: "I'm trying to describe it, not explain it. I am not sure I know how to explain it." I'm not sure he would have agreed, but to me the cusp at least partially explains why hysteresis occurs.**
 
 @gilmoreCatastropheTheoryScientists1993 made an important point about noise in the system. If there is a lot of noise, the jumps occur earlier and we see less or no hysteresis effect. This is called the Maxwell convention as opposed to the 'delay' convention. Demonstrating hysteresis therefore requires precise experimental control.
 
 Another very interesting pattern occurs when $a = 0$ and $b$ is increased.
 
-![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/image8.jpg){#fig-ch3-img8-old-20 width="6.263888888888889in" height="1.3243055555555556in"}
+![The change in the potential function of the cusp by varying $b$. **One minimum splits up in two.**](media/ch3/image8.jpg){#fig-ch3-img8-old-20 width="6.263888888888889in" height="1.3243055555555556in"}
 
 For low $b$ there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation.
 
@@ -126,7 +128,7 @@ For low $b$ there is one stable fixed point that becomes unstable. It splits up 
 
 To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams.
 
-![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one instable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22 width="2.461935695538058in" height="2.4744903762029744in"}
+![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22 width="2.461935695538058in" height="2.4744903762029744in"}
 
 The cusp diagram can be expressed mathematically by setting the first derivative to zero:
 
@@ -158,7 +160,9 @@ A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAtt
 
 ![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25 width="3.1271905074365702in" height="2.783963254593176in"}
 
-Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an 'I don't know' or 'I don't care' position.
+Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-3] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an 'I don't know' or 'I don't care' position.
+
+[^ch3-3]: Perhaps better to call this view anti-choice
 
 The normal ($a$) and splitting ($b$) variable are interpreted as information and involvement. Information is a collection of factors that influence whether people tend to be in the pro-life and pro-choice position. Political and religious orientation as well as personal experiences add to this overall factor. One way to construct this information variable is through a factor analysis or principal component analysis.
 
@@ -168,7 +172,7 @@ The implications of this model are that for low involvement change is continuous
 
 But if the underlying change in information is large enough, attitudes can show a sudden jump. There is a lot of anectodical evidence for this, but it is very hard to capture such an effect in actual time series of attitude measures. Another effect that is consistent with the cusp model is ambivalence. In the cusp, ambivalence is not the same thing as being neutral. The neutral point is at the back of the cusp and is associated with low involvement. Ambivalence is associated with high involvement. Highly involved people with balanced information ($a = 0)$, may oscillate between extreme positions (see @fig-ch5-img2-old-50 in Chapter 5). Finally, the pitchfork bifurcation can explain issue or political polarization. When involvement increases in a group of neutral people, e.g., due to discussion, they may split into two extreme positions.
 
-Another psychological example of the cusp is multistable perception. @stewartCatastropheTheoryModeling1983 proposed a model in which the perception of male phase or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in @fig-ch3-img14-old-26.
+**Another psychological example of the cusp-like behavior is multistable perception. The necker cube is a famous example.** @stewartCatastropheTheoryModeling1983 proposed a model in which the perception of male phase or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in @fig-ch3-img14-old-26.
 
 ![From @stewartCatastropheTheoryModeling1983. The fitted bifurcation lines were calculated using Cobb's method, which is explained in section 3.3.3.](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="3.718439413823272in" height="2.6569116360454945in"}
 
@@ -226,9 +230,9 @@ There is another issue here. In some phenomenological models the control variabl
 
 The control variables are fear and rage (see @fig-ch3-img17-old-29). In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
-There are many other examples of phenomenological cusp model in psychology. For example, cusp models have been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006; @witkiewitzNonnormalityDivergencePosttreatment2007], for performance in work and sports [@cohenCriticalElaborationEmpirical2003; @guastelloCuspCatastropheModels2019; @hardyTestingPredictionsCusp1996] and for humor [@paulosMathematicsHumor2008].[^ch3-3]
+There are many other examples of phenomenological cusp model in psychology. For example, cusp models have been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006; @witkiewitzNonnormalityDivergencePosttreatment2007], for performance in work and sports [@cohenCriticalElaborationEmpirical2003; @guastelloCuspCatastropheModels2019; @hardyTestingPredictionsCusp1996] and for humor [@paulosMathematicsHumor2008].[^ch3-4]
 
-[^ch3-3]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
+[^ch3-4]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
 ### The catastrophe flags
 
@@ -301,7 +305,7 @@ Divergence or the pitchfork bifurcation requires the manipulation of the splitti
 
 #### Hysteresis
 
-Hysteresis requires sophisticated manipulation of the normal control variable. We need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis with some success for proportional reasoning [@jansenEvidencePhaseTransition2001], for the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011], and for multistable perception [@ploegerStochasticCatastropheAnalysis2002].
+Hysteresis, **the lagging behind of the sudden jump,** requires sophisticated manipulation of the normal control variable. We need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis with some success for proportional reasoning [@jansenEvidencePhaseTransition2001], for the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011], and for multistable perception [@ploegerStochasticCatastropheAnalysis2002].
 
 In the latter case we used the quartet motion paradigm, in which two lights are presented simultaneously, first a pair from two of the diagonally opposite corners of the rectangle, and then a second pair from the other two diagonally opposite corners of the rectangle. Usually, either vertical or horizontal apparent motion is perceived. By gradually increasing or decreasing the aspect ratio (i.e., the ratio of height to width of the quartet), hysteresis in the jumps between the two percepts was demonstrated (see @fig-ch3-img22-old-34).
 
@@ -315,7 +319,7 @@ Gilmore's last three flags, anomalous variance, divergence of linear response an
 
 Anomalous variance occurs because near a bifurcation point the second derivative diminishes, meaning that the minimum becomes less deep. Assuming there is always some perturbation of the state, this will lead to larger fluctuations in the state.
 
-Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. The latter is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics [@hakenSynergetics1977]. Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablanderAnticipatingCriticalTransitions2020.
+Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. The latter is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics [@hakenSynergetics1977]. Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablander2023.
 
 In my experience, the problem with early warning signals is that both type 1 and type 2 errors should be low for predicting transitions. This is challenging even in simulations, let alone in noisy psychological data. It would be fantastic if these early warnings really worked. For example, being able to predict a relapse into depression or addiction would be of great therapeutic value.
 
@@ -327,9 +331,9 @@ The catastrophe flags together provide a research methodology for phase transiti
 
 In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$ and $b$. We have implemented this approach in a cusp R package described in @grasmanFittingCuspCatastrophe2009.
 
-The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-4]:
+The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-5]:
 
-[^ch3-4]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and \$ dW\\ \$ depend on time.
+[^ch3-5]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and \$ dW\\ \$ depend on time.
 
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}
@@ -339,9 +343,9 @@ We will discuss this type of stochasticity later, but it is important to note th
 $$
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-14}
 
-where Z is a normalizing constant[^ch3-5] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = \frac{\sqrt{2\pi}}{\sigma}$.
+where Z is a normalizing constant[^ch3-6] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = \frac{\sqrt{2\pi}}{\sigma}$.
 
-[^ch3-5]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
+[^ch3-6]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
 
 As in the case of the normal distribution we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as $V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}$. The probability distribution for the cusp is
 
@@ -470,7 +474,7 @@ This is supported by results of cuspfit. You can verify that a model with beta \
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine.
 
-![Zeemans's catastrophe machine. One end of the elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="2.497853237095363in" height="3.5110662729658793in"}
+![Zeemans's catastrophe machine.**It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan.** The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="2.497853237095363in" height="3.5110662729658793in"}
 
 #### Evaluation
 
