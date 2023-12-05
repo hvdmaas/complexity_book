@@ -236,6 +236,8 @@ There are many other examples of phenomenological cusp model in psychology. For 
 
 [^ch3-4]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
+To explain catastrophic drops in performance in work and sports, @hardy1991 developed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor.
+
 ### The catastrophe flags
 
 A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. So sudden transitions are not instantaneous.
