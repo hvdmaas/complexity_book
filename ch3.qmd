@@ -194,11 +194,11 @@ Examples of nonstructural stable local bifurcations are the transcritical bifurc
 
 Another one we have already seen is the period doubling bifurcation. This happened in the logistic map when the fixed point changed in a limit cycle of period 2. Finally, global bifurcations cannot be localized to a small neighborhood in the phase space, such as when a limit cycle diverges [@guckenheimerGlobalBifurcations1983]. However, I don't know of any applications of global bifurcations in psychology or the social sciences.
 
-## Testing catastrophe models
+## Building catastrophe models
 
-### Phenomenological versus mechanistic models
+### Mechanistic models
 
-The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles. The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation (see Wikipedia). @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
+The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles. The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
 
 **One model that I will use as a psychological model in Chapter 5** is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is
 
@@ -220,9 +220,13 @@ Using these two 'constructed' control variables, we can depict the bifurcation l
 
 ![The bifurcation diagram of the Spruce Budworm model (Copied from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/image16.jpg){#fig-ch3-img16-old-28 width="3.2531408573928258in" height="2.981314523184602in"}
 
-Later we will discuss a psychological example of a mechanistic approach, **but as far as models of transitions are concerned,** these are rare. The phenomenological approach is much more common. Phenomenological models are less persuasive than mechanistic models. One disadvantage of phenomenological models is that they may not provide a deep understanding of the underlying mechanisms that drive the system. Phenomenological models are often used to describe the behavior of a system without providing an explanation of how the behavior arises. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.
+In later chapters we will discuss psychological examples of a mechanistic approach, **but as far as models of transitions are concerned,** these are rare. The phenomenological approach is much more common.
 
-I suggest some guidelines for setting up a phenomenological cusp model. First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in-between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.
+### Phenomenological models
+
+**The cusp model of attitude is a typical phenomenological model. We simply assume that the cusp is a model of the attitude.** Phenomenological models are less convincing than mechanistic models because they do not provide a deep understanding of the underlying mechanisms that drive the system. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.
+
+**Setting up a phenomenological model is not a trivial task either. I suggest some guidelines for setting up a model.** First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in-between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.
 
 Second, select the control variables. What could be a normal variable and what could be a splitting variable. These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in @fig-ch3-img14-old-26, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.
 
@@ -232,11 +236,15 @@ There is another issue here. In some phenomenological models the control variabl
 
 The control variables are fear and rage (see @fig-ch3-img17-old-29). In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
-There are many other examples of phenomenological cusp model in psychology. For example, cusp models have been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006; @witkiewitzNonnormalityDivergencePosttreatment2007], for performance in work and sports [@cohenCriticalElaborationEmpirical2003; @guastelloCuspCatastropheModels2019; @hardyTestingPredictionsCusp1996] and for humor [@paulosMathematicsHumor2008].[^ch3-4]
+**To explain catastrophic drops in performance in work and sports, @hardy1991 proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. @hardyTestingPredictionsCusp1996 present furhter tests of this model. It has been criticized by @cohenCriticalElaborationEmpirical2003. Extension of to the butterfly model are presented in @guastello1984 and @hardy2004.**
+
+**Cusp models have also been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007\] propose using distal risk as the split axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.**
+
+**As a final example I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor. Paulos explains his model in the context of puns. His example is "do you consider clubs appropriate for young children?" with the punchline "only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter. Interpretation is then the behavioral axis. Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter.**[^ch3-4]
 
 [^ch3-4]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
-To explain catastrophic drops in performance in work and sports, @hardy1991 developed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor.
+## Testing catastrophe models
 
 ### The catastrophe flags
 
