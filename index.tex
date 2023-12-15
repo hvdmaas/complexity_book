@@ -1,12 +1,10 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
   letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrartcl}
+]{scrbook}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -143,7 +141,6 @@
 
 \usepackage{makeidx}
 \makeindex
-\KOMAoption{captions}{tableheading}
 \makeatletter
 \makeatother
 \makeatletter
@@ -207,11 +204,7 @@
 \hypersetup{
   pdftitle={Emergent Minds: Navigating Complexity in Psychological Systems},
   pdfauthor={Han van der Maas},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
+  hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{Emergent Minds: Navigating Complexity in Psychological Systems}
@@ -219,15 +212,16 @@
 \date{2023-12-01}
 
 \begin{document}
+\frontmatter
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, enhanced, frame hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, interior hidden, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners, frame hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
-\hypersetup{linkcolor=}
 \setcounter{tocdepth}{7}
 \tableofcontents
 }
+\mainmatter
 \bookmarksetup{startatroot}
 
 \hypertarget{foreword}{%
@@ -12152,6 +12146,7 @@ Psychology} 69 (June): 101433.
 \end{CSLReferences}
 
 
+\backmatter
 
 \printindex
 
