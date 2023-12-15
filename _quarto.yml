@@ -38,7 +38,8 @@ format:
     crossref:
       chapters: true
   pdf:
-    documentclass: scrbook
+    documentclass: scrartcl
+    #papersize: letter
     number-depth: 4
     toc-depth: 8
     include-in-header: 
