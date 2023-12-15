@@ -4,7 +4,7 @@ project:
 book:
   title: "Emergent Minds: Navigating Complexity in Psychological Systems"
   author: "Han van der Maas"
-  date: 'test'
+  date: "Dec 2023"
   search: true
   repo-url: https://github.com/tasospsy/complexity_book
   #repo-actions: [edit]
