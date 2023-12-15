@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Complex Systems in Psychology - 5&nbsp; Building dynamic system models</title>
+<title>Emergent Minds: Navigating Complexity in Psychological Systems - 5&nbsp; Building dynamic system models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -131,7 +132,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -143,26 +144,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Complex Systems in Psychology</a> 
+      <a href="./">Emergent Minds: Navigating Complexity in Psychological Systems</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Emergent-Minds--Navigating-Complexity-in-Psychological-Systems.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -668,7 +653,7 @@ dX_{2} &amp;= (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 <p><span id="eq-ch5-12-old-32"><span class="math display">\[\begin{array}{r}
 I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 \end{array} \tag{5.12}\]</span></span></p>
-<p>I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero (<span class="math inline">\(a = - 8,b = - \infty\)</span>), the state or mood of the wife (<span class="math inline">\(W\)</span>) and the husband (<span class="math inline">\(H\)</span>), converge to <span class="math inline">\(W_{e}\)</span> and <span class="math inline">\(H_{e}\)</span>, with rates <span class="math inline">\(r_{w}\)</span> and <span class="math inline">\(r_{h}\)</span>, respectively. <span class="math inline">\(W_{e}\)</span> and <span class="math inline">\(H_{e}\)</span> are the uninfluenced steady states of mood when the spouses de not interact.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero (<span class="math inline">\(a = - 8,b = - \infty\)</span>), the state or mood of the wife (<span class="math inline">\(W\)</span>) and the husband (<span class="math inline">\(H\)</span>), converge to <span class="math inline">\(W_{e}\)</span> and <span class="math inline">\(H_{e}\)</span>, with rates <span class="math inline">\(r_{w}\)</span> and <span class="math inline">\(r_{h}\)</span>, respectively. <span class="math inline">\(W_{e}\)</span> and <span class="math inline">\(H_{e}\)</span> are the uninfluenced steady states of mood when the spouses do not interact.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p>However, if the influence function (<span class="math inline">\(a = - 8, b = 0\)</span>) is such that a positive mood in one spouse provokes a positive mood in the other, while a negative mood provokes a negative mood, we expect a negative and a positive equilibrium depending on the initial states and uninfluenced steady state values.</p>
 <p>Another more complex influence function (<span class="math inline">\(a = - 8, b = 1\)</span>), assumes that only extreme mood states influence the other spouse.</p>
 <p>This is implemented with:</p>
@@ -937,7 +922,7 @@ Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
 <figcaption class="figure-caption">Figure&nbsp;5.18: Multifigure multistable perception. Verify three phenomena: a) some attention or focus is required to see three-dimensional cubes, b) spontaneous transitions in the perception of cubes occur, c) such transitions affect the perception of neighboring cubes.</figcaption>
 </figure>
 </div>
-<p>We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define <span class="math inline">\(X\)</span> as the percept of the cube. <span class="math inline">\(X = 0\)</span> means that no cubes are perceived, only lines and colored parallelograms. <span class="math inline">\(X &gt; 0\)</span> represents for ‘front’ view, and <span class="math inline">\(X &lt; 0\)</span> the ‘back’ view (cf. <a href="ch3.html#fig-ch3-img2">Figure&nbsp;<span>3.2</span></a>). The cusp model for one cube is <span class="math inline">\(\frac{dX}{dt} = {a + bX - X}^{3}\)</span> , where <span class="math inline">\(a\)</span> is the bias parameter and <span class="math inline">\(b\)</span> is the attention parameter. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b &gt; 1\)</span> (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see <a href="#fig-ch5-img2-old-50">Figure&nbsp;<span>5.2</span></a>).</p>
+<p>We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define <span class="math inline">\(X\)</span> as the percept of the cube. <span class="math inline">\(X = 0\)</span> means that no cubes are perceived, only lines and colored parallelograms. <span class="math inline">\(X &gt; 0\)</span> represents for ‘front’ view, and <span class="math inline">\(X &lt; 0\)</span> the ‘back’ view (cf. <span class="quarto-unresolved-ref">?fig-ch3-img2</span>). The cusp model for one cube is <span class="math inline">\(\frac{dX}{dt} = {a + bX - X}^{3}\)</span> , where <span class="math inline">\(a\)</span> is the bias parameter and <span class="math inline">\(b\)</span> is the attention parameter. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b &gt; 1\)</span> (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see <a href="#fig-ch5-img2-old-50">Figure&nbsp;<span>5.2</span></a>).</p>
 <p>Now we consider <a href="#fig-ch5-img16-old-64">Figure&nbsp;<span>5.16</span></a> and apply <a href="#eq-ch5-20-old-40">Equation&nbsp;<span>5.20</span></a> . We have <span class="math inline">\(N = 25\)</span> (a bit depending on how you count) The values of the parameters <span class="math inline">\(a_{0i}\)</span> should be estimated from data, but for now we will assume no bias, so <span class="math inline">\(a_{0i} = 0\)</span>. We set <span class="math inline">\(a_{ij} &gt; 0\)</span>, meaning that we expect positive coupling between the cusps. The <span class="math inline">\(b_{0}\)</span> is the attention vector. In the simulation we first assume that attention is low (<span class="math inline">\(b_{0i} = - .3)\)</span>. After an initial phase, we will set <span class="math inline">\(b_{01} = 1\)</span>, that is we suddenly attend to one cube. A biot later we set <span class="math inline">\(b_{01}\)</span> back to -.3. However, we also set <span class="math inline">\(b_{ij} &gt; 0\)</span>, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.</p>
 <p>To make this model work we need to make one adjustment. We replace <span class="math inline">\(\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}\)</span> with <span class="math inline">\(\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}\)</span>.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the ‘front’ or the ‘back’ view. Thus, the model for multifigure multistable perception is:</p>
 <p><em><br>
@@ -1009,7 +994,7 @@ Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
 <li><p>Check this analytically. Which are the two equilibria X*? For which values of <span class="math inline">\(r\)</span> are these fixed points stable? Does your result agree with the results of the previous exercise? (**)</p></li>
 <li><p>Create the logistic map in Grind. Plot the time series for <span class="math inline">\(r = 4\)</span>. (*)</p></li>
 <li><p>Make a plot of the pitchfork bifurcation, analogous to <a href="#fig-ch5-img3-old-51">Figure&nbsp;<span>5.3</span></a> (*)</p></li>
-<li><p>Use the spruce model from Section 5.1.6 and the <code>bifurcation()</code> function of the deBif package to recreate the bifurcation diagram shown in <a href="ch3.html#fig-ch3-img16">Figure&nbsp;<span>3.15</span></a> . Describe what you did and present the resulting figure. (**)</p></li>
+<li><p>Use the spruce model from Section 5.1.6 and the <code>bifurcation()</code> function of the deBif package to recreate the bifurcation diagram shown in <span class="quarto-unresolved-ref">?fig-ch3-img16</span> . Describe what you did and present the resulting figure. (**)</p></li>
 <li><p>Implement the SIR model for infectious diseases in R using Grind. Reproduce the diagram of the SIR model with <span class="math inline">\(\beta = 0.4\)</span> and <span class="math inline">\(\gamma = 0.04\)</span> on the Wikipedia page on Compartmental models in epidemiology.</p></li>
 <li><p>Reproduce the simulation of the Polya Urn model shown in <a href="#fig-ch5-img12-old-60">Figure&nbsp;<span>5.12</span></a>. (**)</p></li>
 <li><p>Implement the FitzHugh-Nagumo model in Grind and replicate the <a href="#fig-ch5-img15-old-63">Figure&nbsp;<span>5.15</span></a>. No exact replication is required but the phase diagram should look similar (**)</p></li>

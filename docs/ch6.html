@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Complex Systems in Psychology - 6&nbsp; Psychological Network Models</title>
+<title>Emergent Minds: Navigating Complexity in Psychological Systems - 6&nbsp; Psychological Network Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,26 +144,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Complex Systems in Psychology</a> 
+      <a href="./">Emergent Minds: Navigating Complexity in Psychological Systems</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="./Emergent-Minds--Navigating-Complexity-in-Psychological-Systems.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -629,7 +613,7 @@ P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x}
 </section>
 <section id="the-stability-of-attitudes-and-entropy-measures" class="level4" data-number="6.3.3.4">
 <h4 data-number="6.3.3.4" class="anchored" data-anchor-id="the-stability-of-attitudes-and-entropy-measures"><span class="header-section-number">6.3.3.4</span> The stability of attitudes and entropy measures</h4>
-<p>So, adding Hebbion learning to the Ising attitude model leads to stable and consistent attitudes. Computing the Gibbs entropy is the best way to quantify this <span class="citation" data-cites="dalegeAttitudinalEntropyAE2018">(proposition I.2 in <a href="references.html#ref-dalegeAttitudinalEntropyAE2018" role="doc-biblioref">Jonas Dalege et al. 2018</a>)</span>. Earlier the Boltzmann entropy was defined in Section 4.1.1 as the log of the number of ways (W) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state <span class="citation" data-cites="dalegeAttitudinalEntropyAE2018">(proposition I.1 in <a href="references.html#ref-dalegeAttitudinalEntropyAE2018" role="doc-biblioref">Jonas Dalege et al. 2018</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates X. It is defined as:</p>
+<p>So, adding Hebbian learning to the Ising attitude model leads to stable and consistent attitudes. Computing the Gibbs entropy is the best way to quantify this <span class="citation" data-cites="dalegeAttitudinalEntropyAE2018">(proposition I.2 in <a href="references.html#ref-dalegeAttitudinalEntropyAE2018" role="doc-biblioref">Jonas Dalege et al. 2018</a>)</span>. Earlier the Boltzmann entropy was defined in Section 4.1.1 as the log of the number of ways (W) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state <span class="citation" data-cites="dalegeAttitudinalEntropyAE2018">(proposition I.1 in <a href="references.html#ref-dalegeAttitudinalEntropyAE2018" role="doc-biblioref">Jonas Dalege et al. 2018</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates X. It is defined as:</p>
 <p><span id="eq-ch6-7-old-48"><span class="math display">\[\begin{array}{r}
 - \sum_{&lt; \mathbf{x} &gt;}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}
 \end{array} \tag{6.7}\]</span></span></p>
@@ -721,9 +705,9 @@ H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{&lt; i,j &gt;}^{
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> W <span class="sc">*</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,n<span class="sc">^</span><span class="dv">2</span>,<span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">8</span>,.<span class="dv">2</span>),<span class="at">replace=</span>T),n,n) <span class="co"># delete 90% of nodes</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>W <span class="ot">&lt;-</span> <span class="fu">pmax</span>(W,<span class="fu">t</span>(W)) <span class="co"># make symmetric </span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(W) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>ndata <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>thresholds <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n,<span class="dv">0</span>,<span class="dv">1</span>) </span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">IsingSampler</span>(n, W, thresholds, <span class="at">beta =</span> .<span class="dv">5</span>, <span class="at">responses =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">IsingSampler</span>(ndata, W, thresholds, <span class="at">beta =</span> .<span class="dv">5</span>, <span class="at">responses =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">IsingFit</span>(data,<span class="at">family=</span><span class="st">'binomial'</span>, <span class="at">plot=</span><span class="cn">FALSE</span>)</span>
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>))</span>
 <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">qgraph</span>(W,<span class="at">fade =</span> <span class="cn">FALSE</span>);<span class="fu">title</span>(<span class="st">"Original network"</span>,<span class="at">cex.main=</span><span class="dv">2</span>)</span>

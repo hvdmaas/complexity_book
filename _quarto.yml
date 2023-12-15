@@ -2,13 +2,14 @@ project:
   type: book
   output-dir: docs #for publishing in github pages
 book:
-  title: "Complex Systems in Psychology"
+  title: "Emergent Minds: Navigating Complexity in Psychological Systems"
   author: "Han van der Maas"
-  date: "7/30/2023"
+  date: 'test'
   search: true
   repo-url: https://github.com/tasospsy/complexity_book
   #repo-actions: [edit]
-  downloads: [pdf, epub]
+  downloads: [pdf]
+  #downloads: [pdf, epub]
   sidebar:
     style: docked
     #background: light

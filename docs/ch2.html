@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Complex Systems in Psychology - 2&nbsp; Chaos and unpredictability</title>
+<title>Emergent Minds: Navigating Complexity in Psychological Systems - 2&nbsp; Chaos and unpredictability</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -131,7 +132,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Chaos and unpredictability</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -143,26 +144,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Complex Systems in Psychology</a> 
+      <a href="./">Emergent Minds: Navigating Complexity in Psychological Systems</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
-            Download PDF
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./Complex-Systems-in-Psychology.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
-            Download ePub
-            </a>
-          </li>
-      </ul>
-    </div>
+    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Emergent-Minds--Navigating-Complexity-in-Psychological-Systems.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -244,14 +229,15 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#stable-and-unstable-fixed-points" id="toc-stable-and-unstable-fixed-points" class="nav-link" data-scroll-target="#stable-and-unstable-fixed-points"><span class="header-section-number">2.2</span> Stable and unstable fixed points</a></li>
-  <li><a href="#limit-cycles" id="toc-limit-cycles" class="nav-link" data-scroll-target="#limit-cycles"><span class="header-section-number">2.3</span> Limit cycles</a></li>
-  <li><a href="#chaos" id="toc-chaos" class="nav-link" data-scroll-target="#chaos"><span class="header-section-number">2.4</span> Chaos</a></li>
-  <li><a href="#phase-plot-and-bifurcation-diagrams" id="toc-phase-plot-and-bifurcation-diagrams" class="nav-link" data-scroll-target="#phase-plot-and-bifurcation-diagrams"><span class="header-section-number">2.5</span> Phase plot and bifurcation diagrams</a></li>
-  <li><a href="#what-did-we-learn" id="toc-what-did-we-learn" class="nav-link" data-scroll-target="#what-did-we-learn"><span class="header-section-number">2.6</span> What did we learn</a></li>
-  <li><a href="#other-maps-and-fractals" id="toc-other-maps-and-fractals" class="nav-link" data-scroll-target="#other-maps-and-fractals"><span class="header-section-number">2.7</span> Other maps and fractals</a></li>
-  <li><a href="#detecting-chaos-in-psychophysiological-data" id="toc-detecting-chaos-in-psychophysiological-data" class="nav-link" data-scroll-target="#detecting-chaos-in-psychophysiological-data"><span class="header-section-number">2.8</span> Detecting chaos in psychophysiological data</a></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.9</span> Exercises</a></li>
+  <li><a href="#the-population-growth-of-rabbits" id="toc-the-population-growth-of-rabbits" class="nav-link" data-scroll-target="#the-population-growth-of-rabbits"><span class="header-section-number">2.2</span> The population growth of rabbits</a></li>
+  <li><a href="#stable-and-unstable-fixed-points" id="toc-stable-and-unstable-fixed-points" class="nav-link" data-scroll-target="#stable-and-unstable-fixed-points"><span class="header-section-number">2.3</span> Stable and unstable fixed points</a></li>
+  <li><a href="#limit-cycles" id="toc-limit-cycles" class="nav-link" data-scroll-target="#limit-cycles"><span class="header-section-number">2.4</span> Limit cycles</a></li>
+  <li><a href="#chaos" id="toc-chaos" class="nav-link" data-scroll-target="#chaos"><span class="header-section-number">2.5</span> Chaos</a></li>
+  <li><a href="#phase-plot-and-bifurcation-diagrams" id="toc-phase-plot-and-bifurcation-diagrams" class="nav-link" data-scroll-target="#phase-plot-and-bifurcation-diagrams"><span class="header-section-number">2.6</span> Phase plot and bifurcation diagrams</a></li>
+  <li><a href="#what-did-we-learn" id="toc-what-did-we-learn" class="nav-link" data-scroll-target="#what-did-we-learn"><span class="header-section-number">2.7</span> What did we learn</a></li>
+  <li><a href="#other-maps-and-fractals" id="toc-other-maps-and-fractals" class="nav-link" data-scroll-target="#other-maps-and-fractals"><span class="header-section-number">2.8</span> Other maps and fractals</a></li>
+  <li><a href="#detecting-chaos-in-psychophysiological-data" id="toc-detecting-chaos-in-psychophysiological-data" class="nav-link" data-scroll-target="#detecting-chaos-in-psychophysiological-data"><span class="header-section-number">2.9</span> Detecting chaos in psychophysiological data</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">2.10</span> Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -277,13 +263,18 @@ div.csl-indent {
 
 <section id="introduction" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
+<p><strong>There are many reasons why prediction is difficult in psychology. It can be due to a lack of precise models, inadequate measurement, environmental influences, large individual differences, to name a few. Complexity science adds another source of unpredictability.</strong></p>
+<p><strong>Suppose we have immense amounts of biological and psychological data on large numbers of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.</strong></p>
 <p>Chaos is one of the three most spectacular phenomena in complex systems and as psychologists we should know the basic results of chaos theory. It is also great fun to learn about chaos and it allows me to introduce many key concepts that we need in later chapters.</p>
-<p>In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its implications for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction is impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa.</p>
+<p>In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its <strong>fundamental</strong> implication for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa. <strong>How this works will become clear in this chapter.</strong></p>
+</section>
+<section id="the-population-growth-of-rabbits" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-population-growth-of-rabbits"><span class="header-section-number">2.2</span> The population growth of rabbits</h2>
 <p>Chaos theory consists of many deep mathematical results, but understanding the basics of chaos is not so hard. Below I will explain chaos in difference equations at a very basic level of mathematics and programming. The elementary example is the famous logistic map, usually introduced as a model of population growth, for instance, of rabbits. Suppose we have rabbits on an island, and they start to multiply, what would be a mathematical model for such a process?</p>
 <p>Population growth is a typical example of a dynamical system, it is a model of change. In general, in a dynamical system, the change or growth of a variable (say <span class="math inline">\(X\)</span>) depends on the current state and some parameters. Time plays a very special role. We can use discrete or continuous time steps. In the first case, which is the focus of this chapter, we use difference equations; in the second case, we use differential equations. In the logistic map, time is discrete (population growth takes place in generations). The simplest model for the population growth of rabbits is:</p>
 <p><span id="eq-ch2-1"><span class="math display">\[
 X_{t + 1} = rX_{t} \tag{2.1}\]</span></span></p>
-<p>In this equation <span class="math inline">\(r\)</span> is the growth rate. We can simulate this model by choosing a value for <span class="math inline">\(r\)</span>, <span class="math inline">\(r=2\)</span>, for instance. We also need an initial value, say <span class="math inline">\(X_{0} = 1.\)</span> If this is completely new to you, enter some values repeatedly. You will see exponential growth (<span class="math inline">\(X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)\)</span>. In R we can simulate this using a for loop.</p>
+<p><strong>This simply says that the new value of</strong> <span class="math inline">\(X\)</span> <strong>is determined by the previous value of</strong> <span class="math inline">\(X\)</span><strong>.</strong> In this equation <span class="math inline">\(r\)</span> is the growth rate. We can simulate this model by choosing a value for <span class="math inline">\(r\)</span>, <span class="math inline">\(r=2\)</span>, for instance. We also need an initial value, say <span class="math inline">\(X_{0} = 1.\)</span> If this is completely new to you, enter some values repeatedly. You will see exponential growth (<span class="math inline">\(X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)\)</span>. In R we can simulate this using a for loop.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="dv">2</span></span>
@@ -308,8 +299,8 @@ X_{t + 1} = rX_{t} \tag{2.1}\]</span></span></p>
 X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \tag{2.2}\]</span></span></p>
 <p>What is the effect of this addition to the equation? If <span class="math inline">\(X\)</span> is much smaller than the resource <span class="math inline">\(K\)</span> then the second term, <span class="math inline">\(\left( 1 - \frac{X_{t}}{K} \right),\)</span> is close to 1 and we will see exponential growth. But as <span class="math inline">\(X\)</span> approaches <span class="math inline">\(K\)</span>, this term becomes very small, reducing the effect of exponential growth. <span class="math inline">\(X\)</span> does not actually grow up to <span class="math inline">\(K\)</span>, but to a lower value, if it converges at all. We are going to see this in a moment. It also turns out that the actual value of K is not of interest. Changing K does not change the qualitative behavior. Therefore, <span class="math inline">\(K\)</span> is usually set to 1, scaling the population <span class="math inline">\(X\)</span> between 0 and 1. The only remaining parameter is <span class="math inline">\(r\)</span>. Changing <span class="math inline">\(r\)</span>, however, leads to a number of surprising behaviors.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
-<section id="stable-and-unstable-fixed-points" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="stable-and-unstable-fixed-points"><span class="header-section-number">2.2</span> Stable and unstable fixed points</h2>
+<section id="stable-and-unstable-fixed-points" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="stable-and-unstable-fixed-points"><span class="header-section-number">2.3</span> Stable and unstable fixed points</h2>
 <p>Let us first study a simple ‘boring’ case, <span class="math inline">\(r = 2\)</span> (<a href="#fig-ch2-img2">Figure&nbsp;<span>2.2</span></a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">15</span>; r <span class="ot">&lt;-</span> <span class="dv">2</span>; x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>,n)</span>
@@ -354,8 +345,8 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <p>So 0 and <span class="math inline">\((r - 1)/r\)</span> are fixed points. Indeed for <span class="math inline">\(r = 2\)</span>, we have seen that 0 and .5 are equilibria, one stable and one unstable. To determine whether fixed points are stable we look at the derivative of the function, <span class="math inline">\(f^{'}(x)\)</span>, which, as you can easily check, is <span class="math inline">\(r - 2rX\)</span>.</p>
 <p>I will not explain why, however, the rule is that the fixed point is stable if the absolute value of the derivative in the fixed-point value is less than 1.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> For <span class="math inline">\(r = 2\)</span> the fixed points are 0 and .5. <span class="math inline">\(\left| f^{'}\left( X^{*} = 0 \right) \right| = |2 - 0| = 2\)</span>, which is greater than 1 and thus <span class="math inline">\(X^{*} = 0\)</span> is unstable. <span class="math inline">\(\left| f^{'}\left( X^{*} = .5 \right) \right| = |2 - 2 \times 2 \times .5| = 0\)</span>, which is less than 1 and thus <span class="math inline">\(X^{*} = .5\)</span> is stable. You can check for yourself that <span class="math inline">\(X^{*}\)</span>=<span class="math inline">\(\frac{r - 1}{r}\)</span> is stable for <span class="math inline">\(1 &lt; r &lt; 3\)</span>, both with the r-code and with the absolute value of the derivative.</p>
 </section>
-<section id="limit-cycles" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="limit-cycles"><span class="header-section-number">2.3</span> Limit cycles</h2>
+<section id="limit-cycles" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="limit-cycles"><span class="header-section-number">2.4</span> Limit cycles</h2>
 <p>So at <span class="math inline">\(r = 3\)</span> the fixed point or <span class="math inline">\((r - 1)/r\)</span> becomes unstable. Let’s study some cases. Plot are made with the code of <a href="#fig-ch2-img2">Figure&nbsp;<span>2.2</span></a>.</p>
 <div id="fig-ch2-img4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -363,13 +354,12 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <figcaption class="figure-caption">Figure&nbsp;2.4: Qualitative different behavior of the logistic map for different values of <span class="math inline">\(r\)</span>.</figcaption>
 </figure>
 </div>
-<p>For <span class="math inline">\(r = 2.9\)</span> we see that the series converges to the fixed point <span class="math inline">\(\frac{1.9}{2.9} = .66,\)</span> but in a process of over- and undershooting. For <span class="math inline">\(r = 3.1\)</span> and <span class="math inline">\(r = 3.3\)</span> a limit cycle of period 2 arises. The population oscillates between two values. For <span class="math inline">\(r = 3.5\)</span> this gets even stranger, we see a limit cycle of period 4. For slightly larger values we could get cycles with even higher periods.</p>
+<p>For <span class="math inline">\(r = 2.9\)</span> we see that the series converges to the fixed point <span class="math inline">\(\frac{1.9}{2.9} = .66,\)</span> but in a process of over- and undershooting. For <span class="math inline">\(r = 3.1\)</span> and <span class="math inline">\(r = 3.3\)</span> a limit cycle of period 2 arises. The population oscillates between two values. For <span class="math inline">\(r = 3.5\)</span> this becomes even more remarkable, we see a limit cycle of period 4. For slightly larger values we could get cycles with even higher periods.</p>
 <p>It has been claimed that these limit cycles occur in real population dynamics. Intuitively, it can be understood as a process of over- and undershooting, which dampens out for <span class="math inline">\(r\)</span> a little below 3, but not for <span class="math inline">\(r &gt; 3\)</span>.</p>
 </section>
-<section id="chaos" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="chaos"><span class="header-section-number">2.4</span> Chaos</h2>
-<p>This doubling of periods when we increase$&nbsp;r$at some point leads to even stranger behavior.</p>
-<p>This is what the time series looks like for <span class="math inline">\(r = 4\)</span>.</p>
+<section id="chaos" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="chaos"><span class="header-section-number">2.5</span> Chaos</h2>
+<p>If we increase <span class="math inline">\(r\)</span> even further, the doubling of the periods changes to even stranger behavior. This is what the time series looks like for <span class="math inline">\(r = 4\)</span>.</p>
 <div id="fig-ch2-img5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch2/image5.jpg" style="width:4.43857in;height:2.25176in" class="figure-img"></p>
@@ -396,14 +386,14 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 </figure>
 </div>
 <p>We can see that a run with a slightly different initial value will at first follow the same path, but then it will diverge sharply. A tiny perturbation (the butterfly flapping its wings) propagates through the system and dramatically changes the long-term course of the system.</p>
-<p>Note that some uncertainty about the exact value of the initial state is always inevitable. Suppose we have an equation like the logistic map for temperature in the weather system, and this equation perfectly describes that system. To make a prediction, we need to feed the current temperature into the computer. But we cannot measure temperature with infinite precision. And even if we could, we do not have a computer that can handle numbers with an infinite number of digits. So, we make a small error in setting the initial state, and this will always mess up our long-term forecast. This is why long-term weather will never be possible, even if we develop much more precise mathematical models, take more intensive and more accurate measurements and use more powerful computers. The weather turns out to be a chaotic system. Sensitivity to initial conditions is actually one of three conditions for deterministic chaos. For a discussion on the definition of chaos I refer to <span class="citation" data-cites="banksDevaneyDefinitionChaos1992">(<a href="references.html#ref-banksDevaneyDefinitionChaos1992" role="doc-biblioref">Banks et al. 1992</a>)</span>.</p>
+<p>Note that some uncertainty about the exact value of the initial state is always inevitable. Suppose we have an equation like the logistic map for temperature in the weather system, and this equation perfectly describes that system. To make a prediction, we need to feed the current temperature into the computer. But we cannot measure temperature with infinite precision. And even if we could, we do not have a computer that can handle numbers with an infinite number of digits. So, we make a small error in setting the initial state, and this will always mess up our long-term forecast. This is why long-term weather will never be possible, even if we develop much more precise mathematical models, take more intensive and more accurate measurements and use more powerful computers. The weather turns out to be a chaotic system. <strong>Sensitivity to initial conditions is a necessary and perhaps sufficient condition for deterministic chaos.</strong> For a discussion on the definition of chaos, I refer to <span class="citation" data-cites="banksDevaneyDefinitionChaos1992">(<a href="references.html#ref-banksDevaneyDefinitionChaos1992" role="doc-biblioref">Banks et al. 1992</a>)</span> and <span class="citation" data-cites="broer2010">(<a href="references.html#ref-broer2010" role="doc-biblioref">Broer and Takens 2010</a>)</span>.</p>
 <p>The Lyapunov coefficient quantifies chaos. The idea is to take two very close initial conditions with a difference of <span class="math inline">\(\varepsilon\)</span>. In the next iteration this difference might be smaller, the same, or bigger. In the last case the time series diverge, which is typical for chaos. The Lyapunov coefficient is defined as:</p>
 <p><span id="eq-ch2-3"><span class="math display">\[
 {\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}} \tag{2.3}\]</span></span></p>
 <p>where <span class="math inline">\(f^{'}\left( X_{i} \right) = r - 2rX\)</span> for the logistic map and <span class="math inline">\(\lambda_{L} &gt; 0\)</span> indicates chaos. You may verify in a simulation that <span class="math inline">\(\lambda_{L} &gt; 0\)</span> for $r = 4,$indicating chaos.</p>
 </section>
-<section id="phase-plot-and-bifurcation-diagrams" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="phase-plot-and-bifurcation-diagrams"><span class="header-section-number">2.5</span> Phase plot and bifurcation diagrams</h2>
+<section id="phase-plot-and-bifurcation-diagrams" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="phase-plot-and-bifurcation-diagrams"><span class="header-section-number">2.6</span> Phase plot and bifurcation diagrams</h2>
 <p><a href="#eq-ch2-2">Equation&nbsp;<span>2.2</span></a> is very simple. It is just one equation, a deterministic difference equation specifying how <span class="math inline">\(X_{t + 1}\)</span> depends on <span class="math inline">\(X_{t}\)</span>, but the variety of behavior is astonishing. One way to better understand its behavior is to use phase plots. A phase plot is a graphical representation of the relationship between two or more variables that change over time. In one-dimensional systems we plot <span class="math inline">\(X_{t}\)</span> against <span class="math inline">\(X_{t + 1}\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span>
@@ -457,8 +447,8 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <p>A recurring phenomenon in many chaotic maps are fractals. Fractals are figures in which certain patterns reappear when we zoom in on the figure, and this happens again and again when we zoom in further. You can see this by zooming in on the interval of r between 3.83 and 3.86 (see exercise 2). The three equilibria in the limit cycle split again into period doubling cycles, as we saw in the overall plot between <span class="math inline">\(r\)</span> in 3 and 3.5.</p>
 <p>One famous result on this period doubling route to chaos is the Feigenbaum constant. The ratios of distances between consecutive period doubling points (e.g., the distance between first and second divided by the distance between the second and third point), converge to a value of approximately 4.6692. The amazing thing is that this happens for any unimodal map, not only the logistic map.</p>
 </section>
-<section id="what-did-we-learn" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="what-did-we-learn"><span class="header-section-number">2.6</span> What did we learn</h2>
+<section id="what-did-we-learn" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="what-did-we-learn"><span class="header-section-number">2.7</span> What did we learn</h2>
 <p>I find these results stunning. I note again that the generating function is deceptively simple, but its behavior is utterly complex and beautiful to me. Mathematicians have studied every detail of these plots and most of it is beyond my comprehension. The Wikipedia on the logistic map will introduce you to some more advanced concepts, but for our purposes the present introduction will suffice.</p>
 <p>Actually, it is good to realize which concepts we have already learned. The first is the concept of equilibrium. The states of dynamical systems tend to converge to certain values. The simplest of these is the fixed point. Fixed points can be stable or unstable (more on this in the next chapter). If we start a system exactly at its unstable fixed point (and there is no noise in the system), it will stay there. But any small perturbation will cause it to escape and move to the fixed stable point.</p>
 <p>The bifurcation diagram summarizes this behavior and also shows how the equilibria change when a control parameter changes. For example, at <span class="math inline">\(r = 1\)</span> we see a bifurcation in the logistic map. Initially 0 was the stable fixed point and <span class="math inline">\((r\  - 1)/r\)</span> was unstable. At <span class="math inline">\(r = 1\)</span> this is reversed. At <span class="math inline">\(r = 3\)</span> we see another bifurcation when limit cycles appear.</p>
@@ -466,8 +456,8 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <p>The last thing we learned is that even if our world were deterministic (it is not!), and we knew all the laws of motion (say, the logistic map), and knew initial states with enormous precision, the world is unpredictable.</p>
 <p>This statement needs some nuance. I have already mentioned that the weather can be chaotic and unpredictable. But the weather is not always so unpredictable. Sometimes longer forecasts are possible. But forecasts beyond, say, 10 days seem out of reach. We also see in the logistic map that when <span class="math inline">\(r\)</span> is close to 4, the forecast suffers from the butterfly effect, but for <span class="math inline">\(r = 2\)</span> the time course is very predictable, even more predictable than in many linear systems. This is because there is only one stable fixed point (.5). The initial state does not matter, we always end up at .5! So the logistic map is extremely predictable or extremely unpredictable depending on <span class="math inline">\(r\)</span>.</p>
 </section>
-<section id="other-maps-and-fractals" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="other-maps-and-fractals"><span class="header-section-number">2.7</span> Other maps and fractals</h2>
+<section id="other-maps-and-fractals" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="other-maps-and-fractals"><span class="header-section-number">2.8</span> Other maps and fractals</h2>
 <p>There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:</p>
 <p><span id="eq-ch2-4"><span class="math display">\[
 X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
@@ -476,21 +466,22 @@ Y_{t + 1} = bX_{t} \\
 <p>Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map wiki page. The amazing three-dimensional bifurcation diagram may be more challenging.</p>
 <p>Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin <span class="citation" data-cites="stefanRPubsFractals2020">Stefan (<a href="references.html#ref-stefanRPubsFractals2020" role="doc-biblioref">2020</a>)</span>.</p>
 </section>
-<section id="detecting-chaos-in-psychophysiological-data" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="detecting-chaos-in-psychophysiological-data"><span class="header-section-number">2.8</span> Detecting chaos in psychophysiological data</h2>
+<section id="detecting-chaos-in-psychophysiological-data" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="detecting-chaos-in-psychophysiological-data"><span class="header-section-number">2.9</span> Detecting chaos in psychophysiological data</h2>
 <p>Chaos theory and the logistic map were popularized about 50 years ago, and since then researchers have been looking for chaos in all kinds of time series <span class="citation" data-cites="ayersApplicationChaosTheory1997 robertsonChaosTheoryPsychology2014 schiepek2017">(<a href="references.html#ref-ayersApplicationChaosTheory1997" role="doc-biblioref">Ayers 1997</a>; <a href="references.html#ref-robertsonChaosTheoryPsychology2014" role="doc-biblioref">Robertson and Combs 2014</a>; <a href="references.html#ref-schiepek2017" role="doc-biblioref">Schiepek et al. 2017</a>)</span>. One idea behind this work is the hypothesis that chaos might be healthy <span class="citation" data-cites="poolItHealthyBe1989">(<a href="references.html#ref-poolItHealthyBe1989" role="doc-biblioref">Pool 1989</a>)</span> or be helpful. It would be helpful in learning algorithms, such as neutral networks, to prevent getting stuck in local minima <span class="citation" data-cites="bertschingerRealTimeComputationEdge2004">(<a href="references.html#ref-bertschingerRealTimeComputationEdge2004" role="doc-biblioref">Bertschinger and Natschläger 2004</a>)</span>. My very first publication was about chaos in neural networks <span class="citation" data-cites="vandermaasNoteChaoticBehavior1990">(<a href="references.html#ref-vandermaasNoteChaoticBehavior1990" role="doc-biblioref">van der Maas, Verschure, and Molenaar 1990</a>)</span>.</p>
-<p>Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG <span class="citation" data-cites="pritchardMeasuringChaosBrain1992">(<a href="references.html#ref-pritchardMeasuringChaosBrain1992" role="doc-biblioref">Pritchard and Duke 1992</a>)</span> heart beat <span class="citation" data-cites="freitasIdentifyingChaosHeart2009">(<a href="references.html#ref-freitasIdentifyingChaosHeart2009" role="doc-biblioref">Freitas et al. 2009</a>)</span> and EMG <span class="citation" data-cites="leiDetectingNonlinearityAction2001">(<a href="references.html#ref-leiDetectingNonlinearityAction2001" role="doc-biblioref">Lei, Wang, and Feng 2001</a>)</span>. This is all but easy because these signals are inevitably contaminated with noise. I’m not aware of any recent meta-analyses of these different lines of research but there are still appearing new papers on this topic.</p>
-<p>There exist many techniques for chaos detection in times series. There are several packages available in R, including new methods based on machine learning techniques <span class="citation" data-cites="sandubeteDChaosPackageChaotic2021 tokerSimpleMethodDetecting2020">(<a href="references.html#ref-sandubeteDChaosPackageChaotic2021" role="doc-biblioref">Sandubete and Escot 2021</a>; <a href="references.html#ref-tokerSimpleMethodDetecting2020" role="doc-biblioref">Toker, Sommer, and D’Esposito 2020</a>)</span>. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for <span class="math inline">\(r = 4\)</span> you get the Lyapunov coefficient as computed with the derivative earlier.</p>
+<p>There exist many techniques for chaos detection in times series. <strong>This is all but easy because these empirical signals are inevitably contaminated with noise <span class="citation" data-cites="rosso2007">(<a href="references.html#ref-rosso2007" role="doc-biblioref">Rosso et al. 2007</a>)</span>.</strong> <strong>One example is the computation of Lyapunov exponents, quantifying how small differences in initial conditions evolve over time. A positive Lyapunov exponent indicates chaos, signifying exponential divergence of trajectories, which is a hallmark of chaotic systems. This method involves reconstructing the phase space from time series data and calculating the average exponential rate of separation of trajectories.</strong> With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for <span class="math inline">\(r = 4\)</span> you get the Lyapunov coefficient as computed with the derivative earlier.</p>
+<p><strong>Chaos detection is an active area of research, with new methods being proposed on a regular basis <span class="citation" data-cites="zanin2022">(<a href="references.html#ref-zanin2022" role="doc-biblioref">Zanin 2022</a>)</span>.</strong> There are several packages available in R, including new methods based on machine learning techniques <span class="citation" data-cites="sandubeteDChaosPackageChaotic2021 tokerSimpleMethodDetecting2020">(<a href="references.html#ref-sandubeteDChaosPackageChaotic2021" role="doc-biblioref">Sandubete and Escot 2021</a>; <a href="references.html#ref-tokerSimpleMethodDetecting2020" role="doc-biblioref">Toker, Sommer, and D’Esposito 2020</a>)</span>.</p>
+<p><strong>These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG <span class="citation" data-cites="pritchardMeasuringChaosBrain1992">(<a href="references.html#ref-pritchardMeasuringChaosBrain1992" role="doc-biblioref">Pritchard and Duke 1992</a>)</span> heart beat <span class="citation" data-cites="freitasIdentifyingChaosHeart2009">(<a href="references.html#ref-freitasIdentifyingChaosHeart2009" role="doc-biblioref">Freitas et al. 2009</a>)</span>, EMG <span class="citation" data-cites="leiDetectingNonlinearityAction2001">(<a href="references.html#ref-leiDetectingNonlinearityAction2001" role="doc-biblioref">Lei, Wang, and Feng 2001</a>)</span> and eye movements <span class="citation" data-cites="harezlak2018">(<a href="references.html#ref-harezlak2018" role="doc-biblioref">Harezlak and Kasprowski 2018</a>)</span>. Reviews of these lines of research are provided by <span class="citation" data-cites="stam2005">Stam (<a href="references.html#ref-stam2005" role="doc-biblioref">2005</a>)</span>, <span class="citation" data-cites="kargarnovin2023">Kargarnovin et al. (<a href="references.html#ref-kargarnovin2023" role="doc-biblioref">2023</a>)</span> and <span class="citation" data-cites="garc2015">Garc and Pe (<a href="references.html#ref-garc2015" role="doc-biblioref">2015</a>)</span>.</strong></p>
 </section>
-<section id="exercises" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.9</span> Exercises</h2>
+<section id="exercises" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.10</span> Exercises</h2>
 <ol type="1">
-<li><p>For r=3.5, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (*)</p></li>
-<li><p>In the bifurcation plot, you can zoom in by changing r.range to seq(3.4, 4, by=0.0001)), perhaps also changing cex=.01 to a lower value. Now zoom in on the interval of r between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of r. Provide your r-code and figure (*).</p></li>
-<li><p>Reproduce the first image from the Henon map wiki page. Provide your r-code and figure (*).</p></li>
-<li><p>Make the bifurcation diagram of the Ricker model (see wiki). Provide your r-code and figure. What is the advantage of this model over the logistic map?</p></li>
+<li><p>For <span class="math inline">\(r=3.5\)</span>, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (*)</p></li>
+<li><p>In the section on bifurcation diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the <span class="math inline">\(r\)</span>’s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change ‘cex = 0.01’ to a lower value. Zoom in on the interval of <span class="math inline">\(r\)</span> between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of <span class="math inline">\(r\)</span>. (*)</p></li>
+<li><p>Reproduce the first image from the Henon map wiki page. Provide your R-code and figure (*).</p></li>
+<li><p>Make the bifurcation diagram of the Ricker model (see wiki). Provide your R-code and figure. Why is this model considered a more realistic representation of population growth than the logistic map?</p></li>
 <li><p>Also reproduce the three-dimensional bifurcation diagram of the Henon map (**).</p></li>
-<li><p>Verify that for r=4 the DChaos package gives the Lyapunov coefficient equal to the one calculated with the derivative (<a href="#eq-ch2-3">Equation&nbsp;<span>2.3</span></a>) (**).</p></li>
+<li><p>Have a look at the definition of the Lyapunov coefficient in Section <strong>2.4</strong>. Calculate this Lyapunov coefficient for the logistic map where <span class="math inline">\(r = 4\)</span> using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (<a href="#eq-ch2-3">Equation&nbsp;<span>2.3</span></a>). Do this and check that the coefficients are approximately equal.</p></li>
 <li><p>Use the Rmusic library (installed with devtools::install_github(“keithmcnulty/Rmusic”, build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (**)</p></li>
 <li><p>Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (*).</p></li>
 </ol>
@@ -506,8 +497,20 @@ Banks, J., J. Brooks, G. Cairns, G. Davis, and P. Stacey. 1992. <span>“On <spa
 <div id="ref-bertschingerRealTimeComputationEdge2004" class="csl-entry" role="listitem">
 Bertschinger, Nils, and Thomas Natschläger. 2004. <span>“Real-<span>Time Computation</span> at the <span>Edge</span> of <span>Chaos</span> in <span>Recurrent Neural Networks</span>.”</span> <em>Neural Computation</em> 16 (7): 1413–36. <a href="https://doi.org/10.1162/089976604323057443">https://doi.org/10.1162/089976604323057443</a>.
 </div>
+<div id="ref-broer2010" class="csl-entry" role="listitem">
+Broer, Henk, and Floris Takens. 2010. <em>Dynamical Systems and Chaos</em>. 2011th edition. New York: Springer.
+</div>
 <div id="ref-freitasIdentifyingChaosHeart2009" class="csl-entry" role="listitem">
 Freitas, Ubiratan, Elise Roulin, Jean-François Muir, and Christophe Letellier. 2009. <span>“Identifying Chaos from Heart Rate: <span>The</span> Right Task?”</span> <em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em> 19 (2): 028505. <a href="https://doi.org/10.1063/1.3139116">https://doi.org/10.1063/1.3139116</a>.
+</div>
+<div id="ref-garc2015" class="csl-entry" role="listitem">
+Garc, P., and Callegari Pe. 2015. <span>“Analysis of EEG Signals Using Nonlinear Dynamics and Chaos: A Review.”</span> In. <a href="https://www.semanticscholar.org/paper/Analysis-of-EEG-Signals-using-Nonlinear-Dynamics-A-Garc-Pe/7c7bae15b868a68049d017edd27031c2746e20e4">https://www.semanticscholar.org/paper/Analysis-of-EEG-Signals-using-Nonlinear-Dynamics-A-Garc-Pe/7c7bae15b868a68049d017edd27031c2746e20e4</a>.
+</div>
+<div id="ref-harezlak2018" class="csl-entry" role="listitem">
+Harezlak, Katarzyna, and Pawel Kasprowski. 2018. <span>“Searching for Chaos Evidence in Eye Movement Signals.”</span> <em>Entropy</em> 20 (1): 32. <a href="https://doi.org/10.3390/e20010032">https://doi.org/10.3390/e20010032</a>.
+</div>
+<div id="ref-kargarnovin2023" class="csl-entry" role="listitem">
+Kargarnovin, Shaida, Christopher Hernandez, Farzad V. Farahani, and Waldemar Karwowski. 2023. <span>“Evidence of Chaos in Electroencephalogram Signatures of Human Performance: A Systematic Review.”</span> <em>Brain Sciences</em> 13 (5): 813. <a href="https://doi.org/10.3390/brainsci13050813">https://doi.org/10.3390/brainsci13050813</a>.
 </div>
 <div id="ref-leiDetectingNonlinearityAction2001" class="csl-entry" role="listitem">
 Lei, Min, Zhizhong Wang, and Zhengjin Feng. 2001. <span>“Detecting Nonlinearity of Action Surface <span>EMG</span> Signal.”</span> <em>Physics Letters A</em> 290 (5): 297–303. <a href="https://doi.org/10.1016/S0375-9601(01)00668-5">https://doi.org/10.1016/S0375-9601(01)00668-5</a>.
@@ -521,11 +524,17 @@ Pritchard, Walter s., and Dennis w. Duke. 1992. <span>“Measuring <span>Chaos</
 <div id="ref-robertsonChaosTheoryPsychology2014" class="csl-entry" role="listitem">
 Robertson, Robin, and Allan Combs, eds. 2014. <em>Chaos Theory in <span>Psychology</span> and the <span>Life Sciences</span></em>. <span>New York</span>: <span>Psychology Press</span>. <a href="https://doi.org/10.4324/9781315806280">https://doi.org/10.4324/9781315806280</a>.
 </div>
+<div id="ref-rosso2007" class="csl-entry" role="listitem">
+Rosso, O. A., H. A. Larrondo, M. T. Martin, A. Plastino, and M. A. Fuentes. 2007. <span>“Distinguishing Noise from Chaos.”</span> <em>Physical Review Letters</em> 99 (15): 154102. <a href="https://doi.org/10.1103/PhysRevLett.99.154102">https://doi.org/10.1103/PhysRevLett.99.154102</a>.
+</div>
 <div id="ref-sandubeteDChaosPackageChaotic2021" class="csl-entry" role="listitem">
 Sandubete, Julio, E., and Lorenzo Escot. 2021. <span>“<span>DChaos</span>: <span>An R Package</span> for <span>Chaotic Time Series Analysis</span>.”</span> <em>The R Journal</em> 13 (1): 232. <a href="https://doi.org/10.32614/RJ-2021-036">https://doi.org/10.32614/RJ-2021-036</a>.
 </div>
 <div id="ref-schiepek2017" class="csl-entry" role="listitem">
 Schiepek, Günter K., Kathrin Viol, Wolfgang Aichhorn, Marc-Thorsten Hütt, Katharina Sungler, David Pincus, and Helmut J. Schöller. 2017. <span>“Psychotherapy Is Chaotic<span></span>(not Only) in a Computational World.”</span> <em>Frontiers in Psychology</em> 8. <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00379">https://www.frontiersin.org/articles/10.3389/fpsyg.2017.00379</a>.
+</div>
+<div id="ref-stam2005" class="csl-entry" role="listitem">
+Stam, C. J. 2005. <span>“Nonlinear dynamical analysis of EEG and MEG: review of an emerging field.”</span> <em>Clinical Neurophysiology: Official Journal of the International Federation of Clinical Neurophysiology</em> 116 (10): 2266–2301. <a href="https://doi.org/10.1016/j.clinph.2005.06.011">https://doi.org/10.1016/j.clinph.2005.06.011</a>.
 </div>
 <div id="ref-stefanRPubsFractals2020" class="csl-entry" role="listitem">
 Stefan, Martin. 2020. <span>“<span>RPubs</span> - <span>Fractals</span> with <span>R</span>.”</span> https://rpubs.com/mstefan-rpubs/fractals.
@@ -535,6 +544,9 @@ Toker, Daniel, Friedrich T. Sommer, and Mark D’Esposito. 2020. <span>“A Simp
 </div>
 <div id="ref-vandermaasNoteChaoticBehavior1990" class="csl-entry" role="listitem">
 van der Maas, Han L. J., Paul F. M. J. Verschure, and Peter C. M. Molenaar. 1990. <span>“A Note on Chaotic Behavior in Simple Neural Networks.”</span> <em>Neural Networks</em> 3 (1): 119–22. <a href="https://doi.org/10.1016/0893-6080(90)90050-U">https://doi.org/10.1016/0893-6080(90)90050-U</a>.
+</div>
+<div id="ref-zanin2022" class="csl-entry" role="listitem">
+Zanin, Massimiliano. 2022. <span>“Can Deep Learning Distinguish Chaos from Noise? Numerical Experiments and General Considerations.”</span> <em>Communications in Nonlinear Science and Numerical Simulation</em> 114 (November): 106708. <a href="https://doi.org/10.1016/j.cnsns.2022.106708">https://doi.org/10.1016/j.cnsns.2022.106708</a>.
 </div>
 </div>
 </section>
