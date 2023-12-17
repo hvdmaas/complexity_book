@@ -91,9 +91,9 @@ A great tool for playing around with the Game of Life is Golly, which is freely 
 
 Random initial patterns rarely lead to anything remarkable, but by choosing special initial states, surprising results can be achieved. First, take a look at the Life within Patterns folder. Take, for example, the line-puffer superstable or the spaceship types. One of my favorites is the metapixel-galaxy in the HashLife folder. Note that with + and - you can speed up and slow down the simulation. What this does is simulate the game of life in the game of life! Zoom in and zoom out to see what really happens. I've seen this many times and I'm still amazed. A small childish experiment is to disturb the metapixel galaxy in a few cells. This leads to a big disturbance and a collapse of the pattern.
 
-It is even possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm. This raises the question of whether we can build self-organizing intelligent systems in this way. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section).
+**I was stunned to see** that it is even possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm, including of course the Game of Life! **This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements.** Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section **on neural networks**).
 
-![The Turing Machine built in the Game of Life](media/ch4/image4.jpg){#fig-ch4-img4 width="3.58125in" height="3.441666666666667in"}
+![The Turing Machine built in the Game of Life. ](media/ch4/image4.jpg){#fig-ch4-img4 width="3.58125in" height="3.441666666666667in"}
 
 Another root of complex systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.
 
@@ -125,13 +125,15 @@ Neural networks are at the heart of the AI revolution, but other developments ha
 
 I was most amazed by the construction and performance of AlphaZero chess. AlphaZero chess [@silverGeneralReinforcementLearning2018] combines a deep learning neural network that evaluates positions and predicts next moves with a variant of reinforcement learning (Monte Carlo tree search). Amazingly, AlphaZero learns chess over millions of self-played games. This approach is a radical departure from classic chess programs, where brute force search and built-in indexes of openings and endgames were the key to success. AlphaZero Chess is a self-organizing chess program with a phase transition in learning after 64000 training steps [see fig.7 in @mcgrathAcquisitionChessKnowledge2022]. For an analysis of the interrelations between psychology and modern AI, I refer to @vandermaasHowMuchIntelligence2021.
 
+**Alpha-zero's use of Monte Carlo tree search is also seen as a form of symbolic artificial intelligence. The idea of combining classic symbolic approaches with neural networks has always been in the air. The third wave of this hybrid approach has been reviewed in @garcez2023.**
+
 ### The concept of self-organization
 
 I trust that you now possess some understanding of self-organization and its applications across various scientific fields. Self-organization is a generally applicable concept that transcends various disciplines, yet it maintains strong connections with specific examples within each discipline.
 
 As previously mentioned, the precise definition of self-organization remains under discussion, and a range of criteria continue to be debated. Key questions, such as the degree of order necessary for a system to be deemed self-organized, whether any external influences are permissible, whether a degree of randomness within the system is acceptable, and whether the emergent state must be irreversible, are among the issues that lack definitive resolutions.
 
-This ambiguity in the definition isn't unusual for psychologists, as many non-formal concepts lack strict definitions. The value of the self-organization concept is primarily found in its concrete examples, its broad applicability, such as in the field of artificial intelligence, and our capability to create simulations of it. The focus of the next section will be on such simulations.
+This ambiguity in the definition isn't unusual for psychologists, as many non-formal concepts lack strict definitions. The value of the self-organization concept is primarily found in its concrete examples, its broad applicability, such as in the field of artificial intelligence, and our capability to create simulations of it. The focus of the next section will be on such simulations using a dedicated tool, NetLogo.
 
 ## NetLogo
 
@@ -330,7 +332,7 @@ A simple but famous example of social self-organization concerns pedestrian dyna
 
 Famous is the work of the sociologist Mark Granovetter [-@granovetterStrengthWeakTies1973] on strong and weak ties in social networks (belonging to the best cited paper in the history of the social sciences). The idea is that weak ties in social networks are often more valuable than strong ties, as they provide access to new information and opportunities that may not be available within one's close circle of friends and acquaintances.
 
-Another of his contributions is the threshold model of collective behavior [@granovetterThresholdModelsCollective1978]. I like to explain this work using the "Guy starts dance party" video on YouTube. The idea is that people have some threshold, between 0 and 1, to join the dancers. These thresholds have some distribution, a flexible one is the beta distribution. With this R-code we can simulate this effect:
+Another of his contributions is the threshold model of collective behavior [@granovetterThresholdModelsCollective1978]. I like to explain this work using the "Guy starts dance party" video on YouTube. The idea is that people have some threshold, between 0 and 1, to join the dancers. **The thresholds are sampled from the beta distribution, which is characterized by two shape parameters, α and β.** With this R-code we can simulate this effect:
 
 ```{r eval = FALSE}
 layout(1:2)
