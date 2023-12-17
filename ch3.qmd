@@ -22,7 +22,9 @@ I call it an intriguing property because in the linear systems we are used to, s
 
 A key physical example is the change in state of water. Between, say, 10 and 80 degrees Celsius, a smooth change in temperature results in only a slight change in the liquid state of water. But if we change the temperature very slowly, close to the thresholds of 0 or 100 degrees Celsius, we see sudden phase transitions.
 
-We saw something similar for the logistic map when $r$ crossed the boundary $r = 1$. However, this did not lead to a sudden change in $X^{*}$. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior.
+We saw something similar for the logistic map when $r$ crossed the boundary $r = 1$. However, this did not lead to a sudden change in $X^{*}$. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior.[^ch3-2]
+
+[^ch3-2]: **A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.**
 
 ![A first order (discontinuous) and second order (continuous) phase transition. (from: <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>)](media/ch3/image1.jpg){#fig-ch3-img1-old-13 width="5.174305555555556in" height="2.4652777777777777in"}
 
@@ -136,9 +138,9 @@ $$
 V^{'}(X) = {- a - bX + X}^{3} = 0.
 $$ {#eq-ch3-5-old-9}
 
-This type of equation is called a cubic equation.[^ch3-2] The degenerate critical points of the cusp can be found by setting the first and second derivative to zero. This is just within reach of your high school mathematics training and I leave this as an exercise. The result is:
+This type of equation is called a cubic equation.[^ch3-3] The degenerate critical points of the cusp can be found by setting the first and second derivative to zero. This is just within reach of your high school mathematics training and I leave this as an exercise. The result is:
 
-[^ch3-2]: The cubic equation that cannot solved easily. This is due to the fact that the cusp is not a function of the form $y = f(x)$. Functions assign to each element of $x$ exactly one element of $y$. But in bistable systems we assign two values of $y$ to one value of $x$.
+[^ch3-3]: The cubic equation that cannot solved easily. This is due to the fact that the cusp is not a function of the form $y = f(x)$. Functions assign to each element of $x$ exactly one element of $y$. But in bistable systems we assign two values of $y$ to one value of $x$.
 
 $$
 27a^{2} = 4b^{3}.
@@ -162,9 +164,9 @@ A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAtt
 
 ![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25 width="3.1271905074365702in" height="2.783963254593176in"}
 
-Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-3] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an 'I don't know' or 'I don't care' position.
+Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-4] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an 'I don't know' or 'I don't care' position.
 
-[^ch3-3]: Perhaps better to call this view anti-choice
+[^ch3-4]: Perhaps better to call this view anti-choice
 
 The normal ($a$) and splitting ($b$) variable are interpreted as information and involvement. Information is a collection of factors that influence whether people tend to be in the pro-life and pro-choice position. Political and religious orientation as well as personal experiences add to this overall factor. One way to construct this information variable is through a factor analysis or principal component analysis.
 
@@ -240,9 +242,9 @@ The control variables are fear and rage (see @fig-ch3-img17-old-29). In such a r
 
 **Cusp models have also been proposed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007\] propose using distal risk as the split axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.**
 
-**As a final example I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor. Paulos explains his model in the context of puns. His example is "do you consider clubs appropriate for young children?" with the punchline "only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter. Interpretation is then the behavioral axis. Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter.**[^ch3-4]
+**As a final example I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor. Paulos explains his model in the context of puns. His example is "do you consider clubs appropriate for young children?" with the punchline "only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter. Interpretation is then the behavioral axis. Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter.**[^ch3-5]
 
-[^ch3-4]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
+[^ch3-5]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
 ## Testing catastrophe models
 
@@ -341,9 +343,9 @@ The catastrophe flags together provide a research methodology for phase transiti
 
 In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$ and $b$. We have implemented this approach in a cusp R package described in @grasmanFittingCuspCatastrophe2009.
 
-The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-5]:
+The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-6]:
 
-[^ch3-5]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and \$ dW\\ \$ depend on time.
+[^ch3-6]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and \$ dW\\ \$ depend on time.
 
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}
@@ -353,9 +355,9 @@ We will discuss this type of stochasticity later, but it is important to note th
 $$
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-14}
 
-where Z is a normalizing constant[^ch3-6] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = \frac{\sqrt{2\pi}}{\sigma}$.
+where Z is a normalizing constant[^ch3-7] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = \frac{\sqrt{2\pi}}{\sigma}$.
 
-[^ch3-6]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
+[^ch3-7]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
 
 As in the case of the normal distribution we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as $V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}$. The probability distribution for the cusp is
 
@@ -496,9 +498,9 @@ The third remark is that two alternative approaches have been proposed. Both Gua
 
 ## Criticism of catastrophe theory
 
-One often speaks of the rise and the fall of catastrophe theory [@rosserRiseFallCatastrophe2007]. The hype following Zeeman's famous Scientific American paper[^ch3-7] [@zeemanCatastropheTheory1976], **in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences,** led to a strongly worded reply by @zahlerClaimsAccomplishmentsApplied1977 in Nature.
+One often speaks of the rise and the fall of catastrophe theory [@rosserRiseFallCatastrophe2007]. The hype following Zeeman's famous Scientific American paper[^ch3-8] [@zeemanCatastropheTheory1976], **in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences,** led to a strongly worded reply by @zahlerClaimsAccomplishmentsApplied1977 in Nature.
 
-[^ch3-7]: I recommend the BBC documentary "Case Study Catastrophe Theory Maths Foundation Course"
+[^ch3-8]: I recommend the BBC documentary "Case Study Catastrophe Theory Maths Foundation Course"
 
     (<https://www.youtube.com/watch?v=myDvcvox1V4&t=1435s>) to see Zeeman at work.
 
