@@ -62,9 +62,7 @@ It is also argued that emergence is a consequence of symmetry breaking [@krakaue
 
 I believe that both weak and strong emergence are essential to understanding psychological phenomena. Our minds, encompassing conscious thought, self-awareness, reasoning abilities, natural language comprehension, emotions, and attitudes, are not mere artifacts and cannot be simply reduced to intricate patterns of neural activity. In my view, these mental constructs, **such as consciousness**, possess their own causal influence, and this is one of the reasons that psychology stands as a scientific discipline in its own right.
 
-**My thinking about consciousness has been strongly influenced by the work of Douglas Hofstadter [@hofstadterGodelEscherBach1999; @hofstadter2007]. In his work, our sense of self is a construct formed by the brain's ability to use symbols, such as natural language, to refer to its own activities and experiences. Consciousness is based on symbolic self-reference. It arises when these self-referential loops (strange loops) reach a certain level of complexity. The higher-order self has the ability to reflect and influence the lower-order processing of the brain.**
-
-**I note that this is one of the most debated issues in psychology. The neuro-reductionist view is rather popular in the field of psychology [@irvine2020], both when it concerns the explanation of consciousness (for a recent overview see @seth2022) and psychological disorders (for a critical review see @borsboom2019).**
+**Of course, the relationship between the mind and the brain is one of the most debated topics in psychology. The neuro-reductionist view is popular in the field of psychology, both when it concerns the explanation of higher cognition** [@schwartz2016] **and psychological disorders (for a critical review see @borsboom2019). In chapter 4, I will explain my position in more detail.**
 
 ## Theory construction methodology
 
