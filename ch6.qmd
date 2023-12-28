@@ -69,7 +69,7 @@ A relatively new topic in complex networks concerns higher order interactions. I
 
 **He introduced the concept of near decomposability to describe how these nested hierarchies typically interact. Interactions within each subsystem are generally stronger and more frequent than interactions between subsystems. Of course, the HSBM is a simplification of reality, where levels can be mixed and low-level interference occasionally spirals up to higher levels (see next chapter). Nevertheless, the HSBM is often a useful conceptualization of complex networks, even in psychology.**
 
-![A hierarchical stochastic block model with four levels.](media/ch2/network4444.jpeg){alt="A hierarchical stochastic block model with four levels"}
+![A hierarchical stochastic block model with four levels](media/ch2/network4444.jpeg)
 
 ## Psychological network models
 
