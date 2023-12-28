@@ -24,7 +24,7 @@ $$\begin{array}{r}
 \frac{dX}{dt} = rX(1 - X)
 \end{array}$$ {#eq-ch5-1-old-21}
 
-**The change in** $X$ **is a function of** $X$ **itself. The exponential growth term** $rX$ **is dominant when** $X$ **is close to zero,** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+**The change in \$X\$ is a function of \$X\$ itself. The exponential growth term \$rX\$ dominates when \$X\$ is close to zero, but the growth levels off as \$X\$ approaches 0.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
 $$\frac{dX}{dt} = rX$$
 
