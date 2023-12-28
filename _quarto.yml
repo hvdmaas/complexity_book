@@ -2,7 +2,7 @@ project:
   type: book
   output-dir: docs #for publishing in github pages
 book:
-  title: "Emergent Minds: Navigating Complexity in Psychological Systems"
+  title: "Complex systems research in Psychology"
   author: "Han van der Maas"
   date: "Dec 2023"
   search: true
