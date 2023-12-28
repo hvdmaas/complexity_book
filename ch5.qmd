@@ -360,7 +360,7 @@ run(table=T,method='euler', tstep=.1,
     if(abs(state)>bound) break",ymin=-bound,ymax=bound)
 ```
 
-The model explains observed response times and accuracies in terms of the underlying process parameters, drift rate and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. The DDMs also explain the speed-accuracy tradeoff. If we set our confidence bound higher, we are slower but more accurate.
+The model explains observed response times and accuracies in terms of the underlying process parameters, drift rate and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. This drift diffusion model also explain the speed-accuracy tradeoff. If we set our confidence bound higher, we are slower but more accurate.
 
 A well-known extension of the drift diffusion model is the Ornstein--Uhlenbeck (O-U) model:
 
@@ -388,7 +388,7 @@ $$ {#eq-ch5-9-old-29}
 
 Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in @roxinNeurobiologicalModelsTwoChoice2008 and @verdonckIsingDecisionMaker2014 and discussed in @ratcliffDiffusionDecisionModel2016.
 
-The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the DDM can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
+The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
 ![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting w = k and w + k to a large value.](media/ch5/image8.jpg){#fig-ch5-img8-old-56 width="3.8890234033245843in"}
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Emergent Minds: Navigating Complexity in Psychological Systems - 5&nbsp; Building dynamic system models</title>
+<title>Complex systems research in Psychology - 5&nbsp; Building dynamic system models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,8 +110,7 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -132,7 +131,7 @@ div.csl-indent {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -144,10 +143,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Emergent Minds: Navigating Complexity in Psychological Systems</a> 
+      <a href="./">Complex systems research in Psychology</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/tasospsy/complexity_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Emergent-Minds--Navigating-Complexity-in-Psychological-Systems.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/tasospsy/complexity_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Complex-systems-research-in-Psychology.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -282,7 +281,8 @@ div.csl-indent {
 
 </header>
 
-<p>Another branch of the complex systems approach is nonlinear dynamical systems theory (NLDST). We have seen many examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.</p>
+<p><strong>Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.</strong></p>
+<p>This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. We have seen many examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.</p>
 <p>In psychology, following the principle of parsimony (Occam’s razor) we must start with simple models. We don’t have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling <span class="citation" data-cites="murray1989">(<a href="references.html#ref-murray1989" role="doc-biblioref">James D. Murray 1989</a>)</span>. As a rough estimate, one could say that mathematical psychology is where mathematical biology was a century ago., but this depends a bit on the subfield of psychology. In areas such as neural modeling, speeded decision making, memory choice theory, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.</p>
 <p>As in the previous chapter, I will first present a basic overview of dynamical systems modeling in other sciences. The second part concerns applications in psychology. I refer to more advanced sources when necessary. I recommend the book by <span class="citation" data-cites="gottmanMathematicsMarriageDynamic2002">Gottman et al. (<a href="references.html#ref-gottmanMathematicsMarriageDynamic2002" role="doc-biblioref">2002</a>)</span> for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. The online lectures on nonlinear dynamics and chaos and the book by Steven Strogatz <span class="citation" data-cites="strogatzNonlinearDynamicsChaos2018">(<a href="references.html#ref-strogatzNonlinearDynamicsChaos2018" role="doc-biblioref">2018</a>)</span> are very helpful. Murray’s book on mathematical biology is also highly recommended <span class="citation" data-cites="murrayMathematicalBiology2002">(<a href="references.html#ref-murrayMathematicalBiology2002" role="doc-biblioref">J. D. Murray 2002</a>)</span>. A basic introduction is Thinking in Systems of <span class="citation" data-cites="meadowsThinkingSystemsPrimer2008">Meadows (<a href="references.html#ref-meadowsThinkingSystemsPrimer2008" role="doc-biblioref">2008</a>)</span>.</p>
 <p>This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind <span class="citation" data-cites="deboerSimplePhasePlane2018">(<a href="references.html#ref-deboerSimplePhasePlane2018" role="doc-biblioref">de Boer 2018</a>)</span> is based on the R-packages deSolve and rootSolve <span class="citation" data-cites="soetaertSolvingDifferentialEquations2010">(<a href="references.html#ref-soetaertSolvingDifferentialEquations2010" role="doc-biblioref">Soetaert, Petzoldt, and Setzer 2010a</a>)</span>. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states. The manual can be found at <a href="https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf" class="uri">https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf</a></p>
@@ -527,7 +527,7 @@ div.csl-indent {
 <div id="fig-ch5-img6-old-54" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch5/image6.jpg" class="img-fluid figure-img" style="width:4.77593in"></p>
-<figcaption class="figure-caption">Figure&nbsp;5.6: The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;5.6: The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. <strong>This simulated graph resembles the real data very well (see for example Figure 9 in <span class="citation" data-cites="jusup2022">Jusup et al. (<a href="references.html#ref-jusup2022" role="doc-biblioref">2022</a>)</span>)</strong></figcaption>
 </figure>
 </div>
 <p>Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s<sup>2</sup>). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.</p>
@@ -562,7 +562,7 @@ dX = Idt + \sigma dW
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">table=</span>T,<span class="at">method=</span><span class="st">'euler'</span>, <span class="at">tstep=</span>.<span class="dv">1</span>,</span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">tmax=</span><span class="dv">500</span>,<span class="at">after=</span><span class="st">"state&lt;-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">    if(abs(state)&gt;bound) break"</span>,<span class="at">ymin=</span><span class="sc">-</span>bound,<span class="at">ymax=</span>bound)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The model explains observed response times and accuracies in terms of the underlying process parameters, drift rate and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. The DDMs also explain the speed-accuracy tradeoff. If we set our confidence bound higher, we are slower but more accurate.</p>
+<p>The model explains observed response times and accuracies in terms of the underlying process parameters, drift rate and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. This drift diffusion model also explain the speed-accuracy tradeoff. If we set our confidence bound higher, we are slower but more accurate.</p>
 <p>A well-known extension of the drift diffusion model is the Ornstein–Uhlenbeck (O-U) model:</p>
 <p><span id="eq-ch5-7-old-27"><span class="math display">\[\begin{array}{r}
 dX = (\lambda x + I)dt + \sigma dW
@@ -582,7 +582,7 @@ dX_{2} &amp;= (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 \end{align*}
 \tag{5.9}\]</span></span></p>
 <p>Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in <span class="citation" data-cites="roxinNeurobiologicalModelsTwoChoice2008">Roxin and Ledberg (<a href="references.html#ref-roxinNeurobiologicalModelsTwoChoice2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="verdonckIsingDecisionMaker2014">Verdonck and Tuerlinckx (<a href="references.html#ref-verdonckIsingDecisionMaker2014" role="doc-biblioref">2014</a>)</span> and discussed in <span class="citation" data-cites="ratcliffDiffusionDecisionModel2016">Ratcliff et al. (<a href="references.html#ref-ratcliffDiffusionDecisionModel2016" role="doc-biblioref">2016</a>)</span>.</p>
-<p>The relations between different accumulator models are summarized in this figure from <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">Bogacz et al. (<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">2006</a>)</span>. It shows that convenient models such as the DDM can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.</p>
+<p>The relations between different accumulator models are summarized in this figure from <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">Bogacz et al. (<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">2006</a>)</span>. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.</p>
 <div id="fig-ch5-img8-old-56" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch5/image8.jpg" class="img-fluid figure-img" style="width:3.88902in"></p>
@@ -1068,6 +1068,9 @@ Izhikevich, Eugene M., and Richard FitzHugh. 2006. <span>“<span>FitzHugh-Nagum
 </div>
 <div id="ref-johnsonModelingMultispeciesPredator2019" class="csl-entry" role="listitem">
 Johnson, Chris J., Matthew A. Mumma, and Martin-Hugues St-Laurent. 2019. <span>“Modeling Multispecies Predatorprey Dynamics: Predicting the Outcomes of Conservation Actions for Woodland Caribou.”</span> <em>Ecosphere</em> 10 (3): e02622. <a href="https://doi.org/10.1002/ecs2.2622">https://doi.org/10.1002/ecs2.2622</a>.
+</div>
+<div id="ref-jusup2022" class="csl-entry" role="listitem">
+Jusup, Marko, Petter Holme, Kiyoshi Kanazawa, Misako Takayasu, Ivan Romić, Zhen Wang, Sunčana Geček, et al. 2022. <span>“Social Physics.”</span> <em>Physics Reports</em>, Social physics, 948 (February): 1–148. <a href="https://doi.org/10.1016/j.physrep.2021.10.005">https://doi.org/10.1016/j.physrep.2021.10.005</a>.
 </div>
 <div id="ref-ludwig1978" class="csl-entry" role="listitem">
 Ludwig, D., D. D. Jones, and C. S. Holling. 1978. <span>“Qualitative Analysis of Insect Outbreak Systems: The Spruce Budworm and Forest.”</span> <em>Journal of Animal Ecology</em> 47 (1): 315–32. <a href="https://doi.org/10.2307/3939">https://doi.org/10.2307/3939</a>.
