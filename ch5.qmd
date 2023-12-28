@@ -24,7 +24,7 @@ $$\begin{array}{r}
 \frac{dX}{dt} = rX(1 - X)
 \end{array}$$ {#eq-ch5-1-old-21}
 
-A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+**The change in** $X$ **is a function of** $X$ **itself. The exponential growth term** $rX$ **is dominant when** $X$ **is close to zero,** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
 $$\frac{dX}{dt} = rX$$
 
@@ -782,13 +782,13 @@ I will give a psychological example of this multivariate model, concerning perce
 
 #### Application to perception
 
-Now take a look at @fig-ch5-img18-old-66. This is a special case of multistable perception, which I call multifigure multistable perception.
+Take a look at @fig-ch5-img18-old-66. This is a special case of multistable perception, which I call multifigure multistable perception.
 
 ![Multifigure multistable perception. Verify three phenomena: a) some attention or focus is required to see three-dimensional cubes, b) spontaneous transitions in the perception of cubes occur, c) such transitions affect the perception of neighboring cubes.](media/ch5/image18.jpg){#fig-ch5-img18-old-66 width="6.263888888888889in"}
 
-We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define $X$ as the percept of the cube. $X = 0$ means that no cubes are perceived, only lines and colored parallelograms. $X > 0$ represents for 'front' view, and $X < 0$ the 'back' view (cf. @fig-ch3-img2). The cusp model for one cube is $\frac{dX}{dt} = {a + bX - X}^{3}$ , where $a$ is the bias parameter and $b$ is the attention parameter. If $a = 0$ and $b > 1$ (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see @fig-ch5-img2-old-50).
+We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define $X$ as the percept of the cube. $X = 0$ means that no cubes are perceived, only lines and colored parallelograms. $X > 0$ represents the 'front' view, and $X < 0$ the 'back' view (cf. @fig-ch3-img2). The cusp model for one cube is $\frac{dX}{dt} = {a + bX - X}^{3}$ , where $a$ is the bias parameter and $b$ is the attention parameter. If $a = 0$ and $b > 1$ (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see @fig-ch5-img2-old-50).
 
-Now we consider @fig-ch5-img16-old-64 and apply @eq-ch5-20-old-40 . We have $N = 25$ (a bit depending on how you count) The values of the parameters $a_{0i}$ should be estimated from data, but for now we will assume no bias, so $a_{0i} = 0$. We set $a_{ij} > 0$, meaning that we expect positive coupling between the cusps. The $b_{0}$ is the attention vector. In the simulation we first assume that attention is low ($b_{0i} = - .3)$. After an initial phase, we will set $b_{01} = 1$, that is we suddenly attend to one cube. A biot later we set $b_{01}$ back to -.3. However, we also set $b_{ij} > 0$, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.
+Now we consider @fig-ch5-img16-old-64 and apply @eq-ch5-20-old-40 . We have $N = 25$ (a bit depending on how you count) The values of the parameters $a_{0i}$ should be estimated from data, but for now we will assume no bias, so $a_{0i} = 0$. We set $a_{ij} > 0$, meaning that we expect positive coupling between the cusps. The $b_{0}$ is the attention vector. In the simulation we first assume that attention is low ($b_{0i} = - .3)$. After an initial phase, we will set $b_{01} = 1$, that is we suddenly attend to one cube. A bit later we set $b_{01}$ back to -.3. However, we also set $b_{ij} > 0$, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.
 
 To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch5-5] This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
 
