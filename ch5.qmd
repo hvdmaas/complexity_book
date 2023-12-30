@@ -24,7 +24,7 @@ $$\begin{array}{r}
 \frac{dX}{dt} = rX(1 - X)
 \end{array}$$ {#eq-ch5-1-old-21}
 
-**The change in \$X\$ is a function of \$X\$ itself. The exponential growth term \$rX\$ dominates when \$X\$ is close to zero, but the growth levels off as \$X\$ approaches 0.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+**The change in \$X\$ is a function of \$X\$ itself. The exponential growth term \$rX\$ dominates when \$X\$ is close to zero, but the growth levels off as \$X\$ approaches 1.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
 $$\frac{dX}{dt} = rX$$
 
@@ -105,7 +105,9 @@ In analyzing the behavior of a dynamical system, the first thing we want to know
 
 For @eq-ch5-1-old-21, the logistic function, we also want to know the equilibria, the stable and unstable fixed points. To do so we follow the same steps as for the exponential function (see exercises).
 
-I note that the continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in chapter 2. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:
+I note that the continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in chapter 2. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:[^ch5-2]
+
+[^ch5-2]: **the** $-X$ **is added because the difference equation has the form** $X_{t + 1} = f(X_{t})$**, the change** $dX$ **is thus** $f(X_{t})-X_{t}$**.**
 
 ``` r
 dX <- r*X*(1-X) - X 
@@ -209,7 +211,7 @@ p <- c(a=0,b=1); s <- c(X=.1); run(ymin=-1)
 s[1] <- -.1; run(add=T)
 ```
 
-This shows two runs demonstrating bistability for $a = 0$ and $b = 1$.
+This code shows two runs demonstrating bistability for $a = 0$ and $b = 1$.
 
 A better way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 2 by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small timestep. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
 
@@ -223,7 +225,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise).](media/ch5/image2.jpg){#fig-ch5-img2-old-50 width="4.07635498687664in"}
+![Spontaneous jumps in the cusp due to stochastics (noise). **Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.**](media/ch5/image2.jpg){#fig-ch5-img2-old-50 width="4.07635498687664in"}
 
 ### Bifurcation analysis
 
@@ -277,7 +279,7 @@ parms <- c(r = 0.4, q = 10)
 bifurcation(spruce, state, parms)
 ```
 
-Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. Note that the variables are reparametrized (see Section 3.3.1). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start A is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat B budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch5-img5-old-53.
+Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see Section 3.3.1). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start A is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat B budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch5-img5-old-53.
 
 ![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch5/image5.jpg){#fig-ch5-img5-old-53 width="4.124379921259843in"}
 
@@ -342,9 +344,9 @@ dX = Idt + \sigma dW
 
 As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
 
-The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step[^ch5-2]. We stop the run when either the negative or positive bound is reached.
+The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step[^ch5-3]. We stop the run when either the negative or positive bound is reached.
 
-[^ch5-2]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
+[^ch5-3]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
 
 ``` r
 model <- function(t, state, parms) {
@@ -455,9 +457,9 @@ Some other advanced variations of this model have been proposed. In these papers
 
 The model of marriage developed by the psychologist John Gottman and the mathematical biologist James Murray [-@gottmanMathematicsMarriageDynamic2002] is firmly grounded in psychological theory and data. The main phenomenon that inspired this modeling work is the finding by @gottmanMaritalProcessesPredictive1992 finding that the patterns of interaction between couples, when discussing a major area of ongoing disagreement in their marriage, are predictive of divorce.
 
-The model consists of two coupled difference equations, but I present the model in the form of differential equations[^ch5-3].
+The model consists of two coupled difference equations, but I present the model in the form of differential equations[^ch5-4].
 
-[^ch5-3]: The reason difference equations were used in the original model is that the data consist of turn takings in a conversation. This, however, does not lead to qualitative different results. With `method='euler'` and a change in $r_{w}$ and $r_{h}$ the difference model can be constructed.
+[^ch5-4]: The reason difference equations were used in the original model is that the data consist of turn takings in a conversation. This, however, does not lead to qualitative different results. With `method='euler'` and a change in $r_{w}$ and $r_{h}$ the difference model can be constructed.
 
 $$
 \begin{align*}
@@ -472,9 +474,9 @@ $$\begin{array}{r}
 I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 \end{array}$$ {#eq-ch5-12-old-32}
 
-I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses do not interact.[^ch5-4]
+I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses do not interact.[^ch5-5]
 
-[^ch5-4]: I follow the definition and notation of the original source, but this model is clearly not restricted to heterosexual relationships.
+[^ch5-5]: I follow the definition and notation of the original source, but this model is clearly not restricted to heterosexual relationships.
 
 However, if the influence function ($a = - 8, b = 0$) is such that a positive mood in one spouse provokes a positive mood in the other, while a negative mood provokes a negative mood, we expect a negative and a positive equilibrium depending on the initial states and uninfluenced steady state values.
 
@@ -790,9 +792,9 @@ We can build a dynamical systems model of these perceptual phenomena by using th
 
 Now we consider @fig-ch5-img16-old-64 and apply @eq-ch5-20-old-40 . We have $N = 25$ (a bit depending on how you count) The values of the parameters $a_{0i}$ should be estimated from data, but for now we will assume no bias, so $a_{0i} = 0$. We set $a_{ij} > 0$, meaning that we expect positive coupling between the cusps. The $b_{0}$ is the attention vector. In the simulation we first assume that attention is low ($b_{0i} = - .3)$. After an initial phase, we will set $b_{01} = 1$, that is we suddenly attend to one cube. A bit later we set $b_{01}$ back to -.3. However, we also set $b_{ij} > 0$, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.
 
-To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch5-5] This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
+To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch5-6] This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
 
-[^ch5-5]: We could also use $X_j^2$
+[^ch5-6]: We could also use $X_j^2$
 
 *\
 *$$\begin{array}{r}
