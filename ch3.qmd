@@ -345,7 +345,7 @@ In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheo
 
 The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-6]:
 
-[^ch3-6]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and \$ dW\\ \$ depend on time.
+[^ch3-6]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and $dW$ depend on time.
 
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}

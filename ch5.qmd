@@ -24,7 +24,7 @@ $$\begin{array}{r}
 \frac{dX}{dt} = rX(1 - X)
 \end{array}$$ {#eq-ch5-1-old-21}
 
-**The change in \$X\$ is a function of \$X\$ itself. The exponential growth term \$rX\$ dominates when \$X\$ is close to zero, but the growth levels off as \$X\$ approaches 1.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+**The change in** $X$ **is a function of** $X$ **itself. The exponential growth term** $rX$ **dominates when** $X$ **is close to zero, but the growth levels off as** $X$ **approaches 1.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
 $$\frac{dX}{dt} = rX$$
 
@@ -336,13 +336,13 @@ Many dynamic models have been proposed in the study of speeded decision making [
 
 ![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate I (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch5/image7.jpg){#fig-ch5-img7-old-55 width="3.609476159230096in"}
 
-One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model, with \$I\$as the stimulus-driven input:
+One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model, with $I$ as the stimulus-driven input:
 
 $$\begin{array}{r}
 dX = Idt + \sigma dW
 \end{array}$$ {#eq-ch5-6-old-26}
 
-As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
+As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). **We start at zero,** $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
 
 The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step[^ch5-3]. We stop the run when either the negative or positive bound is reached.
 
@@ -620,7 +620,7 @@ In @robinaughAdvancingNetworkTheory2019, this model is extended with other proce
 
 ### Neural models: van der Pol and different time scales
 
-Imagine taking the cusp equation $\frac{dX}{dt} = {a + bX - X}^{3}$, with $b=1$, such that we have hysteresis. But now we make $a$, or actually $da/dt$, a function of $X$: $\frac{da}{dt} = - \varepsilon X$, where $\varepsilon$ is small constant. If we set $\varepsilon$ to .05, $a$ changes 20 times slower than $X$. What happens now is that with $X = 1$ and $a = 0$, $a$ decreases up to the point where $X$ jumps to a negative value. Now $a$ increases, resulting to a new jump to a positive value of$\ X$. And this loop will continue endlessly.
+Imagine taking the cusp equation $\frac{dX}{dt} = {a + bX - X}^{3}$, with $b=1$, such that we have hysteresis. But now we make $a$, or actually $da/dt$, a function of $X$: $\frac{da}{dt} = - \varepsilon X$, where $\varepsilon$ is small constant. If we set $\varepsilon$ to .05, $a$ changes 20 times slower than $X$. What happens now is that with $X = 1$ and $a = 0$, $a$ decreases up to the point where $X$ jumps to a negative value. Now $a$ increases, resulting to a new jump to a positive value of $X$. And this loop will continue endlessly.
 
 ``` r
 model <- function(t, state, parms){
@@ -659,7 +659,7 @@ $$
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in:
 
-![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential (), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable (\$W\$). The V-nullcline (where \$dV/dt = 0\$) and the W-nullcline (where \$dW/dt = 0\$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest, potentially leading to an action potential; in the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch5/image15.jpg){#fig-ch5-img15-old-63 width="3.4180555555555556in"}
+![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The V-nullcline (where $dV/dt = 0$) and the W-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch5/image15.jpg){#fig-ch5-img15-old-63 width="3.4180555555555556in"}
 
 The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin--Huxley model, consisting of four differential equations, that models the activation and deactivation dynamics of a spiking neuron in more detail. This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
@@ -752,7 +752,7 @@ run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
 
 The last three lines of this code show the Kadyrov oscillator:
 
-![The Kadyrov oscillator. Y attracts X to its state (as \$d = 1\$), but X pushes Y away (as \$c = - 1\$), resulting in oscillations.](media/ch5/image17.jpg){#fig-ch5-img17-old-65 width="2.674443350831146in"}
+![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch5/image17.jpg){#fig-ch5-img17-old-65 width="2.674443350831146in"}
 
 If we simplify this analysis a bit to stable fixed points only, we see three regimes:
 
@@ -839,7 +839,7 @@ which gives:
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch5-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling \$a\_{ij} \> 0\$, while the one on the right seems to be switch independently (\$a\_{ij} \> 0)\$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch5/image20.jpg){#fig-ch5-img20-old-68 width="3.8260181539807525in"}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} > 0)$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch5/image20.jpg){#fig-ch5-img20-old-68 width="3.8260181539807525in"}
 
 ## Causal loop diagrams
 
