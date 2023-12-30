@@ -108,6 +108,8 @@ Chapter 6 focuses **on a novel use of networks**, which we call network psycholo
 
 The latest line of research is the integrated study of psychological and social networks [@vandermaas2020a]. Chapter 7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change.
 
+## Systems of a small number of variables versus systems of many variables
+
 ## Other work and sources
 
 The complex systems approach is often introduced as the next new thing, but those days are gone. Even in psychology it can no longer be considered a new approach. Many different research groups have used the toolbox of complex systems research in many areas of psychology. This book will give many examples. One could even argue that a lot of work has been done that could be considered complex systems research but has not been published under that heading. For example, most neural network models of psychological processes are complex systems models because they investigate emergent computational properties of the interaction of neural units. This is also true of much work in mathematical psychology, for example when differential equations are used to study dynamical systems. Older work in complex systems research has often been published with reference to nonlinear dynamical systems, which is a related concept. Other related approaches are computational social science and agent-based modeling.
