@@ -134,7 +134,7 @@ The Lyapunov coefficient quantifies chaos. The idea is to take two very close in
 $$
 {\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}$$ {#eq-ch2-3}
 
-where $f^{'}\left( X_{i} \right) = r - 2rX$ for the logistic map and $\lambda_{L} > 0$ indicates chaos. You may verify in a simulation that $\lambda_{L} > 0$ for \$r = 4,\$indicating chaos.
+where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambda_{L} > 0$ indicates chaos. You may verify in a simulation that $\lambda_{L} > 0$ for $r = 4$, indicating chaos.
 
 ## Phase plot and bifurcation diagrams
 
@@ -208,7 +208,7 @@ This statement needs some nuance. I have already mentioned that the weather can 
 
 ## Other maps and fractals
 
-There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:
+There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled **difference** equations:
 
 $$
 X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\

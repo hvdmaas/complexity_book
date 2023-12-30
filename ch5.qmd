@@ -379,7 +379,7 @@ dX_{2} = I_{2}dt + \sigma W_{2}
 \end{align*}
 $$ {#eq-ch5-8-old-28}
 
-Now two independent processes run (race) to one positive bound. The first one to arrive wins. More biologically inspired models involve inhibition. The model of mutual inhibition model:
+Now two independent processes run (race) to one positive bound. The first one to arrive wins. More biologically inspired models involve inhibition. **The equations of mutual inhibition model are:**
 
 $$
 \begin{align*}
@@ -867,7 +867,7 @@ Insightmaker has many powerful built-in functions, allows sensitivity testing as
 
 6)  Implement the SIR model for infectious diseases in R using Grind. Reproduce the diagram of the SIR model with $\beta = 0.4$ and $\gamma = 0.04$ on the Wikipedia page on Compartmental models in epidemiology.
 
-7)  Reproduce the simulation of the Polya Urn model shown in @fig-ch5-img12-old-60. (\*\*)
+7)  Reproduce the **times-series plot of the** simulation of the Polya Urn model shown in @fig-ch5-img12-old-60. (\*\*)
 
 8)  Implement the FitzHugh-Nagumo model in Grind and replicate the @fig-ch5-img15-old-63. No exact replication is required but the phase diagram should look similar (\*\*)
 

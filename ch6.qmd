@@ -288,7 +288,7 @@ data <- IsingSampler(N, W, nIter=100, thresholds, beta = 2, responses = c(-1, 1)
 hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 ```
 
-![The distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation shows the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/image12.jpg){#fig-ch6-img12-old-81 width="3.257518591426072in"}
+![The **equilibrium** distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation shows the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/image12.jpg){#fig-ch6-img12-old-81 width="3.257518591426072in"}
 
 In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds. Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
