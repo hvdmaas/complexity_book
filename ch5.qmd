@@ -392,7 +392,7 @@ Note that these are all linear dynamical system that do not exhibit complex beha
 
 The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting w = k and w + k to a large value.](media/ch5/image8.jpg){#fig-ch5-img8-old-56 width="3.8890234033245843in"}
+![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. **Adapted from @bogaczPhysicsOptimalDecision2006.**](media/ch5/image8.jpg){#fig-ch5-img8-old-56 width="3.8890234033245843in"}
 
 ### Dyadic models
 
@@ -519,7 +519,7 @@ I have kept the influence functions and most parameters the same for both spouse
 
 In a series of papers, Paul van Geert proposed dynamical systems models for developmental processes [@denhartighDynamicNetworkModel2016; @vangeertDynamicSystemsModel1998; @vangeertDynamicSystemsModel1991]. The idea is that cognitive and language abilities grow over time in an autocatalytic process constrained by a limited capacity, similar to the logistic growth of populations.
 
-Van Geert has proposed many different models, I will give just one example. @vangeertDynamicSystemsModel1991 introduced a system of two coupled differential equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
+Van Geert has proposed many different models, I will give just one example. @vangeertDynamicSystemsModel1991 introduced a system of two coupled **difference** equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
 
 $$
 \begin{align*}
@@ -578,7 +578,7 @@ $$\begin{array}{r}
 \frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A
 \end{array}$$ {#eq-ch5-14-old-34}
 
-This looks a bit like the Romeo and Juliet model, but now the effect of perceived threat T on the change in arousal A is a logistic function that starts at one and grows to 1. The location is determined by $\beta$ and the acceleration or steepness is determined by $\alpha$.
+This looks a bit like the Romeo and Juliet model, but now the effect of perceived threat T on the change in arousal A is a logistic function that starts at 0 and grows to 1. The location is determined by $\beta$ and the acceleration or steepness is determined by $\alpha$.
 
 An implementation and simple illustration is:
 
@@ -601,7 +601,7 @@ newton(s=c(A=1,T=1),plot=T);
 run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)")
 ```
 
-The $\beta$ parameter is set so that the non-panic mode dominates, but the panic mode is present (a metastable state) but can be easily disturbed (see plane). For $20 < t < 30$, arousal is set to a high value, resulting in a high perceived threat. But because we also added some noise to both processes, after some time both arousal and perceived threat jump back to low values.
+The $\beta$ parameter is set so that the non-panic mode dominates, but the panic mode is present (a metastable state). This state can be easily disturbed (see plane). For $20 < t < 30$, arousal is set to a high value, resulting in a high perceived threat. But because we also added some noise to both processes, after some time both arousal and perceived threat jump back to low values.
 
 This dynamic of this model is the cusp, as can be checked with:
 
@@ -663,7 +663,7 @@ The equation for $V$, the membrane potential, has a cubic nonlinearity that allo
 
 The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin--Huxley model, consisting of four differential equations, that models the activation and deactivation dynamics of a spiking neuron in more detail. This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
-Other applications of the van der Pol model concern extensions of the HKB model (see Section 4.3.3), the sleep-wake cycle [@forgerSimplerModelHuman1999], multistable perception [@furstenauSimulatingBistablePerception2014], developmental processes [@molenaarDynamicModelsDevelopment1985], and bipolar disorder [@daughertyMathematicalModelsBipolar2009]. One case where it seems to be especially useful in in modeling the wake sleep cycle.
+Other applications of the van der Pol model concern extensions of the HKB model (see Section 4.3.3), multistable perception [@furstenauSimulatingBistablePerception2014], developmental processes [@molenaarDynamicModelsDevelopment1985], and bipolar disorder [@daughertyMathematicalModelsBipolar2009]. One case where it seems to be especially useful in in modeling the wake sleep cycle [@forgerSimplerModelHuman1999].
 
 ### Budworms and Beers
 
@@ -671,7 +671,7 @@ Building nonlinear dynamical models of psychological processes from scratch is d
 
 But even when you work with experts in dynamic modeling, building useful models is far from easy. I recommend following, at least roughly, the steps we proposed in our theory construction methodology [@borsboomTheoryConstructionMethodology2021]. The key is to formulate phenomena, replicated recurring patterns in data, that need to be explained. This requires a good knowledge of existing verbal theories and, if they exist, alternative formal models. I find the process of formalizing a verbal theory or model fascinating. It tends to be very confusing. Suddenly it is unclear what the basic assumptions are, what mechanism is really being proposed in some psychological theory, and what actually the time scales are.
 
-As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987, in which fluid intelligence is invested in crystallized intelligence. I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (Section 6.3.1.3), but this illustrates that the process of formalization is itself a test for verbal theories.
+As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987. **Cattell's investment theory posits that fluid intelligence, which represents the ability to solve novel problems, "invests" in crystallized intelligence, which consists of acquired knowledge and skills.** I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (Section 6.3.1.3), but this illustrates that the process of formalization is itself a test for verbal theories.
 
 Another problem is that if we build our own dynamic model, there is a clear risk that we will not fully understand the model. We have seen that some very simple models already show amazingly complex behavior.
 

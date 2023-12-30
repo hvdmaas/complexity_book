@@ -406,21 +406,23 @@ I believe that understanding models requires working with models, for example th
 
 ## Exercises
 
-1)  What does the rice cooker have to do with the Ising model?
+1)  Their is a relation between the rice cooker and the Ising model? **How does the magnetic thermostat in a traditional rice cooker work to automatically stop cooking when the rice is done? (\*)**
 
 2)  What is the Boltzmann entropy for the state $\sum_{}^{}x = 0$ in an Ising model (with nodes states -1 and 1) with 10 nodes and no external field? (\*).
 
-3)  Go to the webpage 'A Neural Network Playground'. What is the minimal network to solve the XOR with 100% success? Use only the x1 and x2 feature. (\*)
+3)  Go to the webpage 'A Neural Network Playground'. What is the minimal network to solve the XOR **close to perfect accuracy**? Use only the x1 and x2 feature. (\*)
 
-4)  In the Granovetter model (Section 4.3.7), people may also stop dancing (with probability .1). Add this to the model. What changes? (\*)
+4)  In the Granovetter model (Section 4.3.7), people may also stop dancing (with probability .1). Add this to the model. How does this change the equilibrium behavior? (\*)
 
 5)  Add the external field to the Ising model in NetLogo (neighbors4 case). Report the changed line in the NetLogo code. What did you change in the interface?\
     Set the temperature to 1.5. Change tau slowly. At which values of tau do the hysteresis jumps occur? (\*)
 
-6)  Test whether the Ising model is indeed a cusp. Run the Ising model in NetLogo using the BehaviorSpace tool. Use the model in which all spins are connected to all spins (see Section 4.2.2.2). Vary tau (-.3 to .3 in .05 increments) and temperature (0 to 3, in .5 increments). One iteration per combination of parameter values is sufficient. Stop after 10000 ticks and collect only the final magnetization. Import the data into R and fit the cusp. Which cusp model best describes the data? (\*\*)
+6)  Test whether the Ising model is indeed a cusp. Run the Ising model in NetLogo using the BehaviorSpace tool **(see @fig-ch7-img1-old-89 for an example)**. Use the model in which all spins are connected to all spins (see Section 4.2.2.2). Vary tau (-.3 to .3 in .05 increments) and temperature (0 to 3, in .5 increments). One iteration per combination of parameter values is sufficient. Stop after 10000 ticks and collect only the final magnetization. Import the data into R and fit the cusp. Which cusp model best describes the data? (\*\*)
 
 7)  Open the Sandpile 3D model in NetLogo3D. Grains of sand fall at random place. Change one line of code such that they all fall in the middle. What did you change? (\*)
 
 8)  Download 'Motion Quartet' from the NetLogo community website and explore hysteresis in your own perception. What could be a splitting variable? (\*)
 
 9)  Implement the Granovetter model in NetLogo (max 40 lines of code) (\*\*)
+
+10) **Implement Game of Life in Netlogo or use Golly and try to find as many qualitatively different stable patterns of 6 units that can occur in Game of Life. If you cannot find more, try to look at additional resources online to find the other patterns you missed. For 4 units, there are only two, one of which is a block of four. (\*)**
