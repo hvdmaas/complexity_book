@@ -361,17 +361,17 @@ Suppose we have a network of conservative but low attentive agents into which we
 
 What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. Without a cusp for the individual opinion dynamics, this form of polarization would not occur.
 
-![The visualization of persuasion paradox in the original paper. Activism initially spreads quickly, but also increases the attention of conservative agents (see last panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention.](media/ch7/image11.jpg){#fig-ch7-img11-old-99 width="6.263888888888889in"}
+![The visualization of persuasion paradox in the original paper [@vandermaas2020a]. Activism initially spreads quickly, but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves.](media/ch7/image11.jpg){#fig-ch7-img11-old-99 width="6.263888888888889in"}
 
 #### A counterintuitive prediction
 
 In continuous opinion models the main reason for polarization is bounded confidence. We can easily add this to the HIOM: when $\left| O_{i} - O_{j} \right| > \epsilon,$ there is no interaction (no increase in attention and no exchange of information). This would even increase the polarization in the HIOM. However, since opinion and information can have opposite signs due to hysteresis, there is a way out. An example would be a meat-eating vegetarian, a person with a vegetarian point of view who actually eats meat. I claim to be such a vegetarian, but this position is not generally accepted in my local environment.
 
-The scenario, simulated in @vandermaasPolarizationIndividualsHierarchical2020, consists of a majority of low-involved meat eaters and highly involved vegetarians. The meat eaters refuse to talk to the vegetarians due to bounded confidence, leading to increased polarization.
+The scenario, simulated in [@vandermaas2020a], consists of a majority of low-involved meat eaters and highly involved vegetarians. The meat eaters refuse to talk to the vegetarians due to bounded confidence, leading to increased polarization.
 
 Now some attentive vegetarians will be perturbed into the meat-eating position. This is a metastable state. This state is somewhat stable, although there may jump back after a few iterations. But while the vegetarians are in this metastable meat-eating state, they can communicate with the less involved meat-eaters and spread vegetarian information. This proves effective (see @fig-ch7-img12-old-100). This scenario is also implemented in the NetLogo model.
 
-![The meat-eating vegetarian. The left panels show equal initial states. In the upper panels, bounded trust prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the lower panels, some vegetarians are perturbed towards meat eating. These perturbed agents have I \< 0 and O \> 0, which is possible because A \> 0 (hysteresis). Since O \> 0, these agents can exchange information with meat eaters, leading to the spread of vegetarianism. For simulation details, see \@vandermaasPolarizationIndividualsHierarchical2020.](media/ch7/image12.jpg){#fig-ch7-img12-old-100 width="6.263888888888889in"}
+![The meat-eating vegetarian. The left panels show equal initial states. In the upper panels, bounded trust prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the lower panels, some vegetarians are perturbed towards meat eating. These perturbed agents have I \< 0 and O \> 0, which is possible because A \> 0 (hysteresis). Since O \> 0, these agents can exchange information with meat eaters, leading to the spread of vegetarianism. For simulation details, see @vandermaas2020.](media/ch7/image12.jpg){#fig-ch7-img12-old-100 width="6.263888888888889in"}
 
 #### Variants of the HIOM
 

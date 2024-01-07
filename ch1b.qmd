@@ -62,7 +62,7 @@ A breakthrough occurred in the 1980s. Catching all the fish proved to be a very 
 
 In the following, I will discuss three reasons to be somewhat optimistic, based on three key observations about complex systems. The first key observation has to do with simplification, the second with the tendency of complex systems to be characterized by a limited number of stable states, and the third key observations is that all complex systems seem to be describable as some kind of network. Simplification is perhaps the most important one.
 
-## The right level of simplification
+## The art of simplification
 
 Einstein supposedly said that everything should be made as simple as possible, but not one bit simpler. A fascinating and instructive example is the traffic jam, which is made up of many people, with their amazingly complex brains, in modern cars full of advanced technology. Where to start modeling such a complex phenomenon? The answer is astonishing. It seems that we can reduce people in cars to simple blocks in a lane, speeding up when there is space in front of the artificial car and braking when they get too close to the car in front. All lower levels of modelling are ignored. This is even simpler than a flock of birds.
 
@@ -108,7 +108,7 @@ Chapter 6 focuses on a novel use of networks, which I call network psychology. T
 
 Similarly, depression can be thought of as a network of mutually reinforcing symptoms. For example, sleep problems, a symptom of depression, can lead to increased fatigue and difficulty concentrating, which in turn can affect a person's ability to manage daily tasks and engage in social activities. This can then lead back to poorer sleep quality, creating a cyclical pattern in which each symptom reinforces the others. This new view of mental disorders originated in our research group and is now very popular [@robinaughNetworkApproachPsychopathology2020]. One reason for this is that many statistical techniques have been developed to investigate this network approach.
 
-The latest line of research is the integrated study of psychological and social networks [@vandermaas2020a]. Chapter 7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change.
+The latest line of research is the integrated study of psychological and social networks [@vandermaas2020a]. Chapter 7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change. This model provides a new explanation of polarization.
 
 ## Methods for Investigating complex systems
 
