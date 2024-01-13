@@ -20,19 +20,19 @@ One physical example of self-organization is the laser. An important founder of 
 
 Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. This very simple model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences. In the standard 2d version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. Only when the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet. These are the temperature of the magnet and the external magnetic field. The lower the temperature the more the spins align. At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect. The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). With an external field we can force the spins to be all up or all down. This external field could be caused another magnet.
 
-![Schematic picture of the magnet](media/ch4/image1.jpg){#fig-ch4-img1 width="1.4480708661417323in" height="2.469194006999125in"}
+![Schematic picture of the magnet](media/ch4/image1.jpg){#fig-ch4-img1-old-39}
 
 The main model equations of the Ising model are:
 
 $$
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}$$ {#eq-ch4-1} 17
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}$$ {#eq-ch4-1-old-17}
 
 $$
-P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.$$ {#eq-ch4-2} 18
+P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.$$ {#eq-ch4-2-old-18}
 
 The first equation defines the energy of a given state vector $\mathbf{x}$ (for $n$ spins with states -1 and 1). The notation $< i,j >$ in the summation means that we sum over all neighboring, or linked, pairs.
 
-The external field and temperature are $\tau$ and $\frac{1}{\beta}$, respectively. The first equation simply states that nodes congruent with the external field lower the energy. Also, neighboring nodes with equal spins lower the energy. Suppose we have only four connected positive spins (top row of @fig-ch4-img1) and no external field, then we have $\mathbf{x} = (1,1,1,1)$ and $H = - 6$. This is also the case for $\mathbf{x} = ( - 1, - 1, - 1, - 1)$, but any other state has a higher energy.
+The external field and temperature are $\tau$ and $\frac{1}{\beta}$, respectively. The first equation simply states that nodes congruent with the external field lower the energy. Also, neighboring nodes with equal spins lower the energy. Suppose we have only four connected positive spins (top row of @fig-ch4-img1-old-39) and no external field, then we have $\mathbf{x} = (1,1,1,1)$ and $H = - 6$. This is also the case for $\mathbf{x} = ( - 1, - 1, - 1, - 1)$, but any other state has a higher energy.
 
 The second equation defines the probability of a certain state (e.g., all spins up). This probability requires a normalization, $Z$, to ensure that the probabilities over all possible states sum up to 1. For large systems ($N > 20$), the computation of $Z$ is a substantive issue as the number of possible states grows exponentially. If the temperature is very high, that is, $\beta$ is close to zero, $\exp\left( - \beta H\left( \mathbf{x} \right) \right)$ will be 1 for all possible states, and the spins will behave randomly. The differences in energy between states do not matter anymore.
 
@@ -41,7 +41,7 @@ The randomness of the behavior is captured by the concept of entropy. Entropy is
 In the simulation of this model, we take a random spin, calculate the energy of the current $\mathbf{x}$ and the $\mathbf{x}$ with that particular spin flipped. The difference in energy determines the probability of a flip:
 
 $$
-P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}.$$ {#eq-ch4-3} 19
+P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}.$$ {#eq-ch4-3-old-19}
 
 If we do these flips repeatedly, we find equilibria of the model. This is called the Glauber dynamics (more efficient algorithms do exist). The beauty of these algorithms is that the normalization constant Z falls out of the equation. In this way we can simulate Ising systems with $N$ much larger than 20.
 
@@ -49,7 +49,7 @@ In the case of a fully connected Ising network (also called the Curie-Weiss mode
 
 [^ch4-1]: An extremely useful application of this principle is the rice cooker!
 
-In the 2D Ising model (see @fig-ch4-img1), the connections are sparse (only local) and more complicated (self-organizing) behavior occurs. We will simulate this in NetLogo later in this chapter and as a model of attitudes in chapter 6.
+In the 2D Ising model (see @fig-ch4-img1-old-39), the connections are sparse (only local) and more complicated (self-organizing) behavior occurs. We will simulate this in NetLogo later in this chapter and as a model of attitudes in chapter 6.
 
 ### Chemistry
 
@@ -69,9 +69,9 @@ A neat example of the role of self-organization in evolution is the work on spir
 
 What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular automaton (CA). A CA is basically a two-dimensional grid of cells, where cells interact with their neighbors, as in the Ising model. In the hypercycle simulation, cells could be empty (dead) or filled with one out of several colors. Colors die with some probability but are also copied to empty cells with a probability that depends on whether there is a catalyzing color in the local neighborhood. One of the colors is a parasite, catalyzed by one color, but not catalyzing any other colors. The amazing effect, and you will see this later using NetLogo, is that moving global spirals emerge that isolate the parasites so that a stable hypercycle prevails.
 
-Many examples of self-organization come from ecosystem biology. We will see simulations of flocking below, but I would also like to mention ants. <!--
-![An example of the ant bridge](media/ch4/image2.jpg){#fig-ch4-img2 width="2.1534722222222222in" height="1.1263888888888889in"}
--->
+Many examples of self-organization come from ecosystem biology. We will see simulations of flocking below, but I would also like to mention ants.
+
+![An example of the ant bridge](media/ch4/image2.jpg){#fig-ch4-img2-old-40}
 
 Ants exhibit amazing forms of globally organized behavior. They build bridges, nests, and rafts, and they fight off predators. I once saw a documentary on an ant nest that somehow decided to move to another location 50 meters away. Ant colonies utilize pheromones and swarm intelligence to relocate to a new location. Scouts search for potential sites, leaving pheromone trails. If a promising location is found, more ants follow the trail, reinforcing the signal. Unsuitable sites result in fading trails. Once a decision is made, the colony collectively moves to the chosen site, transporting their brood and establishing a new nest.
 
@@ -79,9 +79,9 @@ It is not a strange idea to think of an ant society as a living organism. Note t
 
 ### Computer science
 
-Another crucially important area of research on self-organisation has been computer science. A simple but utterly amazing example is the work on Conways' game of life [@berlekampWinningWaysYour2004]. The rules are depicted in @fig-ch4-img3.
+Another crucially important area of research on self-organisation has been computer science. A simple but utterly amazing example is the work on Conways' game of life [@berlekampWinningWaysYour2004]. The rules are depicted in @fig-ch4-img3-old-41.
 
-![The rules of the Game of Life](media/ch4/image3.jpg){#fig-ch4-img3 width="4.689096675415573in" height="2.2624114173228347in"}
+![The rules of the Game of Life](media/ch4/image3.jpg){#fig-ch4-img3-old-41}
 
 For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.[^ch4-2] It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.
 
@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 **I was stunned to see** that it is even possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm, including of course the Game of Life! **This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements.** Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section **on neural networks**).
 
-![The Turing Machine built in the Game of Life.](media/ch4/image4.jpg){#fig-ch4-img4 width="3.58125in" height="3.441666666666667in"}
+![The Turing Machine built in the Game of Life.](media/ch4/image4.jpg){#fig-ch4-img4-old-42"}
 
 Another root of complex systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.
 
@@ -113,9 +113,9 @@ Modern large language models, like GPT, differ from traditional backpropagation 
 
 An interesting unsupervised model is the Boltzmann machine. It is basically an Ising model (see section 4.1.1) where the connections between nodes have continuous values. These weights can be updated according to the Hebbian rule. A simple setup of the Boltzmann machine is to take a network of connected artificial neurons, present the inputs to be learned in some sequence by setting the states of these neurons equal to the input. The Hebb rule should change the weights between neurons so that the Boltzmann machine builds a memory for these input states. This is the training phase. In the test phase, we present partial states by setting some, but not all, nodes to the values of a particular learned input pattern. By the Glauber's dynamics, we update the remaining states that should take on the values belonging to the pattern. This pattern completion task is typical for ANN's.
 
-This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM we stack many of these layers, which can be trained in pairs. I recommend Timo Matzen's R package for a hands-on explanation (https://github.com/TimoMatzen/RBM). Other famous approaches are the Kohonen self-organizing maps and the Hopfield neural network.
+This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM we stack many of these layers, which can be trained in pairs. I recommend Timo Matzen's R package for a hands-on explanation (<https://github.com/TimoMatzen/RBM>). Other famous approaches are the Kohonen self-organizing maps and the Hopfield neural network.
 
-![The deep learning restricted Boltzmann machine](media/ch4/image5.jpg){#fig-ch4-img5 width="3.220833333333333in" height="1.7909722222222222in"}
+![The deep learning restricted Boltzmann machine.](media/ch4/image5.jpg){#fig-ch4-img5-old-43}
 
 In supervised learning, connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the output neurons. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true. In this case the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagating rule for multi-layer networks, such that they can learn this non-linear classification from examples. We will do a simple simulation in NetLogo later. Although extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.
 
@@ -183,9 +183,46 @@ I find NetLogo programming very easy and very hard at the same time. Hard becaus
 
 In NetLogo, you "ask" objects to do something. A typical line would be:
 
-```         
-ask turtles with [pcolor = red] set pcolor green
+```{css, echo=FALSE}
+.purple{
+  color: #660096;
+  font-family: Monaco;
+  font-size: 14px;
+}
+
+.blue {
+  color: #0000AA;
+  font-family: Monaco;
+  font-size: 14px;
+}
+
+.green {
+  color: #007F69;
+  font-family: Monaco;
+  font-size: 14px;
+}
+
+.comm {
+  color: #5A5A5A;
+  font-family: Monaco;
+  font-size: 14px;
+}
+
+.text {
+  color: black;
+  font-family: Monaco;
+  font-size: 14px;
+}
+.val {
+  color: #963700;
+  font-family: Monaco;
+  font-size: 14px;
+}
 ```
+
+<span class="blue"> ask </span> <span class="purple">turtles with</span> <span class="text">[</span> <span class="purple">pcolor = </span> <span class="val">red</span> <span class="text">]</span> <span class="blue">set</span> <span class="purple">pcolor</span> <span class="val">green</span>
+
+
 
 This would make red turtles green. To get started, I highly recommend watching the videos on the NetLogo page 'The Beginner's Guide to NetLogo Programming' and following these examples. Here we make our own Game of Life.
 
@@ -193,39 +230,23 @@ This would make red turtles green. To get started, I highly recommend watching t
 
 The first thing to do is to create two buttons in the interface, a setup and a go button. In Command, name them setup and go. In the settings of the go button, select 'forever'. Now we go to the Code tab and define these two functions as:
 
-```         
-to setup
-  clear-all
-  reset-ticks
-end
+<span class="green">to</span> <span class="text">setup</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">clear-all</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">reset-clicks</span> <br> <span class="green">end</span>
 
-to go
-  tick
-end
-```
+<span class="green">to</span> <span class="text">go</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">tick</span> <br> <span class="green">end</span>
 
 Ticks count the iterations in NetLogo, and with this code we are really just resetting things. Now add this last line to setup (with ";" we add comments to code):
 
-```         
-ask patches
-    [set pcolor one-of [white blue]] ; white is dead, blue is alive
-```
+<span class="blue">ask</span> <span class="purple">patches</span> <br> <span class="text">[</span> <span class="blue">set</span> <span class="purple">pcolor one-of</span> <span class="text">[</span> <span class="val">white blue</span> <span class="text">]]</span> <span class="comm">; white is dead, blue is alive</span>
 
 To do a synchronous update, we need to store the update state in a temporary variable called new-state. Put this line at the top of your code
 
-`patches-own [new-state]`
+<span class="green">patches-own</span> <span class="text">[new-state]</span>
 
 In the 'go' function, we add the life rules.
 
-```         
-ask patches[
-  if(count(neighbors with [pcolor = blue]) > 3) [set new-state white]
-  if(count(neighbors with [pcolor = blue]) < 2) [set new-state white]
-  if(count(neighbors with [pcolor = blue]) = 3) [set new-state blue]
-]
+<span class="blue">ask</span> <span class="purple">patches</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple">></span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple"><</span> <span class="val">2</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple">=</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">blue</span> <span class="text">]</span> <br> <span class="text">]</span>
 
-ask patches [set pcolor new-state]
-```
+<span class="blue">ask</span> <span class="purple">patches</span> <span class="text">[</span> <span class="blue">set</span> <span class="purple">pcolor</span> <span class="text">new-state</span> <span class="text">]</span>
 
 The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.
 
@@ -233,17 +254,15 @@ In the help menu, you will find the very useful NetLogo dictionary. Just reading
 
 #### The Ising model
 
-Building a NetLogo from scratch requires quite some experience, adapting a program is much easier. The Ising model in NetLogo was not complete, as there is no slider for the external field. Try to add this yourself. Add a slider for the external field 'tau'. The code only needs to be changed in this line (study @eq-ch4-1):
+Building a NetLogo from scratch requires quite some experience, adapting a program is much easier. The Ising model in NetLogo was not complete, as there is no slider for the external field. Try to add this yourself. Add a slider for the external field 'tau'. The code only needs to be changed in this line (study @eq-ch4-1-old-17):
 
-```         
-let Ediff 2 * spin * sum [ spin ] of neighbors4
-```
+<span class="blue">let</span>  <span class="text">Ediff</span> <span class="val">2</span> <span class="purple">\*</span> <span class="text">spin</span> <span class="purple">* sum</span> <span class="text">[ spin ]</span> <span class="purple">of neighbors4</span>
 
 If successful, you can test for hysteresis and divergence. For tau = 0, decreasing the temperature should give the pitchfork bifurcation. For a positive temperature (say 1.5), moving tau up and down should give hysteresis.
 
 Actually, this should work better if all spins are connected to all spins. To do this, 'neighbors4' should be replaced by 'patches'. To normalize the effect of so many spins, it is recommended to use:
 
-`let 0.001 * Ediff 2 * spin * sum [ spin ] of patches`
+<span class="blue">let</span> <span class="val">0.001</span> <span class="purple">\*</span> <span class="text">Ediff</span> <span class="val">2</span> <span class="purple">\*</span> <span class="text">spin</span> <span class="purple">* sum</span> <span class="text">[ spin ]</span> <span class="purple">of patches</span>
 
 Now you should see hysteresis and the pitchfork better. However, in this case the typical self-organized patterning that occurred in the Ising model with only local interactions is not present.
 
@@ -285,26 +304,26 @@ Another related approach is the ecological approach to visual perception by @gib
 
 A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The Optical Illusion model in NetLogo's model library illustrates some of them. Check out the codes for each illusion, they are extremely short and elegant.
 
-![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo](media/ch4/image6.jpg){#fig-ch4-img6 width="2.309009186351706in" height="1.8072725284339457in"}
+![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo.](media/ch4/image6.jpg){#fig-ch4-img6-old-44}
 
 In Chapter 3, I provided examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download 'Motion Quartet' from the NetLogo community website and explore hysteresis in your own perception.
 
 ### Motor action
 
-Many body motions are periodic in nature, think of walking, swimming, dancing, and galloping. Key to these motions is the synchronization of the movements of body parts. A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. @fig-ch4-img7 explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.
+Many body motions are periodic in nature, think of walking, swimming, dancing, and galloping. Key to these motions is the synchronization of the movements of body parts. A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. @fig-ch4-img7-old-45 explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.
 
-![The finger movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$ ($- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength ($b/a$) and heterogeneity ($\Delta w)$ are control variables. Adapted from @hakenTheoreticalModelPhase1985 and @kelsoHakenKelsoBunz2021.](media/ch4/image7.jpg){#fig-ch4-img7 width="6.263888888888889in" height="2.5215277777777776in"}
+![The finger movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$ ($- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength ($b/a$) and heterogeneity ($\Delta w)$ are control variables. Adapted from @hakenTheoreticalModelPhase1985 and @kelsoHakenKelsoBunz2021.](media/ch4/image7.jpg){#fig-ch4-img7-old-45}
 
 The Haken--Kelso--Bunz (HKB) model, developed in the tradition of synergetics, explains the phase transition between in phase and anti-phase motions in a way we have seen in the previous chapter (the phenomenological cusp model). They set-up a potential function in the form of
 
 $$
-V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}$$ {#eq-ch4-4} 20
+V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}$$ {#eq-ch4-4-old-20}
 
 Where $\varphi$ is the order or behavioral variable, the phase difference between the two fingers. The main control parameter is $b/a$. According to @kelsoHakenKelsoBunz2021 coupling strength ($b/a$) corresponds to the velocity or frequency of the oscillations in the experiments. $\Delta w$ is the difference (heterogeneity, diversity) between the natural frequencies of the individual oscillatory elements. In the finger movement task this parameter is expected to be 0. The behavior of this protentional function is cusp like. It has two stable states 0 and $\pm \pi$, and increasing and decreasing the frequency leads to hysteresis. The effects of $\Delta w$ is similar to the fold catastrophe (see Chapter 3).
 
 This potential function is proposed as the simplest form that explains the experimental results. This is why I would call this a phenomenological model. However, @hakenTheoreticalModelPhase1985 also present a more mechanistic model, a combination of Van der Pol and Rayleigh oscillators [@alderisioEntrainmentSynchronizationNetworks2016]. The stochastic variant of the HKB model also predicts early warnings such as critical slowing down (see the catastrophe flags, Section 3.3.2). The presence of critical slowing down and other flags has been confirmed experimentally [@kelsoNonequilibriumPhaseTransitions1986].
 
-One difference with the catastrophe approach is that the synergetic models that incorporate hysteresis typically do not have a splitting control variable. The concept of structural stability, which is fundamental to catastrophe theory, is not used in synergetics. What the splitting factor might be in this model is not so clear. I have never understood why coupling strength $b/a$ (see @fig-ch4-img7) and the frequency of the oscillations are equated in the basic version of the HKB model [see also @beekModelingRhythmicInterlimb2002]. Clearly, uncoupled oscillators would have a rather random phase difference. Strengthening the coupling would lead to a kind of pitchfork bifurcation.
+One difference with the catastrophe approach is that the synergetic models that incorporate hysteresis typically do not have a splitting control variable. The concept of structural stability, which is fundamental to catastrophe theory, is not used in synergetics. What the splitting factor might be in this model is not so clear. I have never understood why coupling strength $b/a$ (see @fig-ch4-img7-old-45) and the frequency of the oscillations are equated in the basic version of the HKB model [see also @beekModelingRhythmicInterlimb2002]. Clearly, uncoupled oscillators would have a rather random phase difference. Strengthening the coupling would lead to a kind of pitchfork bifurcation.
 
 This coupling/uncoupling is a also a phenomenon in the visual coordination of rhythmic movements between people. @schmidtPhaseTransitionsCritical1990 used an experimental paradigm in which two people swing a leg up and down, while sitting side by side. A metronome was used to manipulate the frequency of the swing. Clear jumps from out-of-phase to in-phase movement were demonstrated.
 
@@ -314,9 +333,9 @@ This coupling/uncoupling is a also a phenomenon in the visual coordination of rh
 
 A major challenge in robotics is to build walking robots. Bipedal robots have evolved from clumsy mechanical walkers to flexible dynamic walkers and runners. Current legged robots can walk on slippery, uneven natural terrain, jump, do backflips, recover from rear shocks, and dance (see some videos on humanoid robots such as Atlas, Asimo). These successes are based on a combination of new technologies, but the principles of self-organization play a key role. An important concept is dynamic stability. In old-school robots, the path and momentum of each step had to be precisely calculated in advance to keep the robot's center of mass continuously balanced at every point. A dynamically stable robot maintains balance the same way a human does: by catching itself mid-fall with each step [@pavlusClumsyQuestPerfect2016].
 
-An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply [@mcgeerPassiveWalkingKnees1990; @reherDynamicWalkingAgile2021]. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork, Strandbeest, by Theo Jansen. **Inspired by another great book about self-organization, the Blind Watchmaker [@dawkins1986], Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals.** His YouTube videos are strongly recommended. <!--
-![Beach Beast" \| www.strandbeest.com/ IMG_4285.jpg \| Robbert van den Beld \| Flickr](media/ch4/image8.jpg){#fig-ch4-img8 width="4.790972222222222in" height="2.6979166666666665in"}
---> \###
+An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply [@mcgeerPassiveWalkingKnees1990; @reherDynamicWalkingAgile2021]. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork, Strandbeest, by Theo Jansen. **Inspired by another great book about self-organization, the Blind Watchmaker [@dawkins1986], Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals.** His YouTube videos are strongly recommended.
+
+![Beach Beast \| www.strandbeest.com/ IMG_4285.jpg \| Robbert van den Beld \| Flickr](media/ch4/image8.jpg){#fig-ch4-img8-old-46}
 
 ### Developmental processes
 
@@ -382,7 +401,7 @@ However, there is a fine line between the wisdom of the crowd and the stupidity 
 
 Of particular importance is game theory, which consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner's dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to tell. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix). In this game, loyalty to one's friend is irrational, an outcome related to the tragedy of the commons [@hardinTragedyCommons1968]. The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.
 
-![The prisoner's dilemma](media/ch4/image9.jpg){#fig-ch4-img9 width="1.8396948818897638in" height="1.7948261154855643in"}
+![The prisoner's dilemma.](media/ch4/image9.jpg){#fig-ch4-img9-old-47}
 
 A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory (Nash) equilibrium. A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players. The public goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public good games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students when they are working in groups on an assignment that the problem of this one student doing nothing happens because nice, hard-working students refuse to betray their fellow students to me. These nice, hard-working students are what are called second-order free riders [@fowlerSecondorderFreeridingProblem2005].
 
@@ -396,7 +415,7 @@ Three parameters can be adjusted to influence behavior in the baseline assembly 
 
 @guimeraTeamAssemblyMechanisms2005 estimated the parameters $p$ and $q$ for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only the field of astronomy had a very dense collaboration structure. In the other fields the estimates of $p$ and $q$ of teams publishing in certain journals correlated well with impact factor. Interestingly, $p$ correlates positively and $q$ negatively with impact.
 
-![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch4/image10.jpg){#fig-ch4-img10 width="3.8427471566054243in" height="3.2659087926509187in"}
+![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch4/image10.jpg){#fig-ch4-img10-old-48}
 
 ## Zooming out
 
