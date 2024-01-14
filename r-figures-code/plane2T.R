@@ -13,7 +13,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   # Colors ------------------------------------------------------------------
   # Important objects
   #colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
-  ncolors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
+  ncolors <- c("#332288", "#882255", "#FFCC01", "#666666", #1-4
                "#44AA99", "#CC6677",                       #5,6
                "#117733", "#88CCEE", "#AA4499" )          #7,8,9
   #cfont <- "CMU-bright"
@@ -58,7 +58,8 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
     axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) # custom y
     if (legend) 
       legend("topright", legend = names(state)[ishows], 
-             col = ncolors[ishows],lwd = lwd, cex = sizeLegend, lty = 2:100)
+             col = ncolors[ishows],lwd = lwd, cex = sizeLegend, 
+             lty = seq(1,100,2)) # odd numbering again (to avoid dashed line = 2))
 
   }
   vstate <- as.list(state)
@@ -73,7 +74,7 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   }
   for (i in ishows) contour(xc, yc, outer(xc, yc, FUN, i), 
                             levels = 0, drawlabels = FALSE, add = TRUE, col = ncolors[i], 
-                            lwd = lwd, lty = i+1)
+                            lwd = lwd, lty = 2*i-1)
   if (portrait | vector) {
     if (logx) {
       dx <- (log10(xmax) - log10(xmin))/grid

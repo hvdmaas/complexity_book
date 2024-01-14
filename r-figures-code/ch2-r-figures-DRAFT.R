@@ -16,7 +16,7 @@ for (i in 1:(n - 1))
 
 ggplot(tibble(x), aes(x = row_number(x), y = x))+
   geom_line()+
-  geom_point(shape = 21, fill = colors[4], size = 2, stroke = 1, color = 'white')+
+  geom_point(shape = 21, fill = ncolors[4], size = 2, stroke = 1, color = 'white')+
   labs(x= 'Time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
 
@@ -32,7 +32,7 @@ for (i in 1:(n - 1)){
 #plot(x, type = 'b', xlab = 'time', bty = 'n')
 ggplot(tibble(time = rep(1:n), x = x), aes(x = time, y = x))+
   geom_line()+
-  geom_point(shape = 21, fill = colors[4], size = 2, stroke = 1, color = 'white')+
+  geom_point(shape = 21, fill = ncolors[4], size = 2, stroke = 1, color = 'white')+
   labs(x= 'Time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
 ggsave('media/ch2/fig-ch2-img2.jpg', width = 5, height = 3, units = 'in', dpi = 300)
@@ -71,7 +71,7 @@ tmpFun <- function(r, n){
   }
   ggplot(tibble(time = rep(1:n), x = x), aes(x = time, y = x))+
     geom_line()+
-    geom_point(shape = 21, fill = colors[4], size = 1.5, stroke = 0.75, color = 'white')+
+    geom_point(shape = 21, fill = ncolors[4], size = 1.5, stroke = 0.75, color = 'white')+
     labs(title = paste0('r = ',r), x= 'Time') + scale_x_continuous(breaks=seq(0,n,5))+
     theme_minimal() + theme1 
 }
@@ -79,7 +79,7 @@ r2_9 <- tmpFun(r = 2.9, n = 30); r3_1 <- tmpFun(r = 3.1, n = 30)
 r3_3 <- tmpFun(r = 3.3, n = 30); r3_5 <- tmpFun(r = 3.5, n = 30)
 
 p <- (r2_9 + r3_1) / (r3_3 + r3_5)
-ggsave(plot = p, 'fig-ch2-img4.jpg', width = 7, height = 5, units = 'in', dpi = 300)
+ggsave(plot = p, 'media/ch2/fig-ch2-img4.jpg', width = 7, height = 5, units = 'in', dpi = 300)
 dev.off()
 
 # fig 2.5 -----------------------------------------------------------------
@@ -98,10 +98,10 @@ dev.off()
  for (i in 1:(n - 1))
    y[i + 1] <- r * y[i] * (1 - y[i])
  ggplot(tibble(time = rep(1:n), x = x, y=y))+
-   geom_line(aes(x = time, y = x), color = 'grey10')+
-   geom_line(aes(x = time, y = y), color = ncolors[4], linetype = 'dotted')+
-   #geom_point(shape = 21, fill = colors[4], size = 1.5, stroke = 0.75, color = 'white')+
-   labs(title = paste0('r = ',r), x= 'time') + scale_x_continuous(breaks=seq(0,n,5))+
+   geom_line(aes(x = time, y = x), color = ncolors[4])+
+   geom_line(aes(x = time, y = y), color = 'grey10', linetype = 'dotted')+
+   #geom_point(shape = 21, fill = ncolors[4], size = 1.5, stroke = 0.75, color = 'white')+
+   labs(title = paste0('r = ',r), x= 'Time') + scale_x_continuous(breaks=seq(0,n,5))+
    theme_minimal() + theme1 
  ggsave('media/ch2/fig-ch2-img6.jpg', width = 5, height = 2.5, units = 'in', dpi = 300)
  dev.off()
@@ -148,7 +148,7 @@ phase_data_joined <- cbind(phase_data_X, phase_data_Xt)
 
 # Create the scatterplot using ggplot2
 Phase_plots <- ggplot(phase_data_joined, aes(x = Xt, y = `Xt+1`, color = name)) +
-  geom_point(alpha = .3, shape = 1) +
+  geom_point(alpha = .7, shape = 1) +
   xlim(0, 1) + ylim(0, 1) +
   scale_color_manual(values = ncolors)+
   labs(title = 'Phase plots', x = "Xt", y = "Xt+1") +

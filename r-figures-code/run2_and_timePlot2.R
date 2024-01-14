@@ -13,7 +13,7 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
   showtext_auto()
   #Check if font was added
   font_families()
-  colors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
+  colors <- c("#332288", "#882255", "#FFCC01", "#666666", #1-4
                "#44AA99", "#CC6677",                       #5,6
                "#117733", "#88CCEE", "#AA4499" )          #7,8,9
   if (!is.null(draw)) 
@@ -44,15 +44,17 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
   if (recolor) {
     for (i in seq(length(ishows))) draw(data[, 1], data[, 
                                                         ishows[i] + 1], col = colors[i],
-                                        lty =i+1,
+                                        lty =2*i-1, #tasos: for solid & dotted (1,3,5,...)
                                         lwd = lwd, pch = i)
     if (legend) {
       if(is.null(c.legend.pos)) c.legend.pos = 'topright'
       if (identical(draw, lines)) 
         legend(c.legend.pos, legend = colnames[ishows], 
-               col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
+               col = colors, lty = seq(1,100,2), # odd numbering again (to avoid dashed line = 2)
+               lwd = lwd, cex = sizeLegend, bty = 'n')
       else legend(c.legend.pos, legend = colnames[ishows], 
-                  col = colors, lty = 2:100, lwd = lwd, cex = sizeLegend, 
+                  col = colors, lty = seq(1,100,2), # odd numbering again (to avoid dashed line = 2)
+                  lwd = lwd, cex = sizeLegend, 
                   pch = 1:100, bty = 'n')
     }
     return()
@@ -61,15 +63,19 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
     j <- ifelse(is.null(colMap), i, colMap[i])
     k <- ifelse(is.null(pchMap), j, pchMap[i])
     draw(data[, 1], data[, i + 1], col = colors[min(j, ncolors)], 
-         lwd = lwd, pch = k, lty =i+1)
+         lwd = lwd, pch = k, 
+         lty =2*i-1 #tasos: same trick
+         )
   }
   if (legend) {
     if(is.null(c.legend.pos)) c.legend.pos = 'topright'
     if (identical(draw, lines)) 
       legend(c.legend.pos, legend = colnames[ishows], col = colors[ishows], 
-             lty = 2:100, lwd = lwd, cex = sizeLegend, bty = 'n')
+             lty = seq(1,100,2), # odd numbering again (to avoid dashed line = 2)
+             lwd = lwd, cex = sizeLegend, bty = 'n')
     else legend(c.legend.pos, legend = colnames[ishows], col = colors[ishows], 
-                lty = 2:100, lwd = lwd, cex = sizeLegend, pch = ishows, bty = 'n')
+                lty = seq(1,100,2), # odd numbering again (to avoid dashed line = 2)
+                lwd = lwd, cex = sizeLegend, pch = ishows, bty = 'n')
   }
 }
 environment(timePlot2) <- asNamespace('Grind')

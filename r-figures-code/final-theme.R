@@ -11,16 +11,15 @@ library(patchwork)
 # -------------------------------------------------------------------------
 # Download and import the font into R using the lines below
 font_add(family = "CMU-bright", regular = "cmunbmr.ttf")
-font_add_google('EB Garamond')
+#font_add_google('EB Garamond')
 showtext_auto()
 #Check if font was added
 font_families()
 
 # Colors ------------------------------------------------------------------
-
 # Important objects
 colors <- RColorBrewer::brewer.pal(8, 'Dark2')[c(3,4,7,8)]
-ncolors <- c("#332288", "#882255", "#DDCC77", "#666666", #1-4
+ncolors <- c("#332288", "#882255", "#FFCC01", "#666666", #1-4
              "#44AA99", "#CC6677",                       #5,6
              "#117733", "#88CCEE", "#AA4499" )          #7,8,9
 cfont <- "CMU-bright"

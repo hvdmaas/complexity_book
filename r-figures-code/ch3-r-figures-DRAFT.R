@@ -59,7 +59,7 @@ p1 + stat_function(fun = f, args = list(sign = -1), linetype = 'dotted')
 ggsave('media/ch3/fig-ch3-img5-old-17.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
 
-# fig 3.17 -----------------------------------------------------------------
+# fig 3.19 -----------------------------------------------------------------
 
 #layout(t(1)); par(mar=c(4,4,1,1))
 x <- read.table('data/PNAS_patient_data.txt',header=T)
@@ -74,7 +74,7 @@ x %>%
   ggplot(aes(x = week, y = dep, color = cluster))+
   geom_line(color = 'black', linewidth = .4) +
   geom_point(aes( fill = cluster), shape = 21, stroke = .5, color = 'black')+
-  scale_fill_gradient(low = 'white', high = colors[1])+
+  scale_fill_gradient(low = 'white', high = colors[4])+
   labs(x = 'Week', y = 'SLC-90')+
   theme_minimal()+
   theme1 + theme(legend.position = 'none')
@@ -159,60 +159,14 @@ ggsave('media/ch3/fig-ch3-img23-old-35.jpg', width = 6, height = 3.5, units = 'i
 
 # fig 3.24 ----------------------------------------------------------------
 
-x <- read.table('data/stoufer.txt')
-colnames(x) <- c('IntensityofFeeling','Attitude')
-fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling, beta ~ IntensityofFeeling, x)
-summary(fit)
-plot(fit, 'bifurcation')
+#x <- read.table('data/stoufer.txt')
+#colnames(x) <- c('IntensityofFeeling','Attitude')
+#fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling, beta ~ IntensityofFeeling, x)
+#summary(fit)
+#plot(fit, 'bifurcation')
 
-#plot(fit, 'bifurcation') = plotCuspBifurcation(fit)
-## plot function to work with from cusp package:
-##
-# > plotCuspBifurcation
-# function (object, xlim = a + c(-0.3, 0.3), ylim = b + c(-0.1, 
-#                                                         0.1), xlab = expression(alpha), ylab = expression(beta), 
-#           hue = 0.5 + 0.25 * tanh(object$y), col = hsv(h = hue, s = 1, 
-#                                                        alpha = 0.4), cex.xlab = 1.55, cex.ylab = cex.xlab, axes = TRUE, 
-#           box = TRUE, add = FALSE, bifurcation.set.fill = gray(0.8), 
-#           cex.scale = 15, cex = (cex.scale/log(NROW(ab))) * dens/max(dens), 
-#           pch = 20) 
-# {
-#   obj <- object
-#   ab <- obj$linear.predictors
-#   a <- c(-1, 1) * max(abs(range(ab[, "alpha"])))
-#   b <- c(-1, 1) * max(abs(range(ab[, "beta"])))
-#   if (a[2] > b[2]) {
-#     b <- a
-#   }
-#   else {
-#     a <- b
-#   }
-#   if (!add) {
-#     plot.new()
-#     plot.window(xlim, ylim)
-#     if (axes) {
-#       axis(1)
-#       axis(2)
-#     }
-#     if (box) {
-#       box()
-#     }
-#     mtext(xlab, 1, line = 2, cex = cex.xlab)
-#     mtext(ylab, 2, line = 3, cex = cex.ylab)
-#     bif <- cusp.bifset(seq_range(b + c(-0.7, 0.7)))
-#     polygon(c(bif[, 2], rev(bif[, 3])), c(bif[, 1], rev(bif[, 
-#                                                             1])), col = bifurcation.set.fill)
-#     abline(v = 0, lty = 3, col = gray(0.3))
-#     abline(h = 0, lty = 3, col = gray(0.3))
-#   }
-#   density2D = Vectorize((function(x, y, bw = 0.9) sum(exp(-0.5 * 
-#                                                             colSums((t(ab) - c(x, y))^2/bw^2)))/sqrt(2 * pi * bw^2)/NROW(ab)))
-#   dens = density2D(ab[, "alpha"], ab[, "beta"])
-#   points(ab[, "alpha"], ab[, "beta"], col = col, pch = 20, 
-#          cex = cex)
-# }
 
-# -------------------------------------------------------------------------
+# fig 3.25 ----------------------------------------------------------------
 x <- read.table('data/bentler.txt',header=TRUE)
 #layout(t(1:8))
 age <- c('age 4 to 4.5','age 4.5 to 5','age 5 to 5.5','age 5.5 to 6','age 6 to 6.5','age 6.5 to 7','age 7 to 7.5','age 7.5 to 8')
@@ -220,23 +174,15 @@ x %>%
   tibble() %>% 
   mutate(age_range = factor(age_range, labels = age)) %>% 
   ggplot()+
-  geom_bar(aes(score), fill = colors[1])+ coord_flip()+
+  geom_bar(aes(score), fill = colors[4])+ coord_flip()+
   facet_wrap(~age_range, nrow = 1)+
   scale_x_continuous(breaks=seq(0,12,1))+
   labs(x = '', y = '')+
   theme_minimal()+
   theme1 + theme(axis.text.x = element_blank(),
-                 strip.text = element_text(colour = "grey10", size = 20))
-ggsave('media/ch3/fig-ch3-img25-old-37.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+                 strip.text = element_text(colour = "grey10", size = 25))
+ggsave('media/ch3/fig-ch3-img25-old-37.jpg', width = 7, height = 3.5, units = 'in', dpi = 300)
 
-#for(i in 1:8)
-#{
-#  if(i==1) {par(mar=c(4,3,2,1));names=0:12} else {names='';par(mar=c(4,1,2,1))}
-#  barplot(table(factor(x[x[,1]==i,2],levels=0:12)),horiz=T,axes=F,main=age[i],xlab='',names=names,cex.main=1.5,cex.names=1.5)
-#}
 
-fit <- cusp(y ~ score, alpha ~ age_range, beta ~ age_range, x)
-summary(fit)
-plot(fit, 'bifurcation')
 
 

@@ -12,19 +12,19 @@ source("r-figures-code/fit2.R")
 
 # antiRun function --------------------------------------------------------
 
-antiRun <- function(data, point = FALSE, psize = .4, lsize = .25, grp = NULL,  ...){
-  dots <- list(...)
-  p <- data %>% 
-    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
-    ggplot() +
-    geom_line(aes(time, val, linetype = par, color = par), linewidth = lsize, ...) +
-    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
-    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
-    theme_minimal() + theme1+
-    theme(legend.position = 'right')
-  if(point) pl <- p + geom_point(aes(time, val, shape = par, color = par), size = psize, ...)
-  ifelse(point, return(pl), return(p))
-}
+#antiRun <- function(data, point = FALSE, psize = .4, lsize = .25, grp = NULL,  ...){
+#  dots <- list(...)
+#  p <- data %>% 
+#    pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
+#    ggplot() +
+#    geom_line(aes(time, val, linetype = par, color = par), linewidth = lsize, ...) +
+#    scale_color_manual(values = c(ncolors[1],ncolors[2]))+
+#    labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '', ...) +
+#    theme_minimal() + theme1+
+#    theme(legend.position = 'right')
+#  if(point) pl <- p + geom_point(aes(time, val, shape = par, color = par), size = psize, ...)
+#  ifelse(point, return(pl), return(p))
+#}
 
 # fig 5.1 -----------------------------------------------------------------
 
@@ -37,7 +37,7 @@ LV <- function(t, state, parms) {
   })
 }
 
-png('media/ch5/fig-ch5-img1-old-49b.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img1-old-49.png', width = 8, height = 5, units = 'in', res = 300)
 
 ## base 2
 set.seed(1)
@@ -134,7 +134,7 @@ dev.off()
 #plot1 <- (p1 + p2) / (p3 + p4 )
 #plot1
 
-ggsave('media/ch5/fig-ch5-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
+#ggsave('media/ch5/fig-ch5-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
 
 # fig 5.2 -----------------------------------------------------------------
 model <- function(t, state, parms){
@@ -176,17 +176,17 @@ ggsave('media/ch5/fig-ch5-img2-old-50.jpg', width = 5, height = 3, units = 'in',
 
 # fig 5.3 -----------------------------------------------------------------
 
-p <- c(a=0,b=1)
-low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
-continue(low,x="a",y="X",xmin=-2,xmax=2,ymax=2) # Continue this steady state varying a
-high <- newton(s=c(X=1)) # again starting from X = 1
-continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
+#p <- c(a=0,b=1)
+#low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
+#continue(low,x="a",y="X",xmin=-2,xmax=2,ymax=2) # Continue this steady state varying a
+#high <- newton(s=c(X=1)) # again starting from X = 1
+#continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 
 
 # fig 5.4 -----------------------------------------------------------------
-library(deBif)
-phaseplane(model,s,p)
-bifurcation(model,s,p)
+#library(deBif)
+#phaseplane(model,s,p)
+#bifurcation(model,s,p)
 
 # fig 5.5 -----------------------------------------------------------------
 
@@ -254,12 +254,101 @@ dat <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 #matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 library(ggmatplot)
 ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[4],
-          linewidth = .15, linetype = 1, xlab = "time",ylab = 'x') + 
+          linewidth = .15, linetype = 1, xlab = "Time",ylab = 'x') + 
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
 
 ggsave('media/ch5/fig-ch5-img6-old-54.png', width = 4, height = 2.5, units = 'in', dpi = 300)
 
+
+# fig 5.7 -----------------------------------------------------------------
+
+model <- function(t, state, parms) {
+  with(as.list(c(state,parms)), {
+    dX = I
+    return(list(c(dX)))
+  })
+}
+p <- c(I=.01); s <- c(X=0)
+bound <- 1
+set.seed(1)
+r1 <- run2(table=T,timeplot=T,method='euler', tstep=.1,
+           tmax=500,after="state<-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);
+    if(abs(state)>bound) break",ymin=-bound,ymax=bound)
+set.seed(8)
+r2 <- run2(table=T,timeplot=T,method='euler', tstep=.1,
+           tmax=500,after="state<-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);
+    if(abs(state)>bound) break",ymin=-bound,ymax=bound)
+names(r1) <- c('time','X1')
+names(r2) <- c('time','X2')
+r <- merge(r1,r2,all=T)
+
+library(rtdists)
+h <- rdiffusion(29000,a=2,v=.01,t0=0,s=.1)
+h1 <- h[h$response=='upper',]
+h2 <- h[h$response=='lower',]
+
+g1  <- ggplot(r, aes(x = time)) +
+  geom_line(aes(y = X1), color = ncolors[2]) +
+  geom_line(aes(y = X2), color = ncolors[2]) +
+  geom_hline(yintercept = 1) +
+  geom_hline(yintercept = -1) +
+  geom_hline(yintercept = 0, linetype = 'dotted') +
+  geom_vline(xintercept = 0) +
+  #ylim(-1,1) +
+  scale_y_continuous(breaks = c(-1, 0, 1))+
+  xlim(0,130)+
+  labs(x = 'Time', y = 'X')+
+  #coord_flip()+
+  theme_minimal()+ theme1+
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.line = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.ticks.length.x = unit(0, 'pt'))
+g1plus <- g1 + 
+  annotate("segment", x = 0, xend = 42, y = 0, yend = 1,
+           arrow = arrow(type = "closed", length = unit(0.1, "inches"))) +
+  annotate('text', x = 20, y = 0.8, label = "Drift Rate: I", size = 10)+
+  
+  annotate("segment", x = 80, xend = 80, y = 0, yend = 1,
+           arrow = arrow(ends='both',type = "closed", length = unit(0.1, "inches")))+
+  annotate('text', x = 90, y = 0.5, label = "Bound: b", size = 10)+
+  
+  annotate("segment", x = 120, xend = 130, y = 0, yend = 0,
+           arrow = arrow(type = "closed", length = unit(0.1, "inches")))+
+  annotate('text', x = 125, y = -0.1, label = "Decision Time", size = 10) 
+g1plus
+
+g2 <- ggplot(h1,aes(x=rt)) +
+  geom_histogram(binwidth = 5,fill = ncolors[4],color = "white", alpha = 0.7)+
+  xlim(0,130)+
+  theme_minimal()+
+  theme(axis.line = element_blank(),
+        axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks = element_blank(),
+        axis.ticks.length = unit(0,'pt'),
+        panel.grid = element_blank(),
+        plot.margin = margin(0, 0, -15, 0, "pt"))
+
+g3 <-  ggplot(h2,aes(x=rt)) +
+  geom_histogram(binwidth = 5,fill = ncolors[4],color = "white", alpha = 0.7)+
+  xlim(0,130)+
+  theme_minimal()+
+  scale_y_reverse()+
+  theme(axis.line = element_blank(),
+        axis.title=element_blank(),
+        axis.text=element_blank(),
+        axis.ticks = element_blank(),
+        axis.ticks.length = unit(0,'pt'),
+        panel.grid = element_blank(),
+        plot.margin = margin(-15, 0, 0, 0, "pt"))
+
+gfinal <- g2/g1plus/g3 + plot_layout(heights = c(1, 5,1))
+gfinal
+
+ggsave('media/ch5/fig-ch5-img7-old-55.png', width = 8, height = 4, units = 'in', dpi = 300)
 
 # fig 5.9 -----------------------------------------------------------------
 model <- function(t, state, parms) {
@@ -271,13 +360,13 @@ model <- function(t, state, parms) {
 }
 
 # Using base2 -------------------------------------------------------------
-png('media/ch5/fig-ch5-img9-old-57b.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img9-old-57.png', width = 6, height = 4, units = 'in', res = 300)
 layout(matrix(1:6,3,2,byrow=T))
 par(mar=c(4.5,5,1,2)) #bott left top right
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
 s <- c(R=0.1,J=.1) 
 #debug(run2)
-run2()
+run2(legend=F)
 plane2(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
 p <- c(a=-.2,b=-1,c=1,d=0) # parameters
 run2(ymin=-.2,legend=F)
@@ -336,7 +425,7 @@ model <- function(t, state, parms) {
 }
 
 # using base2
-png('media/ch5/fig-ch5-img10-old-58b.png', width = 7, height = 4.5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img10-old-58.png', width = 7, height = 4.5, units = 'in', res = 300)
 layout(matrix(1:9,3,3,byrow=T))
 par(mar=c(4,4,1,2))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
@@ -430,17 +519,17 @@ model <- function(t, state, parms) {
 }
 
 ## Using base2
-png('media/ch5/fig-ch5-img11-old-59b.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img11-old-59.png', width = 8, height = 5, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 par(mar=c(4,4,1,2))
 # Set parameter values and run the model:
 p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
 s <- c(X = 0.01, Y = 0.01)
-run2(method = "euler", tstep = 1, c.legend.pos = 'bottomright')
+run2(method = "euler", tstep = 1, legend = FALSE)
 plane2(portrait = TRUE,grid=4, legend = FALSE)
 p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
 s <- c(X = 0.0126, Y = 0.01)
-run2(tmax = 1500, method = "euler", tstep = 1)
+run2(tmax = 1500, method = "euler", tstep = 1, legend = FALSE)
 plane2(portrait = TRUE,grid=4, legend = FALSE)
 dev.off()
 
@@ -473,10 +562,52 @@ dev.off()
 #
 #dev.off()
 
-# -------------------------------------------------------------------------
+
+# fig 5.12 ----------------------------------------------------------------
+#polya urn model
+setseed(1)
+urn=c(0,1,1)
+urn_s=length(urn)
+n=1000;m=50
+urn[n]=NA
+urns=matrix(mean(urn,na.rm=T),n,m)
+
+for(j in 1:m)
+{
+  for(i in (urn_s+1):n)
+  {
+    s=sample(urn[1:(i-1)],size=1)
+    urn[i]=s
+    urns[i,j]=mean(urn[1:i])
+  }
+}
+layout(matrix(1:2,1,2))
+
+#matplot(urns[,1:20],type='l',ylim=c(0,1),ylab='p(blue)',xlab='turns',bty='n')
+p1 <- ggmatplot(urns[,1:20], color = 'black',linetype = 'solid', linewidth = 0.2,
+          plot_type = "line",xlab = 'Turns',ylab='p(blue)')+
+  theme_minimal() + theme1 + theme(legend.position = 'none')
+p1
+
+p2 <- ggplot()+
+  geom_histogram(aes(urns[n,]), binwidth = 0.1,
+                 fill = ncolors[4], color = 'white') +
+  xlab('p(blue)')+ylab('Frequency')+
+  theme_minimal()+theme1
+p2
+#hist(urns[n,],main='',xlab='p(blue)',col='grey')
+
+library(png) 
+urns_png <- readPNG('media/ch5/urns.png')
+library(cowplot)
+urnsgg <- ggdraw() + draw_image(urns_png)
+# Plot + image
+plot_grid(urnsgg, p1, p2, ncol = 3)
+
+ggsave('media/ch5/fig-ch5-img12-old-60.png', width = 9, height = 3, units = 'in', dpi = 300)
 
 # fig 5.13 ----------------------------------------------------------------
-png('media/ch5/fig-ch5-img13-old-61b.png', width = 7, height = 5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dA <- -A + b*T  
@@ -518,7 +649,7 @@ model <- function(t, state, parms){
     return(list(c(dX,da)))
   })
 }
-png('media/ch5/fig-ch5-img14-old-62b.png', width = 7, height = 4.5, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img14-old-62.png', width = 7, height = 4.5, units = 'in', res = 300)
 s <- c(X=.1,a=0); # initial state and parameter values
 layout(matrix(1:4,2,2,byrow=T))
 par(mar=c(4,4,3,2))
@@ -577,8 +708,19 @@ for(i in c('a','b','c','d'))
 }
 dev.off()
 
+library(png) 
+four_cases <- readPNG('media/ch5/fig-ch5-img16-old-64b.png')
+bif_diagram <- readPNG('media/ch5/urns.png')
+library(cowplot)
+four_cases_gg <- ggdraw() + draw_image(four_cases)
+bif_diagram_gg <- ggdraw() + draw_image(bif_diagram)
+# Plot + image
+plot_grid( bif_diagram_gg, four_cases_gg,ncol = 2, rel_widths = c(2/5, 3/5))
+
+ggsave('media/ch5/fig-ch5-img16-old-64.png', width = 10, height = 4, units = 'in', dpi = 300)
+
 # fig 5.17 --------------------------------------------------------------------
-png('media/ch5/fig-ch5-img17-old-65b.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch5/fig-ch5-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)
 layout(1)
 s <- c(X=0.1,Y=.1) 
 p <- c(a=1,b=1,c=-1,d=1)
@@ -665,5 +807,5 @@ pl1 <- pl + geom_line(data = data.frame(
 pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 9, family = cfont) +
   annotate("text", x = 80, y = -0.5, label = 'Attention', size = 9, family = cfont)
 pl2
-ggsave('media/ch5/fig-ch5-img19-old-67.png', width = 5, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch5/fig-ch5-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
 
