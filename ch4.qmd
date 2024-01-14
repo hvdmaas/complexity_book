@@ -220,9 +220,7 @@ In NetLogo, you "ask" objects to do something. A typical line would be:
 }
 ```
 
-<span class="blue"> ask </span> <span class="purple">turtles with</span> <span class="text">[</span> <span class="purple">pcolor = </span> <span class="val">red</span> <span class="text">]</span> <span class="blue">set</span> <span class="purple">pcolor</span> <span class="val">green</span>
-
-
+[ ask ]{.blue} [turtles with]{.purple} [\[</span> ]{.text}[pcolor = ]{.purple} [red]{.val} <span class="text">\] [set]{.blue} [pcolor]{.purple} [green]{.val}
 
 This would make red turtles green. To get started, I highly recommend watching the videos on the NetLogo page 'The Beginner's Guide to NetLogo Programming' and following these examples. Here we make our own Game of Life.
 
@@ -230,23 +228,23 @@ This would make red turtles green. To get started, I highly recommend watching t
 
 The first thing to do is to create two buttons in the interface, a setup and a go button. In Command, name them setup and go. In the settings of the go button, select 'forever'. Now we go to the Code tab and define these two functions as:
 
-<span class="green">to</span> <span class="text">setup</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">clear-all</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">reset-clicks</span> <br> <span class="green">end</span>
+[to]{.green} [setup]{.text} <br>      [clear-all]{.purple} <br>      [reset-clicks]{.purple} <br> [end]{.green}
 
-<span class="green">to</span> <span class="text">go</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="purple">tick</span> <br> <span class="green">end</span>
+[to]{.green} [go]{.text} <br>      [tick]{.purple} <br> [end]{.green}
 
 Ticks count the iterations in NetLogo, and with this code we are really just resetting things. Now add this last line to setup (with ";" we add comments to code):
 
-<span class="blue">ask</span> <span class="purple">patches</span> <br> <span class="text">[</span> <span class="blue">set</span> <span class="purple">pcolor one-of</span> <span class="text">[</span> <span class="val">white blue</span> <span class="text">]]</span> <span class="comm">; white is dead, blue is alive</span>
+[ask]{.blue} [patches]{.purple} <br> [\[</span> ]{.text}[set]{.blue} [pcolor one-of]{.purple} <span class="text">\[</span> [white blue]{.val} <span class="text">\]\] [; white is dead, blue is alive]{.comm}
 
 To do a synchronous update, we need to store the update state in a temporary variable called new-state. Put this line at the top of your code
 
-<span class="green">patches-own</span> <span class="text">[new-state]</span>
+[patches-own]{.green} [\[new-state\]]{.text}
 
 In the 'go' function, we add the life rules.
 
-<span class="blue">ask</span> <span class="purple">patches</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple">></span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple"><</span> <span class="val">2</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">]</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span> <span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">])</span> <span class="purple">=</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span> <span class="blue">set</span> <span class="text">new-state</span> <span class="val">blue</span> <span class="text">]</span> <br> <span class="text">]</span>
+[ask]{.blue} [patches]{.purple} [\]]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
 
-<span class="blue">ask</span> <span class="purple">patches</span> <span class="text">[</span> <span class="blue">set</span> <span class="purple">pcolor</span> <span class="text">new-state</span> <span class="text">]</span>
+[ask]{.blue} [patches]{.purple} [\[</span> ]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
 
 The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.
 
@@ -256,13 +254,13 @@ In the help menu, you will find the very useful NetLogo dictionary. Just reading
 
 Building a NetLogo from scratch requires quite some experience, adapting a program is much easier. The Ising model in NetLogo was not complete, as there is no slider for the external field. Try to add this yourself. Add a slider for the external field 'tau'. The code only needs to be changed in this line (study @eq-ch4-1-old-17):
 
-<span class="blue">let</span>  <span class="text">Ediff</span> <span class="val">2</span> <span class="purple">\*</span> <span class="text">spin</span> <span class="purple">* sum</span> <span class="text">[ spin ]</span> <span class="purple">of neighbors4</span>
+[let]{.blue} [Ediff]{.text} [2]{.val} [\*]{.purple} [spin]{.text} [\* sum]{.purple} [\[ spin \]]{.text} [of neighbors4]{.purple}
 
 If successful, you can test for hysteresis and divergence. For tau = 0, decreasing the temperature should give the pitchfork bifurcation. For a positive temperature (say 1.5), moving tau up and down should give hysteresis.
 
 Actually, this should work better if all spins are connected to all spins. To do this, 'neighbors4' should be replaced by 'patches'. To normalize the effect of so many spins, it is recommended to use:
 
-<span class="blue">let</span> <span class="val">0.001</span> <span class="purple">\*</span> <span class="text">Ediff</span> <span class="val">2</span> <span class="purple">\*</span> <span class="text">spin</span> <span class="purple">* sum</span> <span class="text">[ spin ]</span> <span class="purple">of patches</span>
+[let]{.blue} [0.001]{.val} [\*]{.purple} [Ediff]{.text} [2]{.val} [\*]{.purple} [spin]{.text} [\* sum]{.purple} [\[ spin \]]{.text} [of patches]{.purple}
 
 Now you should see hysteresis and the pitchfork better. However, in this case the typical self-organized patterning that occurred in the Ising model with only local interactions is not present.
 

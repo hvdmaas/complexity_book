@@ -215,7 +215,7 @@ X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
 Y_{t + 1} = bX_{t} \\
 $$ {#eq-ch2-4}
 
-Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map wiki page. The amazing three-dimensional bifurcation diagram may be more challenging.
+Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map Wikipedia page. The amazing three-dimensional bifurcation diagram may be more challenging.
 
 Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin @stefanRPubsFractals2020.
 
@@ -235,9 +235,9 @@ There exist many techniques for chaos detection in times series. **This is all b
 
 2)  In the section on bifurcation diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the $r$'s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change 'cex = 0.01' to a lower value. Zoom in on the interval of $r$ between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of $r$. (\*)
 
-3)  Reproduce the first image from the Henon map wiki page. Provide your R-code and figure (\*).
+3)  Reproduce the first image from the Henon map Wikipedia page. Provide your R-code and figure (\*).
 
-4)  Make the bifurcation diagram of the Ricker model (see wiki). Provide your R-code and figure. Why is this model considered a more realistic representation of population growth than the logistic map?
+4)  Make the bifurcation diagram of the Ricker model (see Wikipedia). Provide your R-code and figure. Why is this model considered a more realistic representation of population growth than the logistic map?
 
 5)  Also reproduce the three-dimensional bifurcation diagram of the Henon map (\*\*).
 
