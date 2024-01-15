@@ -292,7 +292,7 @@ $$\begin{array}{r}
 dO_{i} = \  - \left( O_{i}^{3} - {(A}_{i} + A^{\min})O_{i} - I_{i} \right)dt + s_{O}dW_{i}(t)
 \end{array}$$ {#eq-ch7-3-old-52}
 
-Spontaneous jumps in the dynamical behaviour of this equation are shown in @fig-ch5-img2-old-50 (for $I = 0$, $A_{i} + A^{\min} = 1$ and $s_{O} = 0.4$).
+Spontaneous jumps in the dynamical behaviour of this equation are shown in @fig-ch4n-img2-old-50 (for $I = 0$, $A_{i} + A^{\min} = 1$ and $s_{O} = 0.4$).
 
 #### Agent interactions: information and attention
 
@@ -385,7 +385,7 @@ A more radical simplification that still uses the attention/involvement idea is 
 
 What I also like less is that the HIOM is not complex enough. A huge simplification is that we have left out the fact that we have more than one attitude. We have hundreds or maybe thousands of attitudes. Since these are not independent, it is safe to say that these attitudes form complex networks with subclusters and central (hub) attitudes. A better model would be a (social) network of (attitude) networks of (attitude element) networks. In our current work, the level of within-person attitude networks is underexplored. Finally, many crucial aspects of opinion formation are missing, such as the role of (social) media, confirmation bias, identification with groups in society, the political system, etc.
 
-What I really don't like is that the Ising Attitude Model, in which attitudes behave according to the cusp, always leads to radicalization when we get involved. At best, we can jump irregularly between the extreme states (as in @fig-ch5-img2-old-50) as a form of ambivalence. But our society needs people, e.g., judges, who get involved and attend, but at the same time remain neutral. This is impossible in the Ising Attitude Model and thus in the HIOM.
+What I really don't like is that the Ising Attitude Model, in which attitudes behave according to the cusp, always leads to radicalization when we get involved. At best, we can jump irregularly between the extreme states (as in @fig-ch4n-img2-old-50) as a form of ambivalence. But our society needs people, e.g., judges, who get involved and attend, but at the same time remain neutral. This is impossible in the Ising Attitude Model and thus in the HIOM.
 
 A possible way out is to start from the tricritical Ising or Blume Capel model (see Section 6.3.3.5), where the attitude nodes have three states (-1, 0, 1) instead of only two. The resulting dynamic equation is the butterfly catastrophe which has four instead of two control variables. Building this in the HIOM will be a challenge. The Blume Capel model has also been proposed as a between person opinion model [@barbaroTerritorialDevelopmentsBased2013; @ferriEquilibriumDynamicsThreestate2022]. My dislike in this case is based on limited evidence. Demonstration with data that increased involvement can lead to trimodal distribution is needed.
 
