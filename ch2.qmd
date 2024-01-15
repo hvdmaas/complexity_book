@@ -21,7 +21,7 @@ X_{t + 1} = rX_{t}$$ {#eq-ch2-1}
 
 **This simply says that the new value of** $X$ **is determined by the previous value of** $X$**.** In this equation $r$ is the growth rate. We can simulate this model by choosing a value for $r$, $r=2$, for instance. We also need an initial value, say $X_{0} = 1.$ If this is completely new to you, enter some values repeatedly. You will see exponential growth ($X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)$. In R we can simulate this using a for loop.
 
-```{r}
+```{r eval = FALSE}
 n <- 15
 r <- 2
 x <- rep(0,n)
