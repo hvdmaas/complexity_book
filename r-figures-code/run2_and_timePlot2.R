@@ -62,7 +62,8 @@ timePlot2 <- function (data, tmin = 0, tmax = NULL, ymin = 0, ymax = NULL,
   for (i in ishows) {
     j <- ifelse(is.null(colMap), i, colMap[i])
     k <- ifelse(is.null(pchMap), j, pchMap[i])
-    draw(data[, 1], data[, i + 1], col = colors[min(j, ncolors)], 
+    draw(data[, 1], data[, i + 1], 
+         col = colors[min(j, ncolors)], # need check
          lwd = lwd, pch = k, 
          lty =2*i-1 #tasos: same trick
          )

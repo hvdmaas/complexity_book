@@ -33,9 +33,10 @@ for(i in 1:iter)
 layout(1)
 #plot(total_words,type='l',xlab='time',bty='n')
 png('media/ch7/fig-ch7-img3-old-91.png', width = 6, height = 3, units = 'in', res = 300)
-plot(total_unique_words,type='l',xlab='Time',ylab = 'total unique words',bty='n',
+plot(total_unique_words,type='l',xlab='Time',ylab = 'Total unique words',bty='n',
       axes = FALSE, family = cfont)
-axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)  # custom axis
+options(scipen=999) # not sci notation
+axis(1, c(0, 50000, 100000), labels=c(0,50000, 100000), tcl = 0, cex.axis = 1, family = cfont)  # custom axis
 axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)
 dev.off()
 
@@ -73,6 +74,14 @@ dev.off()
 
 # -------------------------------------------------------------------------
 
+# fig 7.6 -----------------------------------------------------------------
+x <- read.csv('r-figures-code/Social impact theory experiment-table.csv',skip=6 )
+library(ggmatplot)
+x <- x[order(x$X.step),]
+ggmatplot(x=x$X.step,y=x$magnetization,group = x$X.run.number,
+          plot_type = "line",xlab = 'Time',ylab='Proportion', linewidth = .4)+
+  theme_minimal() + theme1
+ggsave('media/ch7/fig-ch7-img6-old-94.jpg', width = 6, height = 3, units = 'in', dpi = 300)
 
 # fig 7.7  ----------------------------------------------------------------
 png('media/ch7/fig-ch7-img7-old-95.png', width = 8, height = 5, units = 'in', res = 300)
@@ -91,14 +100,14 @@ g <- 0.95 # if g  = 0 => DeGroot model
 x0 <- runif(n,0,1)
 s <- x0;p  <- c() 
 layout(1)
-run2(odes=FJ,method='euler',tmax=100, legend = FALSE)
+run2(odes=FJ,method='euler', tmax=100, legend = FALSE)
 dev.off()
 # fig 7.8 -----------------------------------------------------------------
 png('media/ch7/fig-ch7-img8-old-96.png', width = 8, height = 6, units = 'in', res = 300)
 
 set.seed(20)
 layout(matrix(1:4, 2, 2))
-iter <- 50; mu <- .5; n <- 200
+iter <- 50; mu <- .5; n <- 100
 for (bound in c(.1, .2, .3, .5))
 {
   x <- runif(n, 0, 1)
@@ -110,8 +119,8 @@ for (bound in c(.1, .2, .3, .5))
     dat[i, ] = x
   }
   matplot(dat,type='l',col=1,lty=1,bty='n',xlab='',
-          ylab='opinion',main=paste('bound = ',bound),
-          axes = FALSE, family = cfont)
+          ylab='Opinion',main=paste('bound = ',bound),
+          axes = FALSE, family = cfont, lwd = .5)
   axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)  # custom axis
   axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)
 }
