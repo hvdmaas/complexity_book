@@ -20,7 +20,7 @@ One physical example of self-organization is the laser. An important founder of 
 
 Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. This very simple model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences. In the standard 2d version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. Only when the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet. These are the temperature of the magnet and the external magnetic field. The lower the temperature the more the spins align. At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect. The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). With an external field we can force the spins to be all up or all down. This external field could be caused another magnet.
 
-![Schematic picture of the magnet](media/ch4/image1.jpg){#fig-ch4-img1-old-39}
+![Schematic picture of the magnet](media/ch4/image1.jpg){#fig-ch4-img1-old-39 width="400"}
 
 The main model equations of the Ising model are:
 
@@ -71,7 +71,7 @@ What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular aut
 
 Many examples of self-organization come from ecosystem biology. We will see simulations of flocking below, but I would also like to mention ants.
 
-![An example of the ant bridge](media/ch4/image2.jpg){#fig-ch4-img2-old-40}
+![An example of the ant bridge.](media/ch4/image2.jpg){#fig-ch4-img2-old-40}
 
 Ants exhibit amazing forms of globally organized behavior. They build bridges, nests, and rafts, and they fight off predators. I once saw a documentary on an ant nest that somehow decided to move to another location 50 meters away. Ant colonies utilize pheromones and swarm intelligence to relocate to a new location. Scouts search for potential sites, leaving pheromone trails. If a promising location is found, more ants follow the trail, reinforcing the signal. Unsuitable sites result in fading trails. Once a decision is made, the colony collectively moves to the chosen site, transporting their brood and establishing a new nest.
 
@@ -81,7 +81,7 @@ It is not a strange idea to think of an ant society as a living organism. Note t
 
 Another crucially important area of research on self-organisation has been computer science. A simple but utterly amazing example is the work on Conways' game of life [@berlekampWinningWaysYour2004]. The rules are depicted in @fig-ch4-img3-old-41.
 
-![The rules of the Game of Life](media/ch4/image3.jpg){#fig-ch4-img3-old-41}
+![The rules of the Game of Life.](media/ch4/image3.jpg){#fig-ch4-img3-old-41}
 
 For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.[^ch4-2] It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.
 
@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 **I was stunned to see** that it is even possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm, including of course the Game of Life! **This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements.** Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section **on neural networks**).
 
-![The Turing Machine built in the Game of Life.](media/ch4/image4.jpg){#fig-ch4-img4-old-42"}
+![The Turing Machine built in the Game of Life.](media/ch4/image4.jpg){#fig-ch4-img4-old-42}
 
 Another root of complex systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.
 
@@ -220,7 +220,7 @@ In NetLogo, you "ask" objects to do something. A typical line would be:
 }
 ```
 
-[ ask ]{.blue} [turtles with]{.purple} [\[</span> ]{.text}[pcolor = ]{.purple} [red]{.val} <span class="text">\] [set]{.blue} [pcolor]{.purple} [green]{.val}
+[ask]{.blue} [turtles with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [red]{.val} <span class="text">\] [set]{.blue} [pcolor]{.purple} [green]{.val}
 
 This would make red turtles green. To get started, I highly recommend watching the videos on the NetLogo page 'The Beginner's Guide to NetLogo Programming' and following these examples. Here we make our own Game of Life.
 
@@ -234,7 +234,7 @@ The first thing to do is to create two buttons in the interface, a setup and a g
 
 Ticks count the iterations in NetLogo, and with this code we are really just resetting things. Now add this last line to setup (with ";" we add comments to code):
 
-[ask]{.blue} [patches]{.purple} <br> [\[</span> ]{.text}[set]{.blue} [pcolor one-of]{.purple} <span class="text">\[</span> [white blue]{.val} <span class="text">\]\] [; white is dead, blue is alive]{.comm}
+[ask]{.blue} [patches]{.purple} <br> [\[</span>]{.text}[set]{.blue} [pcolor one-of]{.purple} [\[]{.text} [white blue]{.val} <span class="text">\]\] [; white is dead, blue is alive]{.comm}
 
 To do a synchronous update, we need to store the update state in a temporary variable called new-state. Put this line at the top of your code
 
@@ -242,9 +242,9 @@ To do a synchronous update, we need to store the update state in a temporary var
 
 In the 'go' function, we add the life rules.
 
-[ask]{.blue} [patches]{.purple} [\]]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span> ]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span> ]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
+[ask]{.blue} [patches]{.purple} [\]]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
 
-[ask]{.blue} [patches]{.purple} [\[</span> ]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
+[ask]{.blue} [patches]{.purple} [\[</span>]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
 
 The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.
 
