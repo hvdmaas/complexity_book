@@ -20,15 +20,15 @@ One physical example of self-organization is the laser. An important founder of 
 
 Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. This very simple model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences. In the standard 2d version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. Only when the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet. These are the temperature of the magnet and the external magnetic field. The lower the temperature the more the spins align. At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect. The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). With an external field we can force the spins to be all up or all down. This external field could be caused another magnet.
 
-![Schematic picture of the magnet](media/exch4/image1.jpg){#fig-exch4-img1-old-39 width="400"}
+![Schematic picture of the magnet](media/ch5n/image1.jpg){#fig-ch5n-img1-old-39 width="400"}
 
 The main model equations of the Ising model are:
 
 $$
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}$$ {#eq-exch4-1-old-17}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}$$ {#eq-ch5n-1-old-17}
 
 $$
-P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.$$ {#eq-exch4-2-old-18}
+P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.$$ {#eq-ch5n-2-old-18}
 
 The first equation defines the energy of a given state vector $\mathbf{x}$ (for $n$ spins with states -1 and 1). The notation $< i,j >$ in the summation means that we sum over all neighboring, or linked, pairs.
 
@@ -41,13 +41,13 @@ The randomness of the behavior is captured by the concept of entropy. Entropy is
 In the simulation of this model, we take a random spin, calculate the energy of the current $\mathbf{x}$ and the $\mathbf{x}$ with that particular spin flipped. The difference in energy determines the probability of a flip:
 
 $$
-P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}.$$ {#eq-exch4-3-old-19}
+P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}.$$ {#eq-ch5n-3-old-19}
 
 If we do these flips repeatedly, we find equilibria of the model. This is called the Glauber dynamics (more efficient algorithms do exist). The beauty of these algorithms is that the normalization constant Z falls out of the equation. In this way we can simulate Ising systems with $N$ much larger than 20.
 
-In the case of a fully connected Ising network (also called the Curie-Weiss model), the emergent behavior, what is called the mean field behavior, can be described by the cusp [Section 3.2.3, @abeCuspSingularityMean2017; @postonCatastropheTheoryIts2014]. The external field is the normal variable and temperature acts as a splitting variable. The relationship to self-organization is that when we cool a hot magnet, at some threshold the spins begin to align and soon are all up or down. This is the pitchfork bifurcation, creating order out of disorder.[^exch4-1]
+In the case of a fully connected Ising network (also called the Curie-Weiss model), the emergent behavior, what is called the mean field behavior, can be described by the cusp [Section 3.2.3, @abeCuspSingularityMean2017; @postonCatastropheTheoryIts2014]. The external field is the normal variable and temperature acts as a splitting variable. The relationship to self-organization is that when we cool a hot magnet, at some threshold the spins begin to align and soon are all up or down. This is the pitchfork bifurcation, creating order out of disorder.[^ch5n-1]
 
-[^exch4-1]: An extremely useful application of this principle is the rice cooker!
+[^ch5n-1]: An extremely useful application of this principle is the rice cooker!
 
 In the 2D Ising model (see @fig-ch5n-img1-old-39), the connections are sparse (only local) and more complicated (self-organizing) behavior occurs. We will simulate this in NetLogo later in this chapter and as a model of attitudes in chapter 6.
 
@@ -71,7 +71,7 @@ What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular aut
 
 Many examples of self-organization come from ecosystem biology. We will see simulations of flocking below, but I would also like to mention ants.
 
-![An example of the ant bridge.](media/ch4/image2.jpg){#fig-exch4-img2-old-40}
+![An example of the ant bridge.](media/ch5n/image2.jpg){#fig-ch5n-img2-old-40}
 
 Ants exhibit amazing forms of globally organized behavior. They build bridges, nests, and rafts, and they fight off predators. I once saw a documentary on an ant nest that somehow decided to move to another location 50 meters away. Ant colonies utilize pheromones and swarm intelligence to relocate to a new location. Scouts search for potential sites, leaving pheromone trails. If a promising location is found, more ants follow the trail, reinforcing the signal. Unsuitable sites result in fading trails. Once a decision is made, the colony collectively moves to the chosen site, transporting their brood and establishing a new nest.
 
@@ -81,11 +81,11 @@ It is not a strange idea to think of an ant society as a living organism. Note t
 
 Another crucially important area of research on self-organisation has been computer science. A simple but utterly amazing example is the work on Conways' game of life [@berlekampWinningWaysYour2004]. The rules are depicted in @fig-ch5n-img3-old-41.
 
-![The rules of the Game of Life.](media/ch4/image3.jpg){#fig-exch4-img3-old-41}
+![The rules of the Game of Life.](media/ch5n/image3.jpg){#fig-ch5n-img3-old-41}
 
-For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.[^exch4-2] It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.
+For each cell, given the current neighbors, the next state for all cells is computed. This is called synchronous updating.[^ch5n-2] It is hard to predict what will happen if we start from a random initial state. But you may already realize that a block of 4 squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.
 
-[^exch4-2]: In a synchronous update, all cells of the cellular automata update their state simultaneously. This implies that the new state of each cell at a given time step depends only on the states of its neighbors at the previous time step. In asynchronous update, cells update their state one at a time, rather than all at once. The order in which cells update can be deterministic (in a sequence), or it can be stochastic (random). These two different update schemes can lead to very different behaviors in cellular automata.
+[^ch5n-2]: In a synchronous update, all cells of the cellular automata update their state simultaneously. This implies that the new state of each cell at a given time step depends only on the states of its neighbors at the previous time step. In asynchronous update, cells update their state one at a time, rather than all at once. The order in which cells update can be deterministic (in a sequence), or it can be stochastic (random). These two different update schemes can lead to very different behaviors in cellular automata.
 
 A great tool for playing around with the Game of Life is Golly, which is freely available for computers and mobile phones. I ask you to download and open Golly, draw some random lines, press Enter and see what happens. Often you will see it converging to a stable state (with oscillating sub-patterns). Occasionally you will see walkers or gliders (zoom out). These are patterns that move around the field.
 
@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 **I was stunned to see** that it is even possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Turing machine is a theoretical machine, developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm, including of course the Game of Life! **This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements.** Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section **on neural networks**).
 
-![The Turing Machine built in the Game of Life.](media/ch4/image4.jpg){#fig-exch4-img4-old-42}
+![The Turing Machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42}
 
 Another root of complex systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948.
 
@@ -115,7 +115,7 @@ An interesting unsupervised model is the Boltzmann machine. It is basically an I
 
 This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM we stack many of these layers, which can be trained in pairs. I recommend Timo Matzen's R package for a hands-on explanation (<https://github.com/TimoMatzen/RBM>). Other famous approaches are the Kohonen self-organizing maps and the Hopfield neural network.
 
-![The deep learning restricted Boltzmann machine.](media/ch4/image5.jpg){#fig-exch4-img5-old-43}
+![The deep learning restricted Boltzmann machine.](media/ch5n/image5.jpg){#fig-ch5n-img5-old-43}
 
 In supervised learning, connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the output neurons. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true. In this case the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagating rule for multi-layer networks, such that they can learn this non-linear classification from examples. We will do a simple simulation in NetLogo later. Although extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.
 
@@ -290,9 +290,9 @@ A promising general approach to understanding the so called "predictive" brain f
 
 **I find higher order theories most compelling because they make a clearly define the distinction between unconscious and conscious information processing. Higher-order theories of consciousness suggest that consciousness arises when the brain represents its own processes to itself. Crucial are meta-representations. One might have a representation of a particular perception, such as a flower, and additionally have a meta-representation that acknowledges, "I am perceiving a flower. A recent and interesting variant is the** **self-organizing metarepresentational account of @cleeremans2020, as it states that consciousness is something the brain learns to do.**
 
-**My thinking about consciousness has been strongly influenced by the work of Douglas Hofstadter, especially his book on Gödel, Escher, Bach (GEB) [@hofstadterGodelEscherBach1999; @hofstadter2007]. In his work, our sense of self is a construct formed by the brain's ability to use symbols, such as natural language, to refer to its own activities and experiences. Consciousness is based on symbolic self-reference, thus meta-representations. It arises when these self-referential loops (strange loops) reach a certain level of complexity. I think, with Hofstadter, that this higher-order self has the ability influence the lower-order processing of the brain, a case of downwards causation (see chapter 1 on Emergence).**[^exch4-3] **For a somewhat critical analysis I refer to** @nenu2022. **Also, the lack of empirical data constraints on theories of consciousness is clearly an issue [@doerig2021].**
+**My thinking about consciousness has been strongly influenced by the work of Douglas Hofstadter, especially his book on Gödel, Escher, Bach (GEB) [@hofstadterGodelEscherBach1999; @hofstadter2007]. In his work, our sense of self is a construct formed by the brain's ability to use symbols, such as natural language, to refer to its own activities and experiences. Consciousness is based on symbolic self-reference, thus meta-representations. It arises when these self-referential loops (strange loops) reach a certain level of complexity. I think, with Hofstadter, that this higher-order self has the ability influence the lower-order processing of the brain, a case of downwards causation (see chapter 1 on Emergence).**[^ch5n-3] **For a somewhat critical analysis I refer to** @nenu2022. **Also, the lack of empirical data constraints on theories of consciousness is clearly an issue [@doerig2021].**
 
-[^exch4-3]: **I wrote a GEB-like dialogue on consciousness [@vandermaas2022] in which my laptop professes to have free will, yet simultaneously denies that I possess free will. I asked ChatGPT what he thought of it. Nice as always ChatGPT replies: The dialogue is a creative and thought-provoking exploration of various philosophical and theoretical concepts related to AI, consciousness, and free will. But it also disagrees: "AI, as it exists today, does not possess consciousness, self-awareness, or free will, and its"understanding" is limited to processing data within the parameters of its programming." I also asked ChatGpt whether is has a self-concept. It denied and then I asked whether that in itself is not prove of a self-concept. It answered: "it might seem paradoxical, my statement about lacking a self-concept is a reflection of my programming and the current state of AI development, rather than an indication of self-awareness or self-concept." I then tried various arguments, but ChatGpt refuses to attribute any form of self-awareness to itself.**
+[^ch5n-3]: **I wrote a GEB-like dialogue on consciousness [@vandermaas2022] in which my laptop professes to have free will, yet simultaneously denies that I possess free will. I asked ChatGPT what he thought of it. Nice as always ChatGPT replies: The dialogue is a creative and thought-provoking exploration of various philosophical and theoretical concepts related to AI, consciousness, and free will. But it also disagrees: "AI, as it exists today, does not possess consciousness, self-awareness, or free will, and its"understanding" is limited to processing data within the parameters of its programming." I also asked ChatGpt whether is has a self-concept. It denied and then I asked whether that in itself is not prove of a self-concept. It answered: "it might seem paradoxical, my statement about lacking a self-concept is a reflection of my programming and the current state of AI development, rather than an indication of self-awareness or self-concept." I then tried various arguments, but ChatGpt refuses to attribute any form of self-awareness to itself.**
 
 ### Visual illusions
 
@@ -302,7 +302,7 @@ Another related approach is the ecological approach to visual perception by @gib
 
 A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The Optical Illusion model in NetLogo's model library illustrates some of them. Check out the codes for each illusion, they are extremely short and elegant.
 
-![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo.](media/ch4/image6.jpg){#fig-exch4-img6-old-44}
+![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo.](media/ch5n/image6.jpg){#fig-ch5n-img6-old-44}
 
 In Chapter 3, I provided examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download 'Motion Quartet' from the NetLogo community website and explore hysteresis in your own perception.
 
@@ -310,12 +310,12 @@ In Chapter 3, I provided examples of sudden jumps and hysteresis in multistable 
 
 Many body motions are periodic in nature, think of walking, swimming, dancing, and galloping. Key to these motions is the synchronization of the movements of body parts. A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. @fig-ch5n-img7-old-45 explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.
 
-![The finger movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$ ($- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength ($b/a$) and heterogeneity ($\Delta w)$ are control variables. Adapted from @hakenTheoreticalModelPhase1985 and @kelsoHakenKelsoBunz2021.](media/ch4/image7.jpg){#fig-exch4-img7-old-45}
+![The finger movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$ ($- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength ($b/a$) and heterogeneity ($\Delta w)$ are control variables. Adapted from @hakenTheoreticalModelPhase1985 and @kelsoHakenKelsoBunz2021.](media/ch5n/image7.jpg){#fig-ch5n-img7-old-45}
 
 The Haken--Kelso--Bunz (HKB) model, developed in the tradition of synergetics, explains the phase transition between in phase and anti-phase motions in a way we have seen in the previous chapter (the phenomenological cusp model). They set-up a potential function in the form of
 
 $$
-V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}$$ {#eq-exch4-4-old-20}
+V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}$$ {#eq-ch5n-4-old-20}
 
 Where $\varphi$ is the order or behavioral variable, the phase difference between the two fingers. The main control parameter is $b/a$. According to @kelsoHakenKelsoBunz2021 coupling strength ($b/a$) corresponds to the velocity or frequency of the oscillations in the experiments. $\Delta w$ is the difference (heterogeneity, diversity) between the natural frequencies of the individual oscillatory elements. In the finger movement task this parameter is expected to be 0. The behavior of this protentional function is cusp like. It has two stable states 0 and $\pm \pi$, and increasing and decreasing the frequency leads to hysteresis. The effects of $\Delta w$ is similar to the fold catastrophe (see Chapter 3).
 
@@ -333,7 +333,7 @@ A major challenge in robotics is to build walking robots. Bipedal robots have ev
 
 An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply [@mcgeerPassiveWalkingKnees1990; @reherDynamicWalkingAgile2021]. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork, Strandbeest, by Theo Jansen. **Inspired by another great book about self-organization, the Blind Watchmaker [@dawkins1986], Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals.** His YouTube videos are strongly recommended.
 
-![Beach Beast \| www.strandbeest.com/ IMG_4285.jpg \| Robbert van den Beld \| Flickr](media/ch4/image8.jpg){#fig-exch4-img8-old-46}
+![Beach Beast \| www.strandbeest.com/ IMG_4285.jpg \| Robbert van den Beld \| Flickr](media/ch5n/image8.jpg){#fig-ch5n-img8-old-46}
 
 ### Developmental processes
 
@@ -399,7 +399,7 @@ However, there is a fine line between the wisdom of the crowd and the stupidity 
 
 Of particular importance is game theory, which consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner's dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to tell. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix). In this game, loyalty to one's friend is irrational, an outcome related to the tragedy of the commons [@hardinTragedyCommons1968]. The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.
 
-![The prisoner's dilemma.](media/ch4/image9.jpg){#fig-exch4-img9-old-47}
+![The prisoner's dilemma.](media/ch5n/image9.jpg){#fig-ch5n-img9-old-47}
 
 A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory (Nash) equilibrium. A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players. The public goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public good games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students when they are working in groups on an assignment that the problem of this one student doing nothing happens because nice, hard-working students refuse to betray their fellow students to me. These nice, hard-working students are what are called second-order free riders [@fowlerSecondorderFreeridingProblem2005].
 
@@ -413,7 +413,7 @@ Three parameters can be adjusted to influence behavior in the baseline assembly 
 
 @guimeraTeamAssemblyMechanisms2005 estimated the parameters $p$ and $q$ for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only the field of astronomy had a very dense collaboration structure. In the other fields the estimates of $p$ and $q$ of teams publishing in certain journals correlated well with impact factor. Interestingly, $p$ correlates positively and $q$ negatively with impact.
 
-![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch4/image10.jpg){#fig-exch4-img10-old-48}
+![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48}
 
 ## Zooming out
 

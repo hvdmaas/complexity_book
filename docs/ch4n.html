@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./ch5n.html" rel="next">
 <link href="./ch3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -186,6 +186,12 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./ch4n.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5n.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Self-organization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -897,7 +903,7 @@ Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
 <figcaption class="figure-caption">Figure&nbsp;4.18: Multifigure multistable perception. Verify three phenomena: a) some attention or focus is required to see three-dimensional cubes, b) spontaneous transitions in the perception of cubes occur, c) such transitions affect the perception of neighboring cubes.</figcaption>
 </figure>
 </div>
-<p>We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define <span class="math inline">\(X\)</span> as the percept of the cube. <span class="math inline">\(X = 0\)</span> means that no cubes are perceived, only lines and colored parallelograms. <span class="math inline">\(X &gt; 0\)</span> represents the ‘front’ view, and <span class="math inline">\(X &lt; 0\)</span> the ‘back’ view (cf. <span class="quarto-unresolved-ref">?fig-ch3-img2</span>). The cusp model for one cube is <span class="math inline">\(\frac{dX}{dt} = {a + bX - X}^{3}\)</span> , where <span class="math inline">\(a\)</span> is the bias parameter and <span class="math inline">\(b\)</span> is the attention parameter. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b &gt; 1\)</span> (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see <a href="#fig-ch4n-img2-old-50">Figure&nbsp;<span>4.2</span></a>).</p>
+<p>We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define <span class="math inline">\(X\)</span> as the percept of the cube. <span class="math inline">\(X = 0\)</span> means that no cubes are perceived, only lines and colored parallelograms. <span class="math inline">\(X &gt; 0\)</span> represents the ‘front’ view, and <span class="math inline">\(X &lt; 0\)</span> the ‘back’ view (cf. <a href="ch3.html#fig-ch3-img2-old-14">Figure&nbsp;<span>3.2</span></a>). The cusp model for one cube is <span class="math inline">\(\frac{dX}{dt} = {a + bX - X}^{3}\)</span> , where <span class="math inline">\(a\)</span> is the bias parameter and <span class="math inline">\(b\)</span> is the attention parameter. If <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b &gt; 1\)</span> (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise, see <a href="#fig-ch4n-img2-old-50">Figure&nbsp;<span>4.2</span></a>).</p>
 <p>Now we consider <a href="#fig-ch4n-img16-old-64">Figure&nbsp;<span>4.16</span></a> and apply <a href="#eq-ch4n-20-old-40">Equation&nbsp;<span>4.20</span></a> . We have <span class="math inline">\(N = 25\)</span> (a bit depending on how you count) The values of the parameters <span class="math inline">\(a_{0i}\)</span> should be estimated from data, but for now we will assume no bias, so <span class="math inline">\(a_{0i} = 0\)</span>. We set <span class="math inline">\(a_{ij} &gt; 0\)</span>, meaning that we expect positive coupling between the cusps. The <span class="math inline">\(b_{0}\)</span> is the attention vector. In the simulation we first assume that attention is low (<span class="math inline">\(b_{0i} = - .3)\)</span>. After an initial phase, we will set <span class="math inline">\(b_{01} = 1\)</span>, that is we suddenly attend to one cube. A bit later we set <span class="math inline">\(b_{01}\)</span> back to -.3. However, we also set <span class="math inline">\(b_{ij} &gt; 0\)</span>, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.</p>
 <p>To make this model work we need to make one adjustment. We replace <span class="math inline">\(\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}\)</span> with <span class="math inline">\(\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}\)</span>.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the ‘front’ or the ‘back’ view. Thus, the model for multifigure multistable perception is:</p>
 <p><em><br>
@@ -975,7 +981,7 @@ Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
 <li><p>Check this analytically. Which are the two equilibria X*? For which values of <span class="math inline">\(r\)</span> are these fixed points stable? Does your result agree with the results of the previous exercise? (**)</p></li>
 <li><p>Create the logistic map in Grind. Plot the time series for <span class="math inline">\(r = 4\)</span>. (*)</p></li>
 <li><p>Make a plot of the pitchfork bifurcation, analogous to <a href="#fig-ch4n-img3-old-51">Figure&nbsp;<span>4.3</span></a> (*)</p></li>
-<li><p>Use the spruce model from Section 5.1.6 and the <code>bifurcation()</code> function of the deBif package to recreate the bifurcation diagram shown in <span class="quarto-unresolved-ref">?fig-ch3-img16</span> . Describe what you did and present the resulting figure. (**)</p></li>
+<li><p>Use the spruce model from Section 5.1.6 and the <code>bifurcation()</code> function of the deBif package to recreate the bifurcation diagram shown in <a href="ch3.html#fig-ch3-img16-old-28">Figure&nbsp;<span>3.16</span></a> . Describe what you did and present the resulting figure. (**)</p></li>
 <li><p>Implement the SIR model for infectious diseases in R using Grind. Reproduce the diagram of the SIR model with <span class="math inline">\(\beta = 0.4\)</span> and <span class="math inline">\(\gamma = 0.04\)</span> on the Wikipedia page on Compartmental models in epidemiology.</p></li>
 <li><p>Reproduce the <strong>times-series plot of the</strong> simulation of the Polya Urn model shown in <a href="#fig-ch4n-img12-old-60">Figure&nbsp;<span>4.12</span></a>. (**)</p></li>
 <li><p>Implement the FitzHugh-Nagumo model in Grind and replicate the <a href="#fig-ch4n-img15-old-63">Figure&nbsp;<span>4.15</span></a>. No exact replication is required but the phase diagram should look similar (**)</p></li>
@@ -1392,8 +1398,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch5n.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Self-organization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
