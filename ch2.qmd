@@ -2,13 +2,11 @@
 
 ## Introduction
 
-**There are many reasons why prediction is difficult in psychology. It can be due to a lack of precise models, inadequate measurement, environmental influences, large individual differences, to name a few. Complexity science adds another source of unpredictability.**
-
-**Suppose we have immense amounts of biological and psychological data on large numbers of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.**
+Suppose we have immense amounts of genetic, biological and psychological data on millions of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.
 
 Chaos is one of the three most spectacular phenomena in complex systems and as psychologists we should know the basic results of chaos theory. It is also great fun to learn about chaos and it allows me to introduce many key concepts that we need in later chapters.
 
-In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its **fundamental** implication for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa. **How this works will become clear in this chapter.**
+In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its fundamental implication for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa. How this works will become clear in this chapter.
 
 ## The population growth of rabbits
 
@@ -19,7 +17,7 @@ Population growth is a typical example of a dynamical system, it is a model of c
 $$
 X_{t + 1} = rX_{t}$$ {#eq-ch2-1}
 
-**This simply says that the new value of** $X$ **is determined by the previous value of** $X$**.** In this equation $r$ is the growth rate. We can simulate this model by choosing a value for $r$, $r=2$, for instance. We also need an initial value, say $X_{0} = 1.$ If this is completely new to you, enter some values repeatedly. You will see exponential growth ($X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)$. In R we can simulate this using a for loop.
+This simply says that the new value of $X$ is determined by the previous value of $X$. In this equation $r$ is the growth rate. We can simulate this model by choosing a value for $r$, $r=2$, for instance. We also need an initial value, say $X_{0} = 1.$ If this is completely new to you, enter some values repeatedly. You will see exponential growth ($X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)$. In R we can simulate this using a for loop.
 
 ```{r eval = FALSE}
 n <- 15
@@ -82,9 +80,9 @@ This concept of equilibrium, stable or unstable, is crucial for later chapters. 
 Simulating this is again not really necessary. One has to realize that a fixed point ($X^{*}$) is found when $X_{t + 1} = X_{t} = X^{*}$. See for yourself that:
 
 $${X_{t + 1} = X_{t} = X^{*}
-}{X^{*} = rX^{*}\left( 1 - X^{*} \right)
-}{X^{*} = 0\ or\ 1 = r - rX^{*}
-}{X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}}$$
+}\\{X^{*} = rX^{*}( 1 - X^{*})
+}\\{X^{*} = 0\ or\ 1 = r - rX^{*}
+}\\{X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}}$$
 
 So 0 and $(r - 1)/r$ are fixed points. Indeed for $r = 2$, we have seen that 0 and .5 are equilibria, one stable and one unstable. To determine whether fixed points are stable we look at the derivative of the function, $f^{'}(x)$, which, as you can easily check, is $r - 2rX$.
 
@@ -127,7 +125,7 @@ lines(x, col = 'red')
 
 We can see that a run with a slightly different initial value will at first follow the same path, but then it will diverge sharply. A tiny perturbation (the butterfly flapping its wings) propagates through the system and dramatically changes the long-term course of the system.
 
-Note that some uncertainty about the exact value of the initial state is always inevitable. Suppose we have an equation like the logistic map for temperature in the weather system, and this equation perfectly describes that system. To make a prediction, we need to feed the current temperature into the computer. But we cannot measure temperature with infinite precision. And even if we could, we do not have a computer that can handle numbers with an infinite number of digits. So, we make a small error in setting the initial state, and this will always mess up our long-term forecast. This is why long-term weather will never be possible, even if we develop much more precise mathematical models, take more intensive and more accurate measurements and use more powerful computers. The weather turns out to be a chaotic system. **Sensitivity to initial conditions is a necessary and perhaps sufficient condition for deterministic chaos.** For a discussion on the definition of chaos, I refer to [@banksDevaneyDefinitionChaos1992] and [@broer2010].
+Note that some uncertainty about the exact value of the initial state is always inevitable. Suppose we have an equation like the logistic map for temperature in the weather system, and this equation perfectly describes that system. To make a prediction, we need to feed the current temperature into the computer. But we cannot measure temperature with infinite precision. And even if we could, we do not have a computer that can handle numbers with an infinite number of digits. So, we make a small error in setting the initial state, and this will always mess up our long-term forecast. This is why long-term weather will never be possible, even if we develop much more precise mathematical models, take more intensive and more accurate measurements and use more powerful computers. The weather turns out to be a chaotic system. Sensitivity to initial conditions is a necessary and perhaps sufficient condition for deterministic chaos. For a discussion on the definition of chaos, I refer to [@banksDevaneyDefinitionChaos1992] and [@broer2010].
 
 The Lyapunov coefficient quantifies chaos. The idea is to take two very close initial conditions with a difference of $\varepsilon$. In the next iteration this difference might be smaller, the same, or bigger. In the last case the time series diverge, which is typical for chaos. The Lyapunov coefficient is defined as:
 
@@ -208,7 +206,7 @@ This statement needs some nuance. I have already mentioned that the weather can 
 
 ## Other maps and fractals
 
-There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled **difference** equations:
+There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:
 
 $$
 X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
@@ -223,11 +221,11 @@ Fractals are another topic for further study. Another look at Wikipedia is recom
 
 Chaos theory and the logistic map were popularized about 50 years ago, and since then researchers have been looking for chaos in all kinds of time series [@ayersApplicationChaosTheory1997; @robertsonChaosTheoryPsychology2014; @schiepek2017]. One idea behind this work is the hypothesis that chaos might be healthy [@poolItHealthyBe1989] or be helpful. It would be helpful in learning algorithms, such as neutral networks, to prevent getting stuck in local minima [@bertschingerRealTimeComputationEdge2004]. My very first publication was about chaos in neural networks [@vandermaasNoteChaoticBehavior1990].
 
-There exist many techniques for chaos detection in times series. **This is all but easy because these empirical signals are inevitably contaminated with noise [@rosso2007].** **One example is the computation of Lyapunov exponents, quantifying how small differences in initial conditions evolve over time. A positive Lyapunov exponent indicates chaos, signifying exponential divergence of trajectories, which is a hallmark of chaotic systems. This method involves reconstructing the phase space from time series data and calculating the average exponential rate of separation of trajectories.** With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
+There exist many techniques for chaos detection in times series. This is all but easy because these empirical signals are inevitably contaminated with noise [@rosso2007]. One example is the computation of Lyapunov exponents, quantifying how small differences in initial conditions evolve over time. A positive Lyapunov exponent indicates chaos, signifying exponential divergence of trajectories, which is a hallmark of chaotic systems. This method involves reconstructing the phase space from time series data and calculating the average exponential rate of separation of trajectories. With the Lyapunov function in the package DChaos you can compute the Lyapunov coefficient for times series generated with the logistic map. You may verify that for $r = 4$ you get the Lyapunov coefficient as computed with the derivative earlier.
 
-**Chaos detection is an active area of research, with new methods being proposed on a regular basis [@zanin2022].** There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020].
+Chaos detection is an active area of research, with new methods being proposed on a regular basis [@zanin2022]. There are several packages available in R, including new methods based on machine learning techniques [@sandubeteDChaosPackageChaotic2021; @tokerSimpleMethodDetecting2020].
 
-**These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.**
+These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.
 
 ## Exercises
 
@@ -241,7 +239,7 @@ There exist many techniques for chaos detection in times series. **This is all b
 
 5)  Also reproduce the three-dimensional bifurcation diagram of the Henon map (\*\*).
 
-6)  Have a look at the definition of the Lyapunov coefficient in Section **2.4**. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
+6)  Have a look at the definition of the Lyapunov coefficient in Section 2.4. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
 
 7)  Use the Rmusic library (installed with devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
