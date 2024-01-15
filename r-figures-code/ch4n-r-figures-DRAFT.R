@@ -37,7 +37,7 @@ LV <- function(t, state, parms) {
   })
 }
 
-png('media/ch5/fig-ch5-img1-old-49.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img1-old-49.png', width = 8, height = 5, units = 'in', res = 300)
 
 ## base 2
 set.seed(1)
@@ -134,7 +134,7 @@ dev.off()
 #plot1 <- (p1 + p2) / (p3 + p4 )
 #plot1
 
-#ggsave('media/ch5/fig-ch5-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
 
 # fig 5.2 -----------------------------------------------------------------
 model <- function(t, state, parms){
@@ -170,7 +170,7 @@ combined_plot <- plot_grid(
   p1, p2, ncol = 2, rel_widths = c(3/4, 1/4))
 combined_plot
 
-ggsave('media/ch5/fig-ch5-img2-old-50.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img2-old-50.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
 # -------------------------------------------------------------------------
 
@@ -224,7 +224,7 @@ p + annotate('text',x=3.6,y=.58,label=expression(paste('Type I: ', Rho==Beta*Nu)
     annotate('text',x=4.2,y=.35,label=expression(paste('Type IV: ',Rho==frac(Beta*Nu,Alpha+Nu^2))),
              color = ncolors[3], size = 6)
   
-ggsave('media/ch5/fig-ch5-img5-old-53.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img5-old-53.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
 # fig 5.6 -----------------------------------------------------------------
 model <- function(t, state, parms){
@@ -258,7 +258,7 @@ ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[4],
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
 
-ggsave('media/ch5/fig-ch5-img6-old-54.png', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img6-old-54.png', width = 4, height = 2.5, units = 'in', dpi = 300)
 
 
 # fig 5.7 -----------------------------------------------------------------
@@ -348,7 +348,7 @@ g3 <-  ggplot(h2,aes(x=rt)) +
 gfinal <- g2/g1plus/g3 + plot_layout(heights = c(1, 5,1))
 gfinal
 
-ggsave('media/ch5/fig-ch5-img7-old-55.png', width = 8, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img7-old-55.png', width = 8, height = 4, units = 'in', dpi = 300)
 
 # fig 5.9 -----------------------------------------------------------------
 model <- function(t, state, parms) {
@@ -360,7 +360,7 @@ model <- function(t, state, parms) {
 }
 
 # Using base2 -------------------------------------------------------------
-png('media/ch5/fig-ch5-img9-old-57.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img9-old-57.png', width = 6, height = 4, units = 'in', res = 300)
 layout(matrix(1:6,3,2,byrow=T))
 par(mar=c(4.5,5,1,2)) #bott left top right
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
@@ -398,10 +398,10 @@ dev.off()
 #p <- p1 / p2 / p3
 #p
 #
-#ggsave('media/ch5/fig-ch5-img9-old-57_1of2.png', width = 3, height = 5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img9-old-57_1of2.png', width = 3, height = 5, units = 'in', dpi = 300)
 #
 ## plane 2 -----------------------------------------------------------------
-#png('media/ch5/fig-ch5-img9-old-57_2of2.png', width = 2.5, height = 5, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img9-old-57_2of2.png', width = 2.5, height = 5, units = 'in', res = 300)
 #layout(matrix(1:3,3,1,byrow=T))
 #par(mar=c(5,4,1,2))
 #p <- c(a=-1,b=1,c=.5,d=-1) # parameters
@@ -425,7 +425,7 @@ model <- function(t, state, parms) {
 }
 
 # using base2
-png('media/ch5/fig-ch5-img10-old-58.png', width = 7, height = 4.5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img10-old-58.png', width = 7, height = 4.5, units = 'in', res = 300)
 layout(matrix(1:9,3,3,byrow=T))
 par(mar=c(4,4,1,2))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
@@ -457,10 +457,10 @@ dev.off()
 #p3 <- infPlot(b = 1)
 #plot1 <- p1 / p2 / p3
 #plot1
-#ggsave('media/ch5/fig-ch5-img10-old-58_1of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img10-old-58_1of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 #dev.off()
 ### COLUMN 2 - nullclines
-#png('media/ch5/fig-ch5-img10-old-58_2of3.png', width = 2.5, height = 5, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img10-old-58_2of3.png', width = 2.5, height = 5, units = 'in', res = 300)
 #layout(matrix(1:3,3,1,byrow=T))
 #par(mar=c(4,4,1,2))
 #for(b in c(Inf,0,1)){
@@ -506,7 +506,7 @@ dev.off()
 #p3 <- antiRun2(datt[[3]])
 #plot3 <- p1/p2/p3
 #plot3
-#ggsave('media/ch5/fig-ch5-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 
 
 # fig 5.11 ----------------------------------------------------------------
@@ -519,7 +519,7 @@ model <- function(t, state, parms) {
 }
 
 ## Using base2
-png('media/ch5/fig-ch5-img11-old-59.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img11-old-59.png', width = 8, height = 5, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 par(mar=c(4,4,1,2))
 # Set parameter values and run the model:
@@ -548,10 +548,10 @@ dev.off()
 #p2 <- antiRun(dat2)
 #halfp <- p1+p2
 #halfp
-#ggsave('media/ch5/fig-ch5-img11-old-59_1of2.png', width = 6, height = 3, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img11-old-59_1of2.png', width = 6, height = 3, units = 'in', dpi = 300)
 #dev.off()
 ### plane2 row
-#png('media/ch5/fig-ch5-img11-old-59_2of2.png', width = 10, height = 5, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img11-old-59_2of2.png', width = 10, height = 5, units = 'in', res = 300)
 #layout(matrix(1:2,1,2))
 #p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
 #s <- c(X = 0.01, Y = 0.01)
@@ -598,16 +598,16 @@ p2
 #hist(urns[n,],main='',xlab='p(blue)',col='grey')
 
 library(png) 
-urns_png <- readPNG('media/ch5/urns.png')
+urns_png <- readPNG('media/ch4n/urns.png')
 library(cowplot)
 urnsgg <- ggdraw() + draw_image(urns_png)
 # Plot + image
 plot_grid(urnsgg, p1, p2, ncol = 3)
 
-ggsave('media/ch5/fig-ch5-img12-old-60.png', width = 9, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img12-old-60.png', width = 9, height = 3, units = 'in', dpi = 300)
 
 # fig 5.13 ----------------------------------------------------------------
-png('media/ch5/fig-ch5-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dA <- -A + b*T  
@@ -629,7 +629,7 @@ dev.off()
 
 
 #1
-#png('media/ch5/fig-ch5-img13-old-61_1of2.png', width = 8, height = 4, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img13-old-61_1of2.png', width = 8, height = 4, units = 'in', res = 300)
 #plane2(vector=T,xmin=0,ymin=0,xmax=1,ymax=1.1,legend=F) 
 #newton(s=c(A=0,T=0),plot=T)
 #newton(s=c(A=0.8,T=.8),plot=T)
@@ -639,7 +639,7 @@ dev.off()
 #dat <- run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)",
 #    table=TRUE, timeplot = FALSE)
 #antiRun(dat, line = TRUE, psize = .4)
-#ggsave('media/ch5/fig-ch5-img13-old-61_2of2.png', width = 5, height = 2.5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img13-old-61_2of2.png', width = 5, height = 2.5, units = 'in', dpi = 300)
 
 # 5.14 --------------------------------------------------------------------
 model <- function(t, state, parms){
@@ -649,7 +649,7 @@ model <- function(t, state, parms){
     return(list(c(dX,da)))
   })
 }
-png('media/ch5/fig-ch5-img14-old-62.png', width = 7, height = 4.5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img14-old-62.png', width = 7, height = 4.5, units = 'in', res = 300)
 s <- c(X=.1,a=0); # initial state and parameter values
 layout(matrix(1:4,2,2,byrow=T))
 par(mar=c(4,4,3,2))
@@ -672,10 +672,10 @@ dev.off()
 #            table=TRUE, timeplot = FALSE)
 #p2 <- antiRun(dat2, title = 'b = 1')
 #p1/p2
-#ggsave('media/ch5/fig-ch5-img14-old-62_1of2.png', width = 3.5, height = 5, units = 'in', dpi = 300)
+#ggsave('media/ch4n/fig-ch4n-img14-old-62_1of2.png', width = 3.5, height = 5, units = 'in', dpi = 300)
 
 #2
-#png('media/ch5/fig-ch5-img14-old-62_2of2.png', width = 5.5, height = 8, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img14-old-62_2of2.png', width = 5.5, height = 8, units = 'in', res = 300)
 #layout(matrix(1:2,2,1))
 #p <- c(e=.05,b=-.5)
 #plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = -.5')
@@ -693,7 +693,7 @@ model <- function(t, state, parms) {
 }
 
 s <- c(X=0,Y=0) 
-png('media/ch5/fig-ch5-img16-old-64b.png', width = 8, height = 6, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img16-old-64b.png', width = 8, height = 6, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 for(i in c('a','b','c','d'))
 {
@@ -709,18 +709,18 @@ for(i in c('a','b','c','d'))
 dev.off()
 
 library(png) 
-four_cases <- readPNG('media/ch5/fig-ch5-img16-old-64b.png')
-bif_diagram <- readPNG('media/ch5/urns.png')
+four_cases <- readPNG('media/ch4n/fig-ch4n-img16-old-64b.png')
+bif_diagram <- readPNG('media/ch4n/urns.png')
 library(cowplot)
 four_cases_gg <- ggdraw() + draw_image(four_cases)
 bif_diagram_gg <- ggdraw() + draw_image(bif_diagram)
 # Plot + image
 plot_grid( bif_diagram_gg, four_cases_gg,ncol = 2, rel_widths = c(2/5, 3/5))
 
-ggsave('media/ch5/fig-ch5-img16-old-64.png', width = 10, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img16-old-64.png', width = 10, height = 4, units = 'in', dpi = 300)
 
 # fig 5.17 --------------------------------------------------------------------
-png('media/ch5/fig-ch5-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)
 layout(1)
 s <- c(X=0.1,Y=.1) 
 p <- c(a=1,b=1,c=-1,d=1)
@@ -747,7 +747,7 @@ dev.off()
 #diag(b_ij) <- 0 # set diagonal of b to 0
 #
 #s <- X;p <- c(b0_i) # required for grind
-#png('media/ch5/fig-ch5-img19-old-67b.png', width = 6.5, height = 4, units = 'in', res = 300)
+#png('media/ch4n/fig-ch4n-img19-old-67b.png', width = 6.5, height = 4, units = 'in', res = 300)
 #run2(after="if(t==33)parms<-c(1,rep(-.3,N-1));
 #           if(t==66)parms<-rep(-.3,N);
 #           state<-state+rnorm(N,mean=0,sd=0.05)",ymin=-1,ymax=2.5,
@@ -807,5 +807,5 @@ pl1 <- pl + geom_line(data = data.frame(
 pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 9, family = cfont) +
   annotate("text", x = 80, y = -0.5, label = 'Attention', size = 9, family = cfont)
 pl2
-ggsave('media/ch5/fig-ch5-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
 
