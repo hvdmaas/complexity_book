@@ -17,7 +17,7 @@ book:
     - index.qmd
     - ch1.qmd
     - ch2.qmd
-    #- ch3.qmd
+    - ch3.qmd
     #- ch4n.qmd
     #- ch5n.qmd
     #- ch6.qmd
