@@ -194,7 +194,7 @@ s <- x0;p  <- c()
 run(odes=FJ,method='euler',tmax=100)
 ```
 
-![Convergence of opinion in the Friedkin-Johnson model in a connected network of agents.](media/ch7/image7.jpg){#fig-ch7-img7-old-95 width="3.6001038932633422in"}
+![Convergence of opinion in the Friedkin-Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95}
 
 With an additional bias mechanism, in which confirming evidence is weighted more heavily relative to disconfirming evidence, polarization can also occur in connected networks [@dandekarBiasedAssimilationHomophily2013].
 
@@ -260,7 +260,7 @@ In the online library of NetLogo you can find the model "BC", which simulates bo
 
 In the introduction to this chapter, I said that psychology is the victim of the simplifications necessary to develop sociophysics models. In this section we explore ways to make these models a bit more psychologically realistic. Several existing models already include additional psychological variables [@jagerEnhancingRealismSimulation2017]. The Social Impact model is a good example since it incorporates persuasiveness and supportiveness of agents to determine opinion change. The model is also based on a well-known theory in social psychology. Other models include stubbornness, cognitive dissonance, and confidence [@castellanoStatisticalPhysicsSocial2009]. All of these parameters are used to modify the interactions between agents.
 
-Here I will discuss the model proposed in @vandermaasPolarizationIndividualsHierarchical2020, which uses three dynamic variables to describe agents: information, involvement and opinion. Individual agents are described by the cusp catastrophe as shown in @fig-ch3-img13 . This is somewhat similar to the work of @sobkowiczDiscreteModelOpinion2012, who used the cusp model for the individual agent, using emotion and information as dynamic control variables. As in our model, interactions between agents change both opinions and the control variables. For example, agitation spreads across agents. However, in his opinion model, Sobkowicz reduces the cusp dynamics to a three-state system, where opinions are either -1, 0 or 1. We will not adopt this simplification, as much of the interesting dynamics (hysteresis within agents) are lost.
+Here I will discuss the model proposed in @vandermaasPolarizationIndividualsHierarchical2020, which uses three dynamic variables to describe agents: information, involvement and opinion. Individual agents are described by the cusp catastrophe as shown in @fig-ch3-img13-old-25 . This is somewhat similar to the work of @sobkowiczDiscreteModelOpinion2012, who used the cusp model for the individual agent, using emotion and information as dynamic control variables. As in our model, interactions between agents change both opinions and the control variables. For example, agitation spreads across agents. However, in his opinion model, Sobkowicz reduces the cusp dynamics to a three-state system, where opinions are either -1, 0 or 1. We will not adopt this simplification, as much of the interesting dynamics (hysteresis within agents) are lost.
 
 ### Networks of attitude networks
 

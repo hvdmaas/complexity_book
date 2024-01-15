@@ -83,7 +83,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./ch7.html" rel="next">
 <link href="./ch5n.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -198,6 +198,18 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="./ch6.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Psychological Network Models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sociophysics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Epilogue</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -609,7 +621,7 @@ P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x}
 <figcaption class="figure-caption">Figure&nbsp;6.15: Through Hebbian learning, a random (unbalanced) network becomes balanced.</figcaption>
 </figure>
 </div>
-<p>In this case we want to update the nodes values using the Glauber dynamics (<span class="quarto-unresolved-ref">?eq-ch4-3</span>), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.</p>
+<p>In this case we want to update the nodes values using the Glauber dynamics (<a href="ch5n.html#eq-ch5n-3-old-19">Equation&nbsp;<span>5.3</span></a>), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.</p>
 <p>Due to Hebbian learning, the network evolves from an unbalanced network (random connections) to a consistently balanced network. Without learning, we need high attention to make the attitude network behave consistently. In the Learning Ising Attitude Model (LIMA), weights increase during periods of high attention. The advantage is that in later instances less attention is required for consistent network behavior <span class="citation" data-cites="dalegeFormalApproachAttitude2020">(chapter 8 of <a href="references.html#ref-dalegeFormalApproachAttitude2020" role="doc-biblioref">J. Dalege 2020</a>)</span>. In this way we can develop stable consistent attitudes.</p>
 </section>
 <section id="the-stability-of-attitudes-and-entropy-measures" class="level4" data-number="6.3.3.4">
@@ -626,7 +638,7 @@ P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x}
 <p><span id="eq-ch6-8-old-49"><span class="math display">\[\begin{array}{r}
 H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{&lt; i,j &gt;}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
 \end{array} \tag{6.8}\]</span></span></p>
-<p>You can compare this to <span class="quarto-unresolved-ref">?eq-ch4-1</span>. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.</p>
+<p>You can compare this to <span class="quarto-unresolved-ref">?eq-ch5n-1</span>. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.</p>
 <p>The dynamics of this model are more complicated. It resembles the butterfly catastrophe <span class="citation" data-cites="dattaguptaTricriticalPointQualitative1981">(<a href="references.html#ref-dattaguptaTricriticalPointQualitative1981" role="doc-biblioref">Dattagupta 1981</a>)</span>, which has a tricritical point. The potential function has three stable fixed points for some sets of parameters (see Section 3.2.5 and the exercise about the butterfly catastrophe). This is relevant to the modeling of attitudes because it opens up the possibility to have involved stable inbetween attitude positions (see <a href="#fig-ch6-img15-old-84">Figure&nbsp;<span>6.16</span></a>). In the Ising attitude model highly involved persons always radicalize, but this more advanced model allows for involved non-partisan positions.</p>
 <div id="fig-ch6-img15-old-84" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -1388,8 +1400,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./ch7.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Sociophysics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

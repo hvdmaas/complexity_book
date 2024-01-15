@@ -382,7 +382,7 @@ $$\begin{array}{r}
 H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
 \end{array}$$ {#eq-ch6-8-old-49}
 
-You can compare this to @eq-ch5n-1. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.
+You can compare this to @eq-ch5n-1-old-17. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.
 
 The dynamics of this model are more complicated. It resembles the butterfly catastrophe [@dattaguptaTricriticalPointQualitative1981], which has a tricritical point. The potential function has three stable fixed points for some sets of parameters (see Section 3.2.5 and the exercise about the butterfly catastrophe). This is relevant to the modeling of attitudes because it opens up the possibility to have involved stable inbetween attitude positions (see @fig-ch6-img15-old-84). In the Ising attitude model highly involved persons always radicalize, but this more advanced model allows for involved non-partisan positions.
 
