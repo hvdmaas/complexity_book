@@ -26,7 +26,7 @@ source("r-figures-code/fit2.R")
 #  ifelse(point, return(pl), return(p))
 #}
 
-# fig 5.1 -----------------------------------------------------------------
+# fig 4n.1 -----------------------------------------------------------------
 
 # required objects
 LV <- function(t, state, parms) {
@@ -136,7 +136,7 @@ dev.off()
 
 #ggsave('media/ch4n/fig-ch4n-img1-old-49.jpg', width = 6, height = 4.5, units = 'in', dpi = 300)
 
-# fig 5.2 -----------------------------------------------------------------
+# fig 4n.2 -----------------------------------------------------------------
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     dX <-  a + b*X - X^3        # cusp
@@ -174,7 +174,7 @@ ggsave('media/ch4n/fig-ch4n-img2-old-50.jpg', width = 5, height = 3, units = 'in
 
 # -------------------------------------------------------------------------
 
-# fig 5.3 -----------------------------------------------------------------
+# fig 4n.3 -----------------------------------------------------------------
 
 #p <- c(a=0,b=1)
 #low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
@@ -183,12 +183,12 @@ ggsave('media/ch4n/fig-ch4n-img2-old-50.jpg', width = 5, height = 3, units = 'in
 #continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 
 
-# fig 5.4 -----------------------------------------------------------------
+# fig 4n.4 -----------------------------------------------------------------
 #library(deBif)
 #phaseplane(model,s,p)
 #bifurcation(model,s,p)
 
-# fig 5.5 -----------------------------------------------------------------
+# fig 4n.5 -----------------------------------------------------------------
 
 h1=function(N,a,b) b*N
 h2=function(N,a,b) b*N/(a+N)
@@ -226,7 +226,7 @@ p + annotate('text',x=3.6,y=.58,label=expression(paste('Type I: ', Rho==Beta*Nu)
   
 ggsave('media/ch4n/fig-ch4n-img5-old-53.jpg', width = 5, height = 3, units = 'in', dpi = 300)
 
-# fig 5.6 -----------------------------------------------------------------
+# fig 4n.6 -----------------------------------------------------------------
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     x <- state[1:n]
@@ -261,7 +261,7 @@ ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[4],
 ggsave('media/ch4n/fig-ch4n-img6-old-54.png', width = 4, height = 2.5, units = 'in', dpi = 300)
 
 
-# fig 5.7 -----------------------------------------------------------------
+# fig 4n.7 -----------------------------------------------------------------
 
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
@@ -350,7 +350,7 @@ gfinal
 
 ggsave('media/ch4n/fig-ch4n-img7-old-55.png', width = 8, height = 4, units = 'in', dpi = 300)
 
-# fig 5.9 -----------------------------------------------------------------
+# fig 4n.9 -----------------------------------------------------------------
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dR <- a*R+b*J
@@ -414,7 +414,7 @@ dev.off()
 #plane2(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 #dev.off()
 
-# fig 5.10 ----------------------------------------------------------------
+# fig 4n.10 ----------------------------------------------------------------
 influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
@@ -509,7 +509,7 @@ dev.off()
 #ggsave('media/ch4n/fig-ch4n-img10-old-58_3of3.png', width = 2.5, height = 5, units = 'in', dpi = 300)
 
 
-# fig 5.11 ----------------------------------------------------------------
+# fig 4n.11 ----------------------------------------------------------------
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- (a + b * Y) * X - a * X^2 / K
@@ -563,7 +563,7 @@ dev.off()
 #dev.off()
 
 
-# fig 5.12 ----------------------------------------------------------------
+# fig 4n.12 ----------------------------------------------------------------
 #polya urn model
 setseed(1)
 urn=c(0,1,1)
@@ -606,7 +606,7 @@ plot_grid(urnsgg, p1, p2, ncol = 3)
 
 ggsave('media/ch4n/fig-ch4n-img12-old-60.png', width = 9, height = 3, units = 'in', dpi = 300)
 
-# fig 5.13 ----------------------------------------------------------------
+# fig 4n.13 ----------------------------------------------------------------
 png('media/ch4n/fig-ch4n-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
@@ -719,7 +719,7 @@ plot_grid( bif_diagram_gg, four_cases_gg,ncol = 2, rel_widths = c(2/5, 3/5))
 
 ggsave('media/ch4n/fig-ch4n-img16-old-64.png', width = 10, height = 4, units = 'in', dpi = 300)
 
-# fig 5.17 --------------------------------------------------------------------
+# fig 4n.17 --------------------------------------------------------------------
 png('media/ch4n/fig-ch4n-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)
 layout(1)
 s <- c(X=0.1,Y=.1) 
@@ -727,7 +727,7 @@ p <- c(a=1,b=1,c=-1,d=1)
 run2(tmax=20,tstep=0.1,ymin=-2,ymax=2)
 dev.off()
 
-# fig 5.19 ----------------------------------------------------------------
+# fig 4n.19 ----------------------------------------------------------------
 #set.seed(1)
 #model <- function(t, state, parms){
 #  with(as.list(c(state,parms)),{
