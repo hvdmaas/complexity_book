@@ -228,7 +228,7 @@ This would make red turtles green. To get started, I highly recommend watching t
 
 The first thing to do is to create two buttons in the interface, a setup and a go button. In Command, name them setup and go. In the settings of the go button, select 'forever'. Now we go to the Code tab and define these two functions as:
 
-[to]{.green} [setup]{.text} <br>      [clear-all]{.purple} <br>      [reset-clicks]{.purple} <br> [end]{.green}
+[to]{.green} [setup]{.text} <br>      [clear-all]{.purple} <br>      [reset-clicks]{.text} <br> [end]{.green}
 
 [to]{.green} [go]{.text} <br>      [tick]{.purple} <br> [end]{.green}
 
@@ -242,9 +242,9 @@ To do a synchronous update, we need to store the update state in a temporary var
 
 In the 'go' function, we add the life rules.
 
-[ask]{.blue} [patches]{.purple} [\]]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
+[ask]{.blue} [patches]{.purple}  [\[]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
 
-[ask]{.blue} [patches]{.purple} [\[</span>]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
+[ask]{.blue} [patches]{.purple} \[ [</span>]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
 
 The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.
 
