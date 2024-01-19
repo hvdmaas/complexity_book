@@ -1,4 +1,4 @@
-# Building dynamic system models
+# Building dynamic system models {#sec-ch4n}
 
 **Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.**
 
@@ -554,7 +554,7 @@ plane(portrait = TRUE,grid=4)
 
 So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to 'Euler' to simulate difference equations.
 
-### The Polya Urn model of the third source
+### The Polya Urn model of the third source {#sec-polyaUrn}
 
 Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding developmental processes in psychology. The Third Source Hypothesis [@molenaar1993] proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes. Based on a series of studies, [@gartnerThirdComponentCausing1990] concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
 

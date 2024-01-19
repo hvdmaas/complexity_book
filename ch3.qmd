@@ -1,4 +1,4 @@
-# Transitions in complex systems
+# Transitions in complex systems {#sec-ch3}
 
 ## Introduction
 

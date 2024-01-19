@@ -1,6 +1,6 @@
-# Chaos and unpredictability 
+# Chaos and unpredictability {#sec-ch2}
 
-## Introduction {#sec-Introduction}
+## Introduction
 
 Suppose we have immense amounts of genetic, biological and psychological data on millions of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.
 

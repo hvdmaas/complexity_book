@@ -1,4 +1,4 @@
-# Psychological Network Models
+# Psychological Network Models {#sec-ch6}
 
 ## Introduction
 

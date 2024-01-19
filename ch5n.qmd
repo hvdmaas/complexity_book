@@ -1,4 +1,4 @@
-# Self-organization
+# Self-organization {#sec-ch5n}
 
 In chapter 1, I posited that complex systems have three intriguing key properties. We have seen chaos and phase transitions in chapter 2 and 3 and will now focus on the third property, self-organization. Self-organization is captivating because it reveals the remarkable ability of complex systems to generate order and structure without external control or intervention.
 
@@ -242,7 +242,7 @@ To do a synchronous update, we need to store the update state in a temporary var
 
 In the 'go' function, we add the life rules.
 
-[ask]{.blue} [patches]{.purple}  [\[]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
+[ask]{.blue} [patches]{.purple} [\[]{.text} <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\>]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [\<]{.purple} [2]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [white]{.val} <span class="text">\] <br>      [if]{.blue} [(]{.text} [neighbors with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [blue]{.val} <span class="text">\]) [=]{.purple} [3]{.val} [)]{.text} [\[</span>]{.text}[set]{.blue} [new-state]{.text} [blue]{.val} <span class="text">\] <br> [\]]{.text}
 
 [ask]{.blue} [patches]{.purple} \[ [</span>]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
 

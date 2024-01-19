@@ -247,7 +247,7 @@ div.csl-indent {
   <li><a href="#the-mathematics-of-marriage" id="toc-the-mathematics-of-marriage" class="nav-link" data-scroll-target="#the-mathematics-of-marriage"><span class="header-section-number">4.2.2.2</span> The mathematics of marriage</a></li>
   </ul></li>
   <li><a href="#the-van-geert-models" id="toc-the-van-geert-models" class="nav-link" data-scroll-target="#the-van-geert-models"><span class="header-section-number">4.2.3</span> The van Geert models</a></li>
-  <li><a href="#the-polya-urn-model-of-the-third-source" id="toc-the-polya-urn-model-of-the-third-source" class="nav-link" data-scroll-target="#the-polya-urn-model-of-the-third-source"><span class="header-section-number">4.2.4</span> The Polya Urn model of the third source</a></li>
+  <li><a href="#sec-polyaUrn" id="toc-sec-polyaUrn" class="nav-link" data-scroll-target="#sec-polyaUrn"><span class="header-section-number">4.2.4</span> The Polya Urn model of the third source</a></li>
   <li><a href="#the-panic-model" id="toc-the-panic-model" class="nav-link" data-scroll-target="#the-panic-model"><span class="header-section-number">4.2.5</span> The panic model</a></li>
   <li><a href="#neural-models-van-der-pol-and-different-time-scales" id="toc-neural-models-van-der-pol-and-different-time-scales" class="nav-link" data-scroll-target="#neural-models-van-der-pol-and-different-time-scales"><span class="header-section-number">4.2.6</span> Neural models: van der Pol and different time scales</a></li>
   <li><a href="#analogical-modeling-budworms-and-beers" id="toc-analogical-modeling-budworms-and-beers" class="nav-link" data-scroll-target="#analogical-modeling-budworms-and-beers"><span class="header-section-number">4.2.7</span> Analogical modeling: Budworms and Beers</a></li>
@@ -268,7 +268,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></h1>
+<h1 class="title"><span id="sec-ch4n" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Building dynamic system models</span></span></h1>
 </div>
 
 
@@ -726,8 +726,8 @@ Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
 </div>
 <p>So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to ‘Euler’ to simulate difference equations.</p>
 </section>
-<section id="the-polya-urn-model-of-the-third-source" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="the-polya-urn-model-of-the-third-source"><span class="header-section-number">4.2.4</span> The Polya Urn model of the third source</h3>
+<section id="sec-polyaUrn" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="sec-polyaUrn"><span class="header-section-number">4.2.4</span> The Polya Urn model of the third source</h3>
 <p>Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding developmental processes in psychology. The Third Source Hypothesis <span class="citation" data-cites="molenaar1993">(<a href="references.html#ref-molenaar1993" role="doc-biblioref">P. C. M. Molenaar, Boomsma, and Dolan 1993</a>)</span> proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes. Based on a series of studies, <span class="citation" data-cites="gartnerThirdComponentCausing1990">(<a href="references.html#ref-gartnerThirdComponentCausing1990" role="doc-biblioref">Gärtner 1990</a>)</span> concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.</p>
 <p>A simple and, in my opinion, insightful dynamical model for this effect is the Pólya-Eggenberger urn model <span class="citation" data-cites="mahmoudPolyaUrnModels2008">(<a href="references.html#ref-mahmoudPolyaUrnModels2008" role="doc-biblioref">Mahmoud 2008</a>)</span>. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with 2 blue and 1 red marbles. we randomly take out a marble. If we draw a blue marble, we put it back with another blue marble. If we draw a red marble, we put it back and add a red marble. Initially, <span class="math inline">\(p(blue) = 2/3\)</span>, but what will happen to that over time when we have more and more marbles?</p>
 <p>My intuition was simply wrong, and in my experience, this is true for the vast majority of people. But take your own guess. What happens is shown in <a href="#fig-ch4n-img12-old-60">Figure&nbsp;<span>4.12</span></a>. Each time you run the process, <span class="math inline">\(p(blue)\)</span> reaches a stable state, but the value of that state is random. What happens is that early (random) samples have a huge influence on the long-term dynamics. This creates a Matthew Effect (the rich get richer, and the poor get poorer).</p>

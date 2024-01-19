@@ -1,4 +1,4 @@
-# Sociophysics
+# Sociophysics {#sec-ch7}
 
 ## Introduction
 
