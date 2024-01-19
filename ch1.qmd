@@ -1,6 +1,6 @@
-# Introduction
+# Introduction {#sec-introduction}
 
-## What are complex systems?
+## What are complex systems? {#sec-test}
 
 Some things in life are simple. When you push a block, it moves. Pushing harder makes it move faster, and stopping the push stops its movement. When you open the tap, water starts to flow. If you open it further, it flows faster, and if you close it, it stops. Cause-and-effect relationships like this are clear and roughly linear. Such relationships are rare in psychology. Let's take fear as an example. A fear stimulus, for example a barking dog, can lead to fear and flight, but also to anger and attack. Whether the stimulus is perceived as fearful might depend on subtle differences in context. It has also been debated whether the flight response precedes the feeling of fear or vice versa. Fear could also suddenly change into a panic attack. In psychology, cause and effect relationships are rarely simple, and effects are often non-linear.
 

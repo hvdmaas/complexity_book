@@ -392,7 +392,7 @@ Note that these are all linear dynamical system that do not exhibit complex beha
 
 The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. **Adapted from @bogaczPhysicsOptimalDecision2006.**](media/ch4n/image8.jpg){#fig-ch4n-img8-old-56}
+![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. **Adapted from @bogaczPhysicsOptimalDecision2006.**](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
 
 ### Dyadic models
 
@@ -659,7 +659,7 @@ $$
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in:
 
-![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The V-nullcline (where $dV/dt = 0$) and the W-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/image15.jpg){#fig-ch4n-img15-old-63}
+![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The V-nullcline (where $dV/dt = 0$) and the W-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63}
 
 The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin--Huxley model, consisting of four differential equations, that models the activation and deactivation dynamics of a spiking neuron in more detail. This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
@@ -833,7 +833,7 @@ which gives:
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch4n-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} > 0)$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch4n/image20.jpg){#fig-ch4n-img20-old-68}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} > 0)$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
 
 ## Causal loop diagrams
 

@@ -26,13 +26,13 @@ We saw something similar for the logistic map when $r$ crossed the boundary $r =
 
 [^ch3-2]: **A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.**
 
-![A first order (discontinuous) and second order (continuous) phase transition (from: <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/image1.jpg){#fig-ch3-img1-old-13}
+![A first order (discontinuous) and second order (continuous) phase transition (from: <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13}
 
 Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, turning over ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception.
 
 **Building and testing models of these psychological transitions is challenging but rewarding. These transitions represent significant changes, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies. During these transitions, there is a profound change in psychological systems.**
 
-![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts. Multistable perception is a much studied psychological phenomenon that is still not fully understood.](media/ch3/image2.jpg){#fig-ch3-img2-old-14}
+![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts. Multistable perception is a much studied psychological phenomenon that is still not fully understood.](media/ch3/ch3-02__figure14.png){#fig-ch3-img2-old-14}
 
 ## Bifurcation and Catastrophe theory
 
@@ -52,7 +52,7 @@ $$
 V(X) = X^{2}
 $$ {#eq-ch3-1-old-5}
 
-![The quadratic potential function. **A boll rolls to the minimum value of** $V(X)$**. It's change is defined by negative of the derivative,** $-V'(X)$, **of the potential function.**](media/ch3/image3.jpg){#fig-ch3-img3-old-15}
+![The quadratic potential function. **A boll rolls to the minimum value of** $V(X)$**. It's change is defined by negative of the derivative,** $-V'(X)$, **of the potential function.**](media/ch3/ch3-03__figure15.png){#fig-ch3-img3-old-15}
 
 You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function. We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are $V^{'}(X) = 2X$ and $V^{''}(X) = 2$, respectively. At $X = 0$ we find the minimum.
 
@@ -152,11 +152,11 @@ This equation defines the bifurcation lines where the first and second derivativ
 
 To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). I strongly recommend that you test this example (not with your credit card). You can play with two forces. $Fv$ is the vertical force and the splitting control variable ($b$) in the cusp. $Fh$ is the horizontal force and the normal variable ($a$) in the cusp. Note that you will only get smooth changes when $Fv = 0$, but sudden jumps and hysteresis when you employ vertical force. One very important phenomenon is that the card has no 'memory' when the $Fv = 0$. You can push the card to a position, but as soon as you release this force ($Fh$ back to zero), the card moves back to the center position. This is not the case with vertical pressure. If we force the card to the left or right position it will stay there, even if we remove the horizontal force. The card has a 'memory'.
 
-![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/image11.jpg){#fig-ch3-img11-old-23}
+![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23}
 
 This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water. We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
-![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/image12.jpg){#fig-ch3-img12-old-24}
+![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/ch3-12__figure24.png){#fig-ch3-img12-old-24}
 
 A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion.
 
@@ -218,7 +218,7 @@ $$ {#eq-ch3-8-old-12}
 
 Using these two 'constructed' control variables, we can depict the bifurcation lines of the cusp as:
 
-![The bifurcation diagram of the Spruce Budworm model (Copied from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/image16.jpg){#fig-ch3-img16-old-28}
+![The bifurcation diagram of the Spruce Budworm model (Copied from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28}
 
 In later chapters we will discuss psychological examples of a mechanistic approach, **but as far as models of transitions are concerned,** these are rare. The phenomenological approach is much more common.
 
@@ -313,7 +313,7 @@ It appeared that subjects solved the task by switching between the fast-guessing
 
 Divergence or the pitchfork bifurcation requires the manipulation of the splitting variable. In the case of attitudes, we hypothesize this to be involvement or some related variable. In @vandermaasSuddenTransitionsAttitudes2003 we re-analyzed a dataset from @stoufferAmericanSoldierAdjustment1949, which @lataneAttitudesCatastrophesDimensions1994 presented as evidence for the cusp model. The attitude concerned demobilization (from 0, unfavorable, to 6, favorable) and respondents were asked to indicate how strongly they felt about their answer (from intensity 0 to intensity 5). For low intensities of feeling the data are normally distributed whereas for higher intensities data are bimodally distributed (see @fig-ch3-img21-old-33).
 
-![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in the final section in this chapter.](media/ch3/image21.jpg){#fig-ch3-img21-old-33}
+![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in the final section in this chapter.](media/ch3/ch3-21__figure33.png){#fig-ch3-img21-old-33}
 
 #### Hysteresis
 

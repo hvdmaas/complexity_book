@@ -35,6 +35,7 @@ format:
     number-depth: 4
     toc-depth: 8
     code-copy: true
+    number-sections: true
     crossref:
       chapters: true
   pdf:
@@ -42,6 +43,7 @@ format:
     #papersize: letter
     number-depth: 4
     toc-depth: 8
+    number-sections: true
     include-in-header: 
       text: |
         \usepackage{makeidx}

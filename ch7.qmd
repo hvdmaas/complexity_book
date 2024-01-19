@@ -28,7 +28,7 @@ Of course, this is only an initial model that can be extended in many ways, some
 
 Languages are complex systems that emerge in a self-organizing cultural process [@steelsSelfOrganizingSpatialVocabulary1995]. Steels developed the naming game (@fig-ch7-img2-old-90) to study the evolution of language [for a review see, @chenNamingGameModels2019]. @castellanoStatisticalPhysicsSocial2009 provides a brief review.
 
-![The naming game (adapted from Castellano et al., 2009). The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word.](media/ch7/image2.jpg){#fig-ch7-img2-old-90}
+![The naming game (adapted from Castellano et al., 2009). The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word.](media/ch7/ch7-2__figure92.png){#fig-ch7-img2-old-90}
 
 The game begins with blank lists for all agents. In the first round, the speakers invent a new unique word, assuming that the possibilities are endless. We assume that there is only one object to name and that the social network is fully connected. Two agents are randomly selected from a population: one as the "speaker" and the other as the "hearer." The speaker chooses a word from her vocabulary for the object. If the hearer is unfamiliar with the word, she incorporates it into her lexicon. If she recognizes the word, both clear their vocabularies, retaining only the word that was spoken.
 
