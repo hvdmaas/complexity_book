@@ -6,7 +6,7 @@ This chapter is dedicated to the dynamics between people. Networks of social int
 
 I use the somewhat controversial term sociophysics as a label for this very diverse field of research, which has roots in many different sciences. It is as (in)correct as the generally accepted term psychophysics in psychology. What I like about it is that it emphasizes the intention to arrive at a formalized, mathematically stated theory of social processes, often based on formalisms first developed in physics. Alternative labels are social physics, computational social science and agent-based modeling [@goldstoneComputationalModelsCollective2005].
 
-In my broad definition of sociophysics, it deals with many different systems and processes. Examples that I have already discussed are the synchronization of movement, in the swinging of legs in a two-person system, or even in a crowd of people fleeing a fire in a building. Granovetter's threshold model of joining a dancing crowd is another example. Many papers deal with the spread of opinions, fashions, rumors, etc. This will be the main topic of this chapter. But this field also includes work on segregation, cooperation, crime, economic systems, and much more. I will present some key examples and then turn to models of the social dynamics of opinions.
+In my broad definition of sociophysics, it deals with many different systems and processes. Examples that I have already discussed are the synchronization of movement, in the swinging of legs in a two-person system, or in a crowd of people fleeing a fire in a building. Granovetter's threshold model of joining a dancing crowd is another example. Many papers deal with the spread of opinions, fashions, rumors, etc. This will be the main topic of this chapter. But this field also includes work on segregation, cooperation, crime, economic systems, and much more. I will present some key examples and then turn to models of the social dynamics of opinions.
 
 Some important follow-up books to read are @smaldino2023 on modeling social behavior, @bowlesCooperativeSpeciesHuman2011 on cooperation and altruism, @durlaufSocialDynamics2001 on modeling social economics, the work of @epsteinAgentZeroNeurocognitive2014; @epsteinGenerativeSocialScience2006; @epsteinGrowingArtificialSocieties1996 on building artificial societies and @millerComplexAdaptiveSystems2007 on computation models of social life. There are also some excellent review articles on this area of research [@castellanoStatisticalPhysicsSocial2009; @noorazarRecentAdvancesOpinion2020; @proskurnikovTutorialModelingAnalysis2017; @jusup2022]. A less mathematically focused review is provided by @flacheModelsSocialInfluence2017.
 
@@ -18,7 +18,7 @@ The most famous computational model for studying segregation is Schelling's mode
 
 The NetLogo model Segregation (Social Science sample model) demonstrates this model. Especially at high densities, transitions between the unsegregated state, the segregated state and a mixed state where agents keep moving can be seen [@gauvinPhaseDiagramSchelling2009]. Instead of playing around with the sliders we use the BehavioralSpace option. @fig-ch7-img1-old-89 shows the settings for this option, the R-code and the results. Note that without visualizations NetLogo is pretty fast.
 
-One concept we saw in Chapter 4, in the context of Haken's work, was that of the order parameter. The order parameter literally measures the order in the system. Finding an appropriate order parameter is not always easy, and multiple definitions are often possible. We look for one that captures the qualitative phenomena in the model, such as sudden changes and hysteresis. In the NetLogo simulation, I used the percentage of similar neighbors. @gauvinPhaseDiagramSchelling2009 propose two, probably better, order parameters, a segregation coefficient, which requires the identification of clusters, and the density of unwanted locations, which better distinguishes between the three states of the system.
+One concept we saw in Chapter 5, in the context of Haken's work, was that of the order parameter. The order parameter literally measures the order in the system. Finding an appropriate order parameter is not always easy, and multiple definitions are often possible. We look for one that captures the qualitative phenomena in the model, such as sudden changes and hysteresis. In the NetLogo simulation, I used the percentage of similar neighbors. @gauvinPhaseDiagramSchelling2009 propose two, probably better, order parameters, a segregation coefficient, which requires the identification of clusters, and the density of unwanted locations, which better distinguishes between the three states of the system.
 
 ![BehaviorSpace settings and R-code to visualize the effects of intolerance on segregation.](media/ch7/image1.jpg){#fig-ch7-img1-old-89}
 
@@ -26,7 +26,7 @@ Of course, this is only an initial model that can be extended in many ways, some
 
 ### The evolution of language: The naming game
 
-Languages are complex systems that emerge in a self-organizing cultural process [@steelsSelfOrganizingSpatialVocabulary1995]. Steels developed the naming game (@fig-ch7-img2-old-90) to study the evolution of language [for a review see, @chenNamingGameModels2019]. @castellanoStatisticalPhysicsSocial2009 provides a brief review.
+Languages are complex systems that emerge in a self-organizing cultural process [@steelsSelfOrganizingSpatialVocabulary1995]. Steels developed the naming game (@fig-ch7-img2-old-90) to study the evolution of language For a review I refer to @chenNamingGameModels2019. @castellanoStatisticalPhysicsSocial2009 provides a brief review.
 
 ![The naming game (adapted from Castellano et al., 2009). The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word.](media/ch7/ch7-2__figure92.png){#fig-ch7-img2-old-90}
 
@@ -71,14 +71,14 @@ Which results in @fig-ch7-img3-old-91 :
 
 After a phase in which agents use lots of different words, a language consisting of just a single word emerges abruptly. A simplification would be the case that agents start with either word A, word B or with both words A and B. So no new words are invented. For this case we can write the time evolution in three differential equations:
 
-$${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}X}_{AB}X_{AB} + X_{A}X_{AB}
-}\\{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}X}_{AB}X_{AB} + X_{B}X_{AB}}$$
+$${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}
+}\\{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}$$
 
 $$\begin{array}{r}
-\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - {(X}_{A}{+ X_{B})X}_{AB}
+\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}
 \end{array}$$ {#eq-ch7-1-old-50}
 
-The first equation can be understood as follow. Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's choice of A or B (${\frac{1}{2}X}_{AB}X_{AB})$. If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: 1) If the initial proportion of A is greater than B, A wins, 2) if the initial proportion of B is greater than A, B wins, and c) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.
+The first equation can be understood as follow. Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's choice of A or B (${\frac{1}{2}X}_{AB}X_{AB})$. If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: 1) If the initial proportion of A is greater than B, A wins, 2) if the initial proportion of B is greater than A, B wins, and 3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.
 
 ### Cultural dynamics: The Axelrod model
 
