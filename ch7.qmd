@@ -127,17 +127,15 @@ It is hard to count the number of opinion-spread models, but it could easily be 
 
 ### Discrete opinion models
 
-###  {#section .unnumbered}
-
 #### Voter models
 
-The simplest possible model seems to be the voter model. In its basic form, with only two possible opinions (-1, 1), two connected agents A and B meet, and A simply copies B's opinion. What happens in this simple system depends on the topology of the network, i.e., its dimension (either $d = 1$ (on a line), $d = 2$ (a lattice) or $d > 2)$ and its size $N$. In more than 2 dimensions and with infinite size, the voter system does not converge, but in other cases it converges to a state of all -1s or all 1s [@castellanoStatisticalPhysicsSocial2009; @rednerRealityinspiredVoterModels2019]. The probability of ending up in the +1 state is equal to the initial probability of +1s. How long it takes to converge can also be derived analytically. The convergence time is proportional to $N^{2}$, for voters on a line ($d = 1$), $NlnN$ for $d = 2$, and $N$ for $d > 2$.
+The simplest possible model seems to be the voter model. In its basic form, with only two possible opinions (-1, 1), two connected agents A and B meet, and A simply copies B's opinion. What happens in this simple system depends on the topology of the network, i.e., its dimension (either $d = 1$ (on a line), $d = 2$ (a lattice) or $d > 2)$ and its size $N$. In more than 2 dimensions and with infinite size, the voter system does not converge, but in other cases it converges to a state of all -1s or all 1s [@castellanoStatisticalPhysicsSocial2009; @rednerRealityinspiredVoterModels2019]. The probability of ending up in the +1 state is equal to the initial probability of +1s. How long it takes to converge can also be derived analytically. The convergence time is proportional to $N^{2}$, for voters on a line ($d = 1$), $NlnN$ for $d = 2$, and $N$ for $d > 2$. Thus the convergence is slowest when agents are connected in a line.
 
 In the heterogeneous voter model, each agent A copies the opinion of agent B with some probability $r_{i}$. In this way, one can study the effect of stubborn voters (with low $r_{i}$). It turns out that the small group of stubborn individuals (sometimes called zealots) can overcome the majority opinion. Many other variants have been analyzed, such as adding memory and noise to the voters [@castellanoStatisticalPhysicsSocial2009]. It is also possible to consider three groups, left, center, and right, where left and right do not interact. In this case, depending on the initial proportion, we end up in a state of full consensus in one of the states or with a mixture of extremists without centrists [@rednerRealityinspiredVoterModels2019]. Finally, the topology of the social network plays a role. In general, consensus is reached quickly in scale free networks with broad degree distributions.
 
 Another approach has been proposed by @martinsContinuousOpinionsDiscrete2008. The Continuous Opinions and Discrete Actions (CODA) model combines discrete and continuous aspects of opinion dynamics. Agents act discretely but update their continuous opinions based on observations of other agents' discrete actions.
 
-There are two choice options, A and B, and agent $i$ has some subjective probability $p_{i}$ that A is the best option, and ${1 - p}_{i}$ for B. The actual choice is made according to $sgn\left( p_{i} - .5 \right)$, so A is chosen when \$p\_{i} \> .5.\\ \$Next, the agent observes other agents. Agents assume that other agent make rational choices, i.e., choose A when A is the best option with a probability $a$ that is larger than .5. In running the model, it is convenient to work with the log-odds of probabilities, $v_{i} = ln\frac{p_{i}}{1 - p_{i}}$. Using the Bayes' theorem, we can update $v_{i}$ to $v_{i} + a$ when agent j chooses A and to $v_{i} - a$ if the choice is B. @martinsContinuousOpinionsDiscrete2008 integrates these decision rules with the voter model, showing extreme forms of polarization, i.e., a strongly bimodal distribution of opinions.
+IN CODA there are two choice options, A and B, and agent $i$ has some subjective probability $p_{i}$ that A is the best option, and ${1 - p}_{i}$ for B. The actual choice is made according to $sgn\left( p_{i} - .5 \right)$, so A is chosen when $p_{i} > .5$. Next, the agent observes other agents. Agents assume that other agent make rational choices, i.e., choose A when A is the best option with a probability $a$ that is larger than .5. In running the model, it is convenient to work with the log-odds of probabilities, $v_{i} = ln\frac{p_{i}}{1 - p_{i}}$. Using the Bayes' theorem, we can update $v_{i}$ to $v_{i} + a$ when agent j chooses A and to $v_{i} - a$ if the choice is B. @martinsContinuousOpinionsDiscrete2008 integrates these decision rules with the voter model, showing extreme forms of polarization, i.e., a strongly bimodal distribution of opinions.
 
 #### More discrete opinion models: majority type models
 
@@ -147,7 +145,7 @@ Another, deeply analyzed, option is the majority model [@galamSociophysicsReview
 
 ![Bottom-up voting in hierarchical systems in the Galam model.](media/ch7/image5.jpg){#fig-ch7-img5-old-93}
 
-Another case is the q-voter model [@castellanoNonlinearVoterModel2009; @jedrzejewskiStatisticalPhysicsOpinion2019]. Here, agents change their opinions only if all q-voters selected from the neighborhood agree on the other opinion. When $q = 1$, this reduces to the standard voter model. The q-voter model generally allows for a higher degree of opinion diversity compared to the basic voter model. The q-voter model has been implemented in NetLogo ("qvoter_WS" in the models online available).
+Another case is the $q$-voter model [@castellanoNonlinearVoterModel2009; @jedrzejewskiStatisticalPhysicsOpinion2019]. Here, agents change their opinions only if all $q$-voters selected from the neighborhood agree on the other opinion. When $q = 1$, this reduces to the standard voter model. The $q$-voter model generally allows for a higher degree of opinion diversity compared to the basic voter model. The $q$-voter model has been implemented in NetLogo ("qvoter_WS" in the models online available).
 
 In the basic Snzadj model, agents are placed on a line, and two neighbors with the same opinion spread this opinion to their own neighbors. If they disagree, they enforce their disagreement on their neighbor. Thus (?,1,1,?) becomes (1,1,1,1) and (?,-1,1,?) becomes (1,-1,1,-1). This can converge to a state of all 1s, all -1s, or a sequence of 1 and -1 pairs. The latter state is reached with a probability of 0.5. This model has also been extended in many ways, such as adding an election process [@sznajd-weronReviewSznajdModel2021].
 
@@ -155,7 +153,7 @@ In the basic Snzadj model, agents are placed on a line, and two neighbors with t
 
 The last discrete model I mention here is the Social Impact Model, which is based on Latané's [-@latanePsychologySocialImpact1981] psychological theory of social impact. Latané introduced many ideas and concepts from complex systems theory into social psychology. His psychological theory is firmly grounded in social psychology and supported by all kinds of evidence [@karauSocialLoafingMetaanalytic1993].
 
-In this theory, opinion change depends on social impact $I$. Opinions $X$ are either -1 or 1. Social impact is a function of the persuasiveness ($p_{i}$) of opponents (connected agents with the opposite opinion), the supportiveness ($s_{i}$) of supporters (with the same opinion), and the distance ($d_{ij}$) to these agents. The effect of distance can be modified with $\alpha$. As the value of $\alpha$ increases, the influence of agents located farther away diminishes. All these parameters are positive random values. The impact I is defined as:
+In this theory, opinion change depends on social impact $I$. Opinions $X$ are either -1 or 1. Social impact is a function of the persuasiveness ($p_{i}$) of opponents (connected agents with the opposite opinion), the supportiveness ($s_{i}$) of supporters (with the same opinion), and the distance ($d_{ij}$) to these agents. The effect of distance can be modified with $\alpha$. As the value of $\alpha$ increases, the influence of agents located farther away diminishes. All these parameters are positive random values. The impact $I$ is defined as:
 
 $$I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack$$
 
@@ -165,9 +163,9 @@ $$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H_{i}\rbrack$$
 
 Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H_{i}$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant.
 
-In the presence of individual fields, some minority opinions can become metastable. These metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters. These smaller clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what could be called staircase behavior. Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for long periods of time, against all odds [@douglasPsychologyConspiracyTheories2017].
+In the presence of individual fields, some minority opinions can become metastable. These metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters. These smaller clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior. Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for long periods of time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
-![Five runs of the Social Impact Model with \$\\alpha = 5,\$ \$p\$, \$s\$ and \$H\$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact Model can be found in the online NetLogo models.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94}
+![Five runs of the Social Impact Model with $\alpha = 5$, $p$, $s$ and $H$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact Model can be found in the online NetLogo models.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94}
 
 Extensions of this model include learning, leadership, external influences and identity effects [for a review, see @holystSocialImpactModels2001].
 
@@ -233,7 +231,7 @@ for (bound in c(.1, .2, .3, .5))
 }
 ```
 
-![Four example runs of the Deffuant model with four different boundaries.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96}
+![Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96}
 
 With this code you can explore many scenarios and variants. One interesting option is to have agents with different boundaries. It turns out that adding some open-minded agents helps prevent polarization [@weisbuchMeetDiscussSegregate2002]. Also, adding some noise to X at each time step reduces polarization [@zhangRobustConsensusNoisy2018]. One can also lower the bound with the number of interactions. This increases the polarization [@weisbuchMeetDiscussSegregate2002]. One case I find interesting is increasing the bound after polarization emerged for a low bound. This gives hysteresis. A bound of 0.5 is sometimes insufficient to reduce polarization. @castellanoStatisticalPhysicsSocial2009 review some other extensions (the role propaganda, for instance).
 
@@ -254,7 +252,7 @@ In the online library of NetLogo you can find the model "BC", which simulates bo
 
 ### Empirical verification
 
-@castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multi-country panel surveys, social media and laboratory studies [for a review, see @peraltaOpinionDynamicsSocial2022]. The problem seems to be that these data do not discriminate between models. Most of the data fits all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed phenomena that all models are supposed to explain.
+@castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multi-country panel surveys, social media and laboratory studies [for a review, see @peraltaOpinionDynamicsSocial2022]. The problem seems to be that these data do not discriminate between models. Most of the data fit all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed phenomena that all models are supposed to explain.
 
 ## Psychosocial models
 
@@ -266,7 +264,7 @@ Here I will discuss the model proposed in @vandermaasPolarizationIndividualsHier
 
 Our starting point is the Ising Attitude Model explained in Chapter 6. In this model, attitudes or opinions are conceptualized as networks of feelings, behaviors, and beliefs about the issue. This new view of attitudes has been well received in the literature and applied to a number of attitudes [e.g., @chambonUnderstandingChangeCOVID192022; @turner-zwinkelsBeliefSystemNetworks2022; @zwickerApplyingAttitudeNetwork2020]. The idea is to use this attitude network model as a model for individual agents.
 
-The resulting model becomes very complex, it is a networks of networks model. This is not a new idea. Hierarchical or multilayer network models, such as multilayer neural networks [@treurNetworkOrientedModelingAdaptive2019] and multilayer voter models [@masudaVoterModelTwoclique2014], have been applied in many domains [for a review, see @boccalettiStructureDynamicsMultilayer2014]. However, such a model contains an enormous number of parameters and is hard to study. We take a simpler approach.
+The resulting model becomes very complex, it is a network of networks model. This is not a new idea. Hierarchical or multilayer network models, such as multilayer neural networks [@treurNetworkOrientedModelingAdaptive2019] and multilayer voter models [@masudaVoterModelTwoclique2014], have been applied in many domains [for a review, see @boccalettiStructureDynamicsMultilayer2014]. However, such a model contains an enormous number of parameters and is hard to study. We take a simpler approach.
 
 As discussed in Section 6.3.3.1, the average behavior of the spins in the Ising model (the mean field) can be represented as a cusp catastrophe. This reduces the complexity enormously since the cusp attitude model contains only one equation with three variables, opinion (magnetization), information (external field), and attention or involvement (inverse of the temperature). Our model, the Hierarchical Ising Opinion Model (HIOM), is an Ising-type social network in which each agent is a cusp. Interactions affect information and attention, leading to changes in opinion. We saw networks of interacting cusps in Section 5.2.8.1. The HIOM is an extended form of this model.
 
@@ -296,19 +294,19 @@ Spontaneous jumps in the dynamical behaviour of this equation are shown in @fig-
 
 #### Agent interactions: information and attention
 
-The HIOM makes three assumptions about interactions. First, it assumes that agents initiate interactions based on their involvement. The idea is simply that I'm not likely to start a discussion about a topic, say genetically modified food, if I'm not interested in the topic. The probability of initiating an interaction is equal to attention:
+The HIOM makes three assumptions about interactions. First, it assumes that agents initiate interactions based on their involvement. The idea is simply that I'm not likely to start a discussion about a topic, say abut genetically modified food, if I'm not interested in the topic. The probability of initiating an interaction is equal to attention:
 
 $$\begin{array}{r}
 P_{i}(initiates\ interaction) = \ A_{i}
 \end{array}$$ {#eq-ch7-4-old-53}
 
-Second, it is assumed that the attention or involvement slowly decreases over time. Attention or involvement is a limited resource, and I cannot be involved in everything all the time. Third, attention increases again through interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is:
+Second, it is assumed that the attention or involvement slowly decreases over time. Attention or involvement is a limited resource, and I cannot be involved in everything all the time. With the constant emergence of new interests or topics, attention to older topics tends to wane. Third, attention increases again through social interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is:
 
 $$\begin{array}{r}
 \frac{dA_{i}}{dt} = - {{decay}_{A}A}_{i} + {d_{A}u}_{i}
 \end{array}$$ {#eq-ch7-5-old-54}
 
-The first part is the decay in attention applied to all agents. When the agent is involved in an interaction, we set $u_{i} = 1$, orherwise $u_{i} = 0$. The parameter \$d\_{A}\$determines the rate of change of $A$ due to interactions.
+The first part is the decay in attention applied to all agents. When the agent is involved in an interaction, we set $u_{i} = 1$, otherwise $u_{i} = 0$. The parameter $d_{A}$ determines the rate of change of $A$ due to interactions.
 
 The fourth assumption is about information. We assume that the exchange of information is an averaging process weighted by attention. If agent $i$ is less attentive to the attitude object than agent $j$, agent $i$ will move more to the information position of $j$ than $j$ will move to $i$. This is formalized by:
 
@@ -325,7 +323,7 @@ The model is now in place and can be simulated by following the steps below:
 
 -   Select a network topology.
 
--   Set the model parameters $dt$ (.01), $A_{\min}$ (-.5), $s_{O}$(.01), $m_{i}(0),\ s_{i}$, $d_{A}$, $p$, and $r_{\min}$. Values in parentheses are defaults.
+-   Set the model parameters $dt$ (.01), $A_{\min}$ (-.5), $s_{O}$ (.01), $m_{i}$ (0), $s_{i}$, $d_{A}$, $p$, and $r_{\min}$. Values in parentheses are defaults.
 
 -   Initialize agents, set $I_{init},\ A_{init},$ and $O_{init}$.
 
@@ -371,7 +369,7 @@ The scenario, simulated in [@vandermaas2020a], consists of a majority of low-inv
 
 Now some attentive vegetarians will be perturbed into the meat-eating position. This is a metastable state. This state is somewhat stable, although there may jump back after a few iterations. But while the vegetarians are in this metastable meat-eating state, they can communicate with the less involved meat-eaters and spread vegetarian information. This proves effective (see @fig-ch7-img12-old-100). This scenario is also implemented in the NetLogo model.
 
-![The meat-eating vegetarian. The left panels show equal initial states. In the upper panels, bounded trust prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the lower panels, some vegetarians are perturbed towards meat eating. These perturbed agents have I \< 0 and O \> 0, which is possible because A \> 0 (hysteresis). Since O \> 0, these agents can exchange information with meat eaters, leading to the spread of vegetarianism. For simulation details, see @vandermaas2020.](media/ch7/image12.jpg){#fig-ch7-img12-old-100}
+![The meat-eating vegetarian. The left panels show equal initial states. In the upper panels, bounded trust prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the lower panels, some vegetarians are perturbed towards meat eating. These perturbed agents have $I < 0$ and $O > 0$, which is possible because $A > 0$ (hysteresis). Since $O > 0$, these agents can exchange information with meat eaters, leading to the spread of vegetarianism. For simulation details, see @vandermaas2020.](media/ch7/image12.jpg){#fig-ch7-img12-old-100}
 
 #### Variants of the HIOM
 
