@@ -1,6 +1,6 @@
 # Building dynamic system models {#sec-ch4n}
 
-**Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.**
+Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.
 
 This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. We have seen many examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
 
@@ -24,7 +24,7 @@ $$\begin{array}{r}
 \frac{dX}{dt} = rX(1 - X)
 \end{array}$$ {#eq-ch4n-1-old-21}
 
-**The change in** $X$ **is a function of** $X$ **itself. The exponential growth term** $rX$ **dominates when** $X$ **is close to zero, but the growth levels off as** $X$ **approaches 1.** A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to zero, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
 $$\frac{dX}{dt} = rX$$
 
@@ -101,13 +101,13 @@ s['X']*exp(p['r']*5) # compare with analytical solution
 
 We don't have to worry about time steps anymore and the numerical and analytical solutions converge. This is of course a trivial use of an ODE solver, but much more can be done.
 
-In analyzing the behavior of a dynamical system, the first thing we want to know about a dynamical system is what the equilibria $X^{*}$are*.* To do this, we need to set the time derivative equal to zero,$\frac{dX}{dt} = 0.$ For the exponential function this is simply $rX = \ 0$, i.e., when $X$ is zero. Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than zero, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
+In analyzing the behavior of a dynamical system, the first thing we want to know about a dynamical system is what the equilibria $X^{*}$ are*.* To do this, we need to set the time derivative equal to zero, $\frac{dX}{dt} = 0$. For the exponential function this is simply $rX = \ 0$, i.e., when $X$ is zero. Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than zero, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
 
 For @eq-ch4n-1-old-21, the logistic function, we also want to know the equilibria, the stable and unstable fixed points. To do so we follow the same steps as for the exponential function (see exercises).
 
 I note that the continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in chapter 2. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:[^ch4n-2]
 
-[^ch4n-2]: **the** $-X$ **is added because the difference equation has the form** $X_{t + 1} = f(X_{t})$**, the change** $dX$ **is thus** $f(X_{t})-X_{t}$**.**
+[^ch4n-2]: the $-X$ is added because the difference equation has the form $X_{t + 1} = f(X_{t})$, the change $dX$ is thus $f(X_{t})-X_{t}$.
 
 ``` r
 dX <- r*X*(1-X) - X 
@@ -225,7 +225,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). **Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.**](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
+![Spontaneous jumps in the cusp due to stochastics (noise). Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
 
 ### Bifurcation analysis
 
@@ -281,7 +281,7 @@ bifurcation(spruce, state, parms)
 
 Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see Section 3.3.1). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start A is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat B budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
-![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
+![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
 
 ### Evaluation of ecological modelling
 
@@ -322,7 +322,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. **This simulated graph resembles the real data very well (see for example Figure 9 in @jusup2022)**](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well (see for example Figure 9 in @jusup2022).](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
 Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
 
@@ -334,7 +334,7 @@ In this section, I present an overview of dynamical systems models in psychology
 
 Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.
 
-![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate I (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55}
+![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55}
 
 One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model, with $I$ as the stimulus-driven input:
 
@@ -342,9 +342,9 @@ $$\begin{array}{r}
 dX = Idt + \sigma dW
 \end{array}$$ {#eq-ch4n-6-old-26}
 
-As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). **We start at zero,** $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
+As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). We start at zero, $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
 
-The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step[^ch4n-3]. We stop the run when either the negative or positive bound is reached.
+The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step.[^ch4n-3] We stop the run when either the negative or positive bound is reached.
 
 [^ch4n-3]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
 
@@ -379,7 +379,7 @@ dX_{2} = I_{2}dt + \sigma W_{2}
 \end{align*}
 $$ {#eq-ch4n-8-old-28}
 
-Now two independent processes run (race) to one positive bound. The first one to arrive wins. More biologically inspired models involve inhibition. **The equations of mutual inhibition model are:**
+Now two independent processes run (race) to one positive bound. The first one to arrive wins. More biologically inspired models involve inhibition. The equations of mutual inhibition model are:
 
 $$
 \begin{align*}
@@ -392,7 +392,7 @@ Note that these are all linear dynamical system that do not exhibit complex beha
 
 The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. **Adapted from @bogaczPhysicsOptimalDecision2006.**](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
+![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
 
 ### Dyadic models
 
@@ -519,12 +519,12 @@ I have kept the influence functions and most parameters the same for both spouse
 
 In a series of papers, Paul van Geert proposed dynamical systems models for developmental processes [@denhartighDynamicNetworkModel2016; @vangeertDynamicSystemsModel1998; @vangeertDynamicSystemsModel1991]. The idea is that cognitive and language abilities grow over time in an autocatalytic process constrained by a limited capacity, similar to the logistic growth of populations.
 
-Van Geert has proposed many different models, I will give just one example. @vangeertDynamicSystemsModel1991 introduced a system of two coupled **difference** equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
+Van Geert has proposed many different models, I will give just one example. @vangeertDynamicSystemsModel1991 introduced a system of two coupled difference equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
 
 $$
 \begin{align*}
-X_{t + 1} = (a - bY)X - \frac{aX^{2}}{K} \\
-Y_{t + 1} = (c - dX)Y - \frac{cY^{2}}{K}
+X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K} \\
+Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \end{align*}
 $$ {#eq-ch4n-13-old-33}
 
@@ -667,9 +667,9 @@ Other applications of the van der Pol model concern extensions of the HKB model 
 
 ### Analogical modeling: Budworms and Beers
 
-**If we create a dynamic model from the ground up, there's a significant chance that we might not completely grasp its intricacies. We have seen that some very simple models already show amazingly complex behavior.**
+If we create a dynamic model from the ground up, there's a significant chance that we might not completely grasp its intricacies. We have seen that some very simple models already show amazingly complex behavior.
 
-**One approach** to cope with these issues is analogical modeling, or basically copying models. We used the Ising model to model attitudes and the mutualistic Lotka-Volterra model to model intelligence. Both are explained in the next chapter. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
+One approach to cope with these issues is analogical modeling, or basically copying models. We used the Ising model to model attitudes and the mutualistic Lotka-Volterra model to model intelligence. Both are explained in the next chapter. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
 
 We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in the last chapter when we include social effects. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
 
@@ -853,7 +853,7 @@ Building nonlinear dynamical models of psychological processes from scratch is d
 
 But even when you work with experts in dynamic modeling, building useful models is far from easy. I recommend following, at least roughly, the steps we proposed in our theory construction methodology [@borsboomTheoryConstructionMethodology2021]. The key is to formulate phenomena, replicated recurring patterns in data, that need to be explained. This requires a good knowledge of existing verbal theories and, if they exist, alternative formal models. I find the process of formalizing a verbal theory or model fascinating. It tends to be very confusing. Suddenly it is unclear what the basic assumptions are, what mechanism is really being proposed in some psychological theory, and what actually the time scales are.
 
-As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987. **Cattell's investment theory posits that fluid intelligence, which represents the ability to solve novel problems, "invests" in crystallized intelligence, which consists of acquired knowledge and skills.** I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (Section 6.3.1.3), but this illustrates that the process of formalization is itself a test for verbal theories.
+As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987. Cattell's investment theory posits that fluid intelligence, which represents the ability to solve novel problems, "invests" in crystallized intelligence, which consists of acquired knowledge and skills. I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (Section 6.3.1.3), but this illustrates that the process of formalization is itself a test for verbal theories.
 
 ## Exercises
 
@@ -869,7 +869,7 @@ As an example, I mention the well-known investment theory of @cattellIntelligenc
 
 6)  Implement the SIR model for infectious diseases in R using Grind. Reproduce the diagram of the SIR model with $\beta = 0.4$ and $\gamma = 0.04$ on the Wikipedia page on Compartmental models in epidemiology.
 
-7)  Reproduce the **times-series plot of the** simulation of the Polya Urn model shown in @fig-ch4n-img12-old-60. (\*\*)
+7)  Reproduce the times-series plot of the simulation of the Polya Urn model shown in @fig-ch4n-img12-old-60. (\*\*)
 
 8)  Implement the FitzHugh-Nagumo model in Grind and replicate the @fig-ch4n-img15-old-63. No exact replication is required but the phase diagram should look similar (\*\*)
 
