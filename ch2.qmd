@@ -80,12 +80,12 @@ This concept of equilibrium, stable or unstable, is crucial for later chapters. 
 Simulating this is again not really necessary. One has to realize that a fixed point ($X^{*}$) is found when $X_{t + 1} = X_{t} = X^{*}$. See for yourself that:
 
 $$
-\begin{gather*}
-X_{t + 1} = X_{t} = X^{*}\\
-X^{*} = rX^{*}( 1 - X^{*})\\
-X^{*} = 0\ or\ 1 = r - rX^{*}\\
-X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}
-\end{gather*}
+\begin{gathered}
+X_{t + 1} = X_{t} = X^{*} \\
+X^{*} = rX^{*}( 1 - X^{*}) \\
+X^{*} = 0\ or\ 1 = r - rX^{*} \\
+X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r} \\
+\end{gathered}
 $$
 
 So 0 and $(r - 1)/r$ are fixed points. Indeed for $r = 2$, we have seen that 0 and .5 are equilibria, one stable and one unstable. To determine whether fixed points are stable we look at the derivative of the function, $f^{'}(x)$, which, as you can easily check, is $r - 2rX$.
@@ -213,10 +213,10 @@ This statement needs some nuance. I have already mentioned that the weather can 
 There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:
 
 $$
-\begin{gather*}
+\begin{gathered}
 X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
 Y_{t + 1} = bX_{t} 
-\end{gather*}
+\end{gathered}
 $$ {#eq-ch2-4}
 
 Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map Wikipedia page. The amazing three-dimensional bifurcation diagram may be more challenging.
