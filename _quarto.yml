@@ -39,8 +39,8 @@ format:
     crossref:
       chapters: true
   pdf:
-    documentclass: scrbook
-    #papersize: letter
+    documentclass: scrreprt
+    papersize: A4
     number-depth: 4
     toc-depth: 8
     number-sections: true
@@ -54,6 +54,10 @@ format:
         \printindex
     #highlight-style: github
     #fontfamily: 
+    #geometry:
+    #  - top=30mm
+    #  - left=20mm
+    #  - heightrounded
     crossref:
       chapters: true
 editor: visual
