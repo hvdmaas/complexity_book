@@ -364,9 +364,13 @@ f(y) = \frac{1}{{Z\sigma}^{2}}e^{\frac{\alpha y + \frac{1}{2}\beta y^{2} - \frac
 
 As in regression models, the cusp variables are modelled as linear function of measured variables. That is, the dependent variables $Y_{i1},\ Y_{i2},\ldots,Y_{ip}$ and the independent variables $X_{i1},\ X_{i2},\ldots,X_{iq}$, for subjects $i = 1,\ldots,n$, are related to the cusp variables as follows:
 
-$$y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
+$$
+\begin{gathered}
+y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 \alpha_{i} = a_{0} + a_{1}X_{i1} + a_{2}X_{i2} + \ldots + a_{q}X_{iq} \\
-\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}$$ {#eq-ch3-12-old-16}
+\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}
+\end{gathered}
+$$ {#eq-ch3-12-old-16}
 
 By estimating these regression parameters, we fit the cusp model to empirical data. The cusp package in R makes this possible. I will first demonstrate this using simulated data. This is my number one rule when using statistical techniques: never use a statistical technique on real data before you have tested it on simulated data. First, it forces you to understand what the statistical technique actually does, and second, it gives you a way to test the power and investigate violations of the technique's assumptions.
 
