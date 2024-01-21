@@ -4,7 +4,7 @@ project:
 book:
   title: "Complex systems research in Psychology"
   author: "Han van der Maas"
-  date: "Jan 2024"
+  date: "22 Jan 2024"
   search: true
   repo-url: https://github.com/tasospsy/complexity_book
   #repo-actions: [edit]
@@ -17,12 +17,12 @@ book:
     - index.qmd
     - ch1.qmd
     - ch2.qmd
-    #- ch3.qmd
-    #- ch4n.qmd
-    #- ch5n.qmd
-    #- ch6.qmd
-    #- ch7.qmd
-    #- ch8.qmd
+    - ch3.qmd
+    - ch4n.qmd
+    - ch5n.qmd
+    - ch6.qmd
+    - ch7.qmd
+    - ch8.qmd
     - references.qmd
 
 

@@ -122,9 +122,9 @@ j = 1 \\
 j \neq i
 \end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W$$
 
-$$\begin{array}{r}
+$$
 K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i}
-\end{array}$$ {#eq-ch6-1-old-42}
+$$ {#eq-ch6-1-old-42}
 
 Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $a$ the growth rates, $K$ the limited resources for each $X$ (a weighted sum of a genetic ($G$) and an environmental ($E$) part), and $M$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see the -@vandermaasDynamicalModelGeneral2006 paper].
 
@@ -181,9 +181,9 @@ The growth of the resource $r_{j}$ consists of two parts. The first part models 
 
 $$\frac{dX_{i}\ }{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}})$$
 
-$$\begin{array}{r}
+$$
 \frac{dR_{j}\ }{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}
-\end{array}$$ {#eq-ch6-2-old-43}
+$$ {#eq-ch6-2-old-43}
 
 What has been shown for this and related models is that you will not get more species surviving than there are resources. Another famous quote from Robert May is "There is no comfortable theorem assuring that increased diversity and complexity beget enhanced community stability; rather, as a mathematical generality, the opposite is true. The task, then, is to elucidate the devious strategies which make for stability in enduring natural systems. There will be no one simple answer to these questions." Thus, given a limited number of resources (time, money, educational support), we should expect early specialization in only a few skills.
 
@@ -191,17 +191,15 @@ Biologists have proposed a number of mechanisms to deal with this problem [@meen
 
 In this paper, we show that the combination of these mechanisms allows a balanced growth of several correlated abilities. Specially chosen parameter settings led to different patterns of abnormal development (such as hyperspecialization and delayed development). The final model is:
 
-$$\begin{array}{r}
+$$
 \frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}}
-\end{array}$$
+$$
 
 $$
-\begin{array}{r}
 \frac{dR_{j}}{dt} = r\left( r_{\max} - R_{j} \right) - R_{j}\sum_{i = 1}^{W}{b_{ij}\frac{dX_{i}}{dt}}\ \left\{ \begin{array}{r}
 growth - dependent\  \\
 resource\ depletion
 \end{array} \right\} \\
-\end{array}
 $$ {#eq-ch6-3-old-44}
 
 #### The wiring of intelligence {#sec-The-wiring-of-intelligence}
@@ -322,8 +320,7 @@ We see that for medium attention, the agreement with the thresholds is highest. 
 
 These connectionist attitude models are capable of "learning", i.e., adjusting the weights. This can also be done in the Ising attitude model by using Hebbian learning. Hebbian learning, 'what fires together, wires together', can be formulated as:
 
-*\
-*$$\begin{array}{r}
+$$\begin{array}{r}
 \mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}
 \end{array}$$ {#eq-ch6-6-old-47}
 
