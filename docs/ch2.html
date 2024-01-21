@@ -293,7 +293,7 @@ X_{t + 1} = rX_{t} \tag{2.1}\]</span></span></p>
 <p>Note that the exponential model ignores the fact that population growth is limited by resources. At some point food will become scarce. One way of making the model, introduced by Verhulst in 1838, more realistic is to add a growth-limiting term:</p>
 <p><span id="eq-ch2-2"><span class="math display">\[
 X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \tag{2.2}\]</span></span></p>
-<p>What is the effect of this addition to the equation? If <span class="math inline">\(X\)</span> is much smaller than the resource <span class="math inline">\(K\)</span> then the second term, <span class="math inline">\(\left( 1 - \frac{X_{t}}{K} \right),\)</span> is close to 1 and we will see exponential growth. But as <span class="math inline">\(X\)</span> approaches <span class="math inline">\(K\)</span>, this term becomes very small, reducing the effect of exponential growth. <span class="math inline">\(X\)</span> does not actually grow up to <span class="math inline">\(K\)</span>, but to a lower value, if it converges at all. We are going to see this in a moment. It also turns out that the actual value of K is not of interest. Changing K does not change the qualitative behavior. Therefore, <span class="math inline">\(K\)</span> is usually set to 1, scaling the population <span class="math inline">\(X\)</span> between 0 and 1. The only remaining parameter is <span class="math inline">\(r\)</span>. Changing <span class="math inline">\(r\)</span>, however, leads to a number of surprising behaviors.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>What is the effect of this addition to the equation? If <span class="math inline">\(X\)</span> is much smaller than the resource <span class="math inline">\(K\)</span> then the second term, <span class="math inline">\(\left( 1 - {X_{t}}/{K} \right),\)</span> is close to 1 and we will see exponential growth. But as <span class="math inline">\(X\)</span> approaches <span class="math inline">\(K\)</span>, this term becomes very small, reducing the effect of exponential growth. <span class="math inline">\(X\)</span> does not actually grow up to <span class="math inline">\(K\)</span>, but to a lower value, if it converges at all. We are going to see this in a moment. It also turns out that the actual value of K is not of interest. Changing K does not change the qualitative behavior. Therefore, <span class="math inline">\(K\)</span> is usually set to 1, scaling the population <span class="math inline">\(X\)</span> between 0 and 1. The only remaining parameter is <span class="math inline">\(r\)</span>. Changing <span class="math inline">\(r\)</span>, however, leads to a number of surprising behaviors.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
 <section id="sec-Stable-and-unstable-fixed-points" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-Stable-and-unstable-fixed-points"><span class="header-section-number">2.3</span> Stable and unstable fixed points</h2>
@@ -334,12 +334,16 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 </div>
 <p>This concept of equilibrium, stable or unstable, is crucial for later chapters. The essence of the next chapter is to change a control parameter, here <span class="math inline">\(r\)</span>, and study how the pattern of equilibria (the equilibrium landscape) changes. You can easily do this yourself by setting <span class="math inline">\(r = .9\)</span>. For <span class="math inline">\(r &lt; 1\)</span>, there is only stable attractor (zero).</p>
 <p>Simulating this is again not really necessary. One has to realize that a fixed point (<span class="math inline">\(X^{*}\)</span>) is found when <span class="math inline">\(X_{t + 1} = X_{t} = X^{*}\)</span>. See for yourself that:</p>
-<p><span class="math display">\[{X_{t + 1} = X_{t} = X^{*}
-}\\{X^{*} = rX^{*}( 1 - X^{*})
-}\\{X^{*} = 0\ or\ 1 = r - rX^{*}
-}\\{X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}}\]</span></p>
+<p><span class="math display">\[
+\begin{gathered}
+X_{t + 1} = X_{t} = X^{*} \\
+X^{*} = rX^{*}( 1 - X^{*}) \\
+X^{*} = 0\ or\ 1 = r - rX^{*} \\
+X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r} \\
+\end{gathered}
+\]</span></p>
 <p>So 0 and <span class="math inline">\((r - 1)/r\)</span> are fixed points. Indeed for <span class="math inline">\(r = 2\)</span>, we have seen that 0 and .5 are equilibria, one stable and one unstable. To determine whether fixed points are stable we look at the derivative of the function, <span class="math inline">\(f^{'}(x)\)</span>, which, as you can easily check, is <span class="math inline">\(r - 2rX\)</span>.</p>
-<p>I will not explain why, however, the rule is that the fixed point is stable if the absolute value of the derivative in the fixed-point value is less than 1.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> For <span class="math inline">\(r = 2\)</span> the fixed points are 0 and .5. <span class="math inline">\(\left| f^{'}\left( X^{*} = 0 \right) \right| = |2 - 0| = 2\)</span>, which is greater than 1 and thus <span class="math inline">\(X^{*} = 0\)</span> is unstable. <span class="math inline">\(\left| f^{'}\left( X^{*} = .5 \right) \right| = |2 - 2 \times 2 \times .5| = 0\)</span>, which is less than 1 and thus <span class="math inline">\(X^{*} = .5\)</span> is stable. You can check for yourself that <span class="math inline">\(X^{*}\)</span>=<span class="math inline">\(\frac{r - 1}{r}\)</span> is stable for <span class="math inline">\(1 &lt; r &lt; 3\)</span>, both with the r-code and with the absolute value of the derivative.</p>
+<p>I will not explain why, however, the rule is that the fixed point is stable if the absolute value of the derivative in the fixed-point value is less than 1.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> For <span class="math inline">\(r = 2\)</span> the fixed points are 0 and .5. <span class="math inline">\(\left| f^{'}\left( X^{*} = 0 \right) \right| = |2 - 0| = 2\)</span>, which is greater than 1 and thus <span class="math inline">\(X^{*} = 0\)</span> is unstable. <span class="math inline">\(\left| f^{'}\left( X^{*} = .5 \right) \right| = |2 - 2 \times 2 \times .5| = 0\)</span>, which is less than 1 and thus <span class="math inline">\(X^{*} = .5\)</span> is stable. You can check for yourself that <span class="math inline">\(X^{*}=(r - 1)/r\)</span> is stable for <span class="math inline">\(1 &lt; r &lt; 3\)</span>, both with the r-code and with the absolute value of the derivative.</p>
 </section>
 <section id="sec-Limit-cycles" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-Limit-cycles"><span class="header-section-number">2.4</span> Limit cycles</h2>
@@ -350,7 +354,7 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <figcaption class="figure-caption">Figure&nbsp;2.4: Qualitative different behavior of the logistic map for different values of <span class="math inline">\(r\)</span>.</figcaption>
 </figure>
 </div>
-<p>For <span class="math inline">\(r = 2.9\)</span> we see that the series converges to the fixed point <span class="math inline">\(\frac{1.9}{2.9} = .66,\)</span> but in a process of over- and undershooting. For <span class="math inline">\(r = 3.1\)</span> and <span class="math inline">\(r = 3.3\)</span> a limit cycle of period 2 arises. The population oscillates between two values. For <span class="math inline">\(r = 3.5\)</span> this becomes even more remarkable, we see a limit cycle of period 4. For slightly larger values we could get cycles with even higher periods.</p>
+<p>For <span class="math inline">\(r = 2.9\)</span> we see that the series converges to the fixed point <span class="math inline">\(\frac{1.9}{2.9} = .66,\)</span> but in a process of over- and undershooting. Between <span class="math inline">\(r = 3.1\)</span> and <span class="math inline">\(r = 3.3\)</span> a limit cycle of period 2 arises. The population oscillates between two values. For <span class="math inline">\(r = 3.5\)</span> this becomes even more remarkable, we see a limit cycle of period 4. For slightly larger values we could get cycles with even higher periods.</p>
 <p>It has been claimed that these limit cycles occur in real population dynamics. Intuitively, it can be understood as a process of over- and undershooting, which dampens out for <span class="math inline">\(r\)</span> a little below 3, but not for <span class="math inline">\(r &gt; 3\)</span>.</p>
 </section>
 <section id="sec-Chaos" class="level2" data-number="2.5">
@@ -456,8 +460,10 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <h2 data-number="2.8" class="anchored" data-anchor-id="sec-Other-maps-and-fractals"><span class="header-section-number">2.8</span> Other maps and fractals</h2>
 <p>There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:</p>
 <p><span id="eq-ch2-4"><span class="math display">\[
+\begin{gathered}
 X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
-Y_{t + 1} = bX_{t} \\
+Y_{t + 1} = bX_{t}
+\end{gathered}
 \tag{2.4}\]</span></span></p>
 <p>Using the code example from the logistic map, you should be able to generate time series and a phase diagram for this model. Try to reproduce the first image on the Henon map Wikipedia page. The amazing three-dimensional bifurcation diagram may be more challenging.</p>
 <p>Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin <span class="citation" data-cites="stefanRPubsFractals2020">Stefan (<a href="references.html#ref-stefanRPubsFractals2020" role="doc-biblioref">2020</a>)</span>.</p>
@@ -473,11 +479,11 @@ Y_{t + 1} = bX_{t} \\
 <h2 data-number="2.10" class="anchored" data-anchor-id="sec-Exercises"><span class="header-section-number">2.10</span> Exercises</h2>
 <ol type="1">
 <li><p>For <span class="math inline">\(r=3.5\)</span>, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (*)</p></li>
-<li><p>In the section on bifurcation diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the <span class="math inline">\(r\)</span>’s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change ‘cex = 0.01’ to a lower value. Zoom in on the interval of <span class="math inline">\(r\)</span> between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of <span class="math inline">\(r\)</span>. (*)</p></li>
+<li><p>In <a href="#sec-Phase-plot-and-bifurcation-diagrams"><span>Section&nbsp;2.6</span></a> the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the <span class="math inline">\(r\)</span>’s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change ‘cex = 0.01’ to a lower value. Zoom in on the interval of <span class="math inline">\(r\)</span> between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of <span class="math inline">\(r\)</span>. (*)</p></li>
 <li><p>Reproduce the first image from the Henon map Wikipedia page. Provide your R-code and figure (*).</p></li>
 <li><p>Make the bifurcation diagram of the Ricker model (see Wikipedia). Provide your R-code and figure. Why is this model considered a more realistic representation of population growth than the logistic map?</p></li>
 <li><p>Also reproduce the three-dimensional bifurcation diagram of the Henon map (**).</p></li>
-<li><p>Have a look at the definition of the Lyapunov coefficient in Section 2.4. Calculate this Lyapunov coefficient for the logistic map where <span class="math inline">\(r = 4\)</span> using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (<a href="#eq-ch2-3">Equation&nbsp;<span>2.3</span></a>). Do this and check that the coefficients are approximately equal.</p></li>
+<li><p>Have a look at the definition of the Lyapunov coefficient in <a href="#sec-Chaos"><span>Section&nbsp;2.5</span></a>. Calculate this Lyapunov coefficient for the logistic map where <span class="math inline">\(r = 4\)</span> using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (<a href="#eq-ch2-3">Equation&nbsp;<span>2.3</span></a>). Do this and check that the coefficients are approximately equal.</p></li>
 <li><p>Use the Rmusic library (installed with devtools::install_github(“keithmcnulty/Rmusic”, build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (**)</p></li>
 <li><p>Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (*).</p></li>
 </ol>
@@ -549,7 +555,7 @@ Zanin, Massimiliano. 2022. <span>“Can Deep Learning Distinguish Chaos from Noi
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Verhulst proposed this model in the form of a differential equation in continuous time. We will discuss this type of model in Chapter 5. In continuous time, nothing particularly spectacular happens and we only see the kind of behavior displayed in <a href="#fig-ch2-img2">Figure&nbsp;<span>2.2</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Verhulst proposed this model in the form of a differential equation in continuous time. We will discuss this type of model in <a href="ch4n.html"><span>Chapter&nbsp;4</span></a>. In continuous time, nothing particularly spectacular happens and we only see the kind of behavior displayed in <a href="#fig-ch2-img2">Figure&nbsp;<span>2.2</span></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Why this is, is not too difficult to understand. If you google ‘fixed points of difference equations’, you will quickly arrive at stackexchange.com, where several insightful explanations are given.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
