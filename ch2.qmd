@@ -40,7 +40,7 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right)$$ {
 
 What is the effect of this addition to the equation? If $X$ is much smaller than the resource $K$ then the second term, $\left( 1 - \frac{X_{t}}{K} \right),$ is close to 1 and we will see exponential growth. But as $X$ approaches $K$, this term becomes very small, reducing the effect of exponential growth. $X$ does not actually grow up to $K$, but to a lower value, if it converges at all. We are going to see this in a moment. It also turns out that the actual value of K is not of interest. Changing K does not change the qualitative behavior. Therefore, $K$ is usually set to 1, scaling the population $X$ between 0 and 1. The only remaining parameter is $r$. Changing $r$, however, leads to a number of surprising behaviors.[^ch2-1]
 
-[^ch2-1]: Verhulst proposed this model in the form of a differential equation in continuous time. We will discuss this type of model in Chapter 5. In continuous time, nothing particularly spectacular happens and we only see the kind of behavior displayed in @fig-ch2-img2.
+[^ch2-1]: Verhulst proposed this model in the form of a differential equation in continuous time. We will discuss this type of model in @sec-ch4n. In continuous time, nothing particularly spectacular happens and we only see the kind of behavior displayed in @fig-ch2-img2.
 
 ## Stable and unstable fixed points {#sec-Stable-and-unstable-fixed-points}
 
@@ -231,7 +231,7 @@ These methods generally require long time series. Many publications appeared on 
 
 1)  For $r=3.5$, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 
-2)  In the section on bifurcation diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the $r$'s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change 'cex = 0.01' to a lower value. Zoom in on the interval of $r$ between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of $r$. (\*)
+2)  In @sec-Phase-plot-and-bifurcation-diagrams the code to make a bifurcation plot is shown. First, run this code and take a look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the $r$'s on the x-axis. Adjust the code by changing the r.range to seq(3.4, 4, by=0.0001)), also change 'cex = 0.01' to a lower value. Zoom in on the interval of $r$ between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time series plot for a particular value of $r$. (\*)
 
 3)  Reproduce the first image from the Henon map Wikipedia page. Provide your R-code and figure (\*).
 
@@ -239,7 +239,7 @@ These methods generally require long time series. Many publications appeared on 
 
 5)  Also reproduce the three-dimensional bifurcation diagram of the Henon map (\*\*).
 
-6)  Have a look at the definition of the Lyapunov coefficient in Section 2.4. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
+6)  Have a look at the definition of the Lyapunov coefficient in @sec-Chaos. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
 
 7)  Use the Rmusic library (installed with devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
