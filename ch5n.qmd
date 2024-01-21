@@ -45,7 +45,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left(
 
 If we do these flips repeatedly, we find equilibria of the model. This is called the Glauber dynamics (more efficient algorithms do exist). The beauty of these algorithms is that the normalization constant Z falls out of the equation. In this way we can simulate Ising systems with $N$ much larger than 20.
 
-In the case of a fully connected Ising network (also called the Curie-Weiss model), the emergent behavior, what is called the mean field behavior, can be described by the cusp [@sec-The-cusp-catastrophe, @abeCuspSingularityMean2017; @postonCatastropheTheoryIts2014]. The external field is the normal variable and temperature acts as a splitting variable. The relationship to self-organization is that when we cool a hot magnet, at some threshold the spins begin to align and soon are all up or down. This is the pitchfork bifurcation, creating order out of disorder.[^ch5n-1]
+In the case of a fully connected Ising network (also called the Curie-Weiss model), the emergent behavior, what is called the mean field behavior, can be described by the cusp (@sec-Ising-attitude-model; @abeCuspSingularityMean2017; @postonCatastropheTheoryIts2014). The external field is the normal variable and temperature acts as a splitting variable. The relationship to self-organization is that when we cool a hot magnet, at some threshold the spins begin to align and soon are all up or down. This is the pitchfork bifurcation, creating order out of disorder.[^ch5n-1]
 
 [^ch5n-1]: An extremely useful application of this principle is the rice cooker!
 
@@ -436,7 +436,7 @@ I believe that understanding models requires working with models, for example th
 5)  Add the external field to the Ising model in NetLogo (neighbors4 case). Report the changed line in the NetLogo code. What did you change in the interface?\
     Set the temperature to 1.5. Change tau slowly. At which values of tau do the hysteresis jumps occur? (\*)
 
-6)  Test whether the Ising model is indeed a cusp. Run the Ising model in NetLogo using the BehaviorSpace tool (see @fig-ch7-img1-old-89 for an example). Use the model in which all spins are connected to all spins (see @sec-Social-relations). Vary tau (-.3 to .3 in .05 increments) and temperature (0 to 3, in .5 increments). One iteration per combination of parameter values is sufficient. Stop after 10000 ticks and collect only the final magnetization. Import the data into R and fit the cusp. Which cusp model best describes the data? (\*\*)
+6)  Test whether the Ising model is indeed a cusp. Run the Ising model in NetLogo using the BehaviorSpace tool (see @fig-ch7-img1-old-89 for an example). Use the model in which all spins are connected to all spins (see @sec-The-Ising-model). Vary tau (-.3 to .3 in .05 increments) and temperature (0 to 3, in .5 increments). One iteration per combination of parameter values is sufficient. Stop after 10000 ticks and collect only the final magnetization. Import the data into R and fit the cusp. Which cusp model best describes the data? (\*\*)
 
 7)  Open the Sandpile 3D model in NetLogo3D. Grains of sand fall at random place. Change one line of code such that they all fall in the middle. What did you change? (\*)
 
