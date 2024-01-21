@@ -258,6 +258,10 @@ for(b in 1:-7)
   curve(f(x,a,b,c,d),-2.8,2.8,axes=F,bty='n',ylab='',xlab='')
 
 # fig 6.16 ----------------------------------------------------------------
+library(png)
+library(grid)
+library(gridExtra)
+
 mutualism <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:nr_var]

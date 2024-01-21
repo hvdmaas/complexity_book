@@ -296,7 +296,7 @@ g1  <- ggplot(r, aes(x = time)) +
   geom_hline(yintercept = 0, linetype = 'dotted') +
   geom_vline(xintercept = 0) +
   #ylim(-1,1) +
-  scale_y_continuous(breaks = c(-1, 0, 1))+
+  scale_y_continuous(breaks = c(0))+
   xlim(0,130)+
   labs(x = 'Time', y = 'X')+
   #coord_flip()+
