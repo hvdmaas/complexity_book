@@ -12,9 +12,9 @@ This chapter will be hands-on again. We will use the Grind package in R to simul
 
 At the end of the chapter, I will introduce causal loop diagrams and an open-source tool, Insightmaker, that makes it easy to create causal loop diagrams. It will also be used to simulate dynamical systems models and I will provide some examples.
 
-## Basic concepts
+## Basic concepts {#sec-Basic-concepts}
 
-### Back to the logistic equation
+### Back to the logistic equation {#sec-Back-to-the-logistic-equation}
 
 We have seen the logistic equation in the form of the logistic map, where time progressed in discrete steps. The logistic map is a difference equation, $X_{t + 1} = f(X_{t})$, but in this chapter we will focus on differential equations in continuous time. We will limit ourselves to ordinary differential equations (ODE's). In such equations we take the derivatives with respect to only one variable. The ODE for logistic growth[^ch4n-1] is:
 
@@ -115,7 +115,7 @@ dX <- r*X*(1-X) - X
 
 and use `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
 
-### The Lotka-Volterra models
+### The Lotka-Volterra models {#sec-The-LotkaVolterra-models}
 
 Perhaps the best-known population models are the Lotka-Volterra equations [@murrayMathematicalBiology2002]. These consist of coupled differential equations, one for the density of the prey and one for the density of the predator.
 
@@ -156,7 +156,7 @@ The plane function makes a phase plot with $N$ and $P$ as axes. The black points
 
 A famous example of a system of three coupled differential equations is the SIR model used to model infectious diseases. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
 
-### Fitting models: stochasticity versus noise
+### Fitting models: stochasticity versus noise {#sec-Fitting-models-stochasticity-versus-noise}
 
 Grind includes an option to fit dynamical systems models. With `fit()`, based on the `modFit()` function from the FME package [@soetaert2010], one can estimate the model parameters given a data set. These functions also provide confidence intervals, allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.
 
@@ -192,7 +192,7 @@ This results in:
 
 Note that the error data set looks very similar to the deterministic data set because it contains only the measurement error (X is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
 
-### Back to the cusp
+### Back to the cusp {#sec-Back-to-the-cusp}
 
 To illustrate how Grind can be used to perform bifurcation analysis, we go back to the cusp. Recall that the differential equation for the cusp is:
 
@@ -227,7 +227,7 @@ barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 
 ![Spontaneous jumps in the cusp due to stochastics (noise). Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
 
-### Bifurcation analysis
+### Bifurcation analysis {#sec-Bifurcation-analysis}
 
 By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change parameter. This is what we did in Chapter 2 for the logistic map, when we varied r and plotted the equilibria (see @fig-ch2-img8).
 
@@ -263,7 +263,7 @@ You can create one- and two-parameter bifurcation diagrams (using the LP curve o
 
 ![Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the a, b plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52}
 
-### Spruce Budworm outbreak model
+### Spruce Budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
 In chapter 3, I introduced the Spruce Budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
 
@@ -283,7 +283,7 @@ Note that this predator-prey model only consists of one equation. There is no se
 
 ![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
 
-### Evaluation of ecological modelling
+### Evaluation of ecological modelling {#sec-Evaluation-of-ecological-modelling}
 
 Understanding the technical basics of dynamical systems theory is one thing, but actually building useful dynamical systems models is quite another. Every term in every differential equation of a model needs some underpinning. These models make many assumptions, both implicit and explicit. The Lotka-Volterra model, for example, assumes that the prey population grows exponentially in the absence of the predator, that the predator population dies off with the prey population and does not switch to other prey species, that the response of the predator population to changes in the prey population is direct and not delayed, that there is no spatial component to the model, and that the rates of change of the populations are proportional to their sizes, to name just a few. These assumptions are widely debated in the biological literature [@abramsNaturePredationPrey2000], and modifications of these assumptions may have significant consequences. In fact, hundreds of extensions and variants have been proposed and studied.
 
@@ -326,11 +326,11 @@ matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 
 Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
 
-## Psychological models
+## Psychological models {#sec-Psychological-models}
 
 In this section, I present an overview of dynamical systems models in psychology, primarily in the form of systems of differential equations. Although the list is extensive, it is not exhaustive. It is important to explore different models and applications before embarking on your own modeling efforts.
 
-### Response time models
+### Response time models {#sec-Response-time-models}
 
 Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.
 
@@ -394,11 +394,11 @@ The relations between different accumulator models are summarized in this figure
 
 ![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
 
-### Dyadic models
+### Dyadic models {#sec-Dyadic-models}
 
 The study of dyadic interaction lends itself to dynamic modeling. Dyadic interactions have been studied extensively in the field of caregiver-child interactions [@ainsworthPatternsAttachmentPsychological2015]. Here, we focus on a dyadic interaction in romantic relationships.
 
-#### Romeo and Juliet
+#### Romeo and Juliet {#sec-Romeo-and-Juliet}
 
 One type of model can be traced back to publications by @rapoportFightsGamesDebates1960 and @strogatzLoveAffairsDifferential1988. I follow the setup described by @sprottDynamicalModelsLove2004. Note that it was intended as a toy model to demonstrate dynamical modeling.
 
@@ -453,7 +453,7 @@ Rinaldi also considers the case of a population of heterosexual men and women wi
 
 Some other advanced variations of this model have been proposed. In these papers the analysis of the mathematical properties of the model gets much more attention than the psychological theory. What exactly the variables are and the reasoning behind certain model assumptions is often unclear. The work of Murray and Gottman is more interesting in this regard.
 
-#### The mathematics of marriage
+#### The mathematics of marriage {#sec-The-mathematics-of-marriage}
 
 The model of marriage developed by the psychologist John Gottman and the mathematical biologist James Murray [-@gottmanMathematicsMarriageDynamic2002] is firmly grounded in psychological theory and data. The main phenomenon that inspired this modeling work is the finding by @gottmanMaritalProcessesPredictive1992 finding that the patterns of interaction between couples, when discussing a major area of ongoing disagreement in their marriage, are predictive of divorce.
 
@@ -515,7 +515,7 @@ The three influence functions are shown in the first column, the nullclines in t
 
 I have kept the influence functions and most parameters the same for both spouses, but this is not necessarily the case (see the work of Gottman and Murray for discussion and alternative influence functions). It is possible to derive the equilibria analytically and to determine the stability of these equilibria [@gottmanMathematicsMarriageDynamic2002]. They also propose a two-stage procedure for fitting of the model to data consisting of positive and negative speaker interactions using a bilinear influence function. A more advanced statistical approach is proposed in @hamakerUsingThresholdAutoregressive2009. For a related model for the interaction between therapist and client I refer to @tschacher2019.
 
-### The van Geert models
+### The van Geert models {#sec-The-van-Geert-models}
 
 In a series of papers, Paul van Geert proposed dynamical systems models for developmental processes [@denhartighDynamicNetworkModel2016; @vangeertDynamicSystemsModel1998; @vangeertDynamicSystemsModel1991]. The idea is that cognitive and language abilities grow over time in an autocatalytic process constrained by a limited capacity, similar to the logistic growth of populations.
 
@@ -554,7 +554,7 @@ plane(portrait = TRUE,grid=4)
 
 So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to 'Euler' to simulate difference equations.
 
-### The Polya Urn model of the third source {#sec-polyaUrn}
+### The Polya Urn model of the third source {#sec-The-Polya-Urn-model-of-the-third-source}
 
 Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding developmental processes in psychology. The Third Source Hypothesis [@molenaar1993] proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes. Based on a series of studies, [@gartnerThirdComponentCausing1990] concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
 
@@ -566,7 +566,7 @@ My intuition was simply wrong, and in my experience, this is true for the vast m
 
 @saviWiringIntelligence2019 provide a developmental interpretation. Imagine a girl receiving a tennis racket for her birthday. First, she practices the backhand twice at home, but incorrectly. Then, during the first tennis lesson, her trainer demonstrates to her the correct backhand. She now has three experiences, two incorrect and one correct. Now, suppose her backhand development is based on a very simple learning schema. Whenever a backhand return is required, she samples from her earlier experiences, and the sampled backhand is then added to the set of earlier experiences. Then the cumulation of experiences follows the Polya urn scheme. While she has the potential to become a tennis master, her twin sister, who had less fortunate initial experiences, decides to quit tennis lessons within the first year. This model is consistent with many developmental theories (e.g., the Critical Period Hypothesis), but these theories lack a formal approach.
 
-### The panic model
+### The panic model {#sec-The-panic-model}
 
 In recent years, we have been working on a model of panic disorder [@haslbeckModelingPsychopathologyData2022; @robinaughAdvancingNetworkTheory2019]. In theories of panic disorder, there is a reinforcing feedback loop between arousal and perceived threat. When an increase in arousal is perceived as a threat (e.g., a heart attack), arousal increases further. This "vicious cycle" results in a panic attack [@clarkCognitiveApproachPanic1986]. Thus, these theories posit two causal effects: an effect of perceived threat on arousal and an effect of arousal on perceived threat.
 
@@ -618,7 +618,7 @@ In @robinaughAdvancingNetworkTheory2019, this model is extended with other proce
 
 ![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at A = T = 1.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61}
 
-### Neural models: van der Pol and different time scales
+### Neural models: van der Pol and different time scales {#sec-Neural-models-van-der-Pol-and-different-time-scales}
 
 Imagine taking the cusp equation $\frac{dX}{dt} = {a + bX - X}^{3}$, with $b=1$, such that we have hysteresis. But now we make $a$, or actually $da/dt$, a function of $X$: $\frac{da}{dt} = - \varepsilon X$, where $\varepsilon$ is small constant. If we set $\varepsilon$ to .05, $a$ changes 20 times slower than $X$. What happens now is that with $X = 1$ and $a = 0$, $a$ decreases up to the point where $X$ jumps to a negative value. Now $a$ increases, resulting to a new jump to a positive value of $X$. And this loop will continue endlessly.
 
@@ -665,7 +665,7 @@ The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin-
 
 Other applications of the van der Pol model concern extensions of the HKB model (see Section 4.3.3), multistable perception [@furstenauSimulatingBistablePerception2014], developmental processes [@molenaarDynamicModelsDevelopment1985], and bipolar disorder [@daughertyMathematicalModelsBipolar2009]. One case where it seems to be especially useful is in modeling the wake sleep cycle [@forgerSimplerModelHuman1999].
 
-### Analogical modeling: Budworms and Beers
+### Analogical modeling: Budworms and Beers {#sec-Analogical-modeling-Budworms-and-Beers}
 
 If we create a dynamic model from the ground up, there's a significant chance that we might not completely grasp its intricacies. We have seen that some very simple models already show amazingly complex behavior.
 
@@ -695,9 +695,9 @@ Fifth, processes at other timescales are missing. The model seems to work well f
 
 These modeling issues are serious but at the same time also very interesting. Ambiguities in our thinking about psychological systems come to light in the process of building concrete mathematical models [@borsboomTheoryConstructionMethodology2021].
 
-### Cascading transitions in multifigure multistable perception
+### Cascading transitions in multifigure multistable perception {#sec-Cascading-transitions-in-multifigure-multistable-perception}
 
-#### Interacting cusps
+#### Interacting cusps {#sec-Interacting-cusps}
 
 In Section 5.2.6, we studied the van der Pol oscillator. In that model the normal variable of the cusp was itself a dynamic variable $\frac{da}{dt}= - \varepsilon X$. Instead of a linear equation, we could also use a cusp. We then get:
 
@@ -776,7 +776,7 @@ The cascading transition model has been proposed independently in various resear
 
 I will give a psychological example of this multivariate model, concerning perception, in the next section.
 
-#### Application to perception
+#### Application to perception {#sec-Application-to-perception}
 
 Take a look at @fig-ch4n-img18-old-66. This is a special case of multistable perception, which I call multifigure multistable perception.
 
@@ -835,7 +835,7 @@ There is much more to be said about this model and its empirical validation. One
 
 ![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} > 0)$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
 
-## Causal loop diagrams
+## Causal loop diagrams {#sec-Causal-loop-diagrams}
 
 In this chapter I focused on the construction of dynamical system models and introduced R tools to study such models numerically. This introduction was necessarily somewhat superficial. At the beginning of this chapter, I referred to some texts that I recommend for further reading. There are some more psychological models that I could have included. For example, the setup of dynamical field theory is a bit too complicated to replicate in Grind but I recommend studying this model [@schonerDynamicThinkingPrimer2016]. In the next chapter, I will present a dynamical model of developmental processes with mutualistic (positive) interactions. Dynamical systems models of social interactions are presented in the last chapter. I have also touched on some issues regarding dynamical systems modeling in psychology. Since we will see several more examples in the next two chapters, I will leave a full discussion to the Epilogue of this book.
 
@@ -847,7 +847,7 @@ Insightmaker provides a graphical model construction interface for dynamical sys
 
 Insightmaker has many powerful built-in functions, allows sensitivity testing as well as some sort of optimization. Personally, I prefer the approach of writing the equations and implementing them in R. One reason is that this is how you communicate models in papers. Another is that the equations help you think about analytical results, which are always preferable to simulations. Finally, we can use Grind or deBif to go beyond simple simulations and classify equilibria and perform bifurcation analysis. But for building causal loop diagrams of larger models to concretize theorizing without the direct goal of running them, Insightmaker is a great tool.
 
-## Closing Remarks
+## Closing Remarks {#sec-Closing-Remarks}
 
 Building nonlinear dynamical models of psychological processes from scratch is difficult. What you have learned so far in this book is probably not enough. The knowledge you now have will allow you to study existing models from different fields and to collaborate with experts in dynamical modeling. You now have the basic language for communicating about such models.
 
@@ -855,7 +855,7 @@ But even when you work with experts in dynamic modeling, building useful models 
 
 As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987. Cattell's investment theory posits that fluid intelligence, which represents the ability to solve novel problems, "invests" in crystallized intelligence, which consists of acquired knowledge and skills. I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (Section 6.3.1.3), but this illustrates that the process of formalization is itself a test for verbal theories.
 
-## Exercises
+## Exercises {#sec-Exercises}
 
 1)  Put the logistic equation into Grind, find out what the equilibria are, and determine for which values of $r$ these are stable or unstable fixed points. (\*)
 

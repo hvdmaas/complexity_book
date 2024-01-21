@@ -342,7 +342,17 @@ grid.arrange(A, B)
 dev.off()
 # fig 6.17 --------------------------------------------------------------------
 
-# MISSING 14/1
+set.seed(1)
+factors <- 3
+M <- matrix(0,nr_var,nr_var)
+low <- .0;high <- .1 # interaction between and within factors
+# loop to create M
+cat <- cut(1:nr_var,factors)
+for(i in 1:nr_var)
+  for(j in 1:nr_var)
+    if(cat[i]==cat[j]) M[i,j] <- high else M[i,j] <- low
+M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
+
 
 # fig 6.18 ----------------------------------------------------------------
 

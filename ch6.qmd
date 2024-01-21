@@ -1,6 +1,6 @@
 # Psychological Network Models {#sec-ch6}
 
-## Introduction
+## Introduction {#sec-Introduction}
 
 Psychology widely accepts common cause theories. High scores on cognitive tests are often attributed to high intelligence. Charisma is often linked to multiple leadership qualities. A high $p$-factor score (psychopathology factor) is often associated with several mental health issues. The common cause explanation is often favored due to its simplicity and the availability of statistical methodology, such as factor analysis. However, in most cases, the common cause is merely a hypothetical construct. Many people accept common cause theories because they do not see any alternative. However, complex systems theory offers a powerful alternative, including a statistical approach.
 
@@ -12,11 +12,11 @@ Psychological networks are perhaps the most thriving area of complex systems res
 
 In this chapter I will present and discuss these theoretical and psychometric lines of research, accompanied by practical examples. However, I will begin with an introduction to network theory.
 
-## Network theory
+## Network theory {#sec-Network-theory}
 
 It is hard to imagine a discipline in which networks are not a central theme. Networks are the key to understanding systems ranging from particle physics to social networks, from ecosystems to the Internet, and from railways to the brain. The mathematics of network theory is not so easy to grasp, but fortunately the basic concepts and ideas are. I will give a brief introduction.
 
-### Network concepts
+### Network concepts {#sec-Network-concepts}
 
 A network, a special type of graph, consists of nodes (often called vertices) and links (or connections or edges). I will explain some basic concepts here and illustrate each of them with R-code below.
 
@@ -49,7 +49,7 @@ centralityPlot(qgraph(adj)) # note centrality() gives more indices
 
 ![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71}
 
-### Network types
+### Network types {#sec-Network-types}
 
 Simple networks do not have cycles. An example of an undirected acyclic graph is one with nodes on a line (but not a circle). Connected undirected acyclic graph are trees; if they are partially un-connected, they are forests. Directed acyclic graphs, such as family trees and citation networks, are called DAGs. Most current neural networks are feed-forward networks without cycles, but so-called recurrent networks have cycles.
 
@@ -69,7 +69,7 @@ This nesting is crucial for understanding complex systems and is a central theme
 
 ![A hierarchical stochastic block model with four levels of four units.](media/ch6/fig-ch6-extra.png){#fig-ch6-extra}
 
-### Network dynamics
+### Network dynamics {#sec-Network-dynamics}
 
 A prominent phase transition in network theory is the emergence of a giant component. This happens when we start with a completely unconnected network of $n$ nodes and randomly add links. We simply take a random node and connect it to another node to which it has no connection. This leads to many small unconnected clusters at first, but then a giant component appears (a second order phase transition). This happens when about $n/2$ links have been added. You can verify this in the NetLogo model 'Giant Component'. The implication is that randomly connected networks with a sufficient number of links are almost always connected networks.
 
@@ -77,7 +77,7 @@ This is just one example of network dynamics [@dorogovtsevEvolutionNetworks2002]
 
 A relatively new topic in complex networks concerns higher order interactions. In most networks we only consider pairwise interactions, but third order and even higher order interactions may play a role [@battistonPhysicsHigherorderInteractions2021]. Other work considers hierarchical complex networks [@boccaletti2014]. For more information on network concept and types, I first refer to Wikipedia. Another great (open) source is the book by @barabasiNetworkScience2016. A more concise overview is provided by @boccaletti2014.
 
-## Psychological network models
+## Psychological network models {#sec-Psychological-network-models}
 
 The idea of emergentism, discussed in Chapter 1, is that there are multiple, hierarchically ordered levels of description, and that one need not always refer to lower levels to explain phenomena. Psychology seems to have a problem with this: We are missing levels. The lowest relevant level seems to be the neural level. Neural activity can be aggregated into the activity of neural groups or even brain areas. At the highest level we have observed behavior, for example motor and speech actions. The relations between these levels is often obscure.
 
@@ -95,9 +95,9 @@ The latent variable or factor approach has long been dominant in differential ps
 
 The psychological network approach was developed in response to the factor approach. The main reason is that underlying common causes are unsatisfactory if they cannot be identified independently of the observed relationships they are supposed to explain [@vandermaasDynamicalModelGeneral2006]. One consequence is that such an explanation does not provide guidance for possible interventions.
 
-### Mutualism model: the case of general intelligence
+### Mutualism model: the case of general intelligence {#sec-Mutualism-model-the-case-of-general-intelligence}
 
-#### The $g$ factor
+#### The $g$ factor {#sec-The-g-factor}
 
 The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$.
 
@@ -111,7 +111,7 @@ It is important to note that factor explanations are not always problematic. I l
 
 Statistically, these factor models are equivalent. Thus, the fact that factor models fit intelligence data well does not tell us anything about the status of $g$. Is it a common cause or just an index?
 
-#### Mutualism model
+#### Mutualism model {#sec-Mutualism-model}
 
 @vandermaasDynamicalModelGeneral2006 proposed an alternative model that is consistent with the formative interpretation of the factor model. The idea is that our cognitive system consists of many cognitive functions that develop over time in an autocatalytic process based on experience and training, but also due to weak positive reciprocal interactions between developing cognitive functions. Examples of such mutualistic interactions are those between short-term memory and cognitive strategies, language and cognition (syntactic and semantic bootstrapping), cognition and metacognition, action and perception, and performance and motivation [@vandermaasNetworkModelsCognitive2017]. For example, babies learn to grasp objects by repeatedly reaching out, coordinating their hand and finger movements, and adjusting their grip. Through these actions, they gather sensory feedback, refining their perception and improving their grasping skills in a reciprocal learning process [@needhamHowBabiesUse2023].
 
@@ -171,7 +171,7 @@ hist(cor(data)[cor(data)<1],main='positive manifold',
 
 ![A typical run of the mutualism model for one subject and the distribution of correlations between $X$ values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76}
 
-#### Abnormal development
+#### Abnormal development {#sec-Abnormal-development}
 
 In @vandermaasNetworkModelsCognitive2017, this model is applied in several ways, for example, by incorporating Cattell's idea of investment of fluid skills in crystalized abilities. In a recent paper, de @ronGeneralModellingFramework2023 extends the mutualism model with resource competition to explain different patterns of abnormal development. One pattern of abnormal development is hyperspecialization, which is associated with rare variants of autism. In the process of modeling, we came to an interesting insight. Assuming that there is competition for scarce resources (time, money, educational support), hyperspecialization is the default outcome and it is 'normal' development that needs to be explained. The reason is the following insight from mathematical biology.
 
@@ -204,7 +204,7 @@ resource\ depletion
 \end{array}
 $$ {#eq-ch6-3-old-44}
 
-#### The wiring of intelligence
+#### The wiring of intelligence {#sec-The-wiring-of-intelligence}
 
 A limitation of mutualism models is that only the activation of nodes is updated. The weight and structure of the network are fixed. While this may be sufficient to explain some developmental phenomena, it is ultimately unsatisfactory. The links themselves should be adaptable, as in the learning of neural networks. An example of learning in the form of updating weights is presented in a later section on the Ising Attitude model.
 
@@ -212,7 +212,7 @@ In @saviWiringIntelligence2019 the case where both nodes and links are updated w
 
 However, it is difficult to create a growing network with Fortuin-Kasteleyn properties. A simple example of this problem is the random network. In random networks, there is a uniform probability that two nodes are connected. But if we add new nodes to such a network and connect them to existing nodes with the same probability, the existing nodes will have more connections on average. Thus, adding new nodes destroys the randomness of the network, that is the probability that two nodes are connected is not uniform over nodes anymore. Such a network is a non-equilibrium network [@dorogovtsevEvolutionNetworks2002]. Rewiring algorithms to achieve equilibrium exist, but they are not trivial.
 
-### Symptom networks
+### Symptom networks {#sec-Symptom-networks}
 
 In the network perspective on psychopathology, a mental disorder can be viewed as a system of interacting symptoms. Network theory conceptualizes mental disorders as complex networks of symptoms that interact through feedback loops to create a self-sustaining syndromic constellation. Mental disorders can be understood as alternative stable states of highly interconnected networks of symptoms [@borsboomNetworkTheoryMental2017].
 
@@ -240,7 +240,7 @@ This suggests a distinction between perturbations and interventions. With interv
 
 ![Resilience from a complex systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/image10.jpg){#fig-ch6-img10-old-79}
 
-### Ising attitude model
+### Ising attitude model {#sec-Ising-attitude-model}
 
 The network approach has been applied to many other domains outside of intelligence research and the study of psychopathology. Examples include emotion [@langeEmotionsOverlappingCausal2021; @treur2019], personality [@costantiniStateARtPersonality2015; @cramer2012], interest [@sachisthalIntroducingScienceInterest2019], deviations of rational choice [@kruis2020],and organizational behavior [@loweryBalancingActPerformance2021]. One area where it has been developed into a new theory is attitude research.
 
@@ -252,7 +252,7 @@ In this section, I will discuss our network approach to attitudes using the Isin
 
 It was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors, that each explain observed responses, similar to the CHC model of general intelligence. The causal attitude model [@dalegeFormalizedAccountAttitudes2016], maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. That is high attention 'freezes' the network and leads to consistent and stable positive or negative states of the attitude (the 'mere thought effect', see below).
 
-#### Model setup
+#### Model setup {#sec-Model-setup}
 
 The basic assumptions of the Ising Attitude Model are that nodes are binary (e.g., one eats red meat or not), that nodes influence each other causally, and that they have specific thresholds (as in the model for depression). An external field (a campaign to eat less meat) could also affect the nodes. The orientation of nodes to other nodes and to the external field depends on one's attention, $A$, to the attitude object.
 
@@ -276,7 +276,7 @@ This is an important result because it makes the use of the cusp in attitude res
 
 This mean-field approximation is very robust. In @vandermaas2020 it is shown by simulation that networks with much fewer connections and a distribution of weights, some of which are negative, are still well described by the cusp. This can be easily checked with some R code or in NetLogo. We will make use of the IsingSampler package in R.
 
-#### Simulation
+#### Simulation {#sec-Simulation}
 
 The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($W$), which for the Curie Wiess model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$ is the inverse of the temperature ($1/T$).
 
@@ -318,7 +318,7 @@ plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
 
 We see that for medium attention, the agreement with the thresholds is highest. When attention is zero or very low, nodes behave randomly and do not correlate with the thresholds. When attention is very high, the effects of node-specific thresholds are masked by the collective effects of other nodes. The principal problem of implicit measurement is that for low to medium attention, the network is quite noisy. This is why this paper is called "Accurate by being noisy".
 
-#### Learning
+#### Learning {#sec-Learning}
 
 These connectionist attitude models are capable of "learning", i.e., adjusting the weights. This can also be done in the Ising attitude model by using Hebbian learning. Hebbian learning, 'what fires together, wires together', can be formulated as:
 
@@ -366,7 +366,7 @@ In this case we want to update the nodes values using the Glauber dynamics (@eq-
 
 Due to Hebbian learning, the network evolves from an unbalanced network (random connections) to a consistently balanced network. Without learning, we need high attention to make the attitude network behave consistently. In the Learning Ising Attitude Model (LIMA), weights increase during periods of high attention. The advantage is that in later instances less attention is required for consistent network behavior [chapter 8 of @dalegeFormalApproachAttitude2020]. In this way we can develop stable consistent attitudes.
 
-#### The stability of attitudes and entropy measures
+#### The stability of attitudes and entropy measures {#sec-The-stability-of-attitudes-and-entropy-measures}
 
 So, adding Hebbian learning to the Ising attitude model leads to stable and consistent attitudes. Computing the Gibbs entropy is the best way to quantify this [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in Section 4.1.1 as the log of the number of ways (W) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates X. It is defined as:
 
@@ -378,7 +378,7 @@ $$\begin{array}{r}
 
 Note that we sum over all microstate ($2^{n})$. For small networks we can compute this measure using the `IsingEntrophy()` function of the IsingSampler package. There is much more to say about the different entropy measures. For instance, Shannon entropy (a measure in information theory) and Gibbs entropy have the same mathematical definition but are derived from completely different lines of reasoning. An introduction to the discussion on entropy measures can be found at Entropy page of Wikipedia.
 
-#### Tricriticality
+#### Tricriticality {#sec-Tricriticality}
 
 A new direction of research concerns Ising type models with trichotomic node values (-1,0,1). In physics this case is known as the tricritical Ising model or the Blume Capel model [@saulTricriticalBehaviorBlumeCapel1974]. In physics, the states +1 and -1 could represent the spin of a particle pointing up or down, while 0 could represent a non-magnetic or spinless state. In an attitude model, +1 and -1 may represent pro and con beliefs, while 0 represents a neutral belief. The Hamiltonian of the model includes a penalty for the -1 and +1 states:
 
@@ -392,11 +392,11 @@ The dynamics of this model are more complicated. It resembles the butterfly cata
 
 ![The butterfly catastrophe, $V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}$, associated with the tricritical Ising model. The potential function can have three minima (a = c = 0, d = 5, b varies from 1 to -7).](media/ch6/image15.jpg){#fig-ch6-img15-old-84}
 
-## Psychometric network techniques
+## Psychometric network techniques {#sec-Psychometric-network-techniques}
 
 So far, we have seen examples of theoretical psychological network models in the fields of cognitive, clinical, and social psychology. However, much of the popularity of this approach is due to the psychometric approach that has been developed to analyze data using networks. In the last 15 years, a family of statistical approaches has been developed for all kinds of data and empirical settings. Our psychosystems group (psychosystems.org) has published a book "Network Psychometrics with R: A Guide for Behavioral and Social Scientists" [@isvoranuNetworkPsychometricsGuide2022]. This resource is highly recommended. I will limit myself to a brief overview and some practical examples related to the models presented in the first part of this chapter.
 
-### Main techniques
+### Main techniques {#sec-Main-techniques}
 
 An important aspect of Network Psychometrics is to visualize the network. This is the process of creating visual representations of the network structure. This helps in interpreting the data. The main R packages for visualization are igraph and qgraph. Both packages include many other useful functions.
 
@@ -412,7 +412,7 @@ For a detailed discussion of the reasons for using certain techniques, I again r
 
 Finally, I mention semantic network analysis again. A recent review of statistical approaches (available in R) is provided by @christensenSemanticNetworkAnalysis2021.
 
-### Fitting the mutualism model
+### Fitting the mutualism model {#sec-Fitting-the-mutualism-model}
 
 In the section on the mutualism model, I provided code to simulate data. These data can be fitted using JASP. By re-running the previous code and adding
 
@@ -468,7 +468,7 @@ In JASP, you can perform network and confirmatory factor analysis. In the latter
 
 ![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.jpg){#fig-ch6-img17-old-86}
 
-### Fitting Ising models
+### Fitting Ising models {#sec-Fitting-Ising-models}
 
 With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
 
@@ -525,11 +525,11 @@ qgraph(ObamaFit$weiadj, layout = 'spring', cut = .8, groups = communities(ObamaC
 
 ![The attitude towards Obama.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88}
 
-## Challenges
+## Challenges {#sec-Challenges}
 
 Since the early work on network psychology, the mutualism model, and the paper on the network perspective on comorbidity, a tremendous amount of work has been done. In particular, network psychometrics has taken off in an unprecedented way. One could say that modern psychometrics is being reinvented from a network perspective. For every type of data and research question, a network approach seems to be available. For example, there are R packages for meta-analysis from a network perspective [@salanti2014]. I also note that much work has been done to understand the relationship between network psychometrics and more traditional techniques such as item response theory [@marsman2018] , factor models [@waldorpRelationsNetworksRegression2022] and structural equation modeling [@epskampGeneralizedNetworkPsychometrics2017]. Nevertheless, there are still many challenges for both psychological network modeling and network psychometrics.
 
-### Psychological network modelling
+### Psychological network modelling {#sec-Psychological-network-modelling}
 
 Despite all the hard work on this, I can only conclude that this theoretical line of research is still in its infancy. The strength of the application to intelligence is that it provides an alternative to the $g$-factor approach, which is also nothing more than a sketch of a theory. The extensions of the mutualism model [@ronGeneralModellingFramework2023; @saviWiringIntelligence2019] are new steps, but still rather limited models. One reason for this state of affairs is that it is really hard to pinpoint the elementary processes involved in intelligence, and indeed in any psychological system.
 
@@ -547,7 +547,7 @@ In Chapter 1, I mentioned the case of the shallow lake studied in ecology, where
 
 Although much more progress can be made in network modeling of psychological systems, it is advisable to be realistic. Progress in mathematical modeling of ecosystems has also been slow. Ecosystems and human systems are devilishly complex. The formalization of psychological models is of interest for many reasons @borsboomTheoryConstructionMethodology2021, but will only be effective if we also make progress in other areas, such as measurement.
 
-### Psychometric network analysis
+### Psychometric network analysis {#sec-Psychometric-network-analysis}
 
 This approach is also not without its problems, some of which are related to the problems of psychological network modeling. For example, the definition of nodes and the risk of missing nodes in the data is a serious threat. Again, this is not a unique problem; simple regression analysis suffers from the same risks. Another common threat to many applications of psychometric network analysis is the reliance on self-report in interviews or questionnaires. Generalizability, which may depend more on the choice of sample and measurement method than on the statistical analysis itself, is another example of a common problem in psychology in general and psychometric network analysis, in particular.
 
@@ -561,11 +561,11 @@ While these problems are not unique to network psychometrics, they are common pr
 
 But we can also think of other ways. A simple, but not easy to implement, procedure is to ask subjects about the links in their networks. If one claims not to eat meat because of its effect on the climate, one might consider adding a directed link to this individual's network [@rosencransNetworkApproachPosttraumatic2021]. @desernoHighwaysHappinessAutistic2020 used clinicians' perceptions of causal relationships in autism. These relationships were consistent with those found in self-reported client data. The main problem is that there are many more possible links than nodes to report on, which makes the questionaries extremely long and tedious to fill out. @brandt2022 applied conceptual similarity judgments to construct attitude networks. Alternatively, one could try to estimate links from social media data, interviews or essays using automatic techniques [@petersQualitativeNetworkApproach2022].
 
-## Conclusion
+## Conclusion {#sec-Conclusion}
 
 Despite these critical remarks, it is safe to say that the psychological network approach has made great progress in a very short time. The mutualism paper was only published in 2006. It is a new and unique application of the complex systems approach within the field of psychology. For me, the common cause approach is theoretically unsatisfactory because the common causes are purely hypothetical constructs. For both the $g$- and the $p$-factor, a reasonable explanation of the origin of these factors is a mystery. In contrast, the reciprocal interactions between function and symptoms that underlie the network theories of intelligence and psychopathology are not really controversial. It is also good to note that the network approach is not inconsistent with factor analytic work in psychology. It is a matter of interpreting the general factor as a common cause or as an index. The formative interpretation of factors is consistent with the network approach.
 
-## Exercises
+## Exercises {#sec-Exercises}
 
 1)  Reproduce the degree distribution of the Barabási-Albert model shown on the Wikipedia page on the scale-free network. Use sample_pa from the Igraph library. (\*)
 

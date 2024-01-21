@@ -1,6 +1,6 @@
 # Chaos and unpredictability {#sec-ch2}
 
-## Introduction
+## Introduction {#sec-Introduction}
 
 Suppose we have immense amounts of genetic, biological and psychological data on millions of participants and knowledge of all relevant environmental factors. Suppose also that these huge amounts of data are of fantastic quality. Using state-of-the-art machine learning models and powerful computing resources, we could build advanced statistical models that include main and higher order interaction effects of all variables, even incorporating non-linear transformations. Even then, prediction may not be possible. The reason is a phenomenon called deterministic chaos.
 
@@ -8,7 +8,7 @@ Chaos is one of the three most spectacular phenomena in complex systems and as p
 
 In my opinion, the applicability of chaos theory to psychology and social science is somewhat limited. For a long time, researchers have tried to show chaos in time series of psychophysiological measures, but this seems to be difficult. I will briefly review this work at the end of the chapter. The relevance of chaos theory may lie not in its application, but in its fundamental implication for prediction. What chaos theory basically shows is that even in the best of circumstances, where we have very accurate models and data, long-term prediction might be impossible. This is known as the butterfly effect: A butterfly flaps its wings in India and that tiny change in air pressure could eventually cause a tornado in Iowa. How this works will become clear in this chapter.
 
-## The population growth of rabbits
+## The population growth of rabbits {#sec-The-population-growth-of-rabbits}
 
 Chaos theory consists of many deep mathematical results, but understanding the basics of chaos is not so hard. Below I will explain chaos in difference equations at a very basic level of mathematics and programming. The elementary example is the famous logistic map, usually introduced as a model of population growth, for instance, of rabbits. Suppose we have rabbits on an island, and they start to multiply, what would be a mathematical model for such a process?
 
@@ -42,7 +42,7 @@ What is the effect of this addition to the equation? If $X$ is much smaller than
 
 [^ch2-1]: Verhulst proposed this model in the form of a differential equation in continuous time. We will discuss this type of model in Chapter 5. In continuous time, nothing particularly spectacular happens and we only see the kind of behavior displayed in @fig-ch2-img2.
 
-## Stable and unstable fixed points
+## Stable and unstable fixed points {#sec-Stable-and-unstable-fixed-points}
 
 Let us first study a simple 'boring' case, $r = 2$ (@fig-ch2-img2).
 
@@ -90,7 +90,7 @@ I will not explain why, however, the rule is that the fixed point is stable if t
 
 [^ch2-2]: Why this is, is not too difficult to understand. If you google 'fixed points of difference equations', you will quickly arrive at stackexchange.com, where several insightful explanations are given.
 
-## Limit cycles
+## Limit cycles {#sec-Limit-cycles}
 
 So at $r = 3$ the fixed point or $(r - 1)/r$ becomes unstable. Let's study some cases. Plot are made with the code of @fig-ch2-img2.
 
@@ -100,7 +100,7 @@ For $r = 2.9$ we see that the series converges to the fixed point $\frac{1.9}{2.
 
 It has been claimed that these limit cycles occur in real population dynamics. Intuitively, it can be understood as a process of over- and undershooting, which dampens out for $r$ a little below 3, but not for $r > 3$.
 
-## Chaos
+## Chaos {#sec-Chaos}
 
 If we increase $r$ even further, the doubling of the periods changes to even stranger behavior. This is what the time series looks like for $r = 4$.
 
@@ -134,7 +134,7 @@ $$
 
 where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambda_{L} > 0$ indicates chaos. You may verify in a simulation that $\lambda_{L} > 0$ for $r = 4$, indicating chaos.
 
-## Phase plot and bifurcation diagrams
+## Phase plot and bifurcation diagrams {#sec-Phase-plot-and-bifurcation-diagrams}
 
 @eq-ch2-2 is very simple. It is just one equation, a deterministic difference equation specifying how $X_{t + 1}$ depends on $X_{t}$, but the variety of behavior is astonishing. One way to better understand its behavior is to use phase plots. A phase plot is a graphical representation of the relationship between two or more variables that change over time. In one-dimensional systems we plot $X_{t}$ against $X_{t + 1}$.
 
@@ -190,7 +190,7 @@ A recurring phenomenon in many chaotic maps are fractals. Fractals are figures i
 
 One famous result on this period doubling route to chaos is the Feigenbaum constant. The ratios of distances between consecutive period doubling points (e.g., the distance between first and second divided by the distance between the second and third point), converge to a value of approximately 4.6692. The amazing thing is that this happens for any unimodal map, not only the logistic map.
 
-## What did we learn
+## What did we learn {#sec-What-did-we-learn}
 
 I find these results stunning. I note again that the generating function is deceptively simple, but its behavior is utterly complex and beautiful to me. Mathematicians have studied every detail of these plots and most of it is beyond my comprehension. The Wikipedia on the logistic map will introduce you to some more advanced concepts, but for our purposes the present introduction will suffice.
 
@@ -204,7 +204,7 @@ The last thing we learned is that even if our world were deterministic (it is no
 
 This statement needs some nuance. I have already mentioned that the weather can be chaotic and unpredictable. But the weather is not always so unpredictable. Sometimes longer forecasts are possible. But forecasts beyond, say, 10 days seem out of reach. We also see in the logistic map that when $r$ is close to 4, the forecast suffers from the butterfly effect, but for $r = 2$ the time course is very predictable, even more predictable than in many linear systems. This is because there is only one stable fixed point (.5). The initial state does not matter, we always end up at .5! So the logistic map is extremely predictable or extremely unpredictable depending on $r$.
 
-## Other maps and fractals
+## Other maps and fractals {#sec-Other-maps-and-fractals}
 
 There are many accessible sources on chaos theory. As always, Wikipedia is a great resource. It helps me a lot by actually doing things, i.e., doing computer simulations. One example is the Henon map, which consists of two coupled difference equations:
 
@@ -217,7 +217,7 @@ Using the code example from the logistic map, you should be able to generate tim
 
 Fractals are another topic for further study. Another look at Wikipedia is recommended. Making your own fractals in R is made easy by the R blog by Martin @stefanRPubsFractals2020.
 
-## Detecting chaos in psychophysiological data
+## Detecting chaos in psychophysiological data {#sec-Detecting-chaos-in-psychophysiological-data}
 
 Chaos theory and the logistic map were popularized about 50 years ago, and since then researchers have been looking for chaos in all kinds of time series [@ayersApplicationChaosTheory1997; @robertsonChaosTheoryPsychology2014; @schiepek2017]. One idea behind this work is the hypothesis that chaos might be healthy [@poolItHealthyBe1989] or be helpful. It would be helpful in learning algorithms, such as neutral networks, to prevent getting stuck in local minima [@bertschingerRealTimeComputationEdge2004]. My very first publication was about chaos in neural networks [@vandermaasNoteChaoticBehavior1990].
 
@@ -227,7 +227,7 @@ Chaos detection is an active area of research, with new methods being proposed o
 
 These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.
 
-## Exercises
+## Exercises {#sec-Exercises}
 
 1)  For $r=3.5$, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 

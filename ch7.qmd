@@ -1,6 +1,6 @@
 # Sociophysics {#sec-ch7}
 
-## Introduction
+## Introduction {#sec-Introduction}
 
 This chapter is dedicated to the dynamics between people. Networks of social interactions undoubtedly meet the criteria of the definition of a complex system and often exhibit unpredictability, sudden changes, and self-organization. Models of the dynamics between people are the domain of social scientists, such as sociologists, but also scientists with a background in statistical physics. Again, it is necessary to simplify, and the victim in this case is psychology. In many models, people are reduced to binary nodes, on or off, pro or contra, or to systems with only one continuous attribute. It is a challenge to add a little more psychology to the agents in these models so that more phenomena can be explained without making these models too complex to study. It is very easy to cross that line. The second part of the chapter deals with what I call psychosocial models.
 
@@ -10,9 +10,9 @@ In my broad definition of sociophysics, it deals with many different systems and
 
 Some important follow-up books to read are @smaldino2023 on modeling social behavior, @bowlesCooperativeSpeciesHuman2011 on cooperation and altruism, @durlaufSocialDynamics2001 on modeling social economics, the work of @epsteinAgentZeroNeurocognitive2014; @epsteinGenerativeSocialScience2006; @epsteinGrowingArtificialSocieties1996 on building artificial societies and @millerComplexAdaptiveSystems2007 on computation models of social life. There are also some excellent review articles on this area of research [@castellanoStatisticalPhysicsSocial2009; @noorazarRecentAdvancesOpinion2020; @proskurnikovTutorialModelingAnalysis2017; @jusup2022]. A less mathematically focused review is provided by @flacheModelsSocialInfluence2017.
 
-## Some famous examples
+## Some famous examples {#sec-Some-famous-examples}
 
-### Segregation
+### Segregation {#sec-Segregation}
 
 The most famous computational model for studying segregation is Schelling's model [@schellingDynamicModelsSegregation1971]. The simplified version of this model assumes a two-dimensional space, a cellular automaton as in NetLogo, where each location or cell is occupied by one of two types of agents or is empty. The density parameter determines how many locations are occupied. Agents stay at their location if a certain percentage of their 8 neighbors, $B$, are of the same type as the agent. So, if $B = 0\%$, nobody moves. For values of B close to 100%, everybody moves all the time. What Schelling showed with his model was that even low levels of intolerance, near 30%, lead to segregation. Thus, even if people can accept up to 70% of "foreign" neighbors, segregation still occurs.
 
@@ -24,7 +24,7 @@ One concept we saw in Chapter 5, in the context of Haken's work, was that of the
 
 Of course, this is only an initial model that can be extended in many ways, some of which are already explored in Schelling's original paper. For an interesting historical sketch of this line of research, see @hegselmannThomasSchellingJames2017. A different NetLogo model inspired by Schelling's research is called "Party." In this model, party-goers experience discomfort and change their groups if their current group consists of a disproportionate number of individuals of the opposite sex. A recent review with a focus on urban dynamics can be found in @jusup2022.
 
-### The evolution of language: The naming game
+### The evolution of language: The naming game {#sec-The-evolution-of-language-The-naming-game}
 
 Languages are complex systems that emerge in a self-organizing cultural process [@steelsSelfOrganizingSpatialVocabulary1995]. Steels developed the naming game (@fig-ch7-img2-old-90) to study the evolution of language For a review I refer to @chenNamingGameModels2019. @castellanoStatisticalPhysicsSocial2009 provides a brief review.
 
@@ -80,7 +80,7 @@ $$\begin{array}{r}
 
 The first equation can be understood as follow. Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's choice of A or B (${\frac{1}{2}X}_{AB}X_{AB})$. If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: 1) If the initial proportion of A is greater than B, A wins, 2) if the initial proportion of B is greater than A, B wins, and 3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.
 
-### Cultural dynamics: The Axelrod model
+### Cultural dynamics: The Axelrod model {#sec-Cultural-dynamics-The-Axelrod-model}
 
 @axelrodDisseminationCultureModel1997 introduced an influential model of cultural diffusion based on the effects of social interactions and homophily. Homophily refers to the tendency or preference for individuals to associate or connect with others who are similar to themselves. In Axelrod's model, individuals become more similar through interactions but only if they already share some cultural features.
 
@@ -117,7 +117,7 @@ plot(uniques[1:i],type='l',lwd=2,xlab='time',ylab='# unique cultures',
 
 What I find appealing about the Axelrod model is its multidimensionality. As long as we have some characteristics or qualities in common with other people on certain dimensions, there is hope. This is why I am more concerned about polarization in the United States than in the Netherlands. In the US, it seems that all aspects of life are interconnected, and even seemingly unrelated factors such as one's choice of jeans or favorite sport are correlated with one's political beliefs. This greatly limits the possibilities for depolarization.
 
-## Dynamics of opinions
+## Dynamics of opinions {#sec-Dynamics-of-opinions}
 
 In that same famous paper, Axelrod asked an important question: "If people tend to become more alike in their beliefs, attitudes, and behavior when they interact, why do not all such differences eventually disappear?"
 
@@ -125,9 +125,9 @@ The answer to Axelrod's question is usually posed in terms of limited interactio
 
 It is hard to count the number of opinion-spread models, but it could easily be in the hundreds, if you count all the variants. They all share a few building blocks. First, there has to be some topology to the social network. Modelers make different choices here, often fully connected networks are assumed because they allow an analytical approach, others use random networks, lattices, small world networks, etc. The problem is that we don't really know how real social networks work, except that they are incredibly complex [@newmanWhySocialNetworks2003]. Second, you need to define some interaction rules. For example, two agents might end up in the middle after a discussion, or one agent might copy the other's state, or one agent might take over the majority vote in its local neighborhood. Finally, you have to define opinion. A major division in social contagion models is whether opinions are defined as discrete or continuous. I will first discuss several discrete opinion models.
 
-### Discrete opinion models
+### Discrete opinion models {#sec-Discrete-opinion-models}
 
-#### Voter models
+#### Voter models {#sec-Voter-models}
 
 The simplest possible model seems to be the voter model. In its basic form, with only two possible opinions (-1, 1), two connected agents A and B meet, and A simply copies B's opinion. What happens in this simple system depends on the topology of the network, i.e., its dimension (either $d = 1$ (on a line), $d = 2$ (a lattice) or $d > 2)$ and its size $N$. In more than 2 dimensions and with infinite size, the voter system does not converge, but in other cases it converges to a state of all -1s or all 1s [@castellanoStatisticalPhysicsSocial2009; @rednerRealityinspiredVoterModels2019]. The probability of ending up in the +1 state is equal to the initial probability of +1s. How long it takes to converge can also be derived analytically. The convergence time is proportional to $N^{2}$, for voters on a line ($d = 1$), $NlnN$ for $d = 2$, and $N$ for $d > 2$. Thus the convergence is slowest when agents are connected in a line.
 
@@ -137,7 +137,7 @@ Another approach has been proposed by @martinsContinuousOpinionsDiscrete2008. Th
 
 IN CODA there are two choice options, A and B, and agent $i$ has some subjective probability $p_{i}$ that A is the best option, and ${1 - p}_{i}$ for B. The actual choice is made according to $sgn\left( p_{i} - .5 \right)$, so A is chosen when $p_{i} > .5$. Next, the agent observes other agents. Agents assume that other agent make rational choices, i.e., choose A when A is the best option with a probability $a$ that is larger than .5. In running the model, it is convenient to work with the log-odds of probabilities, $v_{i} = ln\frac{p_{i}}{1 - p_{i}}$. Using the Bayes' theorem, we can update $v_{i}$ to $v_{i} + a$ when agent j chooses A and to $v_{i} - a$ if the choice is B. @martinsContinuousOpinionsDiscrete2008 integrates these decision rules with the voter model, showing extreme forms of polarization, i.e., a strongly bimodal distribution of opinions.
 
-#### More discrete opinion models: majority type models
+#### More discrete opinion models: majority type models {#sec-More-discrete-opinion-models-majority-type-models}
 
 In the voter and in the Axelrod models, interactions are limited to two agents. When multiple neighbors have an impact on each agent, many new options arise. One option is the Ising model [@galamSociophysicsNewApproach1982]. Agents switch sides with a probability that depends on the states of their neighbors. The temperature variable in the Ising model is translated into randomness in the model. The external field is now interpreted as an external social field. In this way one can explain phase transitions and hysteresis in opinion dynamics.
 
@@ -149,7 +149,7 @@ Another case is the $q$-voter model [@castellanoNonlinearVoterModel2009; @jedrze
 
 In the basic Snzadj model, agents are placed on a line, and two neighbors with the same opinion spread this opinion to their own neighbors. If they disagree, they enforce their disagreement on their neighbor. Thus (?,1,1,?) becomes (1,1,1,1) and (?,-1,1,?) becomes (1,-1,1,-1). This can converge to a state of all 1s, all -1s, or a sequence of 1 and -1 pairs. The latter state is reached with a probability of 0.5. This model has also been extended in many ways, such as adding an election process [@sznajd-weronReviewSznajdModel2021].
 
-#### Social Impact theory
+#### Social Impact theory {#sec-Social-Impact-theory}
 
 The last discrete model I mention here is the Social Impact Model, which is based on Latané's [-@latanePsychologySocialImpact1981] psychological theory of social impact. Latané introduced many ideas and concepts from complex systems theory into social psychology. His psychological theory is firmly grounded in social psychology and supported by all kinds of evidence [@karauSocialLoafingMetaanalytic1993].
 
@@ -169,9 +169,9 @@ In the presence of individual fields, some minority opinions can become metastab
 
 Extensions of this model include learning, leadership, external influences and identity effects [for a review, see @holystSocialImpactModels2001].
 
-### Continuous opinion models
+### Continuous opinion models {#sec-Continuous-opinion-models}
 
-#### Classic models
+#### Classic models {#sec-Classic-models}
 
 Another line of research, with its own history, starts from the assumption that opinions are continuous variables [for a recent review see, @noorazarRecentAdvancesOpinion2020]. A classical model is the DeGroot model, where agents are connected in a weighted network. At each iteration, an agent's opinion is set equal to the weighted average of all connected agents in the network. Thus opinions tend to converge. The Friedkin-Johnson model [@friedkinSocialInfluenceOpinions1990] is an extension that includes a confidence level for each agent. This confidence of the agent in his own opinion reduces the effect of others. Clustering or polarization in these linear models can only occur if parts of the network are unconnected. The Friedkin-Johnson model can be efficiently simulated with Grind (using the `method='euler'` option) by:
 
@@ -196,7 +196,7 @@ run(odes=FJ,method='euler',tmax=100)
 
 With an additional bias mechanism, in which confirming evidence is weighted more heavily relative to disconfirming evidence, polarization can also occur in connected networks [@dandekarBiasedAssimilationHomophily2013].
 
-#### Bounded confidence
+#### Bounded confidence {#sec-Bounded-confidence}
 
 The bounded confidence mechanism has been extensively studied as the most effective way to generate divergence of opinions in continuous opinion models. It assumes that individuals have a limited willingness to accept and consider opinions that differ from their own and will only update their opinions if they are within a certain range or "bound" of similarity.
 
@@ -250,17 +250,17 @@ Again, many extensions have been studied. A recent paper studies the case where 
 
 In the online library of NetLogo you can find the model "BC", which simulates both the standard Deffuant and the HK models.
 
-### Empirical verification
+### Empirical verification {#sec-Empirical-verification}
 
 @castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multi-country panel surveys, social media and laboratory studies [for a review, see @peraltaOpinionDynamicsSocial2022]. The problem seems to be that these data do not discriminate between models. Most of the data fit all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed phenomena that all models are supposed to explain.
 
-## Psychosocial models
+## Psychosocial models {#sec-Psychosocial-models}
 
 In the introduction to this chapter, I said that psychology is the victim of the simplifications necessary to develop sociophysics models. In this section we explore ways to make these models a bit more psychologically realistic. Several existing models already include additional psychological variables [@jagerEnhancingRealismSimulation2017]. The Social Impact model is a good example since it incorporates persuasiveness and supportiveness of agents to determine opinion change. The model is also based on a well-known theory in social psychology. Other models include stubbornness, cognitive dissonance, and confidence [@castellanoStatisticalPhysicsSocial2009]. All of these parameters are used to modify the interactions between agents.
 
 Here I will discuss the model proposed in @vandermaasPolarizationIndividualsHierarchical2020, which uses three dynamic variables to describe agents: information, involvement and opinion. Individual agents are described by the cusp catastrophe as shown in @fig-ch3-img13-old-25 . This is somewhat similar to the work of @sobkowiczDiscreteModelOpinion2012, who used the cusp model for the individual agent, using emotion and information as dynamic control variables. As in our model, interactions between agents change both opinions and the control variables. For example, agitation spreads across agents. However, in his opinion model, Sobkowicz reduces the cusp dynamics to a three-state system, where opinions are either -1, 0 or 1. We will not adopt this simplification, as much of the interesting dynamics (hysteresis within agents) are lost.
 
-### Networks of attitude networks
+### Networks of attitude networks {#sec-Networks-of-attitude-networks}
 
 Our starting point is the Ising Attitude Model explained in Chapter 6. In this model, attitudes or opinions are conceptualized as networks of feelings, behaviors, and beliefs about the issue. This new view of attitudes has been well received in the literature and applied to a number of attitudes [e.g., @chambonUnderstandingChangeCOVID192022; @turner-zwinkelsBeliefSystemNetworks2022; @zwickerApplyingAttitudeNetwork2020]. The idea is to use this attitude network model as a model for individual agents.
 
@@ -270,7 +270,7 @@ As discussed in Section 6.3.3.1, the average behavior of the spins in the Ising 
 
 The HOIM model can be found in the online Netlogo models ('HIOM.nlogo'). In the Netlogo, the equation and algorithm differ slightly from the original paper, mainly to speed up the simulation. The equations here are those used in the Netlogo model.
 
-#### The HIOM model
+#### The HIOM model {#sec-The-HIOM-model}
 
 Like other opinion models, the Hierarchical Ising Opinion Model (HIOM) makes assumptions about a) the topology of the network, b) the interactions between agents, and c) the definition of opinion.
 
@@ -292,7 +292,7 @@ dO_{i} = \  - \left( O_{i}^{3} - {(A}_{i} + A^{\min})O_{i} - I_{i} \right)dt + s
 
 Spontaneous jumps in the dynamical behaviour of this equation are shown in @fig-ch4n-img2-old-50 (for $I = 0$, $A_{i} + A^{\min} = 1$ and $s_{O} = 0.4$).
 
-#### Agent interactions: information and attention
+#### Agent interactions: information and attention {#sec-Agent-interactions-information-and-attention}
 
 The HIOM makes three assumptions about interactions. First, it assumes that agents initiate interactions based on their involvement. The idea is simply that I'm not likely to start a discussion about a topic, say abut genetically modified food, if I'm not interested in the topic. The probability of initiating an interaction is equal to attention:
 
@@ -317,7 +317,7 @@ I_{i} = {{decay}_{I}\ (I}_{i} + Ν(m_{I},s_{I}))
 
 where $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$. Resistance, $r$ in \[0,1\], determines the relative impact of agent $j$ on agent $i$. Resistance or stubbornness is a logistic function of the difference in attention between the agents. Thus, if $A_{i} \ll A_{j}$, $r$ will be close to zero and the information in agent $i$ will change to the value of the information in agent $j$. The strength of this effect, persuasion, is determined by the steepness, $p$, of the logistic function. The parameter $r_{\min}$ determines the minimal value of $r$. If $r_{\min}$ is high, $r$ will be high and agents will stick to their information state. If $s_{I} > 0$ some normally distributed noise with mean $m_{I}$ is added. If $m_{I} \neq 0$ and $s_{I} = 0$, a constant external field is active.
 
-#### Algorithm
+#### Algorithm {#sec-Algorithm}
 
 The model is now in place and can be simulated by following the steps below:
 
@@ -353,7 +353,7 @@ There is no obvious stop criterion but in practice some type of convergence happ
 
 In the standard setup, you can see that high attention (set %active-agent high) leads to polarization. If you now decrease the difference in information (set decay_I to .5), the polarization remains even if the difference in underlying information is 0. Only if you also decrease attention (set %active-agents low), the polarization disappears. This is the first simulation described in @vandermaasPolarizationIndividualsHierarchical2020. The second and third simulation are described in the next two sections.
 
-#### The persuasion paradox
+#### The persuasion paradox {#sec-The-persuasion-paradox}
 
 Suppose we have a network of conservative but low attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists' opinion to spread quickly. They initiate all interactions (according to @eq-ch7-4-old-53) and have much more impact on their interaction partners than vice versa (@eq-ch7-6-old-55). However, this is not what happens. This scenario leads to polarization. The attention of the conservatives is raised, and people get a strong opinion against the activists. @fig-ch7-img11-old-99 shows this effect, which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selection 'setup-black-pete' and 'add-activists'. Activists can now be added by clicking in the world. Vary persuasion $p$ and $d_{A}\ ($da) to see different effects.
 
@@ -361,7 +361,7 @@ What is new in this model? It shows a new mechanism for polarization, namely hys
 
 ![The visualization of persuasion paradox in the original paper [@vandermaas2020a]. Activism initially spreads quickly, but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves.](media/ch7/image11.jpg){#fig-ch7-img11-old-99}
 
-#### A counterintuitive prediction
+#### A counterintuitive prediction {#sec-A-counterintuitive-prediction}
 
 In continuous opinion models the main reason for polarization is bounded confidence. We can easily add this to the HIOM: when $\left| O_{i} - O_{j} \right| > \epsilon,$ there is no interaction (no increase in attention and no exchange of information). This would even increase the polarization in the HIOM. However, since opinion and information can have opposite signs due to hysteresis, there is a way out. An example would be a meat-eating vegetarian, a person with a vegetarian point of view who actually eats meat. I claim to be such a vegetarian, but this position is not generally accepted in my local environment.
 
@@ -371,7 +371,7 @@ Now some attentive vegetarians will be perturbed into the meat-eating position. 
 
 ![The meat-eating vegetarian. The left panels show equal initial states. In the upper panels, bounded trust prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the lower panels, some vegetarians are perturbed towards meat eating. These perturbed agents have $I < 0$ and $O > 0$, which is possible because $A > 0$ (hysteresis). Since $O > 0$, these agents can exchange information with meat eaters, leading to the spread of vegetarianism. For simulation details, see @vandermaas2020.](media/ch7/image12.jpg){#fig-ch7-img12-old-100}
 
-#### Variants of the HIOM
+#### Variants of the HIOM {#sec-Variants-of-the-HIOM}
 
 What appeals to me about the HIOM is its ability to incorporate a greater degree of psychological insight into opinion dynamics models, resulting in a novel explanation for polarization attributed to hysteresis within individuals. Furthermore, it presents an untested, counterintuitive prediction that warrants further investigation.
 
@@ -387,19 +387,19 @@ What I really don't like is that the Ising Attitude Model, in which attitudes be
 
 A possible way out is to start from the tricritical Ising or Blume Capel model (see Section 6.3.3.5), where the attitude nodes have three states (-1, 0, 1) instead of only two. The resulting dynamic equation is the butterfly catastrophe which has four instead of two control variables. Building this in the HIOM will be a challenge. The Blume Capel model has also been proposed as a between person opinion model [@barbaroTerritorialDevelopmentsBased2013; @ferriEquilibriumDynamicsThreestate2022]. My dislike in this case is based on limited evidence. Demonstration with data that increased involvement can lead to trimodal distribution is needed.
 
-### Cascading transitions in other psychosocial systems
+### Cascading transitions in other psychosocial systems {#sec-Cascading-transitions-in-other-psychosocial-systems}
 
 We have now seen two psychological models of cascading transitions. The first was the model for multifigure multistable perception (Section 5.2.8.2). This was a within-person model. The second is the HIOM. But many other processes in psychosocial systems come to mind. One example is addiction. At the psychological level, the dynamics of addiction are often sudden (e.g., quitting and relapse), while at the social level there are sudden outbreaks of substance abuse (e.g., the heroin epidemic).
 
 To model this cascading process, we could follow the same approach as in the HIOM. Instead of the cusp, we could use the Budworm Spruce model as a model of individual substance use. Interactions in the network affect the parameters $r_{b},\ K,\ A,$ and $B$ parameters. A similar approach is possible with the panic model (see Section 5.2.5). In future work, we will also apply this model to collective learning processes.
 
-## Psychosociophysics
+## Psychosociophysics {#sec-Psychosociophysics}
 
 Neglecting the social world while attempting to model complex psychological processes may lead to inaccurate outcomes [@sobkowiczWhitherNowOpinion2020]. It is crucial for psychologists engaged in modeling to familiarize themselves with prominent sociophysics modeling techniques. The objective of this chapter was to offer a comprehensive overview of these models, but it is important to note that this review is not exhaustive. As new models continue to emerge, the foundational knowledge provided here will, hopefully, enable readers to stay informed and assess their applicability to psychological inquiries.
 
 Similarly, excluding psychological factors while modeling the social world can be counterproductive. It is essential to emphasize the need for psychosocial or even psychosociophysical models that integrate both aspects. The Social Impact Model serves as an example of such an approach. Our own model, the HIOM, has been elaborated upon in this chapter. The HIOM stands as a significant step in the direction of psychosociophysics models. The concept of cascading transitions is evidently relevant to other applicable cases, and there is ample opportunity for further exploration in this field.
 
-## Exercises
+## Exercises {#sec-Exercises}
 
 1)  Re-run the Schelling simulation (@fig-ch7-img1-old-89) with density of 50 instead of 97. Are the results substantially different? Submit your plot. (\*)
 

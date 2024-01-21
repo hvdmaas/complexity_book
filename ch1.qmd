@@ -1,6 +1,6 @@
 # Introduction {#sec-ch1}
 
-## What are complex systems? {#sec-What}
+## What are complex systems? {#sec-What} {#sec-What-are-complex-systems-secWhat}
 
 Some things in life are simple. When you push a block, it moves. Pushing harder makes it move faster, and stopping the push stops its movement. When you open the tap, water starts to flow. If you open it further, it flows faster, and if you close it, it stops. Cause-and-effect relationships like this are clear and roughly linear. Such relationships are rare in psychology. Let's take fear as an example. A fear stimulus, for example a barking dog, can lead to fear and flight, but also to anger and attack. Whether the stimulus is perceived as fearful might depend on subtle differences in context. It has also been debated whether the flight response precedes the feeling of fear or vice versa. Fear could also suddenly change into a panic attack. In psychology, cause and effect relationships are rarely simple, and effects are often non-linear.
 
@@ -24,7 +24,7 @@ Similar examples can be found in any of the natural sciences. Tornadoes, for exa
 
 The prime example from psychology is the brain. About a hundred billion neurons interact with thousands of other neurons in their neighborhood. Compared to computers, brains are extremely energy efficient, but as all open systems, they do consume energy (the equivalent of a light bulb according to [@attwellNeuralBasisFunctional2002]. Fast local interactions somehow form global waves of electrical activity that make up thought processes and even consciousness. The letters you are reading activate retinal neurons that initiate a cascade of electrical waves across billions of neurons that somehow create your understanding of this text [@robertsMetastableBrainWaves2019; @schonerDynamicsNeuralPopulations2020]. How is this possible? For me, this is the most fascinating scientific question of all time. It's the main reason why I'm a psychologist and not a physicist. I view the brain as the ultimate complex system.
 
-## Emergentism
+## Emergentism {#sec-Emergentism}
 
 What is the relation between complexity and reductionism? According to reductionism, complex phenomena can be explained by reducing them to the interactions of their individual parts or components. This raises two questions, one related to weak emergence and one related to strong emergence.
 
@@ -40,7 +40,7 @@ I believe that both weak and strong emergence are essential to understanding psy
 
 Of course, the relationship between the mind and the brain is one of the most debated topics in psychology. The neuro-reductionist view is popular in the field of psychology, both when it concerns the explanation of higher cognition [@schwartz2016] and psychological disorders (for a critical review see @borsboom2019).
 
-## The field of psychology
+## The field of psychology {#sec-The-field-of-psychology}
 
 The study of complex systems in the natural sciences (@fig-ch1-img3) is highly technical. I like to think of the field of complex systems as a toolbox of empirical paradigms and mathematical models and techniques [@grauwinComplexSystemsScience2012]. Models are often formulated in the form of difference or differential equations and subjected to, for example, bifurcation analysis. These are mathematical ways of describing the behavior of complex systems. Additionally, advanced numerical analysis, commonly in the form of computer simulation, is a standard approach. However, educational programs in psychology do not usually include courses in algebra, calculus and programming. Many psychologists lack the basic knowledge and skills to apply the toolbox of complex systems theory, as these are not ordinarily part of the psychology curriculum. Complex systems research simply seems too complex for psychologists and social scientists. One goal of this book is to provide psychologists with a first introduction to this technical toolbox.
 
@@ -62,7 +62,7 @@ A breakthrough occurred in the 1980s. Catching all the fish proved to be a very 
 
 In the following, I will discuss three reasons to be somewhat optimistic, based on three key observations about complex systems. The first key observation has to do with simplification, the second with the tendency of complex systems to be characterized by a limited number of stable states, and the third key observations is that all complex systems seem to be describable as some kind of network. Simplification is perhaps the most important one.
 
-## The art of simplification
+## The art of simplification {#sec-The-art-of-simplification}
 
 Einstein supposedly said that everything should be made as simple as possible, but not one bit simpler. A fascinating and instructive example is the traffic jam, which is made up of many people, with their amazingly complex brains, in modern cars full of advanced technology. Where to start modeling such a complex phenomenon? The answer is astonishing. It seems that we can reduce people in cars to simple blocks in a lane, speeding up when there is space in front of the artificial car and braking when they get too close to the car in front. All lower levels of modelling are ignored. This is even simpler than a flock of birds.
 
@@ -84,7 +84,7 @@ Fourth, good models do not build in phenomena, but explain them from basic princ
 
 Fifth, it is my conviction that a metaphorical use of the complex systems approach should be avoided by using concrete formal models. It is crucial to strive for the highest level of scientific rigor. There are no special, more lenient, methodological rules for complex systems research [@vandermaasMetaphor1995].
 
-## A limited number of equilibria
+## A limited number of equilibria {#sec-A-limited-number-of-equilibria}
 
 That complex systems can be simplified was the first key observation. The second key observation is that complex systems tend to be characterized by a limited number of equilibria. An important example is water. Water normally exists in either a solid, liquid or gaseous state (leaving aside the plasma state). These are stable states over wide ranges of temperature and pressure.
 
@@ -98,7 +98,7 @@ Finally, it has also been argued that many complex systems, especially living sy
 
 I would claim that many psychological complex systems tend to be in one attractor state most of the time, but they occasionally change states. If certain control parameters slowly change their values, the current equilibrium can become unstable and a transition to another equilibrium can occur. This is what happens when we lower the temperature of water to below zero. Transitions can occur in many ways, also depending on the types of equilibria involved. The family of transition models is described by bifurcation theory. This is explained in more detail in Chapter 3, where we focus on a very important transition model, the cusp catastrophe, and in Chapter 4, which considers dynamical systems models.
 
-## Networks are everywhere
+## Networks are everywhere {#sec-Networks-are-everywhere}
 
 The third key observation of great relevance to the attempt to use complex systems modelling in psychology is that complex systems are networks, as they consist of interacting sub-elements. For me, the network is the most interdisciplinary research topic in modern science. Magnets, ecosystems, the brain, the Internet, and social networks are prime examples. Network science is a huge area of research with many fundamental insights and an important tool in modern psychological science.
 
@@ -110,7 +110,7 @@ Similarly, depression can be thought of as a network of mutually reinforcing sym
 
 The latest line of research is the integrated study of psychological and social networks [@vandermaas2020a]. Chapter 7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change. This model provides a new explanation of polarization.
 
-## Methods for Investigating complex systems
+## Methods for Investigating complex systems {#sec-Methods-for-Investigating-complex-systems}
 
 Complex systems are studied in various ways across different disciplines. We utilize computer simulations to examine the emergence in complex system models, analyze their unpredictable behavior, categorize the types of tipping points involved, derive equations that describe the overall behavior of complex systems, collect and analyze time series data, or experimentally disrupt the system to test its resilience. Following Sayama (2015), I categorize the methods and tools into two groups: those for systems with a small number of variables and those for systems with many variables. The first category is referred to as nonlinear dynamical system theory, which encompasses chaos theory, and catastrophe or bifurcation theory. The second category includes tools for studying multi-element systems, such as agent-based modeling and network theory. One might assume that the first category is irrelevant to complex systems, which by definition have many variables. However, it has been found that the global behavior of complex systems can often be described with a small number of variables, often just one, that behaves in a highly nonlinear manner. Therefore, I consider nonlinear dynamical system theory an essential part of complex system research.
 
@@ -118,7 +118,7 @@ This categorization is reflected in the setup of the book. The next three chapte
 
 In the second part of the book, we shift our focus to tools for studying systems with many variables, particularly agent-based modeling of self-organization in Chapter 5, network modeling in Chapter 6, and the application of both to psycho-social systems in Chapter 7.
 
-## Other work and sources
+## Other work and sources {#sec-Other-work-and-sources}
 
 The complex systems approach is often introduced as the next new thing, but those days are gone. Even in psychology it can no longer be considered a new approach. Many different research groups have used the toolbox of complex systems research in all areas of psychology. This book will give many examples. One could even argue that a lot of work has been done that could be considered complex systems research but has not been published under that heading. For example, most neural network models of psychological processes are complex systems models because they investigate emergent computational properties of the interaction of neural units. This is also true of much work in mathematical psychology, for example when differential equations are used to study dynamical systems. Older work in complex systems research has often been published with reference to nonlinear dynamical systems. Other related approaches are computational social science and agent-based modeling.
 
@@ -126,7 +126,7 @@ Today, there are many interdisciplinary centers or hubs for complexity research.
 
 It is impossible to give a balanced review of all past and ongoing work on complex systems. I'm naturally somewhat biased towards our own work and contributions, but I did my best to point out relevant work. As a general resource to complex systems research with a bit less technical approach I recommend Mitchell's book [@mitchellComplexityGuidedTour2009], for a bit more mathematical approach I recommend the books of Serra and Zanarini [@serraComplexSystemsCognitive1990] and [@sayama2015]. Overviews of work in psychology are provided by @guastelloChaosComplexityPsychology2008 and @portMindMotionExplorations1995. Other great books are written by @heathNonlinearDynamicsTechniques2000 and @kelsoDynamicPatternsSelforganization1995.
 
-## Exercises
+## Exercises {#sec-Exercises}
 
 1)  Visit <https://www.traffic-simulation.de/>. In what direction do traffic jams move? For roundabouts: what is a bad priority rule? Do traffic jams appear and disappear for the same values of critical parameters? Take for instance the 'ring' road and vary Politeness. (\*)
 
