@@ -324,7 +324,7 @@ These connectionist attitude models are capable of "learning", i.e., adjusting t
 
 *\
 *$$\begin{array}{r}
-\mathrm{\Delta}W_{i,j} = \epsilon\left( 1 - \left| W_{i,j} \right| \right)x_{i}x_{j} - \lambda W_{i,j}
+\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}
 \end{array}$$ {#eq-ch6-6-old-47}
 
 Weights will grow to 1 if the nodes they connect are consistently either both 1 or both -1. If they consistently differ in value, the weight grows to -1. If the nodes behave inconsistently, the weight shrinks to 0.

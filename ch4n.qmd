@@ -30,7 +30,7 @@ $$\frac{dX}{dt} = rX$$
 
 $\frac{dX}{X} = rdt$ by separation of variables
 
-$\frac{\int_{}^{}{dX}}{X} = \int_{}^{}{rdt}$ integrate
+$\int_{}^{}\frac{dX}{X} = \int_{}^{}{rdt}$ integrate
 
 $\ln X = rt + C$ assuming $X \geq 0$
 

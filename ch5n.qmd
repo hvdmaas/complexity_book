@@ -41,7 +41,7 @@ The randomness of the behavior is captured by the concept of entropy. Entropy is
 In the simulation of this model, we take a random spin, calculate the energy of the current $\mathbf{x}$ and the $\mathbf{x}$ with that particular spin flipped. The difference in energy determines the probability of a flip:
 
 $$
-P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{\left( 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)} \right)}.$$ {#eq-ch5n-3-old-19}
+P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{ 1 + e^{- \beta\left( H\left( x_{i} \right) - H\left( - x_{i} \right) \right)}}.$$ {#eq-ch5n-3-old-19}
 
 If we do these flips repeatedly, we find equilibria of the model. This is called the Glauber dynamics (more efficient algorithms do exist). The beauty of these algorithms is that the normalization constant Z falls out of the equation. In this way we can simulate Ising systems with $N$ much larger than 20.
 

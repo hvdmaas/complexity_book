@@ -62,7 +62,7 @@ $$
 \frac{dX}{dt} = - V^{'}(X).
 $$ {#eq-ch3-2-old-6}
 
-This makes sense. When the ball is in $(1,1)$, $- V^{'}(X) = - 2$ and the ball will move towards $X = 0$. But if $X = 0$, $- V^{'}(X) = 0$, and the ball will not move anymore. In the case of the quadratic potential function, there is only one fixed point. By adding parameters and lower order terms to V, i.e., ${aX + X}^{2}$, we can move its location, but the qualitative form (one stable fixed point) will not change. Also note that the second derivative is positive, which tells us that we are dealing with a minimum and not a maximum (the so-called second derivative test).
+This makes sense. When the ball is in $(1,1)$, $- V^{'}(X) = - 2$ and the ball will move towards $X = 0$. But if $X = 0$, $- V^{'}(X) = 0$, and the ball will not move anymore. In the case of the quadratic potential function, there is only one fixed point. By adding parameters and lower order terms to $V$, i.e., ${aX + X}^{2}$, we can move its location, but the qualitative form (one stable fixed point) will not change. Also note that the second derivative is positive, which tells us that we are dealing with a minimum and not a maximum (the so-called second derivative test).
 
 Many dynamical systems behave according to this potential function. Nothing spectacular happens: no bifurcations and no jumps. This is different when we consider potential functions with higher order terms.
 
@@ -86,7 +86,7 @@ curve(v(x,a=0),-3,3,bty='n')
 curve(v(x,a=2),-3,3,bty='n')
 ```
 
-In the left plot, $a < 0$ and there is no fixed point, the ball rolls away to minus infinity. This can be checked by setting the first derivative to zero, which gives $X = \pm \sqrt{\frac{a}{3}}$. For negative $a$ there is no solution. A positive value of $a$ gives two solutions, as shown on the right for $a = 2$. The positive solution $X = \sqrt{\frac{2}{3}\ }$is a stable fixed point because the second derivative in this point is positive. The negative solution $X = - \sqrt{\frac{2}{3}\ }$ is an unstable fixed point because the second derivative in this point is negative.
+In the left plot, $a < 0$ and there is no fixed point, the ball rolls away to minus infinity. This can be checked by setting the first derivative to zero, which gives $X = \pm \sqrt{{a}/{3}}$. For negative $a$ there is no solution. A positive value of $a$ gives two solutions, as shown on the right for $a = 2$. The positive solution $X = \sqrt{{2}/{3}\ }$is a stable fixed point because the second derivative in this point is positive. The negative solution $X = - \sqrt{{2}/{3}\ }$ is an unstable fixed point because the second derivative in this point is negative.
 
 The middle figure depicts the case just in between these two cases. Here the equilibrium is an inflection point, a degenerate critical point. The bifurcation occurs at this point as we go from a landscape with no fixed points to one with two, one stable and one unstable.
 
@@ -343,7 +343,7 @@ In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheo
 
 The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-6]:
 
-[^ch3-6]: Many different t notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and $dW$ depend on time.
+[^ch3-6]: Many different notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and $dW$ depend on time.
 
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}
@@ -353,7 +353,7 @@ We will discuss this type of stochasticity later, but it is important to note th
 $$
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-14}
 
-where Z is a normalizing constant[^ch3-7] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = \frac{\sqrt{2\pi}}{\sigma}$.
+where Z is a normalizing constant[^ch3-7] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = {\sqrt{2\pi}}/{\sigma}$.
 
 [^ch3-7]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
 
