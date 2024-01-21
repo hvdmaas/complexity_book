@@ -26,7 +26,7 @@ We saw something similar for the logistic map when $r$ crossed the boundary $r =
 
 [^ch3-2]: A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.
 
-![A first order (discontinuous) and second order (continuous) phase transition (from: <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13}
+![A first order (discontinuous) and second order (continuous) phase transition (Adapted from <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13}
 
 Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, turning over ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception.
 
@@ -126,7 +126,7 @@ Another very interesting pattern occurs when $a = 0$ and $b$ is increased.
 
 For low $b$ there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation.
 
-![Bifurcation plots for the $a$ and $b$ parameters of the cusp. Moving along the $a$ axis gives hysteresis, assuming \$b\$ is positive. Moving along the $b$ axis, assuming $a=0$, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.](media/ch3/image9.jpg){#fig-ch3-img9-old-21}
+![Bifurcation plots for the $a$ and $b$ parameters of the cusp. Moving along the $a$ axis gives hysteresis, assuming $b$ is positive. Moving along the $b$ axis, assuming $a=0$, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.](media/ch3/image9.jpg){#fig-ch3-img9-old-21}
 
 To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams.
 
@@ -218,7 +218,7 @@ $$ {#eq-ch3-8-old-12}
 
 Using these two 'constructed' control variables, we can depict the bifurcation lines of the cusp as:
 
-![The bifurcation diagram of the Spruce Budworm model (Copied from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28}
+![The bifurcation diagram of the Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28}
 
 In later chapters we will discuss psychological examples of a mechanistic approach, but as far as models of transitions are concerned, these are rare. The phenomenological approach is much more common.
 
@@ -445,7 +445,7 @@ text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
 ```
 
-![At the back of the cusp (low $b0$), the cusp is approximately linear and cuspfit prefers this simpler model (red line) over the cusp mode (blue line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35}
+![At the back of the cusp (low $b_0$), the cusp is approximately linear and cuspfit prefers this simpler model (red line) over the cusp mode (blue line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35}
 
 #### Empirical examples {#sec-Empirical-examples}
 
@@ -510,7 +510,7 @@ A number of points are about inferring a cusp from data, which was indeed done r
 
 Another somewhat inconsistent line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), while it is also claimed that Zeeman's models are not falsifiable. But you cannot have it both ways, if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.
 
-Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field [@sec-ch8; @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008].
+Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field (see @sec-ch8 and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008).
 
 The last point of Zahler and Sussmann is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether this will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
 
@@ -538,7 +538,7 @@ However, there is room for improvement. Phenomenological models have limited exp
 
 6)  Check whether indeed the Bentler data fit better with when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (\*)
 
-7)  
+7)  What is the best fitting cusp model (according to the BIC) for this tricky data set created with this r-code? Why? (\*\*)
 
     ```{r eval = FALSE}
     n=500
@@ -547,7 +547,5 @@ However, there is room for improvement. Phenomenological models have limited exp
     y = rnorm(n) 
     data <- data.frame(z,x,y) # collect variables in data
     ```
-
-What is the best fitting cusp model (according to the BIC) for this tricky data set? Why? (\*\*)
 
 8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasmanFittingCuspCatastrophe2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
