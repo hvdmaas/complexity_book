@@ -26,19 +26,19 @@ $$ {#eq-ch4n-1-old-21}
 
 The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to zero, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
 
-+-----------------------------------------------------+-----------------------------------+
-| $\frac{dX}{dt} = rX$                                | by separation of variables        |
-|                                                     |                                   |
-| $\frac{dX}{X} = rdt$                                |                                   |
-+-----------------------------------------------------+-----------------------------------+
-| $\int_{}^{}\frac{dX}{X} = \int_{}^{}{rdt}$          | integrate                         |
-+-----------------------------------------------------+-----------------------------------+
-| $\ln X = rt + C$                                    | assuming $X \geq 0$               |
-+-----------------------------------------------------+-----------------------------------+
-| $X = e^{rt + C} = e^{C}e^{rt}$                      | by taking the exponent            |
-+-----------------------------------------------------+-----------------------------------+
-| $X_{0} = e^{C}e^{r0} \Longrightarrow X_{0} = e^{C}$ | compute the integration constant  |
-+-----------------------------------------------------+-----------------------------------+
++-----------------------------------------------------+----------------------------------+
+| $\frac{dX}{dt} = rX$                                | by separation of variables       |
+|                                                     |                                  |
+| $\frac{dX}{X} = rdt$                                |                                  |
++-----------------------------------------------------+----------------------------------+
+| $\int_{}^{}\frac{dX}{X} = \int_{}^{}{rdt}$          | integrate                        |
++-----------------------------------------------------+----------------------------------+
+| $\ln X = rt + C$                                    | assuming $X \geq 0$              |
++-----------------------------------------------------+----------------------------------+
+| $X = e^{rt + C} = e^{C}e^{rt}$                      | by taking the exponent           |
++-----------------------------------------------------+----------------------------------+
+| $X_{0} = e^{C}e^{r0} \Longrightarrow X_{0} = e^{C}$ | compute the integration constant |
++-----------------------------------------------------+----------------------------------+
 
 $$
 \Longrightarrow X_{t} = {X_{0}e}^{rt}
@@ -335,7 +335,7 @@ In this section, I present an overview of dynamical systems models in psychology
 
 ### Response time models {#sec-Response-time-models}
 
-Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.
+Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated (@fig-ch4n-img7-old-55).
 
 ![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55}
 
@@ -393,7 +393,7 @@ $$ {#eq-ch4n-9-old-29}
 
 Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in @roxinNeurobiologicalModelsTwoChoice2008 and @verdonckIsingDecisionMaker2014 and discussed in @ratcliffDiffusionDecisionModel2016.
 
-The relations between different accumulator models are summarized in this figure from @bogaczPhysicsOptimalDecision2006. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
+The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
 ![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
 
@@ -448,7 +448,7 @@ plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 
 ![Three different love affairs between Romeo and Juliet](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57}
 
-The lines in the phase plots are the nullclines. Nullclines are the curves (straight lines in case of linear systems) for which the time derivatives of the behavioral variables $R$ and $J$ are zero. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).
+The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. Nullclines are the curves (straight lines in case of linear systems) for which the time derivatives of the behavioral variables $R$ and $J$ are zero. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).
 
 @rinaldiLoveDynamicsCase1998 proposed an extension and a constraint to the model that makes it a bit more realistic and easier to study. The basic equation is now $\frac{dR}{dt} = - aR + bJ + A_{J}$, where a is interpreted as a forgetting parameter (constrained to be positive) and $A_{J}$ is the attractiveness of the Julia. In this case a necessary and sufficient condition for asymptotic stability (i.e., having a fixed point) is that $ad > bc$.
 
@@ -510,7 +510,7 @@ for (i in 1:100)
 }
 ```
 
-Resulting in:
+Resulting in @fig-ch4n-img10-old-58.
 
 ![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge on their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58}
 
@@ -531,7 +531,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \end{gathered}
 $$ {#eq-ch4n-13-old-33}
 
-This can be implemented as follows:
+This can be implemented as follows (see @fig-ch4n-img11-old-59):
 
 ``` r
 model <- function(t, state, parms) {
@@ -554,6 +554,8 @@ plane(portrait = TRUE,grid=4)
 ```
 
 ![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59}
+
+![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png)
 
 So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to 'Euler' to simulate difference equations.
 
@@ -606,7 +608,7 @@ run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)")
 
 The $\beta$ parameter is set so that the non-panic mode dominates, but the panic mode is present (a metastable state). This state can be easily disturbed (see plane). For $20 < t < 30$, arousal is set to a high value, resulting in a high perceived threat. But because we also added some noise to both processes, after some time both arousal and perceived threat jump back to low values.
 
-This dynamic of this model is the cusp, as can be checked with:
+This dynamic of this model is the cusp, as can be checked with (see @fig-ch4n-img15-old-63):
 
 ``` r
 p <- c(b=1,alpha=12,beta=-.5)
@@ -646,7 +648,7 @@ plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 
 ![Two runs of the van der Pol oscillator. For high b this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62}
 
-The plots illustrate this behavior. For $b < 0$, $X$ converges to a fixed point, for $b > 0$ we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form
+The plots (@fig-ch4n-img15-old-63) illustrate this behavior. For $b < 0$, $X$ converges to a fixed point, for $b > 0$ we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form
 
 $$
 \frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x
@@ -660,7 +662,7 @@ $$
 \frac{dW}{dt} = .08(V + .7 - .8W)
 \end{gathered}$$ {#eq-ch4n-16-old-36}
 
-The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in:
+The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in @fig-ch4n-img15-old-63.
 
 ![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The V-nullcline (where $dV/dt = 0$) and the W-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63}
 
@@ -748,7 +750,7 @@ p <- c(a=1,b=1,c=-1,d=1)
 run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
 ```
 
-The last three lines of this code show the Kadyrov oscillator:
+The last three lines of this code show the Kadyrov oscillator (\@fig-ch4n-img17-old-65).
 
 ![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65}
 
@@ -830,7 +832,7 @@ text(80,1.4,'Percepts')
 text(80,-.5,'Attention')
 ```
 
-which gives:
+which gives @fig-ch4n-img19-old-67.
 
 ![The multifigure Necker cube simulation. Initially attention is low and the percept is close to zero, representing the absence of three-dimensional perception. At t = 30, the attention intercept to one cube is increased to 1. At the t = 60 it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after t = 60.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67}
 
