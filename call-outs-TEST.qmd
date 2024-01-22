@@ -1,31 +1,39 @@
-## Call out tests
+## DRAFT - Call outs {.unnumbered}
 
-::: {.callout-note}
-
-Note that there are five types of callouts, including:
-`note`, `warning`, `important`, `tip`, and `caution`.
+::: callout-note
+Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
 :::
 
-::: {.callout-warning}
+::: callout-warning
 ## Warning custom Title
 
 This is an example of a callout with a title.
 :::
 
-::: {.callout-important}
+::: callout-important
 ## Important custom Title
 
 This is an example of a callout with a title.
 :::
 
-::: {.callout-tip}
+::: callout-tip
 ## Tip with custom title
 
 This is an example of a callout with a title.
 :::
 
 ::: {.callout-caution collapse="true"}
-## Expand To Learn About Collapse
+## Python code (click to expand)
 
-This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+``` python
+# Python program to check if the input number is odd or even.
+# A number is even if division by 2 gives a remainder of 0.
+# If the remainder is 1, it is an odd number.
+
+num = int(input("Enter a number: "))
+if (num % 2) == 0:
+   print("{0} is Even".format(num))
+else:
+   print("{0} is Odd".format(num))
+```
 :::
