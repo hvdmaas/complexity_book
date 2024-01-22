@@ -145,6 +145,22 @@
 \makeindex
 \KOMAoption{captions}{tableheading}
 \makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
 \makeatother
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
@@ -220,7 +236,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, frame hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, interior hidden, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, sharp corners, frame hidden, enhanced]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -315,6 +331,58 @@ Santa Fe Institute in New Mexico. I am indebted to all of them and to
 many other colleagues around the world.
 
 Han van der Maas, Amsterdam 2024
+
+\bookmarksetup{startatroot}
+
+\hypertarget{draft---call-outs}{%
+\chapter*{DRAFT - Call outs}\label{draft---call-outs}}
+\addcontentsline{toc}{chapter}{DRAFT - Call outs}
+
+\markboth{DRAFT - Call outs}{DRAFT - Call outs}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+
+Note that there are five types of callouts, including: \texttt{note},
+\texttt{warning}, \texttt{important}, \texttt{tip}, and
+\texttt{caution}.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning custom Title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+
+This is an example of a callout with a title.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important custom Title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+
+This is an example of a callout with a title.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with custom title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+
+This is an example of a callout with a title.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Python code (click to expand)}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Python program to check if the input number is odd or even.}
+\CommentTok{\# A number is even if division by 2 gives a remainder of 0.}
+\CommentTok{\# If the remainder is 1, it is an odd number.}
+
+\NormalTok{num }\OperatorTok{=} \BuiltInTok{int}\NormalTok{(}\BuiltInTok{input}\NormalTok{(}\StringTok{"Enter a number: "}\NormalTok{))}
+\ControlFlowTok{if}\NormalTok{ (num }\OperatorTok{\%} \DecValTok{2}\NormalTok{) }\OperatorTok{==} \DecValTok{0}\NormalTok{:}
+   \BuiltInTok{print}\NormalTok{(}\StringTok{"}\SpecialCharTok{\{0\}}\StringTok{ is Even"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(num))}
+\ControlFlowTok{else}\NormalTok{:}
+   \BuiltInTok{print}\NormalTok{(}\StringTok{"}\SpecialCharTok{\{0\}}\StringTok{ is Odd"}\NormalTok{.}\BuiltInTok{format}\NormalTok{(num))}
+\end{Highlighting}
+\end{Shaded}
+
+\end{tcolorbox}
 
 \bookmarksetup{startatroot}
 
