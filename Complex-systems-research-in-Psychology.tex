@@ -236,7 +236,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt, sharp corners, frame hidden, enhanced]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, enhanced, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -340,7 +340,7 @@ Han van der Maas, Amsterdam 2024
 
 \markboth{DRAFT - Call outs}{DRAFT - Call outs}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm]
 
 Note that there are five types of callouts, including: \texttt{note},
 \texttt{warning}, \texttt{important}, \texttt{tip}, and
@@ -348,25 +348,25 @@ Note that there are five types of callouts, including: \texttt{note},
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning custom Title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning custom Title}, breakable, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, left=2mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important custom Title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important custom Title}, breakable, colframe=quarto-callout-important-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, left=2mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with custom title}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with custom title}, breakable, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, left=2mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, coltitle=black, colbacktitle=quarto-callout-caution-color!10!white, colframe=quarto-callout-caution-color-frame, toprule=.15mm, breakable, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, colback=white, opacityback=0, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Python code (click to expand)}, bottomtitle=1mm, left=2mm, opacitybacktitle=0.6, titlerule=0mm, toptitle=1mm]
+\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Python code (click to expand)}, breakable, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, left=2mm]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -383,6 +383,32 @@ This is an example of a callout with a title.
 \end{Shaded}
 
 \end{tcolorbox}
+
+\section{R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, state, parms) \{}
+  \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(state,parms)), \{}
+\NormalTok{    dX }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{X            }\CommentTok{\# the exponential model}
+      \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dX)))}
+\NormalTok{  \})}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Python}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+
+\KeywordTok{def}\NormalTok{ model(t, state, parms): X }\OperatorTok{=}\NormalTok{ state\textbackslash{}[}\DecValTok{0}\NormalTok{\textbackslash{}] r }\OperatorTok{=}\NormalTok{ parms\textbackslash{}[}\DecValTok{0}\NormalTok{\textbackslash{}]}
+
+\NormalTok{dX }\OperatorTok{=}\NormalTok{ r }\OperatorTok{*}\NormalTok{ X  }\CommentTok{\# the exponential model}
+\ControlFlowTok{return}\NormalTok{ [dX]}
+\end{Highlighting}
+\end{Shaded}
 
 \bookmarksetup{startatroot}
 
