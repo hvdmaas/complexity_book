@@ -325,6 +325,8 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
+The result of this simulation is shown in @fig-ch4n-img6-old-54.
+
 ![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well (see for example Figure 9 in @jusup2022).](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
 Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
