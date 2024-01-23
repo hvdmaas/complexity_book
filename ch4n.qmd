@@ -189,9 +189,9 @@ barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
         args.legend=c(x=13))
 ```
 
-This results in:
+This results in @fig-ch4n-img1-old-49.
 
-![Fit of the Lotka-Volterra model on three types of data.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
+![Fit of the Lotka-Volterra model on three types of data. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
 
 Note that the error data set looks very similar to the deterministic data set because it contains only the measurement error (X is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
 
@@ -214,9 +214,9 @@ p <- c(a=0,b=1); s <- c(X=.1); run(ymin=-1)
 s[1] <- -.1; run(add=T)
 ```
 
-This code shows two runs demonstrating bistability for $a = 0$ and $b = 1$.
+This code simulates two runs demonstrating bistability for $a = 0$ and $b = 1$.
 
-A better way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small timestep. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
+A nicer way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small timestep. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
 
 As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous jumps between the two modes of the cusp. When noise or random fluctuations cause the entire equilibrium landscape of a dynamical system to become observable, it is often referred to as stochastic resonance. Stochastic resonance is a notable example of how noise, which is often considered undesirable or disruptive, can actually play a constructive role in certain systems, helping to reveal hidden patterns and structures that might otherwise remain obscured. You can see this by comparing the figure with one generated with a standard deviation of .1 or less.
 
@@ -234,7 +234,7 @@ barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 
 By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change parameter. This is what we did in Chapter 2 for the logistic map, when we varied r and plotted the equilibria (see @fig-ch2-img8).
 
-It is often necessary to run the combination of these two functions repeatedly, starting from different initial states.
+It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create @fig-ch4n-img3-old-51 is:
 
 ``` r
 p <- c(a=0,b=1)
@@ -262,7 +262,7 @@ With
 bifurcation(model,s,p)
 ```
 
-You can create one- and two-parameter bifurcation diagrams (using the LP curve option). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
+You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
 
 ![Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the a, b plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52}
 
@@ -284,7 +284,7 @@ bifurcation(spruce, state, parms)
 
 Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start A is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat B budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
-![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
+![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
 
 ### Evaluation of ecological modelling {#sec-Evaluation-of-ecological-modelling}
 
@@ -325,11 +325,9 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-The result of this simulation is shown in @fig-ch4n-img6-old-54.
-
 ![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well (see for example Figure 9 in @jusup2022).](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
-Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
+The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
 
 ## Psychological models {#sec-Psychological-models}
 
@@ -680,7 +678,7 @@ One approach to cope with these issues is analogical modeling, or basically copy
 
 We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in @sec-ch7 when we include social effects. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
 
-Instead of creating our own model, we look for well-studied models in other sciences, which led me to the spruce budworm model:
+Instead of creating our own model, we look for well-studied models in other sciences, which led me to the Spruce Budworm model:
 
 $$
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}
@@ -872,7 +870,7 @@ As an example, I mention the well-known investment theory of @cattellIntelligenc
 
 4)  Make a plot of the pitchfork bifurcation, analogous to @fig-ch4n-img3-old-51 (\*)
 
-5)  Use the spruce budworm model from @sec-Spruce-Budworm-outbreak-model and the `bifurcation()` function of the deBif package to recreate the bifurcation diagram shown in @fig-ch3-img16-old-28 . Describe what you did and present the resulting figure. (\*\*)
+5)  Use the Spruce Budworm model from @sec-Spruce-Budworm-outbreak-model and the `bifurcation()` function of the deBif package to recreate the bifurcation diagram shown in @fig-ch3-img16-old-28 . Describe what you did and present the resulting figure. (\*\*)
 
 6)  Implement the SIR model for infectious diseases in R using Grind. Reproduce the diagram of the SIR model with $\beta = 0.4$ and $\gamma = 0.04$ on the Wikipedia page on Compartmental models in epidemiology.
 
