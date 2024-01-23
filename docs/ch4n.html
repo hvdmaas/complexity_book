@@ -167,7 +167,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./call-outs-TEST.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DRAFT - Call outs</span></a>
+ <span class="menu-text">DRAFT - Margins &amp; Call outs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -307,7 +307,7 @@ div.csl-indent {
 <table class="table">
 <colgroup>
 <col style="width: 60%">
-<col style="width: 40%">
+<col style="width: 39%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -555,6 +555,7 @@ div.csl-indent {
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># simulation with front car suddenly breaking at t = 150</span></span>
 <span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">run</span>(<span class="at">tmax=</span><span class="dv">300</span>,<span class="at">timeplot =</span> F,<span class="at">table=</span>T,<span class="at">after =</span> <span class="st">'if (t==150) state[2*n] = 0'</span>)</span>
 <span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(data[,<span class="dv">2</span><span class="sc">:</span>(n<span class="sc">+</span><span class="dv">1</span>)],<span class="at">type=</span><span class="st">'l'</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">ylab =</span> <span class="st">'x'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The result of this simulation is shown in <a href="#fig-ch4n-img6-old-54">Figure&nbsp;<span>4.6</span></a>.</p>
 <div id="fig-ch4n-img6-old-54" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img6-old-54.png" class="img-fluid figure-img"></p>
@@ -569,7 +570,7 @@ div.csl-indent {
 <p>In this section, I present an overview of dynamical systems models in psychology, primarily in the form of systems of differential equations. Although the list is extensive, it is not exhaustive. It is important to explore different models and applications before embarking on your own modeling efforts.</p>
 <section id="sec-Response-time-models" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="sec-Response-time-models"><span class="header-section-number">4.2.1</span> Response time models</h3>
-<p>Many dynamic models have been proposed in the study of speeded decision making <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">(<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">Bogacz et al. 2006</a>)</span>. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.</p>
+<p>Many dynamic models have been proposed in the study of speeded decision making <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">(<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">Bogacz et al. 2006</a>)</span>. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated (<a href="#fig-ch4n-img7-old-55">Figure&nbsp;<span>4.7</span></a>).</p>
 <div id="fig-ch4n-img7-old-55" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img7-old-55.png" class="img-fluid figure-img"></p>
@@ -613,7 +614,7 @@ dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 \end{gathered}
 \tag{4.9}\]</span></span></p>
 <p>Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in <span class="citation" data-cites="roxinNeurobiologicalModelsTwoChoice2008">Roxin and Ledberg (<a href="references.html#ref-roxinNeurobiologicalModelsTwoChoice2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="verdonckIsingDecisionMaker2014">Verdonck and Tuerlinckx (<a href="references.html#ref-verdonckIsingDecisionMaker2014" role="doc-biblioref">2014</a>)</span> and discussed in <span class="citation" data-cites="ratcliffDiffusionDecisionModel2016">Ratcliff et al. (<a href="references.html#ref-ratcliffDiffusionDecisionModel2016" role="doc-biblioref">2016</a>)</span>.</p>
-<p>The relations between different accumulator models are summarized in this figure from <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">Bogacz et al. (<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">2006</a>)</span>. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.</p>
+<p>The relations between different accumulator models are summarized in <a href="#fig-ch4n-img8-old-56">Figure&nbsp;<span>4.8</span></a>. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.</p>
 <div id="fig-ch4n-img8-old-56" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/ch4n-8__figure57.png" class="img-fluid figure-img"></p>
@@ -665,7 +666,7 @@ dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 <figcaption class="figure-caption">Figure&nbsp;4.9: Three different love affairs between Romeo and Juliet</figcaption>
 </figure>
 </div>
-<p>The lines in the phase plots are the nullclines. Nullclines are the curves (straight lines in case of linear systems) for which the time derivatives of the behavioral variables <span class="math inline">\(R\)</span> and <span class="math inline">\(J\)</span> are zero. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).</p>
+<p>The lines in the phase plots in <a href="#fig-ch4n-img9-old-57">Figure&nbsp;<span>4.9</span></a> are the nullclines. Nullclines are the curves (straight lines in case of linear systems) for which the time derivatives of the behavioral variables <span class="math inline">\(R\)</span> and <span class="math inline">\(J\)</span> are zero. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).</p>
 <p><span class="citation" data-cites="rinaldiLoveDynamicsCase1998">Rinaldi (<a href="references.html#ref-rinaldiLoveDynamicsCase1998" role="doc-biblioref">1998</a>)</span> proposed an extension and a constraint to the model that makes it a bit more realistic and easier to study. The basic equation is now <span class="math inline">\(\frac{dR}{dt} = - aR + bJ + A_{J}\)</span>, where a is interpreted as a forgetting parameter (constrained to be positive) and <span class="math inline">\(A_{J}\)</span> is the attractiveness of the Julia. In this case a necessary and sufficient condition for asymptotic stability (i.e., having a fixed point) is that <span class="math inline">\(ad &gt; bc\)</span>.</p>
 <p>Rinaldi also considers the case of a population of heterosexual men and women with different levels of attractiveness. The idea is that a man and a woman will leave their partner and bond together when both reach a more optimal level of love. Rinaldi analyses when and when not the population reach a stable state. This marriage assignment problem, as it is called, is an example of an assignment problem. The goal is to find a stable assignment of men to women, such that no man and woman prefer each other to their current partners <span class="citation" data-cites="galeCollegeAdmissionsStability1962">(<a href="references.html#ref-galeCollegeAdmissionsStability1962" role="doc-biblioref">Gale and Shapley 1962</a>)</span>.</p>
 <p>Some other advanced variations of this model have been proposed. In these papers the analysis of the mathematical properties of the model gets much more attention than the psychological theory. What exactly the variables are and the reasoning behind certain model assumptions is often unclear. The work of Murray and Gottman is more interesting in this regard.</p>
@@ -708,7 +709,7 @@ I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span>
 <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">run</span>(<span class="at">state=</span><span class="fu">c</span>(<span class="at">W=</span><span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">0</span>,.<span class="dv">5</span>),<span class="at">H=</span><span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>)), <span class="at">tmax=</span><span class="dv">50</span>,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">ymax=</span><span class="dv">2</span>,<span class="at">add=</span>(i<span class="sc">&gt;</span><span class="dv">1</span>),<span class="at">legend=</span>F)</span>
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Resulting in:</p>
+<p>Resulting in <a href="#fig-ch4n-img10-old-58">Figure&nbsp;<span>4.10</span></a>.</p>
 <div id="fig-ch4n-img10-old-58" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img10-old-58.png" class="img-fluid figure-img"></p>
@@ -729,7 +730,7 @@ X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K} \\
 Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \end{gathered}
 \tag{4.13}\]</span></span></p>
-<p>This can be implemented as follows:</p>
+<p>This can be implemented as follows (see <a href="#fig-ch4n-img11-old-59">Figure&nbsp;<span>4.11</span></a>):</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parms) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state,parms)), {</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    dX <span class="ot">&lt;-</span> (a <span class="sc">+</span> b <span class="sc">*</span> Y) <span class="sc">*</span> X <span class="sc">-</span> a <span class="sc">*</span> X<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> K</span>
@@ -751,6 +752,12 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img11-old-59.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;4.11: The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ch4n/fig-ch4n-img11-old-59.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.</figcaption>
 </figure>
 </div>
 <p>So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to ‘Euler’ to simulate difference equations.</p>
@@ -795,7 +802,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="fu">newton</span>(<span class="at">s=</span><span class="fu">c</span>(<span class="at">A=</span><span class="dv">1</span>,<span class="at">T=</span><span class="dv">1</span>),<span class="at">plot=</span>T);</span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">after=</span><span class="st">"if(t&gt;20&amp;t&lt;30)state[1]&lt;-1;state&lt;-state+rnorm(2,mean=0,sd=0.1)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <span class="math inline">\(\beta\)</span> parameter is set so that the non-panic mode dominates, but the panic mode is present (a metastable state). This state can be easily disturbed (see plane). For <span class="math inline">\(20 &lt; t &lt; 30\)</span>, arousal is set to a high value, resulting in a high perceived threat. But because we also added some noise to both processes, after some time both arousal and perceived threat jump back to low values.</p>
-<p>This dynamic of this model is the cusp, as can be checked with:</p>
+<p>This dynamic of this model is the cusp, as can be checked with (see <a href="#fig-ch4n-img15-old-63">Figure&nbsp;<span>4.15</span></a>):</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">b=</span><span class="dv">1</span>,<span class="at">alpha=</span><span class="dv">12</span>,<span class="at">beta=</span><span class="sc">-</span>.<span class="dv">5</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">newton</span>(<span class="at">s=</span><span class="fu">c</span>(<span class="at">A=</span>.<span class="dv">1</span>,<span class="at">T=</span>.<span class="dv">1</span>)) </span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">continue</span>(start,<span class="at">x=</span><span class="st">"beta"</span>,<span class="at">y=</span><span class="st">"T"</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">xmax=</span><span class="dv">1</span>,<span class="at">ymax=</span><span class="dv">1</span>) </span>
@@ -835,7 +842,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <figcaption class="figure-caption">Figure&nbsp;4.14: Two runs of the van der Pol oscillator. For high b this system oscillates between the two stables states of the cusp. The black dots represent different initial states.</figcaption>
 </figure>
 </div>
-<p>The plots illustrate this behavior. For <span class="math inline">\(b &lt; 0\)</span>, <span class="math inline">\(X\)</span> converges to a fixed point, for <span class="math inline">\(b &gt; 0\)</span> we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form</p>
+<p>The plots (<a href="#fig-ch4n-img15-old-63">Figure&nbsp;<span>4.15</span></a>) illustrate this behavior. For <span class="math inline">\(b &lt; 0\)</span>, <span class="math inline">\(X\)</span> converges to a fixed point, for <span class="math inline">\(b &gt; 0\)</span> we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form:</p>
 <p><span id="eq-ch4n-15-old-35"><span class="math display">\[
 \frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x
 \tag{4.15}\]</span></span></p>
@@ -845,7 +852,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \frac{dV}{dt} = V - \frac{V^{3}}{3} - W + I \\
 \frac{dW}{dt} = .08(V + .7 - .8W)
 \end{gathered} \tag{4.16}\]</span></span></p>
-<p>The equation for <span class="math inline">\(V\)</span>, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and <span class="math inline">\(W\)</span>, a recovery variable, provides linear negative feedback. <span class="math inline">\(I\)</span> represents the input. The main phenomena in this model are shown in:</p>
+<p>The equation for <span class="math inline">\(V\)</span>, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and <span class="math inline">\(W\)</span>, a recovery variable, provides linear negative feedback. <span class="math inline">\(I\)</span> represents the input. The main phenomena in this model are shown in <a href="#fig-ch4n-img15-old-63">Figure&nbsp;<span>4.15</span></a>.</p>
 <div id="fig-ch4n-img15-old-63" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/ch4n-15__figure64.png" class="img-fluid figure-img"></p>
@@ -916,7 +923,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">X=</span><span class="fl">0.1</span>,<span class="at">Y=</span>.<span class="dv">1</span>) </span>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a=</span><span class="dv">1</span>,<span class="at">b=</span><span class="dv">1</span>,<span class="at">c=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">d=</span><span class="dv">1</span>)</span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">tmax=</span><span class="dv">20</span>,<span class="at">tstep=</span><span class="fl">0.1</span>,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">ymax=</span><span class="dv">2</span>) <span class="co"># Kadyrov oscillator</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The last three lines of this code show the Kadyrov oscillator:</p>
+<p>The last three lines of this code show the Kadyrov oscillator (@fig-ch4n-img17-old-65).</p>
 <div id="fig-ch4n-img17-old-65" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img17-old-65.png" class="img-fluid figure-img"></p>
@@ -985,7 +992,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(b0_i,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">3</span>)</span>
 <span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">80</span>,<span class="fl">1.4</span>,<span class="st">'Percepts'</span>)</span>
 <span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">80</span>,<span class="sc">-</span>.<span class="dv">5</span>,<span class="st">'Attention'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>which gives:</p>
+<p>which gives <a href="#fig-ch4n-img19-old-67">Figure&nbsp;<span>4.19</span></a>.</p>
 <div id="fig-ch4n-img19-old-67" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch4n/fig-ch4n-img19-old-67.png" class="img-fluid figure-img"></p>

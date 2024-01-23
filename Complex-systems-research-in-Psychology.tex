@@ -6,7 +6,8 @@
 \documentclass[
   a4paper,
   DIV=11,
-  numbers=noendperiod]{scrreprt}
+  numbers=noendperiod,
+  oneside]{scrreprt}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -213,6 +214,10 @@
 \makeatletter
 \makeatother
 \makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\makeatother
+\makeatletter
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -232,11 +237,11 @@
 
 \title{Complex systems research in Psychology}
 \author{Han van der Maas}
-\date{2024-01-22}
+\date{2024-01-23}
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, breakable, interior hidden, enhanced, frame hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, enhanced, breakable, sharp corners]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Table of contents}
 {
@@ -334,13 +339,26 @@ Han van der Maas, Amsterdam 2024
 
 \bookmarksetup{startatroot}
 
-\hypertarget{draft---call-outs}{%
-\chapter*{DRAFT - Call outs}\label{draft---call-outs}}
-\addcontentsline{toc}{chapter}{DRAFT - Call outs}
+\hypertarget{draft---margins-call-outs}{%
+\chapter*{DRAFT - Margins \& Call
+outs}\label{draft---margins-call-outs}}
+\addcontentsline{toc}{chapter}{DRAFT - Margins \& Call outs}
 
-\markboth{DRAFT - Call outs}{DRAFT - Call outs}
+\markboth{DRAFT - Margins \& Call outs}{DRAFT - Margins \& Call outs}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, breakable, colframe=quarto-callout-note-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-note-color!10!white, left=2mm]
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text ever
+since the 1500s, when an unknown printer took a galley of type and
+scrambled it to make a type specimen book.
+
+{\marginnote{\begin{footnotesize}This is a span that has the class aside
+which places it in the margin without a footnote
+number.\end{footnotesize}}}
+
+It has survived not only five centuries, but also the leap into
+electronic typesetting, remaining essentially unchanged.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toptitle=1mm, opacityback=0, colback=white, breakable, arc=.35mm, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, titlerule=0mm, toprule=.15mm]
 
 Note that there are five types of callouts, including: \texttt{note},
 \texttt{warning}, \texttt{important}, \texttt{tip}, and
@@ -348,25 +366,25 @@ Note that there are five types of callouts, including: \texttt{note},
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning custom Title}, breakable, colframe=quarto-callout-warning-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning custom Title}, toptitle=1mm, opacityback=0, colback=white, breakable, arc=.35mm, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, bottomtitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, titlerule=0mm, toprule=.15mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important custom Title}, breakable, colframe=quarto-callout-important-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-important-color!10!white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important custom Title}, toptitle=1mm, opacityback=0, colback=white, breakable, arc=.35mm, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-important-color!10!white, bottomtitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, titlerule=0mm, toprule=.15mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with custom title}, breakable, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-tip-color!10!white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip with custom title}, toptitle=1mm, opacityback=0, colback=white, breakable, arc=.35mm, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, titlerule=0mm, toprule=.15mm]
 
 This is an example of a callout with a title.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toptitle=1mm, bottomtitle=1mm, leftrule=.75mm, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Python code (click to expand)}, breakable, colframe=quarto-callout-caution-color-frame, rightrule=.15mm, opacitybacktitle=0.6, coltitle=black, arc=.35mm, colback=white, titlerule=0mm, toprule=.15mm, bottomrule=.15mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Python code (click to expand)}, toptitle=1mm, opacityback=0, colback=white, breakable, arc=.35mm, coltitle=black, rightrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, bottomtitle=1mm, bottomrule=.15mm, left=2mm, opacitybacktitle=0.6, leftrule=.75mm, titlerule=0mm, toprule=.15mm]
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -383,32 +401,6 @@ This is an example of a callout with a title.
 \end{Shaded}
 
 \end{tcolorbox}
-
-\section{R}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, state, parms) \{}
-  \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(state,parms)), \{}
-\NormalTok{    dX }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{X            }\CommentTok{\# the exponential model}
-      \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dX)))}
-\NormalTok{  \})}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-\section{Python}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
-
-\KeywordTok{def}\NormalTok{ model(t, state, parms): X }\OperatorTok{=}\NormalTok{ state\textbackslash{}[}\DecValTok{0}\NormalTok{\textbackslash{}] r }\OperatorTok{=}\NormalTok{ parms\textbackslash{}[}\DecValTok{0}\NormalTok{\textbackslash{}]}
-
-\NormalTok{dX }\OperatorTok{=}\NormalTok{ r }\OperatorTok{*}\NormalTok{ X  }\CommentTok{\# the exponential model}
-\ControlFlowTok{return}\NormalTok{ [dX]}
-\end{Highlighting}
-\end{Shaded}
 
 \bookmarksetup{startatroot}
 
@@ -3519,8 +3511,8 @@ we can do this using the math we learned in high school. For exponential
 growth \(\frac{dX}{dt} = rX\), this is the derivation:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6000}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4000}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6067}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3933}}@{}}
 \toprule\noalign{}
 \endhead
 \bottomrule\noalign{}
@@ -4105,6 +4097,9 @@ implementation in Grind of the simplest case looks like this:
 \end{Highlighting}
 \end{Shaded}
 
+The result of this simulation is shown in
+Figure~\ref{fig-ch4n-img6-old-54}.
+
 \begin{figure}
 
 {\centering \includegraphics{media/ch4n/fig-ch4n-img6-old-54.png}
@@ -4148,7 +4143,8 @@ two-alternative forced-choice task, where a stimulus is presented, and a
 choice must be made between two alternatives as quickly as possible. The
 stimulus could be an arrow pointing left or right. Accumulator models
 assume that noisy information is accumulated over time until a decision
-bound is reached and a motor response is initiated.
+bound is reached and a motor response is initiated
+(Figure~\ref{fig-ch4n-img7-old-55}).
 
 \begin{figure}
 
@@ -4245,10 +4241,10 @@ Roxin and Ledberg (2008) and Verdonck and Tuerlinckx (2014) and
 discussed in Ratcliff et al. (2016).
 
 The relations between different accumulator models are summarized in
-this figure from Bogacz et al. (2006). It shows that convenient models
-such as the drift diffusion model (DDM) can be derived by constraints on
-the parameters from more biologically realistic models, such as the
-pooled and mutual inhibition model.
+Figure~\ref{fig-ch4n-img8-old-56}. It shows that convenient models such
+as the drift diffusion model (DDM) can be derived by constraints on the
+parameters from more biologically realistic models, such as the pooled
+and mutual inhibition model.
 
 \begin{figure}
 
@@ -4364,12 +4360,13 @@ between Romeo and Juliet}
 
 \end{figure}
 
-The lines in the phase plots are the nullclines. Nullclines are the
-curves (straight lines in case of linear systems) for which the time
-derivatives of the behavioral variables \(R\) and \(J\) are zero. Where
-they intersect, stable or unstable fixed points can occur. Depending on
-the angle between the nullclines we get a fixed point (cases 1 and 2), a
-limit cycle (case 3), or divergence (not shown).
+The lines in the phase plots in Figure~\ref{fig-ch4n-img9-old-57} are
+the nullclines. Nullclines are the curves (straight lines in case of
+linear systems) for which the time derivatives of the behavioral
+variables \(R\) and \(J\) are zero. Where they intersect, stable or
+unstable fixed points can occur. Depending on the angle between the
+nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3),
+or divergence (not shown).
 
 Rinaldi (1998) proposed an extension and a constraint to the model that
 makes it a bit more realistic and easier to study. The basic equation is
@@ -4474,7 +4471,7 @@ This is implemented with:
 \end{Highlighting}
 \end{Shaded}
 
-Resulting in:
+Resulting in Figure~\ref{fig-ch4n-img10-old-58}.
 
 \begin{figure}
 
@@ -4533,7 +4530,8 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \end{gathered}
 }\label{eq-ch4n-13-old-33}\end{equation}
 
-This can be implemented as follows:
+This can be implemented as follows (see
+Figure~\ref{fig-ch4n-img11-old-59}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4567,6 +4565,18 @@ This can be implemented as follows:
 interrelated cognitive abilities in one of the van Geert models. In the
 left case they coexist, in the right case one ability suppresses the
 other.}
+
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics{media/ch4n/fig-ch4n-img11-old-59.png}
+
+}
+
+\caption{The development of two interrelated cognitive abilities in one
+of the van Geert models. In the left case they coexist, in the right
+case one ability suppresses the other.}
 
 \end{figure}
 
@@ -4695,7 +4705,8 @@ value, resulting in a high perceived threat. But because we also added
 some noise to both processes, after some time both arousal and perceived
 threat jump back to low values.
 
-This dynamic of this model is the cusp, as can be checked with:
+This dynamic of this model is the cusp, as can be checked with (see
+Figure~\ref{fig-ch4n-img15-old-63}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4773,10 +4784,10 @@ states of the cusp. The black dots represent different initial states.}
 
 \end{figure}
 
-The plots illustrate this behavior. For \(b < 0\), \(X\) converges to a
-fixed point, for \(b > 0\) we see cyclic jumps up and down. This
-oscillator is basically the famous van der Pol oscillator, originally
-written in the form
+The plots (Figure~\ref{fig-ch4n-img15-old-63}) illustrate this behavior.
+For \(b < 0\), \(X\) converges to a fixed point, for \(b > 0\) we see
+cyclic jumps up and down. This oscillator is basically the famous van
+der Pol oscillator, originally written in the form:
 
 \begin{equation}\protect\hypertarget{eq-ch4n-15-old-35}{}{
 \frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x
@@ -4797,7 +4808,8 @@ and FitzHugh 2006):
 The equation for \(V\), the membrane potential, has a cubic nonlinearity
 that allows regenerative self-excitation via positive feedback, and
 \(W\), a recovery variable, provides linear negative feedback. \(I\)
-represents the input. The main phenomena in this model are shown in:
+represents the input. The main phenomena in this model are shown in
+Figure~\ref{fig-ch4n-img15-old-63}.
 
 \begin{figure}
 
@@ -5017,7 +5029,8 @@ The phase planes of Figure~\ref{fig-ch4n-img16-old-64} can be made with:
 \end{Highlighting}
 \end{Shaded}
 
-The last three lines of this code show the Kadyrov oscillator:
+The last three lines of this code show the Kadyrov oscillator
+(@fig-ch4n-img17-old-65).
 
 \begin{figure}
 
@@ -5186,7 +5199,7 @@ The code to simulate this model is:
 \end{Highlighting}
 \end{Shaded}
 
-which gives:
+which gives Figure~\ref{fig-ch4n-img19-old-67}.
 
 \begin{figure}
 
