@@ -531,7 +531,7 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 \end{gathered}
 $$ {#eq-ch4n-13-old-33}
 
-This can be implemented as follows (see @fig-ch4n-img11-old-59):
+This can be implemented as follows:
 
 ``` r
 model <- function(t, state, parms) {
@@ -555,9 +555,7 @@ plane(portrait = TRUE,grid=4)
 
 ![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59}
 
-![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png)
-
-So, there are basically two outcomes, either both grow, or one grows and suppresses the other. Note that the method is set to 'Euler' to simulate difference equations.
+So, there are basically two outcomes, either both grow, or one grows and suppresses the other (see @fig-ch4n-img11-old-59). Note that the method is set to 'Euler' to simulate difference equations.
 
 ### The Polya Urn model of the third source {#sec-The-Polya-Urn-model-of-the-third-source}
 
