@@ -22,13 +22,13 @@ I call it an intriguing property because in the linear systems we are used to, s
 
 A key physical example is the change in state of water. Between, say, 10 and 80 degrees Celsius, a smooth change in temperature results in only a slight change in the liquid state of water. But if we change the temperature very slowly, close to the thresholds of 0 or 100 degrees Celsius, we see sudden phase transitions.
 
-We saw something similar for the logistic map when $r$ crossed the boundary $r = 1$. However, this did not lead to a sudden change in $X^{*}$. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior.[^ch3-2]
+We saw something similar for the logistic map when $r$ crossed the boundary $r = 1$. However, this did not lead to a sudden change in $X^{*}$. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior (@fig-ch3-img1-old-13).[^ch3-2]
 
 [^ch3-2]: A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.
 
 ![A first order (discontinuous) and second order (continuous) phase transition (Adapted from <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13}
 
-Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, turning over ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception.
+Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, turning over ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception (@fig-ch3-img2-old-14).
 
 Building and testing models of these psychological transitions is challenging but rewarding. These transitions involve large changes in behavior, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies.
 
@@ -54,7 +54,7 @@ $$ {#eq-ch3-1-old-5}
 
 ![The quadratic potential function. A boll rolls to the minimum value of $V(X)$. It's change is defined by negative of the derivative of the potential function $-V'(X)$.](media/ch3/ch3-03__figure15.png){#fig-ch3-img3-old-15}
 
-You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function. We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are $V^{'}(X) = 2X$ and $V^{''}(X) = 2$, respectively. At $X = 0$ we find the minimum.
+You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function (@fig-ch3-img3-old-15). We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are $V^{'}(X) = 2X$ and $V^{''}(X) = 2$, respectively. At $X = 0$ we find the minimum.
 
 The potential function describes a dynamical system defined by
 
@@ -120,15 +120,15 @@ In his classic paper on the Psychophysical Law [@stevens1957], Stevens reports h
 
 @gilmoreCatastropheTheoryScientists1993 made an important point about noise in the system. If there is a lot of noise, the jumps occur earlier and we see less or no hysteresis effect. This is called the Maxwell convention as opposed to the 'delay' convention. Demonstrating hysteresis therefore requires precise experimental control.
 
-Another very interesting pattern occurs when $a = 0$ and $b$ is increased.
+Another very interesting pattern occurs when $a = 0$ and $b$ is increased (@fig-ch3-img8-old-20).
 
 ![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/image8.jpg){#fig-ch3-img8-old-20}
 
-For low $b$ there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation.
+For low $b$ there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation (@fig-ch3-img9-old-21).
 
 ![Bifurcation plots for the $a$ and $b$ parameters of the cusp. Moving along the $a$ axis gives hysteresis, assuming $b$ is positive. Moving along the $b$ axis, assuming $a=0$, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.](media/ch3/image9.jpg){#fig-ch3-img9-old-21}
 
-To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams.
+To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (\@fig-ch3-img10-old-22).
 
 ![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22}
 
@@ -154,11 +154,11 @@ To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). 
 
 ![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23}
 
-This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water. We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
+This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water (\@fig-ch3-img10-old-22). We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
 ![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/ch3-12__figure24.png){#fig-ch3-img12-old-24}
 
-A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion.
+A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (\@fig-ch3-img10-old-22).
 
 ![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25}
 
@@ -216,7 +216,7 @@ $$
 r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 $$ {#eq-ch3-8-old-12}
 
-Using these two 'constructed' control variables, we can depict the bifurcation lines of the cusp as:
+Using these two 'constructed' control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28:
 
 ![The bifurcation diagram of the Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28}
 
@@ -230,11 +230,11 @@ Setting up a phenomenological model is not a trivial task either. I suggest some
 
 Second, select the control variables. What could be a normal variable and what could be a splitting variable. These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in @fig-ch3-img14-old-26, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.
 
-There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression.
+There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression (\@fig-ch3-img16-old-28).
 
 ![@zeemanCatastropheTheory1976 dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29}
 
-The control variables are fear and rage (see @fig-ch3-img17-old-29). In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
+The control variables are fear and rage. In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
 To explain catastrophic drops in performance in work and sports, @hardy1991 proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. @hardyTestingPredictionsCusp1996 present further tests of this model. It has been criticized by @cohenCriticalElaborationEmpirical2003. Extensions of to the butterfly model are presented in @guastello1984 and @hardy2004.
 
@@ -250,7 +250,7 @@ As a final example I mention the model for humor presented by @paulosMathematics
 
 A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. So sudden transitions are not instantaneous.
 
-But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look something like this:
+But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (\@fig-ch3-img18-old-30).
 
 ![Continuous and discontinuous growth curves my look very similar.](media/ch3/image18.jpg){#fig-ch3-img18-old-30}
 
@@ -422,7 +422,7 @@ summary(fit_correct_model)
 
 : Table 2: The comparative fit measures, AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
 
-The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$ we do have hysteresis. With the code below we simulate datasets for different $\beta$, and compare the goodness of fit between the linear and cusp model. The figure summarizes the results. Note that a lower BIC indicated the better fitting model.
+The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$ we do have hysteresis. With the code below we simulate datasets for different $\beta$, and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better fitting model.
 
 ```{r eval = FALSE}
 set.seed(10)
@@ -462,11 +462,11 @@ fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling, beta ~ IntensityofFeeling,
 summary(fit)
 ```
 
-Inspection of the parameter estimates shows that, as expected, Intensity of Feeling only loads on the splitting axis and not on the normal axis. This is the location of the data in the bifurcation set (`plot(fit)`).
+Inspection of the parameter estimates shows that, as expected, Intensity of Feeling only loads on the splitting axis and not on the normal axis. @fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
 
 ![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/image24.jpg){#fig-ch3-img24-old-36}
 
-Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups. These data are expected to be bimodal and to move along the normal axis [@vandermaasStagewiseCognitiveDevelopment1992].
+Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (\@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaasStagewiseCognitiveDevelopment1992].
 
 ```{r eval = FALSE}
 x <- read.table('data/bentler.txt',header=T)
@@ -484,9 +484,9 @@ plot(fit)
 
 This is supported by results of cuspfit. You can verify that a model with beta \~ 1, fits better according to the AIC and BIC.
 
-![The fit of Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37}
+![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37}
 
-A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine.
+A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (\@fig-ch3-img26-old-38).
 
 ![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38}
 
