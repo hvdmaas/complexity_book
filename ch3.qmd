@@ -128,7 +128,7 @@ For low $b$ there is one stable fixed point that becomes unstable. It splits up 
 
 ![Bifurcation plots for the $a$ and $b$ parameters of the cusp. Moving along the $a$ axis gives hysteresis, assuming $b$ is positive. Moving along the $b$ axis, assuming $a=0$, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.](media/ch3/image9.jpg){#fig-ch3-img9-old-21}
 
-To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (\@fig-ch3-img10-old-22).
+To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (@fig-ch3-img10-old-22).
 
 ![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22}
 
@@ -154,11 +154,11 @@ To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). 
 
 ![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23}
 
-This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water (\@fig-ch3-img10-old-22). We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
+This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water (@fig-ch3-img10-old-22). We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
 ![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/ch3-12__figure24.png){#fig-ch3-img12-old-24}
 
-A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (\@fig-ch3-img10-old-22).
+A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (@fig-ch3-img10-old-22).
 
 ![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25}
 
@@ -230,7 +230,7 @@ Setting up a phenomenological model is not a trivial task either. I suggest some
 
 Second, select the control variables. What could be a normal variable and what could be a splitting variable. These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in @fig-ch3-img14-old-26, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.
 
-There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression (\@fig-ch3-img16-old-28).
+There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression (@fig-ch3-img16-old-28).
 
 ![@zeemanCatastropheTheory1976 dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29}
 
@@ -250,7 +250,7 @@ As a final example I mention the model for humor presented by @paulosMathematics
 
 A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. So sudden transitions are not instantaneous.
 
-But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (\@fig-ch3-img18-old-30).
+But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (@fig-ch3-img18-old-30).
 
 ![Continuous and discontinuous growth curves my look very similar.](media/ch3/image18.jpg){#fig-ch3-img18-old-30}
 
@@ -466,7 +466,7 @@ Inspection of the parameter estimates shows that, as expected, Intensity of Feel
 
 ![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/image24.jpg){#fig-ch3-img24-old-36}
 
-Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (\@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaasStagewiseCognitiveDevelopment1992].
+Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaasStagewiseCognitiveDevelopment1992].
 
 ```{r eval = FALSE}
 x <- read.table('data/bentler.txt',header=T)
@@ -486,7 +486,7 @@ This is supported by results of cuspfit. You can verify that a model with beta \
 
 ![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37}
 
-A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (\@fig-ch3-img26-old-38).
+A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
 ![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38}
 
