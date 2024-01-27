@@ -67,7 +67,7 @@ The scale-free and small-world networks are predominantly associated with the co
 
 This nesting is crucial for understanding complex systems and is a central theme in Simon's influential architecture of complexity [@simon1962]. He introduced the concept of near decomposability to describe the interaction within these nested hierarchies. Typically, interactions within each subsystem are stronger and more frequent than those between subsystems. Although the HSBM simplifies reality, where levels can intermingle and low-level interference might occasionally escalate to higher levels, it often serves as a useful framework for conceptualizing complex networks, including in the field of psychology.
 
-![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. **The code for this figure is available in the online software repository of the book.** ](media/ch6/fig-ch6-extra.png){#fig-ch6-extra}
+![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. **The code for this figure is available in the online software repository of the book.**](media/ch6/fig-ch6-extra.png){#fig-ch6-extra}
 
 ### Network dynamics {#sec-Network-dynamics}
 

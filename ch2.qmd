@@ -112,7 +112,7 @@ If we increase $r$ even further, the doubling of the periods changes to even str
 
 ![Chaos for $r = 4$.](media/ch2/fig-ch2-img5.jpg){#fig-ch2-img5}
 
-There seems to be no regularity. This is what we call deterministic chaos. This time series is unpredictable, even though we now have the equation, and the system is deterministic. What exactly do we mean by this? Let me illustrate.
+There seems to be no regularity. This is what we call deterministic chaos. This time series is unpredictable, even though we know the equation, and the system is deterministic. What exactly do we mean by this? Let me illustrate.
 
 ```{r eval = FALSE}
 r <- 4;  n <- 50; x <- rep(0,n)
@@ -167,7 +167,7 @@ plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
 
 The top figures are time plots and lower figures are phase plots. The first column shows a limit cycle of period 2, the second deterministic chaos and the third noise generated from a uniform distribution. Although the time series of the second and third cases look similar, the phase diagram reveals hidden structure in the chaos time series. Phase plots can help us to distinguish chaos from noise.
 
-The second useful graph is the bifurcation graph. It summarizes the behavior of the logistic map for different values of $r$ in one figure. The idea is to plot the equilibria as y-values for a range of $r$-values on the $x$-axes. This means that if we take an$r$ value $(r < 1)$, we will only plot zero's, as only $X^{*} = 0$ is a stable fixed point. Between 1 and 3, we will also see one fixed point equal to $(r - 1)/r$. For $r = 3.3$, we expect to see 2 points as the attractor is a limit cycle with period 2. For higher $r$ we get chaos. How does this all look? It looks amazing!
+The second useful graph is the bifurcation graph. It summarizes the behavior of the logistic map for different values of $r$ in one figure. The idea is to plot the equilibria as y-values for a range of $r$-values on the $x$-axes. This means that if we take a low $r$ value $(r < 1)$, we will only plot zero's, as only $X^{*} = 0$ is a stable fixed point. Between 1 and 3, we will also see one fixed point equal to $(r - 1)/r$. For $r = 3.3$, we expect to see 2 points as the attractor is a limit cycle with period 2. For higher $r$ we get chaos. How does this all look?
 
 It is actually a good challenge to program this yourself. The trick is to create time series for a range of values of $r$, delete the first part of this series (we only want the equilibrium behavior) and plot these as y values. So, if the logistic map has period two ($r = 3.3$), we repeatedly plot only two points. For $r = 4$ we get the whole chaos band.
 
@@ -208,7 +208,7 @@ We have learnt that there are all sorts of equilibria. The strangest ones are ca
 
 The last thing we learned is that even if our world were deterministic (it is not!), and we knew all the laws of motion (say, the logistic map), and knew initial states with enormous precision, the world is unpredictable.
 
-This statement needs some nuance. I have already mentioned that the weather can be chaotic and unpredictable. But the weather is not always so unpredictable. Sometimes longer forecasts are possible. But forecasts beyond, say, 10 days seem out of reach. We also see in the logistic map that when $r$ is close to 4, the forecast suffers from the butterfly effect, but for $r = 2$ the time course is very predictable, even more predictable than in many linear systems. This is because there is only one stable fixed point (.5). The initial state does not matter, we always end up at .5! So the logistic map is extremely predictable or extremely unpredictable depending on $r$.
+This statement needs some nuance. I have already mentioned that the weather can be chaotic and unpredictable. But the weather is not always so unpredictable. Sometimes longer forecasts are possible. But forecasts beyond, say, 10 days seem out of reach. We also see in the logistic map that when $r$ is close to 4, the forecast suffers from the butterfly effect, but for $r = 2$ the time course is very predictable, even more predictable than in many linear systems. This is because there is only one stable fixed point (.5). The initial state does not matter, we always end up at .5! So the logistic map is either extremely predictable or extremely unpredictable depending on the value of $r$.
 
 ## Other maps and fractals {#sec-Other-maps-and-fractals}
 
