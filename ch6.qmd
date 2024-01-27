@@ -26,7 +26,7 @@ A connected network is a network in which every node is connected to every other
 
 Nodes can be in the center of a network or in the periphery. This should not be taken literally as psychological networks have no spatial dimension. Centrality measures quantify the relative influence, control, or connectivity of a node compared to other nodes in the network. There are many kinds of centrality measures, such as closeness centrality and degree centrality. The degree of a node is equivalent to the number of links it has. The average degree of a network is the average of this number over all nodes. The degree distribution can take several forms. A random graph, where nodes are connected randomly, has a binomial degree distribution. Most real-world networks have a skewed degree distribution. Sometimes nodes are organized into clusters or communities, where the density is higher than between clusters. The average shortest path length (ASPL) is the average number of edges that must be traversed to get from one node to another using the shortest paths (i.e., the fewest intermediate nodes).
 
-There are many methods available in R for creating and visualizing networks and for computing properties of networks. The igraph and qgraph libraries are very useful. It is a good idea to do a bit of experimentation with this R code below by varying the parameter values.
+There are many methods available in R for creating and visualizing networks and for computing properties of networks. The igraph and qgraph libraries are very useful. It is a good idea to do a bit of experimentation with this R code below by varying the parameter values. Some key concepts of networks are shown in @fig-ch6-img2-old-71.
 
 ``` r
 library(igraph);library(qgraph)
@@ -67,7 +67,7 @@ The scale-free and small-world networks are predominantly associated with the co
 
 This nesting is crucial for understanding complex systems and is a central theme in Simon's influential architecture of complexity [@simon1962]. He introduced the concept of near decomposability to describe the interaction within these nested hierarchies. Typically, interactions within each subsystem are stronger and more frequent than those between subsystems. Although the HSBM simplifies reality, where levels can intermingle and low-level interference might occasionally escalate to higher levels, it often serves as a useful framework for conceptualizing complex networks, including in the field of psychology.
 
-![A hierarchical stochastic block model with four levels of four units.](media/ch6/fig-ch6-extra.png){#fig-ch6-extra}
+![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. **The code for this figure is available in the online software repository of the book.** ](media/ch6/fig-ch6-extra.png){#fig-ch6-extra}
 
 ### Network dynamics {#sec-Network-dynamics}
 
@@ -99,7 +99,7 @@ The psychological network approach was developed in response to the factor appro
 
 #### The $g$ factor {#sec-The-g-factor}
 
-The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$.
+The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$ (@fig-ch6-img4-old-73).
 
 ![The Cattell-Horn-Carroll (CHC) model of general intelligence. Blocks represent test scores (narrow), explained by the broad factors, which in turn are determined by the general factor $g$.](media/ch6/image4.jpg){#fig-ch6-img4-old-73}
 
@@ -113,7 +113,7 @@ Statistically, these factor models are equivalent. Thus, the fact that factor mo
 
 #### Mutualism model {#sec-Mutualism-model}
 
-@vandermaasDynamicalModelGeneral2006 proposed an alternative model that is consistent with the formative interpretation of the factor model. The idea is that our cognitive system consists of many cognitive functions that develop over time in an autocatalytic process based on experience and training, but also due to weak positive reciprocal interactions between developing cognitive functions. Examples of such mutualistic interactions are those between short-term memory and cognitive strategies, language and cognition (syntactic and semantic bootstrapping), cognition and metacognition, action and perception, and performance and motivation [@vandermaasNetworkModelsCognitive2017]. For example, babies learn to grasp objects by repeatedly reaching out, coordinating their hand and finger movements, and adjusting their grip. Through these actions, they gather sensory feedback, refining their perception and improving their grasping skills in a reciprocal learning process [@needhamHowBabiesUse2023].
+@vandermaasDynamicalModelGeneral2006 proposed an alternative model that is consistent with the formative interpretation of the factor model. The idea is that our cognitive system consists of many cognitive functions that develop over time in an autocatalytic process based on experience and training, but also due to weak positive reciprocal interactions between developing cognitive functions (@fig-ch6-img6-old-75). Examples of such mutualistic interactions are those between short-term memory and cognitive strategies, language and cognition (syntactic and semantic bootstrapping), cognition and metacognition, action and perception, and performance and motivation [@vandermaasNetworkModelsCognitive2017]. For example, babies learn to grasp objects by repeatedly reaching out, coordinating their hand and finger movements, and adjusting their grip. Through these actions, they gather sensory feedback, refining their perception and improving their grasping skills in a reciprocal learning process [@needhamHowBabiesUse2023].
 
 To model this we used the mutualistic Lotka-Volterra model, which is:
 
@@ -144,7 +144,7 @@ mutualism <- function(t, state, parms){
 }
 ```
 
-A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (tmax=60) for each person. We can then compute the correlations and check if they are positive. For each person, we resample $a$, $K$ and the initial values of $X$, but $M$ is the same across persons. Note that the M-values should not be set to high because we then end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
+A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (tmax=60) for each person. We can then compute the correlations and check if they are positive (@fig-ch6-img7-old-76). For each person, we resample $a$, $K$ and the initial values of $X$, but $M$ is the same across persons. Note that the M-values should not be set to high because we then end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
 
 ``` r
 layout(matrix(1:2,1,2))
@@ -212,7 +212,7 @@ However, it is difficult to create a growing network with Fortuin-Kasteleyn prop
 
 ### Symptom networks {#sec-Symptom-networks}
 
-In the network perspective on psychopathology, a mental disorder can be viewed as a system of interacting symptoms. Network theory conceptualizes mental disorders as complex networks of symptoms that interact through feedback loops to create a self-sustaining syndromic constellation. Mental disorders can be understood as alternative stable states of highly interconnected networks of symptoms [@borsboomNetworkTheoryMental2017].
+In the network perspective on psychopathology, a mental disorder can be viewed as a system of interacting symptoms (@fig-ch6-img8-old-77). Network theory conceptualizes mental disorders as complex networks of symptoms that interact through feedback loops to create a self-sustaining syndromic constellation. Mental disorders can be understood as alternative stable states of highly interconnected networks of symptoms [@borsboomNetworkTheoryMental2017].
 
 As with the mutualism model, this is an alternative to the common cause view. Depression could be caused by some malfunction in the brain, a dysregulation of hormones, or even a genetic defect. But as with general intelligence, no such common cause has yet been found. Drugs work to some extent, but so do most interventions, even placebos and waiting lists [@posternakUntreatedShorttermCourse2001]. We explicitly offered the network approach as an alternative to the $p$-factor account of psychopathology [@vanborkWhatPfactorPsychopathology2017].[^ch6-1] It is called the $p$-factor because it is thought to be conceptually parallel to the $g$-factor of general intelligence [@caspiFactorOneGeneral2014]. And again, no one seems to have any idea what $p$ might be.
 
@@ -276,7 +276,7 @@ This mean-field approximation is very robust. In @vandermaas2020 it is shown by 
 
 #### Simulation {#sec-Simulation}
 
-The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($W$), which for the Curie Wiess model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$ is the inverse of the temperature ($1/T$).
+The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($W$), which for the Curie Weiss model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$, originally the inverse of the temperature ($1/T$), represents attention. The effect of varying $beta$ (attention) is shown in @fig-ch6-img8-old-77.
 
 ``` r
 library("IsingSampler")
@@ -292,9 +292,9 @@ data <- IsingSampler(N, W, nIter=100, thresholds, beta = 2, responses = c(-1, 1)
 hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 ```
 
-![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation shows the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81}
+![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81}
 
-In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds. Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
+In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds (@fig-ch6-img13-old-82). Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
 ``` r
 layout(1)
@@ -356,6 +356,8 @@ diag(W) <- 0
 round(W,2)
 qgraph(W);title('after learning')
 ```
+
+@fig-ch6-img14-old-83 shows the result of this simulation.
 
 ![Through Hebbian learning, a random (unbalanced) network becomes balanced.](media/ch6/fig-ch6-img14-old-83.png){#fig-ch6-img14-old-83}
 
@@ -463,7 +465,7 @@ for(i in 1:nr_var)
 M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 ```
 
-In JASP, you can perform network and confirmatory factor analysis. In the latter case, select 3 factors in the first window and select 'assume uncorrelated factors' in the model options. The resulting plots should look like this.
+In JASP, you can perform network and confirmatory factor analysis. In the latter case, select 3 factors in the first window and select 'assume uncorrelated factors' in the model options. The resulting plots should look like @fig-ch6-img17-old-86.
 
 ![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.jpg){#fig-ch6-img17-old-86}
 
