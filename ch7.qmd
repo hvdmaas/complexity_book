@@ -88,7 +88,7 @@ In the model, agents have F cultural features (e.g., beliefs, habits), each of w
 
 The combination of interaction and homophily creates a self-reinforcing dynamic that often leads to global convergence toward a single culture. However, for certain choices of F and Q, the model converges to a state of diversity. In the simulation below, I use the number of remaining cultures as a simple order parameter. @castellanoNonequilibriumPhaseTransition2000 present detailed analyses of the phase transitions in this model using more advanced order parameters. As you can imagine, this model can be extended in many ways, for instance by introducing ordinal instead of nominal states [@macyWhatSustainsStable2006].
 
-The following R-code of this model generates the left plot in @fig-ch7-img4-old-92 . You can play with the values to see different cases.
+The following R-code of this model generates the first plot in @fig-ch7-img4-old-92 . You can play with the values to see different cases.
 
 ``` r
 resample <- function(x, ...) x[sample.int(length(x), ...)] # as sample(5,1) acts odd
@@ -157,13 +157,13 @@ In this theory, opinion change depends on social impact $I$. Opinions $X$ are ei
 
 $$I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack$$
 
-With $j$ we take the sum over the neighbor of agent $i$. Note that when $X_{i} = X_{j}$, $I^{P} = 0$ due to the $1 - X_{i}X_{j}$ term, and the same is true for $I^{S}$ when $X_{i} \neq X_{j}$. The effects of persuasiveness and supportiveness are reduced as the distance between agents increases. Setting α to values greater than 1 reduces the effect of distant neighbors. In addition to these forces, the theory assumes an external field$\ H$, as in the Ising model. The dynamics of opinions is:
+With $j$ we take the sum over the neighbor of agent $i$. Note that when $X_{i} = X_{j}$, $I^{P} = 0$ due to the $1 - X_{i}X_{j}$ term, and the same is true for $I^{S}$ when $X_{i} \neq X_{j}$. The effects of persuasiveness and supportiveness are reduced as the distance between agents increases. Setting α to values greater than 1 reduces the effect of distant neighbors. In addition to these forces, the theory assumes an external field$H$, as in the Ising model. The dynamics of opinions is:
 
-$$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H_{i}\rbrack$$
+$$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack$$
 
-Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H_{i}$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant.
+Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. **A NetLogo implementation of the model is available in the software repository of this book.**
 
-In the presence of individual fields, some minority opinions can become metastable. These metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters. These smaller clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior. Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for long periods of time, against all odds [@douglasPsychologyConspiracyTheories2017].
+In the presence of individual fields, some minority opinions can become metastable. These metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters. These smaller clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for long periods of time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
 ![Five runs of the Social Impact Model with $\alpha = 5$, $p$, $s$ and $H$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact Model can be found in the online NetLogo models.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94}
 
@@ -173,7 +173,7 @@ Extensions of this model include learning, leadership, external influences and i
 
 #### Classic models {#sec-Classic-models}
 
-Another line of research, with its own history, starts from the assumption that opinions are continuous variables [for a recent review see, @noorazarRecentAdvancesOpinion2020]. A classical model is the DeGroot model, where agents are connected in a weighted network. At each iteration, an agent's opinion is set equal to the weighted average of all connected agents in the network. Thus opinions tend to converge. The Friedkin-Johnson model [@friedkinSocialInfluenceOpinions1990] is an extension that includes a confidence level for each agent. This confidence of the agent in his own opinion reduces the effect of others. Clustering or polarization in these linear models can only occur if parts of the network are unconnected. The Friedkin-Johnson model can be efficiently simulated with Grind (using the `method='euler'` option) by:
+Another line of research, with its own history, starts from the assumption that opinions are continuous variables [for a recent review see, @noorazarRecentAdvancesOpinion2020]. A classical model is the DeGroot model, where agents are connected in a weighted network. At each iteration, an agent's opinion is set equal to the weighted average of all connected agents in the network. Thus opinions tend to converge (@fig-ch7-img7-old-95). The Friedkin-Johnson model [@friedkinSocialInfluenceOpinions1990] is an extension that includes a confidence level for each agent. This confidence of the agent in his own opinion reduces the effect of others. Clustering or polarization in these linear models can only occur if parts of the network are unconnected. The Friedkin-Johnson model can be efficiently simulated with Grind (using the `method='euler'` option) by:
 
 ``` r
 FJ <- function(t, state, parms){
@@ -242,7 +242,7 @@ accapted <- abs(outer(X,X,'-')) < bound # acceptable neighbors
 M <- accepted * M
 ```
 
-after the `X <- state[1:n]` line and adding bound = .1.
+after the `X <- state[1:n]` line and adding bound = .1 (@fig-ch7-img9-old-97).
 
 ![Clustering in the Hegselmann & Krause model.](media/ch7/fig-ch7-img9-old-97.png){#fig-ch7-img9-old-97}
 
@@ -345,11 +345,11 @@ The model is now in place and can be simulated by following the steps below:
 
     -   Update opinion $O$ in all agents (@eq-ch7-3-old-52).
 
-The ${decay}_{A}$ has a special role in the current implementation of the HIOM. Instead of being fixed, it depends on the difference between the percentage of agents in the 'active' set and the desired percentage of active agents (%active_agents), which is controlled by one of the sliders in the NetLogo model. This allows us to manipulate the general interest (attention) in the opinion object.
+The ${decay}_{A}$ has a special role in the current implementation of the HIOM. Instead of being fixed, it depends on the difference between the percentage of agents in the 'active' set and the desired percentage of active agents (%active_agents), which is controlled by one of the sliders in the NetLogo model (@fig-ch7-img10-old-98). This allows us to manipulate the general interest (attention) in the opinion object.
 
 There is no obvious stop criterion but in practice some type of convergence happens over time.
 
-![The interface of the HIOM NetLogo model. All model parameters can be adjusted with sliders. With add-activists and perturbate-activist the key effects of HIOM can be reproduced. The graphs on the left show the distribution of opinion, attention, and information and the change in the means of these variables.](media/ch7/image10.jpg){#fig-ch7-img10-old-98}
+![The interface of the HIOM NetLogo model. All model parameters can be adjusted with sliders. With add-activists and perturbate-activist the key effects of HIOM can be reproduced. The graphs on the right show the distribution of opinion, attention, and information and the change in the means of these variables.](media/ch7/image10.jpg){#fig-ch7-img10-old-98}
 
 In the standard setup, you can see that high attention (set %active-agent high) leads to polarization. If you now decrease the difference in information (set decay_I to .5), the polarization remains even if the difference in underlying information is 0. Only if you also decrease attention (set %active-agents low), the polarization disappears. This is the first simulation described in @vandermaasPolarizationIndividualsHierarchical2020. The second and third simulation are described in the next two sections.
 
