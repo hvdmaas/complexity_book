@@ -248,7 +248,7 @@ In this section, I will discuss our network approach to attitudes using the Isin
 
 It was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors, that each explain observed responses, similar to the CHC model of general intelligence. The causal attitude model [@dalegeFormalizedAccountAttitudes2016] maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. Nodes represent single feelings, beliefs and behaviors. In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. That is high attention 'freezes' the network and leads to consistent and stable positive or negative states of the attitude (the 'mere thought effect', see below).
 
-![Ising attitude network model. Feelings, beliefs and behaviors towards an attitude object align when attended to. Nodes are alsi influenced by local and global external fields. ](media/ch6/fig-attitude network.png)
+![The Ising Attitude Network Model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields.](media/ch6/fig-attitude network.png)
 
 #### Model setup {#sec-Model-setup}
 
