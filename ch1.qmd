@@ -88,7 +88,7 @@ A third observation is that formal modelling is mostly a matter of analogical re
 
 Fourth, good models do not build in phenomena, but explain them from basic principles. What I mean by building in is that a phenomenon should not be an assumption of the model. An example would be a model that says that variance in the speed of cars causes traffic jams. Such a model may explain other things, but not the role of speed variance, because that effect is part of the assumptions. Models that make such assumptions are called phenomenological models. We will see examples of phenomenological models of complex systems, as well as explanatory models, where the latter are based on fundamental principles. Building real explanatory models in our fields is extremely difficult.
 
-Fifth, it is my conviction that a metaphorical use of the complex systems approach should be avoided by using concrete formal models. It is crucial to strive for the highest level of scientific rigor. There are no special, more lenient, methodological rules for complex systems research [@vandermaasMetaphor1995].
+Fifth, it is my conviction that a metaphorical use of the complex systems approach should be avoided by using concrete formal models [@vandongen2024]. It is crucial to strive for the highest level of scientific rigor. There are no special, more lenient, methodological rules for complex systems research [@vandermaasMetaphor1995].
 
 ## A limited number of equilibria {#sec-A-limited-number-of-equilibria}
 

@@ -200,7 +200,9 @@ Another one we have already seen is the period doubling bifurcation. This happen
 
 ### Mechanistic models {#sec-Mechanistic-models}
 
-The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles. The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
+The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles.
+
+The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
 
 One model that I will use as a psychological model in Chapter 4, @sec-Analogical-modeling-Budworms-and-Beers, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is
 

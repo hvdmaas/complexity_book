@@ -2,11 +2,11 @@
 
 Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.
 
-This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. We have seen many examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
+This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. We have seen examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
 
-In psychology, following the principle of parsimony (Occam's razor) we must start with simple models. We don't have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling [@murray1989]. As a rough estimate, one could say that mathematical psychology is where mathematical biology was a century ago., but this depends a bit on the subfield of psychology. In areas such as neural modeling, speeded decision making, memory choice theory, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.
+In psychology, following the principle of parsimony (Occam's razor) we must start with simple models. We don't have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling [@murray1989]. As a rough estimate, one could say that mathematical psychology is where mathematical biology was a century ago., but this depends a bit on the subfield of psychology. In areas such as neural modeling, speeded decision making, memory, choice, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.
 
-As in the previous chapter, I will first present a basic overview of dynamical systems modeling in other sciences. The second part concerns applications in psychology. I refer to more advanced sources when necessary. I recommend the book by @gottmanMathematicsMarriageDynamic2002 for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. The online lectures on nonlinear dynamics and chaos and the book by Steven Strogatz [-@strogatzNonlinearDynamicsChaos2018] are very helpful. Murray's book on mathematical biology is also highly recommended [@murrayMathematicalBiology2002]. A basic introduction is Thinking in Systems of @meadowsThinkingSystemsPrimer2008.
+I will first present a basic overview of dynamical systems modeling in other sciences. The second part concerns applications in psychology. I refer to more advanced sources when necessary. I recommend the book by @gottmanMathematicsMarriageDynamic2002 for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. The online lectures on nonlinear dynamics and chaos and the book by Steven Strogatz [-@strogatzNonlinearDynamicsChaos2018] are very helpful. Murray's book on mathematical biology is also highly recommended [@murrayMathematicalBiology2002]. A basic introduction is Thinking in Systems of @meadowsThinkingSystemsPrimer2008.
 
 This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind [@deboerSimplePhasePlane2018] is based on the R-packages deSolve and rootSolve [@soetaertSolvingDifferentialEquations2010]. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states. The manual can be found at <https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf>
 
@@ -24,7 +24,7 @@ $$
 \frac{dX}{dt} = rX(1 - X)
 $$ {#eq-ch4n-1-old-21}
 
-The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to zero, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $\frac{dX}{dt} = rX$, this is the derivation:
+The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to zero, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $dX/dt = rX$, this is the derivation:
 
 +-----------------------------------------------------+----------------------------------+
 | $\frac{dX}{dt} = rX$                                | by separation of variables       |
@@ -84,12 +84,6 @@ library(Grind)
 The code consists of defining the model, the parameters $p$ and the initial values $s$. Main functions are `run()`, `plane()`, `newton()`, `continue()` and `fit()`. They will be introduced using examples. With `run()` we generate a time series for the model.
 
 ``` r
-install.packages("remotes")
-remotes::install_github("hansschepers/grindr")
-library(deSolve)
-library(rootSolve)
-library(FME)
-library(Grind)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- r*X            # the exponential model
@@ -104,7 +98,7 @@ s['X']*exp(p['r']*5) # compare with analytical solution
 
 We don't have to worry about time steps anymore and the numerical and analytical solutions converge. This is of course a trivial use of an ODE solver, but much more can be done.
 
-In analyzing the behavior of a dynamical system, the first thing we want to know about a dynamical system is what the equilibria $X^{*}$ are*.* To do this, we need to set the time derivative equal to zero, $\frac{dX}{dt} = 0$. For the exponential function this is simply $rX = \ 0$, i.e., when $X$ is zero. Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than zero, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
+In analyzing the behavior of a dynamical system, the first thing we want to know about a dynamical system is what the equilibria $X^{*}$ are*.* To do this, we need to set the time derivative equal to zero, $dX/dt = 0$. For the exponential function this is simply $rX = \ 0$, i.e., when $X$ is zero. Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than zero, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
 
 For @eq-ch4n-1-old-21, the logistic function, we also want to know the equilibria, the stable and unstable fixed points. To do so we follow the same steps as for the exponential function (see exercises).
 
@@ -130,7 +124,7 @@ $$
 \frac{dP}{dt} = cPN - dP
 $$ {#eq-ch4n-4-old-24}
 
-Where $N$ and $P$ refer to the sizes of the prey and predator populations, a and c determine the growth rates, and b and d control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, they eat prey. We will follow the simple example provided by Wikipedia (on Lotka-Volterra equations).
+Where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, they eat prey. We will follow the simple example provided by Wikipedia (on Lotka-Volterra equations).
 
 To implement this model in Grind, we use:
 
@@ -155,9 +149,11 @@ data=run(odes=LV,tstep=.01,table=T) # set tstep to low value
 plane(odes=LV,portrait = TRUE, ymax=17, xmax=50, tstep=0.1,grid=4)
 ```
 
-The plane function makes a phase plot with $N$ and $P$ as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka-Volterra equations is a limit cycle that depends on the choice of the initial conditions. A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting `dN <- a*N *(1-N) - b*P*N` in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading [@deboerSimplePhasePlane2018]. It also contains the appropriate parameter values for this model variant. In this density dependent model there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.
+The plane function makes a phase plot with $N$ and $P$ as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka-Volterra equations is a limit cycle that depends on the choice of the initial conditions.
 
-A famous example of a system of three coupled differential equations is the SIR model used to model infectious diseases. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
+A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting `dN <- a*N *(1-N) - b*P*N` in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading [@deboerSimplePhasePlane2018]. It also contains the appropriate parameter values for this model variant. In this density dependent model there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.
+
+A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
 
 ### Fitting models: stochasticity versus noise {#sec-Fitting-models-stochasticity-versus-noise}
 
@@ -191,7 +187,7 @@ barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
 
 This results in @fig-ch4n-img1-old-49.
 
-![Fit of the Lotka-Volterra model on three types of data. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
+![Fit of the Lotka-Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
 
 Note that the error data set looks very similar to the deterministic data set because it contains only the measurement error (X is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
 
@@ -216,7 +212,7 @@ s[1] <- -.1; run(add=T)
 
 This code simulates two runs demonstrating bistability for $a = 0$ and $b = 1$.
 
-A nicer way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small timestep. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
+A nicer way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small time step. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
 
 As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous jumps between the two modes of the cusp. When noise or random fluctuations cause the entire equilibrium landscape of a dynamical system to become observable, it is often referred to as stochastic resonance. Stochastic resonance is a notable example of how noise, which is often considered undesirable or disruptive, can actually play a constructive role in certain systems, helping to reveal hidden patterns and structures that might otherwise remain obscured. You can see this by comparing the figure with one generated with a standard deviation of .1 or less.
 
@@ -228,11 +224,11 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
-By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change parameter. This is what we did in Chapter 2 for the logistic map, when we varied r and plotted the equilibria (see @fig-ch2-img8).
+By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change a parameter. This is what we did in Chapter 2 for the logistic map, when we varied $r$ and plotted the equilibria (see @fig-ch2-img8).
 
 It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create @fig-ch4n-img3-old-51 is:
 
@@ -246,7 +242,7 @@ continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 
 ![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51}
 
-Another great tool in R is the deBif package by Andre M. de Roos. This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
+Another great tool in R is the deBif package by de Roos. This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
 
 ``` r
 install.packages("deBif")
@@ -254,7 +250,7 @@ library(deBif)
 phaseplane(model,s,p)
 ```
 
-The `phaseplane()` function returns a time plot and the steady states. You can change parameters and initial states on the left side, and plot parameters on the upper right side (click on the two gears). The Steady States option is very useful as it shows the stable and unstable fixed points. Be sure to set the minima and maxima of the plot correctly.
+The `phaseplane()` function returns a time plot and the steady states. You can change parameters and initial states on the left side, and plot parameters on the upper right side (click on the two gears). The Steady States option is very useful as it shows the stable and unstable fixed points. Be sure to set the minima and maxima of axes of the plot correctly.
 
 With
 
@@ -264,7 +260,7 @@ bifurcation(model,s,p)
 
 You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
 
-![Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the a, b plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52}
+![Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52}
 
 ### Spruce Budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
@@ -282,17 +278,17 @@ parms <- c(r = 0.4, q = 10)
 bifurcation(spruce, state, parms)
 ```
 
-Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start A is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat B budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
+Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- \frac{BN^{2}}{A^{2} + N^{2}}$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start $A$ is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat $B$ budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
 ![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
 
 ### Evaluation of ecological modelling {#sec-Evaluation-of-ecological-modelling}
 
-Understanding the technical basics of dynamical systems theory is one thing, but actually building useful dynamical systems models is quite another. Every term in every differential equation of a model needs some underpinning. These models make many assumptions, both implicit and explicit. The Lotka-Volterra model, for example, assumes that the prey population grows exponentially in the absence of the predator, that the predator population dies off with the prey population and does not switch to other prey species, that the response of the predator population to changes in the prey population is direct and not delayed, that there is no spatial component to the model, and that the rates of change of the populations are proportional to their sizes, to name just a few. These assumptions are widely debated in the biological literature [@abramsNaturePredationPrey2000], and modifications of these assumptions may have significant consequences. In fact, hundreds of extensions and variants have been proposed and studied.
+Understanding the technical basics of dynamical systems theory is one thing, but actually building useful dynamical systems models is quite another. Every term in each differential equation of a model needs some underpinning. These models make many assumptions, both implicit and explicit. The Lotka-Volterra model, for example, assumes that the prey population grows exponentially in the absence of the predator, that the predator population dies off with the prey population and does not switch to other prey species, that the response of the predator population to changes in the prey population is direct and not delayed, that there is no spatial component to the model, and that the rates of change of the populations are proportional to their sizes, to name just a few. These assumptions are widely debated in the biological literature [@abramsNaturePredationPrey2000], and modifications of these assumptions may have significant consequences. In fact, hundreds of extensions and variants of the Lotka-Volterra model have been proposed and studied.
 
 For example, the original Lotka-Volterra model has no stable points, only limit cycles. While these cycles have been observed in nature, they are not overwhelmingly common. As we have seen, the dynamics of the system are significantly altered when prey growth is made dependent on prey density. This model has fixed-point equilibria instead of limit cycles.
 
-Adding a spatial component can also make a big difference, as shown in the example of hypercycles [see @szostakHypercycle2016 for a brief review]. Adding more prey and predator species also makes a difference [@johnsonModelingMultispeciesPredator2019]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
+Adding a spatial component can also make a big difference, as shown in the example of hypercycles in the next chapter [see @szostakHypercycle2016 for a brief review]. Adding more prey and predator species also makes a difference [@johnsonModelingMultispeciesPredator2019]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
 
 An additional problem is that empirically testing all these different models is difficult. Although the quality of biological data is often superior to that of psychological data, biologists must also rely on the qualitative predictions of their models. Models in chemistry and especially physics can often be tested quantitatively. Transitions occur precisely at the predicted values of the control variables. Ecological models, much like those in psychology, do not allow for this level of prediction. This is a problem because if we can only test our model qualitatively (are there limit cycles or not, what type of transitions can be detected, is there hysteresis or not), many model choices are not particularly relevant. One of the most significant challenges in complex systems research in the life sciences and psychology is constructing dynamical system models that effectively address these data-related issues.
 
@@ -413,7 +409,7 @@ $$\begin{gathered}
 \end{gathered}
 $$ {#eq-ch4n-10-old-30}
 
-First note that the case of $b = c = 0$ resembles the exponential model with solutions $R = {R_{0}e}^{at}$ and $J = {J_{0}e}^{dt}$, which converge (to 0) or diverge (to infinity) depending on whether a and d are negative or positive. Divergence, unbounded exponential growth of positive feelings is an attractive concept, but impractical, I'm afraid. We will see a more realistic setup in the next model. Nevertheless, this system of coupled linear differential equations is surprisingly rich in behavior. With the signs of the parameters we define very different romantic styles. @strogatzLoveAffairsDifferential1988 distinguishes the following:
+First note that the case of $b = c = 0$ resembles the exponential model with solutions $R = {R_{0}e}^{at}$ and $J = {J_{0}e}^{dt}$, which converge (to 0) or diverge (to infinity) depending on whether a and d are negative or positive. Divergence, unbounded exponential growth of positive feelings is an attractive concept, but unrealistic, I'm afraid. We will see a more sensible setup in the next model. Nevertheless, this system of coupled linear differential equations is surprisingly rich in behavior. With the signs of the parameters we define very different romantic styles. @strogatzLoveAffairsDifferential1988 distinguishes the following:
 
 -   Eager beaver: $a\  > \ 0,\ b\  > \ 0$, Romeo is encouraged by his own feelings as well as Juliet's.
 
@@ -423,7 +419,7 @@ First note that the case of $b = c = 0$ resembles the exponential model with sol
 
 -   Hermit: $a\  < \ 0,\ b\  < \ 0,$ Romeo retreats from his own feelings as well as Juliet's.
 
-Juliet may have his/her own style, which leads to complicated interactions. [@sprottDynamicalModelsLove2004] and other sources give an extended analytical treatment of this model. Systems of linear differential equations can be solved analytically and the behavior of the equilibria can be characterized by the eigenvalues. Some knowledge of matrix algebra is required to understand this. If you want to learn more about dynamical systems, you should study matrix algebra and its applications in linear dynamical systems. I have chosen to leave it out of this book because most psychological dynamical systems models are nonlinear. Here we just use Grind to test some cases. I give three examples with three different sets of parameter values. In the first case, the initial mutual interest diminishes, in the second case, after some ups and downs, the relationship comes to nothing, while in the third case, the couple ends up in a cycle of hate and love.
+Juliet may have his/her own style, which leads to complicated interactions. [@sprottDynamicalModelsLove2004] and other sources give an extended analytical treatment of this model. Systems of linear differential equations can be solved analytically and the behavior of the equilibria can be characterized by the eigenvalues. Some knowledge of matrix algebra is required to understand this. If you want to learn more about dynamical systems, you should study matrix algebra and its applications in linear dynamical systems. I have chosen to leave it out of this book because most psychological dynamical systems models are nonlinear. Here we just use Grind to test some cases. I give three examples with three different sets of parameter values. In the first case, the initial mutual interest fades; in the second case, the relationship fizzles out after some ups and downs; and in the third case, the couple ends up in a cycle of hate and love.
 
 ``` r
 model <- function(t, state, parms) {
@@ -446,15 +442,15 @@ run(ymin=-.2,legend=F)
 plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 ```
 
-![Three different love affairs between Romeo and Juliet](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57}
+![Three different love affairs between Romeo and Juliet. ](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57}
 
 The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. Nullclines are the curves (straight lines in case of linear systems) for which the time derivatives of the behavioral variables $R$ and $J$ are zero. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).
 
 @rinaldiLoveDynamicsCase1998 proposed an extension and a constraint to the model that makes it a bit more realistic and easier to study. The basic equation is now $\frac{dR}{dt} = - aR + bJ + A_{J}$, where a is interpreted as a forgetting parameter (constrained to be positive) and $A_{J}$ is the attractiveness of the Julia. In this case a necessary and sufficient condition for asymptotic stability (i.e., having a fixed point) is that $ad > bc$.
 
-Rinaldi also considers the case of a population of heterosexual men and women with different levels of attractiveness. The idea is that a man and a woman will leave their partner and bond together when both reach a more optimal level of love. Rinaldi analyses when and when not the population reach a stable state. This marriage assignment problem, as it is called, is an example of an assignment problem. The goal is to find a stable assignment of men to women, such that no man and woman prefer each other to their current partners [@galeCollegeAdmissionsStability1962].
+Rinaldi also considers the case of a population of heterosexual men and women with different levels of attractiveness. The idea is that a man and a woman will leave their partner and bond together when both reach a more optimal level of love. Rinaldi analyses when and when not the population reach a stable state. This marriage assignment problem, as it is called, is an example of an assignment problem, a famous problem in optimization theory. The goal is to find a stable assignment of men to women, such that no man and woman prefer each other to their current partners [@galeCollegeAdmissionsStability1962]. We use such algorithms to assign students to master tracks in our educational program.
 
-Some other advanced variations of this model have been proposed. In these papers the analysis of the mathematical properties of the model gets much more attention than the psychological theory. What exactly the variables are and the reasoning behind certain model assumptions is often unclear. The work of Murray and Gottman is more interesting in this regard.
+Some other advanced variations of this model have been proposed. In these papers the analysis of the mathematical properties of the model gets much more attention than the psychological theory. What exactly the variables are and what the reasoning behind certain model assumptions is often unclear. The work of Murray and Gottman is more interesting in this regard.
 
 #### The mathematics of marriage {#sec-The-mathematics-of-marriage}
 
@@ -471,7 +467,7 @@ $$
 \end{gathered}
 $$ {#eq-ch4n-11-old-31}
 
-where influence functions $I_{w}$ and $I_{h}$ are defined conform
+where the influence functions $I_{w}$ and $I_{h}$ are defined as:
 
 $$
 I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
@@ -501,7 +497,7 @@ influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
 s <- c(W=0,H=0)
 for(b in c(Inf,0,1)){
-p['b']<- b
+p['b'] <- b
 curve(influence(x,-8,b),-3,3,xlab='W',ylab='H',lwd=2)
 plane(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
 for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
@@ -510,9 +506,9 @@ for (i in 1:100)
 }
 ```
 
-Resulting in @fig-ch4n-img10-old-58.
+This results in @fig-ch4n-img10-old-58.
 
-![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge on their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58}
+![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58}
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
@@ -561,17 +557,17 @@ So, there are basically two outcomes, either both grow, or one grows and suppres
 
 Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding developmental processes in psychology. The Third Source Hypothesis [@molenaar1993] proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes. Based on a series of studies, [@gartnerThirdComponentCausing1990] concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
 
-A simple and, in my opinion, insightful dynamical model for this effect is the Pólya-Eggenberger urn model [@mahmoudPolyaUrnModels2008]. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with 2 blue and 1 red marbles. we randomly take out a marble. If we draw a blue marble, we put it back with another blue marble. If we draw a red marble, we put it back and add a red marble. Initially, $p(blue) = 2/3$, but what will happen to that over time when we have more and more marbles?
+A simple and, in my opinion, insightful dynamical model for this effect is the Pólya-Eggenberger urn model [@mahmoudPolyaUrnModels2008]. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with 2 blue and 1 red marbles. we randomly take out a marble. If we draw a blue marble, we put it back with another blue marble. If we draw a red marble, we put it back and add a red marble. Initially, $p(blue) = 2/3$, but what will happen to that probability over time when we have more and more marbles? Think about it for a moment.
 
-My intuition was simply wrong, and in my experience, this is true for the vast majority of people. But take your own guess. What happens is shown in @fig-ch4n-img12-old-60. Each time you run the process, $p(blue)$ reaches a stable state, but the value of that state is random. What happens is that early (random) samples have a huge influence on the long-term dynamics. This creates a Matthew Effect (the rich get richer, and the poor get poorer).
+My intuition was simply wrong, and in my experience, this is true for the vast majority of people. What happens is shown in @fig-ch4n-img12-old-60. Each time you run the process, $p(blue)$ reaches a stable state, but the value of that state is random. What happens is that early (random) samples have a huge influence on the long-term dynamics. This creates a Matthew Effect (the rich get richer, and the poor get poorer).
 
-![The Polya Urn model. A random marble is sampled and placed back with an extra marble of the same color. The evolution of the probability of picking a blue marble is unpredictable and converges to a random number. This mechanism may play a role in the Matthew Effect](media/ch4n/fig-ch4n-img12-old-60.png){#fig-ch4n-img12-old-60}
+![The Polya Urn model. A random marble is sampled and placed back with an extra marble of the same color. The evolution of the probability of picking a blue marble is unpredictable and converges to a random number. This mechanism may play a role in the Matthew Effect.](media/ch4n/fig-ch4n-img12-old-60.png){#fig-ch4n-img12-old-60}
 
-@saviWiringIntelligence2019 provide a developmental interpretation. Imagine a girl receiving a tennis racket for her birthday. First, she practices the backhand twice at home, but incorrectly. Then, during the first tennis lesson, her trainer demonstrates to her the correct backhand. She now has three experiences, two incorrect and one correct. Now, suppose her backhand development is based on a very simple learning schema. Whenever a backhand return is required, she samples from her earlier experiences, and the sampled backhand is then added to the set of earlier experiences. Then the cumulation of experiences follows the Polya urn scheme. While she has the potential to become a tennis master, her twin sister, who had less fortunate initial experiences, decides to quit tennis lessons within the first year. This model is consistent with many developmental theories (e.g., the Critical Period Hypothesis), but these theories lack a formal approach.
+@saviWiringIntelligence2019 provide a developmental interpretation. Imagine a girl receiving a tennis racket for her birthday. First, she practices the backhand twice at home, but incorrectly. Then, during the first tennis lesson, her trainer demonstrates to her the correct backhand. She now has three experiences, two incorrect and one correct. Now, suppose her backhand development is based on a very simple learning schema. Whenever a backhand return is required, she samples from her earlier experiences, and the sampled backhand is then added to the set of earlier experiences. Thus the cumulation of experiences follows the Polya urn scheme. While she has the potential to become a tennis master, her twin sister, who had less fortunate initial experiences, decides to quit tennis lessons within the first year. This model is consistent with many developmental theories (e.g., the Critical Period Hypothesis), but these theories lack a formal approach.
 
 ### The panic model {#sec-The-panic-model}
 
-In recent years, we have been working on a model of panic disorder [@haslbeckModelingPsychopathologyData2022; @robinaughAdvancingNetworkTheory2019]. In theories of panic disorder, there is a reinforcing feedback loop between arousal and perceived threat. When an increase in arousal is perceived as a threat (e.g., a heart attack), arousal increases further. This "vicious cycle" results in a panic attack [@clarkCognitiveApproachPanic1986]. Thus, these theories posit two causal effects: an effect of perceived threat on arousal and an effect of arousal on perceived threat.
+In recent years, we have been working on a model of panic disorder [@robinaughAdvancingNetworkTheory2019]. In theories of panic disorder, there is a reinforcing feedback loop between arousal and perceived threat. When an increase in arousal is perceived as a threat (e.g., a heart attack), arousal increases further. This "vicious cycle" results in a panic attack [@clarkCognitiveApproachPanic1986]. Thus, these theories posit two causal effects: an effect of perceived threat on arousal and an effect of arousal on perceived threat.
 
 We will further assume that the effect of perceived threat on changes in arousal is essentially linear while the causal effect of arousal on perceived threat is nonlinear (S-shaped). For the argument, see our paper. It could be argued that both are nonlinear, but this does not fundamentally change the qualitative behavior of the model. The central part of the model consists of two coupled differential equations:
 
@@ -581,7 +577,7 @@ $$
 \frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A
 $$ {#eq-ch4n-14-old-34}
 
-This looks a bit like the Romeo and Juliet model, but now the effect of perceived threat T on the change in arousal A is a logistic function that starts at 0 and grows to 1. The location is determined by $\beta$ and the acceleration or steepness is determined by $\alpha$.
+This looks a bit like the Romeo and Juliet model, but now the effect of perceived threat $T$ on the change in arousal A is a logistic function that starts at 0 and grows to 1. The location is determined by $\beta$ and the acceleration or steepness is determined by $\alpha$.
 
 An implementation and simple illustration is:
 
@@ -619,9 +615,11 @@ continue(start,x="alpha",y="T",xmin=-1,xmax=20,ymax=1,add=T)
 
 In @robinaughAdvancingNetworkTheory2019, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.
 
-![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at A = T = 1.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61}
+![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at $A = T = 1$.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61}
 
 ### Neural models: van der Pol and different time scales {#sec-Neural-models-van-der-Pol-and-different-time-scales}
+
+In the panic model, we touched on differences in time scales. I will explain this further in the context of the van der Pol oscillator, which has many interesting applications.
 
 Imagine taking the cusp equation $\frac{dX}{dt} = {a + bX - X}^{3}$, with $b=1$, such that we have hysteresis. But now we make $a$, or actually $da/dt$, a function of $X$: $\frac{da}{dt} = - \varepsilon X$, where $\varepsilon$ is small constant. If we set $\varepsilon$ to .05, $a$ changes 20 times slower than $X$. What happens now is that with $X = 1$ and $a = 0$, $a$ decreases up to the point where $X$ jumps to a negative value. Now $a$ increases, resulting to a new jump to a positive value of $X$. And this loop will continue endlessly.
 
@@ -662,17 +660,17 @@ $$
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in @fig-ch4n-img15-old-63.
 
-![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The V-nullcline (where $dV/dt = 0$) and the W-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63}
+![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The $V$-nullcline (where $dV/dt = 0$) and the $W$-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63}
 
 The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin--Huxley model, consisting of four differential equations, that models the activation and deactivation dynamics of a spiking neuron in more detail. This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
-Other applications of the van der Pol model concern extensions of the HKB model (see @sec-Motor-action), multistable perception [@furstenauSimulatingBistablePerception2014], developmental processes [@molenaarDynamicModelsDevelopment1985], and bipolar disorder [@daughertyMathematicalModelsBipolar2009]. One case where it seems to be especially useful is in modeling the wake sleep cycle [@forgerSimplerModelHuman1999].
+Other applications of the van der Pol model concern extensions of the HKB model (see @sec-Motor-action in the next chapter), multistable perception [@furstenauSimulatingBistablePerception2014], developmental processes [@molenaarDynamicModelsDevelopment1985], and bipolar disorder [@daughertyMathematicalModelsBipolar2009]. One case where it seems to be especially useful is in modeling the wake sleep cycle [@forgerSimplerModelHuman1999].
 
 ### Analogical modeling: Budworms and Beers {#sec-Analogical-modeling-Budworms-and-Beers}
 
 If we create a dynamic model from the ground up, there's a significant chance that we might not completely grasp its intricacies. We have seen that some very simple models already show amazingly complex behavior.
 
-One approach to cope with these issues is analogical modeling, or basically copying models. We used the Ising model to model attitudes and the mutualistic Lotka-Volterra model to model intelligence. Both are explained in the next chapter. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
+One approach to cope with these issues is analogical modeling, or basically copying models. We used the Ising model to model attitudes and the mutualistic Lotka-Volterra model to model intelligence. Both are explained in the @sec-ch6. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
 
 We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in @sec-ch7 when we include social effects. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
 
