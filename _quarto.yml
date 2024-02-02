@@ -15,7 +15,7 @@ book:
     #background: light
   chapters:
     - index.qmd
-    - call-outs-TEST.qmd
+    #- call-outs-TEST.qmd
     - ch1.qmd
     - ch2.qmd
     - ch3.qmd

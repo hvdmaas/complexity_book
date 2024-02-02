@@ -1,10 +1,10 @@
 ## DRAFT - Margins & Call outs {.unnumbered}
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 [This is a span that has the class aside which places it in the margin without a footnote number.]{.aside}
 
-It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
 
 ::: callout-note
 Note that there are five types of callouts, including: `note`, `warning`, `important`, `tip`, and `caution`.
@@ -67,4 +67,3 @@ dX = r * X  # the exponential model
 return [dX]
 ```
 :::
-
