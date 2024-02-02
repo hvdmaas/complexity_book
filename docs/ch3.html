@@ -166,12 +166,6 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./call-outs-TEST.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">DRAFT - Margins &amp; Call outs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./ch1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
@@ -304,18 +298,17 @@ div.csl-indent {
 </section>
 <section id="sec-Examples-of-transitions" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="sec-Examples-of-transitions"><span class="header-section-number">3.2</span> Examples of transitions</h2>
-<p>In Chapter 1, <a href="ch1.html#sec-A-limited-number-of-equilibria"><span>Section&nbsp;1.5</span></a>, I stated that complex systems tend to be characterized by a limited number of equilibria. As we have seen in the previous chapter, these equilibria can take many different forms, but in this chapter, we consider only stable and unstable fixed points. We are particularly interested in the case where the configuration of stable and unstable points changes due to a smooth change in some external variable, a control variable. In such a case a discontinuous change or a (first order) phase transition can occur. A transition or tipping point is the second of the three intriguing properties of complex systems (chaos being the first).</p>
+<p>In Chapter 1, <a href="ch1.html#sec-A-limited-number-of-equilibria"><span>Section&nbsp;1.5</span></a>, I stated that complex systems tend to be characterized by a limited number of equilibria. As we have seen in the previous chapter, these equilibria can take many different forms, but in this chapter, we consider only stable and unstable fixed points. We are particularly interested in the case where the configuration of stable and unstable points changes due to a smooth change in some external variable, a control variable. In such a case a discontinuous change or a (first order) phase transition can occur. A transition or tipping point is an intriguing property of complex systems.</p>
 <p>I call it an intriguing property because in the linear systems we are used to, smooth changes in control variables lead to similar (proportional) changes in behavior variables. We may see a big change in some behavior, but this requires a big change in the controls. An example would be the speed of your bike and the force you apply. But in the case of fear or panic, this process is often non-linear. If a smooth change in an independent or control variable, such as the smell of smoke, leads to a sudden jump in fear (e.g., panic), we are likely to be dealing with a phase transition.</p>
 <p>A key physical example is the change in state of water. Between, say, 10 and 80 degrees Celsius, a smooth change in temperature results in only a slight change in the liquid state of water. But if we change the temperature very slowly, close to the thresholds of 0 or 100 degrees Celsius, we see sudden phase transitions.</p>
-<p>We saw something similar for the logistic map when <span class="math inline">\(r\)</span> crossed the boundary <span class="math inline">\(r = 1\)</span>. However, this did not lead to a sudden change in <span class="math inline">\(X^{*}\)</span>. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>We saw something similar for the logistic map when <span class="math inline">\(r\)</span> crossed the boundary at <span class="math inline">\(r = 1\)</span>. However, this did not lead to a sudden change in <span class="math inline">\(X^{*}\)</span>. This is often called a second order phase transition, meaning that the configuration of stable and unstable points changes, but there is no discontinuous change in behavior (<a href="#fig-ch3-img1-old-13">Figure&nbsp;<span>3.1</span></a>).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div id="fig-ch3-img1-old-13" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/ch3-01__figure13.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.1: A first order (discontinuous) and second order (continuous) phase transition (Adapted from <a href="https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html" class="uri">https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html</a>).</figcaption>
 </figure>
 </div>
-<p>Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, turning over ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception.</p>
-<p>Building and testing models of these psychological transitions is challenging but rewarding. These transitions involve large changes in behavior, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies.</p>
+<p>Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, capsizing ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception. The perception of the Necker cube is a famous example (<a href="#fig-ch3-img2-old-14">Figure&nbsp;<span>3.2</span></a>). Building and testing models of these psychological transitions is challenging but rewarding. These transitions involve large changes in behavior, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies.</p>
 <div id="fig-ch3-img2-old-14" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/ch3-02__figure14.png" class="img-fluid figure-img"></p>
@@ -341,13 +334,13 @@ V(X) = X^{2}
 <figcaption class="figure-caption">Figure&nbsp;3.3: The quadratic potential function. A boll rolls to the minimum value of <span class="math inline">\(V(X)\)</span>. It’s change is defined by negative of the derivative of the potential function <span class="math inline">\(-V'(X)\)</span>.</figcaption>
 </figure>
 </div>
-<p>You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function. We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are <span class="math inline">\(V^{'}(X) = 2X\)</span> and <span class="math inline">\(V^{''}(X) = 2\)</span>, respectively. At <span class="math inline">\(X = 0\)</span> we find the minimum.</p>
+<p>You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function (<a href="#fig-ch3-img3-old-15">Figure&nbsp;<span>3.3</span></a>). We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are <span class="math inline">\(V^{'}(X) = 2X\)</span> and <span class="math inline">\(V^{''}(X) = 2\)</span>, respectively. At <span class="math inline">\(X = 0\)</span> we find the minimum.</p>
 <p>The potential function describes a dynamical system defined by</p>
 <p><span id="eq-ch3-2-old-6"><span class="math display">\[
 \frac{dX}{dt} = - V^{'}(X).
 \tag{3.2}\]</span></span></p>
 <p>This makes sense. When the ball is in <span class="math inline">\((1,1)\)</span>, <span class="math inline">\(- V^{'}(X) = - 2\)</span> and the ball will move towards <span class="math inline">\(X = 0\)</span>. But if <span class="math inline">\(X = 0\)</span>, <span class="math inline">\(- V^{'}(X) = 0\)</span>, and the ball will not move anymore. In the case of the quadratic potential function, there is only one fixed point. By adding parameters and lower order terms to <span class="math inline">\(V\)</span>, i.e., <span class="math inline">\({aX + X}^{2}\)</span>, we can move its location, but the qualitative form (one stable fixed point) will not change. Also note that the second derivative is positive, which tells us that we are dealing with a minimum and not a maximum (the so-called second derivative test).</p>
-<p>Many dynamical systems behave according to this potential function. Nothing spectacular happens: no bifurcations and no jumps. This is different when we consider potential functions with higher order terms.</p>
+<p>Many dynamical systems behave according to this potential function.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Nothing spectacular happens: no bifurcations and no jumps. This is different when we consider potential functions with higher order terms.</p>
 </section>
 <section id="sec-The-fold-catastrophe" class="level3" data-number="3.3.2">
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="sec-The-fold-catastrophe"><span class="header-section-number">3.3.2</span> The fold catastrophe</h3>
@@ -371,7 +364,7 @@ V(X) = {- aX + X}^{3}.
 </div>
 <p>In the left plot, <span class="math inline">\(a &lt; 0\)</span> and there is no fixed point, the ball rolls away to minus infinity. This can be checked by setting the first derivative to zero, which gives <span class="math inline">\(X = \pm \sqrt{{a}/{3}}\)</span>. For negative <span class="math inline">\(a\)</span> there is no solution. A positive value of <span class="math inline">\(a\)</span> gives two solutions, as shown on the right for <span class="math inline">\(a = 2\)</span>. The positive solution <span class="math inline">\(X = \sqrt{{2}/{3}\ }\)</span>is a stable fixed point because the second derivative in this point is positive. The negative solution <span class="math inline">\(X = - \sqrt{{2}/{3}\ }\)</span> is an unstable fixed point because the second derivative in this point is negative.</p>
 <p>The middle figure depicts the case just in between these two cases. Here the equilibrium is an inflection point, a degenerate critical point. The bifurcation occurs at this point as we go from a landscape with no fixed points to one with two, one stable and one unstable.</p>
-<p>Another way to visualize this is making a bifurcation diagram as we did for the logistic map. On the x-axis we put <span class="math inline">\(a\)</span>, from -1 to 2. On the y-axis we plot <span class="math inline">\(X^{*}\)</span>, the fixed points of <a href="#eq-ch3-3-old-7">Equation&nbsp;<span>3.3</span></a>. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in <a href="#fig-ch3-img5-old-17">Figure&nbsp;<span>3.5</span></a>.</p>
+<p>Another way to visualize this is making a bifurcation diagram as we did for the logistic map in <a href="ch2.html"><span>Chapter&nbsp;2</span></a>. On the x-axis we put <span class="math inline">\(a\)</span>, from -1 to 2. On the y-axis we plot <span class="math inline">\(X^{*}\)</span>, the fixed points of <a href="#eq-ch3-3-old-7">Equation&nbsp;<span>3.3</span></a>. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in <a href="#fig-ch3-img5-old-17">Figure&nbsp;<span>3.5</span></a>.</p>
 <div id="fig-ch3-img5-old-17" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/fig-ch3-img5-old-17.jpg" class="img-fluid figure-img"></p>
@@ -403,21 +396,21 @@ V(X) = {- aX + X}^{3}.
 <p>Now consider what will happen if we decrease <span class="math inline">\(a\)</span> from 2 to -2. In this case the ball will stay in the right minimum until <span class="math inline">\(a = - 1.5\)</span>. Where the jump takes place depends on the direction of the change in <span class="math inline">\(a\)</span>, the normal variable. This lagging behind, or resistance to change, is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for <span class="math inline">\(a = 0.5\)</span> in <a href="#fig-ch3-img7-old-19">Figure&nbsp;<span>3.7</span></a>) is often called a metastable or locally stable state. Metastable states appear to be stable for some time but are not in their globally stable state.</p>
 <p>In his classic paper on the Psychophysical Law <span class="citation" data-cites="stevens1957">(<a href="references.html#ref-stevens1957" role="doc-biblioref">Stevens 1957</a>)</span>, Stevens reports hysteresis effects in perceptual judgments when properties such as brightness and loudness are systematically varied from low to high and vice versa. In this paper he says: “I’m trying to describe it, not explain it. I am not sure I know how to explain it.” To me the cusp at least partially explains why hysteresis occurs.</p>
 <p><span class="citation" data-cites="gilmoreCatastropheTheoryScientists1993">Gilmore (<a href="references.html#ref-gilmoreCatastropheTheoryScientists1993" role="doc-biblioref">1993</a>)</span> made an important point about noise in the system. If there is a lot of noise, the jumps occur earlier and we see less or no hysteresis effect. This is called the Maxwell convention as opposed to the ‘delay’ convention. Demonstrating hysteresis therefore requires precise experimental control.</p>
-<p>Another very interesting pattern occurs when <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b\)</span> is increased.</p>
+<p>Another very interesting pattern occurs when <span class="math inline">\(a = 0\)</span> and <span class="math inline">\(b\)</span> is increased (<a href="#fig-ch3-img8-old-20">Figure&nbsp;<span>3.8</span></a>).</p>
 <div id="fig-ch3-img8-old-20" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image8.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.8: The change in the potential function of the cusp by varying <span class="math inline">\(b\)</span>. One minimum splits up in two.</figcaption>
 </figure>
 </div>
-<p>For low <span class="math inline">\(b\)</span> there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Along the <span class="math inline">\(a\)</span>-axis we see hysteresis and along the <span class="math inline">\(b\)</span>-axis we see divergence or what is often called a pitchfork bifurcation.</p>
+<p>For low <span class="math inline">\(b\)</span> there is one stable fixed point that becomes unstable. It splits up in two new attractors. As we did for the fold, we can make bifurcation diagrams showing the equilibria of X as a function of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Along the <span class="math inline">\(a\)</span>-axis we see hysteresis and along the <span class="math inline">\(b\)</span>-axis we see divergence or what is often called a pitchfork bifurcation (<a href="#fig-ch3-img9-old-21">Figure&nbsp;<span>3.9</span></a>).</p>
 <div id="fig-ch3-img9-old-21" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image9.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.9: Bifurcation plots for the <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> parameters of the cusp. Moving along the <span class="math inline">\(a\)</span> axis gives hysteresis, assuming <span class="math inline">\(b\)</span> is positive. Moving along the <span class="math inline">\(b\)</span> axis, assuming <span class="math inline">\(a=0\)</span>, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.</figcaption>
 </figure>
 </div>
-<p>To depict the combined effects of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams.</p>
+<p>To depict the combined effects of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (<a href="#fig-ch3-img10-old-22">Figure&nbsp;<span>3.10</span></a>).</p>
 <div id="fig-ch3-img10-old-22" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image10.jpg" class="img-fluid figure-img"></p>
@@ -428,7 +421,7 @@ V(X) = {- aX + X}^{3}.
 <p><span id="eq-ch3-5-old-9"><span class="math display">\[
 V^{'}(X) = {- a - bX + X}^{3} = 0.
 \tag{3.5}\]</span></span></p>
-<p>This type of equation is called a cubic equation.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The degenerate critical points of the cusp can be found by setting the first and second derivative to zero. This is just within reach of your high school mathematics training and I leave this as an exercise. The result is:</p>
+<p>This type of equation is called a cubic equation.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The degenerate critical points of the cusp can be found by setting the first and second derivative to zero. This is just within reach of your high school mathematics training and I leave this as an exercise. The result is:</p>
 <p><span id="eq-ch3-6-old-10"><span class="math display">\[
 27a^{2} = 4b^{3}.
 \tag{3.6}\]</span></span></p>
@@ -443,26 +436,26 @@ V^{'}(X) = {- a - bX + X}^{3} = 0.
 <figcaption class="figure-caption">Figure&nbsp;3.11: A simple business card can be used to illustrate all the properties of the cusp (see text).</figcaption>
 </figure>
 </div>
-<p>This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself <span class="citation" data-cites="postonCatastropheTheoryIts2014">(<a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>)</span>. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable <span class="citation" data-cites="postonCatastropheTheoryIts2014">(see chapter 14 of <a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>, for a more nuanced analysis)</span>. It is very instructive to study the full phase diagram of water. We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.</p>
+<p>This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself <span class="citation" data-cites="postonCatastropheTheoryIts2014">(<a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>)</span>. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable <span class="citation" data-cites="postonCatastropheTheoryIts2014">(see chapter 14 of <a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>, for a more nuanced analysis)</span>. It is very instructive to study the full phase diagram of water (<a href="#fig-ch3-img10-old-22">Figure&nbsp;<span>3.10</span></a>). We do not have to know what a triple point is. What we do need to understand is that this can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.</p>
 <div id="fig-ch3-img12-old-24" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/ch3-12__figure24.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.12: The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.</figcaption>
 </figure>
 </div>
-<p>A psychological example of a cusp concerns sudden jumps in attitudes <span class="citation" data-cites="lataneAttitudesCatastrophesDimensions1994 vandermaasSuddenTransitionsAttitudes2003">(<a href="references.html#ref-lataneAttitudesCatastrophesDimensions1994" role="doc-biblioref">Latané and Nowak 1994</a>; <a href="references.html#ref-vandermaasSuddenTransitionsAttitudes2003" role="doc-biblioref">van der Maas, Kolstein, and van der Pligt 2003</a>)</span>. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion.</p>
+<p>A psychological example of a cusp concerns sudden jumps in attitudes <span class="citation" data-cites="lataneAttitudesCatastrophesDimensions1994 vandermaasSuddenTransitionsAttitudes2003">(<a href="references.html#ref-lataneAttitudesCatastrophesDimensions1994" role="doc-biblioref">Latané and Nowak 1994</a>; <a href="references.html#ref-vandermaasSuddenTransitionsAttitudes2003" role="doc-biblioref">van der Maas, Kolstein, and van der Pligt 2003</a>)</span>. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (<a href="#fig-ch3-img10-old-22">Figure&nbsp;<span>3.10</span></a>).</p>
 <div id="fig-ch3-img13-old-25" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image13.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.13: The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.</figcaption>
 </figure>
 </div>
-<p>Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> and pro-choice. The other state associated with <span class="math inline">\(a = 0, b = 0\)</span> is the neutral state, an ‘I don’t know’ or ‘I don’t care’ position.</p>
+<p>Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and pro-choice. The other state associated with <span class="math inline">\(a = 0, b = 0\)</span> is the neutral state, an ‘I don’t know’ or ‘I don’t care’ position.</p>
 <p>The normal (<span class="math inline">\(a\)</span>) and splitting (<span class="math inline">\(b\)</span>) variable are interpreted as information and involvement. Information is a collection of factors that influence whether people tend to be in the pro-life and pro-choice position. Political and religious orientation as well as personal experiences add to this overall factor. One way to construct this information variable is through a factor analysis or principal component analysis.</p>
 <p>The splitting factor, involvement, also combines a number of effects (importance, attention). The main idea is that there are two types of independent variables. Some will work (mainly) along the normal axis and some will (mainly) impact the splitting axis.</p>
 <p>The implications of this model are that for low involvement change is continuous (<a href="#fig-ch3-img13-old-25">Figure&nbsp;<span>3.13</span></a>). Presenting people with some new information supporting the pro-life and pro-choice position will have a moderate effect. One problem, as demonstrated with the business card, is that the uninvolved person has “no memory”. As soon as you stop influencing this person, he drifts to the neutral ‘I don’t care’ position. We have another problem when people are highly involved. Because of the hysteresis effect, it will be very difficult to persuade people with new information. When this hysteresis effect is high, persuasion just does not work. If you have been involved in political discussions, you probably have experienced that yourself.</p>
 <p>But if the underlying change in information is large enough, attitudes can show a sudden jump. If they are central attitudes, they can be major life events. There is a lot of anecdotal evidence for such transitions <span class="citation" data-cites="ebaugh1988">(<a href="references.html#ref-ebaugh1988" role="doc-biblioref">Ebaugh 1988</a>)</span>, but it is very hard to capture such an effect in actual time series of attitude measures. Another effect that is consistent with the cusp model is ambivalence. In the cusp, ambivalence is not the same thing as being neutral. The neutral point is at the back of the cusp and is associated with low involvement. Ambivalence is associated with high involvement. Highly involved people with balanced information (<span class="math inline">\(a = 0)\)</span>, may oscillate between extreme positions (see <a href="ch4n.html#fig-ch4n-img2-old-50">Figure&nbsp;<span>4.2</span></a>). Finally, the pitchfork bifurcation can explain issue or political polarization. When involvement increases in a group of neutral people, e.g., due to discussion, they may split into two extreme positions.</p>
-<p>Another psychological example of the cusp-like behavior is multistable perception. The Necker cube is a famous example. <span class="citation" data-cites="stewartCatastropheTheoryModeling1983">Stewart and Peregoy (<a href="references.html#ref-stewartCatastropheTheoryModeling1983" role="doc-biblioref">1983</a>)</span> proposed a model in which the perception of male phase or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in <a href="#fig-ch3-img14-old-26">Figure&nbsp;<span>3.14</span></a>.</p>
+<p>Another psychological example of the cusp-like behavior is multistable perception. <span class="citation" data-cites="stewartCatastropheTheoryModeling1983">Stewart and Peregoy (<a href="references.html#ref-stewartCatastropheTheoryModeling1983" role="doc-biblioref">1983</a>)</span> proposed a model in which the perception of male phase or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in <a href="#fig-ch3-img14-old-26">Figure&nbsp;<span>3.14</span></a>.</p>
 <div id="fig-ch3-img14-old-26" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image14.jpg" class="img-fluid figure-img"></p>
@@ -473,7 +466,7 @@ V^{'}(X) = {- a - bX + X}^{3} = 0.
 <section id="sec-Higher-order-catastrophes" class="level3" data-number="3.3.5">
 <h3 data-number="3.3.5" class="anchored" data-anchor-id="sec-Higher-order-catastrophes"><span class="header-section-number">3.3.5</span> Higher order catastrophes</h3>
 <p>Note that the cusp is made up of folds. This is best seen in the hysteresis diagram in <a href="#fig-ch3-img9-old-21">Figure&nbsp;<span>3.9</span></a> (see the dotted rectangle). Higher order catastrophes yield elements of cusps and folds. The swallowtail catastrophe with potential function <span class="math inline">\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX}^{3} + \frac{1}{5}X^{5}\)</span> consists of three surfaces of fold bifurcations meeting in two lines of cusp bifurcations, which in turn meet in a single swallowtail bifurcation point. We need a four-dimensional space to visualize this, which is difficult. The Wikipedia page on Catastrophe theory has some rotating graphs that may help. The butterfly catastrophe has <span class="math inline">\(X^{6}\)</span> as the highest term (and four control variables).</p>
-<p>The butterfly catastrophe is of interest when we observe trimodal behavior. I will discuss this catastrophe in <a href="ch6.html#sec-Tricriticality"><span>Section&nbsp;6.3.3.5</span></a> in relation to the modeling of attitudes. I note that the butterfly catastrophe and the butterfly effect in chaos theory are two completely unrelated concepts. Other catastrophes have two instead of one behavioral variable. However, the vast majority of applications of catastrophe theory focus on the cusp, which will also be the focus of the remaining of this chapter. There are many good (but not easy) books that present the full scope of catastrophe theory <span class="citation" data-cites="gilmoreCatastropheTheoryScientists1993 postonCatastropheTheoryIts2014">(<a href="references.html#ref-gilmoreCatastropheTheoryScientists1993" role="doc-biblioref">Gilmore 1993</a>; <a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>)</span>.</p>
+<p>The butterfly catastrophe is of interest when we observe trimodal behavior.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> I will discuss this catastrophe in <a href="ch6.html#sec-Tricriticality"><span>Section&nbsp;6.3.3.5</span></a> in relation to the modeling of attitudes. Other catastrophes have two instead of one behavioral variable. However, the vast majority of applications of catastrophe theory focus on the cusp, which will also be the focus of the remaining of this chapter. There are many good (but not easy) books that present the full scope of catastrophe theory <span class="citation" data-cites="gilmoreCatastropheTheoryScientists1993 postonCatastropheTheoryIts2014">(<a href="references.html#ref-gilmoreCatastropheTheoryScientists1993" role="doc-biblioref">Gilmore 1993</a>; <a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">Poston and Stewart 2014</a>)</span>.</p>
 </section>
 <section id="sec-Other-bifurcations" class="level3" data-number="3.3.6">
 <h3 data-number="3.3.6" class="anchored" data-anchor-id="sec-Other-bifurcations"><span class="header-section-number">3.3.6</span> Other bifurcations</h3>
@@ -492,7 +485,8 @@ V^{'}(X) = {- a - bX + X}^{3} = 0.
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-Building-catastrophe-models"><span class="header-section-number">3.4</span> Building catastrophe models</h2>
 <section id="sec-Mechanistic-models" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="sec-Mechanistic-models"><span class="header-section-number">3.4.1</span> Mechanistic models</h3>
-<p>The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles. The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. <span class="citation" data-cites="postonCatastropheTheoryIts2014">Poston and Stewart (<a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">2014</a>)</span> show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.</p>
+<p>The model of the attitude towards abortion is called a phenomenological model, as opposed to a mechanistic model. In the former one, we assume the presence of a cusp, and make hypotheses about the involved variables. In the latter, the cusp is derived from basic assumptions or first principles.</p>
+<p>The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. <span class="citation" data-cites="postonCatastropheTheoryIts2014">Poston and Stewart (<a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">2014</a>)</span> show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how exactly temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.</p>
 <p>One model that I will use as a psychological model in Chapter 4, <a href="ch4n.html#sec-Analogical-modeling-Budworms-and-Beers"><span>Section&nbsp;4.2.7</span></a>, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is</p>
 <p><span id="eq-ch3-7-old-11"><span class="math display">\[
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
@@ -503,7 +497,7 @@ V^{'}(X) = {- a - bX + X}^{3} = 0.
 <p><span id="eq-ch3-8-old-12"><span class="math display">\[
 r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 \tag{3.8}\]</span></span></p>
-<p>Using these two ‘constructed’ control variables, we can depict the bifurcation lines of the cusp as:</p>
+<p>Using these two ‘constructed’ control variables, we can depict the bifurcation lines of the cusp as in <a href="#fig-ch3-img16-old-28">Figure&nbsp;<span>3.16</span></a>:</p>
 <div id="fig-ch3-img16-old-28" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/ch3-16__figure28.png" class="img-fluid figure-img"></p>
@@ -516,18 +510,18 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="sec-Phenomenological-models"><span class="header-section-number">3.4.2</span> Phenomenological models</h3>
 <p>The cusp model of attitude is a typical phenomenological model. We simply assume that the cusp is a model of the attitude. Phenomenological models are less convincing than mechanistic models because they do not provide a deep understanding of the underlying mechanisms that drive the system. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.</p>
 <p>Setting up a phenomenological model is not a trivial task either. I suggest some guidelines for setting up a model. First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in-between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.</p>
-<p>Second, select the control variables. What could be a normal variable and what could be a splitting variable. These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in <a href="#fig-ch3-img14-old-26">Figure&nbsp;<span>3.14</span></a>, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.</p>
-<p>There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman’s <span class="citation" data-cites="zeemanCatastropheTheory1976">(<a href="references.html#ref-zeemanCatastropheTheory1976" role="doc-biblioref">1976</a>)</span> model dog aggression.</p>
+<p>Second, select the control variables. What could be a normal variable and what could be a splitting variable? These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in <a href="#fig-ch3-img14-old-26">Figure&nbsp;<span>3.14</span></a>, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.</p>
+<p>There is another issue here. In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman’s <span class="citation" data-cites="zeemanCatastropheTheory1976">(<a href="references.html#ref-zeemanCatastropheTheory1976" role="doc-biblioref">1976</a>)</span> model dog aggression (<a href="#fig-ch3-img16-old-28">Figure&nbsp;<span>3.16</span></a>).</p>
 <div id="fig-ch3-img17-old-29" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image17.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.17: <span class="citation" data-cites="zeemanCatastropheTheory1976">Zeeman (<a href="references.html#ref-zeemanCatastropheTheory1976" role="doc-biblioref">1976</a>)</span> dog aggression model with rage and fear as rotated control variables.</figcaption>
 </figure>
 </div>
-<p>The control variables are fear and rage (see <a href="#fig-ch3-img17-old-29">Figure&nbsp;<span>3.17</span></a>). In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade- off in reaction time tasks <span class="citation" data-cites="dutilhPhaseTransitionModel2011">(<a href="references.html#ref-dutilhPhaseTransitionModel2011" role="doc-biblioref">Dutilh et al. 2011</a>)</span>. When constructing a phenomenological model, these two options for setting the control variable should be considered.</p>
+<p>The control variables are fear and rage. In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade-off in reaction time tasks <span class="citation" data-cites="dutilhPhaseTransitionModel2011">(<a href="references.html#ref-dutilhPhaseTransitionModel2011" role="doc-biblioref">Dutilh et al. 2011</a>)</span>. When constructing a phenomenological model, these two options for setting the control variable should be considered.</p>
 <p>To explain catastrophic drops in performance in work and sports, <span class="citation" data-cites="hardy1991">Hardy and Parfitt (<a href="references.html#ref-hardy1991" role="doc-biblioref">1991</a>)</span> proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. <span class="citation" data-cites="hardyTestingPredictionsCusp1996">Hardy (<a href="references.html#ref-hardyTestingPredictionsCusp1996" role="doc-biblioref">1996</a>)</span> present further tests of this model. It has been criticized by <span class="citation" data-cites="cohenCriticalElaborationEmpirical2003">Cohen, Pargman, and Tenenbaum (<a href="references.html#ref-cohenCriticalElaborationEmpirical2003" role="doc-biblioref">2003</a>)</span>. Extensions of to the butterfly model are presented in <span class="citation" data-cites="guastello1984">Guastello (<a href="references.html#ref-guastello1984" role="doc-biblioref">1984b</a>)</span> and <span class="citation" data-cites="hardy2004">Hardy, Woodman, and Carrington (<a href="references.html#ref-hardy2004" role="doc-biblioref">2004</a>)</span>.</p>
 <p>Cusp models have also been developed for addiction <span class="citation" data-cites="guastelloCuspButterflyCatastrophe1984 mazanovCuspCatastropheModel2006">(<a href="references.html#ref-guastelloCuspButterflyCatastrophe1984" role="doc-biblioref">Guastello 1984a</a>; <a href="references.html#ref-mazanovCuspCatastropheModel2006" role="doc-biblioref">Mazanov and Byrne 2006</a>)</span>. <span class="citation" data-cites="witkiewitzNonnormalityDivergencePosttreatment2007">Witkiewitz et al. (<a href="references.html#ref-witkiewitzNonnormalityDivergencePosttreatment2007" role="doc-biblioref">2007</a>)</span>] propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.</p>
-<p>As a final example I mention the model for humor presented by <span class="citation" data-cites="paulosMathematicsHumor2008">Paulos (<a href="references.html#ref-paulosMathematicsHumor2008" role="doc-biblioref">2008</a>)</span> in his fascinating book on mathematics and humor.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Paulos explains his model in the context of puns. His example is “do you consider clubs appropriate for young children?” with the punchline “only when kindness fails,” which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of “clubs,” the other axis represents the second meaning. The bifurcation set represents the ambiguous region. The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter. Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. <span class="citation" data-cites="tschacher2023">Tschacher and Haken (<a href="references.html#ref-tschacher2023" role="doc-biblioref">2023</a>)</span> propose a related complexity account of humor.</p>
+<p>As a final example I mention the model for humor presented by <span class="citation" data-cites="paulosMathematicsHumor2008">Paulos (<a href="references.html#ref-paulosMathematicsHumor2008" role="doc-biblioref">2008</a>)</span> in his fascinating book on mathematics and humor.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Paulos explains his model in the context of puns. His example is “do you consider clubs appropriate for young children?” with the punchline “only when kindness fails,” which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of “clubs,” the other axis represents the second meaning. The bifurcation set represents the ambiguous region. The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter. Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. <span class="citation" data-cites="tschacher2023">Tschacher and Haken (<a href="references.html#ref-tschacher2023" role="doc-biblioref">2023</a>)</span> propose a related complexity account of humor.</p>
 </section>
 </section>
 <section id="sec-Testing-catastrophe-models" class="level2" data-number="3.5">
@@ -535,7 +529,7 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 <section id="sec-The-catastrophe-flags" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="sec-The-catastrophe-flags"><span class="header-section-number">3.5.1</span> The catastrophe flags</h3>
 <p>A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. So sudden transitions are not instantaneous.</p>
-<p>But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look something like this:</p>
+<p>But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (<a href="#fig-ch3-img18-old-30">Figure&nbsp;<span>3.18</span></a>).</p>
 <div id="fig-ch3-img18-old-30" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image18.jpg" class="img-fluid figure-img"></p>
@@ -543,11 +537,11 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 </figure>
 </div>
 <p>Thus, in terms of time series data, they may look exactly the same. The difference is that in the continuous case the intermediate values are stable. It can be understood as a quadratic minimum that changes its position quickly. If we stop the process by freezing the manipulated control variable in the process, the state will remain at an intermediate value. These intermediate values are all stable values. If we freeze the manipulated variable in a discontinuous process, it will continue to move to a stable state. In this case, the intermediate state is unstable. The ball keeps rolling.</p>
-<p>In practice using data, this is a difficult distinction to make. It means that simple time series are not sufficient to distinguish accelerations from phase transitions. So how do we distinguish between the two processes? In the context of catastrophe theory, Gilmore (1993) proposed the catastrophe flags. These are cusp related phenomena that can be seen in the data. While no single one of these is enough to indicate the cusp, when considered together they provide compelling evidence for its existence.</p>
+<p>In practice using time series data, this is a difficult distinction to make. It means that simple time series are not sufficient to distinguish accelerations from phase transitions. So how do we distinguish between the two processes? In the context of catastrophe theory, Gilmore (1993) proposed the catastrophe flags. These are cusp related phenomena that can be seen in the data. While no single one of these is sufficient to indicate the cusp, when considered together they provide compelling evidence for its existence.</p>
 <p>In the upcoming subsections, I will provide definitions for the flags and illustrate their applications in psychology using examples. The first flag is the sudden jump.</p>
 <section id="sec-Sudden-jump" class="level4" data-number="3.5.1.1">
 <h4 data-number="3.5.1.1" class="anchored" data-anchor-id="sec-Sudden-jump"><span class="header-section-number">3.5.1.1</span> Sudden jump</h4>
-<p>The sudden jump is large fast change in equilibrium behavior. Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. <a href="#fig-ch3-img19-old-31">Figure&nbsp;<span>3.19</span></a> presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually quitted antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme <span class="citation" data-cites="wichersCriticalSlowingPersonalized2016">(<a href="references.html#ref-wichersCriticalSlowingPersonalized2016" role="doc-biblioref">Wichers, Groot, and Psychosystems 2016</a>)</span>. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method <span class="citation" data-cites="jamesEcpPackageNonparametric2014">(<a href="references.html#ref-jamesEcpPackageNonparametric2014" role="doc-biblioref">James and Matteson 2014</a>)</span>, we found a jump at 18 weeks with a bootstrapped p-value of .005 (with the null hypothesis of no change point).</p>
+<p>The sudden jump is large fast change in equilibrium behavior. Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. <a href="#fig-ch3-img19-old-31">Figure&nbsp;<span>3.19</span></a> presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme <span class="citation" data-cites="wichersCriticalSlowingPersonalized2016">(<a href="references.html#ref-wichersCriticalSlowingPersonalized2016" role="doc-biblioref">Wichers, Groot, and Psychosystems 2016</a>)</span>. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method <span class="citation" data-cites="jamesEcpPackageNonparametric2014">(<a href="references.html#ref-jamesEcpPackageNonparametric2014" role="doc-biblioref">James and Matteson 2014</a>)</span>, we found a jump at 18 weeks with a bootstrapped p-value of .005 (with the null hypothesis of no change point).</p>
 <div id="fig-ch3-img19-old-31" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/fig-ch3-img19-old-31.jpg" class="img-fluid figure-img"></p>
@@ -589,7 +583,7 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 <p>Inaccessibility means that certain values of the behavioral variable are unstable. The business card is a good example. Given some vertical pressure, we can try what we want but we cannot force the card to stay in the middle position, it is unstable. Inaccessibility is relevant to reject the alternative hypothesis that the sudden jump and bimodality are due to an acceleration.</p>
 <p>In Experiment 2 of <span class="citation" data-cites="dutilhPhaseTransitionModel2011">Dutilh et al. (<a href="references.html#ref-dutilhPhaseTransitionModel2011" role="doc-biblioref">2011</a>)</span> we focused on this flag. Our hypothesis was that in simple choice response tasks there is a phase transition between a fast-guessing state and a slower stimulus-driven response state. The idea is that if we force subjects to speed up, there will be a catastrophic jump in performance (from almost 100% correct to 50% correct).</p>
 <p>We created a game in which subjects responded to a series of simple choice items (a lexical decision task). The length of the series was not known to the subject. At the end of a series, they were rewarded according to how close their percentage correct was to 75%. Speed was also rewarded, but much less. So, we asked the subject to be in the inaccessible state. The alternative hypothesis, based on information accumulation models, was that there was no phase transition and that responding with 75% accuracy required the correct setting of a boundary (see <a href="ch4n.html#sec-Response-time-models"><span>Section&nbsp;4.2.1</span></a>).</p>
-<p>It appeared that subjects solved the task by switching between the fast-guessing mode and the slower stimulus-controlled mode, even when instructed according to the alternative model. Thus, the 75% intermediate state appears to be unstable.</p>
+<p>It appeared that subjects solved the task by switching between the fast-guessing mode and the slower stimulus-controlled mode, even when instructed according to the alternative model. Thus, the 75% intermediate state appeared to be unstable.</p>
 </section>
 <section id="sec-Divergence" class="level4" data-number="3.5.1.4">
 <h4 data-number="3.5.1.4" class="anchored" data-anchor-id="sec-Divergence"><span class="header-section-number">3.5.1.4</span> Divergence</h4>
@@ -608,16 +602,16 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 <div id="fig-ch3-img22-old-34" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image22.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.22: Hysteresis in the perception of apparent motion. Switches between the perception in of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.22: Hysteresis in the perception of apparent motion. Switches between the perception in of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet. Adapted from <span class="citation" data-cites="ploegerStochasticCatastropheAnalysis2002">Ploeger, Van Der Maas, and Hartelman (<a href="references.html#ref-ploegerStochasticCatastropheAnalysis2002" role="doc-biblioref">2002</a>)</span> with permission.</figcaption>
 </figure>
 </div>
 </section>
 <section id="sec-Anomalous-variance-divergence-of-linear-response-and-critical-slowing-down" class="level4" data-number="3.5.1.6">
 <h4 data-number="3.5.1.6" class="anchored" data-anchor-id="sec-Anomalous-variance-divergence-of-linear-response-and-critical-slowing-down"><span class="header-section-number">3.5.1.6</span> Anomalous variance, divergence of linear response and critical slowing down</h4>
-<p>Gilmore’s last three flags, anomalous variance, divergence of linear response and critical slowing down, are indicators that occur near the bifurcation lines. They are also known as early warning systems and are a popular line of research <span class="citation" data-cites="dakosMethodsDetectingEarly2012">(<a href="references.html#ref-dakosMethodsDetectingEarly2012" role="doc-biblioref">Dakos et al. 2012</a>)</span>.</p>
+<p>Gilmore’s last three flags, anomalous variance, divergence of linear response and critical slowing down, are indicators that occur near the bifurcation lines. They are also known as early warning systems and are a popular topic of research <span class="citation" data-cites="dakosMethodsDetectingEarly2012">(<a href="references.html#ref-dakosMethodsDetectingEarly2012" role="doc-biblioref">Dakos et al. 2012</a>)</span>.</p>
 <p>Anomalous variance occurs because near a bifurcation point the second derivative diminishes, meaning that the minimum becomes less deep. Assuming there is always some perturbation of the state, this will lead to larger fluctuations in the state.</p>
 <p>Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. The latter is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics <span class="citation" data-cites="hakenSynergetics1977">(<a href="references.html#ref-hakenSynergetics1977" role="doc-biblioref">Haken 1977</a>)</span>. Examples of applications in psychology can be found in <span class="citation" data-cites="leemputCriticalSlowingEarly2014">Leemput et al. (<a href="references.html#ref-leemputCriticalSlowingEarly2014" role="doc-biblioref">2014</a>)</span> and <span class="citation" data-cites="olthofCriticalFluctuationsEarlyWarning2020">Olthof et al. (<a href="references.html#ref-olthofCriticalFluctuationsEarlyWarning2020" role="doc-biblioref">2020</a>)</span>. A somewhat critical review is provided in <span class="citation" data-cites="dablander2023">Dablander et al. (<a href="references.html#ref-dablander2023" role="doc-biblioref">2023</a>)</span>.</p>
-<p>In my experience, the problem with early warning signals is that both type 1 and type 2 errors should be low for predicting transitions. This is challenging even in simulations, let alone in noisy psychological data. It would be fantastic if these early warnings really worked. For example, being able to predict a relapse into depression or addiction would be of great therapeutic value.</p>
+<p>In my experience, the problem with early warning signals is that both type 1 and type 2 errors should be low for predicting transitions. This is challenging even in simulations, let alone in noisy psychological data. It would be fantastic if these early warnings really worked. For example, being able to predict a relapse into depression or addiction would be of great clinical value.</p>
 <p>The catastrophe flags together provide a research methodology for phase transition research in psychology. A single flag may not be sufficient, but the combination is. For example, the combination of evidence for inaccessibility and hysteresis is convincing. I have given psychological examples of most of the flags. Which flags to use in a particular case depends on the knowledge and experimental control of the control variables. Another approach is to fit the cusp model directly to the data. This is the subject of the next section.</p>
 </section>
 </section>
@@ -626,13 +620,13 @@ r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 <section id="sec-Cobbs-maximum-likelihood-approach" class="level4" data-number="3.5.2.1">
 <h4 data-number="3.5.2.1" class="anchored" data-anchor-id="sec-Cobbs-maximum-likelihood-approach"><span class="header-section-number">3.5.2.1</span> Cobb’s maximum likelihood approach</h4>
 <p>In a series of papers Loren Cobb an colleagues <span class="citation" data-cites="cobbApplicationsCatastropheTheory1985 cobbStochasticCatastropheModels1978">(<a href="references.html#ref-cobbApplicationsCatastropheTheory1985" role="doc-biblioref">Cobb and Zacks 1985</a>; <a href="references.html#ref-cobbStochasticCatastropheModels1978" role="doc-biblioref">Cobb 1978</a>)</span> developed a maximum likelihood approach to fit the cusp catastrophe to data consisting of cross-sectional measurements of <span class="math inline">\(X\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. We have implemented this approach in a cusp R package described in <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">Grasman, van der Maas, and Wagenmakers (<a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">2009</a>)</span>.</p>
-<p>The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance <span class="math inline">\(\sigma^{2})\)</span>, to <a href="#eq-ch3-2-old-6">Equation&nbsp;<span>3.2</span></a><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>:</p>
+<p>The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance <span class="math inline">\(\sigma^{2})\)</span>, to <a href="#eq-ch3-2-old-6">Equation&nbsp;<span>3.2</span></a><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>:</p>
 <p><span id="eq-ch3-9-old-13"><span class="math display">\[
 dX = - V^{'}(X)dt + \sigma dW(t). \tag{3.9}\]</span></span></p>
-<p>We will discuss this type of stochasticity later, but it is important to note that it is not the same as measurement noise. Measurement noise, i.e., <span class="math inline">\(\varepsilon\)</span> in <span class="math inline">\(Y = X + \varepsilon\)</span>, does not affect the dynamics of <span class="math inline">\(X\)</span>. Wiener noise does, it is part of the updating equation of <span class="math inline">\(X\)</span> itself. This stochastic differential equation is associated with a probability distribution of the form</p>
+<p>It is important to note that this type of stochasticity is not the same as measurement noise. Measurement noise, i.e., <span class="math inline">\(\varepsilon\)</span> in <span class="math inline">\(Y = X + \varepsilon\)</span>, does not affect the dynamics of <span class="math inline">\(X\)</span>. Wiener noise does, it is part of the updating equation of <span class="math inline">\(X\)</span> itself. This stochastic differential equation is associated with a probability distribution of the form</p>
 <p><span id="eq-ch3-10-old-14"><span class="math display">\[
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}}, \tag{3.10}\]</span></span></p>
-<p>where Z is a normalizing constant<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> necessary to ensure that the area under <span class="math inline">\(f(X)\)</span> is 1. This may look complicated but for the quadratic case <span class="math inline">\(V(X) = {\frac{1}{2}X}^{2}\)</span>, this results in the standard normal distribution, with <span class="math inline">\(Z = {\sqrt{2\pi}}/{\sigma}\)</span>.</p>
+<p>where Z is a normalizing constant<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> necessary to ensure that the area under <span class="math inline">\(f(X)\)</span> is 1. This may look complicated but for the quadratic case <span class="math inline">\(V(X) = {\frac{1}{2}X}^{2}\)</span>, this results in the standard normal distribution, with <span class="math inline">\(Z = {\sqrt{2\pi}}/{\sigma}\)</span>.</p>
 <p>As in the case of the normal distribution we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as <span class="math inline">\(V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}\)</span>. The probability distribution for the cusp is</p>
 <p><span id="eq-ch3-11-old-15"><span class="math display">\[
 f(y) = \frac{1}{{Z\sigma}^{2}}e^{\frac{\alpha y + \frac{1}{2}\beta y^{2} - \frac{1}{4}y^{4}}{\sigma^{2}}}. \tag{3.11}\]</span></span></p>
@@ -656,7 +650,7 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>Y1 <span class="ot">&lt;-</span> <span class="sc">-</span>w0<span class="sc">/</span>w1 <span class="sc">+</span> (<span class="dv">1</span><span class="sc">/</span>w1) <span class="sc">*</span> <span class="fu">Vectorize</span>(rcusp)(<span class="dv">1</span>, a0<span class="sc">+</span>a1<span class="sc">*</span>X1, b0<span class="sc">+</span>b1<span class="sc">*</span>X2) </span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X1, X2, Y1) <span class="co"># collect ‘measured’ variables in data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>I recommend doing some descriptive analysis first. With <code>hist(data$Y1)</code> we can inspect whether there is some indication of bimodality. X2 is the splitting variable so perhaps we see stronger bimodality with <code>hist(data$Y1[data$X2&gt;mean(data$X2)]</code>). The function pairs in R, <code>pairs(data)</code>, is also always recommended. In this perfect simulated case, you will already see strong indications of the cusp. Now we fit the full model with alpha and beta both as function of X1 and X2.</p>
+<p>I recommend doing some descriptive analysis first. With <code>hist(data$Y1)</code> we can inspect whether there is some indication of bimodality. <span class="math inline">\(X2\)</span> is the splitting variable so perhaps we see stronger bimodality with <code>hist(data$Y1[data$X2&gt;mean(data$X2)]</code>). The function pairs in R, <code>pairs(data)</code>, is also always recommended. In this perfect simulated case, you will already see strong indications of the cusp. Now we fit the full model with <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> both as function of <span class="math inline">\(X1\)</span> and <span class="math inline">\(X2\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">cusp</span>(y <span class="sc">~</span> Y1, alpha <span class="sc">~</span> X1<span class="sc">+</span>X2, beta <span class="sc">~</span> X1<span class="sc">+</span>X2, data) </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,88 +658,71 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <p>Summary provides the following table:</p>
 <table class="table">
 <caption>Table 1: The parameter estimates including standard errors and p-values generated by the cusp package.</caption>
-<colgroup>
-<col style="width: 26%">
-<col style="width: 14%">
-<col style="width: 15%">
-<col style="width: 13%">
-<col style="width: 18%">
-<col style="width: 11%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Coefficients:</th>
-<th style="text-align: left;">Estimate</th>
-<th style="text-align: left;">Std.Error</th>
-<th style="text-align: left;">z-value</th>
-<th style="text-align: left;">Pr(&gt;|z|)</th>
-<th></th>
+<th style="text-align: center;">Estimate</th>
+<th style="text-align: center;">Std.Error</th>
+<th style="text-align: center;">z-value</th>
+<th style="text-align: center;">Pr(&gt;|z|)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">a[(Intercept)]</td>
-<td style="text-align: left;">-2.13</td>
-<td style="text-align: left;">0.19</td>
-<td style="text-align: left;">-11.0</td>
-<td style="text-align: left;">&lt; 2e-16</td>
-<td>***</td>
+<td style="text-align: center;">-2.13</td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">-11.0</td>
+<td style="text-align: center;">&lt; 2e-16<sup>***</sup></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">a[X1]</td>
-<td style="text-align: left;">3.11</td>
-<td style="text-align: left;">0.22</td>
-<td style="text-align: left;">14.2</td>
-<td style="text-align: left;">&lt; 2e-16</td>
-<td>***</td>
+<td style="text-align: center;">3.11</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">14.2</td>
+<td style="text-align: center;">&lt; 2e-16<sup>***</sup></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">a[X2]</td>
-<td style="text-align: left;">0.15</td>
-<td style="text-align: left;">0.17</td>
-<td style="text-align: left;">0.9</td>
-<td style="text-align: left;">0.39</td>
-<td></td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">0.39</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">b[(Intercept)]</td>
-<td style="text-align: left;">-2.29</td>
-<td style="text-align: left;">0.34</td>
-<td style="text-align: left;">-6.7</td>
-<td style="text-align: left;">2.66e-11</td>
-<td>***</td>
+<td style="text-align: center;">-2.29</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">-6.7</td>
+<td style="text-align: center;">2.66e-11<sup>***</sup></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">b[X1]</td>
-<td style="text-align: left;">-0.09</td>
-<td style="text-align: left;">0.33</td>
-<td style="text-align: left;">-0.3</td>
-<td style="text-align: left;">0.79</td>
-<td></td>
+<td style="text-align: center;">-0.09</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">-0.3</td>
+<td style="text-align: center;">0.79</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">b[X2]</td>
-<td style="text-align: left;">4.40</td>
-<td style="text-align: left;">0.27</td>
-<td style="text-align: left;">16.5</td>
-<td style="text-align: left;">&lt; 2e-16</td>
-<td>***</td>
+<td style="text-align: center;">4.40</td>
+<td style="text-align: center;">0.27</td>
+<td style="text-align: center;">16.5</td>
+<td style="text-align: center;">&lt; 2e-16<sup>***</sup></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">w[(Intercept)]</td>
-<td style="text-align: left;">1.98</td>
-<td style="text-align: left;">0.07</td>
-<td style="text-align: left;">27.6</td>
-<td style="text-align: left;">&lt; 2e-16</td>
-<td>***</td>
+<td style="text-align: center;">1.98</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">27.6</td>
+<td style="text-align: center;">&lt; 2e-16<sup>***</sup></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">w[Y1]</td>
-<td style="text-align: left;">3.97</td>
-<td style="text-align: left;">0.10</td>
-<td style="text-align: left;">38.0</td>
-<td style="text-align: left;">&lt; 2e-16</td>
-<td>***</td>
+<td style="text-align: center;">3.97</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">38.0</td>
+<td style="text-align: center;">&lt; 2e-16<sup>***</sup></td>
 </tr>
 </tbody>
 </table>
@@ -768,36 +745,36 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: left;">R.Squared</th>
-<th style="text-align: left;">logLik</th>
-<th style="text-align: left;">npar</th>
-<th style="text-align: left;">AIC</th>
-<th style="text-align: left;">AICc</th>
-<th style="text-align: left;">BIC</th>
+<th style="text-align: center;">R.Squared</th>
+<th style="text-align: center;">logLik</th>
+<th style="text-align: center;">npar</th>
+<th style="text-align: center;">AIC</th>
+<th style="text-align: center;">AICc</th>
+<th style="text-align: center;">BIC</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Full model</td>
-<td style="text-align: left;">0.428</td>
-<td style="text-align: left;">-1058.7</td>
-<td style="text-align: left;">8</td>
-<td style="text-align: left;">2133.3</td>
-<td style="text-align: left;">2133.5</td>
-<td style="text-align: left;">2172.6</td>
+<td style="text-align: center;">0.428</td>
+<td style="text-align: center;">-1058.7</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2133.3</td>
+<td style="text-align: center;">2133.5</td>
+<td style="text-align: center;">2172.6</td>
 </tr>
 <tr class="even">
 <td>Reduced model</td>
-<td style="text-align: left;">0.426</td>
-<td style="text-align: left;">-1059.0</td>
-<td style="text-align: left;">6</td>
-<td style="text-align: left;">2130.0</td>
-<td style="text-align: left;">2130.1</td>
-<td style="text-align: left;">2159.5</td>
+<td style="text-align: center;">0.426</td>
+<td style="text-align: center;">-1059.0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2130.0</td>
+<td style="text-align: center;">2130.1</td>
+<td style="text-align: center;">2159.5</td>
 </tr>
 </tbody>
 </table>
-<p>The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with <span class="math inline">\(- 2 &lt; \alpha &lt; 2,\)</span> and fixed <span class="math inline">\(\beta\)</span>. If <span class="math inline">\(\beta &lt; 0\)</span> we have no hysteresis, but if <span class="math inline">\(\beta &gt; 0\)</span> we do have hysteresis. With the code below we simulate datasets for different <span class="math inline">\(\beta\)</span>, and compare the goodness of fit between the linear and cusp model. The figure summarizes the results. Note that a lower BIC indicated the better fitting model.</p>
+<p>The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with <span class="math inline">\(- 2 &lt; \alpha &lt; 2,\)</span> and fixed <span class="math inline">\(\beta\)</span>. If <span class="math inline">\(\beta &lt; 0\)</span> we have no hysteresis, but if <span class="math inline">\(\beta &gt; 0\)</span> we do have hysteresis. With the code below we simulate datasets for different <span class="math inline">\(\beta\)</span>, and compare the goodness of fit between the linear and cusp model. <a href="#fig-ch3-img23-old-35">Figure&nbsp;<span>3.23</span></a> summarizes the results. Note that a lower BIC indicated the better fitting model.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
@@ -838,14 +815,14 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">cusp</span>(y <span class="sc">~</span> Attitude, alpha <span class="sc">~</span> IntensityofFeeling, beta <span class="sc">~</span> IntensityofFeeling, x)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Inspection of the parameter estimates shows that, as expected, Intensity of Feeling only loads on the splitting axis and not on the normal axis. This is the location of the data in the bifurcation set (<code>plot(fit)</code>).</p>
+<p>Inspection of the parameter estimates shows that, as expected, Intensity of Feeling only loads on the splitting axis and not on the normal axis. <a href="#fig-ch3-img24-old-36">Figure&nbsp;<span>3.24</span></a> shows the location of the data in the bifurcation set (<code>plot(fit)</code>).</p>
 <div id="fig-ch3-img24-old-36" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image24.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3.24: Placement of the data of <a href="#fig-ch3-img21-old-33">Figure&nbsp;<span>3.21</span></a> in the bifurcation set.</figcaption>
 </figure>
 </div>
-<p>Another example is the conservation data set of <span class="citation" data-cites="bentlerEvidenceRegardingStages1970">Bentler (<a href="references.html#ref-bentlerEvidenceRegardingStages1970" role="doc-biblioref">1970</a>)</span>, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups. These data are expected to be bimodal and to move along the normal axis <span class="citation" data-cites="vandermaasStagewiseCognitiveDevelopment1992">(<a href="references.html#ref-vandermaasStagewiseCognitiveDevelopment1992" role="doc-biblioref">Van der Maas and Molenaar 1992b</a>)</span>.</p>
+<p>Another example is the conservation data set of <span class="citation" data-cites="bentlerEvidenceRegardingStages1970">Bentler (<a href="references.html#ref-bentlerEvidenceRegardingStages1970" role="doc-biblioref">1970</a>)</span>, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (<a href="#fig-ch3-img25-old-37">Figure&nbsp;<span>3.25</span></a>). These data are expected to be bimodal and to move along the normal axis <span class="citation" data-cites="vandermaasStagewiseCognitiveDevelopment1992">(<a href="references.html#ref-vandermaasStagewiseCognitiveDevelopment1992" role="doc-biblioref">Van der Maas and Molenaar 1992b</a>)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">'data/bentler.txt'</span>,<span class="at">header=</span>T)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">t</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>))</span>
@@ -863,10 +840,10 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <div id="fig-ch3-img25-old-37" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/fig-ch3-img25-old-37.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.25: The fit of Bentler conservation data.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3.25: The Bentler conservation data.</figcaption>
 </figure>
 </div>
-<p>A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">Grasman, van der Maas, and Wagenmakers (<a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">2009</a>)</span>, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine.</p>
+<p>A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">Grasman, van der Maas, and Wagenmakers (<a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">2009</a>)</span>, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (<a href="#fig-ch3-img26-old-38">Figure&nbsp;<span>3.26</span></a>).</p>
 <div id="fig-ch3-img26-old-38" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="media/ch3/image26.jpg" class="img-fluid figure-img"></p>
@@ -884,11 +861,11 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 </section>
 <section id="sec-Criticism-of-catastrophe-theory" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="sec-Criticism-of-catastrophe-theory"><span class="header-section-number">3.6</span> Criticism of catastrophe theory</h2>
-<p>One often speaks of the rise and the fall of catastrophe theory <span class="citation" data-cites="rosserRiseFallCatastrophe2007">(<a href="references.html#ref-rosserRiseFallCatastrophe2007" role="doc-biblioref">Rosser 2007</a>)</span>. The hype following Zeeman’s famous Scientific American paper<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <span class="citation" data-cites="zeemanCatastropheTheory1976">(<a href="references.html#ref-zeemanCatastropheTheory1976" role="doc-biblioref">Zeeman 1976</a>)</span>, in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences, led to a strongly worded reply by <span class="citation" data-cites="zahlerClaimsAccomplishmentsApplied1977">Zahler and Sussmann (<a href="references.html#ref-zahlerClaimsAccomplishmentsApplied1977" role="doc-biblioref">1977</a>)</span> in Nature.</p>
+<p>One often speaks of the rise and the fall of catastrophe theory <span class="citation" data-cites="rosserRiseFallCatastrophe2007">(<a href="references.html#ref-rosserRiseFallCatastrophe2007" role="doc-biblioref">Rosser 2007</a>)</span>. The hype following Zeeman’s famous Scientific American paper<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> <span class="citation" data-cites="zeemanCatastropheTheory1976">(<a href="references.html#ref-zeemanCatastropheTheory1976" role="doc-biblioref">Zeeman 1976</a>)</span>, in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences, led to a strongly worded reply by <span class="citation" data-cites="zahlerClaimsAccomplishmentsApplied1977">Zahler and Sussmann (<a href="references.html#ref-zahlerClaimsAccomplishmentsApplied1977" role="doc-biblioref">1977</a>)</span> in Nature.</p>
 <p>Because people still refer to this paper when we use catastrophe theory in our work, let us briefly respond to the main points of criticism made by Zahler and Sussmann. I note that in the introduction to their paper they state that there may be legitimate uses of catastrophe theory in physics and engineering. Moreover, they do not question the correctness or importance of catastrophe theory as a purely mathematical subject.</p>
 <p>They raise ten points, some of which we have already addressed. For example, their first point is about how sudden a jump actually is, but they call this a less serious criticism. As I explained earlier, it is not the suddenness that matters, but whether or not the intermediate states are unstable.</p>
-<p>A number of points are about inferring a cusp from data, which was indeed done rather superficially in Zeeman’s earlier work. They pointed out that there are no testable predictions, that the location of the cusp can be shifted, and that there is no way to decide whether the data fit the cusp. We hope to have shown that these problems are largely solved. The catastrophe flags allow us to make new testable predictions, and with Cobb’s maximum likelihood approach we can fit the model as we would any statistical model in modern science. Of course, one can be critical of the use of statistics in psychology and the social sciences, but these criticisms are not specific to catastrophe theory.</p>
-<p>Another somewhat inconsistent line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), while it is also claimed that Zeeman’s models are not falsifiable. But you cannot have it both ways, if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.</p>
+<p>A number of points are about inferring a cusp from data, which was indeed done rather superficially in Zeeman’s earlier work. They pointed out that there are no testable predictions, that the location of the cusp can be shifted, and that there is no way to decide whether the data fit the cusp. We hope to have shown that these problems are largely solved. The catastrophe flags allow us to make new testable predictions, and with Cobb’s maximum likelihood approach we can fit the model as we would do with any other statistical model in modern science. Of course, one can be critical of the use of statistics in psychology and the social sciences, but these criticisms are not specific to catastrophe theory.</p>
+<p>Another, somewhat inconsistent, line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), while it is also claimed that Zeeman’s models are not falsifiable. But you cannot have it both ways, if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.</p>
 <p>Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman’s interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person’s belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field (see <a href="ch8.html"><span>Chapter&nbsp;8</span></a> and <span class="citation" data-cites="borsboomKindsContinuaReview2016">Borsboom et al. (<a href="references.html#ref-borsboomKindsContinuaReview2016" role="doc-biblioref">2016</a>)</span>; <span class="citation" data-cites="michellPsychometricsPathologicalScience2008">Michell (<a href="references.html#ref-michellPsychometricsPathologicalScience2008" role="doc-biblioref">2008</a>)</span>).</p>
 <p>The last point of Zahler and Sussmann is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether this will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.</p>
 <p><span class="citation" data-cites="loehleCatastropheTheoryEcology1989">Loehle (<a href="references.html#ref-loehleCatastropheTheoryEcology1989" role="doc-biblioref">1989</a>)</span> present an excellent discussion on the usefulness of catastrophe theory in the context of modelling ecosystems. He concluded that “an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data”, but this problem has now been largely solved.</p>
@@ -896,7 +873,7 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 <section id="sec-Conclusion" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="sec-Conclusion"><span class="header-section-number">3.7</span> Conclusion</h2>
 <p>Psychologists are often concerned with psychological types and classes, stages and phases, and the transitions between them. Our thinking about transitions becomes much clearer and more advanced when we know the basics of bifurcations.</p>
-<p>Catastrophe theory comes with a toolbox for behavioral and social sciences. We can build phenomenological models, test for catastrophe flags, and even fit cusp models to data. With the development of this toolbox, most of the criticisms of catastrophe theory lose their relevance.</p>
+<p>Catastrophe theory comes with a toolbox for the behavioral and social sciences. We can build phenomenological models, test for catastrophe flags, and even fit cusp models to data. With the development of this toolbox, most of the criticisms of catastrophe theory lose their relevance.</p>
 <p>However, there is room for improvement. Phenomenological models have limited explanatory power. As explained in the next chapter on dynamical system models, it is possible to create more mechanistic models that support the use of phenomenological models. In Chapter 6, <a href="ch6.html#sec-Ising-attitude-model"><span>Section&nbsp;6.3.3</span></a>, another option is introduced using networks. It will be demonstrated that the behavior of the Ising network model for attitudes is governed by the cusp model, which is very similar to the cusp model proposed for the attitude toward abortion.</p>
 </section>
 <section id="sec-Exercises" class="level2" data-number="3.8">
@@ -1102,13 +1079,15 @@ Zeeman, E. C. 1976. <span>“Catastrophe <span>Theory</span>.”</span> <em>Scie
 <ol>
 <li id="fn1"><p>Learning a particular conservation task does seem to be rather sudden, but there could easily be two years between learning conservation of number and conservation of volume <span class="citation" data-cites="kreitlerHorizontalDecalageProblem1989">(<a href="references.html#ref-kreitlerHorizontalDecalageProblem1989" role="doc-biblioref">Kreitler and Kreitler 1989</a>)</span> . This is inconsistent with the stage theory.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>The cubic equation that cannot solved easily. This is due to the fact that the cusp is not a function of the form <span class="math inline">\(y = f(x)\)</span>. Functions assign to each element of <span class="math inline">\(x\)</span> exactly one element of <span class="math inline">\(y\)</span>. But in bistable systems we assign two values of <span class="math inline">\(y\)</span> to one value of <span class="math inline">\(x\)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Perhaps better to call this view anti-choice<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Given these guidelines and examples it is an interesting exercise to develop one’s own cusp model, for example, for falling in love. This is a tricky exercise.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Many different notations exist for his. Perhaps clearer is <span class="math inline">\(dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)\)</span>, as <span class="math inline">\(dX\)</span> and <span class="math inline">\(dW\)</span> depend on time.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>For consistency with later chapters, I define <span class="math inline">\(Z\)</span> differently from the notation in <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">(<a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">Grasman, van der Maas, and Wagenmakers 2009</a>)</span>. It is the inverse of <span class="math inline">\(Z\)</span> in that paper.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>I recommend the BBC documentary “Case Study Catastrophe Theory Maths Foundation Course”</p>
-<p>(<a href="https://www.youtube.com/watch?v=myDvcvox1V4&amp;t=1435s" class="uri">https://www.youtube.com/watch?v=myDvcvox1V4&amp;t=1435s</a>) to see Zeeman at work.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>As we will see in <a href="#sec-Cobbs-maximum-likelihood-approach"><span>Section&nbsp;3.5.2.1</span></a>, the statistical equivalent of the quadratic potential function is the normal distribution, the most popular distribution in our statistical work.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The cubic equation that cannot solved easily. This is due to the fact that the cusp is not a function of the form <span class="math inline">\(y = f(x)\)</span>. Functions assign to each element of <span class="math inline">\(x\)</span> exactly one element of <span class="math inline">\(y\)</span>. But in bistable systems we assign two values of <span class="math inline">\(y\)</span> to one value of <span class="math inline">\(x\)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Perhaps better to call this view anti-choice<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>I note that the butterfly catastrophe and the butterfly effect in chaos theory are completely unrelated concepts.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Given these guidelines and examples it is an interesting exercise to develop one’s own cusp model, for example, for falling in love. This is a tricky exercise.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Many different notations exist for his. Perhaps clearer is <span class="math inline">\(dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)\)</span>, as <span class="math inline">\(dX\)</span> and <span class="math inline">\(dW\)</span> depend on time.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>For consistency with later chapters, I define <span class="math inline">\(Z\)</span> differently from the notation in <span class="citation" data-cites="grasmanFittingCuspCatastrophe2009">(<a href="references.html#ref-grasmanFittingCuspCatastrophe2009" role="doc-biblioref">Grasman, van der Maas, and Wagenmakers 2009</a>)</span>. It is the inverse of <span class="math inline">\(Z\)</span> in that paper.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>I recommend the BBC documentary “Case Study Catastrophe Theory Maths Foundation Course”</p>
+<p>(<a href="https://www.youtube.com/watch?v=myDvcvox1V4&amp;t=1435s" class="uri">https://www.youtube.com/watch?v=myDvcvox1V4&amp;t=1435s</a>) to see Zeeman at work.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
