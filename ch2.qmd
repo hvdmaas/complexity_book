@@ -249,6 +249,6 @@ These methods generally require long time series. Many publications appeared on 
 
 6)  Have a look at the definition of the Lyapunov coefficient in @sec-Chaos. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
 
-7)  Use the Rmusic library (installed with devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
+7)  Use the Rmusic library (installed with `devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)`) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
 8)  Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (\*).
