@@ -4,8 +4,6 @@ This book is intended for psychologists and social scientists interested in the 
 
 The book has three primary objectives. The first is to provide a comprehensive overview of complex systems research, with a particular emphasis on its applications in psychology and the social sciences. The second is to provide skills for complex systems research. Lastly, it strives to foster critical thinking regarding the potential applications of complex systems in psychology.
 
-[This is a span that has the class aside which places it in the margin without a footnote number.]{.aside}
-
 For many decades, scientists have been studying a wide variety of complex systems. Well-known examples include lasers, tornados, chemical oscillations, ant nests and flocks of birds. These scientists have built mathematical and computational models of these complex systems and developed techniques to study them.
 
 The application of these techniques requires a great deal of mathematical and technical knowledge, but also a deep understanding of the nature of the system. You don't just create a mathematical model off the top of your head. In addition, testing such models requires extensive and reliable quantitative data. The application of complex systems theory to the behavioral and social sciences is therefore not straightforward. Theories are often verbal, and quantitative measurement in these sciences is a longstanding issue. While there has been some reasonable progress over the past 150 years, it is fair to say that the behavioral and social sciences are less mature than the "hard" sciences.
