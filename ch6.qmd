@@ -124,7 +124,7 @@ $$
 K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i}
 $$ {#eq-ch6-1-old-42}
 
-Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $a$ the growth rates, $K$ the limited resources for each $X$ (a weighted sum of a genetic ($G$) and an environmental ($E$) part), and $M$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see the -@vandermaasDynamicalModelGeneral2006 paper]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in [@vandermaas2017]. Here we focus on the technical aspects.
+Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see the -@vandermaasDynamicalModelGeneral2006 paper]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in [@vandermaas2017]. Here we focus on the technical aspects.
 
 ![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75}
 
@@ -276,7 +276,7 @@ This mean-field approximation is very robust. In @vandermaas2020 it is shown by 
 
 #### Simulation {#sec-Simulation}
 
-The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($W$), which for the Curie Weiss model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$, originally the inverse of the temperature ($1/T$), represents attention. The effect of varying $beta$ (attention) is shown in @fig-ch6-img8-old-77.
+The IsingSampler function runs the Metropolis-Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input it takes a matrix of links ($\mathbf{W}$), which for the Curie Weiss model should be symmetric with zeroes on the diagonal. The $thresholds$ for each node should be equal. $Beta$, originally the inverse of the temperature ($1/T$), represents attention. The effect of varying $beta$ (attention) is shown in @fig-ch6-img8-old-77.
 
 ``` r
 library("IsingSampler")
@@ -367,7 +367,7 @@ Due to Hebbian learning, the network evolves from an unbalanced network (random 
 
 #### The stability of attitudes and entropy measures {#sec-The-stability-of-attitudes-and-entropy-measures}
 
-To quantify the consistency of attitudes, we can compute the Gibbs entropy [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in @sec-Physics as the log of the number of ways ($W$) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates $x$. It is defined as:
+To quantify the consistency of attitudes, we can compute the Gibbs entropy [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in @sec-Physics as the log of the number of ways ($W$) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. Instead, it deals with a probability distribution over the different microstates $\mathbf{x}$. It is defined as:
 
 [^ch6-2]: Assuming that all the attitude states (items) are reencoded as positive (or negative) valued items.
 
