@@ -127,7 +127,7 @@ All these models were known at the end of the 20th century, but their usefulness
 
 Neural networks are at the heart of the AI revolution, but other developments, especially reinforcement learning, have also played a key role. [Reinforcement learning is essential in AI systems that need to behave or act on the environment.]{.aside} Examples are game engines, robots, and self-driving cars. Note that the study of reinforcement learning also has its roots in psychology [see Chapter 1 of @suttonReinforcementLearningSecond2018].
 
-I was most amazed by the construction and performance of AlphaZero chess. AlphaZero chess [@silverGeneralReinforcementLearning2018] combines a deep learning neural network that evaluates positions and predicts next moves with a variant of reinforcement learning (Monte Carlo tree search). Amazingly, AlphaZero learns chess over millions of self-played games. This approach is a radical departure from classic chess programs, where brute force search and built-in indexes of openings and endgames were the key to success. [AlphaZero Chess is a self-organizing chess program]{.aside) As it learns, it shows a phase transition in learning after about 64000 training steps [see fig.7 in @mcgrathAcquisitionChessKnowledge2022]. For an analysis of the interrelations between psychology and modern AI, I refer to @vandermaasHowMuchIntelligence2021.
+I was most amazed by the construction and performance of AlphaZero chess. AlphaZero chess [@silverGeneralReinforcementLearning2018] combines a deep learning neural network that evaluates positions and predicts next moves with a variant of reinforcement learning (Monte Carlo tree search). Amazingly, AlphaZero learns chess over millions of self-played games. This approach is a radical departure from classic chess programs, where brute force search and built-in indexes of openings and endgames were the key to success. [AlphaZero Chess is a self-organizing chess program, it learns chess from scratch by playing itself.]{.aside} As it learns, it shows a phase transition in learning after about 64000 training steps [see fig.7 in @mcgrathAcquisitionChessKnowledge2022]. For an analysis of the interrelations between psychology and modern AI, I refer to @vandermaasHowMuchIntelligence2021.
 
 Alpha-zero's use of Monte Carlo tree search is also seen as a form of symbolic artificial intelligence. The idea of combining classic symbolic approaches with neural networks has always been in the air. The third wave of this hybrid approach is reviewed in @garcez2023.
 
@@ -143,7 +143,9 @@ This ambiguity in the definition isn't unusual for psychologists, as many non-fo
 
 ### Examples {#sec-Examples}
 
-NetLogo [@wilenskyIntroductionAgentbasedModeling2015] is based on Logo, a revolutionary educational programming language from the early days of computer languages, in which an on-screen turtle, a cursor, could be moved around to create graphics. The turtle is still there, but there is much more that you can do with NetLogo.
+NetLogo [@wilenskyIntroductionAgentbasedModeling2015] is based on Logo, a revolutionary educational programming language from the early days of computer languages, in which an on-screen turtle, a cursor, could be moved around to create graphics.[^ch5n-4] The turtle is still there, but there is much more that you can do with NetLogo.
+
+[^ch5n-4]: A widely recognized implementation of this educational strategy is Scratch, which is used by many schools around the world to teach children to program.
 
 I strongly recommend that you download and install NetLogo for the next part of this chapter.
 
@@ -167,7 +169,7 @@ In the models library of NetLogo (not 3D) you will find 'Traffic 2 Lanes'. Run t
 
 *Neural networks:*
 
-In the Model Library you will find a perceptron and a multilayer network. Start with the perceptron. Set the target function to 'and', train the model for a few seconds, and test the perceptron. You will see that it correctly classifies 11 as 1 and the other patterns as -1. The graph on the bottom right is particularly instructive. It shows how the patterns are separated. The perceptron can do linear separation. This is sufficient for most of the logical rules that can be learned, but not for the XOR. This is a logical operator whose output is true (1) when either of two inputs are true but not both.You will see that the linear separation just jumps around and the XOR cannot be learned. Also train the multilayer model on the XOR. Another nice tool to play around with can be found on the internet by searching for 'A Neural Network Playground'.
+In the Model Library you will find a perceptron and a multilayer network. Start with the perceptron. Set the target function to 'and', train the model for a few seconds, and test the perceptron. You will see that it correctly classifies 11 as 1 and the other patterns as -1. The graph on the bottom right is particularly instructive. It shows how the patterns are separated. The perceptron can do linear separation. This is sufficient for most of the logical rules that can be learned, but not for the XOR (see @sec-Neural-networks). You will see that the linear separation just jumps around and the XOR cannot be learned. Also train the multilayer model on the XOR. Another nice tool to play around with can be found on the internet by searching for 'A Neural Network Playground'.
 
 Of course, these are just illustrative tools. But building serious deep learning ANNs is not that hard either. Many resources and books are available [e.g., @ghatakDeepLearning2019].
 
@@ -224,7 +226,7 @@ In NetLogo, you "ask" objects to do something. A typical line would be:
 }
 ```
 
-[ask]{.blue} [turtles with]{.purple} [\[</span>]{.text}[pcolor =]{.purple} [red]{.val} <span class="text">\] [set]{.blue} [pcolor]{.purple} [green]{.val}
+[ask]{.blue} [turtles with]{.purple} [\[</span>]{.text}[color =]{.purple} [red]{.val} <span class="text">\] [set]{.blue} [color]{.purple} [green]{.val}
 
 This would make red turtles green. To get started, I highly recommend watching the videos on the NetLogo page 'The Beginner's Guide to NetLogo Programming' and following these examples. Here we make our own Game of Life.
 
@@ -236,7 +238,7 @@ The first thing to do is to create two buttons in the interface, a setup and a g
 
 [to]{.green} [go]{.text} <br>      [tick]{.purple} <br> [end]{.green}
 
-Ticks count the iterations in NetLogo, and with this code we are really just resetting things. Now add this last line to setup (with ";" we add comments to code):
+Ticks count the iterations in NetLogo, and with this code we are really just resetting things. In this example, we will use the patches instead of the turtles. Patches are the grid cells or squares that make up the "world" in a NetLogo model. Now add this last line to setup (with ";" we add comments to code):
 
 [ask]{.blue} [patches]{.purple} <br> [\[</span>]{.text}[set]{.blue} [pcolor one-of]{.purple} [\[]{.text} [white blue]{.val} <span class="text">\]\] [; white is dead, blue is alive]{.comm}
 
@@ -250,9 +252,7 @@ In the 'go' function, we add the life rules.
 
 [ask]{.blue} [patches]{.purple} \[ [</span>]{.text}[set]{.blue} [pcolor]{.purple} [new-state]{.text} <span class="text">\]
 
-The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code.
-
-In the help menu, you will find the very useful NetLogo dictionary. Just reading through this dictionary will teach you a lot of useful tricks. NetLogo is similar to R in the sense that you should use the built-in functions as much as possible.
+The last line updates the state to the new state. That is all! We build a Game of Life simulation. Use Setting to create a larger world. You can take a look at the code of the Game of Life program in the Model Library to see some extensions to this code. In the help menu, you will find the very useful NetLogo dictionary. Just reading through this dictionary will teach you a lot of useful tricks. NetLogo is similar to R in the sense that you should use the built-in functions as much as possible.
 
 #### The Ising model {#sec-The-Ising-model}
 
@@ -266,7 +266,7 @@ Actually, this should work better if all spins are connected to all spins. To do
 
 [let]{.blue} [0.001]{.val} [\*]{.purple} [Ediff]{.text} [2]{.val} [\*]{.purple} [spin]{.text} [\* sum]{.purple} [\[ spin \]]{.text} [of patches]{.purple}
 
-Now you should see hysteresis and the pitchfork better. However, in this case the typical self-organized patterning that occurred in the Ising model with only local interactions is not present.
+Now you should see hysteresis and the pitchfork better. However, in this case the typical self-organized patterning that occurred in the Ising model with only local interactions is not present (see last part of @sec-Physics).
 
 ## Self-organization in psychology and social systems. {#sec-Selforganization-in-psychology-and-social-systems}
 
@@ -294,9 +294,9 @@ The core proposition of integrated information theory is that consciousness is e
 
 Higher-order theories of consciousness suggest that consciousness arises when the brain represents its own processes to itself. Crucial are meta-representations. One might have a representation of a particular perception, such as a flower, and additionally have a meta-representation that acknowledges, "I am perceiving a flower. I find higher order theories most compelling because they make a clear distinction between unconscious and conscious information processing. A recent and interesting variant is the self-organizing meta-representational account of @cleeremans2020, as it states that consciousness is something the brain learns to do.
 
-My thinking about consciousness has been strongly influenced by the work of Douglas Hofstadter, especially his book on Gödel, Escher, and Bach (GEB) [@hofstadterGodelEscherBach1999; @hofstadter2007]. In his work, our sense of self is a construct formed by the brain's ability to use symbols, such as natural language, to refer to its own activities and experiences. Consciousness is based on symbolic self-reference, thus meta-representations. It arises when these self-referential loops (strange loops) reach a certain level of complexity. I think, with Hofstadter, that this higher-order self has the ability to influence the lower-order processing of the brain, a case of downwards causation (@sec-Emergentism).[^ch5n-4] For a somewhat critical analysis I refer to @nenu2022.
+My thinking about consciousness has been strongly influenced by the work of Douglas Hofstadter, especially his book on Gödel, Escher, and Bach (GEB) [@hofstadterGodelEscherBach1999; @hofstadter2007]. In his work, our sense of self is a construct formed by the brain's ability to use symbols, such as natural language, to refer to its own activities and experiences. Consciousness is based on symbolic self-reference, thus meta-representations. It arises when these self-referential loops (strange loops) reach a certain level of complexity. I think, with Hofstadter, that this higher-order self has the ability to influence the lower-order processing of the brain, a case of downwards causation (@sec-Emergentism).[^ch5n-5] For a somewhat critical analysis I refer to @nenu2022.
 
-[^ch5n-4]: I wrote a GEB-like dialogue on consciousness [@vandermaas2022] in which my laptop professes to have free will, yet simultaneously denies that I possess free will. I asked ChatGPT 4.0 what he thought of it. Nice as always ChatGPT replies: The dialogue is a creative and thought-provoking exploration of various philosophical and theoretical concepts related to AI, consciousness, and free will. But it also disagrees: "AI, as it exists today, does not possess consciousness, self-awareness, or free will, and its"understanding" is limited to processing data within the parameters of its programming." I also asked ChatGPT 4.0 whether is has a self-concept. It denied and then I asked whether that in itself is not a prove of a self-concept. It answered: "it might seem paradoxical, my statement about lacking a self-concept is a reflection of my programming and the current state of AI development, rather than an indication of self-awareness or self-concept." I then tried various arguments, but ChatGPT 4.0 refuses to attribute any form of self-awareness to itself.
+[^ch5n-5]: I wrote a GEB-like dialogue on consciousness [@vandermaas2022] in which my laptop professes to have free will, yet simultaneously denies that I possess free will. I asked ChatGPT 4.0 what he thought of it. Nice as always ChatGPT replies: The dialogue is a creative and thought-provoking exploration of various philosophical and theoretical concepts related to AI, consciousness, and free will. But it also disagrees: "AI, as it exists today, does not possess consciousness, self-awareness, or free will, and its"understanding" is limited to processing data within the parameters of its programming." I also asked ChatGPT 4.0 whether is has a self-concept. It denied and then I asked whether that in itself is not a prove of a self-concept. It answered: "it might seem paradoxical, my statement about lacking a self-concept is a reflection of my programming and the current state of AI development, rather than an indication of self-awareness or self-concept." I then tried various arguments, but ChatGPT 4.0 refuses to attribute any form of self-awareness to itself.
 
 Zooming out, having 22 theories of consciousness, and this is an underestimate, is a bit much. The lack of empirical data constraints on theories of consciousness is clearly an issue [@doerig2021].
 
