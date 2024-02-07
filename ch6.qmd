@@ -208,7 +208,7 @@ In @saviWiringIntelligence2019 the case where both nodes and links are updated w
 
 However, it is difficult to create a growing network with Fortuin-Kasteleyn properties. A simple example of this problem is the random network. In random networks, there is a uniform probability that two nodes are connected. But if we add new nodes to such a network and connect them to existing nodes with the same probability, the existing nodes will have more connections on average. Thus, adding new nodes destroys the randomness of the network, that is the probability that two nodes are connected is not uniform over nodes anymore. Such a network is a non-equilibrium network [@dorogovtsevEvolutionNetworks2002]. Rewiring algorithms to achieve equilibrium exist, but they are not trivial.
 
-### Symptom networks
+### Symptom networks {#sec-Symptom-networks}
 
 In the network perspective on psychopathology, a mental disorder can be viewed as a system of interacting symptoms (@fig-ch6-img8-old-77). Network theory conceptualizes mental disorders as complex networks of symptoms that interact through feedback loops to create a self-sustaining syndromic constellation. Mental disorders can be understood as alternative stable states of highly interconnected networks of symptoms [@borsboomNetworkTheoryMental2017].
 
