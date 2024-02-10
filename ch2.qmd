@@ -233,7 +233,7 @@ There exist many techniques for chaos detection in times series. This is all but
 
 These methods generally require long time series. Many publications appeared on the detection of chaos in psychophysiological data. Examples are EEG [@pritchardMeasuringChaosBrain1992] heart beat [@freitasIdentifyingChaosHeart2009], EMG [@leiDetectingNonlinearityAction2001] and eye movements [@harezlak2018]. Reviews of these lines of research are provided by @stam2005, @kargarnovin2023 and @garc2015.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch2}
 
 1)  For $r=3.5$, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 
