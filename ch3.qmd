@@ -106,7 +106,7 @@ The fold catastrophe has been studied in fields ranging from evolution theory [@
 
 $$ V(X) = - aX - \frac{1}{2}bX^{2} + \frac{1}{4}X^{4}. $$ {#eq-ch3-4-old-8}
 
-The half and quarter are added to make later derivations a little easier. The highest power is now 4. The first two terms contain the control variables $a$ and $b$, known as the normal and splitting variables. [Control variables are the parameters whose gradual change induce qualitative change in the behavior of the system.]{.aside} You might ask why there is no third order term. The non-technical answer is that such a term would not change the qualitative behavior of the bifurcation. Catastrophe theory studies bifurcations that are structurally stable, meaning that perturbing the equations (and not just the parameters) does not fundamentally change the behavior [see @sec-Other-bifurcations and @stewartCatastropheTheoryPhysics1982 for further explication].
+The half and quarter are added to make later derivations a little easier. The highest power is now 4. The first two terms contain the control variables $a$ and $b$, known as the normal and splitting variables. [Control variables are the parameters whose gradual change induce qualitative change in the behavior of the system.]{.aside} You might ask why there is no third order term. The non-technical answer is that such a term would not change the qualitative behavior of the bifurcation. Catastrophe theory studies bifurcations that are structurally stable, meaning that perturbing the equations (and not just the parameters) does not fundamentally change the behavior [see [@sec-Other-bifurcations] and @stewartCatastropheTheoryPhysics1982 for further explication].
 
 It is advisable to do some minimal research on this equation yourself, using an online graphic calculator tool like Desmos or GeoGebra (paste f(X)=-a X-(1/2) b X\^2+(1/4) X\^4). For example, set $a = 1$ and $b = 3$ and look at the graph of the potential function. Think in terms of the ball moving to a stable fixed point. What you should see is that there are three fixed points, of which the middle one is unstable. This bistability is important. Again, there is a relationship to unpredictability. Although you know the potential function and the values of $a$ and $b$, you are still not sure where the ball is. It could be in either of the minima.
 
@@ -242,7 +242,7 @@ The control variables are fear and rage. In such a rotation the normal variable 
 
 To explain catastrophic drops in performance in work and sports, @hardy1991 proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. @hardyTestingPredictionsCusp1996 present further tests of this model. It has been criticized by @cohenCriticalElaborationEmpirical2003. Extensions of to the butterfly model are presented in @guastello1984 and @hardy2004.
 
-Cusp models have also been developed for addiction [@guastelloCuspButterflyCatastrophe1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007\] propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.
+Cusp models have also been developed for addiction [@guastello1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007 propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.
 
 As a final example I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor.[^ch3-7] Paulos explains his model in the context of puns. His example is "do you consider clubs appropriate for young children?" with the punchline "only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. A joke involves a jump from one meaning to another. [The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter.]{.aside} Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. @tschacher2023 propose a related complexity account of humor.
 
@@ -286,7 +286,7 @@ plot(x$week,x$dep,type='b',pch=(e1$cluster-1)*16+1,xlab='Week',ylab='SLC-90',bty
 
 Multimodality (in the case of the cusp bimodality) is an important and easy-to-use flag, as it can be tested with cross-sectional data. Finite mixture models have been developed to test for multimodality in frequency distributions [@mclachlanFiniteMixtureModels2019].
 
-An example is shown in @fig-ch3-img20-old-32. These data come from a conservation anticipation task, where children have to predict the level of water in the second glass when it is poured over. The resulting data and the fit of a mixture of two normal distributions are shown on the right. The data are clearly bimodal supporting the hypothesis of a transition in conservation learning [@vandermaasStagewiseCognitiveDevelopment1992]. These data were used in @dolanFittingMultivariageNormal1998 to fit multivariate normal mixture distributions subject to a structural equation model.
+An example is shown in @fig-ch3-img20-old-32. These data come from a conservation anticipation task, where children have to predict the level of water in the second glass when it is poured over. The resulting data and the fit of a mixture of two normal distributions are shown on the right. The data are clearly bimodal supporting the hypothesis of a transition in conservation learning [@vandermaas1992]. These data were used in @dolan1998 to fit multivariate normal mixture distributions subject to a structural equation model.
 
 ![Bimodality in the expected heights of water when it is poured into a wider glass. This variation of the Piagetian maintenance task is used with children ages 5-8.](media/ch3/fig-ch3-img20-old-32.jpg){#fig-ch3-img20-old-32}
 
@@ -321,7 +321,7 @@ Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, req
 
 #### Hysteresis {#sec-Hysteresis}
 
-[Hysteresis, the lagging behind of the sudden jump, requires sophisticated manipulation of the normal control variable.]{.aside} To test for hysteresis we need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis in proportional reasoning using Piaget's balance scale test in which a specific dimension (distance from the fulcrum) was systematically varied [@jansenEvidencePhaseTransition2001]. We also hypothesized that speeding up subjects in response time tasks would eventually lead to a catastrophe in accuracy. To support this claim, we demonstrated bimodality in response times and hysteresis in the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011]. To support the cusp model of multistable perception we used the quartet motion paradigm [@ploegerStochasticCatastropheAnalysis2002]. In this perceptual paradigm two lights are presented simultaneously, first a pair from two of the diagonally opposite corners of the rectangle, and then a second pair from the other two diagonally opposite corners of the rectangle. Usually, either vertical or horizontal apparent motion is perceived. By gradually increasing or decreasing the aspect ratio (i.e., the ratio of height to width of the quartet), hysteresis in the jumps between the two percepts was demonstrated (see @fig-ch3-img22-old-34).
+[Hysteresis, the lagging behind of the sudden jump, requires sophisticated manipulation of the normal control variable.]{.aside} To test for hysteresis we need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis in proportional reasoning using Piaget's balance scale test in which a specific dimension (distance from the fulcrum) was systematically varied [@jansen2001]. We also hypothesized that speeding up subjects in response time tasks would eventually lead to a catastrophe in accuracy. To support this claim, we demonstrated bimodality in response times and hysteresis in the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011]. To support the cusp model of multistable perception we used the quartet motion paradigm [@ploegerStochasticCatastropheAnalysis2002]. In this perceptual paradigm two lights are presented simultaneously, first a pair from two of the diagonally opposite corners of the rectangle, and then a second pair from the other two diagonally opposite corners of the rectangle. Usually, either vertical or horizontal apparent motion is perceived. By gradually increasing or decreasing the aspect ratio (i.e., the ratio of height to width of the quartet), hysteresis in the jumps between the two percepts was demonstrated (see @fig-ch3-img22-old-34).
 
 In @ploegerStochasticCatastropheAnalysis2002 we used a special design, the method of modified limits, to rule out the alternative explanation that hysteresis is simply due to delayed responses. It could be that the switches always occur in the middle (at an aspect ratio of 1), but the self-report is delayed. In the modified limits method, subjects do not respond during a trial, but only after the entire trial. By varying the length of the trials, it is possible to determine at which parameter value the subject perceives a switch.
 
@@ -343,7 +343,7 @@ The catastrophe flags together provide a research methodology for phase transiti
 
 #### Cobb's maximum likelihood approach {#sec-Cobbs-maximum-likelihood-approach}
 
-In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach[^ch3-8] to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$ and $b$. We have implemented this approach in a cusp R package described in @grasmanFittingCuspCatastrophe2009.
+In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach[^ch3-8] to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$ and $b$. We have implemented this approach in a cusp R package described in @grasman2009.
 
 [^ch3-8]: The is method is to find the parameter values that make the observed data most probable.
 
@@ -361,7 +361,7 @@ f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-1
 
 where Z is a normalizing constant[^ch3-10] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = {\sqrt{2\pi}}/{\sigma}$.
 
-[^ch3-10]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasmanFittingCuspCatastrophe2009]. It is the inverse of $Z$ in that paper.
+[^ch3-10]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasman2009]. It is the inverse of $Z$ in that paper.
 
 As in the case of the normal distribution we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as $V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}$. The probability distribution for the cusp is
 
@@ -459,7 +459,7 @@ text(.5,800, 'hysteresis',cex=1.5)
 
 #### Empirical examples {#sec-Empirical-examples}
 
-In @grasmanFittingCuspCatastrophe2009 we present several examples with real data. As another example, we use Stoufer's data, which we used as an example of divergence before (see @fig-ch3-img21-old-33).
+In @grasman2009 we present several examples with real data. As another example, we use Stoufer's data, which we used as an example of divergence before (see @fig-ch3-img21-old-33).
 
 ```{r eval = FALSE}
 x <- read.table('data/stoufer.txt')
@@ -472,7 +472,7 @@ Inspection of the parameter estimates shows that, as expected, Intensity of Feel
 
 ![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/image24.jpg){#fig-ch3-img24-old-36}
 
-Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaasStagewiseCognitiveDevelopment1992].
+Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaas1992].
 
 ```{r eval = FALSE}
 x <- read.table('data/bentler.txt',header=T)
@@ -492,7 +492,7 @@ This is supported by results of cuspfit. You can verify that a model with beta \
 
 ![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37}
 
-A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data (see @grasmanFittingCuspCatastrophe2009, for details). This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
+A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data [see @grasman2009, for details]. This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
 ![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38}
 
@@ -520,7 +520,7 @@ A number of points are about inferring a cusp from data, which was indeed done r
 
 Another, somewhat inconsistent, line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), while it is also claimed that Zeeman's models are not falsifiable. But you cannot have it both ways, if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.
 
-Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field (see @sec-ch8 and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008).
+Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field [see [@sec-ch8] and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008].
 
 The last point of Zahler and Sussmann is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether this will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
 
@@ -548,7 +548,7 @@ However, there is room for improvement. Phenomenological models have limited exp
 
 6)  Check whether indeed the Bentler data fit better with when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (\*)
 
-7)  What is the best fitting cusp model (according to the BIC) for this tricky data set created with this r-code? Why? (\*\*)
+7)  What is the best fitting cusp model (according to the BIC) for this tricky data set created with this R-code? Why? (\*\*)
 
     ```{r eval = FALSE}
     n=500
@@ -558,4 +558,4 @@ However, there is room for improvement. Phenomenological models have limited exp
     data <- data.frame(z,x,y) # collect variables in data
     ```
 
-8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasmanFittingCuspCatastrophe2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
+8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasman2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
