@@ -2,13 +2,13 @@
 
 Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.
 
-This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. [A nonlinear dynamical system is one in which the change of system variables over time is governed by nonlinear equations, resulting in complex behavior such as chaos, bifurcations.] {.aside} We have seen examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
+This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. [A nonlinear dynamical system is one in which the change of system variables over time is governed by nonlinear equations, resulting in complex behavior such as chaos, bifurcations.]{.aside} We have seen examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
 
 In psychology, following the principle of parsimony (Occam's razor) we must start with simple models. We don't have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling [@murray1989]. Mathematical psychology is generally less developed than mathematical biology, but this depends somewhat on the subfield. In areas such as neural modeling, speeded decision making, memory, choice, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.
 
 I will first present a basic overview of dynamical systems modeling in other sciences. The second part concerns applications in psychology. I refer to more advanced sources when necessary. I recommend the book by @gottmanMathematicsMarriageDynamic2002 for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. The online lectures on nonlinear dynamics and chaos and the book by Steven Strogatz [-@strogatzNonlinearDynamicsChaos2018] are very helpful. Murray's book on mathematical biology is also highly recommended [@murrayMathematicalBiology2002]. A basic introduction is Thinking in Systems of @meadowsThinkingSystemsPrimer2008.
 
-This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind [@deboerSimplePhasePlane2018] is based on the R-packages deSolve and rootSolve [@soetaertSolvingDifferentialEquations2010]. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states.[^ch4n-1]
+This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind [@deboerSimplePhasePlane2018] is based on the R-packages deSolve and rootSolve [@soetaert2010]. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states.[^ch4n-1]
 
 [^ch4n-1]: The manual can be found at <https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf>
 
@@ -67,7 +67,7 @@ timesteps # length of simulation
 
 where $dt$ must be chosen by hand. If you test some values of $dt$, you will see that a value too high (.5) leads to a solution (`x[timesteps]`) that is different from the analytical solution. But if we set $dt$ very low (.00001), it takes unnecessarily long.
 
-This is why we use 'solvers', numerical methods for ordinary differential equations. [Solvers are specialized algorithms designed to numerically approximate solutions to ODEs and handle the complexities of integrating these equations over time to predict the evolution of system states under different initial conditions and parameters.]{.aside} We will use the R-package Grind, although many other methods are available in R. One could also directly use the R packages deSolve and rootSolve by @soetaertSolvingDifferentialEquations2010, on which the Grind package is based. Grind has to be installed from GitHub using:
+This is why we use 'solvers', numerical methods for ordinary differential equations. [Solvers are specialized algorithms designed to numerically approximate solutions to ODEs and handle the complexities of integrating these equations over time to predict the evolution of system states under different initial conditions and parameters.]{.aside} We will use the R-package Grind, although many other methods are available in R. One could also directly use the R packages deSolve and rootSolve by @soetaert2010, on which the Grind package is based. Grind has to be installed from GitHub using:
 
 ``` r
 install.packages("remotes")
@@ -155,7 +155,7 @@ The plane function makes a phase plot with $N$ and $P$ as axes. The black points
 
 A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting `dN <- a*N *(1-N) - b*P*N` in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading [@deboerSimplePhasePlane2018]. It also contains the appropriate parameter values for this model variant. In this density dependent model there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.
 
-A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics. [The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into three compartments: susceptible (S), representing individuals who have not yet contracted the disease but are at risk; infected (I), representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered (R), representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible.]{aside} The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
+A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics. \[The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into three compartments: susceptible (S), representing individuals who have not yet contracted the disease but are at risk; infected (I), representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered (R), representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible.\]{aside} The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
 
 ### Fitting models: stochasticity versus noise {#sec-Fitting-models-stochasticity-versus-noise}
 
@@ -323,7 +323,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well (see for example Figure 9 in @jusup2022).](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well [see for example Figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
 The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
 
@@ -514,13 +514,13 @@ This results in @fig-ch4n-img10-old-58.
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
-I have kept the influence functions and most parameters the same for both spouses, but this is not necessarily the case (see the work of Gottman and Murray for discussion and alternative influence functions). It is possible to derive the equilibria analytically and to determine the stability of these equilibria [@gottmanMathematicsMarriageDynamic2002]. They also propose a two-stage procedure for fitting of the model to data consisting of positive and negative speaker interactions using a bilinear influence function. A more advanced statistical approach is proposed in @hamakerUsingThresholdAutoregressive2009. For a related model for the interaction between therapist and client I refer to @tschacher2019.
+I have kept the influence functions and most parameters the same for both spouses, but this is not necessarily the case (see the work of Gottman and Murray for discussion and alternative influence functions). It is possible to derive the equilibria analytically and to determine the stability of these equilibria [@gottmanMathematicsMarriageDynamic2002]. They also propose a two-stage procedure for fitting of the model to data consisting of positive and negative speaker interactions using a bilinear influence function. A more advanced statistical approach is proposed in @hamaker2009. For a related model for the interaction between therapist and client I refer to @tschacher2019.
 
 ### The van Geert models {#sec-The-van-Geert-models}
 
 In a series of papers, Paul van Geert proposed dynamical systems models for developmental processes [@denhartighDynamicNetworkModel2016; @vangeertDynamicSystemsModel1998; @vangeertDynamicSystemsModel1991]. [It is thought that cognitive and language abilities grow over time in an autocatalytic process constrained by a limited capacity, similar to the logistic growth of populations.]{.aside}
 
-Van Geert has proposed many different models, I will give just one example. @vangeertDynamicSystemsModel1991 introduced a system of two coupled difference equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
+Van Geert has proposed many different models, I will give just one example. Van Geert [-@vangeertDynamicSystemsModel1991] introduced a system of two coupled difference equations to model where the growth rate of one cognitive ability depends on the level of another cognitive ability:
 
 $$
 \begin{gathered}
@@ -557,7 +557,7 @@ So, there are basically two outcomes, either both grow, or one grows and suppres
 
 ### The Polya Urn model of the third source {#sec-The-Polya-Urn-model-of-the-third-source}
 
-Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding nonlinear developmental processes in psychology. [@molenaar1993] propose the third source hypothesis. [The third source hypothesis  proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes.]{.aside} Based on a series of studies, [@gartnerThirdComponentCausing1990] concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
+Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding nonlinear developmental processes in psychology. [@molenaar1993] propose the third source hypothesis. [The third source hypothesis proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes.]{.aside} Based on a series of studies, [@gartnerThirdComponentCausing1990] concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
 
 A simple and, in my opinion, insightful dynamical model for this effect is the Pólya-Eggenberger urn model [@mahmoudPolyaUrnModels2008]. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with 2 blue and 1 red marbles. we randomly take out a marble. If we draw a blue marble, we put it back with another blue marble. If we draw a red marble, we put it back and add a red marble. Initially, $p(blue) = 2/3$, but what will happen to that probability over time when we have more and more marbles? Think about it for a moment.
 
@@ -690,7 +690,7 @@ First, the definition of $N$ is imprecise. Is it the blood alcohol concentration
 
 Second, the choice of a logistic function for the autonomous part seems reasonable but is not derived from first principles. One could also assume a linear function with a ceiling at $K$.
 
-Third, and relatedly, the self-control function is also not derived from first principles. An additional problem is that we cannot measure this term directly [@duckworthSelfControlGritRelated2014].
+Third, and relatedly, the self-control function is also not derived from first principles. An additional problem is that we cannot measure this term directly [@duckworth2014].
 
 Fourth, this model may not work for all addictions or should be adapted to specific cases. An example is smoking. First, for smoking, the intermediate recreational state is very unstable [@epskampIntermediateStableStates2022], and the autocatalytic effect described by the logistic equation seems less appropriate for smoking. For alcohol, the Holling type IV seems to be a good choice for the self-control term as alcohol directly impairs brain regions involved in self-control [@remmerswaalImpairedSubjectiveSelfcontrol2019]. For gambling, Holling Type III may be sufficient.
 
@@ -711,7 +711,7 @@ $$
 \end{gathered}
 $$ {#eq-ch4n-18-old-38}
 
-This model, first proposed by Kadyrov, was analyzed in detail by @abrahamComputationalUnfoldingDoublecusp1991. We can study this model in Grind by specifying:
+This model, first proposed by Kadyrov, was analyzed in detail by . We can study this model in Grind by specifying:
 
 ``` r
 model <- function(t, state, parms) {   
@@ -836,7 +836,7 @@ which gives @fig-ch4n-img19-old-67.
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch4n-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} = 0)$. You can verify this introspectively. Adapted from https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} = 0)$. You can verify this introspectively. Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
 
 ## Causal loop diagrams {#sec-Causal-loop-diagrams}
 

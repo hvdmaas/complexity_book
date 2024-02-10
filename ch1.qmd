@@ -118,7 +118,7 @@ Two applications in psychology are well known: the first is the study of neural 
 
 [Similarly, depression can be thought of as a network of mutually reinforcing symptoms.]{.aside} For example, sleep problems, a symptom of depression, can lead to increased fatigue and difficulty concentrating, which in turn can affect a person's ability to manage daily tasks and engage in social activities. This can then lead back to poorer sleep quality, creating a cyclical pattern in which each symptom reinforces the others. This new view of mental disorders originated in our research group and is now very popular [@robinaughNetworkApproachPsychopathology2020]. One reason for this is that many statistical techniques have been developed to investigate this network approach.
 
-The latest line of this research is the integrated study of psychological and social networks [@vandermaas2020a]. @sec-ch7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change. This model provides a new explanation of polarization. [In the process of polarization, non-linear intrapersonal and interpersonal dynamics interact.]{.aside}
+The latest line of this research is the integrated study of psychological and social networks [@vandermaas2020]. @sec-ch7 deals with models in which psychological network models of attitudes are nested within social networks of opinion change. This model provides a new explanation of polarization. [In the process of polarization, non-linear intrapersonal and interpersonal dynamics interact.]{.aside}
 
 ## Methods for investigating complex systems {#sec-Methods-for-Investigating-complex-systems}
 
