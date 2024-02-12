@@ -51,9 +51,15 @@ format:
         \usepackage{makeidx}
         \makeindex
         \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm, marginparwidth=35mm,marginparsep=5mm ]{geometry}
-        \usepackage{setspace}
-        \usepackage{marginnote}
-        \marginpar{\setstretch{.8}}
+        \usepackage{setspace} % For setting the line spacing
+        \usepackage{marginnote} % For improved margin notes
+
+        % Redefine the marginnote command to include setstretch
+        \let\oldmarginnote\marginnote
+        \renewcommand{\marginnote}[1]{%
+       \oldmarginnote{\setstretch{0.8}\selectfont#1}%
+}
+        
 
     include-after-body: 
       text: |
