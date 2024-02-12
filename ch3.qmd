@@ -50,7 +50,7 @@ $$
 V(X) = X^{2}
 $$ {#eq-ch3-1-old-5}
 
-![The quadratic potential function. A boll rolls to the minimum value of $V(X)$. It's change is defined by negative of the derivative of the potential function $-V'(X)$.](media/ch3/ch3-03__figure15.png){#fig-ch3-img3-old-15 width="1000"}
+![The quadratic potential function. A boll rolls to the minimum value of $V(X)$. It's change is defined by negative of the derivative of the potential function $-V'(X)$.](media/ch3/ch3-03__figure15.png){#fig-ch3-img3-old-15 width="5cm"}
 
 You can imagine a ball in a landscape. The ball will roll to the minimum of the potential function (@fig-ch3-img3-old-15). We learned in school that this is the point where the first derivative is zero and the second derivative is positive. The first and second derivatives are $V^{'}(X) = 2X$ and $V^{''}(X) = 2$, respectively. At $X = 0$ we find the minimum.
 
