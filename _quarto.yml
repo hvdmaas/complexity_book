@@ -50,16 +50,17 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
+        \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm]{geometry}
     include-after-body: 
       text: |
         \printindex
     #highlight-style: github
-    geometry:
-      - top=25mm
-      - left=15mm
-      - right=45mm  # Add this line to set the right margin
-      - bottom=25mm # Add this line to set the bottom margin
-      - heightrounded
+    # geometry:
+    #  - top=25mm
+    #  - left=15mm
+    #  - right=45mm  # Add this line to set the right margin
+    #  - bottom=25mm # Add this line to set the bottom margin
+    # - heightrounded
     crossref:
       chapters: true
 editor: visual
