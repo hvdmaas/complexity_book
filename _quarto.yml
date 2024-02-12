@@ -58,7 +58,7 @@ format:
         \let\oldmarginnote\marginnote
         \renewcommand{\marginnote}[1]{%
         \oldmarginnote{\setstretch{0.8}\selectfont#1}%
-}
+        }
         
 
     include-after-body: 
