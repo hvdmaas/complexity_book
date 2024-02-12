@@ -29,7 +29,9 @@ for (i in 1:(n - 1))
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
-![Exponential growth.](media/ch2/fig-ch2-img1.jpg){#fig-ch2-img1}
+![Exponential growth.](media/ch2/fig-ch2-img1.jpg){#fig-ch2-img1 width="10cm"}
+
+![Exponential growth.](media/ch2/fig-ch2-img1.jpg){width="8cm"}
 
 Note that we can find any $X_{t}$ given $X_{0}$ by iterating the model as we do in the for loop. $X_{t}$ is called the solution. Simulation is a bit odd in this case. We can compute the solution analytically. It is $X_{t} = X_{0}r^{t}$. Thus for $X_{15} = 1 \times 2^{15} = 32768$. [For more complex models the analytical solution is often not available, and we have to use simulation (the numerical solution).]{.aside}
 
@@ -54,7 +56,9 @@ for (i in 1:(n - 1))
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
-![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){#fig-ch2-img2}
+![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){#fig-ch2-img2 width="10cm"}
+
+![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){width="8cm"}
 
 This is the simple case. The population initially develops exponentially but then levels off and reached a stable state at $X = .5$. We need to understand a bit more about it. What you see here is that we have gone from an unstable initial state to a stable state, a point attractor. The next code shows that this point attractor attracts from a wide range of initial values, but not all.
 
@@ -75,7 +79,7 @@ for (init in seq(0, .7, by = .01))
 
 If we start exactly at zero, $X$ stays at zero. So, zero is an equilibrium too, but a special one. It is an unstable fixed point. A small perturbation will cause $X$ to move to .5, the stable fixed point. All initial values in close proximity of 0 will move away from 0 (repellent), but if $X = 0$ exactly, then it remains 0 for all time. So, $X = 0$ is a fixed point but unstable (@fig-ch2-img1). [Fixed point can be stable or unstable.]{.aside}
 
-![Illustration of stable and unstable fixed points. For many initial values, $X = .5$ is an attractor. $X = 0$ is an unstable fixed point. Only if we start exactly at 0 do we stay there.](media/ch2/fig-ch2-img3.jpg){#fig-ch2-img3}
+![Illustration of stable and unstable fixed points. For many initial values, $X = .5$ is an attractor. $X = 0$ is an unstable fixed point. Only if we start exactly at 0 do we stay there.](media/ch2/fig-ch2-img3.jpg){#fig-ch2-img3 width="10cm"}
 
 This concept of equilibrium, stable or unstable, is crucial for later chapters. The essence of the next chapter is to change a control parameter, here $r$, and study how the pattern of equilibria (the equilibrium landscape) changes. You can easily do this yourself by setting $r = .9$. For $r < 1$, there is only stable attractor (zero).
 
@@ -100,7 +104,7 @@ I will not explain why, however, the rule is that the fixed point is stable if t
 
 So at $r = 3$ the fixed point or $(r - 1)/r$ becomes unstable. Let's study some cases. The plots in @fig-ch2-img4 are made with the code for @fig-ch2-img2.
 
-![Qualitative different behavior of the logistic map for different values of $r$.](media/ch2/fig-ch2-img4.jpg){#fig-ch2-img4}
+![Qualitative different behavior of the logistic map for different values of $r$.](media/ch2/fig-ch2-img4.jpg){#fig-ch2-img4 width="14cm"}
 
 For $r = 2.9$ we see that the series converges to the fixed point $\frac{1.9}{2.9} = .66,$ but in a process of over- and undershooting. Between $r = 3.1$ and $r = 3.3$ a limit cycle of period 2 arises. [In a limit cycle of period 2 the population oscillates between two values.]{.aside} For $r = 3.5$ this becomes even more remarkable, we see a limit cycle of period 4. For slightly larger values we could get cycles with higher periods.
 
@@ -110,7 +114,7 @@ It has been claimed that these limit cycles occur in real population dynamics. I
 
 If we increase $r$ even further, the doubling of the periods changes to even stranger behavior. @fig-ch2-img4 shows what the time series looks for $r = 4$.
 
-![Chaos for $r = 4$.](media/ch2/fig-ch2-img5.jpg){#fig-ch2-img5}
+![Chaos for $r = 4$.](media/ch2/fig-ch2-img5.jpg){#fig-ch2-img5 width="10cm"}
 
 There seems to be no regularity. This is what we call deterministic chaos. This time series is unpredictable, even though we know the equation, and the system is deterministic. What exactly do we mean by this? Let me illustrate.
 
@@ -127,7 +131,7 @@ for (i in 1:(n - 1))
 lines(x, col = 'red')
 ```
 
-![The butterfly effect: A small difference in initial state causes divergence in the long run.](media/ch2/fig-ch2-img6.jpg){#fig-ch2-img6}
+![The butterfly effect: A small difference in initial state causes divergence in the long run.](media/ch2/fig-ch2-img6.jpg){#fig-ch2-img6 width="10cm"}
 
 We can see that a run with a slightly different initial value will at first follow the same path, but then it will diverge sharply (@fig-ch2-img6). A tiny perturbation (the butterfly flapping its wings) propagates through the system and dramatically changes the long-term course of the system.
 
@@ -163,7 +167,7 @@ plot(x,type='l',xlab='time',bty='n',main='random noise',cex.main=2)
 plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
 ```
 
-![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7}
+![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7 width="14cm"}
 
 The top figures are time plots and lower figures are phase plots. The first column shows a limit cycle of period 2, the second deterministic chaos and the third noise generated from a uniform distribution. Although the time series of the second and third cases look similar, the phase diagram reveals hidden structure in the chaos time series. Phase plots can help us to distinguish chaos from noise.
 
@@ -190,7 +194,7 @@ plot(equilibria ~ r, pch=19,cex=.01,bty='n')
 
 This results in @fig-ch2-img8. We see indeed fixed stable points for $r < 3$, the period doubling of the limit cycles for $r > 3$, followed by chaos.
 
-![The bifurcation diagram of the logistic map.](media/ch2/fig-ch2-img8.jpg){#fig-ch2-img8}
+![The bifurcation diagram of the logistic map.](media/ch2/fig-ch2-img8.jpg){#fig-ch2-img8 width="14cm"}
 
 A recurring phenomenon in many chaotic maps are fractals. [Fractals are figures in which certain patterns reappear when we zoom in on the figure, and this happens again and again when we zoom in further.]{.aside} You can see the fractal nature of the logistic map by zooming in on the interval of r between 3.83 and 3.86 (see exercise 2). The three equilibria in the limit cycle split again into period doubling cycles, as we saw in the overall plot between $r$ in 3 and 3.5.
 
@@ -247,7 +251,7 @@ These methods generally require long time series. Many publications appeared on 
 
 6)  Have a look at the definition of the Lyapunov coefficient in @sec-Chaos. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal.
 
-7)  Use the Rmusic library (installed with \
+7)  Use the Rmusic library (installed with\
     `devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)`) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
 8)  Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300-400 words (\*).

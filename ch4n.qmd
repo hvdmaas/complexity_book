@@ -229,7 +229,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="15cm"}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
@@ -246,7 +246,7 @@ high <- newton(s=c(X=1)) # again starting from X = 1
 continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 ```
 
-![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51}
+![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51 width="10cm"}
 
 Another great tool in R is the deBif package by de Roos. This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
 
@@ -286,7 +286,7 @@ bifurcation(spruce, state, parms)
 
 Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- BN^{2}/(A^{2} + N^{2})$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start $A$ is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat $B$ budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
-![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53}
+![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53 width="15cm"}
 
 ### Evaluation of ecological modelling {#sec-Evaluation-of-ecological-modelling}
 
@@ -339,7 +339,7 @@ In this section, I present an overview of dynamical systems models in psychology
 
 Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (@fig-ch4n-img7-old-55). [Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated]{.aside}
 
-![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55}
+![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="15cm"}
 
 One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model, with $I$ as the stimulus-driven input:
 
@@ -397,7 +397,7 @@ Note that these are all linear dynamical system that do not exhibit complex beha
 
 The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56}
+![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="15cm"}
 
 ### Dyadic models {#sec-Dyadic-models}
 
@@ -448,7 +448,7 @@ run(ymin=-.2,legend=F)
 plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 ```
 
-![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57}
+![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="15cm"}
 
 The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. [Nullclines are the curves for which the time derivatives of the behavioral variables $R$ and $J$ are zero.]{.aside} In linear dynamical system null-clines are straight lines. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).
 
@@ -515,7 +515,7 @@ for (i in 1:100)
 
 This results in @fig-ch4n-img10-old-58.
 
-![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58}
+![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="15cm"}
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
@@ -556,7 +556,7 @@ run(tmax = 1500, method = "euler", tstep = 1)
 plane(portrait = TRUE,grid=4)
 ```
 
-![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59}
+![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="15cm"}
 
 So, there are basically two outcomes, either both grow, or one grows and suppresses the other (see @fig-ch4n-img11-old-59). Note that the method is set to 'Euler' to simulate difference equations.
 
@@ -668,7 +668,7 @@ $$
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in @fig-ch4n-img15-old-63.
 
-![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The $V$-nullcline (where $dV/dt = 0$) and the $W$-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63}
+![The dynamics of the FitzHugh--Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The $V$-nullcline (where $dV/dt = 0$) and the $W$-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4n-15__figure64.png){#fig-ch4n-img15-old-63 width="14cm"}
 
 The FitzHugh--Nagumo model itself is a simplified version of the famous Hodgkin--Huxley model, consisting of four differential equations, that models the activation and deactivation dynamics of a spiking neuron in more detail. This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
@@ -758,7 +758,7 @@ run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
 
 The last three lines of this code show the Kadyrov oscillator (@fig-ch4n-img17-old-65).
 
-![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65}
+![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65 width="12cm"}
 
 If we simplify this analysis a bit to stable fixed points only, we see three regimes:
 
@@ -841,11 +841,11 @@ text(80,-.5,'Attention')
 
 which gives @fig-ch4n-img19-old-67.
 
-![The multifigure Necker cube simulation. Initially attention is low and the percept is close to zero, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At the $t = 60$ it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67}
+![The multifigure Necker cube simulation. Initially attention is low and the percept is close to zero, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At the $t = 60$ it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67 width="14cm"}
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch4n-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} = 0)$. You can verify this introspectively. Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to be switch independently ($a_{ij} = 0)$. You can verify this introspectively. Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68 width="14cm"}
 
 ## Causal loop diagrams {#sec-Causal-loop-diagrams}
 
