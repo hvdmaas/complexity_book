@@ -50,7 +50,7 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
-        \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm]{geometry}
+        \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm, marginparwidth=35mm,marginparsep=5mm ]{geometry}
     include-after-body: 
       text: |
         \printindex
