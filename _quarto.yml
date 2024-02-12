@@ -52,7 +52,7 @@ format:
         \makeindex
         \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm, marginparwidth=35mm,marginparsep=5mm ]{geometry}
         \usepackage{setspace}
-        \marginpar{\setstretch{1.5}\selectfont Here is your margin note text.}
+        \marginpar{\setstretch{.8}}
 
     include-after-body: 
       text: |
