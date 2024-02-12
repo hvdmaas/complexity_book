@@ -57,7 +57,7 @@ format:
         % Redefine the marginnote command to include setstretch
         \let\oldmarginnote\marginnote
         \renewcommand{\marginnote}[1]{%
-       \oldmarginnote{\setstretch{0.8}\selectfont#1}%
+        \oldmarginnote{\setstretch{0.8}\selectfont#1}%
 }
         
 
