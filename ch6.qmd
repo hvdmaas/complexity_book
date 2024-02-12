@@ -2,7 +2,7 @@
 
 ## Introduction {#sec-Introduction}
 
-Common cause theories are widely accepted in psychology. High scores on cognitive tests are attributed to high intelligence. Charisma is associated with various leadership qualities. A high score on the $p$ factor (psychopathology factor) is often associated with various mental health problems. The common cause explanation is popular because of its simplicity and the availability of statistical methods such as factor analysis. In most cases, however, the common cause is only a hypothetical construct. [Common causes are questionable if they cannot be identified independently of the observed relationships they are intended to explain.]{.aside} Yet, many people accept common cause theories because they see no alternative. This is incorrect. Complex systems theory offers a powerful alternative, including a statistical approach. The main thesis of this chapter is that the functioning (and dysfunctioning) of the human mind is often best understood as a complex interplay of various psychological elements such as cognitive functions, mental states, symptoms, and behaviors. [The interplay of psychological subsystems can be modeled in terms of networks, psychological networks.]{.aside}
+Common cause theories are widely accepted in psychology. High scores on cognitive tests are attributed to high intelligence. Charisma is associated with various leadership qualities. A high score on the $p$ factor (psychopathology factor) is often associated with various mental health problems. [Common causes are questionable if they cannot be identified independently of the observed relationships they are intended to explain.]{.aside} The common cause explanation is popular because of its simplicity and the availability of statistical methods such as factor analysis. In most cases, however, the common cause is only a hypothetical construct. Yet, many people accept common cause theories because they see no alternative. This is incorrect. Complex systems theory offers a powerful alternative, including a statistical approach. The main thesis of this chapter is that the functioning (and dysfunctioning) of the human mind is often best understood as a complex interplay of various psychological elements such as cognitive functions, mental states, symptoms, and behaviors. [The interplay of psychological subsystems can be modeled in terms of networks, psychological networks.]{.aside}
 
 The study of psychological networks is perhaps the most thriving area of complex systems research in psychology today. This chapter is about this new line of research. The paper on the mutualism model of general intelligence [@vandermaasDynamicalModelGeneral2006] can be seen as the root of this approach, but it took off, as shown in @fig-ch6-img1-old-70, when it was applied to clinical psychology [@borsboomNetworkTheoryMental2017; @borsboomPsychometricPerspectivesDiagnostic2008; @cramerComorbidityNetworkPerspective2010], especially when the theoretical work was backed up with psychometric tools [@epskampEstimatingPsychologicalNetworks2018; @epskampQgraphNetworkVisualizations2012; @marsmanGuestEditorsIntroduction2022].
 
@@ -41,7 +41,7 @@ adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
 adj <- adj*sample(0:1,100,replace=T,prob=c(.8,.2)) # set 80% to 0
 qgraph(adj) # plot in qgraph
 edge_density(fcn) # indeed 1
-edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE)) # indeed .2
+edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))# now .2
 centralityPlot(qgraph(adj)) # note centrality() gives more indices
 ```
 
@@ -81,7 +81,7 @@ Differential psychology is concerned with individual differences, in contrast to
 
 #### The $g$ factor {#sec-The-g-factor}
 
-The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, basicly meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$ (@fig-ch6-img4-old-73).
+The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, basically meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$ (@fig-ch6-img4-old-73).
 
 ![The Cattell-Horn-Carroll (CHC) model of general intelligence. Blocks represent test scores (narrow), explained by the broad factors, which in turn are determined by the general factor $g$.](media/ch6/image4.jpg){#fig-ch6-img4-old-73}
 
@@ -138,17 +138,20 @@ M[diag(nr_var)==1] <- 0 # set diagonal of M to 0
 
 for(i in 1:nr_of_pp)
 {
-  # sample a,K, starting values X from normal distributions for each person separately
+  # sample a,K, starting values X from normal 
+  # distributions for each person separately
   # note M is constant over persons.
   a <- rnorm(nr_var,.2,.05) 
   k <- rnorm(nr_var,10,2)
   x0 <- rnorm(nr_var,2,0.1) # initial state of X
   s  <- x0;p <- c() # required for grind
-  data[i,] <- run(odes=mutualism ,tmax=60, timeplot = (i==1),legend=F) # collect data (end points)
+  data[i,] <- run(odes=mutualism ,tmax=60, 
+      timeplot = (i==1),legend=F) # collect data (end points)
   #plot person 1 only
 }
 hist(cor(data)[cor(data)<1],main='positive manifold',
-     xlab='between test correlations',col='lightgreen') # positive manifold
+     xlab='between test correlations',
+     col='lightgreen') # positive manifold
 ```
 
 ![A typical run of the mutualism model for one subject and the distribution of correlations between $X$ values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76}
@@ -226,11 +229,11 @@ The network approach has been applied to many other domains outside of intellige
 
 People have many attitudes, about food, politics, other people, horror movies, the police, etc. They help us make decisions and guide our behavior. Attitudes can be very stable and multifaceted, but they can also be inconsistent and inconsequential. Social psychology has studied attitudes for a long time, and many insights and theories have been developed.
 
-[Attitudes are complex constructs and typical phenomena, such as cognitive dissonance, imbalance, ambivalence, and political polarization, can be well described by a network model.]{.aside} The formalization of attitude theories has been dominated by the connectionist account [@monroeGeneralConnectionistModel2008; @vanoverwalleConnectionistModelAttitude2005]. In connectionist models, developed in the Parallel Distributed Processing (PDP) framework, attitude units (e.g., beliefs) form a connected network whose activations (ususally between -1 and 1) are updated based on the weighted sum of internal inputs from other units and an external input. These weights or connections are updated according to either the delta rule (a supervised learning rule based on the difference between the produced and expected output of the network) or the Hebb rule (a simpler unsupervised rule). With this setup, these models can explain a number of phenomena in attitude research. Another network account has been put forward in sociology [@dellapostaPluralisticCollapseOil2020].
+[Attitudes are complex constructs and typical phenomena, such as cognitive dissonance, imbalance, ambivalence, and political polarization, can be well described by a network model.]{.aside} The formalization of attitude theories has been dominated by the connectionist account [@monroeGeneralConnectionistModel2008; @vanoverwalleConnectionistModelAttitude2005]. In connectionist models, developed in the Parallel Distributed Processing (PDP) framework, attitude units (e.g., beliefs) form a connected network whose activations (usually between -1 and 1) are updated based on the weighted sum of internal inputs from other units and an external input. These weights or connections are updated according to either the delta rule (a supervised learning rule based on the difference between the produced and expected output of the network) or the Hebb rule (a simpler unsupervised rule). With this setup, these models can explain a number of phenomena in attitude research. Another network account has been put forward in sociology [@dellapostaPluralisticCollapseOil2020].
 
 In this section, I will discuss our network approach to attitudes using the Ising model, which was developed in a series of recent papers. The advantages of this model over the connectionist PDP models are that it is derived from basic assumptions, is better understood mathematically, is easy to simulate, provides a psychological interpretation of the temperature parameter, and can be fitted to data [@dalege2017].
 
-It was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors, that each explain observed responses, similar to the CHC model of general intelligence. The causal attitude model [@dalegeFormalizedAccountAttitudes2016] maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. Nodes represent single feelings, beliefs and behaviors. [Attitudes are networks of feelings, beliefs and behaviors towards an attitude object]{.aside} In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. [Attention is equated to (inverse) temperature.]{.aside} That is high attention 'freezes' the network and leads to consistent and stable positive or negative states of the attitude (the 'mere thought effect', see below).
+It was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors, that each explain observed responses, similar to the CHC model of general intelligence. [Attitudes are networks of feelings, beliefs and behaviors towards an attitude object]{.aside} The causal attitude model [@dalegeFormalizedAccountAttitudes2016] maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. Nodes represent single feelings, beliefs and behaviors. In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. That is high attention 'freezes' the network and leads to consistent and stable positive or negative states of the attitude (the 'mere thought effect', see below). [Attention is equated to (inverse) temperature.]{.aside}
 
 ![The Ising Attitude Network Model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields. The connections are weighted.](media/ch6/fig-attitude%20network.png)
 
@@ -270,9 +273,11 @@ tau <- 0
 N <- 1000 # replications
 thresholds <- rep(tau, n)
 layout(t(1:2))
-data <- IsingSampler(N, W, nIter=100, thresholds, beta = .1, responses = c(-1, 1))
+data <- IsingSampler(N, W, nIter=100, thresholds, 
+            beta = .1, responses = c(-1, 1))
 hist(apply(data,1,sum),main="beta = .1",xlab='sum of x')
-data <- IsingSampler(N, W, nIter=100, thresholds, beta = 2, responses = c(-1, 1))
+data <- IsingSampler(N, W, nIter=100, thresholds, 
+            beta = 2, responses = c(-1, 1))
 hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 ```
 
@@ -290,8 +295,9 @@ dat <- numeric(0)
 beta.range <- seq(0,3,by=.05)
 for(beta in beta.range)
 {
-data <- IsingSampler(N, W, nIter = 100, thresholds, beta = beta, responses = c(-1, 1))
-dat <- c(dat,sum(thresholds*apply(data,2,sum))) # a simple measure of alignment
+data <- IsingSampler(N, W, nIter = 100, thresholds, 
+                     beta = beta, responses = c(-1, 1))
+dat <- c(dat,sum(thresholds*apply(data,2,sum))) # measure of alignment
 }
 plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
 ```
@@ -319,7 +325,8 @@ glauber_step = function(x,n,t,w,beta)
 {
   i = sample(1:n,size=1) # take a random node
   x_new=x;x_new[i]=x_new[i]*-1 # construct new state with flipped node
-  p=1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  # update probability
+  # update probability
+  p=1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  
   if(runif(1)<p) x=x_new # update state
   return(x)
 }
@@ -353,7 +360,7 @@ Due to Hebbian learning, a network evolves from an unbalanced network (random co
 
 To quantify the consistency of attitudes, we can compute the Gibbs entropy [proposition I.2 in @dalegeAttitudinalEntropyAE2018]. Earlier the Boltzmann entropy was defined in @sec-Physics as the log of the number of ways ($W$) a particular macrostate can be realized. It measures the inconsistency of a particular attitude state [proposition I.1 in @dalegeAttitudinalEntropyAE2018].[^ch6-2] Gibbs entropy is more general in that it does not assume that each microstate is equally probable. [Gibbs entropy describes the probability distribution over the different microstates $\mathbf{x}$.]{.aside} It is defined as:
 
-[^ch6-2]: Assuming that all the attitude states (items) are reencoded as positive (or negative) valued items.
+[^ch6-2]: Assuming that all the attitude states (items) are re-encoded as positive (or negative) valued items.
 
 $$\begin{array}{r}
  - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}
@@ -424,7 +431,9 @@ If we rerun the code and create a centrality plot in JASP, we will see the risks
 ``` r
 library("graphicalVAR")
 # make time series for one persons with some stochastic effects
-data <- run(odes=mutualism, tmax=1000,table=T,timeplot = (i==1),legend=F, after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
+data <- run(odes=mutualism, tmax=1000,table=T,
+        timeplot = (i==1),legend=F, 
+        after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
 data <- data[,-1]
 colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
 fit=graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
@@ -465,17 +474,20 @@ library("IsingFit")
 set.seed(1)
 n <- 8
 W <- matrix(runif(n^2,0.5,2),n,n); # random positive matrix
-W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),replace=T),n,n) # delete 90% of nodes
+W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),
+        replace=T),n,n) # delete 90% of nodes
 W <- pmax(W,t(W)) # make symmetric 
 diag(W) <- 0
 ndata <- 1000
 thresholds <- rnorm(n,0,1) 
-data <- IsingSampler(ndata, W, thresholds, beta = .5, responses = c(-1, 1))
+data <- IsingSampler(ndata, W, thresholds,
+        beta = .5, responses = c(-1, 1))
 fit <- IsingFit(data,family='binomial', plot=FALSE)
 layout(t(1:3))
 qgraph(W,fade = FALSE);title("Original network",cex.main=2)
 qgraph(fit$weiadj,fade = FALSE);title("Estimated network",cex.main=2)
-plot(thresholds,type='p',bty='n',xlab='node',ylab='Threshold',cex=2,cex.lab=1.5);lines(fit[[2]],lwd=2)
+plot(thresholds,type='p',bty='n',xlab='node',
+     ylab='Threshold',cex=2,cex.lab=1.5);lines(fit[[2]],lwd=2)
 ```
 
 ![The true (original) and the estimated Ising model are in good agreement. The thresholds are also well estimated from the data.](media/ch6/fig-ch6-img18-old-87.png){#fig-ch6-img18-old-87}
@@ -503,9 +515,11 @@ We can use Isingfit and add community detection:
 ``` r
 Obama <- read.table("data/Obama.txt",header=T) # see book data folder
 ObamaFit <- IsingFit(Obama,plot=F)
-ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 'undirected', weighted = TRUE,     add.colnames = FALSE)
+ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 
+        'undirected', weighted = TRUE,     add.colnames = FALSE)
 ObamaCom <- cluster_walktrap(ObamaiGraph)
-qgraph(ObamaFit$weiadj, layout = 'spring', cut = .8, groups = communities(ObamaCom), legend = FALSE)
+qgraph(ObamaFit$weiadj, layout = 'spring', 
+         cut = .8, groups = communities(ObamaCom), legend = FALSE)
 ```
 
 @fig-ch6-img19-old-88 shows the network. The red nodes represent negative feelings toward Barack Obama; the green nodes represent positive feelings toward Obama; the light blue nodes represent judgments primarily related to interpersonal warmth; and the purple nodes represent judgments related to Obama's competence. This community structure is consistent with the postulate of the Ising attitude model that similar evaluative responses cluster @dalegeFormalizedAccountAttitudes2016. @finnemann2021 present additional examples and applications of other packages.
@@ -522,7 +536,7 @@ Despite all the hard work on this, I can only conclude that this theoretical lin
 
 This is perhaps less of a problem in the factor account because the indicators are interchangeable in a reflective factor model. Once one has a sufficiently broad set of indicators, the common cause estimate will be robust. In a formative model, each indicator contributes a specific meaning to the index variable. However, this is not a reason to prefer the common cause model [@vandermaas2014].
 
-The other modeling examples suffer from the same problem. In the clinical psychology models, we define the nodes either as the symptoms specified in the DSM or as the questions asked in interviews or questionnaires, with the advantage that we then have data to fit the model. But again, we have no real way of knowing the elementary processes in clinical disorders and their interactions [@friedMovingForwardChallenges2017]. [If we miss important elementary nodes, this may seriously affect the validity of our models and psychometric network analyses.]{aside}
+The other modeling examples suffer from the same problem. In the clinical psychology models, we define the nodes either as the symptoms specified in the DSM or as the questions asked in interviews or questionnaires, with the advantage that we then have data to fit the model. But again, we have no real way of knowing the elementary processes in clinical disorders and their interactions [@friedMovingForwardChallenges2017]. \[If we miss important elementary nodes, this may seriously affect the validity of our models and psychometric network analyses.\]{aside}
 
 A way out has been mentioned in the context of the Ising Attitude Model, using the mean field approximation. If we are only interested in the global behavior of the attitude (hysteresis, divergence), we can ignore the specification of the nodes (another interchangeable argument). But if one wants to intervene on specific nodes or links of a clinically depressed person, this is not sufficient. [In mean-field analyses, the specification of all nodes is less important.]{.aside}
 
@@ -546,7 +560,7 @@ The move to time series data (either $N=1$, $N>1$, or panel data) partially solv
 
 While these problems are not unique to network psychometrics, they are serious problems in practice [see @hamakerModelingAffectDynamics2015; @ryanChallengeGeneratingCausal2022]. The ultimate test of causality requires intervention. [Hopefully, the combination of observational and experimental data can provide sufficient information to properly estimate causal relationships in directed acyclic graphs.]{.aside} For new work along this line I refer to @dablanderCausalInference2021; @kossakowskiSearchCausalityComparison2021.
 
-Perhaps we can also think of other ways. A simple, but not easy to implement, procedure is to ask subjects about the links in their networks. If one claims not to eat meat because of its effect on the climate, one might consider adding a directed link to this individual's network [@rosencransNetworkApproachPosttraumatic2021]. @desernoHighwaysHappinessAutistic2020 used clinicians' perceptions of causal relationships in autism. These relationships were consistent with those found in self-reported client data. The main problem is that there are many more possible links than nodes to report on, which makes the questionaries extremely long and tedious to fill out. @brandt2022 applied conceptual similarity judgments to construct attitude networks. Alternatively, one could try to estimate links from social media data, interviews or essays using automatic techniques [@petersQualitativeNetworkApproach2022].
+Perhaps we can also think of other ways. A simple, but not easy to implement, procedure is to ask subjects about the links in their networks. If one claims not to eat meat because of its effect on the climate, one might consider adding a directed link to this individual's network [@rosencransNetworkApproachPosttraumatic2021]. @desernoHighwaysHappinessAutistic2020 used clinicians' perceptions of causal relationships in autism. These relationships were consistent with those found in self-reported client data. The main problem is that there are many more possible links than nodes to report on, which makes the questionnaires extremely long and tedious to fill out. @brandt2022 applied conceptual similarity judgments to construct attitude networks. Alternatively, one could try to estimate links from social media data, interviews or essays using automatic techniques [@petersQualitativeNetworkApproach2022].
 
 ## Conclusion {#sec-Conclusion}
 

@@ -91,7 +91,7 @@ The combination of interaction and homophily creates a self-reinforcing dynamic 
 The following R-code of this model generates the first plot in @fig-ch7-img4-old-92 . You can play with the values to see different cases.
 
 ``` r
-resample <- function(x, ...) x[sample.int(length(x), ...)] # as sample(5,1) acts odd
+resample <- function(x, ...) x[sample.int(length(x), ...)]
 n <- 100
 iter <- 50000
 F <- 4 # features
@@ -104,13 +104,15 @@ for(i in 1:iter)
   k <- sample((1:n)[-j],1) # agent 2
   w <- sum(x[j,]==x[k,])/F # agreement
   if(w<1 & runif(1)<w) {
-    f <- resample(which(x[j,]!=x[k,]),1) # which (unequal) feature to update
+    f <- resample(which(x[j,]!=x[k,]),1) 
+    # which (unequal) feature to update
     x[j,f] <- x[k,f] # update
     }
   uniques[i] <- nrow(unique(x))
 }
-plot(uniques[1:i],type='l',lwd=2,xlab='time',ylab='# unique cultures',
-     bty='n',ylim=c(0,80),main=paste('Axelrod model with F = ',F, ', Q = ', Q))
+plot(uniques[1:i],type='l',lwd=2,xlab='time',
+     ylab='# unique cultures', bty='n',ylim=c(0,80),
+     main=paste('Axelrod model with F = ',F, ', Q = ', Q))
 ```
 
 ![Two runs of Axelrod's model. For 4 features with 4 possible values only one culture remains. For the second case ($F = 2, Q = 10$) multiple unique cultures, different in all features, emerge.](media/ch7/fig-ch7-img4-old-92.png){#fig-ch7-img4-old-92}
@@ -161,7 +163,7 @@ With $j$ we take the sum over the neighbors of agent $i$. Note that when $X_{i} 
 
 $$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack$$
 
-Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. A NetLogo implementation of the model is available in the software repository of this book.
+Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H$ is negative, and vice verse. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. A NetLogo implementation of the model is available in the software repository of this book.
 
 In the presence of individual fields, some minority opinions can become metastable. [Metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters.]{.aside} These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for long periods of time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
@@ -276,7 +278,7 @@ Like other opinion models, the Hierarchical Ising Opinion Model (HIOM) makes ass
 
 The qualitative results of the HIOM do not depend on the topology of the social network. In @vandermaas2020 the results are replicated for different topologies (e.g., 2d lattices, stochastic block models). However, as in other opinion models, more subtle results (e.g., convergence speed) are likely to depend on the network topology. For (b), the interactions between agents, specific assumptions are made, which are explained in the next section.
 
-Regarding (c), the definition of opinion, the HIOM is special. Opinion is defined as a cusp. In the review of opinion models, I distinguished between discrete and continuous opinion models. Interestingly, the cusp behaves continuously for low values and discretely for high values of the splitting variable.[^ch7-2] [Whether opinion behaves discretely or continuously depends on another continuous variable (attention or involvement).]{.aside} In this way, the HIOM bridges these two modeling traditions. 
+Regarding (c), the definition of opinion, the HIOM is special. Opinion is defined as a cusp. In the review of opinion models, I distinguished between discrete and continuous opinion models. Interestingly, the cusp behaves continuously for low values and discretely for high values of the splitting variable.[^ch7-2] [Whether opinion behaves discretely or continuously depends on another continuous variable (attention or involvement).]{.aside} In this way, the HIOM bridges these two modeling traditions.
 
 [^ch7-2]: This is highly relevant to the discussion in psychology about type and continua, i.e., whether psychological traits are typological or continuous constructs (Borsboom, et al., 2016). They can be both!
 
@@ -355,9 +357,9 @@ In the standard setup, you can see that high attention (set %active-agent high) 
 
 #### The persuasion paradox {#sec-The-persuasion-paradox}
 
-Suppose we have a network of conservative but low attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists' opinion to spread quickly. They initiate all interactions (according to @eq-ch7-4-old-53) and have much more impact on their interaction partners than vice versa (@eq-ch7-6-old-55). However, this is not what happens. This scenario leads to polarization. The attention of some conservatives is too  quickly raised, and people get a strong opinion against the activists. @fig-ch7-img11-old-99 shows this effect, which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selection 'setup-black-pete' and 'add-activists'. Activists can now be added by clicking in the world. Vary persuasion $p$ and $d_{A}\ ($da) to see different effects.
+Suppose we have a network of conservative but low attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists' opinion to spread quickly. They initiate all interactions (according to @eq-ch7-4-old-53) and have much more impact on their interaction partners than vice versa (@eq-ch7-6-old-55). However, this is not what happens. This scenario leads to polarization. The attention of some conservatives is too quickly raised, and people get a strong opinion against the activists. @fig-ch7-img11-old-99 shows this effect, which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selection 'setup-black-pete' and 'add-activists'. Activists can now be added by clicking in the world. Vary persuasion $p$ and $d_{A}\ ($da) to see different effects.
 
-What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. [The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in his or her original position.]{.aside} Without a cusp for the individual opinion dynamics, this form of polarization would not occur. 
+What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. [The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in his or her original position.]{.aside} Without a cusp for the individual opinion dynamics, this form of polarization would not occur.
 
 ![The visualization of persuasion paradox in the original paper [@vandermaas2020]. Activism initially spreads quickly, but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves.](media/ch7/image11.jpg){#fig-ch7-img11-old-99}
 

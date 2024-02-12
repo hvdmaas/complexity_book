@@ -181,7 +181,8 @@ f_deter<- fit(odes=LV,data_deterministic,main='deterministic')
 f_stoch<- fit(odes=LV,data_stochastic,main='stochastic')
 f_error<- fit(odes=LV,data_error,main='error')
 pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
-pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
+pars <- rbind(pars,c(summary(f_deter)$sigma,
+                     summary(f_stoch)$sigma,summary(f_error)$sigma))
 barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
         legend.text=c('deterministic','stochastic','error'),
         args.legend=c(x=13))
@@ -220,8 +221,10 @@ As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous
 
 ``` r
 layout(t(c(1,1,1,2)))
-data <- run(table=T,tmax=1000,method='euler',tstep=.1,after="state<-state+
-            rnorm(1,mean=0,sd=0.4)*sqrt(tstep)",ymax=2,ymin=-2,timeplot=F)
+data <- run(table=T,tmax=1000,method='euler',tstep=.1,
+            after="state <- state + 
+            rnorm(1,mean=0,sd=0.4) * sqrt(tstep)",
+            ymax=2,ymin=-2,timeplot=F)
 plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
@@ -237,7 +240,8 @@ It is often necessary to run the combination of these two functions repeatedly, 
 ``` r
 p <- c(a=0,b=1)
 low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
-continue(low,x="a",y="X",xmin=-2,xmax=2,ymax=2) # Continue this steady state varying a
+# Continue this steady state varying a
+continue(low,x="a",y="X",xmin=-2,xmax=2,ymax=2) 
 high <- newton(s=c(X=1)) # again starting from X = 1
 continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 ```
@@ -323,7 +327,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation described at https://en.wikipedia.org/wiki/Intelligent_driver_model. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well [see for example Figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well \[see for example Figure 9 in \@jusup2022\].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
 The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
 
@@ -504,7 +508,8 @@ curve(influence(x,-8,b),-3,3,xlab='W',ylab='H',lwd=2)
 plane(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
 for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
 for (i in 1:100)
-  run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,ymax=2,add=(i>1),legend=F)
+  run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,
+      ymax=2,add=(i>1),legend=F)
 }
 ```
 
@@ -593,7 +598,8 @@ model <- function(t, state, parms) {
 }
 p <- c(b=1, alpha=12, beta=-.7) 
 s <- c(A=0, T=0) 
-# arousal increase for time t in 20:30, leads to panic, which after some time ('30 min') disappears
+# arousal increase for time t in 20:30, leads to panic, 
+# which after some time ('30 min') disappears
 layout(1:2)
 plane(vector=T,xmin=0,ymin=0,xmax=1,ymax=1.1,legend=F) 
 newton(s=c(A=0,T=0),plot=T)
@@ -738,9 +744,11 @@ for(i in c('a','b','c','d'))
   if (i == 'b') p <- c(a=.6,b=1,c=.6,d=1)
   if (i == 'c') p <- c(a=1,b=1,c=1,d=1)
   if (i == 'd') p <- c(a=1,b=1,c=-1,d=1)
-  plane(tstep=0.5,portrait=(i=='d'),xmin=-2,ymin=-2,xmax=2,ymax=2,
-        legend=F,grid=2,main = paste("Case ",i)) # make a phase portrait (Fig 1c)
-  if (i != 'd') for(i in 1:200) newton(c(X=runif(1,-2,2),Y=runif(1,-2,2)),plot=T) else
+  plane(tstep=0.5,portrait=(i=='d'),xmin=-2,ymin=-2,
+        xmax=2,ymax=2, legend=F,grid=2,
+        main = paste("Case ",i)) # make a phase portrait (Fig 1c)
+  if (i != 'd') for(i in 1:200) newton(c(X=runif(1,-2,2),
+        Y=runif(1,-2,2)),plot=T) else
     newton(c(X=0,Y=0),plot=T)
 }
 s <- c(X=0.1,Y=.1) 
@@ -776,7 +784,7 @@ $$ {#eq-ch4n-20-old-40}
 
 In this model, $a_{0i}$ is the intercept of the normal variable and the off-diagonal elements of matrix $a$ are the slopes of the effect of the other cusps on the normal variable. The diagonal elements of $a$ are set to 0. The $b_{0i}$ values are the intercepts of the splitting variable. The $b_{ij}$ values of matrix $b$ (with diagonal = 0) are the slopes of the effect of other cusps on the splitting variable value of $X_{i}$.
 
-The cascading transition model has been proposed independently in various research areas. The idea of cuspoidal nets ($N>3$) as a neural network has been mentioned in @abrahamCuspoidalNets1991, analyzed in @hoffmannTeachableNeuralNetwork1986 and @izhikevichMultipleCuspBifurcations1This1998. @castroArtificialImmuneSystems2003 discuss this model in the context of adaptive immune systems. The most recent application is in climate research [@dekkerCascadingTransitionsClimate2018; @vonderheydtCascadingTransitionsClimate2019; @kloseEmergenceCascadingDynamics2020]. [The idea of a cascade of collapsing subsystems in the climate is a frightening one.]{.aside} The applications involve special cases of Equation $40$, such as the case where one cusp influence the other, but not vice versa. The case where $b_{ij} \neq 0$ has not been applied to my knowledge. A recent related approach using coupled van der Pol oscillators is described in @monsivais-velazquezDynamicsHierarchicalWeighted2020.
+The cascading transition model has been proposed independently in various research areas. The idea of cuspoidal nets ($N>3$) as a neural network has been mentioned in @abrahamCuspoidalNets1991, analyzed in @hoffmannTeachableNeuralNetwork1986 and @izhikevichMultipleCuspBifurcations1This1998. @castroArtificialImmuneSystems2003 discuss this model in the context of adaptive immune systems. The most recent application is in climate research [@dekkerCascadingTransitionsClimate2018; @vonderheydtCascadingTransitionsClimate2019; @kloseEmergenceCascadingDynamics2020]. [The idea of a cascade of collapsing subsystems in the climate is a frightening one.]{.aside} The applications involve special cases of Equation $40$, such as the case where one cusp influence the other, but not vice verse. The case where $b_{ij} \neq 0$ has not been applied to my knowledge. A recent related approach using coupled van der Pol oscillators is described in @monsivais-velazquezDynamicsHierarchicalWeighted2020.
 
 I will give a psychological example of this multivariate model, concerning perception, in the next section.
 
@@ -790,7 +798,7 @@ We can build a dynamical systems model of these perceptual phenomena by using th
 
 Now we consider @fig-ch4n-img16-old-64 and apply @eq-ch4n-20-old-40 . We have $N = 25$ (a bit depending on how you count) The values of the parameters $a_{0i}$ should be estimated from data, but for now we will assume no bias, so $a_{0i} = 0$. We set $a_{ij} > 0$, meaning that we expect positive coupling between the cusps. The $b_{0}$ is the attention vector. In the simulation we first assume that attention is low ($b_{0i} = - .3)$. After an initial phase, we will set $b_{01} = 1$, that is we suddenly attend to one cube. A bit later we set $b_{01}$ back to -.3. However, we also set $b_{ij} > 0$, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.
 
-To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch4n-7] This is because the increase in attention by the three-dimensional perception of neighbouring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
+To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch4n-7] This is because the increase in attention by the three-dimensional perception of neighboring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
 
 [^ch4n-7]: We could also use $X_j^2$
 
@@ -806,7 +814,8 @@ model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:N]
     b0_i <- parms[1:N]
-    dX <- -X^3 + a0_i + a_ij %*% X + b0_i*X + (X * b_ij %*%  abs(X))  # note abs(X)
+    dX <- -X^3 + a0_i + a_ij %*% X + b0_i*X + 
+      (X * b_ij %*%  abs(X))  # note abs(X)
     return(list(dX))
   })
 }
