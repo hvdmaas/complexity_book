@@ -96,7 +96,7 @@ Another way to visualize this is making a bifurcation diagram as we did for the 
 
 This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, The Seduction of Curves [@mcrobieSeductionCurvesLines2017], McRobie shows that whenever we see an edge, we see a fold. @fig-ch3-img6-old-18 is from the book where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.
 
-![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="16cm"}
+![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="12cm"}
 
 The fold catastrophe has been studied in fields ranging from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher order catastrophes are composed of folds. [The fold catastrophe is also known as a saddle node, tangential or blue-sky bifurcation.]{.aside}
 
@@ -130,7 +130,7 @@ For low $b$ there is one stable fixed point that becomes unstable. It splits up 
 
 To depict the combined effects of $a$ and $b$, we require a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (@fig-ch3-img10-old-22).
 
-![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22 width="14cm"}
+![The cusp catastrophe combines hysteresis along the normal axis ($a$), and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (colored grey).](media/ch3/image10.jpg){#fig-ch3-img10-old-22 width="11cm"}
 
 The cusp diagram can be expressed mathematically by setting the first derivative to zero:
 
@@ -152,15 +152,15 @@ This equation defines the bifurcation lines where the first and second derivativ
 
 To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). I recommend that you test this example (not with your credit card). You can play with two forces. $Fv$ is the vertical force and the splitting control variable ($b$) in the cusp. $Fh$ is the horizontal force and the normal variable ($a$) in the cusp. Note that you will only get smooth changes when $Fv = 0$, but sudden jumps and hysteresis when you employ vertical force. One very important phenomenon is that the card has no 'memory' when the $Fv = 0$. You can push the card to a position, but as soon as you release this force ($Fh$ back to zero), the card moves back to the center position. This is not the case with vertical pressure. If we force the card to the left or right position it will stay there, even if we remove the horizontal force. The card has a 'memory'.
 
-![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23 width="15cm"}
+![A simple business card can be used to illustrate all the properties of the cusp (see text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23 width="12cm"}
 
 This seems simple but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable [see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis]. It is very instructive to study the full phase diagram of water (@fig-ch3-img10-old-22). It can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
-![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/ch3-12__figure24.png){#fig-ch3-img12-old-24 width="12cm"}
+![The phase diagram of water, which summarizes the equilibria and transitions in the state of water as a function of temperature and pressure.](media/ch3/ch3-12__figure24.png){#fig-ch3-img12-old-24 width="10cm"}
 
 A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (@fig-ch3-img10-old-22).
 
-![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25 width="14cm"}
+![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25 width="11cm"}
 
 Cusp modeling begins by the definition of the states of the behavioral variable. In this case the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-5] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an 'I don't know' or 'I don't care' position.
 
@@ -222,7 +222,7 @@ $$ {#eq-ch3-8-old-12}
 
 Using these two 'constructed' control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.
 
-![The bifurcation diagram of the Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28 width="14cm"}
+![The bifurcation diagram of the Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28 width="11cm"}
 
 In later chapters we will discuss psychological examples of a mechanistic approach, but as far as models of transitions are concerned, these are rare. The phenomenological approach is much more common.
 
@@ -236,7 +236,7 @@ Second, select the control variables. What could be a normal variable and what c
 
 There is another issue here. [Control variables in cusp models can be rotated for ease of interpretation]{.aside} In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression (@fig-ch3-img16-old-28).
 
-![@zeemanCatastropheTheory1976 dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29 width="12.5cm"}
+![@zeemanCatastropheTheory1976 dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29 width="11cm"}
 
 The control variables are fear and rage. In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade-off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
@@ -500,7 +500,7 @@ This is supported by results of cuspfit. You can verify that a model with beta \
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data [see @grasman2009, for details]. This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
-![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="10cm"}
+![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="8cm"}
 
 #### Evaluation {#sec-Evaluation}
 

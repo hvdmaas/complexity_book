@@ -66,7 +66,7 @@ Currently, our scales of measurement are somewhere between ordinal and interval.
 
 I will not attempt to review these crises in depth, but would like to suggest, in line with the book, that these crises form a mutualistic network (@fig-ch8-extra). Progress in resolving one crisis will have a positive impact on resolving others. If we can have more confidence in the empirical basis of many well-known psychological phenomena, theory development will benefit. Improved theories are necessary to advance measurement, and vice verse. In periods of rapid progress in sciences such as particle physics and biochemistry, we often see an upward spiral of theory development and measurement techniques.
 
-![The network of crises in psychology. The resolution of one crisis will hopefully have a positive impact on the resolution of others.](media/ch8/ch8-fig1-extra.png){#fig-ch8-extra}
+![The network of crises in psychology. The resolution of one crisis will hopefully have a positive impact on the resolution of others.](media/ch8/ch8-fig1-extra.png){#fig-ch8-extra width="12cm"}
 
 We have been part of at least one such radical transformation, and it is happening now, the AI revolution. Of course, we cannot claim ownership of this revolution, as many disciplines, such as computer science, have played a key role. But the current progress is based on mechanisms (neural learning and operant conditioning) that were first studied by psychologists. Unfortunately, there are no other convincing examples. We have not yet invented the plane or the refrigerator. This is no joke. In science, technology is the proof of the pudding. At some point we really must solve problems like addiction or panic disorder.
 

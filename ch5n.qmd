@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 I was even more stunned to see that it is possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Game of Life implementation of the Turing machine is shown in @fig-ch5n-img4-old-42. This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section on neural networks).
 
-![The Turing Machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="14cm"}
+![The Turing Machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="12cm"}
 
 Another root of complex systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. [Cybernetics studies circular causal and feedback mechanisms in complex systems, focusing on how systems regulate themselves, process information, and adapt to changes in their environment.]{.aside} To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: Gestalt and Universals, Cybernetics and Psychopathology, On Learning and Self-reproducing Machines, and finally, Brainwaves and Self-organization. And this was written in 1948!
 
@@ -306,7 +306,7 @@ Another related approach is the ecological approach to visual perception by @gib
 
 A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The Optical Illusion model in NetLogo's model library illustrates some of them. Check out the codes for each illusion, they are extremely short and elegant (@fig-ch5n-img6-old-44).
 
-![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo.](media/ch5n/image6.jpg){#fig-ch5n-img6-old-44 width="12cm"}
+![The 'Kindergarten' Illusion from The Optical Illusion model in NetLogo.](media/ch5n/image6.jpg){#fig-ch5n-img6-old-44 width="9cm"}
 
 In @sec-ch3, I provided several examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download 'Motion Quartet' from the NetLogo community website (or from this book's software repository) and explore hysteresis in your own perception.
 
@@ -399,7 +399,7 @@ However, there is a fine line between the wisdom of the crowd and the stupidity 
 
 Of particular importance is game theory. Game theory consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner's dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to talk. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix, @fig-ch5n-img9-old-47). In this game, loyalty to one's friend is irrational, an outcome related to the tragedy of the commons [@hardinTragedyCommons1968]. [The tragedy of the commons occurs when individuals, acting in their own self-interest, over-exploit a shared resource, leading to a depletion that undermines everyone's long-term interests, including their own.]{.aside} The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.
 
-![The Prisoner's Dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.](media/ch5n/image9.jpg){#fig-ch5n-img9-old-47 width="10cm"}
+![The Prisoner's Dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.](media/ch5n/image9.jpg){#fig-ch5n-img9-old-47 width="8cm"}
 
 A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory (Nash) equilibrium. [A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players.]{.aside} The public goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public good games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students, when they are working in groups on an assignment, that the problem of this one student doing nothing happens because nice, hard-working students refuse to betray their fellow students to me. These nice, hard-working students are what are called second-order free riders [@fowlerSecondorderFreeridingProblem2005]. Just so you know.
 
@@ -413,7 +413,7 @@ Three parameters can be adjusted to influence behavior in the baseline assembly 
 
 @guimeraTeamAssemblyMechanisms2005 estimated the parameters $p$ and $q$ for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only the field of astronomy had a very dense collaboration structure. In the other fields the estimates of $p$ and $q$ of teams publishing in certain journals correlated well with impact factor. Interestingly, $p$ correlates positively and $q$ negatively with impact.
 
-![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="15cm"}
+![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="12cm"}
 
 ## Zooming out {#sec-Zooming-out}
 

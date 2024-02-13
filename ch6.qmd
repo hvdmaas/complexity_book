@@ -6,7 +6,7 @@ Common cause theories are widely accepted in psychology. High scores on cognitiv
 
 The study of psychological networks is perhaps the most thriving area of complex systems research in psychology today. This chapter is about this new line of research. The paper on the mutualism model of general intelligence [@vandermaasDynamicalModelGeneral2006] can be seen as the root of this approach, but it took off, as shown in @fig-ch6-img1-old-70, when it was applied to clinical psychology [@borsboomNetworkTheoryMental2017; @borsboomPsychometricPerspectivesDiagnostic2008; @cramerComorbidityNetworkPerspective2010], especially when the theoretical work was backed up with psychometric tools [@epskampEstimatingPsychologicalNetworks2018; @epskampQgraphNetworkVisualizations2012; @marsmanGuestEditorsIntroduction2022].
 
-![The number of papers on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="12cm"}
+![The number of papers on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="10cm"}
 
 In this chapter I will present and discuss these theoretical and psychometric lines of research, accompanied by practical examples. However, I will begin with an introduction to network theory.
 
@@ -53,7 +53,7 @@ Simple networks do not have cycles. An example of an undirected acyclic graph is
 
 Igraph has an amazing number of functions for creating specific networks. Some examples are shown in @fig-ch6-img3-old-72.
 
-![Different network types generated with Igraph.](media/ch6/fig-ch6-img3-old-72.png){#fig-ch6-img3-old-72 width="12cm"}
+![Different network types generated with Igraph.](media/ch6/fig-ch6-img3-old-72.png){#fig-ch6-img3-old-72 width="10cm"}
 
 The last case in the figure, preferential attachment, is of particular interest because it is created dynamically. It starts with a node and then new nodes are added that prefer links to nodes that already have many links. In the NetLogo model 'Preferential Attachment simple' you can see this growth process. Preferential attachment networks are often called complex because they exhibits non-trivial structural patterns. Preferential attachment networks are "scale-free", meaning that the degree distribution looks the same no matter what scale you look at it. [Scale-free networks have a degree distribution that follows a power law, with some nodes having many links, but most having only a few.]{.aside} Scale-free networks are useful for studying the robustness and vulnerability of networks to targeted attacks on highly connected nodes. Removing hubs with high degree potentially split the network into disconnected components and impede the network's functionality. Because most nodes in the network have a small degree (few connections), randomly removing nodes tends not to disrupt the network's overall structure. Scale-free networks are believed to exist in various real-world scenarios, ranging from website connections to scientific collaborations. For a critical analysis, I refer to @broido2019.
 
@@ -89,7 +89,7 @@ This model has been criticized extensively, including for its alleged implicatio
 
 It is important to note that the factor explanations are not problematic in and of themselves. I like to use the example of heart disease, say a loose heart valve. This leads to symptoms such as shortness of breath, swelling of the ankles, dizziness, rapid weight gain, and chest discomfort. The relationship between these symptoms is explained by the underlying factor of heart disease. Treating a single symptom may provide some relief for that symptom, but not more. Only intervening on the cause will bring about real change. This is an example of a reflective interpretation of the factor model. When the factor is merely an index and not a common cause, we speak of a formative factor. @fig-ch6-img5-old-74 explains the reflective and formative interpretations of the factor model.
 
-![The reflective and formative interpretations of the factor model cannot be distinguished with correlational data, but they are very different. In the reflective model, the latent factor is a common cause (e.g., temperature) that causes the observations (e.g., different thermometers). Intervening on one thermometer (heating) will only change that particular thermometer because the X's have no outgoing connections. In the formative interpretation, the factor is just an index (e.g., an economic index) that summarizes the state of many interacting components (companies). In this case, only interventions on the X's can have an overall effect.](media/ch6/image5.jpg){#fig-ch6-img5-old-74 width="14cm"}
+![The reflective and formative interpretations of the factor model cannot be distinguished with correlational data, but they are very different. In the reflective model, the latent factor is a common cause (e.g., temperature) that causes the observations (e.g., different thermometers). Intervening on one thermometer (heating) will only change that particular thermometer because the X's have no outgoing connections. In the formative interpretation, the factor is just an index (e.g., an economic index) that summarizes the state of many interacting components (companies). In this case, only interventions on the X's can have an overall effect.](media/ch6/image5.jpg){#fig-ch6-img5-old-74 width="11cm"}
 
 Statistically, these factor models are equivalent. Thus, the fact that factor models fit intelligence data well does not tell us anything about the status of statistical factor $g$. [Is $g$ a common cause or just an index?]{.aside}
 
@@ -110,7 +110,7 @@ $$ {#eq-ch6-1-old-42}
 
 Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see the -@vandermaasDynamicalModelGeneral2006 paper]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in [@vandermaasNetworkModelsCognitive2017]. Here we focus on the technical aspects.
 
-![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="12cm"}
+![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="10cm"}
 
 When $M$ contains mostly negative values, the model is known as a competitive Lotka-Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka-Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
 
@@ -235,7 +235,7 @@ In this section, I will discuss our network approach to attitudes using the Isin
 
 It was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors, that each explain observed responses, similar to the CHC model of general intelligence. [Attitudes are networks of feelings, beliefs and behaviors towards an attitude object]{.aside} The causal attitude model [@dalegeFormalizedAccountAttitudes2016] maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. Nodes represent single feelings, beliefs and behaviors. In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. That is high attention 'freezes' the network and leads to consistent and stable positive or negative states of the attitude (the 'mere thought effect', see below). [Attention is equated to (inverse) temperature.]{.aside}
 
-![The Ising Attitude Network Model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields. The connections are weighted.](media/ch6/fig-attitude%20network.png){width="12cm"}
+![The Ising Attitude Network Model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields. The connections are weighted.](media/ch6/fig-attitude%20network.png){width="9cm"}
 
 #### Model setup {#sec-Model-setup}
 
@@ -255,7 +255,7 @@ Another difference from the original Ising model introduced in Chapter 5 is that
 
 As discussed in Chapter 5 (@sec-Physics), another approach to understanding the dynamics of Ising-type models is the mean-field approximation. This requires the assumption that the network is fully and uniformly connected with equal thresholds (known as the Curie-Weiss model). In this approximation $W_{ij} = c$ (all equal) and the $x_{j}$ are replaced by their mean values, which greatly simplifies the energy function. It can be shown that the dynamics of the simple fully connected Ising model is well approximated by the cusp, with the external field as normal and the inverse temperature as the splitting variable.
 
-![The mean field approximation of the Ising attitude model is the cusp. Attention is the psychological equivalent of inverse temperature.](media/ch6/image11.jpg){#fig-ch6-img11-old-80 width="14cm"}
+![The mean field approximation of the Ising attitude model is the cusp. Attention is the psychological equivalent of inverse temperature.](media/ch6/image11.jpg){#fig-ch6-img11-old-80 width="10cm"}
 
 This is an important result because it makes the use of the cusp in attitude research (see @fig-ch3-img13-old-25) less phenomenological. The cusp is now derived from more basic principles (@fig-ch6-img11-old-80). Note that here we use attention as the splitting variable, whereas in Chapter 3 we used involvement. These are closely related concepts, the difference being the time scale. Attention can change in seconds or minutes, whereas involvement can change in weeks or months. I will use attention and involvement interchangeably.
 
@@ -281,7 +281,7 @@ data <- IsingSampler(N, W, nIter=100, thresholds,
 hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 ```
 
-![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81 width="14cm"}
+![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81 width="11cm"}
 
 In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds (@fig-ch6-img13-old-82). Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
@@ -350,7 +350,7 @@ qgraph(W);title('after learning')
 
 @fig-ch6-img14-old-83 shows the result of this simulation.
 
-![Through Hebbian learning, a random (unbalanced) network becomes balanced.](media/ch6/fig-ch6-img14-old-83.png){#fig-ch6-img14-old-83 width="14cm"}
+![Through Hebbian learning, a random (unbalanced) network becomes balanced.](media/ch6/fig-ch6-img14-old-83.png){#fig-ch6-img14-old-83 width="12cm"}
 
 In this case we want to update the nodes values using the Glauber dynamics (@eq-ch5n-3-old-19), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.
 
@@ -443,7 +443,7 @@ centralityPlot(fit$PDC)
 
 The results are shown in @fig-ch6-img16-old-85. Only the time-series approach provides useful information about possible causal effects.
 
-![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important mode. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="15cm"}
+![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important mode. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="14cm"}
 
 The M-matrix can take different forms. The typical multifactor structure can be achieved with a block structure.
 
