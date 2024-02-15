@@ -354,7 +354,7 @@ qgraph(W);title('after learning')
 
 In this case we want to update the nodes values using the Glauber dynamics (@eq-ch5n-3-old-19), which uses the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R-code.
 
-Due to Hebbian learning, a network evolves from an unbalanced network (random connections) to a consistently balanced network. [Developing strong, balanced attitudinal networks has a clear advantage; they do not require much attention to be consistent.]{.aside} Without learning, we need high attention to make the attitude network behave consistently. In the Learning Ising Attitude Model (LIMA), weights increase during periods of high attention. The advantage is that in later instances less attention is required for consistent network behavior [chapter 8 of @dalegeFormalApproachAttitude2020]. In this way we can develop stable attitudes that do not require much attention to be consistent.
+Due to Hebbian learning, a network evolves from an unbalanced network (random connections) to a consistently balanced network. [Developing strong, balanced attitudinal networks has a clear advantage; they do not require much attention to be consistent.]{.aside} Without learning, we need high attention to make the attitude network behave consistently. In the Learning Ising Attitude Model (LIAM), weights increase during periods of high attention. The advantage is that in later instances less attention is required for consistent network behavior [chapter 8 of @dalegeFormalApproachAttitude2020]. In this way we can develop stable attitudes that do not require much attention to be consistent.
 
 #### The stability of attitudes and entropy measures {#sec-The-stability-of-attitudes-and-entropy-measures}
 
@@ -578,7 +578,7 @@ In the next chapter, we take the step to modeling social interactions using soci
 
 4)  Download the Vulnerability to Depression model from the NetLogo User Community Models. With the ADMINISTER-SHOCK button, you can deactivate all symptoms at once. It is as if you give the network an electric shock that resets all the symptoms. Try to find a setting of the CONNECTION-STRENGTH and EXTERNAL-ACTIVATION that creates a disordered network (above the black line in the NETWORK STATUS plot) whereby administering a shock, makes the system healthy again. Is this healthy state long term stable? (\*)
 
-5)  Compute the Gibbs entropy for the learning Ising model during the learning process (see @sec-The-stability-of-attitudes-and-entropy-measures). Show in a plot that learning minimizes the Gibbs entropy. (\*\*)
+5)  Compute the Gibbs entropy for the Learning Ising Attitude model (LIAM) during the learning process (see @sec-The-stability-of-attitudes-and-entropy-measures). Show in a plot that learning minimizes the Gibbs entropy. (\*\*)
 
 6)  Install and open JASP (jasp-stats.org). Open the data library: 6. Factor. Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
 
