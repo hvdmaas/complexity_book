@@ -1,6 +1,6 @@
 # Sociophysics {#sec-ch7}
 
-## Introduction {#sec-Introduction}
+## Introduction {#sec-Introduction-ch7}
 
 This final chapter is dedicated to the dynamics between people. Networks of social interactions undoubtedly meet the criteria of the definition of a complex system and often exhibit unpredictability, sudden changes, and self-organization. Models of the dynamics between people are the domain of social scientists, such as sociologists, but also scientists with a background in statistical physics. Again, it is necessary to simplify, and the victim in this case is psychology. [In most sociophysics models, people are reduced to binary nodes, on or off, pro or contra, or to systems with only one continuous attribute.]{.aside} It is a challenge to add a little more psychology to the agents in these models so that more phenomena can be explained without making these models too complex to study. It is very easy to cross that line. The second part of the chapter deals with what I call psychosocial models.
 
@@ -400,7 +400,7 @@ Neglecting the social world while attempting to model complex psychological proc
 
 Similarly, excluding psychological factors while modeling the social world can be counterproductive. It is essential to emphasize the need for psychosocial or even psychosociophysical models that integrate both aspects. The Social Impact Model serves as an example of such an approach. Our own model, the HIOM, has been elaborated upon in this chapter. The HIOM stands as a significant step in the direction of psychosociophysics models. The concept of cascading transitions is evidently relevant to other applicable cases, and there is ample opportunity for further exploration in this field.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch7}
 
 1)  Re-run the Schelling simulation (@fig-ch7-img1-old-89) with density of 50 instead of 97. Are the results substantially different? Submit your plot. (\*)
 

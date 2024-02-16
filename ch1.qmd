@@ -138,7 +138,7 @@ Today, there are many interdisciplinary centers or hubs for complexity research.
 
 It is impossible to give a balanced review of all past and ongoing work on complex systems. I'm naturally somewhat biased towards our own work and contributions, but I did my best to point out relevant work. As a general resource to complex systems research with a bit less technical approach I recommend Mitchell's book [@mitchellComplexityGuidedTour2009], for a bit more mathematical approach I recommend the books of @serraComplexSystemsCognitive1990 and @sayama2015. Overviews of work in psychology are provided by @guastelloChaosComplexityPsychology2008 and @portMindMotionExplorations1995. Other great books are written by @heathNonlinearDynamicsTechniques2000 and @kelsoDynamicPatternsSelforganization1995.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch1}
 
 1)  Visit <https://www.traffic-simulation.de/>. In what direction do traffic jams move? For roundabouts: what is a bad priority rule? Do traffic jams appear and disappear for the same values of critical parameters? Take for instance the 'ring' road and vary Politeness. (\*)
 

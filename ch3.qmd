@@ -1,6 +1,6 @@
 # Transitions in complex systems {#sec-ch3}
 
-## Introduction {#sec-Introduction}
+## Introduction {#sec-Introduction-ch3}
 
 My dissertation research was on the theory of Piaget, who proposed a stage theory of cognitive development. These stages were separated by transitions. One such transition should occur between the pre-operational and concrete-operational stages. In the latter stage, children learn logical, concrete physical rules about objects, such as weight, height, and volume. The most famous test to distinguish between the two stages is the conservation task.
 
@@ -532,7 +532,7 @@ The last point of Zahler and Sussmann is that there are better alternatives, suc
 
 @loehleCatastropheTheoryEcology1989 present an excellent discussion on the usefulness of catastrophe theory in the context of modelling ecosystems. He concluded that "an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data", but this problem has now been largely solved. [The empirical program, using catastrophe flags in conjunction with Cobb's method for fitting cusp models, bypass much of the previous criticism of catastrophe theory.]{.aside}
 
-## Conclusion {#sec-Conclusion}
+## Conclusion {#sec-Conclusion-ch3}
 
 Psychologists are often concerned with psychological types and classes, stages and phases, and the transitions between them. Our thinking about transitions becomes much clearer and more advanced when we know the basics of bifurcations.
 
@@ -540,7 +540,7 @@ Catastrophe theory comes with a toolbox for the behavioral and social sciences. 
 
 However, there is room for improvement. Phenomenological models have limited explanatory power. As explained in the next chapter on dynamical system models, it is possible to create more mechanistic models that support the use of phenomenological models. In Chapter 6, @sec-Ising-attitude-model, another option is introduced using networks. It will be demonstrated that the behavior of the Ising network model for attitudes is governed by the cusp model, which is very similar to the cusp model proposed for the attitude toward abortion.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch3}
 
 1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to zero. Show this. (\*)
 

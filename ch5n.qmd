@@ -423,7 +423,7 @@ I believe that understanding models requires working with models, for example th
 
 I have largely omitted the network approach in this chapter. Psychological network models are a recent application of self organization in complex systems in psychology and are the subject of the next chapter.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch5n}
 
 1)  Their is a relation between the rice cooker and the Ising model? How does the magnetic thermostat in a traditional rice cooker work to automatically stop cooking when the rice is done? (\*)
 

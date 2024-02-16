@@ -1,6 +1,6 @@
 # Psychological Network Models {#sec-ch6}
 
-## Introduction {#sec-Introduction}
+## Introduction {#sec-Introduction-ch6}
 
 Common cause theories are widely accepted in psychology. High scores on cognitive tests are attributed to high intelligence. Charisma is associated with various leadership qualities. A high score on the $p$ factor (psychopathology factor) is often associated with various mental health problems. [Common causes are questionable if they cannot be identified independently of the observed relationships they are intended to explain.]{.aside} The common cause explanation is popular because of its simplicity and the availability of statistical methods such as factor analysis. In most cases, however, the common cause is only a hypothetical construct. Yet, many people accept common cause theories because they see no alternative. This is incorrect. Complex systems theory offers a powerful alternative, including a statistical approach. The main thesis of this chapter is that the functioning (and dysfunctioning) of the human mind is often best understood as a complex interplay of various psychological elements such as cognitive functions, mental states, symptoms, and behaviors. [The interplay of psychological subsystems can be modeled in terms of networks, psychological networks.]{.aside}
 
@@ -562,13 +562,13 @@ While these problems are not unique to network psychometrics, they are serious p
 
 Perhaps we can also think of other ways. A simple, but not easy to implement, procedure is to ask subjects about the links in their networks. If one claims not to eat meat because of its effect on the climate, one might consider adding a directed link to this individual's network [@rosencransNetworkApproachPosttraumatic2021]. @desernoHighwaysHappinessAutistic2020 used clinicians' perceptions of causal relationships in autism. These relationships were consistent with those found in self-reported client data. The main problem is that there are many more possible links than nodes to report on, which makes the questionnaires extremely long and tedious to fill out. @brandt2022 applied conceptual similarity judgments to construct attitude networks. Alternatively, one could try to estimate links from social media data, interviews or essays using automatic techniques [@petersQualitativeNetworkApproach2022].
 
-## Conclusion {#sec-Conclusion}
+## Conclusion {#sec-Conclusion-ch6}
 
 Despite these critical remarks, it is safe to say that the psychological network approach has made great progress in a very short time. The mutualism paper was only published in 2006. It is a new and unique application of the complex systems approach within the field of psychology. For me, the common cause approach is theoretically unsatisfactory because the common causes are purely hypothetical constructs. For both the $g$ and $p$ factors, there is no reasonable explanation for the origin of these factors. In contrast, the reciprocal interactions between function and symptoms that underlie the network theories of intelligence and psychopathology are hardly controversial. It is also good to note that the network approach is not inconsistent with statistical factor analytic work in psychology. It is a matter of interpreting the general factor as a common cause or as an index. The formative interpretation of factors is consistent with the network approach.
 
 In the next chapter, we take the step to modeling social interactions using social networks, where the nodes represent agents that move to new locations, learn a language, share cultural attributes, and have opinions. The focus is on opinion networks. The chapter ends with our own agent-based model of opinion dynamics, which builds on the Ising attitude network model. This opinion model is a social network of within person attitude networks. To simplify we will use the cusp description of the Ising Attitude Network Model at the within person level. In essence, the model is based on interacting cusps, similar to the model for multi-figure multistable perception introduced in Chapter 4 (@sec-Cascading-transitions-in-multifigure-multistable-perception). This opinion model suggests a new explanation and a new remedy for polarization.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch6}
 
 1)  Reproduce the degree distribution of the Barabási-Albert model shown on the Wikipedia page on the scale-free network. Use sample_pa from the Igraph library. (\*)
 

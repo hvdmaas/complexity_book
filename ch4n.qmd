@@ -867,7 +867,7 @@ But even when you work with experts in dynamic modeling, building useful models 
 
 As an example, I mention the well-known investment theory of @cattellIntelligenceItsStructure1987. Cattell's investment theory posits that fluid intelligence, which represents the ability to solve novel problems, "invests" in crystallized intelligence, which consists of acquired knowledge and skills. I knew this theory for a long time before I tried to translate it into dynamical equations. But it was not so easy. I began to wonder why it was called an investment theory in the first place. When you invest in something, it becomes less at first, but more in the future. Is that really what Cattell meant? The phenomena, the data patterns, suggest something else, because fluid intelligence grows rapidly and declines slowly after adolescence. Crystallized intelligence grows more slowly, but never really declines. Where the return on investment is, is unclear. I would not argue that Cattell's theory is nonsense, and a possible model is proposed in the next chapter (@sec-Abnormal-development), but this illustrates that the process of formalization is itself a test for verbal theories.
 
-## Exercises {#sec-Exercises}
+## Exercises {#sec-Exercises-ch4n}
 
 1)  Put the logistic equation into Grind, find out what the equilibria are, and determine for which values of $r$ these are stable or unstable fixed points. (\*)
 
