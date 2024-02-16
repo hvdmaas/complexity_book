@@ -504,7 +504,7 @@ A great exercise we have often used in the classroom is to build a Zeeman machin
 
 #### Evaluation {#sec-Evaluation}
 
-I make a few final remarks. First, Cobb's method can be used cross-sectional data. \[Cobb's method is not valid for time series.\]{aside}. Data points should be independent. To test for hysteresis in time series other approaches are required. One option is to use hidden Markov models as in @dutilhPhaseTransitionModel2011.
+I make a few final remarks. First, Cobb's method can be used cross-sectional data. [Cobb's method is not valid for time series.]{aside}. Data points should be independent. To test for hysteresis in time series other approaches are required. One option is to use hidden Markov models as in @dutilhPhaseTransitionModel2011.
 
 The second remark is that there are some issues with the approach of Cobb that are due to fundamental differences between probability distributions and potential functions. The latter can be transformed in many ways (so called local diffeomorphisms) without changing the qualitative properties of the cusp. With the added constraint on probability distributions (area = 1), the same transformations can lead to qualitative effects, such as a change in the number of modes. @wagenmakersTransformationInvariantStochastic2005 suggest a solution to this problem for time series.
 
