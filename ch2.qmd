@@ -29,7 +29,7 @@ for (i in 1:(n - 1))
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
-![Exponential growth.](media/ch2/fig-ch2-img1.jpg){width="8cm"}
+![Exponential growth.](media/ch2/fig-ch2-img1.jpg){#fig-ch2-img1 width="8cm"}
 
 Note that we can find any $X_{t}$ given $X_{0}$ by iterating the model as we do in the for loop. $X_{t}$ is called the solution. Simulation is a bit odd in this case. We can compute the solution analytically. It is $X_{t} = X_{0}r^{t}$. Thus for $X_{15} = 1 \times 2^{15} = 32768$. [For more complex models the analytical solution is often not available, and we have to use simulation (the numerical solution).]{.aside}
 
@@ -54,7 +54,7 @@ for (i in 1:(n - 1))
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
-![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){width="8cm"}
+![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){#fig-ch2-img2 width="8cm"}
 
 This is the simple case. The population initially develops exponentially but then levels off and reached a stable state at $X = .5$. We need to understand a bit more about it. What you see here is that we have gone from an unstable initial state to a stable state, a point attractor. The next code shows that this point attractor attracts from a wide range of initial values, but not all.
 
