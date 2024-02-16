@@ -5,7 +5,9 @@
 %
 \documentclass[
   a4paper,
-]{report}
+  DIV=11,
+  numbers=noendperiod,
+  oneside]{scrreprt}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -161,6 +163,7 @@
 \renewcommand{\marginnote}[1]{%
 \oldmarginnote{\setstretch{0.8}\selectfont#1}%
 }
+\KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -1025,7 +1028,7 @@ and Sayama (2015). Overviews of work in psychology are provided by
 Guastello, Koopmans, and Pincus (2008) and Port and Gelder (1995). Other
 great books are written by Heath (2000) and Kelso (1995).
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch1}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1046,7 +1049,7 @@ great books are written by Heath (2000) and Kelso (1995).
 
 \chapter{Chaos and unpredictability}\label{sec-ch2}
 
-\section{Introduction}\label{sec-Introduction}
+\section{Introduction}\label{sec-Introduction-ch2}
 
 Suppose we have immense amounts of genetic, biological and psychological
 data on millions of participants and knowledge of all relevant
@@ -1715,7 +1718,7 @@ Kargarnovin et al. (2023) and Garc and Pe (2015).
 
 \chapter{Transitions in complex systems}\label{sec-ch3}
 
-\section{Introduction}\label{sec-Introduction}
+\section{Introduction}\label{sec-Introduction-ch3}
 
 My dissertation research was on the theory of Piaget, who proposed a
 stage theory of cognitive development. These stages were separated by
@@ -3424,7 +3427,7 @@ program, using catastrophe flags in conjunction with Cobb's method for
 fitting cusp models, bypass much of the previous criticism of
 catastrophe theory.\end{footnotesize}}}
 
-\section{Conclusion}\label{sec-Conclusion}
+\section{Conclusion}\label{sec-Conclusion-ch3}
 
 Psychologists are often concerned with psychological types and classes,
 stages and phases, and the transitions between them. Our thinking about
@@ -3446,7 +3449,7 @@ using networks. It will be demonstrated that the behavior of the Ising
 network model for attitudes is governed by the cusp model, which is very
 similar to the cusp model proposed for the attitude toward abortion.
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch3}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3801,16 +3804,18 @@ model. This shows that such model choices can have a large effect.
 A famous example of a system of three coupled differential equations is
 the Susceptible-Infected-Recovered (SIR) model used to model infectious
 diseases and to understand the impact of interventions on disease
-dynamics. {[}The Susceptible-Infected-Recovered (SIR) model is a basic
-epidemiological model that divides a population into three compartments:
+dynamics. {\marginnote{\begin{footnotesize}The
+Susceptible-Infected-Recovered (SIR) model is a basic epidemiological
+model that divides a population into susceptible (S), infected (I), and
+recovered (R) individuals\end{footnotesize}}} The state of the model are
 susceptible (S), representing individuals who have not yet contracted
 the disease but are at risk; infected (I), representing individuals who
 are currently infected and can transmit the disease to susceptible
 individuals; and recovered (R), representing individuals who have
 recovered from the disease and are assumed to be immune and no longer
-susceptible.{]}\{aside\} The differential equations specify the change
-in susceptible, infected, and recovered members of the population. You
-can now easily implement this model yourself (see exercises).
+susceptible. The differential equations specify the change in
+susceptible, infected, and recovered members of the population. You can
+now easily implement this model yourself (see exercises).
 
 \subsection{Fitting models: stochasticity versus
 noise}\label{sec-Fitting-models-stochasticity-versus-noise}
@@ -5465,7 +5470,7 @@ possible model is proposed in the next chapter
 (Section~\ref{sec-Abnormal-development}), but this illustrates that the
 process of formalization is itself a test for verbal theories.
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch4n}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7082,7 +7087,7 @@ Psychological network models are a recent application of self
 organization in complex systems in psychology and are the subject of the
 next chapter.
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch5n}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7140,7 +7145,7 @@ next chapter.
 
 \chapter{Psychological Network Models}\label{sec-ch6}
 
-\section{Introduction}\label{sec-Introduction}
+\section{Introduction}\label{sec-Introduction-ch6}
 
 Common cause theories are widely accepted in psychology. High scores on
 cognitive tests are attributed to high intelligence. Charisma is
@@ -8843,7 +8848,7 @@ judgments to construct attitude networks. Alternatively, one could try
 to estimate links from social media data, interviews or essays using
 automatic techniques (Peters, Zörgő, and van der Maas 2022).
 
-\section{Conclusion}\label{sec-Conclusion}
+\section{Conclusion}\label{sec-Conclusion-ch6}
 
 Despite these critical remarks, it is safe to say that the psychological
 network approach has made great progress in a very short time. The
@@ -8875,7 +8880,7 @@ for multi-figure multistable perception introduced in Chapter 4
 This opinion model suggests a new explanation and a new remedy for
 polarization.
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch6}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -8948,7 +8953,7 @@ polarization.
 
 \chapter{Sociophysics}\label{sec-ch7}
 
-\section{Introduction}\label{sec-Introduction}
+\section{Introduction}\label{sec-Introduction-ch7}
 
 This final chapter is dedicated to the dynamics between people. Networks
 of social interactions undoubtedly meet the criteria of the definition
@@ -10159,7 +10164,7 @@ psychosociophysics models. The concept of cascading transitions is
 evidently relevant to other applicable cases, and there is ample
 opportunity for further exploration in this field.
 
-\section{Exercises}\label{sec-Exercises}
+\section{Exercises}\label{sec-Exercises-ch7}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
