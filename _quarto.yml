@@ -39,6 +39,8 @@ format:
     number-sections: true
     crossref:
       chapters: true
+  docx: 
+    reference-doc: my-doc-style.docx
   pdf:
     documentclass: scrreprt
     papersize: A4
