@@ -114,7 +114,7 @@ Other typical behavior occurs when we slowly vary $a\ ($up and down from -2 to 2
 
 ![The change in the potential function of the cusp by varying $a$. Note that the jump to the other state does not happen at $a=0$ but is delayed and depends on the direction of the change in $a$. This delay is called hysteresis.](media/ch3/image7.jpg){#fig-ch3-img7-old-19}
 
-Now consider what will happen if we decrease $a$ from 2 to -2. [Hysteresis means lagging behind, or resistance to change]{.aside}. In this case the ball will stay in the right minimum until $a = - 1.5$. Where the jump takes place depends on the direction of the change in $a$, the normal variable. The delay in jumps is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for $a = 0.5$ in @fig-ch3-img7-old-19) is often called a metastable or locally stable state. [Metastable states appear to be stable for some time but are not in their globally stable state.]{.aside}
+Now consider what will happen if we decrease $a$ from 2 to -2. [Hysteresis means lagging behind, or resistance to change.]{.aside}. In this case the ball will stay in the right minimum until $a = - 1.5$. Where the jump takes place depends on the direction of the change in $a$, the normal variable. The delay in jumps is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for $a = 0.5$ in @fig-ch3-img7-old-19) is often called a metastable or locally stable state. [Metastable states appear to be stable for some time but are not in their globally stable state.]{.aside}
 
 In his classic paper on the Psychophysical Law [@stevens1957], Stevens reports hysteresis in perceptual judgments when properties such as brightness and loudness are systematically varied from low to high and vice verse. In this paper he says: "I'm trying to describe it, not explain it. I am not sure I know how to explain it." To me the cusp at least partially explains why hysteresis occurs.
 
@@ -252,7 +252,7 @@ As a final example I mention the model for humor presented by @paulosMathematics
 
 ### The catastrophe flags {#sec-The-catastrophe-flags}
 
-A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. [Sudden transitions are not instantaneous]{.aside}
+A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. [Sudden transitions are not instantaneous.]{.aside}
 
 But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (@fig-ch3-img18-old-30).
 
@@ -355,7 +355,7 @@ The basic idea is to make catastrophe theory, a deterministic theory, stochastic
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}
 
-It is important to note that this type of stochasticity is not the same as measurement noise. Measurement noise, i.e., $\varepsilon$ in $Y = X + \varepsilon$, does not affect the dynamics of $X$. Wiener noise does, it is part of the updating equation of $X$ itself. [A stochastic differential equation (SDE) is a differential equation that incorporates a term representing random fluctuations]{.aside} This stochastic differential equation is associated with a probability distribution of the form:
+It is important to note that this type of stochasticity is not the same as measurement noise. Measurement noise, i.e., $\varepsilon$ in $Y = X + \varepsilon$, does not affect the dynamics of $X$. Wiener noise does, it is part of the updating equation of $X$ itself. [A stochastic differential equation (SDE) is a differential equation that incorporates a term representing random fluctuations.]{.aside} This stochastic differential equation is associated with a probability distribution of the form:
 
 $$
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-14}
