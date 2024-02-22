@@ -279,8 +279,8 @@ layout(t(1)); par(mar=c(4,4,1,1))
 x <- read.table('data/PNAS_patient_data.txt',header=T)
 library(ecp) # if error: install.packages('ecp')
 e1 <- e.divisive(matrix(x$dep,,1),sig=.01,min.size=10)
-plot(x$week,x$dep,type='b',pch=(e1$cluster-1)*16+1,xlab='Week',ylab='SLC-90',
-     bty='n',main='Jump to depression')
+plot(x$week,x$dep,type='b',pch=(e1$cluster-1)*16+1,xlab='Week',
+     ylab='SLC-90',bty='n',main='Jump to depression')
 ```
 
 #### Multimodality {#sec-Multimodality}
@@ -446,12 +446,15 @@ for (b0 in b0s)
   data <- data.frame(X1, Y1) # collect ‘measured’ variables in data
   fit <- cusp(y ~ Y1, alpha ~ X1, beta ~ 1, data)
   sf <- summary(fit)
-  dat[i, ] <- c(b0, sf$r2lin.r.squared[1], sf$r2cusp.r.squared[1],sf$r2lin.bic[1],
-                sf$r2cusp.bic[1],sf$r2lin.aic[1], sf$r2cusp.aic[1])
+  dat[i, ] <- c(b0, sf$r2lin.r.squared[1], sf$r2cusp.r.squared[1],
+                sf$r2lin.bic[1],sf$r2cusp.bic[1],
+                sf$r2lin.aic[1], sf$r2cusp.aic[1])
 }
 par(mar=c(4,5,1,1))
-matplot(dat[,1],dat[,4:5],ylab='Bic',xlab='b0',bty='n',type='b',pch=1:2,cex.lab=1.5)
-legend('right',legend=c('linear','cusp'),lty=1:2,pch=1:2,col=1:2,cex=1.5)
+matplot(dat[,1],dat[,4:5],ylab='Bic',xlab='b0',bty='n',type='b',
+        pch=1:2,cex.lab=1.5)
+legend('right',legend=c('linear','cusp'),lty=1:2,pch=1:2,
+       col=1:2,cex=1.5)
 abline(v=0,lty=3)
 text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
@@ -484,7 +487,8 @@ age <- c('age 4 to 4.5','age 4.5 to 5','age 5 to 5.5','age 5.5 to 6',
          'age 6 to 6.5','age 6.5 to 7','age 7 to 7.5','age 7.5 to 8')
 for(i in 1:8)
 {
-  if(i==1) {par(mar=c(4,3,2,1));names=0:12} else {names='';par(mar=c(4,1,2,1))}
+  if(i==1) {par(mar=c(4,3,2,1));names=0:12} else 
+    {names='';par(mar=c(4,1,2,1))}
   barplot(table(factor(x[x[,1]==i,2],levels=0:12)),horiz=T,axes=F,
           main=age[i],xlab='',
           names=names,cex.main=1.5,cex.names=1.5)

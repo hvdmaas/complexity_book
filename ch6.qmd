@@ -203,7 +203,7 @@ As with the mutualism model, this is an alternative to the common cause view. De
 
 [^ch6-1]: The original title of this paper was "No reason to p," but the editor did not think it was funny.
 
-![The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. [From: @borsboomSmallWorldPsychopathology2011].](media/ch6/image8.jpg){#fig-ch6-img8-old-77 width="6.263888888888889in"}
+![The small world of psychopathology. Symptoms are represented as nodes and connected by an edge whenever they figure in the same disorder. [From: @borsboomSmallWorldPsychopathology2011].](media/ch6/image8.jpg){#fig-ch6-img8-old-77 width="13cm"}
 
 This lack of theoretical progress encouraged the development of network theory [@cramerComorbidityNetworkPerspective2010; @cramer2016]. As mentioned in the introduction of this chapter, this line of research has become popular. Most of this work consists of data analytic studies. In the simplest case, a questionnaire asking about the severity of symptoms is administered to a group of people, sometimes patients, sometimes a mixture of people who do and do not suffer from a disorder. A variety of psychometric approaches, discussed later in this chapter, are used to fit networks to the data. In this way, one learns to understand the structure of psychopathological networks. It is possible to model comorbidity in this way [@cramerComorbidityNetworkPerspective2010; @jonesBridgeCentralityNetwork2021]. [Comorbidity is modeled by bridging symptoms between network clusters.]{.aside} . In the case of major depression and generalized anxiety disorder, sleep problems seem to be a typical bridge symptom [@blankenRoleStabilizingCommunicating2018].
 

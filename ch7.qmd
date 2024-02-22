@@ -73,9 +73,7 @@ After a phase in which agents use lots of different words, a language consisting
 
 $${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}$$ $${\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}$$
 
-$$\begin{array}{r}
-\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}
-\end{array}$$ {#eq-ch7-1-old-50}
+$$\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}$$ {#eq-ch7-1-old-50}
 
 The first equation can be understood as follow. Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's random choice of A or B (${X}_{AB}X_{AB}/2$). If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: 1) If the initial proportion of A is greater than B, A wins, 2) if the initial proportion of B is greater than A, B wins, and 3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. [Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.]{.aside}
 
@@ -205,9 +203,7 @@ A simple but very interesting model is the Deffuant model [@deffuantMixingBelief
 
 $$X_{i}(t + 1) = \ X_{i}(t) + \ \mu(X_{j}(t) - X_{i}(t))$$
 
-$$\begin{array}{r}
-X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)
-\end{array}$$ {#eq-ch7-2-old-51}
+$$X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)$$ {#eq-ch7-2-old-51}
 
 So, if $\mu = .5$, they find each other in the middle. If $\mu = 1$, they take each other's position, as in the voter model. The value of $\mu$ does not make much difference but the model converges fastest with $\mu = .5$. However, the choice of the bound $\epsilon$ makes a big difference. For $\epsilon = 0,$ all agents stick to their positions, for $\epsilon > .5$, they all converge to $X = .5$. For intermediate values different forms of clustering occur (@fig-ch7-img8-old-96). It has been shown that the topology of the network does not make much difference [@fortunatoUniversalityThresholdComplete2004]. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: [^ch7-1]
 

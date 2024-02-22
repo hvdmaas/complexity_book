@@ -33,7 +33,8 @@ fig-cap-location: margin
 
 monofont: 'Monaco'
 monofontoptions: 
-  - Scale=0.55
+  - Scale=0.7
+
 
 format:
   html:
@@ -60,14 +61,11 @@ format:
         \usepackage[top=25mm, left=15mm, right=65mm, bottom=25mm, marginparwidth=55mm, marginparsep=5mm]{geometry}
         \usepackage{setspace} % For setting the line spacing
         \usepackage{marginnote} % For improved margin notes
-
         % Redefine the marginnote command to include setstretch
         \let\oldmarginnote\marginnote
         \renewcommand{\marginnote}[1]{%
         \oldmarginnote{\setstretch{0.8}\selectfont#1}%
         }
-     
-
     include-after-body: 
       text: |
         \printindex
