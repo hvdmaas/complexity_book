@@ -72,7 +72,7 @@ format:
       text: |
         \printindex
     highlight-style: github
-    code-block-bg: "#D3D3D3"
+    code-block-bg: "#F0F0F0"
     # geometry:
     #  - top=25mm
     #  - left=15mm

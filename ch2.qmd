@@ -100,7 +100,7 @@ I will not explain why, however, the rule is that the fixed point is stable if t
 
 So at $r = 3$ the fixed point or $(r - 1)/r$ becomes unstable. Let's study some cases. The plots in @fig-ch2-img4 are made with the code for @fig-ch2-img2.
 
-![Qualitative different behavior of the logistic map for different values of $r$.](media/ch2/fig-ch2-img4.jpg){#fig-ch2-img4 width="14cm"}
+![Qualitative different behavior of the logistic map for different values of $r$.](media/ch2/fig-ch2-img4.jpg){#fig-ch2-img4 width="13cm"}
 
 For $r = 2.9$ we see that the series converges to the fixed point $\frac{1.9}{2.9} = .66,$ but in a process of over- and undershooting. Between $r = 3.1$ and $r = 3.3$ a limit cycle of period 2 arises. [In a limit cycle of period 2 the population oscillates between two values.]{.aside} For $r = 3.5$ this becomes even more remarkable, we see a limit cycle of period 4. For slightly larger values we could get cycles with higher periods.
 
@@ -163,7 +163,7 @@ plot(x,type='l',xlab='time',bty='n',main='random noise',cex.main=2)
 plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
 ```
 
-![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7 width="14cm"}
+![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7 width="13cm"}
 
 The top figures are time plots and lower figures are phase plots. The first column shows a limit cycle of period 2, the second deterministic chaos and the third noise generated from a uniform distribution. Although the time series of the second and third cases look similar, the phase diagram reveals hidden structure in the chaos time series. Phase plots can help us to distinguish chaos from noise.
 
