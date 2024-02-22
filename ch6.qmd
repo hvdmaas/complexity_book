@@ -45,7 +45,7 @@ edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))# now .2
 centralityPlot(qgraph(adj)) # note centrality() gives more indices
 ```
 
-![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="14cm"}
+![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="13cm"}
 
 ### Network types {#sec-Network-types}
 
@@ -83,7 +83,7 @@ Differential psychology is concerned with individual differences, in contrast to
 
 The factor analytic tradition in psychology began with the study of general intelligence, and so does the psychological network approach. The factor or $g$ model of general intelligence was proposed by @spearmanGeneralIntelligenceObjectively1904 as an explanation of the positive manifold, i.e., the much replicated effect that subtests of intelligence test batteries are positively correlated. In the original simplest model, the observed test scores are statistically explained by a common factor, basically meaning that the correlations between test scores disappear when subjects have the same score on the common factor. In the Cattell-Horn-Carroll (CHC) model often referred to as the standard model, test scores load on subfactors such as visual processing (Gv) and fluid reasoning (Gf), which in turn are positively correlated. These latent correlations are explained by the general, higher order, factor $g$ (@fig-ch6-img4-old-73).
 
-![The Cattell-Horn-Carroll (CHC) model of general intelligence. Blocks represent test scores (narrow), explained by the broad factors, which in turn are determined by the general factor $g$.](media/ch6/image4.jpg){#fig-ch6-img4-old-73 width="14cm"}
+![The Cattell-Horn-Carroll (CHC) model of general intelligence. Blocks represent test scores (narrow), explained by the broad factors, which in turn are determined by the general factor $g$.](media/ch6/image4.jpg){#fig-ch6-img4-old-73 width="13cm"}
 
 This model has been criticized extensively, including for its alleged implications for group differences in observed IQ and intervention strategies [@fraserBellCurveWars2008]. In my view, some of the criticism is unwarranted. For example, the positive manifold is a very robust and widely replicated empirical phenomenon [@nisbett2012]. The specific tests included are not of great importance. That is, any reliable measure of creativity, emotional or social intelligence correlates positively with other IQ subtests. Nor is there much wrong with factor analysis as a statistical technique. To me, the most questionable aspect of g-theory is that it is not really a theory at all. The "elephant in the room" question is simply: What is $g$? What could this single factor be that explains everything? A century of research has not produced a generally accepted answer to this question. And this is a problem for many factor explanations in psychology (e.g., the big five of personality, the $p$-factor of psychopathology).
 
@@ -154,7 +154,7 @@ hist(cor(data)[cor(data)<1],main='positive manifold',
      col='lightgreen') # positive manifold
 ```
 
-![A typical run of the mutualism model for one subject and the distribution of correlations between $X$ values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="14cm"}
+![A typical run of the mutualism model for one subject and the distribution of correlations between $X$ values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="13cm"}
 
 #### Abnormal development {#sec-Abnormal-development}
 
@@ -215,13 +215,13 @@ Since thresholds are generally negative (the zero state of nodes is the default 
 
 A similar approach was used by @lunanskyInterveningPsychopathologyNetworks2022 in order to define resilience and evaluate intervention targets. [Resilience is the ability of a system to recover from perturbations and maintain its current equilibrium.]{.aside} The model can be found in the NetLogo User Community Models under the name of 'Vulnerability to Depression' by Claudia van Borkulo (see @fig-ch6-img9-old-78). Another relevant network modeling approach, based on causal loop diagrams, is proposed in @wittenbornDepressionSystemicSyndrome2016.
 
-![The Vulnerability to Depression model in NetLogo.](media/ch6/image9.jpg){#fig-ch6-img9-old-78 width="15cm"}
+![The Vulnerability to Depression model in NetLogo.](media/ch6/image9.jpg){#fig-ch6-img9-old-78 width="13cm"}
 
 The connection to resilience is interesting. In dynamic terms, resilience is not associated with the healthy or unhealthy state, but with the stability of these states [@kalisch2019]. In @sec-The-cusp-catastrophe the less deep minimum is called the metastable state. These states have less resilience than the globally stable state (@fig-ch6-img10-old-79).
 
 This suggests a distinction between perturbations and interventions. With interventions, we change the equilibrium landscape to allow a sustainable change to a healthy state. Perturbations (a brief intervention or a positive or negative event) can have a permanent or temporary effect, depending on which state is more resilient. In the situation shown in the top panel of @fig-ch6-img10-old-79, any perturbation, whether it is a treatment or an alternative (or even being on the waiting list), will work. In the situation on the bottom left, no intervention would have a lasting effect. This analysis of resilience may help to understand the inconsistent results of studies of intervention effects. Monitoring the resilience of the unhealthy state (with catastrophe flags such as anomalous variance) may also be important for timing interventions [@hayesComplexSystemsApproach2020]. Failed interventions, such as an attempt to quit smoking, are likely to reinforce the unhealthy state [@vangeliPredictorsAttemptsStop2011].
 
-![Resilience from a complex systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/image10.jpg){#fig-ch6-img10-old-79 width="14cm"}
+![Resilience from a complex systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/image10.jpg){#fig-ch6-img10-old-79 width="13cm"}
 
 ### Ising attitude model {#sec-Ising-attitude-model}
 
@@ -443,7 +443,7 @@ centralityPlot(fit$PDC)
 
 The results are shown in @fig-ch6-img16-old-85. Only the time-series approach provides useful information about possible causal effects.
 
-![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important mode. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="14cm"}
+![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important mode. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="13cm"}
 
 The M-matrix can take different forms. The typical multifactor structure can be achieved with a block structure.
 

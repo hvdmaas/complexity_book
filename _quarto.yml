@@ -33,7 +33,7 @@ fig-cap-location: margin
 
 monofont: 'Monaco'
 monofontoptions: 
-  - Scale=0.7
+  - Scale=0.55
 
 format:
   html:

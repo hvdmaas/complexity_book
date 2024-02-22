@@ -20,7 +20,7 @@ The NetLogo model Segregation (Social Science sample model) demonstrates this mo
 
 One concept we saw in Chapter 5, @sec-Motor-action, in the context of Haken's work, was that of the order parameter. The order parameter literally measures the order in the system. [Finding an appropriate order parameter is not always easy, and multiple definitions are often possible.]{.aside} We look for an order parameter that captures the qualitative phenomena in the model, such as sudden changes and hysteresis. In the NetLogo simulation, I used the percentage of similar neighbors. @gauvinPhaseDiagramSchelling2009 propose two, probably better, order parameters, a segregation coefficient, which requires the identification of clusters, and the density of unwanted locations, which better distinguishes between the three states of the system.
 
-![BehaviorSpace settings and R-code to visualize the effects of intolerance on segregation.](media/ch7/image1.jpg){#fig-ch7-img1-old-89 width="14cm"}
+![BehaviorSpace settings and R-code to visualize the effects of intolerance on segregation.](media/ch7/image1.jpg){#fig-ch7-img1-old-89 width="13cm"}
 
 Clearly, this is only an initial model that can be extended in many ways, some of which are already explored in Schelling's original paper. For an interesting historical sketch of this line of research, see @hegselmannThomasSchellingJames2017. A different NetLogo model inspired by Schelling's research is called "Party." In this model, party-goers experience discomfort and change their groups if their current group consists of a disproportionate number of individuals of the opposite sex. A recent review with a focus on urban dynamics can be found in @jusup2022.
 
@@ -232,7 +232,7 @@ for (bound in c(.1, .2, .3, .5))
 }
 ```
 
-![Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96 width="14cm"}
+![Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96 width="13cm"}
 
 With this code you can explore many scenarios and variants. One interesting option is to have agents with different boundaries [@weisbuchMeetDiscussSegregate2002]. [It turns out that adding some open-minded agents helps prevent polarization.]{.aside} Also, adding some noise to X at each time step reduces polarization [@zhangRobustConsensusNoisy2018]. One can also lower the bound with the number of interactions. This increases the polarization [@weisbuchMeetDiscussSegregate2002]. One case I find interesting is increasing the bound after polarization emerged for a low bound. This gives hysteresis. A bound of 0.5 is sometimes insufficient to reduce polarization. @castellanoStatisticalPhysicsSocial2009 review some other extensions (the role propaganda, for instance).
 

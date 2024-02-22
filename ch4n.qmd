@@ -229,7 +229,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="15cm"}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="13cm"}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
@@ -448,7 +448,7 @@ run(ymin=-.2,legend=F)
 plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 ```
 
-![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="15cm"}
+![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="13cm"}
 
 The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. [Nullclines are the curves for which the time derivatives of the behavioral variables $R$ and $J$ are zero.]{.aside} In linear dynamical system null-clines are straight lines. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines we get a fixed point (cases 1 and 2), a limit cycle (case 3), or divergence (not shown).
 
@@ -515,7 +515,7 @@ for (i in 1:100)
 
 This results in @fig-ch4n-img10-old-58.
 
-![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="15cm"}
+![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="13cm"}
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
@@ -650,7 +650,7 @@ run(ymin=-1.5,main='b = 1',legend=F)
 plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 ```
 
-![Two runs of the van der Pol oscillator. For high b this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="14cm"}
+![Two runs of the van der Pol oscillator. For high b this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="13cm"}
 
 The plots (@fig-ch4n-img15-old-63) illustrate this behavior. For $b < 0$, $X$ converges to a fixed point, for $b > 0$ we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form:
 

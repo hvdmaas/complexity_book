@@ -117,7 +117,7 @@ This setup is called the general or unrestricted Boltzmann machine, where any no
 
 [^ch5n-3]: I recommend Timo Matzen's R package for a hands-on explanation (<https://github.com/TimoMatzen/RBM>).
 
-![The deep learning restricted Boltzmann machine.](media/ch5n/image5.jpg){#fig-ch5n-img5-old-43 width="14cm"}
+![The deep learning restricted Boltzmann machine.](media/ch5n/image5.jpg){#fig-ch5n-img5-old-43 width="13cm"}
 
 The waves of popularity of neural networks are closely related to the development of supervised learning algorithms, where the connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the output neurons. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. [In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true.]{.aside} In the XOR the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagation rule for multi-layer networks, such that they can learn this non-linear classification from examples. We will do a simple simulation in NetLogo later. Although extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.
 
@@ -337,7 +337,7 @@ A major challenge in robotics is to build walking robots. Bipedal robots have ev
 
 An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply [@mcgeerPassiveWalkingKnees1990; @reherDynamicWalkingAgile2021]. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork, Strandbeest, by Theo Jansen (@fig-ch5n-img8-old-46). Inspired by another great book about self-organization, the Blind Watchmaker [@dawkins1986], Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals. His YouTube videos are strongly recommended.
 
-![Beach Beast \| www.strandbeest.com/ **IMG_4285.jpg \| Robbert van den Beld \| Flickr**](media/ch5n/image8b.png){#fig-ch5n-img8-old-46 width="15cm"}
+![Beach Beast \| www.strandbeest.com/ **IMG_4285.jpg \| Robbert van den Beld \| Flickr**](media/ch5n/image8b.png){#fig-ch5n-img8-old-46 width="13cm"}
 
 ### Developmental processes {#sec-Developmental-processes}
 

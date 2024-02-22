@@ -26,11 +26,11 @@ We saw something similar for the logistic map when $r$ crossed the boundary at $
 
 [^ch3-2]: A related and very similar distinction is that between a subcritical bifurcation and a supercritical bifurcation.
 
-![A first order (discontinuous) and second order (continuous) phase transition (Adapted from <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13}
+![A first order (discontinuous) and second order (continuous) phase transition (Adapted from <https://polymerdatabase.com/polymer%20physics/ThemalTransitions.html>).](media/ch3/ch3-01__figure13.png){#fig-ch3-img1-old-13 width="13cm"}
 
 Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, capsizing ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception. The perception of the Necker cube is a famous example (@fig-ch3-img2-old-14). Building and testing models of these psychological transitions is challenging but rewarding. These transitions involve large changes in behavior, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies.
 
-![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts. Multistable perception is a much studied psychological phenomenon that is still not fully understood.](media/ch3/ch3-02__figure14.png){#fig-ch3-img2-old-14}
+![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ('front') and right ('back') percepts. Multistable perception is a much studied psychological phenomenon that is still not fully understood.](media/ch3/ch3-02__figure14.png){#fig-ch3-img2-old-14 width="13cm"}
 
 ## Bifurcation and Catastrophe theory {#sec-Bifurcation-and-Catastrophe-theory}
 
@@ -176,7 +176,7 @@ But if the underlying change in information is large enough, attitudes can show 
 
 Another psychological example of the cusp-like behavior is multistable perception. @stewartCatastropheTheoryModeling1983 proposed a model in which the perception of male phase or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in @fig-ch3-img14-old-26.
 
-![Adapted with permission from @stewartCatastropheTheoryModeling1983. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach.](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="14cm"}
+![Adapted with permission from @stewartCatastropheTheoryModeling1983. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach.](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="13cm"}
 
 ### Higher order catastrophes {#sec-Higher-order-catastrophes}
 
@@ -326,7 +326,7 @@ Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, req
 
 In @ploegerStochasticCatastropheAnalysis2002 we used a special design, the method of modified limits, to rule out the alternative explanation that hysteresis is simply due to delayed responses. It could be that the switches always occur in the middle (at an aspect ratio of 1), but the self-report is delayed. In the modified limits method, subjects do not respond during a trial, but only after the entire trial. By varying the length of the trials, it is possible to determine at which parameter value the subject perceives a switch.
 
-![Hysteresis in the perception of apparent motion. Switches between the perception in of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet. Adapted from @ploegerStochasticCatastropheAnalysis2002 with permission.](media/ch3/image22.jpg){#fig-ch3-img22-old-34 width="14cm"}
+![Hysteresis in the perception of apparent motion. Switches between the perception in of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet. Adapted from @ploegerStochasticCatastropheAnalysis2002 with permission.](media/ch3/image22.jpg){#fig-ch3-img22-old-34 width="13cm"}
 
 #### Anomalous variance, divergence of linear response and critical slowing down {#sec-Anomalous-variance-divergence-of-linear-response-and-critical-slowing-down}
 
@@ -496,7 +496,7 @@ plot(fit)
 
 This is supported by results of cuspfit. You can verify that a model with beta \~ 1, fits better according to the AIC and BIC.
 
-![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="14cm"}
+![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="13cm"}
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data [see @grasman2009, for details]. This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 

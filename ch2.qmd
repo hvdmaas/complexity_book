@@ -190,7 +190,7 @@ plot(equilibria ~ r, pch=19,cex=.01,bty='n')
 
 This results in @fig-ch2-img8. We see indeed fixed stable points for $r < 3$, the period doubling of the limit cycles for $r > 3$, followed by chaos.
 
-![The bifurcation diagram of the logistic map.](media/ch2/fig-ch2-img8.jpg){#fig-ch2-img8 width="14cm"}
+![The bifurcation diagram of the logistic map.](media/ch2/fig-ch2-img8.jpg){#fig-ch2-img8 width="13cm"}
 
 A recurring phenomenon in many chaotic maps are fractals. [Fractals are figures in which certain patterns reappear when we zoom in on the figure, and this happens again and again when we zoom in further.]{.aside} You can see the fractal nature of the logistic map by zooming in on the interval of r between 3.83 and 3.86 (see exercise 2). The three equilibria in the limit cycle split again into period doubling cycles, as we saw in the overall plot between $r$ in 3 and 3.5.
 
