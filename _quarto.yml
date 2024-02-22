@@ -29,6 +29,11 @@ book:
 
 bibliography: [referencesBBT.bib]
 csl: chicago-author-date.csl
+fig-cap-location: margin
+
+monofont: 'Monaco'
+monofontoptions: 
+  - Scale=0.7
 
 format:
   html:
@@ -52,7 +57,7 @@ format:
       text: |
         \usepackage{makeidx}
         \makeindex
-        \usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm, marginparwidth=35mm,marginparsep=5mm ]{geometry}
+        \usepackage[top=25mm, left=15mm, right=65mm, bottom=25mm, marginparwidth=55mm, marginparsep=5mm]{geometry}
         \usepackage{setspace} % For setting the line spacing
         \usepackage{marginnote} % For improved margin notes
 
@@ -61,12 +66,13 @@ format:
         \renewcommand{\marginnote}[1]{%
         \oldmarginnote{\setstretch{0.8}\selectfont#1}%
         }
-        
+     
 
     include-after-body: 
       text: |
         \printindex
-    #highlight-style: github
+    highlight-style: github
+    code-block-bg: "#D3D3D3"
     # geometry:
     #  - top=25mm
     #  - left=15mm
@@ -75,5 +81,6 @@ format:
     # - heightrounded
     crossref:
       chapters: true
+      
 editor: visual
 
