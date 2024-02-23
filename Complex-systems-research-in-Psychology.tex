@@ -23,6 +23,7 @@
 \usepackage{lmodern}
 \ifPDFTeX\else  
     % xetex/luatex font selection
+  \setmonofont[Scale=0.7]{Monaco}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -59,40 +60,38 @@
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
 % Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{241,243,245}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
-\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{\underline{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{\textbf{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.14,0.16,0.18}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.44,0.26,0.76}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.84,0.23,0.29}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.42,0.45,0.49}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.36,0.77}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.89,0.38,0.04}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.01,0.18,0.38}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{1.00,0.33,0.33}{#1}}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
@@ -154,10 +153,9 @@
 
 \usepackage{makeidx}
 \makeindex
-\usepackage[top=25mm, left=15mm, right=45mm, bottom=20mm, marginparwidth=35mm,marginparsep=5mm ]{geometry}
+\usepackage[top=25mm, left=15mm, right=65mm, bottom=25mm, marginparwidth=55mm, marginparsep=5mm]{geometry}
 \usepackage{setspace} % For setting the line spacing
 \usepackage{marginnote} % For improved margin notes
-
 % Redefine the marginnote command to include setstretch
 \let\oldmarginnote\marginnote
 \renewcommand{\marginnote}[1]{%
@@ -209,6 +207,18 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}{}
+\makeatother
+\makeatletter
+\@ifundefined{codebgcolor}{\definecolor{codebgcolor}{HTML}{F0F0F0}}{}
+\makeatother
+\makeatletter
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, boxrule=0pt, frame hidden, colback={codebgcolor}, breakable, sharp corners]}{\end{tcolorbox}}\fi
+\makeatother
+\makeatletter
 \@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
 \@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
 \makeatother
@@ -231,7 +241,7 @@
 
 \title{Complex systems research in Psychology}
 \author{Han van der Maas}
-\date{2024-02-16}
+\date{2024-02-23}
 
 \begin{document}
 \maketitle
@@ -358,8 +368,8 @@ fearful might depend on subtle differences in context. It has also been
 debated whether the flight response precedes the feeling of fear or vice
 verse. Fear could also suddenly change into a panic attack.
 
-These difficulties are not unique to psychology . Many systems studied
-in physics, chemistry, and biology show such complex behavior (Weaver
+These difficulties are not unique to psychology. Many systems studied in
+physics, chemistry, and biology show such complex behavior (Weaver
 1948). They are complex systems. There is no full consensus on the
 definition of a complex system (Ladyman, Lambert, and Wiesner 2013;
 Heylighen 2009), I believe the core aspects can be summarized as
@@ -371,9 +381,9 @@ result in global patterns or properties that do not occur in the units
 themselves.\end{footnotesize}}} Complex systems are made up of many
 smaller interacting subsystems, such as atoms, molecules, cells,
 neurons, and even entire organisms. I like the term subsystems because
-the lower level elements can themselves be complex systems\footnote{As
+the lower level elements can themselves be complex systems.\footnote{As
   Simon (1962) noted, atoms were once considered elementary particles,
-  whereas in modern nuclear physics they are themselves complex systems.}.
+  whereas in modern nuclear physics they are themselves complex systems.}
 The interactions between subsystems can be of different kinds, but they
 are generally local, fast, and nonlinear. These interactions result in
 emergent behavior. The emergent processes usually operate on a slower
@@ -399,15 +409,14 @@ ants.\footnote{It is also argued that emergence is a consequence of
   crystal continues to grow, environmental factors such as temperature
   and humidity influence its growth pattern. Minute variations in these
   factors lead to the breaking of initial symmetry and the formation of
-  diverse and beautiful snowflake structures.}
-
-I will explain this in more detail in a Chapter~\ref{sec-ch5n}, but in a
-completely closed system, self-organization would not be possible. The
-emergent patterns in a complex system may be stable for some time, but
-often change suddenly. The study of phase transitions or tipping points
-is therefore central to the study of complex systems. They may also
-exhibit chaotic behavior, implying that they can be fundamentally
-unpredictable, the weather being a notorious example.
+  diverse and beautiful snowflake structures.} I will explain this in
+more detail in a Chapter~\ref{sec-ch5n}, but in a completely closed
+system, self-organization would not be possible. The emergent patterns
+in a complex system may be stable for some time, but often change
+suddenly. The study of phase transitions or tipping points is therefore
+central to the study of complex systems. They may also exhibit chaotic
+behavior, implying that they can be fundamentally unpredictable, the
+weather being a notorious example.
 {\marginnote{\begin{footnotesize}Complex systems are open systems,
 meaning that they use energy that they have absorbed for the
 environment.\end{footnotesize}}}
@@ -422,9 +431,10 @@ system (see Parisi 2023 for an extended analysis). They are open systems
 as birds use energy to fly. Next, each bird responds only to birds in
 its local neighborhood. They follow roughly three rules. They try to fly
 in the same direction as their neighbors, stay close to their neighbors
-and avoid collisions. These are fast and local interactions. I suggest
-you watch some videos of flocks of birds on the internet. What you will
-see is globally organized behavior. This is a prime example of
+and avoid collisions. These are fast and local interactions.
+
+I suggest you watch some videos of flocks of birds on the internet. What
+you will see is globally organized behavior. This is a prime example of
 self-organization. There is evidently no one bird in control ordering
 other birds to change direction. {\marginnote{\begin{footnotesize}This
 globally organized behavior of a flock is a form of spontaneous
@@ -440,13 +450,13 @@ discussed further in Chapter~\ref{sec-ch2}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch1-img1}A flock of birds.}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch1/image1.jpg}
 
 }
-
-\caption{\label{fig-ch1-img1}A flock of birds.}
 
 \end{figure}%
 
@@ -464,7 +474,7 @@ The prime example from psychology is the brain. About a hundred billion
 neurons interact with thousands of other neurons in their neighborhood.
 Compared to computers, brains are extremely energy efficient, but as all
 open systems, they do consume energy (the equivalent of a light bulb
-according to (Attwell and Iadecola 2002).
+according to Attwell and Iadecola (2002).
 {\marginnote{\begin{footnotesize}Fast local interactions somehow form
 global waves of electrical activity that make up thought processes and
 even consciousness.\end{footnotesize}}} The letters you are reading
@@ -536,16 +546,17 @@ causal emergence effects (Hoel, Albantakis, and Tononi 2013).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch1-img4}An illustration of downwards or
+circular causation in flocks due to a predator responding to the
+emerging patterns of the flock and subsequently influencing the flight
+of individual birds. (adapted from
+\url{https://arxiv.org/abs/1108.1682}).}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch1/image4.jpg}
 
 }
-
-\caption{\label{fig-ch1-img4}An illustration of downwards or circular
-causation in flocks due to a predator responding to the emerging
-patterns of the flock and subsequently influencing the flight of
-individual birds. (adapted from \url{https://arxiv.org/abs/1108.1682}).}
 
 \end{figure}%
 
@@ -631,7 +642,7 @@ society to deliver on the other. Our most pressing global problems -
 climate change, overpopulation, war and violence, poverty, inequality,
 infectious diseases, addiction, to name but a few - are unsolvable
 without breakthroughs in the behavioral and social sciences.
-{\marginnote{\begin{footnotesize}J. Doyne Farmer: '' We have an
+{\marginnote{\begin{footnotesize}J. Doyne Farmer: ``We have an
 increasing need to model ourselves'' (Thurner 2016).\end{footnotesize}}}
 
 The realization that the human mind in its social context is an
@@ -641,7 +652,7 @@ predecessor of complex system theory, general systems theory
 (Bertalanffy 1969), explicitly assumed that all systems share important
 characteristics. {\marginnote{\begin{footnotesize}Certain mechanisms and
 phenomena seem to operate and to occur in similar ways at all possible
-levels of description (Simon 1962)\end{footnotesize}}}. This is the
+levels of description (Simon 1962).\end{footnotesize}}}. This is the
 primary reason for providing numerous modeling examples in this book
 that originate from disciplines beyond psychology.
 
@@ -667,17 +678,17 @@ the treatment of major depressive disorder.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch1-img2}The transitions between clear and
+turbid states of shallow lakes do not occur at the same phosphorus load.
+This delay in jumps is called hysteresis. Hysteresis explains why
+transitions are often difficult to reverse. This concept is discussed in
+detail in Chapter~\ref{sec-ch3}.}
+
 \centering{
 
 \includegraphics{media/ch1/image2.jpg}
 
 }
-
-\caption{\label{fig-ch1-img2}The transitions between clear and turbid
-states of shallow lakes do not occur at the same phosphorus load. This
-delay in jumps is called hysteresis. Hysteresis explains why transitions
-are often difficult to reverse. This concept is discussed in detail in
-Chapter~\ref{sec-ch3}.}
 
 \end{figure}%
 
@@ -886,7 +897,7 @@ can occur. This is what happens when we lower the temperature of water
 to below zero. {\marginnote{\begin{footnotesize}Transitions can occur in
 many ways, also depending on the types of equilibria
 involved.\end{footnotesize}}} The family of transition models is
-described by bifurcation theory. This is explained in more detail in
+described by bifurcation theory. This is explained in
 Chapter~\ref{sec-ch3}, where we focus on a very important transition
 model, the cusp catastrophe, and in Chapter~\ref{sec-ch4n}, which
 considers dynamical systems models.
@@ -934,16 +945,16 @@ interactions between cognitive subsystems such as working memory,
 spatial cognition, and language.
 
 {\marginnote{\begin{footnotesize}Similarly, depression can be thought of
-as a network of mutually reinforcing symptoms.\end{footnotesize}}} For
-example, sleep problems, a symptom of depression, can lead to increased
-fatigue and difficulty concentrating, which in turn can affect a
-person's ability to manage daily tasks and engage in social activities.
-This can then lead back to poorer sleep quality, creating a cyclical
-pattern in which each symptom reinforces the others. This new view of
-mental disorders originated in our research group and is now very
-popular (D. J. Robinaugh et al. 2020). One reason for this is that many
-statistical techniques have been developed to investigate this network
-approach.
+as a network of mutually reinforcing symptoms.\end{footnotesize}}} As
+another example, sleep problems, a symptom of depression, can lead to
+increased fatigue and difficulty concentrating, which in turn can affect
+a person's ability to manage daily tasks and engage in social
+activities. This can then lead back to poorer sleep quality, creating a
+cyclical pattern in which each symptom reinforces the others. This new
+view of mental disorders originated in our research group and is now
+very popular (D. J. Robinaugh et al. 2020). One reason for this is that
+many statistical techniques have been developed to investigate this
+network approach.
 
 The latest line of this research is the integrated study of
 psychological and social networks (van der Maas, Dalege, and Waldorp
@@ -974,9 +985,9 @@ such as agent-based modeling and network theory. One might assume that
 the first category is irrelevant to complex systems, which by definition
 have many variables. However, it has been found that the global behavior
 of complex systems can often be described with a small number of
-variables, often just one, that behaves in a highly nonlinear manner.
-{\marginnote{\begin{footnotesize}Therefore, I consider nonlinear
-dynamical system theory an essential part of complex system
+variables, often just one, that behaves in a highly nonlinear
+manner.{\marginnote{\begin{footnotesize}I consider nonlinear dynamical
+system theory an essential part of complex system
 research.\end{footnotesize}}}
 
 This categorization is reflected in the setup of the book. The next
@@ -1131,13 +1142,13 @@ Figure~\ref{fig-ch2-img1}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img1}Exponential growth.}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch2/fig-ch2-img1.jpg}
 
 }
-
-\caption{\label{fig-ch2-img1}Exponential growth.}
 
 \end{figure}%
 
@@ -1193,13 +1204,13 @@ Let us study a `boring' case first, \(r = 2\)
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img2}The \(r=2\) case.}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch2/fig-ch2-img2.jpg}
 
 }
-
-\caption{\label{fig-ch2-img2}The \(r=2\) case.}
 
 \end{figure}%
 
@@ -1238,16 +1249,16 @@ unstable.\end{footnotesize}}}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img3}Illustration of stable and unstable
+fixed points. For many initial values, \(X = .5\) is an attractor.
+\(X = 0\) is an unstable fixed point. Only if we start exactly at 0 do
+we stay there.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img3.jpg}
 
 }
-
-\caption{\label{fig-ch2-img3}Illustration of stable and unstable fixed
-points. For many initial values, \(X = .5\) is an attractor. \(X = 0\)
-is an unstable fixed point. Only if we start exactly at 0 do we stay
-there.}
 
 \end{figure}%
 
@@ -1298,14 +1309,14 @@ the code for Figure~\ref{fig-ch2-img2}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img4}Qualitative different behavior of the
+logistic map for different values of \(r\).}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch2/fig-ch2-img4.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img4.jpg}
 
 }
-
-\caption{\label{fig-ch2-img4}Qualitative different behavior of the
-logistic map for different values of \(r\).}
 
 \end{figure}%
 
@@ -1331,13 +1342,13 @@ series looks for \(r = 4\).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img5}Chaos for \(r = 4\).}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img5.jpg}
 
 }
-
-\caption{\label{fig-ch2-img5}Chaos for \(r = 4\).}
 
 \end{figure}%
 
@@ -1363,14 +1374,14 @@ this? Let me illustrate.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img6}The butterfly effect: A small
+difference in initial state causes divergence in the long run.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img6.jpg}
 
 }
-
-\caption{\label{fig-ch2-img6}The butterfly effect: A small difference in
-initial state causes divergence in the long run.}
 
 \end{figure}%
 
@@ -1431,7 +1442,8 @@ code for this figure is:
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{001}
 \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)) x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{=}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])}
 \NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ x[}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{100}\NormalTok{]}
-\FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r),}\AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
+\FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r),}
+     \AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
 \FunctionTok{plot}\NormalTok{(x[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(x)],x[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{],}\AttributeTok{xlim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}Xt\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}Xt+1\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{4}\NormalTok{; x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{001}\NormalTok{;}
 \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)) x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])}
@@ -1447,15 +1459,15 @@ code for this figure is:
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch2/fig-ch2-img7.jpg}
-
-}
-
-\caption{\label{fig-ch2-img7}Time (top) and phase (bottom) plots for
+\sidecaption{\label{fig-ch2-img7}Time (top) and phase (bottom) plots for
 three cases. Chaos and random noise can be distinguished using the phase
 plots.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img7.jpg}
+
+}
 
 \end{figure}%
 
@@ -1512,14 +1524,14 @@ points for \(r < 3\), the period doubling of the limit cycles for
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch2-img8}The bifurcation diagram of the logistic
+map.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch2/fig-ch2-img8.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img8.jpg}
 
 }
-
-\caption{\label{fig-ch2-img8}The bifurcation diagram of the logistic
-map.}
 
 \end{figure}%
 
@@ -1792,15 +1804,15 @@ is no discontinuous change in behavior
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img1-old-13}A first order (discontinuous)
+and second order (continuous) phase transition (Adapted from
+\url{https://polymerdatabase.com/polymer\%20physics/ThemalTransitions.html}).}
+
 \centering{
 
-\includegraphics{media/ch3/ch3-01__figure13.png}
+\includegraphics[width=13cm,height=\textheight]{media/ch3/ch3-01__figure13.png}
 
 }
-
-\caption{\label{fig-ch3-img1-old-13}A first order (discontinuous) and
-second order (continuous) phase transition (Adapted from
-\url{https://polymerdatabase.com/polymer\%20physics/ThemalTransitions.html}).}
 
 \end{figure}%
 
@@ -1820,17 +1832,17 @@ observed in psychological intervention studies.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics{media/ch3/ch3-02__figure14.png}
-
-}
-
-\caption{\label{fig-ch3-img2-old-14}Transitions in the perception of the
-Necker cube. The perception of the middle cube is bistable, and sudden
-transitions occur between the left (`front') and right (`back')
+\sidecaption{\label{fig-ch3-img2-old-14}Transitions in the perception of
+the Necker cube. The perception of the middle cube is bistable, and
+sudden transitions occur between the left (`front') and right (`back')
 percepts. Multistable perception is a much studied psychological
 phenomenon that is still not fully understood.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch3/ch3-02__figure14.png}
+
+}
 
 \end{figure}%
 
@@ -1897,15 +1909,16 @@ V(X) = X^{2}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img3-old-15}The quadratic potential
+function. A boll rolls to the minimum value of \(V(X)\). It's change is
+defined by negative of the derivative of the potential function
+\(-V'(X)\).}
+
 \centering{
 
 \includegraphics[width=5cm,height=\textheight]{media/ch3/ch3-03__figure15.png}
 
 }
-
-\caption{\label{fig-ch3-img3-old-15}The quadratic potential function. A
-boll rolls to the minimum value of \(V(X)\). It's change is defined by
-negative of the derivative of the potential function \(-V'(X)\).}
 
 \end{figure}%
 
@@ -1956,15 +1969,15 @@ This is illustrated in Figure~\ref{fig-ch3-img4-old-16}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img4-old-16}A bifurcation at \(a = 0\): the
+equilibria change qualitatively. For \(a<0\) there is no equilibrium,
+for \(a>0\) we have a minimum and a maximum.}
+
 \centering{
 
 \includegraphics{media/ch3/fig-ch3-img4-old-16.jpg}
 
 }
-
-\caption{\label{fig-ch3-img4-old-16}A bifurcation at \(a = 0\): the
-equilibria change qualitatively. For \(a<0\) there is no equilibrium,
-for \(a>0\) we have a minimum and a maximum.}
 
 \end{figure}%
 
@@ -2004,17 +2017,17 @@ example of a second order phase transition.\end{footnotesize}}}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img5-old-17}The bifurcation diagram of the
+fold catastrophe. Similar to what's shown in the preceding figure, when
+\(a=0\), there is a dramatic change in the equilibrium landscape.
+Suddenly, both a stable and an unstable equilibrium emerge, seemingly
+from nowhere.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch3/fig-ch3-img5-old-17.jpg}
 
 }
-
-\caption{\label{fig-ch3-img5-old-17}The bifurcation diagram of the fold
-catastrophe. Similar to what's shown in the preceding figure, when
-\(a=0\), there is a dramatic change in the equilibrium landscape.
-Suddenly, both a stable and an unstable equilibrium emerge, seemingly
-from nowhere.}
 
 \end{figure}%
 
@@ -2028,15 +2041,15 @@ lecture.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img6-old-18}The fold in drawings (from,
+McRobie 2017). The fold line separates the parts that can be seen from
+the parts that are hidden.}
+
 \centering{
 
-\includegraphics[width=12cm,height=\textheight]{media/ch3/image6.jpg}
+\includegraphics[width=12cm,height=\textheight]{media/ch3/image6.png}
 
 }
-
-\caption{\label{fig-ch3-img6-old-18}The fold in drawings (from, McRobie
-2017). The fold line separates the parts that can be seen from the parts
-that are hidden.}
 
 \end{figure}%
 
@@ -2089,22 +2102,22 @@ other minimum.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img7-old-19}The change in the potential
+function of the cusp by varying \(a\). Note that the jump to the other
+state does not happen at \(a=0\) but is delayed and depends on the
+direction of the change in \(a\). This delay is called hysteresis.}
+
 \centering{
 
 \includegraphics{media/ch3/image7.jpg}
 
 }
 
-\caption{\label{fig-ch3-img7-old-19}The change in the potential function
-of the cusp by varying \(a\). Note that the jump to the other state does
-not happen at \(a=0\) but is delayed and depends on the direction of the
-change in \(a\). This delay is called hysteresis.}
-
 \end{figure}%
 
 Now consider what will happen if we decrease \(a\) from 2 to -2.
 {\marginnote{\begin{footnotesize}Hysteresis means lagging behind, or
-resistance to change\end{footnotesize}}}. In this case the ball will
+resistance to change.\end{footnotesize}}}. In this case the ball will
 stay in the right minimum until \(a = - 1.5\). Where the jump takes
 place depends on the direction of the change in \(a\), the normal
 variable. The delay in jumps is called hysteresis. Hysteresis is of
@@ -2134,14 +2147,14 @@ increased (Figure~\ref{fig-ch3-img8-old-20}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img8-old-20}The change in the potential
+function of the cusp by varying \(b\). One minimum splits up in two.}
+
 \centering{
 
 \includegraphics{media/ch3/image8.jpg}
 
 }
-
-\caption{\label{fig-ch3-img8-old-20}The change in the potential function
-of the cusp by varying \(b\). One minimum splits up in two.}
 
 \end{figure}%
 
@@ -2157,18 +2170,18 @@ often called a pitchfork bifurcation (Figure~\ref{fig-ch3-img9-old-21}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img9-old-21}Bifurcation plots for the \(a\)
+and \(b\) parameters of the cusp. Moving along the \(a\) axis gives
+hysteresis, assuming \(b\) is positive. Moving along the \(b\) axis,
+assuming \(a=0\), gives the pitchfork bifurcation or divergence. The
+dotted lines represent unstable maxima. The area in the dotted box in
+the first plot is a fold.}
+
 \centering{
 
 \includegraphics{media/ch3/image9.jpg}
 
 }
-
-\caption{\label{fig-ch3-img9-old-21}Bifurcation plots for the \(a\) and
-\(b\) parameters of the cusp. Moving along the \(a\) axis gives
-hysteresis, assuming \(b\) is positive. Moving along the \(b\) axis,
-assuming \(a=0\), gives the pitchfork bifurcation or divergence. The
-dotted lines represent unstable maxima. The area in the dotted box in
-the first plot is a fold.}
 
 \end{figure}%
 
@@ -2178,13 +2191,7 @@ diagrams (Figure~\ref{fig-ch3-img10-old-22}).
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=11cm,height=\textheight]{media/ch3/image10.jpg}
-
-}
-
-\caption{\label{fig-ch3-img10-old-22}The cusp catastrophe combines
+\sidecaption{\label{fig-ch3-img10-old-22}The cusp catastrophe combines
 hysteresis along the normal axis (\(a\)), and the pitchfork along the
 splitting axis (\(b\)). At the back of the cusp, changes in \(a\) only
 lead to smooth changes in the equilibrium behavior \(X^{*}\). At the
@@ -2192,6 +2199,12 @@ front, sudden jumps occur when we cross the bifurcation lines. These
 jumps are typical of first order phase transitions. The area between the
 bifurcation lines is called the bifurcation set. In this area there are
 two stable and one unstable equilibrium (colored grey).}
+
+\centering{
+
+\includegraphics[width=11cm,height=\textheight]{media/ch3/image10.jpg}
+
+}
 
 \end{figure}%
 
@@ -2243,14 +2256,14 @@ we remove the horizontal force. The card has a `memory'.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img11-old-23}A simple business card can be
+used to illustrate all the properties of the cusp (see text).}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch3/ch3-11__figure23.png}
 
 }
-
-\caption{\label{fig-ch3-img11-old-23}A simple business card can be used
-to illustrate all the properties of the cusp (see text).}
 
 \end{figure}%
 
@@ -2267,15 +2280,15 @@ and the social sciences.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img12-old-24}The phase diagram of water,
+which summarizes the equilibria and transitions in the state of water as
+a function of temperature and pressure.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch3/ch3-12__figure24.png}
 
 }
-
-\caption{\label{fig-ch3-img12-old-24}The phase diagram of water, which
-summarizes the equilibria and transitions in the state of water as a
-function of temperature and pressure.}
 
 \end{figure}%
 
@@ -2290,16 +2303,16 @@ is the attitude toward abortion (Figure~\ref{fig-ch3-img10-old-22}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img13-old-25}The cusp model of attitudes
+(toward abortion). Because of hysteresis, it is very difficult to
+persuade highly involved people with new information, but if they change
+it will be a sudden jump.}
+
 \centering{
 
 \includegraphics[width=11cm,height=\textheight]{media/ch3/image13.jpg}
 
 }
-
-\caption{\label{fig-ch3-img13-old-25}The cusp model of attitudes (toward
-abortion). Because of hysteresis, it is very difficult to persuade
-highly involved people with new information, but if they change it will
-be a sudden jump.}
 
 \end{figure}%
 
@@ -2362,16 +2375,16 @@ The results are shown in Figure~\ref{fig-ch3-img14-old-26}.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch3/image14.jpg}
-
-}
-
-\caption{\label{fig-ch3-img14-old-26}Adapted with permission from
+\sidecaption{\label{fig-ch3-img14-old-26}Adapted with permission from
 Stewart and Peregoy (1983). The fitted bifurcation lines were calculated
 using Cobb's method, which is explained in
 Section~\ref{sec-Cobbs-maximum-likelihood-approach}.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch3/image14.jpg}
+
+}
 
 \end{figure}%
 
@@ -2419,17 +2432,17 @@ pitchfork (see Figure~\ref{fig-ch3-img15-old-27}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img15-old-27}Perturbed pitchfork bifurcation
+(\(a = .1\)). For \(a = 0\) we would get the pitchfork bifurcation as
+shown in Figure~\ref{fig-ch3-img9-old-21}. Thus, a perturbation in a
+model parameter leads to qualitative change in this bifurcation, and
+this is the reason why it is not considered structurally stable.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch3/image15.jpg}
 
 }
-
-\caption{\label{fig-ch3-img15-old-27}Perturbed pitchfork bifurcation
-(\(a = .1\)). For \(a = 0\) we would get the pitchfork bifurcation as
-shown in Figure~\ref{fig-ch3-img9-old-21}. Thus, a perturbation in a
-model parameter leads to qualitative change in this bifurcation, and
-this is the reason why it is not considered structurally stable.}
 
 \end{figure}%
 
@@ -2499,15 +2512,15 @@ bifurcation lines of the cusp as in Figure~\ref{fig-ch3-img16-old-28}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img16-old-28}The bifurcation diagram of the
+Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai
+deNeveu, 2015).}
+
 \centering{
 
 \includegraphics[width=11cm,height=\textheight]{media/ch3/ch3-16__figure28.png}
 
 }
-
-\caption{\label{fig-ch3-img16-old-28}The bifurcation diagram of the
-Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai
-deNeveu, 2015).}
 
 \end{figure}%
 
@@ -2556,14 +2569,14 @@ Zeeman's (1976) model dog aggression
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img17-old-29}Zeeman (1976) dog aggression
+model with rage and fear as rotated control variables.}
+
 \centering{
 
 \includegraphics[width=11cm,height=\textheight]{media/ch3/image17.jpg}
 
 }
-
-\caption{\label{fig-ch3-img17-old-29}Zeeman (1976) dog aggression model
-with rage and fear as rotated control variables.}
 
 \end{figure}%
 
@@ -2620,7 +2633,7 @@ climate changes are transitions between stages (e.g., ice ages), but
 these transitions can take hundreds of years. Even when the ball is
 rolling towards its new minimum, it takes time to roll.
 {\marginnote{\begin{footnotesize}Sudden transitions are not
-instantaneous\end{footnotesize}}}
+instantaneous.\end{footnotesize}}}
 
 But then what is the difference with an acceleration, such as we see in
 a logistic growth pattern? The time course of an acceleration and a
@@ -2628,14 +2641,14 @@ sudden jump will look very similar (Figure~\ref{fig-ch3-img18-old-30}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img18-old-30}Continuous and discontinuous
+growth curves my look very similar.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch3/image18.jpg}
 
 }
-
-\caption{\label{fig-ch3-img18-old-30}Continuous and discontinuous growth
-curves my look very similar.}
 
 \end{figure}%
 
@@ -2681,15 +2694,15 @@ null hypothesis of no change point).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img19-old-31}A sudden jump to depression
+(score at the SLC-90) in a patient who gradually quitted antidepressant
+medication during the study.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch3/fig-ch3-img19-old-31.jpg}
 
 }
-
-\caption{\label{fig-ch3-img19-old-31}A sudden jump to depression (score
-at the SLC-90) in a patient who gradually quitted antidepressant
-medication during the study.}
 
 \end{figure}%
 
@@ -2704,8 +2717,8 @@ The code for this figure is:
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{\textquotesingle{}data/PNAS\_patient\_data.txt\textquotesingle{}}\NormalTok{,}\AttributeTok{header=}\NormalTok{T)}
 \FunctionTok{library}\NormalTok{(ecp) }\CommentTok{\# if error: install.packages(\textquotesingle{}ecp\textquotesingle{})}
 \NormalTok{e1 }\OtherTok{\textless{}{-}} \FunctionTok{e.divisive}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(x}\SpecialCharTok{$}\NormalTok{dep,,}\DecValTok{1}\NormalTok{),}\AttributeTok{sig=}\NormalTok{.}\DecValTok{01}\NormalTok{,}\AttributeTok{min.size=}\DecValTok{10}\NormalTok{)}
-\FunctionTok{plot}\NormalTok{(x}\SpecialCharTok{$}\NormalTok{week,x}\SpecialCharTok{$}\NormalTok{dep,}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\AttributeTok{pch=}\NormalTok{(e1}\SpecialCharTok{$}\NormalTok{cluster}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\DecValTok{16}\SpecialCharTok{+}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}Week\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}SLC{-}90\textquotesingle{}}\NormalTok{,}
-     \AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Jump to depression\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x}\SpecialCharTok{$}\NormalTok{week,x}\SpecialCharTok{$}\NormalTok{dep,}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\AttributeTok{pch=}\NormalTok{(e1}\SpecialCharTok{$}\NormalTok{cluster}\DecValTok{{-}1}\NormalTok{)}\SpecialCharTok{*}\DecValTok{16}\SpecialCharTok{+}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}Week\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{ylab=}\StringTok{\textquotesingle{}SLC{-}90\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}Jump to depression\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2728,15 +2741,15 @@ equation model.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img20-old-32}Bimodality in the expected
+heights of water when it is poured into a wider glass. This variation of
+the Piagetian maintenance task is used with children ages 5-8.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch3/fig-ch3-img20-old-32.jpg}
 
 }
-
-\caption{\label{fig-ch3-img20-old-32}Bimodality in the expected heights
-of water when it is poured into a wider glass. This variation of the
-Piagetian maintenance task is used with children ages 5-8.}
 
 \end{figure}%
 
@@ -2823,16 +2836,16 @@ testing for divergence is a sensible next step.\end{footnotesize}}}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img21-old-33}The pitchfork bifurcation in
+attitudes. The dotted lines represent the fit of the cusp model to these
+data. This technique will be discussed in
+Section~\ref{sec-Fitting-the-cusp-to-crosssectional-data}.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch3/ch3-21__figure33.png}
 
 }
-
-\caption{\label{fig-ch3-img21-old-33}The pitchfork bifurcation in
-attitudes. The dotted lines represent the fit of the cusp model to these
-data. This technique will be discussed in
-Section~\ref{sec-Fitting-the-cusp-to-crosssectional-data}.}
 
 \end{figure}%
 
@@ -2871,18 +2884,18 @@ value the subject perceives a switch.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch3/image22.jpg}
-
-}
-
-\caption{\label{fig-ch3-img22-old-34}Hysteresis in the perception of
+\sidecaption{\label{fig-ch3-img22-old-34}Hysteresis in the perception of
 apparent motion. Switches between the perception in of vertical or
 horizontal apparent motion occur when the aspect ratio (horizontal axis)
 is varied. The aspect ratio is the ratio of height to width of the
 quartet. Adapted from Ploeger, van der Maas, and Hartelman (2002) with
 permission.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch3/image22.jpg}
+
+}
 
 \end{figure}%
 
@@ -2959,7 +2972,7 @@ as measurement noise. Measurement noise, i.e., \(\varepsilon\) in
 noise does, it is part of the updating equation of \(X\) itself.
 {\marginnote{\begin{footnotesize}A stochastic differential equation
 (SDE) is a differential equation that incorporates a term representing
-random fluctuations\end{footnotesize}}} This stochastic differential
+random fluctuations.\end{footnotesize}}} This stochastic differential
 equation is associated with a probability distribution of the form:
 
 \begin{equation}\phantomsection\label{eq-ch3-10-old-14}{
@@ -3165,12 +3178,15 @@ results. Note that a lower BIC indicated the better fitting model.
 \NormalTok{  data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(X1, Y1) }\CommentTok{\# collect ‘measured’ variables in data}
 \NormalTok{  fit }\OtherTok{\textless{}{-}} \FunctionTok{cusp}\NormalTok{(y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Y1, alpha }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X1, beta }\SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{, data)}
 \NormalTok{  sf }\OtherTok{\textless{}{-}} \FunctionTok{summary}\NormalTok{(fit)}
-\NormalTok{  dat[i, ] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(b0, sf}\SpecialCharTok{$}\NormalTok{r2lin.r.squared[}\DecValTok{1}\NormalTok{], sf}\SpecialCharTok{$}\NormalTok{r2cusp.r.squared[}\DecValTok{1}\NormalTok{],sf}\SpecialCharTok{$}\NormalTok{r2lin.bic[}\DecValTok{1}\NormalTok{],}
-\NormalTok{                sf}\SpecialCharTok{$}\NormalTok{r2cusp.bic[}\DecValTok{1}\NormalTok{],sf}\SpecialCharTok{$}\NormalTok{r2lin.aic[}\DecValTok{1}\NormalTok{], sf}\SpecialCharTok{$}\NormalTok{r2cusp.aic[}\DecValTok{1}\NormalTok{])}
+\NormalTok{  dat[i, ] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(b0, sf}\SpecialCharTok{$}\NormalTok{r2lin.r.squared[}\DecValTok{1}\NormalTok{], sf}\SpecialCharTok{$}\NormalTok{r2cusp.r.squared[}\DecValTok{1}\NormalTok{],}
+\NormalTok{                sf}\SpecialCharTok{$}\NormalTok{r2lin.bic[}\DecValTok{1}\NormalTok{],sf}\SpecialCharTok{$}\NormalTok{r2cusp.bic[}\DecValTok{1}\NormalTok{],}
+\NormalTok{                sf}\SpecialCharTok{$}\NormalTok{r2lin.aic[}\DecValTok{1}\NormalTok{], sf}\SpecialCharTok{$}\NormalTok{r2cusp.aic[}\DecValTok{1}\NormalTok{])}
 \NormalTok{\}}
 \FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{))}
-\FunctionTok{matplot}\NormalTok{(dat[,}\DecValTok{1}\NormalTok{],dat[,}\DecValTok{4}\SpecialCharTok{:}\DecValTok{5}\NormalTok{],}\AttributeTok{ylab=}\StringTok{\textquotesingle{}Bic\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}b0\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{cex.lab=}\FloatTok{1.5}\NormalTok{)}
-\FunctionTok{legend}\NormalTok{(}\StringTok{\textquotesingle{}right\textquotesingle{}}\NormalTok{,}\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}linear\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cusp\textquotesingle{}}\NormalTok{),}\AttributeTok{lty=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{col=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{cex=}\FloatTok{1.5}\NormalTok{)}
+\FunctionTok{matplot}\NormalTok{(dat[,}\DecValTok{1}\NormalTok{],dat[,}\DecValTok{4}\SpecialCharTok{:}\DecValTok{5}\NormalTok{],}\AttributeTok{ylab=}\StringTok{\textquotesingle{}Bic\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}b0\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}
+        \AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{cex.lab=}\FloatTok{1.5}\NormalTok{)}
+\FunctionTok{legend}\NormalTok{(}\StringTok{\textquotesingle{}right\textquotesingle{}}\NormalTok{,}\AttributeTok{legend=}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}linear\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}cusp\textquotesingle{}}\NormalTok{),}\AttributeTok{lty=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{pch=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}
+       \AttributeTok{col=}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{,}\AttributeTok{cex=}\FloatTok{1.5}\NormalTok{)}
 \FunctionTok{abline}\NormalTok{(}\AttributeTok{v=}\DecValTok{0}\NormalTok{,}\AttributeTok{lty=}\DecValTok{3}\NormalTok{)}
 \FunctionTok{text}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{.}\DecValTok{5}\NormalTok{,}\DecValTok{800}\NormalTok{, }\StringTok{\textquotesingle{}no hysteresis\textquotesingle{}}\NormalTok{,}\AttributeTok{cex=}\FloatTok{1.5}\NormalTok{)}
 \FunctionTok{text}\NormalTok{(.}\DecValTok{5}\NormalTok{,}\DecValTok{800}\NormalTok{, }\StringTok{\textquotesingle{}hysteresis\textquotesingle{}}\NormalTok{,}\AttributeTok{cex=}\FloatTok{1.5}\NormalTok{)}
@@ -3179,15 +3195,15 @@ results. Note that a lower BIC indicated the better fitting model.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img23-old-35}At the back of the cusp (low
+\(b_0\)), the cusp is approximately linear and cuspfit prefers this
+simpler model (red line) over the cusp mode (blue line).}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch3/fig-ch3-img23-old-35.jpg}
 
 }
-
-\caption{\label{fig-ch3-img23-old-35}At the back of the cusp (low
-\(b_0\)), the cusp is approximately linear and cuspfit prefers this
-simpler model (red line) over the cusp mode (blue line).}
 
 \end{figure}%
 
@@ -3215,14 +3231,14 @@ bifurcation set (\texttt{plot(fit)}).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img24-old-36}Placement of the data of
+Figure~\ref{fig-ch3-img21-old-33} in the bifurcation set.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch3/image24.jpg}
 
 }
-
-\caption{\label{fig-ch3-img24-old-36}Placement of the data of
-Figure~\ref{fig-ch3-img21-old-33} in the bifurcation set.}
 
 \end{figure}%
 
@@ -3241,7 +3257,8 @@ bimodal and to move along the normal axis (van der Maas and Molenaar
          \StringTok{\textquotesingle{}age 6 to 6.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 6.5 to 7\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 7 to 7.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 7.5 to 8\textquotesingle{}}\NormalTok{)}
 \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{)}
 \NormalTok{\{}
-  \ControlFlowTok{if}\NormalTok{(i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{));names}\OtherTok{=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{12}\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{names}\OtherTok{=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{;}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))\}}
+  \ControlFlowTok{if}\NormalTok{(i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{));names}\OtherTok{=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{12}\NormalTok{\} }\ControlFlowTok{else} 
+\NormalTok{    \{names}\OtherTok{=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{;}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))\}}
   \FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(}\FunctionTok{factor}\NormalTok{(x[x[,}\DecValTok{1}\NormalTok{]}\SpecialCharTok{==}\NormalTok{i,}\DecValTok{2}\NormalTok{],}\AttributeTok{levels=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{12}\NormalTok{)),}\AttributeTok{horiz=}\NormalTok{T,}\AttributeTok{axes=}\NormalTok{F,}
           \AttributeTok{main=}\NormalTok{age[i],}\AttributeTok{xlab=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,}
           \AttributeTok{names=}\NormalTok{names,}\AttributeTok{cex.main=}\FloatTok{1.5}\NormalTok{,}\AttributeTok{cex.names=}\FloatTok{1.5}\NormalTok{)}
@@ -3257,13 +3274,13 @@ with beta \textasciitilde{} 1, fits better according to the AIC and BIC.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img25-old-37}The Bentler conservation data.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch3/fig-ch3-img25-old-37.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch3/fig-ch3-img25-old-37.jpg}
 
 }
-
-\caption{\label{fig-ch3-img25-old-37}The Bentler conservation data.}
 
 \end{figure}%
 
@@ -3277,19 +3294,19 @@ artistic value of their Zeeman machine
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch3-img26-old-38}Zeemans's catastrophe
+machine.It consists of a rotating disk and two elastic bands. The first
+elastic band is attached to a fixed point and the strap point. The end
+of the other elastic (red dot) is moved by hand through the control
+plan. The strap point moves according to the cusp catastrophe. Data is
+gathered by collecting a set of X, Y and Z values. Typically, 50 to 100
+data points are sufficient to run Cuspfit.}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch3/image26.jpg}
 
 }
-
-\caption{\label{fig-ch3-img26-old-38}Zeemans's catastrophe machine.It
-consists of a rotating disk and two elastic bands. The first elastic
-band is attached to a fixed point and the strap point. The end of the
-other elastic (red dot) is moved by hand through the control plan. The
-strap point moves according to the cusp catastrophe. Data is gathered by
-collecting a set of X, Y and Z values. Typically, 50 to 100 data points
-are sufficient to run Cuspfit.}
 
 \end{figure}%
 
@@ -3788,13 +3805,13 @@ diseases and to understand the impact of interventions on disease
 dynamics. {\marginnote{\begin{footnotesize}The
 Susceptible-Infected-Recovered (SIR) model is a basic epidemiological
 model that divides a population into susceptible (S), infected (I), and
-recovered (R) individuals\end{footnotesize}}} The state of the model are
-susceptible (S), representing individuals who have not yet contracted
-the disease but are at risk; infected (I), representing individuals who
-are currently infected and can transmit the disease to susceptible
-individuals; and recovered (R), representing individuals who have
-recovered from the disease and are assumed to be immune and no longer
-susceptible. The differential equations specify the change in
+recovered (R) individuals.\end{footnotesize}}} The state of the model
+are susceptible (S), representing individuals who have not yet
+contracted the disease but are at risk; infected (I), representing
+individuals who are currently infected and can transmit the disease to
+susceptible individuals; and recovered (R), representing individuals who
+have recovered from the disease and are assumed to be immune and no
+longer susceptible. The differential equations specify the change in
 susceptible, infected, and recovered members of the population. You can
 now easily implement this model yourself (see exercises).
 
@@ -3849,17 +3866,17 @@ This results in Figure~\ref{fig-ch4n-img1-old-49}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img1-old-49}Fit of the Lotka-Volterra model
+on three types of data. The lines represent the fitted curves. In the
+stochastic case, noise is part of the system that affects the
+computation of the state at the next time step. In the error case, noise
+is a measurement error that does not affect the dynamics.}
+
 \centering{
 
 \includegraphics{media/ch4n/fig-ch4n-img1-old-49.png}
 
 }
-
-\caption{\label{fig-ch4n-img1-old-49}Fit of the Lotka-Volterra model on
-three types of data. The lines represent the fitted curves. In the
-stochastic case, noise is part of the system that affects the
-computation of the state at the next time step. In the error case, noise
-is a measurement error that does not affect the dynamics.}
 
 \end{figure}%
 
@@ -3941,19 +3958,19 @@ or less.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img2-old-50.jpg}
-
-}
-
-\caption{\label{fig-ch4n-img2-old-50}Spontaneous jumps in the cusp due
-to stochastics (noise). Due to stochastic perturbations, the system
+\sidecaption{\label{fig-ch4n-img2-old-50}Spontaneous jumps in the cusp
+due to stochastics (noise). Due to stochastic perturbations, the system
 occasionally jumps over the maxima that separate the minima.
 Interestingly, when the noise is reduced, the time series tends to
 become trapped in a single equilibrium. Conversely, increased noise aids
 in revealing the overall equilibrium landscape. This phenomenon is known
 as stochastic resonance.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch4n/fig-ch4n-img2-old-50.jpg}
+
+}
 
 \end{figure}%
 
@@ -3985,16 +4002,16 @@ Figure~\ref{fig-ch4n-img3-old-51} is:
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img3-old-51}Hysteresis plot made with
+newton() and continue(). The function newton() finds an equilibrium,
+which is used in continue() to vary the normal variable a until a
+bifurcation point is found}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch4n/image3.jpg}
 
 }
-
-\caption{\label{fig-ch4n-img3-old-51}Hysteresis plot made with newton()
-and continue(). The function newton() finds an equilibrium, which is
-used in continue() to vary the normal variable a until a bifurcation
-point is found}
 
 \end{figure}%
 
@@ -4033,16 +4050,16 @@ deBif help pages (with \texttt{??deBif}) for further instructions.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img4-old-52}Output from Shinyapp Debif. The
+last plot is a two-dimensional bifurcation diagram showing the
+bifurcation lines of the cusp in the \(a\), \(b\) plane. This plot
+cannot be made with Grind.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/image4.jpg}
 
 }
-
-\caption{\label{fig-ch4n-img4-old-52}Output from Shinyapp Debif. The
-last plot is a two-dimensional bifurcation diagram showing the
-bifurcation lines of the cusp in the \(a\), \(b\) plane. This plot
-cannot be made with Grind.}
 
 \end{figure}%
 
@@ -4083,14 +4100,14 @@ Figure~\ref{fig-ch4n-img5-old-53}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img5-old-53}The Holling functional response
+models. Type III is used in the Spruce Budworm model.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/fig-ch4n-img5-old-53.jpg}
 
 }
-
-\caption{\label{fig-ch4n-img5-old-53}The Holling functional response
-models. Type III is used in the Spruce Budworm model.}
 
 \end{figure}%
 
@@ -4186,19 +4203,19 @@ implementation in Grind of the simplest case looks like this:
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img6-old-54}The traffic jam simulation. The
+top line represents the front car, which moves off immediately. Other
+cars are waiting for their turn. At t=150, the first car suddenly breaks
+off, creating a traffic jam for the later cars. The effect of this
+disturbance is greater for the last car than for the first car itself.
+This simulated graph resembles the real data very well {[}see for
+example Figure 9 in @jusup2022{]}.}
+
 \centering{
 
 \includegraphics{media/ch4n/fig-ch4n-img6-old-54.png}
 
 }
-
-\caption{\label{fig-ch4n-img6-old-54}The traffic jam simulation. The top
-line represents the front car, which moves off immediately. Other cars
-are waiting for their turn. At t=150, the first car suddenly breaks off,
-creating a traffic jam for the later cars. The effect of this
-disturbance is greater for the last car than for the first car itself.
-This simulated graph resembles the real data very well {[}see for
-example Figure 9 in @jusup2022{]}.}
 
 \end{figure}%
 
@@ -4233,21 +4250,21 @@ stimulus could be an arrow pointing left or right. Most popular are
 accumulator models (Figure~\ref{fig-ch4n-img7-old-55}).
 {\marginnote{\begin{footnotesize}Accumulator models assume that noisy
 information is accumulated over time until a decision bound is reached
-and a motor response is initiated\end{footnotesize}}}
+and a motor response is initiated.\end{footnotesize}}}
 
 \begin{figure}
+
+\sidecaption{\label{fig-ch4n-img7-old-55}A stochastic accumulator model
+of speeded decision making. Evidence accumulates in stochastic steps
+biased by the drift rate \(I\) (stimulus related). When one of the
+bounds is reached, a response is generated that may be incorrect if the
+bounds are too low.}
 
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/fig-ch4n-img7-old-55.png}
 
 }
-
-\caption{\label{fig-ch4n-img7-old-55}A stochastic accumulator model of
-speeded decision making. Evidence accumulates in stochastic steps biased
-by the drift rate \(I\) (stimulus related). When one of the bounds is
-reached, a response is generated that may be incorrect if the bounds are
-too low.}
 
 \end{figure}%
 
@@ -4340,17 +4357,17 @@ and mutual inhibition model.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img8-old-56}Relations between the main
+evidence accumulator models of decision making. DDM is the drift
+diffusion model which can be derived from the mutual inhibition model by
+setting \(w = k\) and \(w + k\) to a large value. Adapted from Bogacz et
+al. (2006).}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/ch4n-8__figure57.png}
 
 }
-
-\caption{\label{fig-ch4n-img8-old-56}Relations between the main evidence
-accumulator models of decision making. DDM is the drift diffusion model
-which can be derived from the mutual inhibition model by setting
-\(w = k\) and \(w + k\) to a large value. Adapted from Bogacz et al.
-(2006).}
 
 \end{figure}%
 
@@ -4445,14 +4462,14 @@ case, the couple ends up in a cycle of hate and love.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img9-old-57}Three different love affairs
+between Romeo and Juliet.}
+
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img9-old-57.png}
+\includegraphics[width=13cm,height=\textheight]{media/ch4n/fig-ch4n-img9-old-57.png}
 
 }
-
-\caption{\label{fig-ch4n-img9-old-57}Three different love affairs
-between Romeo and Juliet.}
 
 \end{figure}%
 
@@ -4574,20 +4591,20 @@ This results in Figure~\ref{fig-ch4n-img10-old-58}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img10-old-58}Qualitative difference
+marriage equilibrium landscapes depending on the form of the influence
+function. In the first, they simply have no influence and both partners
+converge to their uninfluenced steady states of mood. In the second, the
+response to the partner's mood is extreme, resulting in either a
+positive or negative mutual state. In the last case, the response to low
+positive or negative moods is close to zero, but extreme at higher
+levels. Now there are three stable states.}
+
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img10-old-58.png}
+\includegraphics[width=13cm,height=\textheight]{media/ch4n/fig-ch4n-img10-old-58.png}
 
 }
-
-\caption{\label{fig-ch4n-img10-old-58}Qualitative difference marriage
-equilibrium landscapes depending on the form of the influence function.
-In the first, they simply have no influence and both partners converge
-to their uninfluenced steady states of mood. In the second, the response
-to the partner's mood is extreme, resulting in either a positive or
-negative mutual state. In the last case, the response to low positive or
-negative moods is close to zero, but extreme at higher levels. Now there
-are three stable states.}
 
 \end{figure}%
 
@@ -4657,16 +4674,16 @@ This can be implemented as follows:
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img11-old-59}The development of two
+interrelated cognitive abilities in one of the van Geert models. In the
+left case they coexist, in the right case one ability suppresses the
+other.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/fig-ch4n-img11-old-59.png}
 
 }
-
-\caption{\label{fig-ch4n-img11-old-59}The development of two
-interrelated cognitive abilities in one of the van Geert models. In the
-left case they coexist, in the right case one ability suppresses the
-other.}
 
 \end{figure}%
 
@@ -4710,17 +4727,17 @@ get richer, and the poor get poorer.\end{footnotesize}}}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img12-old-60}The Polya Urn model. A random
+marble is sampled and placed back with an extra marble of the same
+color. The evolution of the probability of picking a blue marble is
+unpredictable and converges to a random number. This mechanism may play
+a role in the Matthew Effect.}
+
 \centering{
 
 \includegraphics{media/ch4n/fig-ch4n-img12-old-60.png}
 
 }
-
-\caption{\label{fig-ch4n-img12-old-60}The Polya Urn model. A random
-marble is sampled and placed back with an extra marble of the same
-color. The evolution of the probability of picking a blue marble is
-unpredictable and converges to a random number. This mechanism may play
-a role in the Matthew Effect.}
 
 \end{figure}%
 
@@ -4820,16 +4837,16 @@ modeled on different time scales.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img13-old-61}The panic model. Arousal is
+set high between time is 20 and 30, but panic persists due to the
+hysteresis effect. Eventually, due to noise, it escapes from the
+metastable attractor at \(A = T = 1\).}
+
 \centering{
 
 \includegraphics[width=13cm,height=\textheight]{media/ch4n/fig-ch4n-img13-old-61.png}
 
 }
-
-\caption{\label{fig-ch4n-img13-old-61}The panic model. Arousal is set
-high between time is 20 and 30, but panic persists due to the hysteresis
-effect. Eventually, due to noise, it escapes from the metastable
-attractor at \(A = T = 1\).}
 
 \end{figure}%
 
@@ -4879,15 +4896,15 @@ endlessly.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch4n/fig-ch4n-img14-old-62.png}
-
-}
-
-\caption{\label{fig-ch4n-img14-old-62}Two runs of the van der Pol
+\sidecaption{\label{fig-ch4n-img14-old-62}Two runs of the van der Pol
 oscillator. For high b this system oscillates between the two stables
 states of the cusp. The black dots represent different initial states.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch4n/fig-ch4n-img14-old-62.png}
+
+}
 
 \end{figure}%
 
@@ -4920,13 +4937,7 @@ Figure~\ref{fig-ch4n-img15-old-63}.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=10cm,height=\textheight]{media/ch4n/ch4n-15__figure64.png}
-
-}
-
-\caption{\label{fig-ch4n-img15-old-63}The dynamics of the
+\sidecaption{\label{fig-ch4n-img15-old-63}The dynamics of the
 FitzHugh--Nagumo model. The horizontal axis represents the membrane
 potential (\(V\)), which is the voltage across the membrane of a neuron.
 The vertical axis represents the recovery variable (\(W\)). The
@@ -4940,6 +4951,12 @@ system can increase its own activity without external input. The active
 region refers to a state in which the neuron is actively firing.
 Absolute and relative refractory are periods following an action
 potential when a neuron cannot fire again.}
+
+\centering{
+
+\includegraphics[width=10cm,height=\textheight]{media/ch4n/ch4n-15__figure64.png}
+
+}
 
 \end{figure}%
 
@@ -5097,19 +5114,19 @@ shown in Figure~\ref{fig-ch4n-img16-old-64}.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics{media/ch4n/fig-ch4n-img16-old-64.png}
-
-}
-
-\caption{\label{fig-ch4n-img16-old-64}On the left the bifurcation
+\sidecaption{\label{fig-ch4n-img16-old-64}On the left the bifurcation
 diagram for the double cusp (\(b = d = 1\)) is shown. The figures on the
 right show the phase planes associated with the four different cases in
 the bifurcation diagram. Case a has 9 fixed points, 4 of which are
 stable. Case b has 5 fixed points, 2 of which are stable. Case c has 3
 fixed points, 2 of which are stable. Case d is special because it has a
 limit cycle, the Kadyrov oscillator.}
+
+\centering{
+
+\includegraphics{media/ch4n/fig-ch4n-img16-old-64.png}
+
+}
 
 \end{figure}%
 
@@ -5143,15 +5160,15 @@ The last three lines of this code show the Kadyrov oscillator
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img17-old-65}The Kadyrov oscillator. Y
+attracts X to its state (as \(d = 1\)), but X pushes Y away (as
+\(c = - 1\)), resulting in oscillations.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/fig-ch4n-img17-old-65.png}
 
 }
-
-\caption{\label{fig-ch4n-img17-old-65}The Kadyrov oscillator. Y attracts
-X to its state (as \(d = 1\)), but X pushes Y away (as \(c = - 1\)),
-resulting in oscillations.}
 
 \end{figure}%
 
@@ -5224,17 +5241,17 @@ perception.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img18-old-66}Multifigure multistable
+perception. Verify three phenomena: a) some attention or focus is
+required to see three-dimensional cubes, b) spontaneous transitions in
+the perception of cubes occur, c) such transitions affect the perception
+of neighboring cubes.}
+
 \centering{
 
 \includegraphics{media/ch4n/image18.jpg}
 
 }
-
-\caption{\label{fig-ch4n-img18-old-66}Multifigure multistable
-perception. Verify three phenomena: a) some attention or focus is
-required to see three-dimensional cubes, b) spontaneous transitions in
-the perception of cubes occur, c) such transitions affect the perception
-of neighboring cubes.}
 
 \end{figure}%
 
@@ -5313,13 +5330,7 @@ which gives Figure~\ref{fig-ch4n-img19-old-67}.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch4n/fig-ch4n-img19-old-67.png}
-
-}
-
-\caption{\label{fig-ch4n-img19-old-67}The multifigure Necker cube
+\sidecaption{\label{fig-ch4n-img19-old-67}The multifigure Necker cube
 simulation. Initially attention is low and the percept is close to zero,
 representing the absence of three-dimensional perception. At \(t = 30\),
 the attention intercept to one cube is increased to 1. At the \(t = 60\)
@@ -5327,6 +5338,12 @@ it is set back to its initial low value. However, this one cube is now
 perceived as a cube, and the perception spreads to other cubes. They
 also increase overall attention, so that the perception of cubes
 continues after \(t = 60\).}
+
+\centering{
+
+\includegraphics[width=14cm,height=\textheight]{media/ch4n/fig-ch4n-img19-old-67.png}
+
+}
 
 \end{figure}%
 
@@ -5336,17 +5353,17 @@ Figure~\ref{fig-ch4n-img20-old-68}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img20-old-68}Two embedded Necker cubes. The
+one on the left seems to have a positive coupling \(a_{ij} > 0\), while
+the one on the right seems to be switch independently (\(a_{ij} = 0)\).
+You can verify this introspectively. Adapted from
+\url{https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365}}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch4n/ch4n-20__figure69.png}
 
 }
-
-\caption{\label{fig-ch4n-img20-old-68}Two embedded Necker cubes. The one
-on the left seems to have a positive coupling \(a_{ij} > 0\), while the
-one on the right seems to be switch independently (\(a_{ij} = 0)\). You
-can verify this introspectively. Adapted from
-\url{https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365}}
 
 \end{figure}%
 
@@ -5391,14 +5408,14 @@ this chapter with the tag `vdmaas'.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch4n-img21-old-69}Some screenshots of the
+Lotka-Volterra model in Insightmaker.}
+
 \centering{
 
 \includegraphics{media/ch4n/image21.jpg}
 
 }
-
-\caption{\label{fig-ch4n-img21-old-69}Some screenshots of the
-Lotka-Volterra model in Insightmaker.}
 
 \end{figure}%
 
@@ -5604,15 +5621,16 @@ demonstrations). The external field could be caused another magnet.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img1-old-39}Schematic picture of the
+magnet. Spins can be up or down. At lower temperatures, the spins tend
+to align with neighboring spins and the external field, resulting in
+magnetism.}
+
 \centering{
 
 \includegraphics[width=4.7cm,height=\textheight]{media/ch5n/image1.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img1-old-39}Schematic picture of the magnet.
-Spins can be up or down. At lower temperatures, the spins tend to align
-with neighboring spins and the external field, resulting in magnetism.}
 
 \end{figure}%
 
@@ -5803,13 +5821,13 @@ highlight the amazing collective behavior of ants
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img2-old-40}An example of the ant bridge.}
+
 \centering{
 
 \includegraphics{media/ch5n/image2b.jpeg}
 
 }
-
-\caption{\label{fig-ch5n-img2-old-40}An example of the ant bridge.}
 
 \end{figure}%
 
@@ -5842,13 +5860,13 @@ in Figure~\ref{fig-ch5n-img3-old-41}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img3-old-41}The rules of the Game of Life.}
+
 \centering{
 
 \includegraphics{media/ch5n/image3.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img3-old-41}The rules of the Game of Life.}
 
 \end{figure}%
 
@@ -5899,14 +5917,14 @@ extent, but by using a different setup, based on brain-like mechanisms
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img4-old-42}The Turing Machine built in the
+Game of Life.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch5n/image4.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img4-old-42}The Turing Machine built in the
-Game of Life.}
 
 \end{figure}%
 
@@ -6039,14 +6057,14 @@ are the Kohonen self-organizing maps and the Hopfield neural network.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img5-old-43}The deep learning restricted
+Boltzmann machine.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch5n/image5.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch5n/image5.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img5-old-43}The deep learning restricted
-Boltzmann machine.}
 
 \end{figure}%
 
@@ -6279,7 +6297,7 @@ neural nodes and cars.
 In NetLogo, you ``ask'' objects to do something. A typical line would
 be:
 
-{ask} {turtles with} {{[}}{color =} {red} {]} {set} {color} {green}
+\texttt{ask\ turtles\ with\ {[}pcolor\ =\ red{]}\ set\ pcolor\ green}
 
 This would make red turtles green. To get started, I highly recommend
 watching the videos on the NetLogo page `The Beginner's Guide to NetLogo
@@ -6293,9 +6311,19 @@ and a go button. In Command, name them setup and go. In the settings of
 the go button, select `forever'. Now we go to the Code tab and define
 these two functions as:
 
-{to} {setup} ~~~~ {clear-all} ~~~~ {reset-clicks} {end}
+\texttt{to\ setup}
 
-{to} {go} ~~~~ {tick} {end}
+~~~ \texttt{clear-all}
+
+~~~ \texttt{reset-ticks}
+
+\texttt{end}
+
+\texttt{to\ go}
+
+~ ~ ~ \texttt{tick}
+
+\texttt{end}
 
 Ticks count the iterations in NetLogo, and with this code we are really
 just resetting things. In this example, we will use the patches instead
@@ -6303,25 +6331,33 @@ of the turtles. Patches are the grid cells or squares that make up the
 ``world'' in a NetLogo model. Now add this last line to setup (with
 ``;'' we add comments to code):
 
-{ask} {patches} {{[}}{set} {pcolor one-of} {{[}} {white blue} {]}{]} {;
-white is dead, blue is alive}
+\texttt{ask\ patches}
+
+~ ~
+~\texttt{{[}set\ pcolor\ one-of\ {[}white\ blue{]}{]}\ ;\ white\ is\ dead,\ blue\ is\ alive}
 
 To do a synchronous update, we need to store the update state in a
 temporary variable called new-state. Put this line at the top of your
 code
 
-{patches-own} {{[}new-state{]}}
+\texttt{patches-own\ {[}new-state{]}}
 
 In the `go' function, we add the life rules.
 
-{ask} {patches} {{[}} ~~~~ {if} {(} {neighbors with} {{[}}{pcolor =}
-{blue} {]}) {\textgreater{}} {3} {)} {{[}}{set} {new-state} {white} {]}
-~~~~ {if} {(} {neighbors with} {{[}}{pcolor =} {blue} {]}) {\textless{}}
-{2} {)} {{[}}{set} {new-state} {white} {]} ~~~~ {if} {(} {neighbors
-with} {{[}}{pcolor =} {blue} {]}) {=} {3} {)} {{[}}{set} {new-state}
-{blue} {]} {{]}}
+\texttt{ask\ patches{[}}
 
-{ask} {patches} {[} {}{set} {pcolor} {new-state} {]}
+~ ~
+~\texttt{if(count(neighbors\ with\ {[}pcolor\ =\ blue{]})\ \textgreater{}\ 3)\ {[}set\ new-state\ white{]}}
+
+~ ~
+~\texttt{if(count(neighbors\ with\ {[}pcolor\ =\ blue{]})\ \textless{}\ 2)\ {[}set\ new-state\ white{]}}
+
+~ ~
+~\texttt{if(count(neighbors\ with\ {[}pcolor\ =\ blue{]})\ =\ 3)\ {[}set\ new-state\ blue{]}}
+
+~ ~ ~~ {]}~~
+
+\texttt{ask\ patches\ {[}set\ pcolor\ new-state{]}}
 
 The last line updates the state to the new state. That is all! We build
 a Game of Life simulation. Use Setting to create a larger world. You can
@@ -6339,7 +6375,7 @@ as there is no slider for the external field. Try to add this yourself.
 Add a slider for the external field `tau'. The code only needs to be
 changed in this line (study Equation~\ref{eq-ch5n-1-old-17}):
 
-{let} {Ediff} {2} {*} {spin} {* sum} {{[} spin {]}} {of neighbors4}
+\texttt{let\ Ediff\ 2\ *\ spin\ *\ sum\ {[}\ spin\ {]}\ of\ neighbors4}
 
 If successful, you can test for hysteresis and divergence. For tau = 0,
 decreasing the temperature should give the pitchfork bifurcation. For a
@@ -6350,8 +6386,7 @@ Actually, this should work better if all spins are connected to all
 spins. To do this, `neighbors4' should be replaced by `patches'. To
 normalize the effect of so many spins, it is recommended to use:
 
-{let} {0.001} {*} {Ediff} {2} {*} {spin} {* sum} {{[} spin {]}} {of
-patches}
+\texttt{let\ 0.001\ *\ Ediff\ 2\ *\ spin\ *\ sum\ {[}\ spin\ {]}\ of\ patches}
 
 Now you should see hysteresis and the pitchfork better. However, in this
 case the typical self-organized patterning that occurred in the Ising
@@ -6556,14 +6591,14 @@ codes for each illusion, they are extremely short and elegant
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img6-old-44}The `Kindergarten' Illusion
+from The Optical Illusion model in NetLogo.}
+
 \centering{
 
 \includegraphics[width=9cm,height=\textheight]{media/ch5n/image6.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img6-old-44}The `Kindergarten' Illusion from
-The Optical Illusion model in NetLogo.}
 
 \end{figure}%
 
@@ -6587,13 +6622,7 @@ oscillations.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics{media/ch5n/image7.jpg}
-
-}
-
-\caption{\label{fig-ch5n-img7-old-45}The finger movement task. Two
+\sidecaption{\label{fig-ch5n-img7-old-45}The finger movement task. Two
 fingers move up and down (x\textsubscript{1} and x\textsubscript{2}).
 They can move in phase or out of phase with a phase difference of 0 and
 \(\pi\) (bottom left figures). The model is shown on the right side. The
@@ -6602,6 +6631,12 @@ difference\(\ \varphi\) of 0 or \(\pi\) (\(- \pi\) is the same state) or
 only one stable state (a phase difference of 0). Coupling strength
 (\(b/a\)) and heterogeneity (\(\Delta w)\) are control variables.
 Adapted from H. Haken, Kelso, and Bunz (1985) and Kelso (2021).}
+
+\centering{
+
+\includegraphics{media/ch5n/image7.jpg}
+
+}
 
 \end{figure}%
 
@@ -6704,15 +6739,15 @@ walking animals. His YouTube videos are strongly recommended.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=15cm,height=\textheight]{media/ch5n/image8b.png}
-
-}
-
-\caption{\label{fig-ch5n-img8-old-46}Beach Beast \textbar{}
+\sidecaption{\label{fig-ch5n-img8-old-46}Beach Beast \textbar{}
 www.strandbeest.com/ \textbf{IMG\_4285.jpg \textbar{} Robbert van den
 Beld \textbar{} Flickr}}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch5n/image8b.png}
+
+}
 
 \end{figure}%
 
@@ -6752,8 +6787,8 @@ Piaget argued that cognitive development is a spontaneous, natural
 process that occurs as children interact with the world around them.
 {\marginnote{\begin{footnotesize}Piaget's conception of cognitive
 development can be viewed self-organization theory avant la letter, as
-was the case with the Gestalt psychologists\end{footnotesize}}} I see my
-own work in developmental psychology (e.g., Savi et al. 2019; van der
+was the case with the Gestalt psychologists.\end{footnotesize}}} I see
+my own work in developmental psychology (e.g., Savi et al. 2019; van der
 Maas et al. 2006; van der Maas and Molenaar 1992) as a formalization of
 these classical ideas of Piaget. The idea of stages and equilibrium
 lived on in neo-Piagetian theories.
@@ -6852,7 +6887,7 @@ Also famous is the work of the sociologist Mark Granovetter (1973) on
 strong and weak ties in social networks (belonging to the best cited
 paper in the history of the social sciences).
 {\marginnote{\begin{footnotesize}Weak ties in social networks are often
-more valuable than strong ties\end{footnotesize}}}. Weak ties provide
+more valuable than strong ties.\end{footnotesize}}}. Weak ties provide
 access to new information and opportunities that may not be available
 within one's close circle of friends and acquaintances.{]} Another of
 his contributions is the threshold model of collective behavior
@@ -6879,7 +6914,8 @@ R-code we can simulate this effect:
 \NormalTok{  dancers[threshold}\SpecialCharTok{\textless{}}\NormalTok{(number\_of\_dancers[i]}\SpecialCharTok{/}\NormalTok{n)] }\OtherTok{\textless{}{-}} \DecValTok{1} 
 \CommentTok{\# if my threshold \textless{} proportion of dancers, I dance}
 \NormalTok{\}}
-\FunctionTok{plot}\NormalTok{(number\_of\_dancers,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}\#dancers\textquotesingle{}}\NormalTok{,}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1000}\NormalTok{),}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(number\_of\_dancers,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}\#dancers\textquotesingle{}}\NormalTok{,}
+     \AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1000}\NormalTok{),}\AttributeTok{type=}\StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6924,7 +6960,7 @@ and solutions might also play a role (Galesic et al. 2023).
 {\marginnote{\begin{footnotesize}Collective intelligence is more likely
 to be effective when the group is large, has a wide range of knowledge
 and perspectives, and the judgments are made
-independently\end{footnotesize}}} There is an extensive and up-to-date
+independently.\end{footnotesize}}} There is an extensive and up-to-date
 Wikipedia on collective intelligence, discussing findings from various
 disciplines, biological examples (swarm intelligence), and an overview
 of applications (such as open source software, crowd sourcing, the
@@ -6951,16 +6987,16 @@ multiple users can participate in NetLogo simulations.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img9-old-47}The Prisoner's Dilemma. If both
+A and B remain silent, they each face a two-year sentence. If one talks
+and the other does not, the informer is released and the silent partner
+gets a decade behind bars. If both betray, they serve five years.}
+
 \centering{
 
 \includegraphics[width=8cm,height=\textheight]{media/ch5n/image9.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img9-old-47}The Prisoner's Dilemma. If both A
-and B remain silent, they each face a two-year sentence. If one talks
-and the other does not, the informer is released and the silent partner
-gets a decade behind bars. If both betray, they serve five years.}
 
 \end{figure}%
 
@@ -7030,15 +7066,15 @@ negatively with impact.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch5n-img10-old-48}Team assembly model. Newcomers
+and incumbents are added to growing networks based on probabilities p
+and q. If p is sufficiently high, a dense network emerges.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch5n/image10.jpg}
 
 }
-
-\caption{\label{fig-ch5n-img10-old-48}Team assembly model. Newcomers and
-incumbents are added to growing networks based on probabilities p and q.
-If p is sufficiently high, a dense network emerges.}
 
 \end{figure}%
 
@@ -7160,14 +7196,14 @@ al. 2012; Marsman and Rhemtulla 2022).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img1-old-70}The number of papers on the
+combination of symptoms and ``network analysis'' grows exponentially.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch6/fig-ch6-img1-old-70.jpg}
 
 }
-
-\caption{\label{fig-ch6-img1-old-70}The number of papers on the
-combination of symptoms and ``network analysis'' grows exponentially.}
 
 \end{figure}%
 
@@ -7254,16 +7290,16 @@ Figure~\ref{fig-ch6-img2-old-71}.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img2-old-71.png}
-
-}
-
-\caption{\label{fig-ch6-img2-old-71}A weighted directed network with
+\sidecaption{\label{fig-ch6-img2-old-71}A weighted directed network with
 self-loops. Red arrows indicate negative effects. OutStrength and
 InStrength represent two types of centrality measures in directed
 networks.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch6/fig-ch6-img2-old-71.png}
+
+}
 
 \end{figure}%
 
@@ -7282,14 +7318,14 @@ networks. Some examples are shown in Figure~\ref{fig-ch6-img3-old-72}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img3-old-72}Different network types
+generated with Igraph.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch6/fig-ch6-img3-old-72.png}
 
 }
-
-\caption{\label{fig-ch6-img3-old-72}Different network types generated
-with Igraph.}
 
 \end{figure}%
 
@@ -7347,18 +7383,18 @@ conceptualizing complex networks, including in the field of psychology.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-extra}A hierarchical stochastic block model
+with four levels of four units. Probabilities of links are higher within
+blocks than between blocks of nodes. This embedding of levels could be
+seen as an implementation of Simon's architecture of complexity.
+\textbf{The code for this figure is available in the online software
+repository of the book.}}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch6/fig-ch6-extra.png}
 
 }
-
-\caption{\label{fig-ch6-extra}A hierarchical stochastic block model with
-four levels of four units. Probabilities of links are higher within
-blocks than between blocks of nodes. This embedding of levels could be
-seen as an implementation of Simon's architecture of complexity.
-\textbf{The code for this figure is available in the online software
-repository of the book.}}
 
 \end{figure}%
 
@@ -7459,16 +7495,16 @@ explained by the general, higher order, factor \(g\)
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch6/image4.jpg}
-
-}
-
-\caption{\label{fig-ch6-img4-old-73}The Cattell-Horn-Carroll (CHC) model
-of general intelligence. Blocks represent test scores (narrow),
+\sidecaption{\label{fig-ch6-img4-old-73}The Cattell-Horn-Carroll (CHC)
+model of general intelligence. Blocks represent test scores (narrow),
 explained by the broad factors, which in turn are determined by the
 general factor \(g\).}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch6/image4.jpg}
+
+}
 
 \end{figure}%
 
@@ -7503,13 +7539,7 @@ interpretations of the factor model.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=11cm,height=\textheight]{media/ch6/image5.jpg}
-
-}
-
-\caption{\label{fig-ch6-img5-old-74}The reflective and formative
+\sidecaption{\label{fig-ch6-img5-old-74}The reflective and formative
 interpretations of the factor model cannot be distinguished with
 correlational data, but they are very different. In the reflective
 model, the latent factor is a common cause (e.g., temperature) that
@@ -7519,6 +7549,12 @@ because the X's have no outgoing connections. In the formative
 interpretation, the factor is just an index (e.g., an economic index)
 that summarizes the state of many interacting components (companies). In
 this case, only interventions on the X's can have an overall effect.}
+
+\centering{
+
+\includegraphics[width=11cm,height=\textheight]{media/ch6/image5.jpg}
+
+}
 
 \end{figure}%
 
@@ -7573,15 +7609,15 @@ on the technical aspects.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img6-old-75}The mutualism model. The
+self-loops, depicted in red, have an excitatory (\(aX\)) and an
+inhibitory part (\(- aX^{2}K\)).}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch6/fig-ch6-img6-old-75.png}
 
 }
-
-\caption{\label{fig-ch6-img6-old-75}The mutualism model. The self-loops,
-depicted in red, have an excitatory (\(aX\)) and an inhibitory part
-(\(- aX^{2}K\)).}
 
 \end{figure}%
 
@@ -7649,15 +7685,15 @@ model and fit network and factor models.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img7-old-76}A typical run of the mutualism
+model for one subject and the distribution of correlations between \(X\)
+values across subjects.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img7-old-76.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch6/fig-ch6-img7-old-76.jpg}
 
 }
-
-\caption{\label{fig-ch6-img7-old-76}A typical run of the mutualism model
-for one subject and the distribution of correlations between \(X\)
-values across subjects.}
 
 \end{figure}%
 
@@ -7807,15 +7843,16 @@ et al. 2014). And again, no one seems to know what \(p\) might be.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img8-old-77}The small world of
+psychopathology. Symptoms are represented as nodes and connected by an
+edge whenever they figure in the same disorder. (From: Denny Borsboom et
+al. 2011).}
+
 \centering{
 
-\includegraphics[width=6.26389in,height=\textheight]{media/ch6/image8.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch6/image8.jpg}
 
 }
-
-\caption{\label{fig-ch6-img8-old-77}The small world of psychopathology.
-Symptoms are represented as nodes and connected by an edge whenever they
-figure in the same disorder. (From: Denny Borsboom et al. 2011).}
 
 \end{figure}%
 
@@ -7879,14 +7916,14 @@ proposed in Wittenborn et al. (2016).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img9-old-78}The Vulnerability to Depression
+model in NetLogo.}
+
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch6/image9.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch6/image9.jpg}
 
 }
-
-\caption{\label{fig-ch6-img9-old-78}The Vulnerability to Depression
-model in NetLogo.}
 
 \end{figure}%
 
@@ -7915,17 +7952,17 @@ reinforce the unhealthy state (Vangeli et al. 2011).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img10-old-79}Resilience from a complex
+systems perspective. If the system is in a less resilient, metastable
+state, any perturbation will be effective. A perturbation to a
+metastable state will not last. Lasting interventions change the dynamic
+landscape of the system.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/image10.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch6/image10.jpg}
 
 }
-
-\caption{\label{fig-ch6-img10-old-79}Resilience from a complex systems
-perspective. If the system is in a less resilient, metastable state, any
-perturbation will be effective. A perturbation to a metastable state
-will not last. Lasting interventions change the dynamic landscape of the
-system.}
 
 \end{figure}%
 
@@ -7976,7 +8013,7 @@ lower-order cognitive, affective, and behavioral factors, that each
 explain observed responses, similar to the CHC model of general
 intelligence. {\marginnote{\begin{footnotesize}Attitudes are networks of
 feelings, beliefs and behaviors towards an attitude
-object\end{footnotesize}}} The causal attitude model (Dalege et al.
+object.\end{footnotesize}}} The causal attitude model (Dalege et al.
 2016) maintains this distinction in cognitive, affective, and behavioral
 components, but now conceptualizes them as clusters within a network.
 Nodes represent single feelings, beliefs and behaviors. In Dalege et al.
@@ -7989,14 +8026,14 @@ equated to (inverse) temperature.\end{footnotesize}}}
 
 \begin{figure}[H]
 
-{\centering \includegraphics[width=9cm,height=\textheight]{media/ch6/fig-attitude network.png}
-
-}
-
-\caption{The Ising Attitude Network Model. Feelings, beliefs, and
+\sidecaption{The Ising Attitude Network Model. Feelings, beliefs, and
 behaviors toward an attitude object align when attended to. Nodes are
 also influenced by local and global external fields. The connections are
 weighted.}
+
+{\centering \includegraphics[width=9cm,height=\textheight]{media/ch6/fig-attitude network.png}
+
+}
 
 \end{figure}%
 
@@ -8053,15 +8090,15 @@ variable.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img11-old-80}The mean field approximation of
+the Ising attitude model is the cusp. Attention is the psychological
+equivalent of inverse temperature.}
+
 \centering{
 
 \includegraphics[width=10cm,height=\textheight]{media/ch6/image11.jpg}
 
 }
-
-\caption{\label{fig-ch6-img11-old-80}The mean field approximation of the
-Ising attitude model is the cusp. Attention is the psychological
-equivalent of inverse temperature.}
 
 \end{figure}%
 
@@ -8113,16 +8150,16 @@ shown in Figure~\ref{fig-ch6-img8-old-77}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img12-old-81}The equilibrium distribution of
+the attitude values (sum of node values) at low and high attention,
+respectively. This simple simulation demonstrates the mere thought
+effect (Tesser 1978).}
+
 \centering{
 
 \includegraphics[width=11cm,height=\textheight]{media/ch6/fig-ch6-img12-old-81.jpg}
 
 }
-
-\caption{\label{fig-ch6-img12-old-81}The equilibrium distribution of the
-attitude values (sum of node values) at low and high attention,
-respectively. This simple simulation demonstrates the mere thought
-effect (Tesser 1978).}
 
 \end{figure}%
 
@@ -8156,17 +8193,17 @@ such as an interview. This can be simulated as follows:
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img13-old-82}At low levels of attention (but
+not too low), the node values are determined by the thresholds. At
+higher levels of attention, they are overridden by the collective effect
+of other nodes. This may explain the difference between implicit and
+explicit attitude measures.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch6/fig-ch6-img13-old-82.jpg}
 
 }
-
-\caption{\label{fig-ch6-img13-old-82}At low levels of attention (but not
-too low), the node values are determined by the thresholds. At higher
-levels of attention, they are overridden by the collective effect of
-other nodes. This may explain the difference between implicit and
-explicit attitude measures.}
 
 \end{figure}%
 
@@ -8233,14 +8270,14 @@ Figure~\ref{fig-ch6-img14-old-83} shows the result of this simulation.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img14-old-83}Through Hebbian learning, a
+random (unbalanced) network becomes balanced.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch6/fig-ch6-img14-old-83.png}
 
 }
-
-\caption{\label{fig-ch6-img14-old-83}Through Hebbian learning, a random
-(unbalanced) network becomes balanced.}
 
 \end{figure}%
 
@@ -8323,16 +8360,16 @@ allow for involved non-partisan positions.\end{footnotesize}}}
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img15-old-84}The butterfly catastrophe,
+\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}\),
+associated with the tricritical Ising model. The potential function can
+have three minima (\(a = c = 0, d = 5, b\) varies from 1 to -7).}
+
 \centering{
 
 \includegraphics{media/ch6/image15.jpg}
 
 }
-
-\caption{\label{fig-ch6-img15-old-84}The butterfly catastrophe,
-\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}\),
-associated with the tricritical Ising model. The potential function can
-have three minima (\(a = c = 0, d = 5, b\) varies from 1 to -7).}
 
 \end{figure}%
 
@@ -8411,7 +8448,7 @@ developed under the supervision of Eric Jan Wagenmakers (Huth et al.
 2023; Love et al. 2019). It is a user-friendly interface for accessing R
 packages. {\marginnote{\begin{footnotesize}All major statistical
 analyses, both frequentist and Bayesian, are available in JASP
-(\url{https://jasp-stats.org})\end{footnotesize}}}. Many of the network
+(\url{https://jasp-stats.org}).\end{footnotesize}}}. Many of the network
 R packages mentioned above are available.\footnote{You may want to start
   by reading the blog post on doing network analysis in JASP
   (\url{https://jasp-stats.org/2018/03/20/perform-network-analysis-jasp/}).}
@@ -8495,18 +8532,18 @@ effects.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img16-old-85.png}
-
-}
-
-\caption{\label{fig-ch6-img16-old-85}The top figure is based on
+\sidecaption{\label{fig-ch6-img16-old-85}The top figure is based on
 cross-sectional data and incorrectly suggests that node V2 is the most
 important mode. The bottom figure is based on the time series of one
 individual and correctly shows that V2 is central because it is
 influenced by other nodes, while V1 is central because it influences
 other nodes and is therefore more important.}
+
+\centering{
+
+\includegraphics[width=13cm,height=\textheight]{media/ch6/fig-ch6-img16-old-85.png}
+
+}
 
 \end{figure}%
 
@@ -8535,15 +8572,15 @@ look like Figure~\ref{fig-ch6-img17-old-86}.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img17-old-86}The block structure in the
+mutualism model can be represented as either a network or a factor
+model.}
+
 \centering{
 
 \includegraphics{media/ch6/image17.jpg}
 
 }
-
-\caption{\label{fig-ch6-img17-old-86}The block structure in the
-mutualism model can be represented as either a network or a factor
-model.}
 
 \end{figure}%
 
@@ -8579,15 +8616,15 @@ of the model. The code for this analysis is:
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img18-old-87}The true (original) and the
+estimated Ising model are in good agreement. The thresholds are also
+well estimated from the data.}
+
 \centering{
 
 \includegraphics[width=15cm,height=\textheight]{media/ch6/fig-ch6-img18-old-87.png}
 
 }
-
-\caption{\label{fig-ch6-img18-old-87}The true (original) and the
-estimated Ising model are in good agreement. The thresholds are also
-well estimated from the data.}
 
 \end{figure}%
 
@@ -8648,13 +8685,13 @@ other packages.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch6-img19-old-88}The attitude towards Obama.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch6/fig-ch6-img19-old-88.png}
 
 }
-
-\caption{\label{fig-ch6-img19-old-88}The attitude towards Obama.}
 
 \end{figure}%
 
@@ -9023,14 +9060,14 @@ system.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img1-old-89}BehaviorSpace settings and
+R-code to visualize the effects of intolerance on segregation.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/image1.jpg}
+\includegraphics[width=13cm,height=\textheight]{media/ch7/image1.jpg}
 
 }
-
-\caption{\label{fig-ch7-img1-old-89}BehaviorSpace settings and R-code to
-visualize the effects of intolerance on segregation.}
 
 \end{figure}%
 
@@ -9055,17 +9092,17 @@ Loreto (2009) provides a brief review.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img2-old-90}The naming game (adapted from
+\textbf{Castellano et al., 2009}). The speaker chooses the highlighted
+word. If the listener does not know the word (failure), she adds it to
+her inventory. In case of success, both agents delete their inventories,
+keeping only the spoken word.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/ch7-2__figure92.png}
 
 }
-
-\caption{\label{fig-ch7-img2-old-90}The naming game (adapted from
-\textbf{Castellano et al., 2009}). The speaker chooses the highlighted
-word. If the listener does not know the word (failure), she adds it to
-her inventory. In case of success, both agents delete their inventories,
-keeping only the spoken word.}
 
 \end{figure}%
 
@@ -9118,16 +9155,16 @@ Which results in Figure~\ref{fig-ch7-img3-old-91} :
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img3-old-91}The order parameter, the total
+number of unique words, undergoes a phase transition to a state where
+everyone uses the same word for the object (compare with figure 2 of
+Castellano et al., 2009).}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img3-old-91.png}
 
 }
-
-\caption{\label{fig-ch7-img3-old-91}The order parameter, the total
-number of unique words, undergoes a phase transition to a state where
-everyone uses the same word for the object (compare with figure 2 of
-Castellano et al., 2009).}
 
 \end{figure}%
 
@@ -9140,9 +9177,7 @@ write the time evolution in three differential equations:
 \[{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}\]
 \[{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}\]
 
-\begin{equation}\phantomsection\label{eq-ch7-1-old-50}{\begin{array}{r}
-\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}
-\end{array}}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-1-old-50}{\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}}\end{equation}
 
 The first equation can be understood as follow. Speakers B talking to
 listeners A turn listeners A into AB agents. The loss in A agents is
@@ -9225,16 +9260,16 @@ different cases.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img4-old-92}Two runs of Axelrod's model. For
+4 features with 4 possible values only one culture remains. For the
+second case (\(F = 2, Q = 10\)) multiple unique cultures, different in
+all features, emerge.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img4-old-92.png}
 
 }
-
-\caption{\label{fig-ch7-img4-old-92}Two runs of Axelrod's model. For 4
-features with 4 possible values only one culture remains. For the second
-case (\(F = 2, Q = 10\)) multiple unique cultures, different in all
-features, emerge.}
 
 \end{figure}%
 
@@ -9361,14 +9396,14 @@ temperature.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img5-old-93}Bottom-up voting in hierarchical
+systems in the Galam model.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/image5.jpg}
 
 }
-
-\caption{\label{fig-ch7-img5-old-93}Bottom-up voting in hierarchical
-systems in the Galam model.}
 
 \end{figure}%
 
@@ -9442,18 +9477,18 @@ Sutton, and Cichocka 2017).
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img6-old-94}Five runs of the Social Impact
+Model with \(\alpha = 5\), \(p\), \(s\) and \(H\) sampled from uniform
+distributions between 0 and 100, and a lattice of 10 by 10. For example,
+the line at the top shows staircase-like behavior around time 320 and at
+the end of the time series. The Social Impact Model can be found in the
+online NetLogo models.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img6-old-94.jpg}
 
 }
-
-\caption{\label{fig-ch7-img6-old-94}Five runs of the Social Impact Model
-with \(\alpha = 5\), \(p\), \(s\) and \(H\) sampled from uniform
-distributions between 0 and 100, and a lattice of 10 by 10. For example,
-the line at the top shows staircase-like behavior around time 320 and at
-the end of the time series. The Social Impact Model can be found in the
-online NetLogo models.}
 
 \end{figure}%
 
@@ -9502,14 +9537,14 @@ simulated with Grind (using the
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img7-old-95}Convergence of opinion in the
+Friedkin-Johnson model in a connected network of agents.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img7-old-95.png}
 
 }
-
-\caption{\label{fig-ch7-img7-old-95}Convergence of opinion in the
-Friedkin-Johnson model in a connected network of agents.}
 
 \end{figure}%
 
@@ -9535,9 +9570,7 @@ happens because the difference in opinion exceeds the bound
 
 \[X_{i}(t + 1) = \ X_{i}(t) + \ \mu(X_{j}(t) - X_{i}(t))\]
 
-\begin{equation}\phantomsection\label{eq-ch7-2-old-51}{\begin{array}{r}
-X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)
-\end{array}}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-2-old-51}{X_{j}(t + 1) = \ X_{j}(t) + \ \mu\left( X_{i}(t) - X_{j}(t) \right)}\end{equation}
 
 So, if \(\mu = .5\), they find each other in the middle. If \(\mu = 1\),
 they take each other's position, as in the voter model. The value of
@@ -9576,15 +9609,15 @@ entirely accurate code to simulate this model is: \footnote{The second
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img8-old-96}Four example runs of the
+Deffuant model with four different boundaries. Lower bounds of
+confidence lead to polarization.}
+
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/fig-ch7-img8-old-96.png}
+\includegraphics[width=13cm,height=\textheight]{media/ch7/fig-ch7-img8-old-96.png}
 
 }
-
-\caption{\label{fig-ch7-img8-old-96}Four example runs of the Deffuant
-model with four different boundaries. Lower bounds of confidence lead to
-polarization.}
 
 \end{figure}%
 
@@ -9622,14 +9655,14 @@ after the \texttt{X\ \textless{}-\ state{[}1:n{]}} line and adding bound
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img9-old-97}Clustering in the Hegselmann \&
+Krause model.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img9-old-97.png}
 
 }
-
-\caption{\label{fig-ch7-img9-old-97}Clustering in the Hegselmann \&
-Krause model.}
 
 \end{figure}%
 
@@ -9909,18 +9942,18 @@ convergence happens over time.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch7-img10-old-98}The interface of the HIOM
+NetLogo model. All model parameters can be adjusted with sliders. With
+add-activists and perturbate-activist the key effects of HIOM can be
+reproduced. The graphs on the right show the distribution of opinion,
+attention, and information and the change in the means of these
+variables.}
+
 \centering{
 
 \includegraphics{media/ch7/image10.jpg}
 
 }
-
-\caption{\label{fig-ch7-img10-old-98}The interface of the HIOM NetLogo
-model. All model parameters can be adjusted with sliders. With
-add-activists and perturbate-activist the key effects of HIOM can be
-reproduced. The graphs on the right show the distribution of opinion,
-attention, and information and the change in the means of these
-variables.}
 
 \end{figure}%
 
@@ -9961,19 +9994,19 @@ dynamics, this form of polarization would not occur.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics{media/ch7/image11.jpg}
-
-}
-
-\caption{\label{fig-ch7-img11-old-99}The visualization of persuasion
+\sidecaption{\label{fig-ch7-img11-old-99}The visualization of persuasion
 paradox in the original paper (van der Maas, Dalege, and Waldorp 2020).
 Activism initially spreads quickly, but also increases the attention of
 conservative agents (see second and third panel). Over time, opinion
 polarizes. Red nodes are activists and blue nodes are conservatives. The
 size of the nodes represents attention. The last panel explains why some
 conservatives become (anti-)activists themselves.}
+
+\centering{
+
+\includegraphics{media/ch7/image11.jpg}
+
+}
 
 \end{figure}%
 
@@ -10007,14 +10040,8 @@ in the NetLogo model.
 
 \begin{figure}
 
-\centering{
-
-\includegraphics{media/ch7/image12.jpg}
-
-}
-
-\caption{\label{fig-ch7-img12-old-100}The meat-eating vegetarian. The
-left panels show equal initial states. In the upper panels, bounded
+\sidecaption{\label{fig-ch7-img12-old-100}The meat-eating vegetarian.
+The left panels show equal initial states. In the upper panels, bounded
 confidence prevents the vegetarian (red) and the meat-eater (blue) from
 interacting. This leads to polarization. In the lower panels, some
 vegetarians are perturbed towards meat eating. These perturbed agents
@@ -10022,6 +10049,12 @@ have \(I < 0\) and \(O > 0\), which is possible because \(A > 0\)
 (hysteresis). Since \(O > 0\), these agents can exchange information
 with meat eaters, leading to the spread of vegetarianism. For simulation
 details, see van der Maas, Dalege, and Waldorp (2020).}
+
+\centering{
+
+\includegraphics{media/ch7/image12.jpg}
+
+}
 
 \end{figure}%
 
@@ -10375,12 +10408,12 @@ psychology. I gave Gestalt psychology and Piagetian theory as examples,
 but one could make the same point for Rogers' theory of self-concept,
 Heider's balance theory, or Gibson's ecological theory of perception.
 {\marginnote{\begin{footnotesize}The concepts of self-organizing complex
-systems were already present in early day psychology\end{footnotesize}}}
-This is why I perceive the complex systems approach in psychology less
-as a novel theory and more as a formalization of these intriguing yet
-frequently abstract verbal theories. For instance, the Ising attitude
-model serves as a formalization of numerous established concepts in
-social psychology.
+systems were already present in early day
+psychology.\end{footnotesize}}} This is why I perceive the complex
+systems approach in psychology less as a novel theory and more as a
+formalization of these intriguing yet frequently abstract verbal
+theories. For instance, the Ising attitude model serves as a
+formalization of numerous established concepts in social psychology.
 
 Chapter~\ref{sec-ch6} focused on the psychological and psychometric
 network approaches. This chapter ends with an extended discussion of the
@@ -10551,15 +10584,15 @@ see an upward spiral of theory development and measurement techniques.
 
 \begin{figure}
 
+\sidecaption{\label{fig-ch8-extra}The network of crises in psychology.
+The resolution of one crisis will hopefully have a positive impact on
+the resolution of others.}
+
 \centering{
 
 \includegraphics[width=12cm,height=\textheight]{media/ch8/ch8-fig1-extra.png}
 
 }
-
-\caption{\label{fig-ch8-extra}The network of crises in psychology. The
-resolution of one crisis will hopefully have a positive impact on the
-resolution of others.}
 
 \end{figure}%
 
