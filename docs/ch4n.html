@@ -435,9 +435,9 @@ window.Quarto = {
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plane</span>(<span class="at">odes=</span>LV,<span class="at">portrait =</span> <span class="cn">TRUE</span>, <span class="at">ymax=</span><span class="dv">17</span>, <span class="at">xmax=</span><span class="dv">50</span>, <span class="at">tstep=</span><span class="fl">0.1</span>,<span class="at">grid=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The plane function makes a phase plot with <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span> as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka-Volterra equations is a limit cycle that depends on the choice of the initial conditions.</p>
 <p>A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting <code>dN &lt;- a*N *(1-N) - b*P*N</code> in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading <span class="citation" data-cites="deboerSimplePhasePlane2018">(<a href="references.html#ref-deboerSimplePhasePlane2018" role="doc-biblioref">de Boer 2018</a>)</span>. It also contains the appropriate parameter values for this model variant. In this density dependent model there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.</p>
-<p>A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics. [The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into three compartments: susceptible (S), representing individuals who have not yet contracted the disease but are at risk; infected (I), representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered (R), representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible.]{aside} The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).</p>
+<div class="page-columns page-full"><p>A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics.  The state of the model are susceptible (S), representing individuals who have not yet contracted the disease but are at risk; infected (I), representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered (R), representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into susceptible (S), infected (I), and recovered (R) individuals.</span></div></div>
 </section>
-<section id="sec-Fitting-models-stochasticity-versus-noise" class="level3" data-number="4.1.3">
+<section id="sec-Fitting-models-stochasticity-versus-noise" class="level3 page-columns page-full" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-Fitting-models-stochasticity-versus-noise"><span class="header-section-number">4.1.3</span> Fitting models: stochasticity versus noise</h3>
 <p>Grind includes an option to fit dynamical systems models. With <code>fit()</code>, based on the <code>modFit()</code> function from the FME package <span class="citation" data-cites="soetaert2010">(<a href="references.html#ref-soetaert2010" role="doc-biblioref">Soetaert, Petzoldt, and Setzer 2010</a>)</span>, one can estimate the model parameters given a data set. These functions also provide confidence intervals, allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.</p>
 <p>I will illustrate the use of <code>fit()</code> on three data sets created with the original Lotka-Volterra model from the previous section. The first data set is the deterministic data set, the data that follows directly from the code above. The second one is created using a stochastic Lotka-Volterra model. How this works will be explained in the next section. The third is a deterministic data set with measurement error. We will see that the last two cases are very different.</p>
@@ -464,12 +464,12 @@ window.Quarto = {
 <span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text=</span><span class="fu">c</span>(<span class="st">'deterministic'</span>,<span class="st">'stochastic'</span>,<span class="st">'error'</span>),</span>
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">args.legend=</span><span class="fu">c</span>(<span class="at">x=</span><span class="dv">13</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This results in <a href="#fig-ch4n-img1-old-49" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>.</p>
-<div id="fig-ch4n-img1-old-49" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img1-old-49" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img1-old-49-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img1-old-49.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img1-old-49-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img1-old-49-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.1: Fit of the Lotka-Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.
 </figcaption>
 </figure>
@@ -500,18 +500,18 @@ Figure&nbsp;4.1: Fit of the Lotka-Volterra model on three types of data. The lin
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ymax=</span><span class="dv">2</span>,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">timeplot=</span>F)</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">hist</span>(data[,<span class="dv">2</span>],<span class="dv">30</span>,<span class="at">plot=</span>F)<span class="sc">$</span>counts,<span class="at">xlab=</span><span class="st">"X"</span>,<span class="at">hor=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img2-old-50" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img2-old-50" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img2-old-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch4n/fig-ch4n-img2-old-50.jpg" class="img-fluid figure-img" style="width:15cm">
+<img src="media/ch4n/fig-ch4n-img2-old-50.jpg" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img2-old-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img2-old-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.2: Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="sec-Bifurcation-analysis" class="level3" data-number="4.1.5">
+<section id="sec-Bifurcation-analysis" class="level3 page-columns page-full" data-number="4.1.5">
 <h3 data-number="4.1.5" class="anchored" data-anchor-id="sec-Bifurcation-analysis"><span class="header-section-number">4.1.5</span> Bifurcation analysis</h3>
 <p>By combining the Grind functions <code>newton()</code> and <code>continue()</code>, we can perform bifurcation analysis. The <code>newton()</code> function finds stable and unstable fixed points and the <code>continue()</code> function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change a parameter. This is what we did in Chapter 2 for the logistic map, when we varied <span class="math inline">\(r\)</span> and plotted the equilibria (see <a href="ch2.html#fig-ch2-img8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>).</p>
 <p>It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create <a href="#fig-ch4n-img3-old-51" class="quarto-xref">Figure&nbsp;<span>4.3</span></a> is:</p>
@@ -521,12 +521,12 @@ Figure&nbsp;4.2: Spontaneous jumps in the cusp due to stochastics (noise). Due t
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">continue</span>(low,<span class="at">x=</span><span class="st">"a"</span>,<span class="at">y=</span><span class="st">"X"</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">xmax=</span><span class="dv">2</span>,<span class="at">ymax=</span><span class="dv">2</span>) </span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>high <span class="ot">&lt;-</span> <span class="fu">newton</span>(<span class="at">s=</span><span class="fu">c</span>(<span class="at">X=</span><span class="dv">1</span>)) <span class="co"># again starting from X = 1</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">continue</span>(high,<span class="at">x=</span><span class="st">"a"</span>,<span class="at">y=</span><span class="st">"X"</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">xmax=</span><span class="dv">2</span>,<span class="at">ymax=</span><span class="dv">2</span>,<span class="at">add=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img3-old-51" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img3-old-51" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img3-old-51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/image3.jpg" class="img-fluid figure-img" style="width:10cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img3-old-51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img3-old-51-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.3: Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found
 </figcaption>
 </figure>
@@ -539,18 +539,18 @@ Figure&nbsp;4.3: Hysteresis plot made with newton() and continue(). The function
 <p>With</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bifurcation</span>(model,s,p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see <a href="#fig-ch4n-img4-old-52" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with <code>??deBif</code>) for further instructions.</p>
-<div id="fig-ch4n-img4-old-52" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img4-old-52" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img4-old-52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/image4.jpg" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img4-old-52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img4-old-52-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.4: Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> plane. This plot cannot be made with Grind.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="sec-Spruce-Budworm-outbreak-model" class="level3" data-number="4.1.6">
+<section id="sec-Spruce-Budworm-outbreak-model" class="level3 page-columns page-full" data-number="4.1.6">
 <h3 data-number="4.1.6" class="anchored" data-anchor-id="sec-Spruce-Budworm-outbreak-model"><span class="header-section-number">4.1.6</span> Spruce Budworm outbreak model</h3>
 <p>In chapter 3, <a href="ch3.html#sec-Mechanistic-models" class="quarto-xref"><span>Section 3.4.1</span></a>, I introduced the Spruce Budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>spruce <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parms) {</span>
@@ -563,12 +563,12 @@ Figure&nbsp;4.4: Output from Shinyapp Debif. The last plot is a two-dimensional 
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>parms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">r =</span> <span class="fl">0.4</span>, <span class="at">q =</span> <span class="dv">10</span>)</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">bifurcation</span>(spruce, state, parms)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see <a href="ch3.html#sec-Mechanistic-models" class="quarto-xref"><span>Section 3.4.1</span></a>). The predation term, in the original parametrization <span class="math inline">\(- BN^{2}/(A^{2} + N^{2})\)</span>, also has a logistic form that starts to accelerate at <span class="math inline">\(N = A\)</span> up to the maximum level <span class="math inline">\(B\)</span>. The slow start <span class="math inline">\(A\)</span> is used because birds only switch their diet to budworms when this population reaches a certain level <span class="citation" data-cites="ludwig1978">(<a href="references.html#ref-ludwig1978" role="doc-biblioref">Ludwig, Jones, and Holling 1978</a>)</span>. The fixed number of birds can only eat <span class="math inline">\(B\)</span> budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in <a href="#fig-ch4n-img5-old-53" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>.</p>
-<div id="fig-ch4n-img5-old-53" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img5-old-53" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img5-old-53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img5-old-53.jpg" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img5-old-53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img5-old-53-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.5: The Holling functional response models. Type III is used in the Spruce Budworm model.
 </figcaption>
 </figure>
@@ -605,12 +605,12 @@ Figure&nbsp;4.5: The Holling functional response models. Type III is used in the
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># simulation with front car suddenly breaking at t = 150</span></span>
 <span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">run</span>(<span class="at">tmax=</span><span class="dv">300</span>,<span class="at">timeplot =</span> F,<span class="at">table=</span>T,<span class="at">after =</span> <span class="st">'if (t==150) state[2*n] = 0'</span>)</span>
 <span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(data[,<span class="dv">2</span><span class="sc">:</span>(n<span class="sc">+</span><span class="dv">1</span>)],<span class="at">type=</span><span class="st">'l'</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">ylab =</span> <span class="st">'x'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img6-old-54" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img6-old-54" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img6-old-54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img6-old-54.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img6-old-54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img6-old-54-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.6: The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well [see for example Figure 9 in @jusup2022].
 </figcaption>
 </figure>
@@ -623,13 +623,13 @@ Figure&nbsp;4.6: The traffic jam simulation. The top line represents the front c
 <p>In this section, I present an overview of dynamical systems models in psychology, primarily in the form of systems of differential equations. Although the list is extensive, it is not exhaustive. It is important to explore different models and applications before embarking on your own modeling efforts.</p>
 <section id="sec-Response-time-models" class="level3 page-columns page-full" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="sec-Response-time-models"><span class="header-section-number">4.2.1</span> Response time models</h3>
-<div class="page-columns page-full"><p>Many dynamic models have been proposed in the study of speeded decision making <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">(<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">Bogacz et al. 2006</a>)</span>. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (<a href="#fig-ch4n-img7-old-55" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated</span></div></div>
-<div id="fig-ch4n-img7-old-55" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div class="page-columns page-full"><p>Many dynamic models have been proposed in the study of speeded decision making <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">(<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">Bogacz et al. 2006</a>)</span>. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (<a href="#fig-ch4n-img7-old-55" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>). </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.</span></div></div>
+<div id="fig-ch4n-img7-old-55" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img7-old-55-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img7-old-55.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img7-old-55-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img7-old-55-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.7: A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate <span class="math inline">\(I\)</span> (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.
 </figcaption>
 </figure>
@@ -672,12 +672,12 @@ dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 \tag{4.9}\]</span></span></p>
 <p>Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in <span class="citation" data-cites="roxinNeurobiologicalModelsTwoChoice2008">Roxin and Ledberg (<a href="references.html#ref-roxinNeurobiologicalModelsTwoChoice2008" role="doc-biblioref">2008</a>)</span> and <span class="citation" data-cites="verdonckIsingDecisionMaker2014">Verdonck and Tuerlinckx (<a href="references.html#ref-verdonckIsingDecisionMaker2014" role="doc-biblioref">2014</a>)</span> and discussed in <span class="citation" data-cites="ratcliffDiffusionDecisionModel2016">Ratcliff et al. (<a href="references.html#ref-ratcliffDiffusionDecisionModel2016" role="doc-biblioref">2016</a>)</span>.</p>
 <p>The relations between different accumulator models are summarized in <a href="#fig-ch4n-img8-old-56" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.</p>
-<div id="fig-ch4n-img8-old-56" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img8-old-56" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img8-old-56-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/ch4n-8__figure57.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img8-old-56-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img8-old-56-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.8: Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting <span class="math inline">\(w = k\)</span> and <span class="math inline">\(w + k\)</span> to a large value. Adapted from <span class="citation" data-cites="bogaczPhysicsOptimalDecision2006">Bogacz et al. (<a href="references.html#ref-bogaczPhysicsOptimalDecision2006" role="doc-biblioref">2006</a>)</span>.
 </figcaption>
 </figure>
@@ -721,12 +721,12 @@ Figure&nbsp;4.8: Relations between the main evidence accumulator models of decis
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a=</span><span class="sc">-</span>.<span class="dv">1</span>,<span class="at">b=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">c=</span><span class="dv">1</span>,<span class="at">d=</span><span class="fl">0.1</span>) <span class="co"># parameters</span></span>
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">ymin=</span><span class="sc">-</span>.<span class="dv">2</span>,<span class="at">legend=</span>F)</span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plane</span>(<span class="at">portrait=</span>T,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">grid=</span><span class="dv">3</span>,<span class="at">tstep=</span>.<span class="dv">001</span>,<span class="at">legend=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img9-old-57" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img9-old-57" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img9-old-57-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch4n/fig-ch4n-img9-old-57.png" class="img-fluid figure-img" style="width:15cm">
+<img src="media/ch4n/fig-ch4n-img9-old-57.png" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img9-old-57-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img9-old-57-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.9: Three different love affairs between Romeo and Juliet.
 </figcaption>
 </figure>
@@ -736,7 +736,7 @@ Figure&nbsp;4.9: Three different love affairs between Romeo and Juliet.
 <p>Rinaldi also considers the case of a population of heterosexual men and women with different levels of attractiveness. The idea is that a man and a woman will leave their partner and bond together when both reach a more optimal level of love. Rinaldi analyses when and when not the population reach a stable state. This marriage assignment problem, as it is called, is an example of an assignment problem, a famous problem in optimization theory. The goal is to find a stable assignment of men to women, such that no man and woman prefer each other to their current partners <span class="citation" data-cites="galeCollegeAdmissionsStability1962">(<a href="references.html#ref-galeCollegeAdmissionsStability1962" role="doc-biblioref">Gale and Shapley 1962</a>)</span>. We use such algorithms to assign students to master tracks in our educational program.</p>
 <p>Some other advanced variations of this model have been proposed. In these papers the analysis of the mathematical properties of the model gets much more attention than the psychological theory. What exactly the variables are and what the reasoning behind certain model assumptions is often unclear. The work of Murray and Gottman is more interesting in this regard.</p>
 </section>
-<section id="sec-The-mathematics-of-marriage" class="level4" data-number="4.2.2.2">
+<section id="sec-The-mathematics-of-marriage" class="level4 page-columns page-full" data-number="4.2.2.2">
 <h4 data-number="4.2.2.2" class="anchored" data-anchor-id="sec-The-mathematics-of-marriage"><span class="header-section-number">4.2.2.2</span> The mathematics of marriage</h4>
 <p>The model of marriage developed by the psychologist John Gottman and the mathematical biologist James Murray <span class="citation" data-cites="gottmanMathematicsMarriageDynamic2002">(<a href="references.html#ref-gottmanMathematicsMarriageDynamic2002" role="doc-biblioref">2002</a>)</span> is firmly grounded in psychological theory and data. The main phenomenon that inspired this modeling work is the finding by <span class="citation" data-cites="gottmanMaritalProcessesPredictive1992">Gottman and Levenson (<a href="references.html#ref-gottmanMaritalProcessesPredictive1992" role="doc-biblioref">1992</a>)</span> finding that the patterns of interaction between couples, when discussing a major area of ongoing disagreement in their marriage, are predictive of divorce.</p>
 <p>The model consists of two coupled difference equations, but I present the model in the form of differential equations<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
@@ -776,12 +776,12 @@ I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">ymax=</span><span class="dv">2</span>,<span class="at">add=</span>(i<span class="sc">&gt;</span><span class="dv">1</span>),<span class="at">legend=</span>F)</span>
 <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This results in <a href="#fig-ch4n-img10-old-58" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>.</p>
-<div id="fig-ch4n-img10-old-58" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img10-old-58" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img10-old-58-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch4n/fig-ch4n-img10-old-58.png" class="img-fluid figure-img" style="width:15cm">
+<img src="media/ch4n/fig-ch4n-img10-old-58.png" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img10-old-58-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img10-old-58-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.10: Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first, they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second, the response to the partner’s mood is extreme, resulting in either a positive or negative mutual state. In the last case, the response to low positive or negative moods is close to zero, but extreme at higher levels. Now there are three stable states.
 </figcaption>
 </figure>
@@ -818,12 +818,12 @@ Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">X =</span> <span class="fl">0.0126</span>, <span class="at">Y =</span> <span class="fl">0.01</span>)</span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">tmax =</span> <span class="dv">1500</span>, <span class="at">method =</span> <span class="st">"euler"</span>, <span class="at">tstep =</span> <span class="dv">1</span>)</span>
 <span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plane</span>(<span class="at">portrait =</span> <span class="cn">TRUE</span>,<span class="at">grid=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img11-old-59" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img11-old-59" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img11-old-59-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img11-old-59.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img11-old-59-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img11-old-59-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.11: The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist, in the right case one ability suppresses the other.
 </figcaption>
 </figure>
@@ -835,19 +835,19 @@ Figure&nbsp;4.11: The development of two interrelated cognitive abilities in one
 <div class="page-columns page-full"><p>Another type of discrete dynamical systems model is the Polya-Urn model, which is relevant to understanding nonlinear developmental processes in psychology. <span class="citation" data-cites="molenaar1993">(<a href="references.html#ref-molenaar1993" role="doc-biblioref">Molenaar, Boomsma, and Dolan 1993</a>)</span> propose the third source hypothesis.  Based on a series of studies, <span class="citation" data-cites="gartnerThirdComponentCausing1990">(<a href="references.html#ref-gartnerThirdComponentCausing1990" role="doc-biblioref">Gärtner 1990</a>)</span> concluded that 70-80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The third source hypothesis proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes.</span></div></div>
 <p>A simple and, in my opinion, insightful dynamical model for this effect is the Pólya-Eggenberger urn model <span class="citation" data-cites="mahmoudPolyaUrnModels2008">(<a href="references.html#ref-mahmoudPolyaUrnModels2008" role="doc-biblioref">Mahmoud 2008</a>)</span>. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with 2 blue and 1 red marbles. we randomly take out a marble. If we draw a blue marble, we put it back with another blue marble. If we draw a red marble, we put it back and add a red marble. Initially, <span class="math inline">\(p(blue) = 2/3\)</span>, but what will happen to that probability over time when we have more and more marbles? Think about it for a moment.</p>
 <div class="page-columns page-full"><p>My intuition was simply wrong, and in my experience, this is true for the vast majority of people. What happens is shown in <a href="#fig-ch4n-img12-old-60" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>. Each time you run the process, <span class="math inline">\(p(blue)\)</span> reaches a stable state, but the value of that state is random. What happens is that early (random) samples have a huge influence on the long-term dynamics. This creates a Matthew Effect. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The Matthew effect says that the rich get richer, and the poor get poorer.</span></div></div>
-<div id="fig-ch4n-img12-old-60" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img12-old-60" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img12-old-60-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img12-old-60.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img12-old-60-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img12-old-60-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.12: The Polya Urn model. A random marble is sampled and placed back with an extra marble of the same color. The evolution of the probability of picking a blue marble is unpredictable and converges to a random number. This mechanism may play a role in the Matthew Effect.
 </figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="saviWiringIntelligence2019">Savi et al. (<a href="references.html#ref-saviWiringIntelligence2019" role="doc-biblioref">2019</a>)</span> provide a developmental interpretation. Imagine a girl receiving a tennis racket for her birthday. First, she practices the backhand twice at home, but incorrectly. Then, during the first tennis lesson, her trainer demonstrates to her the correct backhand. She now has three experiences, two incorrect and one correct. Now, suppose her backhand development is based on a very simple learning schema. Whenever a backhand return is required, she samples from her earlier experiences, and the sampled backhand is then added to the set of earlier experiences. Thus the cumulation of experiences follows the Polya urn scheme. While she has the potential to become a tennis master, her twin sister, who had less fortunate initial experiences, decides to quit tennis lessons within the first year. This model is consistent with many developmental theories (e.g., the Critical Period Hypothesis), but these theories lack a formal approach.</p>
 </section>
-<section id="sec-The-panic-model" class="level3" data-number="4.2.5">
+<section id="sec-The-panic-model" class="level3 page-columns page-full" data-number="4.2.5">
 <h3 data-number="4.2.5" class="anchored" data-anchor-id="sec-The-panic-model"><span class="header-section-number">4.2.5</span> The panic model</h3>
 <p>In recent years, we have been working on a model of panic disorder <span class="citation" data-cites="robinaughAdvancingNetworkTheory2019">(<a href="references.html#ref-robinaughAdvancingNetworkTheory2019" role="doc-biblioref">Robinaugh et al. 2019</a>)</span>. In theories of panic disorder, there is a reinforcing feedback loop between arousal and perceived threat. When an increase in arousal is perceived as a threat (e.g., a heart attack), arousal increases further. This “vicious cycle” results in a panic attack <span class="citation" data-cites="clarkCognitiveApproachPanic1986">(<a href="references.html#ref-clarkCognitiveApproachPanic1986" role="doc-biblioref">Clark 1986</a>)</span>. Thus, these theories posit two causal effects: an effect of perceived threat on arousal and an effect of arousal on perceived threat.</p>
 <p>We will further assume that the effect of perceived threat on changes in arousal is essentially linear while the causal effect of arousal on perceived threat is nonlinear (S-shaped). For the argument, see our paper. It could be argued that both are nonlinear, but this does not fundamentally change the qualitative behavior of the model. The central part of the model consists of two coupled differential equations:</p>
@@ -883,12 +883,12 @@ Figure&nbsp;4.12: The Polya Urn model. A random marble is sampled and placed bac
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">newton</span>(<span class="at">s=</span><span class="fu">c</span>(<span class="at">A=</span><span class="dv">1</span>,<span class="at">T=</span><span class="dv">1</span>)) <span class="co"># finds a minimum starting from X = -1</span></span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">continue</span>(start,<span class="at">x=</span><span class="st">"alpha"</span>,<span class="at">y=</span><span class="st">"T"</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">xmax=</span><span class="dv">20</span>,<span class="at">ymax=</span><span class="dv">1</span>,<span class="at">add=</span>T) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In <span class="citation" data-cites="robinaughAdvancingNetworkTheory2019">Robinaugh et al. (<a href="references.html#ref-robinaughAdvancingNetworkTheory2019" role="doc-biblioref">2019</a>)</span>, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.</p>
-<div id="fig-ch4n-img13-old-61" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img13-old-61" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img13-old-61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img13-old-61.png" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img13-old-61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img13-old-61-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.13: The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at <span class="math inline">\(A = T = 1\)</span>.
 </figcaption>
 </figure>
@@ -914,12 +914,12 @@ Figure&nbsp;4.13: The panic model. Arousal is set high between time is 20 and 30
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">e=</span>.<span class="dv">05</span>,<span class="at">b=</span><span class="dv">1</span>)</span>
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">ymin=</span><span class="sc">-</span><span class="fl">1.5</span>,<span class="at">main=</span><span class="st">'b = 1'</span>,<span class="at">legend=</span>F)</span>
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plane</span>(<span class="at">xmax=</span><span class="dv">2</span>,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">ymax=</span><span class="dv">2</span>,<span class="at">xmin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">portrait=</span>T,<span class="at">grid=</span><span class="dv">2</span>,<span class="at">main=</span><span class="st">'b = 1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch4n-img14-old-62" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img14-old-62" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img14-old-62-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch4n/fig-ch4n-img14-old-62.png" class="img-fluid figure-img" style="width:14cm">
+<img src="media/ch4n/fig-ch4n-img14-old-62.png" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img14-old-62-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img14-old-62-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.14: Two runs of the van der Pol oscillator. For high b this system oscillates between the two stables states of the cusp. The black dots represent different initial states.
 </figcaption>
 </figure>
@@ -935,12 +935,12 @@ Figure&nbsp;4.14: Two runs of the van der Pol oscillator. For high b this system
 \frac{dW}{dt} = .08(V + .7 - .8W)
 \end{gathered} \tag{4.16}\]</span></span></p>
 <p>The equation for <span class="math inline">\(V\)</span>, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback, and <span class="math inline">\(W\)</span>, a recovery variable, provides linear negative feedback. <span class="math inline">\(I\)</span> represents the input. The main phenomena in this model are shown in <a href="#fig-ch4n-img15-old-63" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>.</p>
-<div id="fig-ch4n-img15-old-63" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img15-old-63" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img15-old-63-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/ch4n-15__figure64.png" class="img-fluid figure-img" style="width:10cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img15-old-63-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img15-old-63-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.15: The dynamics of the FitzHugh–Nagumo model. The horizontal axis represents the membrane potential (<span class="math inline">\(V\)</span>), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable (<span class="math inline">\(W\)</span>). The <span class="math inline">\(V\)</span>-nullcline (where <span class="math inline">\(dV/dt = 0\)</span>) and the <span class="math inline">\(W\)</span>-nullcline (where <span class="math inline">\(dW/dt = 0\)</span>) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.
 </figcaption>
 </figure>
@@ -986,12 +986,12 @@ Figure&nbsp;4.15: The dynamics of the FitzHugh–Nagumo model. The horizontal ax
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  })</span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Depending on the choice of the parameters and initial values many different things can happen. <span class="citation" data-cites="abrahamComputationalUnfoldingDoublecusp1991">Abraham et al. (<a href="references.html#ref-abrahamComputationalUnfoldingDoublecusp1991" role="doc-biblioref">1991</a>)</span> created bifurcation diagrams to summarize the qualitatively different regimes. We will restrict ourselves to the case where <span class="math inline">\(b = d = 1\)</span>, and <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> are varied. The bifurcation diagrams and associated phase planes are shown in <a href="#fig-ch4n-img16-old-64" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>.</p>
-<div id="fig-ch4n-img16-old-64" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img16-old-64" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img16-old-64-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img16-old-64.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img16-old-64-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img16-old-64-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.16: On the left the bifurcation diagram for the double cusp (<span class="math inline">\(b = d = 1\)</span>) is shown. The figures on the right show the phase planes associated with the four different cases in the bifurcation diagram. Case a has 9 fixed points, 4 of which are stable. Case b has 5 fixed points, 2 of which are stable. Case c has 3 fixed points, 2 of which are stable. Case d is special because it has a limit cycle, the Kadyrov oscillator.
 </figcaption>
 </figure>
@@ -1016,12 +1016,12 @@ Figure&nbsp;4.16: On the left the bifurcation diagram for the double cusp (<span
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a=</span><span class="dv">1</span>,<span class="at">b=</span><span class="dv">1</span>,<span class="at">c=</span><span class="sc">-</span><span class="dv">1</span>,<span class="at">d=</span><span class="dv">1</span>)</span>
 <span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">tmax=</span><span class="dv">20</span>,<span class="at">tstep=</span><span class="fl">0.1</span>,<span class="at">ymin=</span><span class="sc">-</span><span class="dv">2</span>,<span class="at">ymax=</span><span class="dv">2</span>) <span class="co"># Kadyrov oscillator</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The last three lines of this code show the Kadyrov oscillator (<a href="#fig-ch4n-img17-old-65" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>).</p>
-<div id="fig-ch4n-img17-old-65" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img17-old-65" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img17-old-65-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img17-old-65.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img17-old-65-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img17-old-65-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.17: The Kadyrov oscillator. Y attracts X to its state (as <span class="math inline">\(d = 1\)</span>), but X pushes Y away (as <span class="math inline">\(c = - 1\)</span>), resulting in oscillations.
 </figcaption>
 </figure>
@@ -1045,15 +1045,15 @@ Figure&nbsp;4.17: The Kadyrov oscillator. Y attracts X to its state (as <span cl
 <div class="page-columns page-full"><p>The cascading transition model has been proposed independently in various research areas. The idea of cuspoidal nets (<span class="math inline">\(N&gt;3\)</span>) as a neural network has been mentioned in <span class="citation" data-cites="abrahamCuspoidalNets1991">Abraham (<a href="references.html#ref-abrahamCuspoidalNets1991" role="doc-biblioref">1991</a>)</span>, analyzed in <span class="citation" data-cites="hoffmannTeachableNeuralNetwork1986">Hoffmann et al. (<a href="references.html#ref-hoffmannTeachableNeuralNetwork1986" role="doc-biblioref">1986</a>)</span> and <span class="citation" data-cites="izhikevichMultipleCuspBifurcations1This1998">Izhikevich (<a href="references.html#ref-izhikevichMultipleCuspBifurcations1This1998" role="doc-biblioref">1998</a>)</span>. <span class="citation" data-cites="castroArtificialImmuneSystems2003">Castro and Timmis (<a href="references.html#ref-castroArtificialImmuneSystems2003" role="doc-biblioref">2003</a>)</span> discuss this model in the context of adaptive immune systems. The most recent application is in climate research <span class="citation" data-cites="dekkerCascadingTransitionsClimate2018 vonderheydtCascadingTransitionsClimate2019 kloseEmergenceCascadingDynamics2020">(<a href="references.html#ref-dekkerCascadingTransitionsClimate2018" role="doc-biblioref">Dekker, von der Heydt, and Dijkstra 2018</a>; <a href="references.html#ref-vonderheydtCascadingTransitionsClimate2019" role="doc-biblioref">von der Heydt, Dekker, and Dijkstra 2019</a>; <a href="references.html#ref-kloseEmergenceCascadingDynamics2020" role="doc-biblioref">Klose et al. 2020</a>)</span>.  The applications involve special cases of Equation <span class="math inline">\(40\)</span>, such as the case where one cusp influence the other, but not vice verse. The case where <span class="math inline">\(b_{ij} \neq 0\)</span> has not been applied to my knowledge. A recent related approach using coupled van der Pol oscillators is described in <span class="citation" data-cites="monsivais-velazquezDynamicsHierarchicalWeighted2020">Monsivais-Velazquez et al. (<a href="references.html#ref-monsivais-velazquezDynamicsHierarchicalWeighted2020" role="doc-biblioref">2020</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The idea of a cascade of collapsing subsystems in the climate is a frightening one.</span></div></div>
 <p>I will give a psychological example of this multivariate model, concerning perception, in the next section.</p>
 </section>
-<section id="sec-Application-to-perception" class="level4" data-number="4.2.8.2">
+<section id="sec-Application-to-perception" class="level4 page-columns page-full" data-number="4.2.8.2">
 <h4 data-number="4.2.8.2" class="anchored" data-anchor-id="sec-Application-to-perception"><span class="header-section-number">4.2.8.2</span> Application to perception</h4>
 <p>Take a look at <a href="#fig-ch4n-img18-old-66" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>. This is a special case of multistable perception, which I call multifigure multistable perception.</p>
-<div id="fig-ch4n-img18-old-66" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img18-old-66" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img18-old-66-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/image18.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img18-old-66-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img18-old-66-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.18: Multifigure multistable perception. Verify three phenomena: a) some attention or focus is required to see three-dimensional cubes, b) spontaneous transitions in the perception of cubes occur, c) such transitions affect the perception of neighboring cubes.
 </figcaption>
 </figure>
@@ -1094,23 +1094,23 @@ Figure&nbsp;4.18: Multifigure multistable perception. Verify three phenomena: a)
 <span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">80</span>,<span class="fl">1.4</span>,<span class="st">'Percepts'</span>)</span>
 <span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">80</span>,<span class="sc">-</span>.<span class="dv">5</span>,<span class="st">'Attention'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>which gives <a href="#fig-ch4n-img19-old-67" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>.</p>
-<div id="fig-ch4n-img19-old-67" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img19-old-67" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img19-old-67-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/fig-ch4n-img19-old-67.png" class="img-fluid figure-img" style="width:14cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img19-old-67-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img19-old-67-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.19: The multifigure Necker cube simulation. Initially attention is low and the percept is close to zero, representing the absence of three-dimensional perception. At <span class="math inline">\(t = 30\)</span>, the attention intercept to one cube is increased to 1. At the <span class="math inline">\(t = 60\)</span> it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after <span class="math inline">\(t = 60\)</span>.
 </figcaption>
 </figure>
 </div>
 <p>There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in <a href="#fig-ch4n-img20-old-68" class="quarto-xref">Figure&nbsp;<span>4.20</span></a>.</p>
-<div id="fig-ch4n-img20-old-68" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img20-old-68" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img20-old-68-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/ch4n-20__figure69.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img20-old-68-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img20-old-68-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.20: Two embedded Necker cubes. The one on the left seems to have a positive coupling <span class="math inline">\(a_{ij} &gt; 0\)</span>, while the one on the right seems to be switch independently (<span class="math inline">\(a_{ij} = 0)\)</span>. You can verify this introspectively. Adapted from <a href="https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365" class="uri">https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365</a>
 </figcaption>
 </figure>
@@ -1123,12 +1123,12 @@ Figure&nbsp;4.20: Two embedded Necker cubes. The one on the left seems to have a
 <p>In this chapter I focused on the construction of dynamical system models and introduced R tools to study such models numerically. This introduction was necessarily somewhat superficial. At the beginning of this chapter, I referred to some texts that I recommend for further reading. There are some more psychological models that I could have included. For example, the setup of dynamical field theory is a bit too complicated to replicate in Grind but I recommend studying this model <span class="citation" data-cites="schonerDynamicThinkingPrimer2016">(<a href="references.html#ref-schonerDynamicThinkingPrimer2016" role="doc-biblioref">Schöner and Spencer 2016</a>)</span>. In the next chapter, <a href="ch6.html#sec-Mutualism-model" class="quarto-xref"><span>Section 6.3.1.2</span></a>, I will present a dynamical model of developmental processes with mutualistic (positive) interactions. Dynamical systems models of social interactions are presented in the <a href="ch7.html" class="quarto-xref"><span>Chapter 7</span></a>. I have also touched on some issues regarding dynamical systems modeling in psychology. Since we will see several more examples in the next two chapters, I will leave a full discussion to the Epilogue of this book.</p>
 <div class="page-columns page-full"><p>One popular approach to dynamical systems modeling that I haven’t touched on is the use of causal loop diagrams, as developed in the field of systems dynamics <span class="citation" data-cites="forresterSystemDynamicsLessons1993 meadowsThinkingSystemsPrimer2008">(<a href="references.html#ref-forresterSystemDynamicsLessons1993" role="doc-biblioref">Forrester 1993</a>; <a href="references.html#ref-meadowsThinkingSystemsPrimer2008" role="doc-biblioref">Meadows 2008</a>)</span>.  As argued in <span class="citation" data-cites="crielaardRefiningCausalLoop2022">Crielaard et al. (<a href="references.html#ref-crielaardRefiningCausalLoop2022" role="doc-biblioref">2022</a>)</span>, the step from verbal theory to formal model may require an intermediate step of setting up a diagram that specifies the causal relationships between variables. Related to causal loop diagrams are several dedicated software packages for system dynamics analysis. A free online and simple software tool is Insightmaker <span class="citation" data-cites="fortmann-roeInsightMakerGeneralpurpose2014">(<a href="references.html#ref-fortmann-roeInsightMakerGeneralpurpose2014" role="doc-biblioref">Fortmann-Roe 2014</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Causal loop diagrams are visual tools used in systems thinking and system dynamics to represent the feedback loops and causal relationships within a system.</span></div></div>
 <p>Insightmaker provides a graphical model construction interface for dynamical systems modeling and agent-based modeling. As such, it can be used to implement the models of this and the previous chapter. A Lotka- Volterra example is shown in <a href="#fig-ch4n-img21-old-69" class="quarto-xref">Figure&nbsp;<span>4.21</span></a>. Insightmaker is easy to use. Studying some examples, found with “Explore Insights” may suffice. I have added some models discussed in this chapter with the tag ‘vdmaas’.</p>
-<div id="fig-ch4n-img21-old-69" class="quarto-figure quarto-figure-center quarto-float anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-ch4n-img21-old-69" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
 <div aria-describedby="fig-ch4n-img21-old-69-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch4n/image21.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch4n-img21-old-69-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch4n-img21-old-69-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4.21: Some screenshots of the Lotka-Volterra model in Insightmaker.
 </figcaption>
 </figure>
