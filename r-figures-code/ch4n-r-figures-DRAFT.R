@@ -565,6 +565,7 @@ dev.off()
 
 # fig 4n.12 ----------------------------------------------------------------
 #polya urn model
+library(ggmatplot)
 setseed(1)
 urn=c(0,1,1)
 urn_s=length(urn)
@@ -598,7 +599,7 @@ p2
 #hist(urns[n,],main='',xlab='p(blue)',col='grey')
 
 library(png) 
-urns_png <- readPNG('media/ch4n/urns.png')
+urns_png <- readPNG('media/ch4n/urns_old.png')
 library(cowplot)
 urnsgg <- ggdraw() + draw_image(urns_png)
 # Plot + image
@@ -710,7 +711,7 @@ dev.off()
 
 library(png) 
 four_cases <- readPNG('media/ch4n/fig-ch4n-img16-old-64b.png')
-bif_diagram <- readPNG('media/ch4n/urns.png')
+bif_diagram <- readPNG('media/ch4n/cases_old.png')
 library(cowplot)
 four_cases_gg <- ggdraw() + draw_image(four_cases)
 bif_diagram_gg <- ggdraw() + draw_image(bif_diagram)
