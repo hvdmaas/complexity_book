@@ -20,7 +20,8 @@ book:
     - ch2.qmd
     - ch3.qmd
     - ch4n.qmd
-    - ch5n.qmd
+    #- ch5n.qmd
+    - ch5n_pdf.qmd
     - ch6.qmd
     - ch7.qmd
     - ch8.qmd
