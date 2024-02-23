@@ -96,7 +96,7 @@ Another way to visualize this is making a bifurcation diagram as we did for the 
 
 This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, The Seduction of Curves [@mcrobieSeductionCurvesLines2017], McRobie shows that whenever we see an edge, we see a fold. @fig-ch3-img6-old-18 is from the book where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.
 
-![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.jpg){#fig-ch3-img6-old-18 width="12cm"}
+![The fold in drawings [from, @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.png){#fig-ch3-img6-old-18 width="12cm"}
 
 The fold catastrophe has been studied in fields ranging from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher order catastrophes are composed of folds. [The fold catastrophe is also known as a saddle node, tangential or blue-sky bifurcation.]{.aside}
 
