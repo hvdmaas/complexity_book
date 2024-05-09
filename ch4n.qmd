@@ -114,7 +114,7 @@ dX <- r*X*(1-X) - X
 
 and use `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
 
-### The Lotka-Volterra models {#sec-The-LotkaVolterra-models}
+### The Lotka—Volterra models {#sec-The-LotkaVolterra-models}
 
 Perhaps the best-known population models are the Lotka-Volterra equations [@murrayMathematicalBiology2002]. [The Lotka-Volterra model describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.]{.aside} These consist of coupled differential equations, one for the density of the prey and one for the density of the predator.
 
