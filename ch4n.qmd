@@ -1,32 +1,32 @@
 # Building dynamic system models {#sec-ch4n}
 
-Suppose you are in a bar in Amsterdam and someone asks you if you would like another beer. Probably, the number of drinks you have already had will influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a process can be modeled using nonlinear differential equations.
+Suppose you are in a bar in Amsterdam and someone asks if you would like another beer. The number of drinks you have already had will probably influence your decision. Perhaps your self-control, whatever it may be, kicks in and you refuse, even though the alcohol already in your system may be interfering with that self-control. Or you may have reached your limit and simply collapse. In this chapter, we will see how such a decision-making process can be modeled using nonlinear differential equations.
 
-This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex systems approach. [A nonlinear dynamical system is one in which the change of system variables over time is governed by nonlinear equations, resulting in complex behavior such as chaos, bifurcations.]{.aside} We have seen examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
+This form of modeling is often called nonlinear dynamical systems theory (NLDST), another branch of the complex-systems approach. [A nonlinear dynamical system is one in which the change of system variables over time is governed by nonlinear equations, resulting in complex behavior such as chaos and bifurcations.]{.aside} We saw examples of nonlinear dynamical system models in earlier chapters. The logistic map is an example of a discrete-time nonlinear dynamical model defined as a difference equation. The catastrophe models are also dynamical systems governed by a potential function. In Chapter 3, @sec-Building-catastrophe-models, I made a distinction between phenomenological modeling (assuming the cusp) and mechanistic modeling (deriving the cusp from first principles). Here we will focus on the more mechanistic construction of dynamical system models.
 
-In psychology, following the principle of parsimony (Occam's razor) we must start with simple models. We don't have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling [@murray1989]. Mathematical psychology is generally less developed than mathematical biology, but this depends somewhat on the subfield. In areas such as neural modeling, speeded decision making, memory, choice, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.
+In psychology, following the principle of parsimony (Occam's razor), we must start with simple models. We don't have many first principles to start with, and our data are often limited, making model testing difficult. But we can learn a lot from other disciplines. Nonlinear dynamical systems have been developed in all the natural sciences, but my main inspiration comes from mathematical biology, especially ecological modeling [@murray1989]. Mathematical psychology is generally less developed than mathematical biology, but this depends somewhat on the subfield. In areas such as neural modeling, speeded-decision making, memory, choice, and psychometrics, there are advanced models, and I will provide some examples later in this chapter.
 
-I will first present a basic overview of dynamical systems modeling in other sciences. The second part concerns applications in psychology. I refer to more advanced sources when necessary. I recommend the book by @gottmanMathematicsMarriageDynamic2002 for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. The online lectures on nonlinear dynamics and chaos and the book by Steven Strogatz [-@strogatzNonlinearDynamicsChaos2018] are very helpful. Murray's book on mathematical biology is also highly recommended [@murrayMathematicalBiology2002]. A basic introduction is Thinking in Systems of @meadowsThinkingSystemsPrimer2008.
+I will first present a basic overview of dynamical systems modeling in other sciences. Then I will discuss applications in psychology. I refer to more advanced sources when necessary. I recommend the book by @gottmanMathematicsMarriageDynamic2002 for its clear and basic explanation of the mathematical aspects of dynamical systems modeling. Strogatz's online lectures on nonlinear dynamics and chaos and his book [-@strogatzNonlinearDynamicsChaos2018] are very helpful. Murray's book on mathematical biology is also highly recommended [@murrayMathematicalBiology2002]. A basic introduction is Thinking in Systems of @meadowsThinkingSystemsPrimer2008.
 
-This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind [@deboerSimplePhasePlane2018] is based on the R-packages deSolve and rootSolve [@soetaert2010]. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states.[^ch4n-1]
+This chapter will be hands-on again. We will use the Grind package in R to simulate dynamical systems models. Grind [@deboerSimplePhasePlane2018] is based on the R packages deSolve and rootSolve [@soetaert2010]. It facilitates numerical integration, phase plane analysis, and stability analysis of steady states.[^ch4n-1]
 
-[^ch4n-1]: The manual can be found at <https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf>
+[^ch4n-1]: The manual can be found at <https://github.com/hansschepers/grindr/blob/master/inst/documentation/GRIND%20tutorial.pdf.>
 
-At the end of the chapter, I will introduce causal loop diagrams and an open-source tool, Insightmaker, that makes it easy to create causal loop diagrams. It will also be used to simulate dynamical systems models and I will provide some examples.
+At the end of the chapter, I will introduce causal loop diagrams and an open-source tool, Insightmaker, that makes it easy to create causal loop diagrams. We will also use Insightmaker to simulate dynamical systems models, for which I will provide some examples.
 
 ## Basic concepts {#sec-Basic-concepts}
 
 ### Back to the logistic equation {#sec-Back-to-the-logistic-equation}
 
-We have seen the logistic equation in the form of the logistic map, where time progressed in discrete steps. The logistic map is a difference equation, $X_{t + 1} = f(X_{t})$, but in this chapter we will focus on differential equations in continuous time. We will limit ourselves to ordinary differential equations (ODE's). [In ordinary differential equations we take the derivatives with respect to only one variable.]{.aside} The ODE for logistic growth[^ch4n-2] is:
+We saw the logistic equation in the form of the logistic map (@sec-The-population-growth-of-rabbits), where time progressed in discrete steps. The logistic map is a difference equation, $X_{t + 1} = f(X_{t})$, but in this chapter we will focus on differential equations in continuous time. We will limit ourselves to ordinary differential equations (ODEs). [In ordinary differential equations, we take the derivatives with respect to only one variable.]{.aside} The ODE for logistic growth[^ch4n-2] is:
 
-[^ch4n-2]: I note that in many texts $\frac{dX}{dt}$ is written as $\dot{X}$.
+[^ch4n-2]: In many texts $\frac{dX}{dt}$ is written as $\dot{X}$.
 
 $$
-\frac{dX}{dt} = rX(1 - X)
+\frac{dX}{dt} = rX(1 - X).
 $$ {#eq-ch4n-1-old-21}
 
-The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to zero, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $dX/dt = rX$, this is the derivation:
+The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ dominates when $X$ is close to 0, but the growth levels off as $X$ approaches 1. A solution to this equation expresses $X_{t}$ as a function of the initial state $X_{0}$. In simple cases we can do this using the math we learned in high school. For exponential growth $dX/dt = rX$, this is the derivation:
 
 +-----------------------------------------------------+----------------------------------+
 | $\frac{dX}{dt} = rX$                                | by separation of variables       |
@@ -46,7 +46,7 @@ $$
 \Longrightarrow X_{t} = {X_{0}e}^{rt}
 $$ {#eq-ch4n-2-old-22}
 
-But for more complex models such an analytical solution is out of scope and numerical solutions (by simulation) are required. This is not the preferred choice. These simulations can be slow, may accumulate rounding errors, and it can be difficult to search the entire parameter space, especially when multiple parameters are involved.
+But for more complex models, such an analytical solution is out of scope and numerical solutions (by simulation) are required. This is not the preferred choice. These simulations can be slow, they may accumulate rounding errors, and it can be difficult to search the entire parameter space, especially when multiple parameters are involved.
 
 The naive implementation of differential equations in R is risky. This would involve a for loop:
 
@@ -67,7 +67,7 @@ timesteps # length of simulation
 
 where $dt$ must be chosen by hand. If you test some values of $dt$, you will see that a value too high (.5) leads to a solution (`x[timesteps]`) that is different from the analytical solution. But if we set $dt$ very low (.00001), it takes unnecessarily long.
 
-This is why we use 'solvers', numerical methods for ordinary differential equations. [Solvers are specialized algorithms designed to numerically approximate solutions to ODEs and handle the complexities of integrating these equations over time to predict the evolution of system states under different initial conditions and parameters.]{.aside} We will use the R-package Grind, although many other methods are available in R. One could also directly use the R packages deSolve and rootSolve by @soetaert2010, on which the Grind package is based. Grind has to be installed from GitHub using:
+This is why we use solvers, numerical methods for ordinary differential equations. [Solvers are specialized algorithms designed to numerically approximate solutions to ODEs and handle the complexities of integrating these equations over time to predict the evolution of system states under different initial conditions and parameters.]{.aside} We will use the R package Grind, although many other methods are available in R. One could also directly use the R packages deSolve and rootSolve by @soetaert2010, on which the Grind package is based. Grind has to be installed from GitHub using:
 
 ``` r
 install.packages("remotes")
@@ -83,7 +83,7 @@ library(FME)
 library(Grind)
 ```
 
-The code consists of defining the model, the parameters $p$ and the initial values $s$. Main functions are `run()`, `plane()`, `newton()`, `continue()` and `fit()`. They will be introduced using examples. With `run()` we generate a time series for the model.
+The code consists of defining the model, the parameters $p$, and the initial values $s$. Main functions are `run()`, `plane()`, `newton()`, `continue()`, and `fit()`. They will be introduced using examples. With `run()` we generate a time series for the model.
 
 ``` r
 model <- function(t, state, parms) {
@@ -98,25 +98,25 @@ run(tmax=5) # run until t = 5, numerical solution
 s['X']*exp(p['r']*5) # compare with analytical solution
 ```
 
-We don't have to worry about time steps anymore and the numerical and analytical solutions converge. This is of course a trivial use of an ODE solver, but much more can be done.
+We don't have to worry about time steps anymore, and the numerical and analytical solutions converge. This is of course a trivial use of an ODE solver, but much more can be done.
 
-In analyzing the behavior of a dynamical system, the first thing we want to know about a dynamical system is what the equilibria $X^{*}$ are*.* To do this, we need to set the time derivative equal to zero, $dX/dt = 0$. For the exponential function this is simply $rX = \ 0$, i.e., when $X$ is zero. Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than zero, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
+In analyzing the behavior of a dynamical system, first we want to know what the equilibria $X^{*}$ are*.* To do this, we need to set the time derivative equal to 0, $dX/dt = 0$. For the exponential function, this is simply $rX = 0$, that is, when $X$ is 0 Second, we want to determine whether these equilibria are stable or unstable. Whether $X^{*}=0$ is stable can be determined by checking the second derivative in $X^{*}$. If this derivative is less than 0, then the fixed point is stable. The second derivative is $r$, so $X^{*} = 0$ is an unstable fixed point whenever $r > 0$ and stable whenever $r < 0$. You can check this in Grind by using$\ r$ values of -.1 and .1, and start values equal to or just above or below 0.
 
 For @eq-ch4n-1-old-21, the logistic function, we also want to know the equilibria, the stable and unstable fixed points. To do so we follow the same steps as for the exponential function (see exercises).
 
-I note that the continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in @sec-The-population-growth-of-rabbits. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:[^ch4n-3]
+The continuous-time implementation of the logistic function is somewhat boring compared to its discrete-time variant that we studied in @sec-The-population-growth-of-rabbits. The difference is that the overshooting and undershooting do not occur in continuous time. By changing the logistic model in Grind to:[^ch4n-3]
 
-[^ch4n-3]: the $-X$ is added because the difference equation has the form $X_{t + 1} = f(X_{t})$, the change $dX$ is thus $f(X_{t})-X_{t}$.
+[^ch4n-3]: The $-X$ is added because the difference equation has the form $X_{t + 1} = f(X_{t})$, so the change $dX$ is thus $f(X_{t})-X_{t}$.
 
 ``` r
 dX <- r*X*(1-X) - X 
 ```
 
-and use `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
+and using `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
 
 ### The Lotka—Volterra models {#sec-The-LotkaVolterra-models}
 
-Perhaps the best-known population models are the Lotka-Volterra equations [@murrayMathematicalBiology2002]. [The Lotka-Volterra model describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.]{.aside} These consist of coupled differential equations, one for the density of the prey and one for the density of the predator.
+Perhaps the best-known population models are the Lotka—Volterra equations [@murrayMathematicalBiology2002]. [The Lotka]{.aside}—[Volterra models describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.]{.aside} These consist of coupled differential equations, one for the density of the prey and one for the density of the predator:
 
 $$
 \frac{dN}{dt} = aN - bPN
@@ -126,7 +126,7 @@ $$
 \frac{dP}{dt} = cPN - dP
 $$ {#eq-ch4n-4-old-24}
 
-Where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, they eat prey. We will follow the simple example provided by Wikipedia (on Lotka-Volterra equations).
+Where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, and:they eat prey. We will follow the simple example provided by Wikipedia (on Lotka—Volterra equations).
 
 To implement this model in Grind, we use:
 
@@ -151,17 +151,17 @@ data=run(odes=LV,tstep=.01,table=T) # set tstep to low value
 plane(odes=LV,portrait = TRUE, ymax=17, xmax=50, tstep=0.1,grid=4)
 ```
 
-The plane function makes a phase plot with $N$ and $P$ as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka-Volterra equations is a limit cycle that depends on the choice of the initial conditions.
+The plane function makes a phase plot with $N$ and $P$ as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka—Volterra equations is a limit cycle that depends on the choice of the initial conditions.
 
-A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting `dN <- a*N *(1-N) - b*P*N` in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading [@deboerSimplePhasePlane2018]. It also contains the appropriate parameter values for this model variant. In this density dependent model there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.
+A well-known improvement to this model is to make the prey growth density dependent by using the logistic equation. This can be done by setting `dN <- a*N *(1-N) - b*P*N` in the model. This is the case used as an example in the Grind tutorial, which I highly recommend reading [@deboerSimplePhasePlane2018]. It also contains the appropriate parameter values for this model variant. In this density-dependent model, there are fixed points, in contrast to the original model. This shows that such model choices can have a large effect.
 
-A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics. [The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into susceptible (S), infected (I), and recovered (R) individuals.]{.aside} The state of the model are susceptible (S), representing individuals who have not yet contracted the disease but are at risk; infected (I), representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered (R), representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
+A famous example of a system of three coupled differential equations is the Susceptible-Infected-Recovered (SIR) model used to model infectious diseases and to understand the impact of interventions on disease dynamics. [The Susceptible-Infected-Recovered (SIR) model is a basic epidemiological model that divides a population into susceptible (S), infected (I), and recovered (R) individuals.]{.aside} The states of the model are susceptible, representing individuals who have not yet contracted the disease but are at risk; infected, representing individuals who are currently infected and can transmit the disease to susceptible individuals; and recovered, representing individuals who have recovered from the disease and are assumed to be immune and no longer susceptible. The differential equations specify the change in susceptible, infected, and recovered members of the population. You can now easily implement this model yourself (see exercises).
 
-### Fitting models: stochasticity versus noise {#sec-Fitting-models-stochasticity-versus-noise}
+### Fitting models: Stochasticity versus noise {#sec-Fitting-models-stochasticity-versus-noise}
 
-Grind includes an option to fit dynamical systems models. With `fit()`, based on the `modFit()` function from the FME package [@soetaert2010], one can estimate the model parameters given a data set. These functions also provide confidence intervals, allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.
+Grind includes an option to fit dynamical systems models. With `fit()`, based on the `modFit()` function from the FME package [@soetaert2010], one can estimate the model parameters given a dataset. These functions also provide confidence intervals and allow fixing parameters and bootstrap analysis. Fitting nonlinear dynamical systems models to data is an art in itself. For example, these methods can be very sensitive to the choice of initial values.
 
-I will illustrate the use of `fit()` on three data sets created with the original Lotka-Volterra model from the previous section. The first data set is the deterministic data set, the data that follows directly from the code above. The second one is created using a stochastic Lotka-Volterra model. How this works will be explained in the next section. The third is a deterministic data set with measurement error. We will see that the last two cases are very different.
+I will illustrate the use of `fit()` on three datasets created with the original Lotka—Volterra model from the previous section. The first dataset is the deterministic dataset, the data that follow directly from the code above. The second is created using a stochastic Lotka—Volterra model. I will explain how this works in the next section. The third is a deterministic dataset with measurement error. We will see that the last two cases are very different.
 
 ``` r
 set.seed(1)
@@ -190,16 +190,16 @@ barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
 
 This results in @fig-ch4n-img1-old-49.
 
-![Fit of the Lotka-Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
+![Fit of the Lotka—Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
 
-Note that the error data set looks very similar to the deterministic data set because it contains only the measurement error (X is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
+Note that the error dataset looks very similar to the deterministic dataset because it contains only the measurement error ($X$ is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, and the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
 
 ### Back to the cusp {#sec-Back-to-the-cusp}
 
 To illustrate how Grind can be used to perform bifurcation analysis, we go back to the cusp. Recall that the differential equation for the cusp is:
 
 $$
-\frac{dX}{dt} = - V^{'}(X) = {a + bX - X}^{3}
+\frac{dX}{dt} = - V^{'}(X) = {a + bX - X}^{3}.
 $$ {#eq-ch4n-5-old-25}
 
 ``` r
@@ -215,7 +215,7 @@ s[1] <- -.1; run(add=T)
 
 This code simulates two runs demonstrating bistability for $a = 0$ and $b = 1$.
 
-A nicer way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the 'after' parameter in the function call, we can add discrete events to the system. 'After' can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small time step. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
+A nicer way to demonstrate bistability in the time series is to make the system stochastic. This was done in Chapter 3, @sec-Cobbs-maximum-likelihood-approach, by using a stochastic differential equation: $dX = - V^{'}(X)dt + \sigma dW(t)$. Grind has a great trick for this. With the “after” parameter in the function call, we can add discrete events to the system. “After” can also be used to change parameter or state values after a certain amount of time or after some condition (see the manual). We use it here to add a random number sampled from a normal distribution, with a mean of 0 and a standard deviation of .4, to $X$. The best way to simulate this in Grind is using the Euler method with a small time step. The noise term should be corrected with $\sqrt{dt}$, as shown in the code. The Wikipedia page on stochastic differential equations will tell you more about the underlying ideas.
 
 As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous jumps between the two modes of the cusp. When noise or random fluctuations cause the entire equilibrium landscape of a dynamical system to become observable, it is often referred to as stochastic resonance. [Stochastic resonance is a notable example of how noise, which is often considered undesirable or disruptive, can actually play a constructive role in certain systems, helping to reveal hidden patterns and structures that might otherwise remain obscured.]{.aside} You can see this by comparing the figure with one generated with a standard deviation of .1 or less.
 
@@ -229,11 +229,11 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise aids in revealing the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="13cm"}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="13cm"}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
-By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It show the change in equilibria when we change a parameter. This is what we did in Chapter 2 for the logistic map, when we varied $r$ and plotted the equilibria (see @fig-ch2-img8).
+By combining the Grind functions `newton()` and `continue()`, we can perform bifurcation analysis. The `newton()` function finds stable and unstable fixed points, and the `continue()` function implements the parameter continuation of a steady state, providing a bifurcation diagram. It shows the change in equilibria when we change a parameter. This is what we did in Chapter 2 for the logistic map, when we varied $r$ and plotted the equilibria (see @fig-ch2-img8).
 
 It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create @fig-ch4n-img3-old-51 is:
 
@@ -246,9 +246,11 @@ high <- newton(s=c(X=1)) # again starting from X = 1
 continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 ```
 
-![Hysteresis plot made with newton() and continue(). The function newton() finds an equilibrium, which is used in continue() to vary the normal variable a until a bifurcation point is found](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51 width="10cm"}
+![Hysteresis plot made with `newton()` and `continue()`. The function `newton()` finds an equilibrium, which is used in `continue()` to vary the normal variable a until a bifurcation point is found.](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51 width="10cm"}
 
-Another great tool in R is the deBif package by de Roos. This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
+Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
+
+[^ch4n-4]: <https://cran.r-project.org/web/packages/deBif/deBif.pdf>
 
 ``` r
 install.packages("deBif")
@@ -256,7 +258,7 @@ library(deBif)
 phaseplane(model,s,p)
 ```
 
-The `phaseplane()` function returns a time plot and the steady states. You can change parameters and initial states on the left side, and plot parameters on the upper right side (click on the two gears). The Steady States option is very useful as it shows the stable and unstable fixed points. Be sure to set the minima and maxima of axes of the plot correctly.
+The `phaseplane()` function returns a time plot and the steady states. You can change parameters and initial states on the left side, and plot parameters on the upper right side (click on the two gears). The Steady States option is very useful as it shows the stable and unstable fixed points. Make sure that the minima and maxima of the plot axes are set correctly.
 
 With
 
@@ -266,11 +268,11 @@ bifurcation(model,s,p)
 
 You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
 
-![Output from Shinyapp Debif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52 width="12cm"}
+![Output from Shiny app deBif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/image4.jpg){#fig-ch4n-img4-old-52 width="12cm"}
 
-### Spruce Budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
+### Spruce budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
-In chapter 3, @sec-Mechanistic-models, I introduced the Spruce Budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
+In chapter 3, @sec-Mechanistic-models, I introduced the spruce budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
 
 ``` r
 spruce <- function(t, state, parms) {
@@ -284,21 +286,21 @@ parms <- c(r = 0.4, q = 10)
 bifurcation(spruce, state, parms)
 ```
 
-Note that this predator-prey model only consists of one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- BN^{2}/(A^{2} + N^{2})$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start $A$ is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat $B$ budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
+Note that this predator-prey model consists of only one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- BN^{2}/(A^{2} + N^{2})$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start $A$ is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat $B$ budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
-![The Holling functional response models. Type III is used in the Spruce Budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53 width="12cm"}
+![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/fig-ch4n-img5-old-53.jpg){#fig-ch4n-img5-old-53 width="12cm"}
 
-### Evaluation of ecological modelling {#sec-Evaluation-of-ecological-modelling}
+### Evaluation of ecological modeling {#sec-Evaluation-of-ecological-modelling}
 
-Understanding the technical basics of dynamical systems theory is one thing, but actually building useful dynamical systems models is quite another. Every term in each differential equation of a model needs some underpinning. These models make many assumptions, both implicit and explicit. The Lotka-Volterra model, for example, assumes that the prey population grows exponentially in the absence of the predator, that the predator population dies off with the prey population and does not switch to other prey species, that the response of the predator population to changes in the prey population is direct and not delayed, that there is no spatial component to the model, and that the rates of change of the populations are proportional to their sizes, to name just a few. These assumptions are widely debated in the biological literature [@abramsNaturePredationPrey2000], and modifications of these assumptions may have significant consequences. [Hundreds of extensions and variants of the Lotka-Volterra model have been proposed and studied.]{.aside}
+Understanding the technical basics of dynamical systems theory is one thing, but actually building useful dynamical system models is quite another. Every term in each differential equation of a model needs some underpinning. These models make many assumptions, both implicit and explicit. The Lotka—Volterra model, for example, assumes that the prey population grows exponentially in the absence of the predator, that the predator population dies off with the prey population and does not switch to other prey species, that the response of the predator population to changes in the prey population is direct and not delayed, that there is no spatial component to the model, and that the rates of change of the populations are proportional to their sizes, to name just a few. These assumptions are widely debated in the biological literature [@abramsNaturePredationPrey2000], and modifying these assumptions may have significant consequences. [Hundreds of extensions and variants of the Lotka]{.aside}—[Volterra model have been proposed and studied.]{.aside}
 
-For example, the original Lotka-Volterra model has no stable points, only limit cycles. While these cycles have been observed in nature, they are not overwhelmingly common. As we have seen, the dynamics of the system are significantly altered when prey growth is made dependent on prey density. This model has fixed-point equilibria instead of limit cycles.
+For example, the original Lotka—Volterra model has no stable points, only limit cycles. While these cycles have been observed in nature, they are not overwhelmingly common. As we have seen, the dynamics of the system are significantly altered when prey growth is made dependent on prey density. This model has fixed-point equilibria instead of limit cycles.
 
-Adding a spatial component can also make a big difference, as shown in the example of hypercycles in the next chapter [see @szostakHypercycle2016 for a brief review]. Adding more prey and predator species also makes a difference [@johnsonModelingMultispeciesPredator2019]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
+Adding a spatial component can also make a big difference, as shown in the example of hypercycles in @sec-Biology (see @szostakHypercycle2016 for a brief review). Adding more prey and predator species also makes a difference \[@johnsonModelingMultispeciesPredator2019\]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
 
-An additional problem is that empirically testing all these different models is difficult. Although the quality of biological data is often superior to that of psychological data, biologists must also rely on the qualitative predictions of their models. Models in chemistry and especially physics can often be tested quantitatively. Transitions occur precisely at the predicted values of the control variables. Ecological models, much like those in psychology, do not allow for this level of prediction. This is a problem because if we can only test our model qualitatively (are there limit cycles or not, what type of transitions can be detected, is there hysteresis or not), many model choices are not particularly relevant. [One of the most significant challenges in complex systems research in the life sciences and psychology is constructing dynamical system models that effectively address these data-related issues.]{.aside}
+An additional problem is that empirically testing all these different models is difficult. Although the quality of biological data is often superior to that of psychological data, biologists must also rely on the qualitative predictions of their models. Models in chemistry and especially physics can often be tested quantitatively. Transitions occur precisely at the predicted values of the control variables. Ecological models, much like those in psychology, do not allow for this level of prediction. This is a problem because if we can only test our model qualitatively (Are there limit cycles? What type of transitions can be detected? Is there hysteresis?), many model choices are not particularly relevant. [One of the most significant challenges in complex-systems research in the life sciences and psychology is constructing dynamical system models that effectively address these data-related issues.]{.aside}
 
-A case in which this is less of an issue is the traffic example that I introduced in Chapter 1. I asked you to play around with the online simulation. We now know the basics to better understand this model. The Wikipedia page on this model ('Intelligent Driver Model') presents the equations, which are also coupled ordinary differential equations. The implementation in Grind of the simplest case looks like this:
+A case in which this is less of an issue is the traffic example that I introduced in Chapter 1. I asked you to play around with the online simulation. We now know the basics to better understand this model. The Wikipedia page on this model (Intelligent Driver Model) presents the equations, which are also coupled ordinary differential equations. The implementation in Grind of the simplest case looks like this:
 
 ``` r
 model <- function(t, state, parms){
@@ -327,9 +329,9 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At t=150, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car itself. This simulated graph resembles the real data very well \[see for example Figure 9 in \@jusup2022\].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t=150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusupSocialPhysics2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
-The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s or m/s^2^). One can also have dimension free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. They hamper the quantitative test of models.
+The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s, or m/s^2^). One can also have dimension-free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. This hampers the quantitative test of models.
 
 ## Psychological models {#sec-Psychological-models}
 
@@ -349,9 +351,9 @@ $$ {#eq-ch4n-6-old-26}
 
 As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). We start at zero, $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
 
-The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step.[^ch4n-4] We stop the run when either the negative or positive bound is reached.
+The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step.[^ch4n-5] We stop the run when either the negative or positive bound is reached.
 
-[^ch4n-4]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
+[^ch4n-5]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
 
 ``` r
 model <- function(t, state, parms) {
@@ -462,9 +464,9 @@ Some other advanced variations of this model have been proposed. In these papers
 
 The model of marriage developed by the psychologist John Gottman and the mathematical biologist James Murray [-@gottmanMathematicsMarriageDynamic2002] is firmly grounded in psychological theory and data. The main phenomenon that inspired this modeling work is the finding by @gottmanMaritalProcessesPredictive1992 finding that the patterns of interaction between couples, when discussing a major area of ongoing disagreement in their marriage, are predictive of divorce.
 
-The model consists of two coupled difference equations, but I present the model in the form of differential equations[^ch4n-5].
+The model consists of two coupled difference equations, but I present the model in the form of differential equations[^ch4n-6].
 
-[^ch4n-5]: The reason difference equations were used in the original model is that the data consist of turn takings in a conversation. This, however, does not lead to qualitative different results. With `method='euler'` and a change in $r_{w}$ and $r_{h}$ the difference model can be constructed.
+[^ch4n-6]: The reason difference equations were used in the original model is that the data consist of turn takings in a conversation. This, however, does not lead to qualitative different results. With `method='euler'` and a change in $r_{w}$ and $r_{h}$ the difference model can be constructed.
 
 $$
 \begin{gathered}
@@ -479,9 +481,9 @@ $$
 I(x,a,b) = \frac{sign(x)}{1 + e^{a\left( |x| - b \right)}}.
 $$ {#eq-ch4n-12-old-32}
 
-I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses do not interact.[^ch4n-6]
+I made up this flexible function to allow for very different forms of influence (as we will see below). When both influences are zero ($a = - 8,b = - \infty$), the state or mood of the wife ($W$) and the husband ($H$), converge to $W_{e}$ and $H_{e}$, with rates $r_{w}$ and $r_{h}$, respectively. $W_{e}$ and $H_{e}$ are the uninfluenced steady states of mood when the spouses do not interact.[^ch4n-7]
 
-[^ch4n-6]: I follow the definition and notation of the original source, but this model is clearly not restricted to heterosexual relationships.
+[^ch4n-7]: I follow the definition and notation of the original source, but this model is clearly not restricted to heterosexual relationships.
 
 However, if the influence function ($a = - 8, b = 0$) is such that a positive mood in one spouse provokes a positive mood in the other, while a negative mood provokes a negative mood, we expect a negative and a positive equilibrium depending on the initial states and uninfluenced steady state values.
 
@@ -678,7 +680,7 @@ Other applications of the van der Pol model concern extensions of the HKB model 
 
 If we create a dynamic model from the ground up, there's a significant chance that we might not completely grasp its intricacies. We have seen that some very simple models already show amazingly complex behavior.
 
-One approach to cope with these issues is analogical modeling, or basically copying models. For instance, we used the Ising model to model attitudes and the mutualistic Lotka-Volterra model to model intelligence. Both are explained in the @sec-ch6. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
+One approach to cope with these issues is analogical modeling, or basically copying models. For instance, we used the Ising model to model attitudes and the mutualistic Lotka—Volterra model to model intelligence. Both are explained in the @sec-ch6. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
 
 We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in @sec-ch7 when we include social effects. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
 
@@ -798,9 +800,9 @@ We can build a dynamical systems model of these perceptual phenomena by using th
 
 Now we consider @fig-ch4n-img16-old-64 and apply @eq-ch4n-20-old-40 . We have $N = 25$ (a bit depending on how you count) The values of the parameters $a_{0i}$ should be estimated from data, but for now we will assume no bias, so $a_{0i} = 0$. We set $a_{ij} > 0$, meaning that we expect positive coupling between the cusps. The $b_{0}$ is the attention vector. In the simulation we first assume that attention is low ($b_{0i} = - .3)$. After an initial phase, we will set $b_{01} = 1$, that is we suddenly attend to one cube. A bit later we set $b_{01}$ back to -.3. However, we also set $b_{ij} > 0$, based on the idea that three-dimensional perception in one cube increases attention in the other cubes.
 
-To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch4n-7] This is because the increase in attention by the three-dimensional perception of neighboring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
+To make this model work we need to make one adjustment. We replace $\sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}}$ with $\sum_{j \neq i}^{}{b_{ij}X_{i}|X_{j}|}$.[^ch4n-8] This is because the increase in attention by the three-dimensional perception of neighboring cubes does not depend on whether we perceive the 'front' or the 'back' view. Thus, the model for multifigure multistable perception is:
 
-[^ch4n-7]: We could also use $X_j^2$
+[^ch4n-8]: We could also use $X_j^2$
 
 $$
 \frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}\left| X_{j} \right|} - {X_{i}}^{3}
@@ -853,9 +855,9 @@ In this chapter I focused on the construction of dynamical system models and int
 
 One popular approach to dynamical systems modeling that I haven't touched on is the use of causal loop diagrams, as developed in the field of systems dynamics [@forresterSystemDynamicsLessons1993; @meadowsThinkingSystemsPrimer2008]. [Causal loop diagrams are visual tools used in systems thinking and system dynamics to represent the feedback loops and causal relationships within a system.]{.aside} As argued in @crielaardRefiningCausalLoop2022, the step from verbal theory to formal model may require an intermediate step of setting up a diagram that specifies the causal relationships between variables. Related to causal loop diagrams are several dedicated software packages for system dynamics analysis. A free online and simple software tool is Insightmaker [@fortmann-roeInsightMakerGeneralpurpose2014].
 
-Insightmaker provides a graphical model construction interface for dynamical systems modeling and agent-based modeling. As such, it can be used to implement the models of this and the previous chapter. A Lotka- Volterra example is shown in @fig-ch4n-img21-old-69. Insightmaker is easy to use. Studying some examples, found with "Explore Insights" may suffice. I have added some models discussed in this chapter with the tag 'vdmaas'.
+Insightmaker provides a graphical model construction interface for dynamical systems modeling and agent-based modeling. As such, it can be used to implement the models of this and the previous chapter. A Lotka—Volterra example is shown in @fig-ch4n-img21-old-69. Insightmaker is easy to use. Studying some examples, found with "Explore Insights" may suffice. I have added some models discussed in this chapter with the tag 'vdmaas'.
 
-![Some screenshots of the Lotka-Volterra model in Insightmaker.](media/ch4n/image21.jpg){#fig-ch4n-img21-old-69}
+![Some screenshots of the Lotka—Volterra model in Insightmaker.](media/ch4n/image21.jpg){#fig-ch4n-img21-old-69}
 
 Insightmaker has many powerful built-in functions, allows sensitivity testing as well as some sort of optimization. Personally, I prefer the approach of writing the equations and implementing them in R. One reason is that this is how you communicate models in papers. Another is that the equations help you think about analytical results, which are always preferable to simulations. Finally, we can use Grind or deBif to go beyond simple simulations and classify equilibria and perform bifurcation analysis. But for building causal loop diagrams of larger models to concretize theorizing without the direct goal of running them, Insightmaker is a great tool.
 

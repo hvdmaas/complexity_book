@@ -336,7 +336,7 @@ Gilmore's last three flags—anomalous variance, divergence of linear response, 
 
 Anomalous variance occurs because near a bifurcation point the second derivative diminishes, meaning that the minimum becomes less deep. Assuming there is always some perturbation of the state, this will lead to larger fluctuations in the state.
 
-Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. This delay in return time is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics, @hakenSynergetics1977). Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablander2023.
+Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. This delay in return time is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems [e.g., synergetics, @hakenSynergetics1977]. Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablander2023.
 
 In my experience, the problem with early warning signals is that both type 1 and type 2 errors should be low for predicting transitions. This is challenging even in simulations, let alone in noisy psychological data. It would be fantastic if these early warnings really worked. For example, being able to predict a relapse into depression or addiction would be of great clinical value.
 
@@ -462,7 +462,7 @@ text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
 ```
 
-![At the back of the cusp (low $b_0$), the cusp is approximately linear, and cuspfit prefers this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="12cm"}
+![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="12cm"}
 
 #### Empirical examples {#sec-Empirical-examples}
 
@@ -500,13 +500,13 @@ summary(fit)
 plot(fit)
 ```
 
-This is supported by results of cuspfit. You can verify that a model with beta \~ 1 fits better according to the AIC and BIC.
+This is supported by results of the cusp fit. You can verify that a model with beta \~ 1 fits better according to the AIC and BIC.
 
 ![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="13cm"}
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with it, and fit the cusp model to the data [see @grasman2009 for details]. Zeeman invented this machine to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
-![Zeeman's catastrophe machine. It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y, and Z values. Typically, 50 to 100 data points are sufficient to run cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="8cm"}
+![Zeeman's catastrophe machine. It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y, and Z values. Typically, 50 to 100 data points are sufficient to run cusp fit function in R.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="8cm"}
 
 #### Evaluation {#sec-Evaluation}
 
@@ -532,7 +532,7 @@ A number of points are about inferring a cusp from data, which was indeed done r
 
 Another, somewhat inconsistent, line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), and they also claim that Zeeman's models are not falsifiable. But you cannot have it both ways: if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.
 
-Then Zahler and Sussmann point out that catastrophe theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe, or from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, and other times sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field (see @sec-ch8 and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008).
+Then Zahler and Sussmann point out that catastrophe theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe, or from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, and other times sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field [@borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008].
 
 Zahler and Sussmann's final point is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether it will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
 
@@ -558,7 +558,7 @@ However, there is room for improvement. Phenomenological models have limited exp
 
 5)  Set up a phenomenological cusp for falling in love. Follow my guidelines (see @sec-Phenomenological-models). (\*\*)
 
-6)  Check whether indeed the Bentler data fit better when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (\*)
+6)  Check whether indeed the Bentler data fit better when `age_range` only loads on the normal axis (according to the AIC and BIC). What is the correct specification of `beta` in `cusp()` in this case? (\*)
 
 7)  What is the best fitting cusp model (according to the BIC) for this tricky dataset created with this R code? Why? (\*\*)
 

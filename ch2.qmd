@@ -240,7 +240,7 @@ These methods generally require long time series. Many publications appeared on 
 
 1)  For $r=3.5$, the logistic map iterates between four points. For which value(s) does it iterate between 8 points? (\*)
 
-2)  @sec-Phase-plot-and-bifurcation-diagrams shows the code to make a bifurcation plot. First, run this code and look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the $r$'s on the x-axis. Adjust the code by changing the `r.range` to `seq(3.4, 4, by=0.0001))`, also change `cex = 0.01` to a lower value. Zoom in on the interval of $r$ between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time-series plot for a particular value of $r$. (\*)
+2)  @sec-Phase-plot-and-bifurcation-diagrams shows the code to make a bifurcation plot. First, run this code and look at the bifurcation plot. In this plot, you can also zoom in by changing the interval between the $r$'s on the x-axis. Adjust the code by changing the `r.range` to `seq(3.4, 4, by=0.0001)`, also change `cex = 0.01` to a lower value. Zoom in on the interval of $r$ between 3.83 and 3.86. In this interval the chaos suddenly disappears and limit cycles with period 3 appear. Check this with a time-series plot for a particular value of $r$. (\*)
 
 3)  Reproduce the first image from the Henon map Wikipedia page. Provide your R code and figure (\*).
 
@@ -251,6 +251,6 @@ These methods generally require long time series. Many publications appeared on 
 6)  Have a look at the definition of the Lyapunov coefficient in @sec-Chaos. Calculate this Lyapunov coefficient for the logistic map where $r = 4$ using the Dchaos package in R. This coefficient can also be calculated manually using the derivative (@eq-ch2-3). Do this and check that the coefficients are approximately equal. (\*\*)
 
 7)  Use the Rmusic library (installed with\
-    `devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)`) to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
+    `devtools::install_github("keithmcnulty/Rmusic", build_vignettes = TRUE)` to create a chaos sound machine. Make one for white noise too. Can you hear the difference? (\*\*)
 
 8)  Find a paper on chaos detection in psychology or psychophysiology and summarize it in 300—400 words. (\*)
