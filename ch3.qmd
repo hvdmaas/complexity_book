@@ -206,7 +206,7 @@ The model of the attitude toward abortion is called a phenomenological model, as
 
 The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
 
-One model that I will use as a psychological model in Chapter 4, @sec-Analogical-modeling-Budworms-and-Beers, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees. The model is
+One model that I will use as a psychological model in Chapter 4, @sec-Analogical-modeling-Budworms-and-Beers, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees [@ludwigQualitativeAnalysisInsect1978a]. The model is
 
 $$
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
@@ -224,53 +224,53 @@ $$ {#eq-ch3-8-old-12}
 
 Using these two “constructed” control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.
 
-![The bifurcation diagram of the Spruce Budworm model (Adapted from Modeling the Spruce Budworm, Jacai deNeveu, 2015).](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28 width="11cm"}
+![The bifurcation diagram of the spruce budworm model.](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28 width="11cm"}
 
 In later chapters we will discuss psychological examples of a mechanistic approach, but as far as models of transitions are concerned, these are rare. The phenomenological approach is much more common.
 
 ### Phenomenological models {#sec-Phenomenological-models}
 
-The cusp model of attitude is a typical phenomenological model. We simply assume that the cusp is a model of the attitude. Phenomenological models are less convincing than mechanistic models because they do not provide a deep understanding of the underlying mechanisms that drive the system. But in psychology and the social sciences we cannot be too picky. Compared to many other, verbally stated, attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable. This will be the subject of the next section.
+The cusp model of attitude is a typical phenomenological model. We simply assume that the cusp is a model of the attitude. Phenomenological models are less convincing than mechanistic models because they do not provide a deep understanding of the underlying mechanisms that drive the system. But in psychology and the social sciences, we cannot be too picky. Compared to many other, verbally stated attitude models, the cusp attitude model is quite precise. It implies a number of phenomena and is testable.
 
-Setting up a phenomenological model is not a trivial task either. I suggest some guidelines for setting up a model. First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in-between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.
+Setting up a phenomenological model is not a trivial task. I suggest some guidelines for this. First, define the behavioral variable. It is important to think about the bistable modes. What are they? What is the inaccessible state in between? Can you have jumps between these states? What is neutral state at the back of the cusp? If you cannot answer these questions, you should reconsider whether a cusp is an appropriate model.
 
 Second, select the control variables. What could be a normal variable and what could be a splitting variable? These are not easy questions. Sometimes there are too many candidates. For the cusp model of attitudes, instead of involvement, we could suggest interest, importance, emotional value, etc. In this case, I think of the splitting axis as a common factor of all these slightly different variables. In other cases, we have no good candidates. In the example in @fig-ch3-img14-old-26, it is not clear exactly what is being manipulated along the normal axis. If you made a choice, it is good to check whether, at high values of the splitting values, variation of the normal variable may lead to sudden jumps and hysteresis. Also check whether the pitchfork bifurcation makes sense.
 
-There is another issue here. [Control variables in cusp models can be rotated for ease of interpretation]{.aside} In some phenomenological models the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model dog aggression (@fig-ch3-img16-old-28).
+There is another issue here. [Control variables in cusp models can be rotated for ease of interpretation.]{.aside} In some phenomenological models, the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model of dog aggression (@fig-ch3-img17-old-29).
 
-![@zeemanCatastropheTheory1976 dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29 width="11cm"}
+![Zeeman's dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29 width="11cm"}
 
 The control variables are fear and rage. In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade-off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
-To explain catastrophic drops in performance in work and sports, @hardy1991 proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. @hardyTestingPredictionsCusp1996 present further tests of this model. It has been criticized by @cohenCriticalElaborationEmpirical2003. Extensions of to the butterfly model are presented in @guastello1984 and @hardy2004.
+To explain catastrophic drops in performance in work and sports, @hardy1991 proposed a cusp model with cognitive anxiety as the splitting factor and physiological arousal as the normal factor. The idea is that at high levels of cognitive anxiety, increases and decreases in arousal lead to sudden changes, including a hysteresis effect. @hardyTestingPredictionsCusp1996 presents further tests of this model, which has been criticized by @cohenCriticalElaborationEmpirical2003. Extensions to the butterfly model are presented in @guastello1984 and @hardy2004.
 
-Cusp models have also been developed for addiction [@guastello1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007 propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an 8-year, multisite investigation of the effectiveness of various treatments for alcoholism.
+Cusp models have also been developed for addiction [@guastello1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007 propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an eight-year, multisite investigation of the effectiveness of various treatments for alcoholism.
 
-As a final example I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor.[^ch3-8] Paulos explains his model in the context of puns. His example is "do you consider clubs appropriate for young children?" with the punchline "only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. A joke involves a jump from one meaning to another. [The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter.]{.aside} Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. @tschacher2023 propose a related complexity account of humor.
+As a final example, I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor.[^ch3-8] Paulos explains his model in the context of puns. His example is: “Do you consider clubs appropriate for young children?” with the punchline “Only when kindness fails,” which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of “clubs,” the other axis represents the second meaning. The bifurcation set represents the ambiguous region. A joke involves a jump from one meaning to another. [The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter.]{.aside} Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. @tschacher2023 propose a related complexity account of humor.
 
-[^ch3-8]: Given these guidelines and examples it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
+[^ch3-8]: Given these guidelines and examples, it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
 ## Testing catastrophe models {#sec-Testing-catastrophe-models}
 
 ### The catastrophe flags {#sec-The-catastrophe-flags}
 
-A question I often get is: How sudden is sudden? It is claimed that climate changes are transitions between stages (e.g., ice ages), but these transitions can take hundreds of years. Even when the ball is rolling towards its new minimum, it takes time to roll. [Sudden transitions are not instantaneous.]{.aside}
+How sudden is sudden? How can climate changes be seen as transitions between stages (i.e., ice ages) when these transitions take hundreds of years? Even when the ball is rolling toward its new minimum, it takes time to roll. [Sudden transitions are not instantaneous, but the in-between states are unstable.]{.aside}
 
-But then what is the difference with an acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden jump will look very similar (@fig-ch3-img18-old-30).
+But then what is the difference with an continuous acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden, discontinuous jump may look very similar (@fig-ch3-img18-old-30).
 
 ![Continuous and discontinuous growth curves my look very similar.](media/ch3/image18.jpg){#fig-ch3-img18-old-30 width="10cm"}
 
-Thus, in terms of time series data, they may look exactly the same. The difference is that in the continuous case the intermediate values are stable. It can be understood as a quadratic minimum that changes its position quickly. If we stop the process by freezing the manipulated control variable in the process, the state will remain at an intermediate value. These intermediate values are all stable values. If we freeze the manipulated variable in a discontinuous process, it will continue to move to a stable state. In this case, the intermediate state is unstable. The ball keeps rolling.
+In fact, in terms of time-series data, they may look exactly the same. The main difference is that in the continuous case the intermediate values are stable. An acceleration can be understood as a quadratic minimum that changes its position quickly. If we stop the process by freezing the manipulated control variable in the process, the state will remain at an intermediate value. These intermediate values are all stable values. If we freeze the manipulated variable in a discontinuous process, it will continue to move to a stable state. In this case, the intermediate state is unstable. The ball keeps rolling and unfortunately the climate keeps changing.
 
-In practice using time series data, this is a difficult distinction to make. It means that simple time series are not sufficient to distinguish accelerations from phase transitions. So how do we distinguish between the two processes? In the context of catastrophe theory, Gilmore (1993) proposed the catastrophe flags. These are cusp related phenomena that can be seen in the data. While no single one of these is sufficient to indicate the cusp, when considered together they provide compelling evidence for its existence.
+In practice using time series data, this is a difficult distinction to make. It means that simple time series are not sufficient to distinguish accelerations from phase transitions. So how do we distinguish between the two processes? In the context of catastrophe theory, Gilmore (1993) proposed the catastrophe flags. These are cusp-related phenomena that can be seen in the data. While no single one of these is sufficient to indicate the cusp, when considered together they provide compelling evidence for its existence.
 
-In the upcoming subsections, I will provide definitions for the flags and illustrate their applications in psychology using examples. The first flag is the sudden jump.
+In the follwowing subsections, I will define the flags and illustrate their applications in psychology using examples. The first flag is the sudden jump.
 
 #### Sudden jump {#sec-Sudden-jump}
 
-[The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped p-value of .005 (with the null hypothesis of no change point).
+[The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped $p$-value of .005 (with the null hypothesis of no change point).
 
-![A sudden jump to depression (score at the SLC-90) in a patient who gradually quitted antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="10cm"}
+![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="10cm"}
 
 Many methods for change point analysis have been developed and compared in @burgEvaluationChangePoint2022.
 
@@ -291,7 +291,7 @@ Multimodality (in the case of the cusp bimodality) is an important and easy-to-u
 
 An example is shown in @fig-ch3-img20-old-32. These data come from a conservation anticipation task, where children have to predict the level of water in the second glass when it is poured over. The resulting data and the fit of a mixture of two normal distributions are shown on the right. The data are clearly bimodal supporting the hypothesis of a transition in conservation learning [@vandermaas1992]. These data were used in @dolan1998 to fit multivariate normal mixture distributions subject to a structural equation model.
 
-![Bimodality in the expected heights of water when it is poured into a wider glass. This variation of the Piagetian maintenance task is used with children ages 5-8.](media/ch3/fig-ch3-img20-old-32.jpg){#fig-ch3-img20-old-32 width="12cm"}
+![Bimodality in the expected heights of water when it is poured into a wider glass. This variation of the Piagetian maintenance task is used with children ages five to eight.](media/ch3/fig-ch3-img20-old-32.jpg){#fig-ch3-img20-old-32 width="12cm"}
 
 The code is:
 
@@ -302,15 +302,15 @@ result=normalmixEM(x)
 plot(result,whichplot=2,breaks=30)
 ```
 
-There is a whole field in statistics focused on multimodality, mixtures and clustering. There are some blogs that present overviews of the relevant R-packages [@arnaudMixtureModellingScratch2021]. Several detailed examples from psychology, using hidden Markov models, are presented in @visserMixtureHiddenMarkov2022.
+There is a whole field in statistics focused on multimodality, mixtures and clustering. There are some blogs that present overviews of the relevant R packages [@arnaudMixtureModellingScratch2021]. Several detailed examples from psychology, using hidden Markov models, are presented in @visserMixtureHiddenMarkov2022.
 
 [The advantage of multimodality over the sudden jump is that we can test it with cross-sectional data.]{.aside} To capture a sudden jump in a development process, you need a lot of high-frequency data. Sudden shifts in opinion are also rare. But it is easy to collect data on large numbers of people who are asked to make judgments about statements on an issue such as abortion. If these judgments are bimodally distributed, this is consistent with a phase transition. Bimodal data may also be produced by a process of acceleration, with time series consisting mainly of data values before and after the acceleration. So, bimodality is not sufficient. It can be considered necessary, so I always suggest starting with cross-sectional multimodal studies. If they fail, you might reconsider your hypothesis. I have often looked for multimodality in measures of arithmetic learning and never found anything convincing, which made me rethink my hypothesis.
 
 #### Inaccessibility {#sec-Inaccessibility}
 
-Inaccessibility means that certain values of the behavioral variable are unstable. The business card is a good example. Given some vertical pressure, we can try what we want but we cannot force the card to stay in the middle position, it is unstable. [Inaccessibility is relevant to reject the alternative hypothesis that the sudden jump and bimodality are due to an acceleration.]{.aside}
+Inaccessibility means that certain values of the behavioral variable are unstable. The business card is a good example. Given some vertical pressure, we can try what we want but we cannot force the card to stay in the middle position; it is unstable. [Inaccessibility is relevant to reject the alternative hypothesis that the sudden jump and bimodality are due to an acceleration.]{.aside}
 
-In Experiment 2 of @dutilhPhaseTransitionModel2011 we focused on this flag. Our hypothesis was that in simple choice response tasks there is a phase transition between a fast-guessing state and a slower stimulus-driven response state. The idea is that if we force subjects to speed up, there will be a catastrophic jump in performance (from almost 100% correct to 50% correct).
+In Experiment 2 of @dutilhPhaseTransitionModel2011, we focused on this flag. Our hypothesis was that in simple choice response tasks there is a phase transition between a fast-guessing state and a slower stimulus-driven response state. The idea is that if we force subjects to speed up, there will be a catastrophic decline in performance (from almost 100% correct to 50% correct).
 
 We created a game in which subjects responded to a series of simple choice items (a lexical decision task). The length of the series was not known to the subject. At the end of a series, they were rewarded according to how close their percentage correct was to 75%. Speed was also rewarded, but much less. So, we asked the subject to be in the inaccessible state. The alternative hypothesis, based on information accumulation models, was that there was no phase transition and that responding with 75% accuracy required the correct setting of a boundary (see @sec-Response-time-models).
 
@@ -318,55 +318,55 @@ It appeared that subjects solved the task by switching between the fast-guessing
 
 #### Divergence {#sec-Divergence}
 
-Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, requires the manipulation of the splitting variable. In the case of attitudes, we hypothesize this to be involvement or some related variable. In @vandermaasSuddenTransitionsAttitudes2003 we re-analyzed a dataset from @stoufferAmericanSoldierAdjustment1949, which @lataneAttitudesCatastrophesDimensions1994 presented as evidence for the cusp model. The attitude concerned demobilization (from 0, unfavorable, to 6, favorable) and respondents were asked to indicate how strongly they felt about their answer (from intensity 0 to intensity 5). For low intensities of feeling the data are normally distributed whereas for higher intensities data are bimodally distributed (see @fig-ch3-img21-old-33). [After testing for multimodality, testing for divergence is a sensible next step.]{.aside}
+Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, requires the manipulation of the splitting variable. In the case of attitudes, we hypothesize this to be involvement or some related variable. In @vandermaasSuddenTransitionsAttitudes2003, we reanalyzed a dataset from @stoufferAmericanSoldierAdjustment1949, which @lataneAttitudesCatastrophesDimensions1994 presented as evidence for the cusp model. The attitude concerned demobilization (from 0, unfavorable, to 6, favorable), and respondents were asked to indicate how strongly they felt about their answer (from intensity 0 to intensity 5). For low intensities of feeling, the data are normally distributed whereas for higher intensities, data are bimodally distributed (see @fig-ch3-img21-old-33). [After testing for multimodality, testing for divergence is a sensible next step.]{.aside}
 
 ![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in @sec-Fitting-the-cusp-to-crosssectional-data.](media/ch3/ch3-21__figure33.png){#fig-ch3-img21-old-33 width="12cm"}
 
 #### Hysteresis {#sec-Hysteresis}
 
-[Hysteresis, the lagging behind of the sudden jump, requires sophisticated manipulation of the normal control variable.]{.aside} To test for hysteresis we need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis in proportional reasoning using Piaget's balance scale test in which a specific dimension (distance from the fulcrum) was systematically varied [@jansen2001]. We also hypothesized that speeding up subjects in response time tasks would eventually lead to a catastrophe in accuracy. To support this claim, we demonstrated bimodality in response times and hysteresis in the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011]. To support the cusp model of multistable perception we used the quartet motion paradigm [@ploegerStochasticCatastropheAnalysis2002]. In this perceptual paradigm two lights are presented simultaneously, first a pair from two of the diagonally opposite corners of the rectangle, and then a second pair from the other two diagonally opposite corners of the rectangle. Usually, either vertical or horizontal apparent motion is perceived. By gradually increasing or decreasing the aspect ratio (i.e., the ratio of height to width of the quartet), hysteresis in the jumps between the two percepts was demonstrated (see @fig-ch3-img22-old-34).
+[Hysteresis, the lagging behind of the sudden jump, requires sophisticated manipulation of the normal control variable.]{.aside} To test for hysteresis, we need to slowly increase and decrease this variable and test whether sudden jumps occur with a delay. We have demonstrated hysteresis in proportional reasoning using Piaget's balance scale test in which a specific dimension (distance from the fulcrum) was systematically varied [@jansen2001]. We also hypothesized that speeding up subjects in response time tasks would eventually lead to a catastrophe in accuracy. To support this claim, we demonstrated bimodality in response times and hysteresis in the speed-accuracy trade-off [@dutilhPhaseTransitionModel2011]. To support the cusp model of multistable perception, we used the quartet motion paradigm [@ploegerStochasticCatastropheAnalysis2002]. In this perceptual paradigm two lights are presented simultaneously, first a pair from two of the diagonally opposite corners of the rectangle, and then a second pair from the other two diagonally opposite corners of the rectangle. Usually, either vertical or horizontal apparent motion is perceived. By gradually increasing or decreasing the aspect ratio (i.e., the ratio of height to width of the quartet), hysteresis in the jumps between the two percepts was demonstrated (see @fig-ch3-img22-old-34).
 
-In @ploegerStochasticCatastropheAnalysis2002 we used a special design, the method of modified limits, to rule out the alternative explanation that hysteresis is simply due to delayed responses. It could be that the switches always occur in the middle (at an aspect ratio of 1), but the self-report is delayed. In the modified limits method, subjects do not respond during a trial, but only after the entire trial. By varying the length of the trials, it is possible to determine at which parameter value the subject perceives a switch.
+In @ploegerStochasticCatastropheAnalysis2002, we used a special design, the method of modified limits, to rule out the alternative explanation that hysteresis is simply due to delayed responses. It could be that the switches always occur in the middle (at an aspect ratio of 1), but the self-report is delayed. In the modified limits method, subjects do not respond during a trial, only after the entire trial. By varying the length of the trials, it is possible to determine at which parameter value the subject perceives a switch.
 
-![Hysteresis in the perception of apparent motion. Switches between the perception in of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet. Adapted from @ploegerStochasticCatastropheAnalysis2002 with permission.](media/ch3/image22.jpg){#fig-ch3-img22-old-34 width="13cm"}
+![Hysteresis in the perception of apparent motion. Switches between the perception of vertical or horizontal apparent motion occur when the aspect ratio (horizontal axis) is varied. The aspect ratio is the ratio of height to width of the quartet. (Adapted from @ploegerStochasticCatastropheAnalysis2002 with permission)](media/ch3/image22.jpg){#fig-ch3-img22-old-34 width="13cm"}
 
-#### Anomalous variance, divergence of linear response and critical slowing down {#sec-Anomalous-variance-divergence-of-linear-response-and-critical-slowing-down}
+#### Anomalous variance, divergence of linear response, and critical slowing down {#sec-Anomalous-variance-divergence-of-linear-response-and-critical-slowing-down}
 
-Gilmore's last three flags, anomalous variance, divergence of linear response and critical slowing down, are indicators that occur near the bifurcation lines. They are also known as early warning signals and are a popular topic of research [@dakosMethodsDetectingEarly2012]. [Early warnings are indicators or signals that precede and predict transitions within a system, allowing for anticipation and potentially preventative action.]{.aside}
+Gilmore's last three flags—anomalous variance, divergence of linear response, and critical slowing down—are indicators that occur near the bifurcation lines. They are also known as early warning signals and are a popular topic of research [@dakosMethodsDetectingEarly2012]. [Early warnings are indicators or signals that precede and predict transitions within a system, allowing for anticipation and potentially preventative action.]{.aside}
 
 Anomalous variance occurs because near a bifurcation point the second derivative diminishes, meaning that the minimum becomes less deep. Assuming there is always some perturbation of the state, this will lead to larger fluctuations in the state.
 
-Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. The latter is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics [@hakenSynergetics1977]. Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablander2023.
+Divergence of linear response is the size of the effect of a small perturbation of the state, which will be greater near a bifurcation point. It will also take longer to return to equilibrium. This delay in return time is known as critical slowing down and is also studied in other approaches to nonlinear dynamical systems (e.g., synergetics, @hakenSynergetics1977). Examples of applications in psychology can be found in @leemputCriticalSlowingEarly2014 and @olthofCriticalFluctuationsEarlyWarning2020. A somewhat critical review is provided in @dablander2023.
 
 In my experience, the problem with early warning signals is that both type 1 and type 2 errors should be low for predicting transitions. This is challenging even in simulations, let alone in noisy psychological data. It would be fantastic if these early warnings really worked. For example, being able to predict a relapse into depression or addiction would be of great clinical value.
 
-The catastrophe flags together provide a research methodology for phase transition research in psychology. A single flag may not be sufficient, but the combination is. For example, the combination of evidence for inaccessibility and hysteresis is convincing. I have given psychological examples of most of the flags. Which flags to use in a particular case depends on the knowledge and experimental control of the control variables. Another approach is to fit the cusp model directly to the data. This is the subject of the next section.
+Together, the catastrophe flags provide a methodology for phase transition research in psychology. A single flag may not be sufficient, but the combination is. For example, the combination of evidence for inaccessibility and hysteresis is convincing. I have given psychological examples of most of the flags. Which flags to use in a particular case depends on the knowledge and experimental control of the control variables. Another approach is to fit the cusp model directly to the data. This is the subject of the next section.
 
 ### Fitting the cusp to cross-sectional data {#sec-Fitting-the-cusp-to-crosssectional-data}
 
 #### Cobb's maximum likelihood approach {#sec-Cobbs-maximum-likelihood-approach}
 
-In a series of papers Loren Cobb an colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach[^ch3-9] to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$ and $b$. We have implemented this approach in a cusp R package described in @grasman2009.
+In a series of papers, Loren Cobb and colleagues [@cobbApplicationsCatastropheTheory1985; @cobbStochasticCatastropheModels1978] developed a maximum likelihood approach[^ch3-9] to fit the cusp catastrophe to data consisting of cross-sectional measurements of $X$, $a$, and $b$. We have implemented this approach in a cusp R package described in @grasman2009.
 
-[^ch3-9]: The is method is to find the parameter values that make the observed data most probable.
+[^ch3-9]: The is method finds the parameter values that make the observed data most probable.
 
 The basic idea is to make catastrophe theory, a deterministic theory, stochastic by adding a stochastic term, called Wiener noise (with variance $\sigma^{2})$, to @eq-ch3-2-old-6[^ch3-10]:
 
-[^ch3-10]: Many different notations exist for his. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and $dW$ depend on time.
+[^ch3-10]: Many different notations exist for this. Perhaps clearer is $dX(t) = - V^{'}\left( X(t) \right)dt + \sigma dW(t)$, as $dX$ and $dW$ depend on time.
 
 $$
 dX = - V^{'}(X)dt + \sigma dW(t).$$ {#eq-ch3-9-old-13}
 
-It is important to note that this type of stochasticity is not the same as measurement noise. Measurement noise, i.e., $\varepsilon$ in $Y = X + \varepsilon$, does not affect the dynamics of $X$. Wiener noise does, it is part of the updating equation of $X$ itself. [A stochastic differential equation (SDE) is a differential equation that incorporates a term representing random fluctuations.]{.aside} This stochastic differential equation is associated with a probability distribution of the form:
+It is important to note that this type of stochasticity is not the same as measurement noise. Measurement noise—that is, $\varepsilon$ in $Y = X + \varepsilon$—does not affect the dynamics of $X$. Wiener noise does; it is part of the updating equation of $X$ itself. [A stochastic differential equation (SDE) is a differential equation that incorporates a term representing random fluctuations.]{.aside} This stochastic differential equation is associated with a probability distribution of the form:
 
 $$
 f(X) = \frac{1}{{Z\sigma}^{2}}e^{\frac{- V(X)}{\sigma^{2}}},$$ {#eq-ch3-10-old-14}
 
-where Z is a normalizing constant[^ch3-11] necessary to ensure that the area under $f(X)$ is 1. This may look complicated but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = {\sqrt{2\pi}}/{\sigma}$.
+where $Z$ is a normalizing constant[^ch3-11] necessary to ensure that the area under $f(X)$ is 1. This may look complicated, but for the quadratic case $V(X) = {\frac{1}{2}X}^{2}$, this results in the standard normal distribution, with $Z = {\sqrt{2\pi}}/{\sigma}$.
 
-[^ch3-11]: For consistency with later chapters, I define $Z$ differently from the notation in [@grasman2009]. It is the inverse of $Z$ in that paper.
+[^ch3-11]: For consistency with later chapters, I define $Z$ differently from the notation in @grasman2009. It is the inverse of $Z$ in that paper.
 
-As in the case of the normal distribution we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as $V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}$. The probability distribution for the cusp is
+As in the case of the normal distribution, we want to allow for some transformations of the variables. To simplify the necessary statistical notation, we write the cusp as $V(y) = {- \alpha y - \frac{1}{2}\beta y^{2} + \frac{1}{4}y}^{4}$. The probability distribution for the cusp is:
 
 $$
 f(y) = \frac{1}{{Z\sigma}^{2}}e^{\frac{\alpha y + \frac{1}{2}\beta y^{2} - \frac{1}{4}y^{4}}{\sigma^{2}}}.$$ {#eq-ch3-11-old-15}
@@ -381,7 +381,7 @@ y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 \end{gathered}
 $$ {#eq-ch3-12-old-16}
 
-By estimating these regression parameters, we fit the cusp model to empirical data. The cusp package in R makes this possible. I will first demonstrate this using simulated data. [This is my number one rule when using statistical techniques: never use a statistical technique on real data before you have tested it on simulated data.]{.aside} I strongly recommend this approach. First, it forces you to understand what the statistical technique actually does, and second, it gives you a way to test the power and investigate violations of the technique's assumptions.
+By estimating these regression parameters, we fit the cusp model to empirical data. The cusp package in R makes this possible. I will first demonstrate this using simulated data. [My number-one rule when using statistical techniques: Never use a statistical technique on real data before you have tested it on simulated data.]{.aside} I strongly recommend this approach. First, it forces you to understand what the statistical technique actually does, and second, it gives you a way to test the power and investigate violations of the technique's assumptions.
 
 ```{r eval = FALSE}
 library(cusp) # if error: install.packages('cusp')
@@ -395,29 +395,29 @@ Y1 <- -w0/w1 + (1/w1) * Vectorize(rcusp)(1, a0+a1*X1, b0+b1*X2)
 data <- data.frame(X1, X2, Y1) # collect ‘measured’ variables in data
 ```
 
-I recommend doing some descriptive analysis first. With `hist(data$Y1)` we can inspect whether there is some indication of bimodality. $X2$ is the splitting variable so perhaps we see stronger bimodality with `hist(data$Y1[data$X2>mean(data$X2)]`). The function pairs in R, `pairs(data)`, is also always recommended. In this perfect simulated case, you will already see strong indications of the cusp. Now we fit the full model with $\alpha$ and $\beta$ both as function of $X1$ and $X2$.
+I recommend doing some descriptive analysis first. With `hist(data$Y1)` we can inspect whether there is some indication of bimodality. $X2$ is the splitting variable, so perhaps we see stronger bimodality with `hist(data$Y1[data$X2>mean(data$X2)]`). The function pairs in R, `pairs(data)`, is also always recommended. In this perfect simulated case, you will already see strong indications of the cusp. Now we fit the full model with $\alpha$ and $\beta$ both as function of $X1$ and $X2$.
 
 ```{r eval = FALSE}
 fit <- cusp(y ~ Y1, alpha ~ X1+X2, beta ~ X1+X2, data) 
 summary(fit) 
 ```
 
-Summary provides the following table:
+The table provides a summary:
 
-| Coefficients:    | Estimate | Std.Error | z-value |   Pr(\>\|z\|)    |
-|:-----------------|:--------:|:---------:|:-------:|:----------------:|
-| a\[(Intercept)\] |  -2.13   |   0.19    |  -11.0  | \< 2e-16^\*\*\*^ |
-| a\[X1\]          |   3.11   |   0.22    |  14.2   | \< 2e-16^\*\*\*^ |
-| a\[X2\]          |   0.15   |   0.17    |   0.9   |       0.39       |
-| b\[(Intercept)\] |  -2.29   |   0.34    |  -6.7   | 2.66e-11^\*\*\*^ |
-| b\[X1\]          |  -0.09   |   0.33    |  -0.3   |       0.79       |
-| b\[X2\]          |   4.40   |   0.27    |  16.5   | \< 2e-16^\*\*\*^ |
-| w\[(Intercept)\] |   1.98   |   0.07    |  27.6   | \< 2e-16^\*\*\*^ |
-| w\[Y1\]          |   3.97   |   0.10    |  38.0   | \< 2e-16^\*\*\*^ |
+| Coefficients     | Estimate | Std. Error | z-value |   Pr(\>\|z\|)    |
+|:-----------------|:--------:|:----------:|:-------:|:----------------:|
+| a\[(Intercept)\] |  -2.13   |    0.19    |  -11.0  | \< 2e-16^\*\*\*^ |
+| a\[X1\]          |   3.11   |    0.22    |  14.2   | \< 2e-16^\*\*\*^ |
+| a\[X2\]          |   0.15   |    0.17    |   0.9   |       0.39       |
+| b\[(Intercept)\] |  -2.29   |    0.34    |  -6.7   | 2.66e-11^\*\*\*^ |
+| b\[X1\]          |  -0.09   |    0.33    |  -0.3   |       0.79       |
+| b\[X2\]          |   4.40   |    0.27    |  16.5   | \< 2e-16^\*\*\*^ |
+| w\[(Intercept)\] |   1.98   |    0.07    |  27.6   | \< 2e-16^\*\*\*^ |
+| w\[Y1\]          |   3.97   |    0.10    |  38.0   | \< 2e-16^\*\*\*^ |
 
 : Table 1: The parameter estimates including standard errors and p-values generated by the cusp package.
 
-Note that we fit a model with too many parameters. We also estimated $a_{2}$ and $b_{1}$ (because the model was specified as alpha \~ X1+X2, beta \~ X1+X2). These estimates are not significantly different from 0. The other parameters are estimated reasonably close to their true values, since the true values fall within the confidence interval of the estimates (defined by twice the standard error on either side). We expect a better fit in terms of AIC and BIC when we fit a reduced model without $a_{2}$ and $b_{1}$. These fit indices penalize the goodness of fit (e.g., the log-likelihood) for the number of parameters used to discourage overfitting and to promote model parsimony.
+Note that we fit a model with too many parameters. We also estimated $a_{2}$ and $b_{1}$ (because the model was specified as alpha \~ \$X$1+$X\$2, beta \~ \$X$1+$X\$2). These estimates are not significantly different from 0. The other parameters are estimated reasonably close to their true values, since the true values fall within the confidence interval of the estimates (defined by twice the standard error on either side). We expect a better fit in terms of AIC and BIC when we fit a reduced model without $a_{2}$ and $b_{1}$. These fit indices penalize the goodness of fit (e.g., the log-likelihood) for the number of parameters used to discourage overfitting and to promote model parsimony.
 
 ```{r eval = FALSE}
 fit_correct_model <- cusp(y ~ Y1, alpha ~ X1, beta ~ X2, data) 
@@ -429,9 +429,9 @@ summary(fit_correct_model)
 | Full model    |   0.428   | -1058.7 |  8   | 2133.3 | 2133.5 | 2172.6 |
 | Reduced model |   0.426   | -1059.0 |  6   | 2130.0 | 2130.1 | 2159.5 |
 
-: Table 2: The comparative fit measures, AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
+: Table 2: The comparative fit measures AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
 
-The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$ we do have hysteresis. With the code below we simulate datasets for different $\beta$, and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better fitting model.
+The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$, and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
 
 ```{r eval = FALSE}
 set.seed(10)
@@ -462,11 +462,11 @@ text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
 ```
 
-![At the back of the cusp (low $b_0$), the cusp is approximately linear and cuspfit prefers this simpler model (red line) over the cusp mode (blue line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="12cm"}
+![At the back of the cusp (low $b_0$), the cusp is approximately linear, and cuspfit prefers this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="12cm"}
 
 #### Empirical examples {#sec-Empirical-examples}
 
-In @grasman2009 we present several examples with real data. As another example, we use Stoufer's data, which we used as an example of divergence before (see @fig-ch3-img21-old-33).
+In @grasman2009, we present several examples with real data. As another example, we use Stoufer's data, which we used as an example of divergence before (see @fig-ch3-img21-old-33).
 
 ```{r eval = FALSE}
 x <- read.table('data/stoufer.txt')
@@ -476,11 +476,11 @@ fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling,
 summary(fit)
 ```
 
-Inspection of the parameter estimates shows that, as expected, Intensity of Feeling only loads on the splitting axis and not on the normal axis. @fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
+Inspection of the parameter estimates shows that, as expected, intensity of feeling only loads on the splitting axis and not on the normal axis. @fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
 
 ![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/image24.jpg){#fig-ch3-img24-old-36 width="12cm"}
 
-Another example is the conservation data set of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12 item test from a conservation test of 560 children from 8 different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaas1992].
+Another example is the conservation dataset of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12-item test from a conservation test of 560 children from eight different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaas1992].
 
 ```{r eval = FALSE}
 x <- read.table('data/bentler.txt',header=T)
@@ -500,43 +500,43 @@ summary(fit)
 plot(fit)
 ```
 
-This is supported by results of cuspfit. You can verify that a model with beta \~ 1, fits better according to the AIC and BIC.
+This is supported by results of cuspfit. You can verify that a model with beta \~ 1 fits better according to the AIC and BIC.
 
 ![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="13cm"}
 
-A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with the machine and fit the cusp model to the data [see @grasman2009, for details]. This machine was invented by Zeeman to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
+A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with it, and fit the cusp model to the data [see @grasman2009 for details]. Zeeman invented this machine to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
-![Zeemans's catastrophe machine.It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y and Z values. Typically, 50 to 100 data points are sufficient to run Cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="8cm"}
+![Zeeman's catastrophe machine. It consists of a rotating disk and two elastic bands. The first elastic band is attached to a fixed point and the strap point. The end of the other elastic (red dot) is moved by hand through the control plan. The strap point moves according to the cusp catastrophe. Data is gathered by collecting a set of X, Y, and Z values. Typically, 50 to 100 data points are sufficient to run cuspfit.](media/ch3/image26.jpg){#fig-ch3-img26-old-38 width="8cm"}
 
 #### Evaluation {#sec-Evaluation}
 
-I make a few final remarks. First, Cobb's method can be used cross-sectional data. [Cobb's method is not valid for time series.]{.aside}. Data points should be independent. To test for hysteresis in time series other approaches are required. One option is to use hidden Markov models as in @dutilhPhaseTransitionModel2011.
+A few final remarks: First, Cobb's method can be used with cross-sectional data. [Cobb's method is not valid for time series.]{.aside} Data points should be independent. To test for hysteresis in time series, other approaches are required. One option is to use hidden Markov models as in @dutilhPhaseTransitionModel2011.
 
-The second remark is that there are some issues with the approach of Cobb that are due to fundamental differences between probability distributions and potential functions. The latter can be transformed in many ways (so called local diffeomorphisms) without changing the qualitative properties of the cusp. With the added constraint on probability distributions (area = 1), the same transformations can lead to qualitative effects, such as a change in the number of modes. @wagenmakersTransformationInvariantStochastic2005 suggest a solution to this problem for time series.
+Second, there are some issues with Cobb's approach that are due to fundamental differences between probability distributions and potential functions. The latter can be transformed in many ways (so-called local diffeomorphisms) without changing the qualitative properties of the cusp. With the added constraint on probability distributions (area = 1), the same transformations can lead to qualitative effects, such as a change in the number of modes. @wagenmakersTransformationInvariantStochastic2005 suggest a solution to this problem for time series.
 
-The third remark is that two alternative approaches have been proposed. Both Guastello's [-@guastelloModeratorRegressionCusp1982] change score least square regression approach and the Gemcat approach [-@olivaGemcatGeneralMultivariate1987] use the first derivative of the cusp as point of departure. A problem with both approaches is that they do not distinguish between stable and unstable equilibrium states. Data points in the inaccessible region improve the fit of the model, whereas they should decrease the fit. @alexanderExaminationLeastsquaresRegression1992 provide a detailed critique.
+Third, two alternative approaches have been proposed. Both Guastello's [-@guastelloModeratorRegressionCusp1982] change score least square regression approach and the Gemcat approach [-@olivaGemcatGeneralMultivariate1987] use the first derivative of the cusp as point of departure. A problem with both approaches is that they do not distinguish between stable and unstable equilibrium states. Data points in the inaccessible region improve the fit of the model, whereas they should decrease the fit. @alexanderExaminationLeastsquaresRegression1992 provide a detailed critique.
 
 ## Criticism of catastrophe theory {#sec-Criticism-of-catastrophe-theory}
 
-One often speaks of the rise and the fall of catastrophe theory [@rosserRiseFallCatastrophe2007]. The hype following Zeeman's famous Scientific American paper[^ch3-12] [@zeemanCatastropheTheory1976], in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences, led to a strongly worded reply by @zahlerClaimsAccomplishmentsApplied1977 in Nature.
+@rosserRiseFallCatastrophe2007 speaks of the rise and the fall of catastrophe theory. The hype following the publication of @zeemanCatastropheTheory1976 in Scientific American [^ch3-12], in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences, led to a strongly worded reply by @zahlerClaimsAccomplishmentsApplied1977 in Nature.
 
 [^ch3-12]: I recommend the BBC documentary "Case Study Catastrophe Theory Maths Foundation Course"
 
     (<https://www.youtube.com/watch?v=myDvcvox1V4&t=1435s>) to see Zeeman at work.
 
-Because people still refer to this paper when we use catastrophe theory in our work, let us briefly respond to the main points of criticism made by Zahler and Sussmann. I note that in the introduction to their paper they state that there may be legitimate uses of catastrophe theory in physics and engineering. [They do not question the correctness or importance of catastrophe theory as a purely mathematical subject.]{.aside}
+Because people still refer to Zeeman's paper when we use catastrophe theory in our work, I will briefly respond to Zahler and Sussmann's main points of criticism. In their introduction, they state that there may be legitimate uses of catastrophe theory in physics and engineering. [They do not question the correctness or importance of catastrophe theory as a purely mathematical subject.]{.aside}
 
-They raise ten points, some of which we have already addressed. For example, their first point is about how sudden a jump actually is, but they call this a less serious criticism. As I explained earlier, it is not the suddenness that matters, but whether or not the intermediate states are unstable.
+They raise 10 points, some of which I have already addressed. For example, their first point is about how sudden a jump actually is, but they call this a less serious criticism. As I explained earlier, it is not the suddenness that matters but whether or not the intermediate states are unstable.
 
-A number of points are about inferring a cusp from data, which was indeed done rather superficially in Zeeman's earlier work. They pointed out that there are no testable predictions, that the location of the cusp can be shifted, and that there is no way to decide whether the data fit the cusp. We hope to have shown that these problems are largely solved. The catastrophe flags allow us to make new testable predictions, and with Cobb's maximum likelihood approach we can fit the model as we would do with any other statistical model in modern science. Of course, one can be critical of the use of statistics in psychology and the social sciences, but these criticisms are not specific to catastrophe theory.
+A number of points are about inferring a cusp from data, which was indeed done rather superficially in Zeeman's earlier work. They point out that there are no testable predictions, that the location of the cusp can be shifted, and that there is no way to decide whether the data fit the cusp. I hope to have shown that these problems are largely solved: the catastrophe flags allow us to make new testable predictions, and with Cobb's maximum likelihood approach we can fit the model as we would do with any other statistical model in modern science. Of course, one can be critical of the use of statistics in psychology and the social sciences, but these criticisms are not specific to catastrophe theory.
 
-Another, somewhat inconsistent, line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), while it is also claimed that Zeeman's models are not falsifiable. But you cannot have it both ways, if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.
+Another, somewhat inconsistent, line of criticism is that many catastrophe models in psychology and the social sciences are just wrong and inconsistent with the data (which could be true), and they also claim that Zeeman's models are not falsifiable. But you cannot have it both ways: if it is wrong or inconsistent with the data, it is falsifiable. Nevertheless, I agree that it is important to think about falsifiability. Theories in psychology tend to be moving targets. As soon as someone finds an empirical result that contradicts the theory, the theory is quickly modified.
 
-Then they point out that catastrophe theory theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe. Aggression can vary from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, while in other circumstances the change is sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field \[see [@sec-ch8] and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008\].
+Then Zahler and Sussmann point out that catastrophe theorists often try to make a discrete variable into a continuous one. Their example is aggression, which they believe is inherently discrete. They call Zeeman's interpretation of aggression as a continuous family of behaviors absurd and utterly meaningless. This may be a bit strong. We can think of situations in which aggression can vary from mild to severe, or from verbal to physical, directed at a person's belongings, mild physical directed at the person, to severe physical. A rich ordering of aggressive acts is very useful for describing domestic violence. Sometimes the change along these acts or variants is gradual, and other times sudden. Whether such an ordering can be treated as a quantitative continuum is one of the most difficult questions in our field (see @sec-ch8 and @borsboomKindsContinuaReview2016; @michellPsychometricsPathologicalScience2008).
 
-The last point of Zahler and Sussmann is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether this will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
+Zahler and Sussmann's final point is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether it will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
 
-@loehleCatastropheTheoryEcology1989 present an excellent discussion on the usefulness of catastrophe theory in the context of modelling ecosystems. He concluded that "an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data", but this problem has now been largely solved. [The empirical program, using catastrophe flags in conjunction with Cobb's method for fitting cusp models, bypass much of the previous criticism of catastrophe theory.]{.aside}
+@loehleCatastropheTheoryEcology1989 presents an excellent discussion on the usefulness of catastrophe theory in the context of modeling ecosystems. He concludes that “an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data,” but this problem has now been largely solved. [The empirical program, using catastrophe flags in conjunction with Cobb's method for fitting cusp models, bypasses much of the previous criticism of catastrophe theory.]{.aside}
 
 ## Conclusion {#sec-Conclusion-ch3}
 
@@ -544,23 +544,23 @@ Psychologists are often concerned with psychological types and classes, stages a
 
 Catastrophe theory comes with a toolbox for the behavioral and social sciences. We can build phenomenological models, test for catastrophe flags, and even fit cusp models to data. With the development of this toolbox, most of the criticisms of catastrophe theory lose their relevance.
 
-However, there is room for improvement. Phenomenological models have limited explanatory power. As explained in the next chapter on dynamical system models, it is possible to create more mechanistic models that support the use of phenomenological models. In Chapter 6, @sec-Ising-attitude-model, another option is introduced using networks. It will be demonstrated that the behavior of the Ising network model for attitudes is governed by the cusp model, which is very similar to the cusp model proposed for the attitude toward abortion.
+However, there is room for improvement. Phenomenological models have limited explanatory power. As explained in the next chapter on dynamical system models, it is possible to create more mechanistic models that support the use of phenomenological models. In Chapter 6, @sec-Ising-attitude-model, another option is introduced using networks. I will demonstrate that the behavior of the Ising network model for attitudes is governed by the cusp model, which is very similar to the cusp model proposed for the attitude toward abortion.
 
 ## Exercises {#sec-Exercises-ch3}
 
-1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to zero. Show this. (\*)
+1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to 0. Show this. (\*)
 
-2)  In Zeeman's dog aggression model fear and rage are 'rotated' control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
+2)  In Zeeman's dog aggression model, fear and rage are “rotated” control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
 
-3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to zero. Plot the bifurcation lines in GeoGebra or Desmos. (\*\*)
+3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to 0. Plot the bifurcation lines in GeoGebra or Desmos. (\*\*)
 
-4)  Some insight into the butterfly catastrophe $V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}$ can be gained by entering the equation in free online graphing calculators such as DesMos or GeoGebra. Set a, b, c, d to 0, -5, 0, 5. Then start varying a and c. What is the difference in the effect of these two parameters on the appearance and disappearance of attractors? (\*)
+4)  Some insight into the butterfly catastrophe $V(X) = {- aX - bX^{2} - cX}^{3} - dX^{4} + X^{6}$ can be gained by entering the equation in free online graphing calculators such as Desmos or GeoGebra. Set $a$, $b$, $c$, $d$ to 0, -5, 0, 5. Then start varying $a$ and $c$. What is the difference in the effect of these two parameters on the appearance and disappearance of attractors? (\*)
 
 5)  Set up a phenomenological cusp for falling in love. Follow my guidelines (see @sec-Phenomenological-models). (\*\*)
 
-6)  Check whether indeed the Bentler data fit better with when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (\*)
+6)  Check whether indeed the Bentler data fit better when age_range only loads on the normal axis (according to the AIC and BIC). What is the correct specification of beta in cusp() in this case? (\*)
 
-7)  What is the best fitting cusp model (according to the BIC) for this tricky data set created with this R-code? Why? (\*\*)
+7)  What is the best fitting cusp model (according to the BIC) for this tricky dataset created with this R code? Why? (\*\*)
 
     ```{r eval = FALSE}
     n=500
@@ -570,4 +570,4 @@ However, there is room for improvement. Phenomenological models have limited exp
     data <- data.frame(z,x,y) # collect variables in data
     ```
 
-8)  Build a Zeeman machine, collect data and fit the cusp [see Example III of @grasman2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
+8)  Build a Zeeman machine, collect data, and fit the cusp [see Example III of @grasman2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
