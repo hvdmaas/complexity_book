@@ -296,7 +296,7 @@ Understanding the technical basics of dynamical systems theory is one thing, but
 
 For example, the original Lotka—Volterra model has no stable points, only limit cycles. While these cycles have been observed in nature, they are not overwhelmingly common. As we have seen, the dynamics of the system are significantly altered when prey growth is made dependent on prey density. This model has fixed-point equilibria instead of limit cycles.
 
-Adding a spatial component can also make a big difference, as shown in the example of hypercycles in @sec-Biology (see @szostakHypercycle2016 for a brief review). Adding more prey and predator species also makes a difference \[@johnsonModelingMultispeciesPredator2019\]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
+Adding a spatial component can also make a big difference, as shown in the example of hypercycles in @sec-Biology (see @szostakHypercycle2016 for a brief review). Adding more prey and predator species also makes a difference [@johnsonModelingMultispeciesPredator2019]. There are many interesting options for the predator term in the prey equation. @tyutyunov2020 compare 12 trophic functions, alternatives to the Holling functional responses. The options are overwhelming. Biologists face a problem here that I discussed in Chapter 1, @sec-The-art-of-simplification. Models easily become too complex. Recall that the traffic simulation models were extremely simple, yet sufficient to explain key phenomena.
 
 An additional problem is that empirically testing all these different models is difficult. Although the quality of biological data is often superior to that of psychological data, biologists must also rely on the qualitative predictions of their models. Models in chemistry and especially physics can often be tested quantitatively. Transitions occur precisely at the predicted values of the control variables. Ecological models, much like those in psychology, do not allow for this level of prediction. This is a problem because if we can only test our model qualitatively (Are there limit cycles? What type of transitions can be detected? Is there hysteresis?), many model choices are not particularly relevant. [One of the most significant challenges in complex-systems research in the life sciences and psychology is constructing dynamical system models that effectively address these data-related issues.]{.aside}
 
@@ -339,17 +339,17 @@ In this section, I present an overview of dynamical systems models in psychology
 
 ### Response time models {#sec-Response-time-models}
 
-Many dynamic models have been proposed in the study of speeded decision making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (@fig-ch4n-img7-old-55). [Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.]{.aside}
+Many dynamic models have been proposed in the study of speeded decision-making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (@fig-ch4n-img7-old-55). [Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.]{.aside}
 
-![A stochastic accumulator model of speeded decision making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="12cm"}
+![A stochastic accumulator model of speeded decision-making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="12cm"}
 
-One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model, with $I$ as the stimulus-driven input:
+One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model (DDM), with $I$ as the stimulus-driven input:
 
 $$
 dX = Idt + \sigma dW
 $$ {#eq-ch4n-6-old-26}
 
-As before $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with zero mean and with standard deviation $\sigma$ (set to .1 by default). We start at zero, $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
+As before, $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with 0 mean and with standard deviation $\sigma$ (set to .1 by default). We start at 0, $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
 
 The implementation of the model in Grind is quite simple. The trick is again in the run statement, which adds white noise after each step.[^ch4n-5] We stop the run when either the negative or positive bound is reached.
 
@@ -369,15 +369,15 @@ run(table=T,method='euler', tstep=.1,
     if(abs(state)>bound) break",ymin=-bound,ymax=bound)
 ```
 
-The model explains observed response time and accuracy in terms of the underlying process parameters, drift rate and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. [Accumulator model such as the drift diffusion model explain the speed-accuracy tradeoff. If we set our confidence bound higher, we are slower but more accurate.]{.aside}
+The model explains observed response time and accuracy in terms of the underlying process parameters, drift rate, and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. [Accumulator models such as the drift-diffusion model explain the speed-accuracy trade-off. If we set our confidence bound higher, we are slower but more accurate.]{.aside}
 
-A well-known extension of the drift diffusion model is the Ornstein--Uhlenbeck (O-U) model:
+A well-known extension of the drift-diffusion model is the Ornstein—Uhlenbeck model:
 
 $$
 dX = (\lambda x + I)dt + \sigma dW
 $$ {#eq-ch4n-7-old-27}
 
-For $\lambda < 0$ this process converges to $I/\lambda$ (assuming $\sigma = 0$), while for $\lambda > 0$ it diverges $.$ For the psychological interpretation, I refer to @bogaczPhysicsOptimalDecision2006. The simplest two-dimensional model is the race model:
+For $\lambda < 0$ this process converges to $I/\lambda$ (assuming $\sigma = 0$), while for $\lambda > 0$ it diverges. For the psychological interpretation, I refer to @bogaczPhysicsOptimalDecision2006. The simplest two-dimensional model is the race model:
 
 $$
 \begin{gathered}
@@ -395,11 +395,11 @@ dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
 \end{gathered}
 $$ {#eq-ch4n-9-old-29}
 
-Note that these are all linear dynamical system that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in @roxinNeurobiologicalModelsTwoChoice2008 and @verdonckIsingDecisionMaker2014 and discussed in @ratcliffDiffusionDecisionModel2016.
+Note that these are all linear dynamical systems that do not exhibit complex behavior. Examples of nonlinear alternatives are presented in @roxinNeurobiologicalModelsTwoChoice2008 and @verdonckIsingDecisionMaker2014 and discussed in @ratcliffDiffusionDecisionModel2016.
 
-The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift diffusion model (DDM) can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
+The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift-diffusion mode can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision making. DDM is the drift diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. Adapted from @bogaczPhysicsOptimalDecision2006.](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="12cm"}
+![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006]](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="12cm"}
 
 ### Dyadic models {#sec-Dyadic-models}
 
