@@ -126,7 +126,7 @@ Another very interesting pattern occurs when $a = 0$ and $b$ is increased (@fig-
 
 ![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/image8.jpg){#fig-ch3-img8-old-20}
 
-For low $b$ there is one stable fixed point that becomes unstable. It splits up into two new stable attractors. [A pitchfork bifurcation occurs when a single equilibrium splits into three (one stable and two unstable) as a parameter changes, resembling a pitchfork's shape.]{.aside} As we did for the fold, we can make bifurcation diagrams showing the equilibria of $X$ as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation (@fig-ch3-img9-old-21).
+For low $b$ there is one stable fixed point that becomes unstable. It splits up into two new stable attractors. [A pitchfork bifurcation occurs when a single equilibrium splits into three (two stable and one unstable) as a parameter changes, resembling a pitchfork's shape.]{.aside} As we did for the fold, we can make bifurcation diagrams showing the equilibria of $X$ as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation (@fig-ch3-img9-old-21).
 
 ![Bifurcation plots for the $a$ and $b$ parameters of the cusp. Moving along the $a$-axis, assuming $b$ is positive, gives hysteresis. Moving along the $b$ axis, assuming $a=0$, gives the pitchfork bifurcation or divergence. The dotted lines represent unstable maxima. The area in the dotted box in the first plot is a fold.](media/ch3/image9.jpg){#fig-ch3-img9-old-21}
 

@@ -302,7 +302,7 @@ Second, it assumes that the attention or involvement slowly decreases over time.
 Third, attention increases again through social interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is:
 
 $$\begin{array}{r}
-\frac{dA_{i}}{dt} = - {{decay}_{A}A}_{i} + {d_{A}u}_{i}.
+\frac{dA_{i}}{dt} = -{decay_{A}{A}}_{i} + {d_{A}u}_{i}.
 \end{array}$$ {#eq-ch7-5-old-54}
 
 The first part is the decay in attention applied to all agents. When the agent is involved in an interaction, we set $u_{i} = 1$; otherwise $u_{i} = 0$. The parameter $d_{A}$ determines the rate of change of $A$ due to interactions.
@@ -317,7 +317,7 @@ I_{i} = {rI}_{i} + (1 - r)I_{j},
 where $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$. Resistance, $r$ in \[0,1\], determines the relative impact of agent $j$ on agent $i$. Resistance or stubbornness is a logistic function of the difference in attention between the agents. Thus, if $A_{i} \ll A_{j}$, $r$ will be close to 0 and the information in agent $i$ will change to the value of the information in agent $j$. The strength of this effect, persuasion, is determined by the steepness, $p$, of the logistic function. The parameter $r_{\min}$ determines the minimal value of $r$. If $r_{\min}$ is high, $r$ will be high and agents will stick to their information state.
 
 $$\begin{array}{r}
-I_{i} = {{decay}_{I}(I}_{i} + Ν(m_{I},s_{I}))
+I_{i} = {decay_{I}(I}_{i} + Ν(m_{I},s_{I}))
 \end{array}$$ {#eq-ch7-6-old-55b}
 
 If $s_{I} > 0$, some normally distributed noise with mean $m_{I}$ is added. If $m_{I} \neq 0$ and $s_{I} = 0$, a constant external field is active. If $decay_I < 1$ , information gradually shrinks to 0.
@@ -340,11 +340,11 @@ The model is now in place and can be simulated by following the steps below:
 
         -   For each agent, randomly choose a neighbor as partner in the interaction.
 
-        -   Add attention to both agents (@eq-ch7-5-old-54, $+ \d_{A}u_{i}$).
+        -   Add attention to both agents (@eq-ch7-5-old-54, $+ d_{A}u_{i}$).
 
         -   Exchange information (@eq-ch7-6-old-55).
 
-    -   Apply decay in $A$ to all agents (@eq-ch7-5-old-54, ${\decay}_{A}A_{i}$).
+    -   Apply decay in $A$ to all agents (@eq-ch7-5-old-54, ${decay}_{A}A_{i}$).
 
     -   Add noise and apply decay in $I$ to all agents (@eq-ch7-6-old-55, ${decay_{I}\ (I}_{i} + Ν(0,s_{I})$).
 

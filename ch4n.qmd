@@ -272,7 +272,7 @@ You can create one- and two-parameter bifurcation diagrams (using the LP curve o
 
 ### Spruce budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
-In chapter 3, @sec-Mechanistic-models, I introduced the spruce budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
+In Chapter 3, @sec-Mechanistic-models, I introduced the spruce budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
 
 ``` r
 spruce <- function(t, state, parms) {
@@ -564,7 +564,7 @@ So, there are basically two outcomes: either both grow, or one grows and suppres
 
 ### The Pólya urn model of the third source {#sec-The-Polya-Urn-model-of-the-third-source}
 
-Another type of discrete dynamical systems model is the Pólya urn model, which is relevant to understanding nonlinear developmental processes in psychology. @molenaar1993 propose the third-source hypothesis. [The third-source hypothesis proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes.]{.aside} Based on a series of studies, @gartnerThirdComponentCausing199\] concluded that 70—80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
+Another type of discrete dynamical systems model is the Pólya urn model, which is relevant to understanding nonlinear developmental processes in psychology. @molenaar1993 propose the third-source hypothesis. [The third-source hypothesis proposes that the development of complex living systems is influenced by three sources of variation: genetic variation, environmental variation, and self-organizing processes.]{.aside} Based on a series of studies, @gartnerThirdComponentCausing1990 concluded that 70—80% of the variation in body weight in inbred mice appears to be due to a third component that generates biological variability in addition to genetic and environmental influences.
 
 A simple, and in my opinion insightful, dynamical model for this effect is the Pólya urn model [@mahmoudPolyaUrnModels2008]. In this discrete dynamical model, we add marbles to an urn containing some red and blue marbles. We could start with two blue and one red marbles. We randomly take out a marble. If it is blue, we put it back with another blue marble. If it is red, we put it back and add a red marble. Initially, $p(blue) = 2/3$, but what will happen to that probability over time when we have more and more marbles? Think about it for a moment.
 
