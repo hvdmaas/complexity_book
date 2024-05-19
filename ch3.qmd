@@ -178,7 +178,7 @@ But if the underlying change in information is large enough, attitudes can show 
 
 Another psychological example of the cusp-like behavior is multistable perception. @stewartCatastropheTheoryModeling1983 proposed a model in which the perception of male face or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in @fig-ch3-img14-old-26.
 
-![Adapted with permission from @stewartCatastropheTheoryModeling1983. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach.](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="13cm"}
+![Multistable perceptual stimuli positioned in the bifurcation set. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach. (Adapted with permission from @stewartCatastropheTheoryModeling1983)](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="13cm"}
 
 ### Higher-order catastrophes {#sec-Higher-order-catastrophes}
 
