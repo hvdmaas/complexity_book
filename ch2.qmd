@@ -79,7 +79,7 @@ If we start exactly at 0, $X$ stays at 0 So, 0 is an equilibrium too, but a spec
 
 This concept of equilibrium, stable or unstable, is crucial for later chapters. The essence of the next chapter is to change a control parameter, here $r$, and study how the pattern of equilibria (the equilibrium landscape) changes. You can easily do this yourself by setting $r = .9$. For $r < 1$, there is only stable attractor (0).
 
-Simulating this is not necessary. One has to realize that a fixed point ($X^{*}$) is found when $X_{t + 1} = X_{t} = X^{*}$. See for yourself that:
+Simulating this is not really necessary. One has to realize that a fixed point ($X^{*}$) is found when $X_{t + 1} = X_{t} = X^{*}$. See for yourself that:
 
 $$
 \begin{gathered}
@@ -197,7 +197,7 @@ Fractals are a recurring phenomenon in many chaotic maps. [Fractals are figures 
 
 One famous result on this period doubling route to chaos is the Feigenbaum constant. The ratios of distances between consecutive period doubling points (e.g., the distance between first and second divided by the distance between the second and third point) converge to a value of approximately 4.6692. The amazing thing is that this constant is the same for any unimodal map.
 
-## What did we learn {#sec-What-did-we-learn}
+## What did we learn? {#sec-What-did-we-learn}
 
 I find these results stunning. I note again that the generating function is deceptively simple, but its behavior is utterly complex and beautiful. Mathematicians have studied every detail of these plots, and most of it is beyond my comprehension. The Wikipedia on the logistic map will introduce you to some more advanced concepts, but for our purposes the present introduction will suffice.
 

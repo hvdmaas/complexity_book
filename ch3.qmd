@@ -60,7 +60,7 @@ $$
 \frac{dX}{dt} = - V^{'}(X).
 $$ {#eq-ch3-2-old-6}
 
-This makes sense. When the ball is in $(1,1)$, $- V^{'}(X) = - 2$ and the ball will move toward $X = 0$. But if $X = 0$, $- V^{'}(X) = 0$, and the ball will not move anymore. In the case of the quadratic potential function, there is only one fixed point. By adding parameters and lower order terms to $V$, that i- ${aX + X}^{2}$, we can move its location, but the qualitative form (one stable fixed point) will not change. Also note that the second derivative is positive, which tells us that we are dealing with a minimum and not a maximum (the so-called second derivative test).
+This makes sense. When the ball is in $(1,1)$, $- V^{'}(X) = - 2$ and the ball will move toward $X = 0$. But if $X = 0$, $- V^{'}(X) = 0$, and the ball will not move anymore. In the case of the quadratic potential function, there is only one fixed point. By adding parameters and lower order terms to $V$, that is, ${aX + X}^{2}$, we can move its location, but the qualitative form (one stable fixed point) will not change. Also note that the second derivative is positive, which tells us that we are dealing with a minimum and not a maximum (the so-called second derivative test).
 
 Many dynamical systems behave according to this potential function.[^ch3-3] Nothing spectacular happens: no bifurcations and no jumps. This is different when we consider potential functions with higher order terms.
 
@@ -264,7 +264,7 @@ In fact, in terms of time-series data, they may look exactly the same. The main 
 
 In practice using time series data, this is a difficult distinction to make. It means that simple time series are not sufficient to distinguish accelerations from phase transitions. So how do we distinguish between the two processes? In the context of catastrophe theory, Gilmore (1993) proposed the catastrophe flags. These are cusp-related phenomena that can be seen in the data. While no single one of these is sufficient to indicate the cusp, when considered together they provide compelling evidence for its existence.
 
-In the follwowing subsections, I will define the flags and illustrate their applications in psychology using examples. The first flag is the sudden jump.
+In the following subsections, I will define the flags and illustrate their applications in psychology using examples. The first flag is the sudden jump.
 
 #### Sudden jump {#sec-Sudden-jump}
 
@@ -302,7 +302,7 @@ result=normalmixEM(x)
 plot(result,whichplot=2,breaks=30)
 ```
 
-There is a whole field in statistics focused on multimodality, mixtures and clustering. There are some blogs that present overviews of the relevant R packages [@arnaudMixtureModellingScratch2021]. Several detailed examples from psychology, using hidden Markov models, are presented in @visserMixtureHiddenMarkov2022.
+There is a whole field in statistics focused on multimodality, mixtures, and clustering. There are some blogs that present overviews of the relevant R packages [@arnaudMixtureModellingScratch2021]. Several detailed examples from psychology, using hidden Markov models, are presented in @visserMixtureHiddenMarkov2022.
 
 [The advantage of multimodality over the sudden jump is that we can test it with cross-sectional data.]{.aside} To capture a sudden jump in a development process, you need a lot of high-frequency data. Sudden shifts in opinion are also rare. But it is easy to collect data on large numbers of people who are asked to make judgments about statements on an issue such as abortion. If these judgments are bimodally distributed, this is consistent with a phase transition. Bimodal data may also be produced by a process of acceleration, with time series consisting mainly of data values before and after the acceleration. So, bimodality is not sufficient. It can be considered necessary, so I always suggest starting with cross-sectional multimodal studies. If they fail, you might reconsider your hypothesis. I have often looked for multimodality in measures of arithmetic learning and never found anything convincing, which made me rethink my hypothesis.
 
@@ -431,7 +431,7 @@ summary(fit_correct_model)
 
 : Table 2: The comparative fit measures AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
 
-The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$, and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
+The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$ and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
 
 ```{r eval = FALSE}
 set.seed(10)
@@ -520,9 +520,7 @@ Third, two alternative approaches have been proposed. Both Guastello's [-@guaste
 
 @rosserRiseFallCatastrophe2007 speaks of the rise and the fall of catastrophe theory. The hype following the publication of @zeemanCatastropheTheory1976 in Scientific American [^ch3-12], in which he introduced the phenomenological application of catastrophe theory in the behavioral and social sciences, led to a strongly worded reply by @zahlerClaimsAccomplishmentsApplied1977 in Nature.
 
-[^ch3-12]: I recommend the BBC documentary "Case Study Catastrophe Theory Maths Foundation Course"
-
-    (<https://www.youtube.com/watch?v=myDvcvox1V4&t=1435s>) to see Zeeman at work.
+[^ch3-12]: To see Zeeman at work, I recommend the BBC documentary *Case Study Catastrophe Theory Maths Foundation Course* (<https://www.youtube.com/watch?v=myDvcvox1V4&t=1435s>).
 
 Because people still refer to Zeeman's paper when we use catastrophe theory in our work, I will briefly respond to Zahler and Sussmann's main points of criticism. In their introduction, they state that there may be legitimate uses of catastrophe theory in physics and engineering. [They do not question the correctness or importance of catastrophe theory as a purely mathematical subject.]{.aside}
 

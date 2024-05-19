@@ -248,7 +248,7 @@ continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 
 ![Hysteresis plot made with `newton()` and `continue()`. The function `newton()` finds an equilibrium, which is used in `continue()` to vary the normal variable a until a bifurcation point is found.](media/ch4n/image3.jpg){#fig-ch4n-img3-old-51 width="10cm"}
 
-Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is a R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
+Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is an R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
 
 [^ch4n-4]: <https://cran.r-project.org/web/packages/deBif/deBif.pdf>
 
@@ -329,7 +329,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t=150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusupSocialPhysics2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusupSocialPhysics2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
 
 The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s, or m/s^2^). One can also have dimension-free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. This hampers the quantitative test of models.
 
@@ -696,7 +696,7 @@ $$ {#eq-ch4n-17-old-37}
 
 But now we interpret the variables and parameters as follows. We first assume $N$ is the number of drinks you consume. The time scale is a day or an evening (depending on when you have your first beer). $K$ is the upper limit of drinks you can take, either because of lack of availability or, worse, because you just collapse. $r_{b}$ is the addiction sensitivity. If this is too low ($r_{b} < 0$), the 0 state is stable. The logistic function seems to be a reasonable choice. Drinking might start off slow, then accelerate, and level off at $K$. This happens when there is only an autonomous process. The second term, the predator term, is now interpreted as self-control. This is not something that changes on the time scale of a day, so, as in the case of the birds, a second equation is not required. $A$ (or actually $1/A$) is a responsiveness parameter, the number of drinks at which self-control is activated, which may not be at the first or second beer. $B$ is the maximum level of self-control. As in the original model, this term is a Holling type III form (see @fig-ch4n-img5-old-53). We could also insert a Holling type IV form, with the idea that self-control deteriorates after too many drinks. Depending on the values of the parameters, one may not drink at all ($r_{b} < 0$), drink at a recreational level, or have an “outbreak” to heavy use.
 
-The advantage of this type of analogical modeling is that we already know everything about the model. We know it is a cusp and we have already made the bifurcation diagram. There are also disadvantages or ambiguities.
+The advantage of this type of analogical modeling is that we already know everything about the model. We know it is a cusp, and we have already made the bifurcation diagram. There are also disadvantages or ambiguities.
 
 First, the definition of $N$ is imprecise. Is it the blood alcohol concentration, the number of drinks, or some other quantity?
 
@@ -706,7 +706,7 @@ Third, and relatedly, the self-control function is also not derived from first p
 
 Fourth, this model may not work for all addictions or should be adapted to specific cases. An example is smoking. For smoking, the intermediate recreational state is very unstable [@epskampIntermediateStableStates2022], and the autocatalytic effect described by the logistic equation seems less appropriate. For alcohol, the Holling type IV seems to be a good choice for the self-control term as alcohol directly impairs brain regions involved in self-control [@remmerswaalImpairedSubjectiveSelfcontrol2019]. For gambling, Holling Type III may be sufficient.
 
-Fifth, processes at other time scales are missing. The model seems to work well for the time scale of a day or an evening. Other relevant time scales are minutes (direct effect of alcohol intake on the brain), weeks (abuse is often concentrated on weekends), and months. On time scales of months or even years, the parameters $r_{b}$, $K$, and $B$, may change. For example, experienced drinkers can drink more. Also, the $r_{b}$, addiction sensitivity, may slowly increase over time. This can be taken into account with additional equations. Furthermore, $K$, $A$, and $B$ could change as an effect of the social network. Nondrinkers might increase $A$, while other users in the social network might increase $K$ (availability).
+Fifth, processes at other time scales are missing. The model seems to work well for the time scale of a day or an evening. Other relevant time scales are minutes (direct effect of alcohol intake on the brain), weeks (abuse is often concentrated on weekends), and months. On time scales of months or even years, the parameters $r_{b}$, $K$, and $B$ may change. For example, experienced drinkers can drink more. Also, the $r_{b}$, addiction sensitivity, may slowly increase over time. This can be taken into account with additional equations. Furthermore, $K$, $A$, and $B$ could change as an effect of the social network. Nondrinkers might increase $A$, while other users in the social network might increase $K$ (availability).
 
 These modeling issues are serious but also very interesting [@vandongen2024]. [Ambiguities in our thinking about psychological systems come to light in the process of building concrete mathematical models.]{.aside}
 
@@ -785,7 +785,7 @@ $$ {#eq-ch4n-19-old-39}
 such that now both the splitting and normal variable of the cusp are linear functions of the behavioral state of the other cusp. This can be further generalized to a system of $N$ cusps by:
 
 $$
-\frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}
+\frac{dX_{i}}{dt} = a_{0i} + \sum_{j\neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j\neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}
 $$ {#eq-ch4n-20-old-40}
 
 In this model, $a_{0i}$ is the intercept of the normal variable and the off-diagonal elements of matrix $a$ are the slopes of the effect of the other cusps on the normal variable. The diagonal elements of $a$ are set to 0. The $b_{0i}$ values are the intercepts of the splitting variable. The $b_{ij}$ values of matrix $b$ (with diagonal = 0) are the slopes of the effect of other cusps on the splitting variable value of $X_{i}$.

@@ -560,7 +560,7 @@ Although much more progress can be made in network modeling of psychological sys
 
 This approach is also not without its problems, some of which are related to the problems of psychological network modeling. For example, the definition of nodes and the risk of missing nodes in the data is a serious threat. This problem is not unique to network analysis; simple regression analysis suffers from the same risks. Another common threat to many applications of psychometric network analysis is the reliance on self-report in interviews or questionnaires. Generalizability, which may depend more on the choice of sample and measurement method than on the statistical analysis itself, is another example of a common problem in psychology in general, and psychometric network analysis in particular.
 
-Psychometric network analysis has been criticized because the results are difficult to replicate [@forbesEvidenceThatPsychopathology2017]. Replication of advanced statistical analyses, whether structural equation modeling, fMRI, or network psychometrics, is always an issue, but some solutions have been developed [@borsboomFalseAlarmComprehensive2017; @borsboomRobustnessReplicabilityPsychopathology2018; @burgerReportingStandardsPsychological2022].[For network analysis, a number of safeguards have been developed to increase replicability]{.aside}
+Psychometric network analysis has been criticized because the results are difficult to replicate [@forbesEvidenceThatPsychopathology2017]. Replication of advanced statistical analyses, whether structural equation modeling, fMRI, or network psychometrics, is always an issue, but some solutions have been developed [@borsboomFalseAlarmComprehensive2017; @borsboomRobustnessReplicabilityPsychopathology2018; @burgerReportingStandardsPsychological2022]. [For network analysis, a number of safeguards have been developed to increase replicability]{.aside}
 
 A final important issue concerns causality. Network models estimated from cross-sectional data are descriptive rather than causal; that is, they do not provide information about the direction of causal relationships between variables. Developing methods for inferring causality from network models is an important challenge in the field.
 
@@ -588,7 +588,7 @@ In the next chapter, we take the step to modeling social interactions using soci
 
 5)  Compute the Gibbs entropy for the Learning Ising Attitude model during the learning process (see @sec-The-stability-of-attitudes-and-entropy-measures). Show in a plot that learning minimizes the Gibbs entropy. (\*\*)
 
-6)  Install and open JASP (jasp-stats.org). Open the data library: 6. Factor. Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
+6)  Install and open JASP (jasp-stats.org). Open the data library: "6. Factor." Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
 
 7)  Read the blog "How to Perform a Network Analysis in JASP"[^ch6-7] Reproduce the top plots of @fig-ch6-img16-old-85. Generate the data using the R code in @sec-Fitting-the-mutualism-model, import the data into JASP, and perform the network analysis. (\*)
 
