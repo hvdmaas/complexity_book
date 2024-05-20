@@ -59,7 +59,7 @@ to-report new_information [Ii Ij Ai Aj]  ; implemention eq 6a
 end
 
 to-report cusp [O A I]  ; implementation eq. 4
-  report -1 * (O ^ 3 - (A - .5) * O - I) * dt + random-normal 0 sd-noise-opinion
+  report -1 * (O ^ 3 - (A - .5) * O - I) * time-step + random-normal 0 sd-noise-opinion
 end
 
 to update_decay_A  ; decay_A update function
@@ -117,7 +117,7 @@ to setup-default  ; paramter settings Black Pete scanario (see HIOM paper)
  set m-noise-information 0
  set sd-noise-information 0.0
  set sd-noise-opinion .001
- set dt .01
+ set time-step .01
  set bound 10
  setup
 end
@@ -136,7 +136,7 @@ to setup-black-pete  ; paramter settings Black Pete scanario (see HIOM paper)
  set m-noise-information 0
  set sd-noise-information 0.0
  set sd-noise-opinion .001
- set dt .01
+ set time-step .01
  set bound 10
  setup
 end
@@ -155,7 +155,7 @@ to setup-meat-eating-vegaterian ; paramter settings meat eating vegetarian scana
  set m-noise-information 0
  set sd-noise-information 0
  set sd-noise-opinion .0001
- set dt .01
+ set time-step .01
  set bound .2
  setup
  ask n-of (count patches / 5) patches ;with [abs(pycor) < 10]
@@ -334,7 +334,7 @@ p
 p
 0
 5
-5.0
+4.0
 .1
 1
 NIL
@@ -475,8 +475,8 @@ SLIDER
 421
 182
 454
-dt
-dt
+time-step
+time-step
 0
 .1
 0.01
