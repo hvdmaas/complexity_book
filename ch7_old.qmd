@@ -279,22 +279,22 @@ Regarding (c), the definition of opinion, the HIOM is special. Opinion is define
 
 It is important to realize that the HIOM inherits assumptions from the Ising attitude model. First, the HIOM assumes that attitude nodes (representing feelings, beliefs, and behaviors toward the attitude object) are binary (-1,1). This is clearly debatable. Nodes might be better defined as (0,1) nodes, (-1,0,1) nodes, or even continuous value nodes as in the XY model [@kosterlitzCriticalPropertiesTwodimensional1974]. Second, we assume undirected pairwise interactions between nodes, whereas there is much to be said for directed effects. Third, attitude networks should be reasonably balanced (see @sec-The-stability-of-attitudes-and-entropy-measures). To some extent, these assumptions can be relaxed without breaking the link to the cusp [see the appendix of @vandermaas2020].
 
-In the HIOM, information and attention are updated based on interactions between agents. Information and attention are two orthogonal axes in the cusp. Information summarizes all variables and influences operating along the normal axis of the cusp. Its neutral value is 0, and negative and positive values are associated with negative and positive opinions. Attention has nonnegative real values. The opinion of agent $i$ at time $t$ changes according to the cusp equation with information and attention as control variables. For the implementation in NetLogo, I write the equation as a stochastic difference equation:[^ch7-3]
+In the HIOM, information and attention are updated based on interactions between agents. Information and attention are two orthogonal axes in the cusp. Information summarizes all variables and influences operating along the normal axis of the cusp. Its neutral value is 0, and negative and positive values are associated with negative and positive opinions. Attention has nonnegative real values. The opinion of agent $i$ is a stochastic differential function (@sec-Cobbs-maximum-likelihood-approach) of information and attention: [^ch7-3]
 
-[^ch7-3]: To incorporate close to linear change in $O$ as a function of $I$, I use $A + A^{\min}$, where $A^{\min} = -.5$ and $A ≥ 0$. See the original paper for explanation.
+[^ch7-3]: To incorporate close to linear change in $O$ as a function of $I$, we set $a = A + A^{\min}$, where $A^{\min} = -.5$ and $A ≥ 0$. See the original paper for explanantion.
 
 $$\begin{array}{r}
-O_{i,t+1}=O_{i,t}-\left(O_{i,t}^3-{(A}_{i,t}+A^{min})O_{i,t}-I_{i,t}\right)t_s+\epsilon_{i,t+1}
+dO_{i} = \  - \left( O_{i}^{3} - {(A}_{i} + A^{\min})O_{i} - I_{i} \right)dt + s_{O}dW_{i}(t)
 \end{array}.$$ {#eq-ch7-3-old-52}
 
-The $\epsilon$ term represents white noise sampled from a normal distribution $N(0, s_{O})$. The time step, $t_{s}$, in this equation is set to a low value (.01) to prevent oscillations and chaotic behavior.
+Spontaneous jumps in the dynamical behavior of this equation are shown in @fig-ch4n-img2-old-50 (for $I = 0$, $A_{i} + A^{\min} = 1$ and $s_{O} = 0.4$).
 
 #### Agent interactions: Information and attention {#sec-Agent-interactions-information-and-attention}
 
 The HIOM makes three assumptions about interactions. First, it assumes that agents initiate interactions based on their involvement. The idea is simply that I'm not likely to start a discussion about a topic—say, about genetically modified food—if I'm not interested in the topic. The probability of initiating an interaction is equal to attention:
 
 $$\begin{array}{r}
-P_{i,t}(initiates\ interaction) = A_{i,t}.
+P_{i}(initiates\ interaction) = A_{i}.
 \end{array}$$ {#eq-ch7-4-old-53}
 
 Second, it assumes that the attention or involvement slowly decreases over time. Attention or involvement is a limited resource; one cannot be involved in everything all the time. With the constant emergence of new interests or topics, attention to older topics tends to wane.
@@ -302,28 +302,25 @@ Second, it assumes that the attention or involvement slowly decreases over time.
 Third, attention increases again through social interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is:
 
 $$\begin{array}{r}
-A_{i,t+1}={decay}_A(A_{i,t}+{d_Au}_{i,t})
+\frac{dA_{i}}{dt} = -{decay_{A}{A}}_{i} + {d_{A}u}_{i}.
 \end{array}$$ {#eq-ch7-5-old-54}
 
-When the agent is involved in an interaction, we set $u_{i} = 1$; otherwise $u_{i} = 0$. The parameter $d_{A}$ determines the rate of change of $A$ due to interactions. The decay in attention, ${decay}_A$, is applied to all agents.
+The first part is the decay in attention applied to all agents. When the agent is involved in an interaction, we set $u_{i} = 1$; otherwise $u_{i} = 0$. The parameter $d_{A}$ determines the rate of change of $A$ due to interactions.
 
-The fourth assumption is about information. We assume that the exchange of information is an averaging process weighted by attention. If agent $i$ is less attentive to the attitude object than agent $j$, agent $i$ will move more to the information position of $j$ than $j$ will move to $i$.
-
-This is formalized by: $$\begin{array}{r}
-I_{i,t+1}=r_{t}I_{i,t}+(1-r_{t}) I_{j,t},
-\\ where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
-\end{array}$$ {#eq-ch7-6-old-55}
-
-$I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$, the agents involved in the interaction. Resistance, $r$ in \[0,1\], determines the relative impact of agent $j$ on agent $i$. Resistance or stubbornness is a logistic function of the difference in attention between the agents. Thus, if $A_{i} \ll A_{j}$, $r$ will be close to 0 and the information in agent $i$ will change to the value of the information in agent $j$. The strength of this effect, persuasion, is determined by the steepness, $p$, of the logistic function. The parameter $r_{\min}$ determines the minimal value of $r$. If $r_{\min}$ is high, $r$ will be high and agents will stick to their information state.
-
-In some scenario's it is of interest to allow for decay in information especially in combination with a normally distributed, $N(m_{I},S_{I})$, noise term, $\epsilon$. The full equation for the update of information is:
+The fourth assumption is about information. We assume that the exchange of information is an averaging process weighted by attention. If agent $i$ is less attentive to the attitude object than agent $j$, agent $i$ will move more to the information position of $j$ than $j$ will move to $i$. This is formalized by:
 
 $$\begin{array}{r}
-I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),
-\\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
+I_{i} = {rI}_{i} + (1 - r)I_{j},
+\ where\ r = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i} - A_{j} \right)}} \\
+\end{array}$$ {#eq-ch7-6-old-55}
+
+where $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$. Resistance, $r$ in \[0,1\], determines the relative impact of agent $j$ on agent $i$. Resistance or stubbornness is a logistic function of the difference in attention between the agents. Thus, if $A_{i} \ll A_{j}$, $r$ will be close to 0 and the information in agent $i$ will change to the value of the information in agent $j$. The strength of this effect, persuasion, is determined by the steepness, $p$, of the logistic function. The parameter $r_{\min}$ determines the minimal value of $r$. If $r_{\min}$ is high, $r$ will be high and agents will stick to their information state.
+
+$$\begin{array}{r}
+I_{i} = {decay_{I}(I}_{i} + Ν(m_{I},s_{I}))
 \end{array}$$ {#eq-ch7-6-old-55b}
 
-If $m_{I} \neq 0$ and $s_{I} = 0$, a constant external field is active. If $decay_I < 1$ , information gradually shrinks to 0.
+If $s_{I} > 0$, some normally distributed noise with mean $m_{I}$ is added. If $m_{I} \neq 0$ and $s_{I} = 0$, a constant external field is active. If $decay_I < 1$ , information gradually shrinks to 0.
 
 #### Algorithm {#sec-Algorithm}
 
@@ -331,7 +328,7 @@ The model is now in place and can be simulated by following the steps below:
 
 -   Select a network topology.
 
--   Set the model parameters $t_{s}$ (.01), $A_{\min}$ (-.5), $s_{O}$ (.01), $m_{i}$ (0), $s_{i}$, $d_{A}$, $p$, and $r_{\min}$. Values in parentheses are defaults.
+-   Set the model parameters $dt$ (.01), $A_{\min}$ (-.5), $s_{O}$ (.01), $m_{i}$ (0), $s_{i}$, $d_{A}$, $p$, and $r_{\min}$. Values in parentheses are defaults.
 
 -   Initialize agents, set $I_{init},\ A_{init},$ and $O_{init}$.
 
@@ -339,7 +336,7 @@ The model is now in place and can be simulated by following the steps below:
 
     -   Randomly choose a set of agents, weighted by attention $A$ (@eq-ch7-4-old-53).
 
-    -   Iterate over this "active" set of agents ($u_{i} = 1$}:
+    -   Iterate over this "active" set of agents:
 
         -   For each agent, randomly choose a neighbor as partner in the interaction.
 
@@ -349,7 +346,7 @@ The model is now in place and can be simulated by following the steps below:
 
     -   Apply decay in $A$ to all agents (@eq-ch7-5-old-54, ${decay}_{A}A_{i}$).
 
-    -   Add noise and apply decay in $I$ to all agents (@eq-ch7-6-old-55b, ${decay_{I}\ (I}_{i} + Ν(0,s_{I})$).
+    -   Add noise and apply decay in $I$ to all agents (@eq-ch7-6-old-55, ${decay_{I}\ (I}_{i} + Ν(0,s_{I})$).
 
     -   Update opinion $O$ in all agents (@eq-ch7-3-old-52).
 
