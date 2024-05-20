@@ -233,7 +233,7 @@ The network approach has been applied to many other domains outside of intellige
 
 People have many attitudes—about food, politics, other people, horror movies, the police, etc. They help us make decisions and guide our behavior. Attitudes can be very stable and multifaceted, but they can also be inconsistent and inconsequential. Social psychology has studied attitudes for a long time, and many insights and theories have been developed.
 
-[Attitudes are complex constructs. Typical phenomena, such as cognitive dissonance, imbalance, ambivalence, and political polarization, can be well described by a network model.]{.aside} The formalization of attitude theories has been dominated by the connectionist account [@monroeGeneralConnectionistModel2008; @vanoverwalleConnectionistModelAttitude2005]. In connectionist models, developed in the parallel distributed processing (PDP) framework, attitude units (e.g., beliefs) form a connected network whose activations (usually between -1 and 1) are updated based on the weighted sum of internal inputs from other units and an external input. These weights or connections are updated according to either the delta rule (a supervised learning rule based on the difference between the produced and expected output of the network) or the Hebb rule (a simpler unsupervised rule). With this setup, these models can explain a number of phenomena in attitude research. Another network account has been put forward in sociology [@dellapostaPluralisticCollapseOil2020].
+[Attitudes are complex constructs. Typical phenomena, such as cognitive dissonance, imbalance, ambivalence, and political polarization, can be well described by a network model.]{.aside} The formalization of attitude theories has been dominated by the connectionist account [@monroeGeneralConnectionistModel2008; @vanoverwalleConnectionistModelAttitude2005]. In connectionist models, developed in the parallel distributed processing (PDP) framework, attitude units (e.g., beliefs) form a connected network whose activations (usually between $-1$ and $1$) are updated based on the weighted sum of internal inputs from other units and an external input. These weights or connections are updated according to either the delta rule (a supervised learning rule based on the difference between the produced and expected output of the network) or the Hebb rule (a simpler unsupervised rule). With this setup, these models can explain a number of phenomena in attitude research. Another network account has been put forward in sociology [@dellapostaPluralisticCollapseOil2020].
 
 In this section, I will discuss our network approach to attitudes using the Ising model, which was developed in a series of recent papers. The advantages of this model over the connectionist PDP models are that it is derived from basic assumptions, is better understood mathematically, is easy to simulate, provides a psychological interpretation of the temperature parameter, and can be fitted to data [@dalege2017].
 
@@ -318,7 +318,7 @@ $$\begin{array}{r}
 \mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}
 \end{array}$$ {#eq-ch6-6-old-47}
 
-Weights will grow to 1 if the nodes they connect are consistently either both 1 or both -1. If they consistently differ in value, the weight grows to -1. If the nodes behave inconsistently, the weight shrinks to 0, due to the last term.
+Weights will grow to $1$ if the nodes they connect are consistently either both $1$ or both $-1$. If they consistently differ in value, the weight grows to $-1$. If the nodes behave inconsistently, the weight shrinks to $0$, due to the last term.
 
 In R, this can be implemented as follows:
 
@@ -374,17 +374,17 @@ Note that we sum over all microstates ($2^{n})$. For small networks, this measur
 
 #### Tricriticality {#sec-Tricriticality}
 
-A new direction of research concerns Ising-type models with trichotomic node values (—1 ,0 , 1). In physics this case is known as the tricritical Ising model or the Blume—Capel model [@saulTricriticalBehaviorBlumeCapel1974]. In physics, the states +1 and -1 could represent the spin of a particle pointing up or down, while 0 could represent a nonmagnetic or spinless state. In an attitude model, +1 and -1 may represent pro and con beliefs, while 0 represents a neutral belief. The Hamiltonian of the model includes a penalty for the -1 and +1 states:
+A new direction of research concerns Ising-type models with trichotomic node values ($—1 ,0 , 1$). In physics this case is known as the tricritical Ising model or the Blume—Capel model [@saulTricriticalBehaviorBlumeCapel1974]. In physics, the states $-1$ and $1$ could represent the spin of a particle pointing up or down, while $0$ could represent a nonmagnetic or spinless state. In an attitude model, $-1$ and $1$ may represent pro and con beliefs, while $0$ represents a neutral belief. The Hamiltonian of the model includes a penalty for the $-1$ and $1$ states:
 
 $$\begin{array}{r}
 H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
 \end{array}$$ {#eq-ch6-8-old-49}
 
-You can compare this to @eq-ch5n-1-old-17. The last term penalizes (increases the energy) of the -1 and +1 states relative to the 0 state.
+You can compare this to @eq-ch5n-1-old-17. The last term penalizes (increases the energy) of the $-1$ and $1$ states relative to the $0$ state.
 
 The dynamics of this model are more complicated. It resembles the butterfly catastrophe [@dattaguptaTricriticalPointQualitative1981], which has a tricritical point. The potential function has three stable fixed points for specific combinations of values of parameters (see @sec-Higher-order-catastrophes and the exercise about the butterfly catastrophe in that chapter). This is relevant to the modeling of attitudes because it opens up the possibility of involved stable in-between attitude positions (see @fig-ch6-img15-old-84). The Ising attitude model, excludes this. [In the Ising attitude model highly involved persons always radicalize, but more advanced spin models allow for involved nonpartisan positions.]{.aside}
 
-![The butterfly catastrophe, $V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}$, associated with the tricritical Ising model. The potential function can have three minima ($a = c = 0, d = 5, b$ varies from 1 to -7).](media/ch6/image15.jpg){#fig-ch6-img15-old-84}
+![The butterfly catastrophe, $V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}$, associated with the tricritical Ising model. The potential function can have three minima ($a = c = 0, d = 5, b$ varies from $1$ to $-7$).](media/ch6/image15.jpg){#fig-ch6-img15-old-84}
 
 ## Psychometric network techniques {#sec-Psychometric-network-techniques}
 

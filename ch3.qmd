@@ -90,7 +90,7 @@ In the left plot, $a < 0$ and there is no fixed point; the ball rolls away to mi
 
 The middle figure depicts the case just in between these two cases. Here the equilibrium is an inflection point, a degenerate critical point. The bifurcation occurs at this point as we go from a landscape with no fixed points to one with two, one stable and one unstable.
 
-Another way to visualize this is by making a bifurcation diagram as we did for the logistic map in @sec-ch2. On the x-axis we put $a$, from -1 to 2. On the y-axis we plot $X^{*}$, the fixed points of @eq-ch3-3-old-7. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in @fig-ch3-img5-old-17. [Note that the fold is not accompanied by sudden jumps in behavior. It is an example of a second-order phase transition.]{.aside}
+Another way to visualize this is by making a bifurcation diagram as we did for the logistic map in @sec-ch2. On the x-axis we put $a$, from $-1$ to $2$. On the y-axis we plot $X^{*}$, the fixed points of @eq-ch3-3-old-7. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in @fig-ch3-img5-old-17. [Note that the fold is not accompanied by sudden jumps in behavior. It is an example of a second-order phase transition.]{.aside}
 
 ![The bifurcation diagram of the fold catastrophe. Similar to what's shown in @fig-ch3-img4-old-16 , when $a=0$, there is a dramatic change in the equilibrium landscape. Suddenly, both a stable and an unstable equilibrium emerge, seemingly from nowhere.](media/ch3/fig-ch3-img5-old-17.jpg){#fig-ch3-img5-old-17 width="10cm"}
 

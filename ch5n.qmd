@@ -434,7 +434,7 @@ I have largely omitted the network approach in this chapter. Psychological netwo
 
 1)  Is there a relation between the rice cooker and the Ising model? How does the magnetic thermostat in a traditional rice cooker work to automatically stop cooking when the rice is done? (\*)
 
-2)  What is the Boltzmann entropy for the state $\sum_{}^{}x = 0$ in an Ising model (with nodes states -1 and 1) with 10 nodes and no external field? (\*).
+2)  What is the Boltzmann entropy for the state $\sum_{}^{}x = 0$ in an Ising model (with nodes states $-1$ and $1$) with 10 nodes and no external field? (\*).
 
 3)  Go to the web page "A Neural Network Playground (<https://playground.tensorflow.org>)." What is the minimal network to solve the XOR close to perfect accuracy? Use only the x1 and x2 feature. (\*)
 
