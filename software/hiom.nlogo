@@ -729,14 +729,14 @@ Iterate
   * Add noise and apply decay in I to all agents (modified eq. 7b).
   * Update opinion O in all agents (eq. 4).
 
-(4)	dO<sub>i</sub> = -(O<sub>i</sub>^3-(A<sub>i</sub>+A_min)O<sub>i</sub>-I<sub>i</sub> )dt+s<sub>O</sub> dW<sub>i</sub> (t)
-(5)	Pr(select agent<sub>i</sub> )=A<sub>i</sub>
-(6a)	A<sub>i</sub>= min⁡(1,A<sub>i</sub>+ d<sub>A</sub>)
-(6b)	A<sub>i</sub>= decay<sub>A</sub>  A<sub>i</sub>
-(7a)	I<sub>i</sub>=r I<sub>i</sub>+(1-r) I<sub>j</sub>, where r=rmin+(1-rmin)/(1+e^(-p(A<sub>i</sub>-A<sub>j</sub>)) )
-(7b)	I<sub>i</sub>=decay<sub>I</sub>  (I<sub>i</sub>+Ν(m<sub>I</sub>,s<sub>I</sub>))
+(4)	O<sub>i,t+1</sub> = 	O<sub>i,t</sub> - (O<sub>i,t</sub> <sup>3</sup> - (A<sub>i,t</sub>+A<sup>min</sup>) O<sub>i,t</sub> - I<sub>i,t</sub> ) t<sub>s</sub> + N(0,s<sub>O</sub>)
+(5)	Pr(select agent<sub>i,t</sub> ) = A<sub>i,t</sub>
+(6a)	A<sub>i,t+1</sub>= min⁡(1,A<sub>i,t</sub>+ d<sub>A</sub>)
+(6b)	A<sub>i,t+1</sub>= decay<sub>A</sub>  A<sub>i,t</sub>
+(7a)	I<sub>i,t+1</sub>=r I<sub>i,t</sub>+(1-r) I<sub>j,t</sub>, where r=rmin+(1-rmin)/(1+e^(-p(A<sub>i</sub>-A<sub>j</sub>)) )
+(7b)	I<sub>i,t+1</sub>=decay<sub>I</sub>  (I<sub>i,t</sub>+Ν(m<sub>I</sub>,s<sub>I</sub>))
 
-Where dt  = .01, Amin = -.5
+Where t<sub>s</sub>  = .01, A<sup>min</sup> = -.5
 
 O is opinion, A is attention, I is information
 
