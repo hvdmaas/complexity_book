@@ -142,7 +142,7 @@ In the voter and Axelrod models, interactions are limited to two agents. When mu
 
 Another deeply analyzed option is the majority model [@galamSociophysicsReviewGalam2008; @rednerRealityinspiredVoterModels2019]. Here, a random group of voters is selected, and all voters in this group adopt the local majority opinion. This process can be repeated until convergence to one opinion is reached (which will always happen in a finite population). @galamSociophysicsReviewGalam2008 sets up this process in a hierarchical fashion (see @fig-ch7-img5-old-93). Alternatively, only one voter could be influenced by the majority vote in its neighborhood. This corresponds to the Ising model with 0 temperature.
 
-![Bottom-up voting in hierarchical systems in the Galam model.](media/ch7/image5.jpg){#fig-ch7-img5-old-93 width="12cm"}
+![Bottom-up voting in hierarchical systems in the Galam model.](media/ch7/ch7-5__figure95.png){#fig-ch7-img5-old-93}
 
 Another case is the $q$-voter model [@castellanoNonlinearVoterModel2009; @jedrzejewskiStatisticalPhysicsOpinion2019]. Here, agents change their opinions only if all $q$ voters selected from the neighborhood agree on the other opinion. When $q = 1$, this reduces to the standard voter model. The $q$-voter model generally allows for a higher degree of opinion diversity compared to the basic voter model. The $q$-voter model has been implemented in NetLogo ("qvoter_WS" in the user community models).
 
@@ -164,7 +164,7 @@ Thus, opinion of agents become $-1$ if $X(t)I_{i}(t) + H$ is negative, and vice 
 
 In the presence of individual fields, some minority opinions can become metastable. [Metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters.]{.aside} These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for a long time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
-![Five runs of the social impact model with $\alpha = 5$, $p$, $s$, and $H$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact model can be found in the online NetLogo models and in the software repository of this book.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94 width="12cm"}
+![Five runs of the social impact model with $\alpha = 5$, $p$, $s$, and $H$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact model can be found in the online NetLogo models and in the software repository of this book.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94 width="19cm"}
 
 Extensions of this model include learning, leadership, external influences, and identity effects [for a review, see @holystSocialImpactModels2001].
 
@@ -191,7 +191,7 @@ s <- x0;p  <- c()
 run(odes=FJ,method='euler',tmax=100)
 ```
 
-![Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95 width="12cm"}
+![Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95 width="19cm"}
 
 With an additional bias mechanism, in which confirming evidence is weighted more heavily relative to disconfirming evidence, polarization can also occur in connected networks [@dandekarBiasedAssimilationHomophily2013].
 
@@ -228,7 +228,7 @@ for (bound in c(.1, .2, .3, .5))
 }
 ```
 
-![Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96 width="13cm"}
+![Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.](media/ch7/fig-ch7-img8-old-96.png){#fig-ch7-img8-old-96 width="21cm"}
 
 With this code you can explore many scenarios and variants. One interesting option is to have agents with different boundaries [@weisbuchMeetDiscussSegregate2002]. [It turns out that adding some open-minded agents helps prevent polarization.]{.aside} Also, adding some noise to $X$ at each time step reduces polarization [@zhangRobustConsensusNoisy2018]. One can also lower the bound with the number of interactions. This increases the polarization [@weisbuchMeetDiscussSegregate2002]. One case I find interesting is increasing the bound after polarization emerged for a low bound. This gives hysteresis. A bound of .5 is sometimes insufficient to reduce polarization. @castellanoStatisticalPhysicsSocial2009 review some other extensions (the role of propaganda, for instance).
 
@@ -241,7 +241,7 @@ M <- accepted * M
 
 after the `X <- state[1:n]` line and adding bound = .1 (@fig-ch7-img9-old-97).
 
-![Clustering in the Hegselmann—Krause model.](media/ch7/fig-ch7-img9-old-97.png){#fig-ch7-img9-old-97 width="12cm"}
+![Clustering in the Hegselmann—Krause model.](media/ch7/fig-ch7-img9-old-97.png){#fig-ch7-img9-old-97 width="19cm"}
 
 Again, many extensions have been studied. A recent paper studies the case where the network topology is a function of cognitive dissonance in opinions [@liOpinionDynamicsModel2020]. @baumannModelingEchoChambers2020 present a continuous opinion model of echo chambers. Of particular interest is the multidimensional case [@lorenzContinuousOpinionDynamics2007]. When agents accept interaction based on the minimum distance along one dimension, consensus can be reached more easily. The idea of bounded confidence has been associated with the concept of the latitude of acceptance as proposed in social judgment theory [@sherifSocialJudgmentAssimilation1961]. This theory also proposes a latitude of rejectance. There are two bounds, a lower and an upper bound. Below the lower bound, agents reduce their differences; between the bounds they ignore each other; and if they differ more than the upper bound, they increase their differences. This scenario has been investigated in @jagerUniformityBipolarizationPluriformity2005.
 

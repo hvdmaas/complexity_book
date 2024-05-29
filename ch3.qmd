@@ -98,7 +98,7 @@ This bifurcation diagram may not look as spectacular as the logistic map, but it
 
 [^ch3-4]: <https://www.youtube.com/watch?v=6ZQKzcw9Ulk>
 
-![The fold in drawings [from @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/image6.png){#fig-ch3-img6-old-18 width="12cm"}
+![The fold in drawings [from @mcrobieSeductionCurvesLines2017]. The fold line separates the parts that can be seen from the parts that are hidden.](media/ch3/ch3-6__figure18.png){#fig-ch3-img6-old-18}
 
 The fold catastrophe has been studied in fields from evolution theory [@dodsonAllopatricSpeciationFold1977] to buoyancy in diving [@guemezCartesianDiverFold2002]. In addition, higher-order catastrophes are composed of folds. [The fold catastrophe is also known as a saddle node, tangential, or blue-sky bifurcation.]{.aside}
 
@@ -114,7 +114,7 @@ I advise you to do some minimal research on this equation yourself, using an onl
 
 Other typical behavior occurs when we slowly vary $a\ ($up and down from -2 to 2), for a positive $b$ value ($b = 2).$ This is shown in @fig-ch3-img7-old-19. At about $a = 1.5$ we see the sudden jump. The left fixed point loses its stability and the ball rolls to the other minimum.
 
-![The change in the potential function of the cusp by varying $a$. Note that the jump to the other state does not happen at $a=0$ but is delayed and depends on the direction of the change in $a$. This delay is called hysteresis.](media/ch3/image7.jpg){#fig-ch3-img7-old-19}
+![The change in the potential function of the cusp by varying $a$. Note that the jump to the other state does not happen at $a=0$ but is delayed and depends on the direction of the change in $a$. This delay is called hysteresis.](media/ch3/ch3-7__figure19.png){#fig-ch3-img7-old-19}
 
 Now consider what will happen if we decrease $a$ from 2 to -2. [Hysteresis means lagging behind, or resistance to change.]{.aside}. In this case, the ball will stay in the right minimum until $a = - 1.5$. Where the jump takes place depends on the direction of the change in $a$, the normal variable. The delay in jumps is called hysteresis. Hysteresis is of great importance in understanding change or lack of change in complex systems. The state in which the ball is the less deep minimum (for $a = 0.5$ in @fig-ch3-img7-old-19) is often called a metastable or locally stable state. [Metastable states appear to be stable for some time but are not in their globally stable state.]{.aside}
 
@@ -124,7 +124,7 @@ In his classic paper on the psychophysical law, @stevens1957 reports hysteresis 
 
 Another very interesting pattern occurs when $a = 0$ and $b$ is increased (@fig-ch3-img8-old-20).
 
-![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/image8.jpg){#fig-ch3-img8-old-20}
+![The change in the potential function of the cusp by varying $b$. One minimum splits up in two.](media/ch3/ch3-8__figure20.png){#fig-ch3-img8-old-20}
 
 For low $b$ there is one stable fixed point that becomes unstable. It splits up into two new stable attractors. [A pitchfork bifurcation occurs when a single equilibrium splits into three (two stable and one unstable) as a parameter changes, resembling a pitchfork's shape.]{.aside} As we did for the fold, we can make bifurcation diagrams showing the equilibria of $X$ as a function of $a$ and $b$. Along the $a$-axis we see hysteresis and along the $b$-axis we see divergence or what is often called a pitchfork bifurcation (@fig-ch3-img9-old-21).
 
@@ -132,7 +132,7 @@ For low $b$ there is one stable fixed point that becomes unstable. It splits up 
 
 Depicting the combined effects of $a$ and $b$ requires a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (@fig-ch3-img10-old-22).
 
-![The cusp catastrophe combines hysteresis along the normal axis ($a$) and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (shaded gray).](media/ch3/image10.jpg){#fig-ch3-img10-old-22 width="11cm"}
+![The cusp catastrophe combines hysteresis along the normal axis ($a$) and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (shaded gray).](media/ch3/ch3-10__figure22.png){#fig-ch3-img10-old-22}
 
 The cusp diagram can be expressed mathematically by setting the first derivative to 0:
 
@@ -162,7 +162,7 @@ This seems simple, but the mathematical analysis of such elastic bending structu
 
 A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (@fig-ch3-img13-old-25).
 
-![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/image13.jpg){#fig-ch3-img13-old-25 width="11cm"}
+![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/ch3-13.png){#fig-ch3-img13-old-25}
 
 Cusp modeling begins by defining the states of the behavioral variable. In this case, the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-6] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an “I don't know” or “I don't care” position.
 
@@ -224,7 +224,7 @@ $$ {#eq-ch3-8-old-12}
 
 Using these two “constructed” control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.
 
-![The bifurcation diagram of the spruce budworm model.](media/ch3/ch3-16__figure28.png){#fig-ch3-img16-old-28 width="11cm"}
+![The bifurcation diagram of the spruce budworm model.](media/ch3/ch3-16.png){#fig-ch3-img16-old-28}
 
 In later chapters we will discuss psychological examples of a mechanistic approach, but as far as models of transitions are concerned, these are rare. The phenomenological approach is much more common.
 
@@ -238,7 +238,7 @@ Second, select the control variables. What could be a normal variable and what c
 
 There is another issue here. [Control variables in cusp models can be rotated for ease of interpretation.]{.aside} In some phenomenological models, the control variables are rotated by 45 degrees. The most famous example is Zeeman's [-@zeemanCatastropheTheory1976] model of dog aggression (@fig-ch3-img17-old-29).
 
-![Zeeman's dog aggression model with rage and fear as rotated control variables.](media/ch3/image17.jpg){#fig-ch3-img17-old-29 width="11cm"}
+![Zeeman's dog aggression model with rage and fear as rotated control variables.](media/ch3/ch3-17__figure29.png){#fig-ch3-img17-old-29}
 
 The control variables are fear and rage. In such a rotation the normal variable is the difference between fear and rage, while the splitting variable is the sum of fear and rage. Another example can be found in our model of the speed-accuracy trade-off in reaction time tasks [@dutilhPhaseTransitionModel2011]. When constructing a phenomenological model, these two options for setting the control variable should be considered.
 
@@ -258,7 +258,7 @@ How sudden is sudden? How can climate changes be seen as transitions between sta
 
 But then what is the difference with an continuous acceleration, such as we see in a logistic growth pattern? The time course of an acceleration and a sudden, discontinuous jump may look very similar (@fig-ch3-img18-old-30).
 
-![Continuous and discontinuous growth curves my look very similar.](media/ch3/image18.jpg){#fig-ch3-img18-old-30 width="10cm"}
+![Continuous and discontinuous growth curves my look very similar.](media/ch3/ch3-18__figure30.png){#fig-ch3-img18-old-30}
 
 In fact, in terms of time-series data, they may look exactly the same. The main difference is that in the continuous case the intermediate values are stable. An acceleration can be understood as a quadratic minimum that changes its position quickly. If we stop the process by freezing the manipulated control variable in the process, the state will remain at an intermediate value. These intermediate values are all stable values. If we freeze the manipulated variable in a discontinuous process, it will continue to move to a stable state. In this case, the intermediate state is unstable. The ball keeps rolling and unfortunately the climate keeps changing.
 
@@ -270,7 +270,7 @@ In the following subsections, I will define the flags and illustrate their appli
 
 [The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped $p$-value of .005 (with the null hypothesis of no change point).
 
-![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="10cm"}
+![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="900"}
 
 Many methods for change point analysis have been developed and compared in @burgEvaluationChangePoint2022.
 
@@ -291,7 +291,7 @@ Multimodality (in the case of the cusp bimodality) is an important and easy-to-u
 
 An example is shown in @fig-ch3-img20-old-32. These data come from a conservation anticipation task, where children have to predict the level of water in the second glass when it is poured over. The resulting data and the fit of a mixture of two normal distributions are shown on the right. The data are clearly bimodal supporting the hypothesis of a transition in conservation learning [@vandermaas1992]. These data were used in @dolan1998 to fit multivariate normal mixture distributions subject to a structural equation model.
 
-![Bimodality in the expected heights of water when it is poured into a wider glass. This variation of the Piagetian maintenance task is used with children ages five to eight.](media/ch3/fig-ch3-img20-old-32.jpg){#fig-ch3-img20-old-32 width="12cm"}
+![Bimodality in the expected heights of water when it is poured into a wider glass. This variation of the Piagetian maintenance task is used with children ages five to eight.](media/ch3/ch3-20.png){#fig-ch3-img20-old-32}
 
 The code is:
 
@@ -320,7 +320,7 @@ It appeared that subjects solved the task by switching between the fast-guessing
 
 Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, requires the manipulation of the splitting variable. In the case of attitudes, we hypothesize this to be involvement or some related variable. In @vandermaasSuddenTransitionsAttitudes2003, we reanalyzed a dataset from @stoufferAmericanSoldierAdjustment1949, which @lataneAttitudesCatastrophesDimensions1994 presented as evidence for the cusp model. The attitude concerned demobilization (from 0, unfavorable, to 6, favorable), and respondents were asked to indicate how strongly they felt about their answer (from intensity 0 to intensity 5). For low intensities of feeling, the data are normally distributed whereas for higher intensities, data are bimodally distributed (see @fig-ch3-img21-old-33). [After testing for multimodality, testing for divergence is a sensible next step.]{.aside}
 
-![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in @sec-Fitting-the-cusp-to-crosssectional-data.](media/ch3/ch3-21__figure33.png){#fig-ch3-img21-old-33 width="12cm"}
+![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in @sec-Fitting-the-cusp-to-crosssectional-data.](media/ch3/ch3-21__figure33.png){#fig-ch3-img21-old-33 width="800"}
 
 #### Hysteresis {#sec-Hysteresis}
 
@@ -415,7 +415,7 @@ The table provides a summary:
 | w\[(Intercept)\] |   1.98   |    0.07    |  27.6   | \< 2e-16^\*\*\*^ |
 | w\[Y1\]          |   3.97   |    0.10    |  38.0   | \< 2e-16^\*\*\*^ |
 
-: Table 1: The parameter estimates including standard errors and p-values generated by the cusp package.
+: Table 3.1: The parameter estimates including standard errors and p-values generated by the cusp package.
 
 Note that we fit a model with too many parameters. We also estimated $a_{2}$ and $b_{1}$ (because the model was specified as alpha \~ \$X$1+$X\$2, beta \~ \$X$1+$X\$2). These estimates are not significantly different from 0. The other parameters are estimated reasonably close to their true values, since the true values fall within the confidence interval of the estimates (defined by twice the standard error on either side). We expect a better fit in terms of AIC and BIC when we fit a reduced model without $a_{2}$ and $b_{1}$. These fit indices penalize the goodness of fit (e.g., the log-likelihood) for the number of parameters used to discourage overfitting and to promote model parsimony.
 
@@ -429,7 +429,7 @@ summary(fit_correct_model)
 | Full model    |   0.428   | -1058.7 |  8   | 2133.3 | 2133.5 | 2172.6 |
 | Reduced model |   0.426   | -1059.0 |  6   | 2130.0 | 2130.1 | 2159.5 |
 
-: Table 2: The comparative fit measures AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
+: Table 3.2: The comparative fit measures AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
 
 The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$ and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
 
@@ -462,7 +462,7 @@ text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
 ```
 
-![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="12cm"}
+![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="800"}
 
 #### Empirical examples {#sec-Empirical-examples}
 
@@ -478,7 +478,7 @@ summary(fit)
 
 Inspection of the parameter estimates shows that, as expected, intensity of feeling only loads on the splitting axis and not on the normal axis. @fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
 
-![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/image24.jpg){#fig-ch3-img24-old-36 width="12cm"}
+![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/ch3-24__figure36.png){#fig-ch3-img24-old-36}
 
 Another example is the conservation dataset of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12-item test from a conservation test of 560 children from eight different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaas1992].
 
@@ -502,7 +502,7 @@ plot(fit)
 
 This is supported by results of the cusp fit. You can verify that a model with beta \~ 1 fits better according to the AIC and BIC.
 
-![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="13cm"}
+![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="900"}
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with it, and fit the cusp model to the data [see @grasman2009 for details]. Zeeman invented this machine to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
