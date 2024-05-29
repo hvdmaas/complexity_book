@@ -686,7 +686,7 @@ If we create a dynamic model from the ground up, there's a significant chance th
 
 One approach to cope with these issues is analogical modeling, or basically copying models. For instance, we used the Ising model to model attitudes and the mutualistic Lotka—Volterra model to model intelligence. Both are explained in @sec-ch6. Here, I will use addiction as an example, focusing on a selection of key phenomena (and for now ignoring many others).
 
-We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in @sec-ch7 when we include social effects. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
+We have reviewed existing formal models of addiction in @vandenendeReviewMathematicalModeling2022. Most of these models are quite complicated. I want the model of the individual addict to be as simple as possible. The reasons for this will become clear in @sec-ch7 when we include social effects [@bootIntegratingDualProcessInpreparation]. The key phenomena are that initiation, cessation, and relapse are often discontinuous processes. The verbal theories we adapt are dual-process models in which an automatic process of using more and more is controlled by a non-automatic process, self-control.
 
 Instead of creating our own model, we look for well-studied models in other sciences, which led me to the spruce budworm model:
 
