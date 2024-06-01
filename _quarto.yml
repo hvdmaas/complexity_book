@@ -46,7 +46,7 @@ format:
     number-sections: true
     crossref:
       chapters: true
-      fig-prefix: fig.
+      fig-prefix: figure
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
@@ -81,7 +81,7 @@ format:
     # - heightrounded
     crossref:
       chapters: true
-      fig-prefix: fig.
+      fig-prefix: figure
       
 editor: visual
 
