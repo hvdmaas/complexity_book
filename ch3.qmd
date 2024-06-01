@@ -206,7 +206,7 @@ The model of the attitude toward abortion is called a phenomenological model, as
 
 The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. @postonCatastropheTheoryIts2014 show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.
 
-One model that I will use as a psychological model in Chapter 4, @sec-Analogical-modeling-Budworms-and-Beers, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees [@ludwigQualitativeAnalysisInsect1978a]. The model is
+One model that I will use as a psychological model in Chapter 4, @sec-Analogical-modeling-Budworms-and-Beers, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees [@ludwig1978]. The model is
 
 $$
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.

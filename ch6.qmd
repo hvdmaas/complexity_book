@@ -516,7 +516,7 @@ An empirical example is provided in @dalege2017. The open-access data ($N = 5728
 |  "Afraid of him"                      | Afr              |
 |  "Proud"                              | Prd              |
 
-: Table 3: The abbreviation of items used in @fig-ch6-img19-old-88
+: Table 6.1: The abbreviation of items used in @fig-ch6-img19-old-88
 
 We can use Isingfit and add community detection:
 
@@ -552,7 +552,7 @@ Another critical point is that these models increase our understanding of psycho
 
 For intelligence, the model suggests that the active establishment of near and far transfer might be effective. A disappointing lesson from developmental psychology is that transfer does not always occur automatically [e.g., @salaFarTransferCognitive2019]. However, strategies for improving transfer do exist [@barnettWhenWhereWe2002] and, according to the mutualism model, should have a general effect.
 
-In Chapter 1, @sec-The-field-of-psychology, I mentioned the case of the shallow lake studied in ecology, where catching the fish was a very effective intervention, while addressing the cause, pollution, was ineffective due to hysteresis. Ecologists now know why this is so and have developed models to explain this phenomenon. However, I did not mention that this intervention was suggested not by modeling work but by owners of ponds who observed that ponds without fish sometimes spontaneously tipped to the clear state. This is not an uncommon path in science, and it may well occur in clinical psychology. The touted extraordinary successes of electroshock therapy for severe depression or new drugs (MDMA) for post-traumatic stress disorder could be our "fish." But these claims have also been criticized [e.g., @borsboomBrainDisordersNot2019; @readDepressionWhyDrugs2022].
+In Chapter 1, @sec-The-field-of-psychology, I mentioned the case of the shallow lake studied in ecology, where catching the fish was a very effective intervention, while addressing the cause, pollution, was ineffective due to hysteresis. Ecologists now know why this is so and have developed models to explain this phenomenon. However, I did not mention that this intervention was suggested not by modeling work but by owners of ponds who observed that ponds without fish sometimes spontaneously tipped to the clear state. This is not an uncommon path in science, and it may well occur in clinical psychology. The touted extraordinary successes of electroshock therapy for severe depression or new drugs (MDMA) for post-traumatic stress disorder could be our "fish." But these claims have also been criticized [e.g., @borsboom2019; @readDepressionWhyDrugs2022].
 
 Although much more progress can be made in network modeling of psychological systems, it is advisable to be realistic. Progress in mathematical modeling of ecosystems has also been slow. [Ecosystems and human systems are devilishly complex.]{.aside} The formalization of psychological models is of interest for many reasons [@borsboomTheoryConstructionMethodology2021], but will only be effective if we also make progress in other areas, such as measurement (@sec-ch8).
 
