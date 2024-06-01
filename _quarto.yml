@@ -3,7 +3,7 @@ project:
   output-dir: docs #for publishing in github pages
 book:
   title: "Complex systems research in Psychology"
-  author: "Han van der Maas"
+  author: "Han L. J. van der Maas"
   date: last-modified
   search: true
   repo-url: https://github.com/tasospsy/complexity_book

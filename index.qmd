@@ -22,4 +22,4 @@ It should also say that this book is more a book for psychologists who have very
 
 I have written this book based on thirty-five years of scientific work in collaboration with fantastic colleagues and coauthors of many papers. I’m part of the ecosystem of the psychology department, especially the wonderful methods section, of the University of Amsterdam. Also important is the Institute for Advanced Study in Amsterdam, which has complex-systems research as a central theme. In recent years, I’ve also been an external faculty member at the renowned Santa Fe Institute in New Mexico. I am indebted to all of them and to many other colleagues around the world. In my citations, I’ve made an effort to acknowledge the extensive contributions to this vast field. Nevertheless, I recognize that there may be omissions, for which I apologize.
 
-Han van der Maas, Amsterdam 2024
+Han L. J. van der Maas, Amsterdam 2024
