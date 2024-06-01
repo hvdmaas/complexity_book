@@ -37,8 +37,11 @@ m <- h[[1]]
 group=h[[2]]
 
 name2=paste('network',paste0(clusters,collapse=''),'.jpeg',sep='',col='')
-jpeg(name2,width = 5, height = 3, units = 'in', dpi = 300)
+jpeg(name2,width = 5, height = 3, units = 'in', res = 300)
 layout(t(1))
-qgraph(m,groups=group, layout="spring",labels=F,
-       vsize=1,edge.width=.4, bg=adjustcolor("white", alpha.f=0)) 
+#qgraph(m,groups=group, layout="spring",labels=F,
+#       vsize=1,edge.width=.4, bg=adjustcolor("white", alpha.f=0)) 
+grayscale_colors <- colorRampPalette(c("black", "white"))(63)
+qgraph(m,groups = group,layout = "spring",labels = FALSE,vsize = 1,edge.width = 0.4,bg = "white",color = grayscale_colors,border.color = "black",edge.color = "darkgray",label.color = "black") 
+
 dev.off()
