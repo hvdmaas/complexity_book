@@ -47,6 +47,8 @@ format:
     crossref:
       chapters: true
       fig-prefix: figure
+      sec-prefix: section
+      eq-prefix: equation
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
@@ -82,6 +84,8 @@ format:
     crossref:
       chapters: true
       fig-prefix: figure
+      sec-prefix: section
+      eq-prefix: equation
       
 editor: visual
 

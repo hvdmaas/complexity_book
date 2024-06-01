@@ -108,7 +108,7 @@ It has been claimed that these limit cycles occur in real population dynamics [@
 
 ## Chaos {#sec-Chaos}
 
-If we increase $r$ even further, the doubling of the periods changes to even stranger behavior. @fig-ch2-img4 shows what the time series looks for $r = 4$.
+If we increase $r$ even further, the doubling of the periods changes to even stranger behavior. @Fig-ch2-img4 shows what the time series looks for $r = 4$.
 
 ![Chaos for $r = 4$.](media/ch2/fig-ch2-img5.jpg){#fig-ch2-img5 width="10cm"}
 
@@ -142,7 +142,7 @@ where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambd
 
 ## Phase plot and bifurcation diagrams {#sec-Phase-plot-and-bifurcation-diagrams}
 
-@eq-ch2-2 is very simple. It is just one equation, a deterministic difference equation specifying how $X_{t + 1}$ depends on $X_{t}$, but the variety of behavior is astonishing. One way to better understand its behavior is to use phase plots. [A phase plot is a graphical representation of the relationship between two or more variables that change over time.]{.aside} In one-dimensional systems we plot $X_{t}$ against $X_{t + 1}$ (see @fig-ch2-img7). The code for this figure is:
+@Eq-ch2-2 is very simple. It is just one equation, a deterministic difference equation specifying how $X_{t + 1}$ depends on $X_{t}$, but the variety of behavior is astonishing. One way to better understand its behavior is to use phase plots. [A phase plot is a graphical representation of the relationship between two or more variables that change over time.]{.aside} In one-dimensional systems we plot $X_{t}$ against $X_{t + 1}$ (see @fig-ch2-img7). The code for this figure is:
 
 ```{r eval = FALSE}
 layout(matrix(1:6,2,3))
