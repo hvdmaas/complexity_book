@@ -30,7 +30,7 @@ We saw something similar for the logistic map when $r$ crossed the boundary at $
 
 Discontinuous phase transitions such as melting and freezing occur in many systems. Famous examples from the natural sciences include collapsing bridges, capsizing ships, cell division, and climate transitions such as the onset of ice ages. Examples from the social sciences include conflict, war, and revolution. Some examples from psychology are falling asleep, outbursts of aggression, radicalization, falling in love, sudden insights, relapses into depression or addiction, panic, and multistable perception. The perception of the Necker cube is a famous example (@fig-ch3-img2-old-14). Building and testing models of these psychological transitions is challenging but rewarding. These transitions involve large changes in behavior, in contrast to the smaller, often marginally significant effects typically observed in psychological intervention studies.
 
-![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left (“front”) and right (“back”) percepts. Multistable perception is a much-studied psychological phenomenon that is still not fully understood.](media/ch3/ch3-02__figure14.png){#fig-ch3-img2-old-14 width="13cm"}
+![Transitions in the perception of the Necker cube. The perception of the middle cube is bistable, and sudden transitions occur between the left ("front") and right ("back") percepts. Multistable perception is a much-studied psychological phenomenon that is still not fully understood.](media/ch3/ch3-02__figure14.png){#fig-ch3-img2-old-14 width="13cm"}
 
 ## Bifurcation and Catastrophe theory {#sec-Bifurcation-and-Catastrophe-theory}
 
@@ -94,7 +94,7 @@ Another way to visualize this is by making a bifurcation diagram as we did for t
 
 ![The bifurcation diagram of the fold catastrophe. Similar to what's shown in @fig-ch3-img4-old-16 , when $a=0$, there is a dramatic change in the equilibrium landscape. Suddenly, both a stable and an unstable equilibrium emerge, seemingly from nowhere.](media/ch3/fig-ch3-img5-old-17.jpg){#fig-ch3-img5-old-17 width="10cm"}
 
-This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, *The Seduction of Curves*, Allen @mcrobieSeductionCurvesLines2017 shows that whenever we see an edge, we see a fold. @fig-ch3-img6-old-18 is from the book, where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.[^ch3-4]
+This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, *The Seduction of Curves*, Allen @mcrobieSeductionCurvesLines2017 shows that whenever we see an edge, we see a fold. @Fig-ch3-img6-old-18 is from the book, where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.[^ch3-4]
 
 [^ch3-4]: <https://www.youtube.com/watch?v=6ZQKzcw9Ulk>
 
@@ -120,7 +120,7 @@ Now consider what will happen if we decrease $a$ from 2 to -2. [Hysteresis means
 
 In his classic paper on the psychophysical law, @stevens1957 reports hysteresis in perceptual judgments when properties such as brightness and loudness are systematically varied from low to high and vice versa. In this paper he says: "I'm trying to describe it, not explain it. I am not sure I know how to explain it." To me the cusp at least partially explains why hysteresis occurs.
 
-@gilmoreCatastropheTheoryScientists1993 made an important point about noise in the system. If there is a lot of noise, the jumps occur earlier and we see less or no hysteresis effect. This is called the Maxwell convention as opposed to the “delay” convention. Demonstrating hysteresis therefore requires precise experimental control.
+@gilmoreCatastropheTheoryScientists1993 made an important point about noise in the system. If there is a lot of noise, the jumps occur earlier and we see less or no hysteresis effect. This is called the Maxwell convention as opposed to the "delay" convention. Demonstrating hysteresis therefore requires precise experimental control.
 
 Another very interesting pattern occurs when $a = 0$ and $b$ is increased (@fig-ch3-img8-old-20).
 
@@ -152,7 +152,7 @@ This equation defines the bifurcation lines where the first and second derivativ
 
 ### Examples of cusp models {#sec-Examples-of-cusp-models}
 
-To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). I recommend that you test this example (not with your credit card). You can play with two forces. $Fv$ is the vertical force and the splitting control variable ($b$) in the cusp. $Fh$ is the horizontal force and the normal variable ($a$) in the cusp. Note that you will only get smooth changes when $Fv = 0$, but sudden jumps and hysteresis when you employ vertical force. One very important phenomenon is that the card has no “memory” when $Fv = 0$. You can push the card to a position, but as soon as you release this force ($Fh$ back to 0), the card moves back to the center position. This is not the case with vertical pressure. If we force the card to the left or right position, it will stay there, even if we remove the horizontal force. The card has a memory.
+To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). I recommend that you test this example (not with your credit card). You can play with two forces. $Fv$ is the vertical force and the splitting control variable ($b$) in the cusp. $Fh$ is the horizontal force and the normal variable ($a$) in the cusp. Note that you will only get smooth changes when $Fv = 0$, but sudden jumps and hysteresis when you employ vertical force. One very important phenomenon is that the card has no "memory" when $Fv = 0$. You can push the card to a position, but as soon as you release this force ($Fh$ back to 0), the card moves back to the center position. This is not the case with vertical pressure. If we force the card to the left or right position, it will stay there, even if we remove the horizontal force. The card has a memory.
 
 ![A simple business card can be used to illustrate all the properties of the cusp (see main text).](media/ch3/ch3-11__figure23.png){#fig-ch3-img11-old-23 width="12cm"}
 
@@ -164,7 +164,7 @@ A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAtt
 
 ![The cusp model of attitudes (toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/ch3-13.png){#fig-ch3-img13-old-25}
 
-Cusp modeling begins by defining the states of the behavioral variable. In this case, the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-6] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an “I don't know” or “I don't care” position.
+Cusp modeling begins by defining the states of the behavioral variable. In this case, the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-6] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an "I don't know" or "I don't care" position.
 
 [^ch3-6]: Perhaps better to call this view anti-choice.
 
@@ -172,7 +172,7 @@ The normal ($a$) and splitting ($b$) variable are interpreted as information and
 
 The splitting factor, involvement, also combines a number of effects (importance, attention). The main idea is that there are two types of independent variables. Some will work (mainly) along the normal axis, and some will (mainly) impact the splitting axis.
 
-The implications of this model are that, for low involvement, change is continuous (@fig-ch3-img13-old-25). Presenting people with some new information supporting the pro-life or pro-choice position will have a moderate effect. One problem, as demonstrated with the business card, is that the uninvolved person has “no memory.” As soon as you stop influencing this person, they drift to the neutral “I don't care” position. We have another problem when people are highly involved: they experience hysteresis. [Because of the hysteresis effect, it is very difficult to persuade people with new information.]{.aside} When this hysteresis effect is large, persuasion just does not work. If you have been involved in political discussions, you have probably experienced that yourself.
+The implications of this model are that, for low involvement, change is continuous (@fig-ch3-img13-old-25). Presenting people with some new information supporting the pro-life or pro-choice position will have a moderate effect. One problem, as demonstrated with the business card, is that the uninvolved person has "no memory." As soon as you stop influencing this person, they drift to the neutral "I don't care" position. We have another problem when people are highly involved: they experience hysteresis. [Because of the hysteresis effect, it is very difficult to persuade people with new information.]{.aside} When this hysteresis effect is large, persuasion just does not work. If you have been involved in political discussions, you have probably experienced that yourself.
 
 But if the underlying change in information is large enough, attitudes can show a sudden jump. If they are central attitudes, they can be major life events. There is a lot of anecdotal evidence for such transitions [@ebaugh1988], but it is very hard to capture such an effect in actual time series of attitude measures. Another effect that is consistent with the cusp model is ambivalence. [In the cusp model of attitudes, ambivalence is not the same thing as being neutral.]{.aside} The neutral point is at the back of the cusp and is associated with low involvement. Ambivalence is associated with high involvement. Highly involved people with balanced information ($a = 0)$, may oscillate between extreme positions (see @fig-ch4n-img2-old-50). Finally, the pitchfork bifurcation can explain issue or political polarization. [When involvement increases in a group of neutral people, for example, due to discussion, they may split into two extreme positions (polarization).]{.aside}
 
@@ -222,7 +222,7 @@ $$
 r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
 $$ {#eq-ch3-8-old-12}
 
-Using these two “constructed” control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.
+Using these two "constructed" control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.
 
 ![The bifurcation diagram of the spruce budworm model.](media/ch3/ch3-16.png){#fig-ch3-img16-old-28}
 
@@ -246,7 +246,7 @@ To explain catastrophic drops in performance in work and sports, @hardy1991 prop
 
 Cusp models have also been developed for addiction [@guastello1984; @mazanovCuspCatastropheModel2006]. @witkiewitzNonnormalityDivergencePosttreatment2007 propose using distal risk as the splitting axis and proximal risk as the normal axis. The model is tested using the renowned dataset from Project MATCH, an eight-year, multisite investigation of the effectiveness of various treatments for alcoholism.
 
-As a final example, I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor.[^ch3-8] Paulos explains his model in the context of puns. His example is: “Do you consider clubs appropriate for young children?” with the punchline “Only when kindness fails,” which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of “clubs,” the other axis represents the second meaning. The bifurcation set represents the ambiguous region. A joke involves a jump from one meaning to another. [The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter.]{.aside} Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. @tschacher2023 propose a related complexity account of humor.
+As a final example, I mention the model for humor presented by @paulosMathematicsHumor2008 in his fascinating book on mathematics and humor.[^ch3-8] Paulos explains his model in the context of puns. His example is: "Do you consider clubs appropriate for young children?" with the punchline "Only when kindness fails," which is probably only funny to people with children. Paulos uses the rotated control axis as in the dog aggression model. Interpretation of the pun is the behavioral axis. One axis represents the first meaning of "clubs," the other axis represents the second meaning. The bifurcation set represents the ambiguous region. A joke involves a jump from one meaning to another. [The punch line forces a catastrophic change in interpretation, accompanied by a release of tension through laughter.]{.aside} Paulos claims that this cusp model combines cognitive incongruity theory, various psychological theories of humor, and the release theory of laughter. @tschacher2023 propose a related complexity account of humor.
 
 [^ch3-8]: Given these guidelines and examples, it is an interesting exercise to develop one's own cusp model, for example, for falling in love. This is a tricky exercise.
 
@@ -268,7 +268,7 @@ In the following subsections, I will define the flags and illustrate their appli
 
 #### Sudden jump {#sec-Sudden-jump}
 
-[The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped $p$-value of .005 (with the null hypothesis of no change point).
+[The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @Fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped $p$-value of .005 (with the null hypothesis of no change point).
 
 ![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="900"}
 
@@ -431,7 +431,7 @@ summary(fit_correct_model)
 
 : Table 3.2: The comparative fit measures AIC, AICc, and BIC indicate that the reduced model should be the model of choice.
 
-The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$ and compare the goodness of fit between the linear and cusp model. @fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
+The next simulation demonstrates that we can detect hysteresis using this approach. We simulate data with $- 2 < \alpha < 2,$ and fixed $\beta$. If $\beta < 0$ we have no hysteresis, but if $\beta > 0$, we do have hysteresis. With the code below we simulate datasets for different $\beta$ and compare the goodness of fit between the linear and cusp model. @Fig-ch3-img23-old-35 summarizes the results. Note that a lower BIC indicated the better-fitting model.
 
 ```{r eval = FALSE}
 set.seed(10)
@@ -476,7 +476,7 @@ fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling,
 summary(fit)
 ```
 
-Inspection of the parameter estimates shows that, as expected, intensity of feeling only loads on the splitting axis and not on the normal axis. @fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
+Inspection of the parameter estimates shows that, as expected, intensity of feeling only loads on the splitting axis and not on the normal axis. @Fig-ch3-img24-old-36 shows the location of the data in the bifurcation set (`plot(fit)`).
 
 ![Placement of the data of @fig-ch3-img21-old-33 in the bifurcation set.](media/ch3/ch3-24__figure36.png){#fig-ch3-img24-old-36}
 
@@ -534,7 +534,7 @@ Then Zahler and Sussmann point out that catastrophe theorists often try to make 
 
 Zahler and Sussmann's final point is that there are better alternatives, such as quantum mechanics, discrete mathematics, and bifurcation theory. There is work on quantum mechanics in psychology (especially in the context of consciousness), but whether it will lead to breakthroughs in this field remains to be seen. Discrete mathematics may be an alternative in some cases (e.g., to model symbolic thinking). I see catastrophe theory as a special branch of bifurcation theory, especially useful when the system under study is difficult to describe in terms of mathematical equations. This goes back to the distinction between phenomenological and mechanistic models. I think we should put more effort into developing mechanistic models based on first principles. More on this in the next chapters.
 
-@loehleCatastropheTheoryEcology1989 presents an excellent discussion on the usefulness of catastrophe theory in the context of modeling ecosystems. He concludes that “an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data,” but this problem has now been largely solved. [The empirical program, using catastrophe flags in conjunction with Cobb's method for fitting cusp models, bypasses much of the previous criticism of catastrophe theory.]{.aside}
+@loehleCatastropheTheoryEcology1989 presents an excellent discussion on the usefulness of catastrophe theory in the context of modeling ecosystems. He concludes that "an unresolved problem in applying catastrophe models is that of testing the goodness of fit of the model to data," but this problem has now been largely solved. [The empirical program, using catastrophe flags in conjunction with Cobb's method for fitting cusp models, bypasses much of the previous criticism of catastrophe theory.]{.aside}
 
 ## Conclusion {#sec-Conclusion-ch3}
 
@@ -548,7 +548,7 @@ However, there is room for improvement. Phenomenological models have limited exp
 
 1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to 0. Show this. (\*)
 
-2)  In Zeeman's dog aggression model, fear and rage are “rotated” control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
+2)  In Zeeman's dog aggression model, fear and rage are "rotated" control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
 
 3)  Derive the equation for the bifurcation lines of the cusp ($27a^{2} = 4b^{3})$, by setting the first and second derivatives to 0. Plot the bifurcation lines in GeoGebra or Desmos. (\*\*)
 

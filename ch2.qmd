@@ -44,7 +44,7 @@ What is the effect of this addition to the equation? If $X$ is much smaller than
 
 ## Stable and unstable fixed points {#sec-Stable-and-unstable-fixed-points}
 
-Let us study a “boring” case first, $r = 2$ (@fig-ch2-img2).
+Let us study a "boring" case first, $r = 2$ (@fig-ch2-img2).
 
 ```{r eval = FALSE}
 n <- 15; r <- 2; x <- rep(0,n)
@@ -94,7 +94,7 @@ So 0 and $(r - 1)/r$ are fixed points. Indeed, for $r = 2$, we have seen that 0 
 
 The fixed point is stable if the absolute value of the derivative in the fixed-point value is less than 1.[^ch2-2] For $r = 2$ the fixed points are 0 and .5. $\left| f^{'}\left( X^{*} = 0 \right) \right| = |2 - 0| = 2$, which is greater than 1 and thus $X^{*} = 0$ is unstable. $\left| f^{'}\left( X^{*} = .5 \right) \right| = |2 - 2 \times 2 \times .5| = 0$, which is less than 1 and thus $X^{*} = .5$ is stable. You can check for yourself that $X^{*}=(r - 1)/r$ is stable for $1 < r < 3$, both with the R-code and with the absolute value of the derivative.
 
-[^ch2-2]: It is not too difficult to understand why this is. If you Google search “fixed points of difference equations,” you will quickly arrive at stackexchange.com, where several insightful explanations are given.
+[^ch2-2]: It is not too difficult to understand why this is. If you Google search "fixed points of difference equations," you will quickly arrive at stackexchange.com, where several insightful explanations are given.
 
 ## Limit cycles {#sec-Limit-cycles}
 
