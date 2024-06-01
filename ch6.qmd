@@ -91,7 +91,7 @@ The factor-analysis tradition in psychology began with the study of general inte
 
 This model has been criticized extensively, including for its alleged implications for group differences in observed IQ and intervention strategies [@fraserBellCurveWars2008]. In my view, some of the criticism is unwarranted. For example, the positive manifold is a very robust and widely replicated empirical phenomenon [@nisbett2012]. The specific tests included are not of great importance. That is, any reliable measure of creativity, emotional intelligence, or social intelligence correlates positively with other IQ subtests. Nor is there much wrong with factor analysis as a statistical technique. To me, the most questionable aspect of $g$ theory is that it is not really a theory at all. The "elephant in the room" question is simply: What is $g$? What could this single factor be that explains everything? A century of research has not produced a generally accepted answer to this question. And this is a problem for many factor explanations in psychology (e.g., the big five of personality, the $p$ factor of psychopathology).
 
-It is important to note that the factor explanations are not problematic in and of themselves. I like to use the example of heart disease, say, a loose heart valve. This leads to symptoms such as shortness of breath, swelling of the ankles, dizziness, rapid weight gain, and chest discomfort. The relationship between these symptoms is explained by the underlying factor of heart disease. Treating a single symptom may provide some relief for that symptom, but not more. Only intervening on the cause will bring about real change. This is an example of a reflective interpretation of the factor model. When the factor is merely an index and not a common cause, we speak of a formative factor. @fig-ch6-img5-old-74 explains the reflective and formative interpretations of the factor model.
+It is important to note that the factor explanations are not problematic in and of themselves. I like to use the example of heart disease, say, a loose heart valve. This leads to symptoms such as shortness of breath, swelling of the ankles, dizziness, rapid weight gain, and chest discomfort. The relationship between these symptoms is explained by the underlying factor of heart disease. Treating a single symptom may provide some relief for that symptom, but not more. Only intervening on the cause will bring about real change. This is an example of a reflective interpretation of the factor model. When the factor is merely an index and not a common cause, we speak of a formative factor. @Fig-ch6-img5-old-74 explains the reflective and formative interpretations of the factor model.
 
 ![The reflective and formative interpretations of the factor model cannot be distinguished with correlational data, but they are very different. In the reflective model, the latent factor is a common cause (e.g., temperature) that causes the observations (e.g., different thermometers). Intervening on one thermometer (heating) will only change that particular thermometer because each $x$ has no outgoing connections. In the formative interpretation, the factor is just an index (e.g., an economic index) that summarizes the state of many interacting components (companies). In this case, *only* interventions on the $x$ can have an overall effect.](media/ch6/ch6-5__figure74.png){#fig-ch6-img5-old-74}
 
@@ -217,7 +217,7 @@ In terms of building actual models, not as much work has been done. In @cramer20
 
 Since thresholds are generally negative (the 0 state of nodes is the default state), sufficient connectivity is required to have a depression as an alternative stable state. A limitation of this model is that although it is related to the Ising model, the exact dynamics are not well understood.
 
-A similar approach was used by @lunanskyInterveningPsychopathologyNetworks2022 in order to define resilience and evaluate intervention targets. [Resilience is the ability of a system to recover from perturbations and maintain its current equilibrium.]{.aside} You can see this in the NetLogo “Vulnerability to Depression” model (see @fig-ch6-img9-old-78). Another relevant network modeling approach, based on causal loop diagrams, is proposed in @wittenbornDepressionSystemicSyndrome2016.
+A similar approach was used by @lunanskyInterveningPsychopathologyNetworks2022 in order to define resilience and evaluate intervention targets. [Resilience is the ability of a system to recover from perturbations and maintain its current equilibrium.]{.aside} You can see this in the NetLogo "Vulnerability to Depression" model (see @fig-ch6-img9-old-78). Another relevant network modeling approach, based on causal loop diagrams, is proposed in @wittenbornDepressionSystemicSyndrome2016.
 
 ![The Vulnerability to Depression model in NetLogo.](media/ch6/image9.jpg){#fig-ch6-img9-old-78 width="20cm"}
 
@@ -352,7 +352,7 @@ round(W,2)
 qgraph(W);title('after learning')
 ```
 
-@fig-ch6-img14-old-83 shows the result of this simulation.
+@Fig-ch6-img14-old-83 shows the result of this simulation.
 
 ![Through Hebbian learning, a random (unbalanced) network becomes balanced.](media/ch6/fig-ch6-img14-old-83.png){#fig-ch6-img14-old-83 width="18cm"}
 
@@ -474,7 +474,7 @@ In JASP, you can perform network and confirmatory factor analysis. In the latter
 
 ### Fitting Ising models {#sec-Fitting-Ising-models}
 
-With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
+With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @Fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
 
 ``` r
 library("IsingSampler")
@@ -530,7 +530,7 @@ qgraph(ObamaFit$weiadj, layout = 'spring',
          cut = .8, groups = communities(ObamaCom), legend = FALSE)
 ```
 
-@fig-ch6-img19-old-88 shows the network. The red nodes represent negative feelings toward Barack Obama; the green nodes represent positive feelings; the light blue nodes represent judgments primarily related to interpersonal warmth; and the purple nodes represent judgments related to Obama's competence. This community structure is consistent with the postulate of the Ising attitude model that similar evaluative responses cluster [@dalegeFormalizedAccountAttitudes2016]. @finnemann2021 present additional examples and applications of other packages.
+@Fig-ch6-img19-old-88 shows the network. The red nodes represent negative feelings toward Barack Obama; the green nodes represent positive feelings; the light blue nodes represent judgments primarily related to interpersonal warmth; and the purple nodes represent judgments related to Obama's competence. This community structure is consistent with the postulate of the Ising attitude model that similar evaluative responses cluster [@dalegeFormalizedAccountAttitudes2016]. @finnemann2021 present additional examples and applications of other packages.
 
 ![The attitude toward Obama.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88 width="15cm"}
 
