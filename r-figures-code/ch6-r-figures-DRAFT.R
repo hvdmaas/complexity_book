@@ -114,7 +114,7 @@ dev.off()
 png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
 set.seed(1)
 layout(1)
-par(mar=c(4,4,4,4))
+par(mar=c(1,1,1,1))
 M <- matrix(rnorm(8^2,0.1,0.0),8,8)
 M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.6,.4)),8,8)
 M[diag(8)==1] <-  -.1
