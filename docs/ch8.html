@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -280,12 +280,12 @@ window.Quarto = {
 <p>Addition is the litmus test of quantification <span class="citation" data-cites="michellQuantitativeScienceDefinition1997">(<a href="references.html#ref-michellQuantitativeScienceDefinition1997" role="doc-biblioref">Michell 1997</a>)</span>. Real quantities, such as weights and distances, can be added. One kilogram + one kilogram = two kilograms, which is twice as much as one kilogram.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> We cannot say such things about IQs, personality test scores, or Likert scores on attitude items. I do not think this is a hopeless endeavor. Even physicists have lived through times when key concepts were vaguely understood and poorly measured (see <em>Inventing Temperature</em> by <span class="citation" data-cites="changInventingTemperatureMeasurement2008">Chang (<a href="references.html#ref-changInventingTemperatureMeasurement2008" role="doc-biblioref">2008</a>)</span>). I also draw hope from statements such as “Every law of physics, pushed to its extreme, will turn out to be statistical and approximate, not mathematically perfect and precise” <span class="citation" data-cites="wheelerHomeUniverse1994">(<a href="references.html#ref-wheelerHomeUniverse1994" role="doc-biblioref">Wheeler 1994</a>)</span>.</p>
 <p>Currently, our scales of measurement are somewhere between ordinal and interval. Perhaps there is a continuous path to improvement. But for now, we have to live with rather weak scales of measurement. This has implications for our attempts to formalize psychological theories. The exact form of certain terms in our equations is irrelevant when we have only ordinal or semi-interval data. When testing models, we should focus on their qualitative behavior. This is exactly what we did with the catastrophe flags in <a href="ch3.html" class="quarto-xref"><span>Chapter 3</span></a>, and it is one reason why I adhere to the sometimes-criticized catastrophe theory.</p>
 <p>I will not attempt to review these crises in depth, but I would like to suggest, in line with the book, that these crises form a mutualistic network (<a href="#fig-ch8-extra" class="quarto-xref">figure&nbsp;<span>8.1</span></a>). Progress in resolving one crisis will have a positive impact on resolving others. If we can have more confidence in the empirical basis of many well-known psychological phenomena, theory development will benefit. Improved theories are necessary to advance measurement, and vice versa. In periods of rapid progress in sciences such as particle physics and biochemistry, we often see an upward spiral of theory development and measurement techniques.</p>
-<div id="fig-ch8-extra" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch8-extra" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch8-extra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch8/ch8-1.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch8-extra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch8-extra-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: The network of crises in psychology. The resolution of one crisis will, I hope, have a positive impact on the resolution of others.
 </figcaption>
 </figure>
@@ -444,6 +444,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -478,7 +496,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

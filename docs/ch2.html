@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -320,12 +320,12 @@ X_{t + 1} = rX_{t} \tag{2.1}\]</span></span></p>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  x[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> r <span class="sc">*</span> x[i]</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="at">type =</span> <span class="st">'b'</span>, <span class="at">xlab =</span> <span class="st">'time'</span>, <span class="at">bty =</span> <span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch2-img1" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img1.jpg" class="img-fluid figure-img" style="width:8cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.1: Exponential growth.
 </figcaption>
 </figure>
@@ -346,12 +346,12 @@ X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right) \ta
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  x[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">=</span> r <span class="sc">*</span> x[i] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x[i])</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="at">type =</span> <span class="st">'b'</span>, <span class="at">xlab =</span> <span class="st">'time'</span>, <span class="at">bty =</span> <span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch2-img2" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img2.jpg" class="img-fluid figure-img" style="width:8cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.2: The <span class="math inline">\(r=2\)</span> case.
 </figcaption>
 </figure>
@@ -372,12 +372,12 @@ Figure&nbsp;2.2: The <span class="math inline">\(r=2\)</span> case.
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="page-columns page-full"><p>If we start exactly at 0, <span class="math inline">\(X\)</span> stays at 0 So, 0 is an equilibrium too, but a special one. It is an unstable fixed point. A small perturbation will cause <span class="math inline">\(X\)</span> to move to .5, the stable fixed point. All initial values in close proximity of 0 will move away from 0 (repellent), but if <span class="math inline">\(X = 0\)</span> exactly, then it remains 0 for all time. So, <span class="math inline">\(X = 0\)</span> is a fixed point but unstable (<a href="#fig-ch2-img1" class="quarto-xref">figure&nbsp;<span>2.1</span></a>). </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Fixed points can be stable or unstable.</span></div></div>
-<div id="fig-ch2-img3" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img3.jpg" class="img-fluid figure-img" style="width:10cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.3: Illustration of stable and unstable fixed points. For many initial values, <span class="math inline">\(X = .5\)</span> is an attractor. <span class="math inline">\(X = 0\)</span> is an unstable fixed point. Only if we start exactly at 0 do we stay there.
 </figcaption>
 </figure>
@@ -398,12 +398,12 @@ X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r} \\
 <section id="sec-Limit-cycles" class="level2 page-columns page-full" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="sec-Limit-cycles"><span class="header-section-number">2.4</span> Limit cycles</h2>
 <p>So at <span class="math inline">\(r = 3\)</span> the fixed point or <span class="math inline">\((r - 1)/r\)</span> becomes unstable. Let’s study some cases. The plots in <a href="#fig-ch2-img4" class="quarto-xref">figure&nbsp;<span>2.4</span></a> are made with the code for <a href="#fig-ch2-img2" class="quarto-xref">figure&nbsp;<span>2.2</span></a>.</p>
-<div id="fig-ch2-img4" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img4.jpg" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.4: Qualitative different behavior of the logistic map for different values of <span class="math inline">\(r\)</span>.
 </figcaption>
 </figure>
@@ -414,12 +414,12 @@ Figure&nbsp;2.4: Qualitative different behavior of the logistic map for differen
 <section id="sec-Chaos" class="level2 page-columns page-full" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="sec-Chaos"><span class="header-section-number">2.5</span> Chaos</h2>
 <p>If we increase <span class="math inline">\(r\)</span> even further, the doubling of the periods changes to even stranger behavior. <a href="#fig-ch2-img4" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> shows what the time series looks for <span class="math inline">\(r = 4\)</span>.</p>
-<div id="fig-ch2-img5" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img5" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img5.jpg" class="img-fluid figure-img" style="width:10cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.5: Chaos for <span class="math inline">\(r = 4\)</span>.
 </figcaption>
 </figure>
@@ -437,12 +437,12 @@ Figure&nbsp;2.5: Chaos for <span class="math inline">\(r = 4\)</span>.
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  x[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> r <span class="sc">*</span> x[i] <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x[i])</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(x, <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch2-img6" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img6" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img6.jpg" class="img-fluid figure-img" style="width:10cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.6: The butterfly effect: A small difference in initial state causes divergence in the long run.
 </figcaption>
 </figure>
@@ -476,12 +476,12 @@ Figure&nbsp;2.6: The butterfly effect: A small difference in initial state cause
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">main=</span><span class="st">'random noise'</span>,<span class="at">cex.main=</span><span class="dv">2</span>) </span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x[<span class="sc">-</span><span class="fu">length</span>(x)],x[<span class="sc">-</span><span class="dv">1</span>],<span class="at">xlim=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,<span class="at">ylim=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>,<span class="at">xlab=</span><span class="st">'Xt'</span>,<span class="at">ylab=</span><span class="st">'Xt+1'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="fig-ch2-img7" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img7" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img7.jpg" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.7: Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.
 </figcaption>
 </figure>
@@ -505,12 +505,12 @@ Figure&nbsp;2.7: Time (top) and phase (bottom) plots for three cases. Chaos and 
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(equilibria <span class="sc">~</span> r, <span class="at">pch=</span><span class="dv">19</span>,<span class="at">cex=</span>.<span class="dv">01</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This results in <a href="#fig-ch2-img8" class="quarto-xref">figure&nbsp;<span>2.8</span></a>. We see indeed fixed stable points for <span class="math inline">\(r &lt; 3\)</span>, the period doubling of the limit cycles for <span class="math inline">\(r &gt; 3\)</span>, followed by chaos.</p>
-<div id="fig-ch2-img8" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch2-img8" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch2-img8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch2/fig-ch2-img8.jpg" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch2-img8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch2-img8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.8: The bifurcation diagram of the logistic map.
 </figcaption>
 </figure>
@@ -718,6 +718,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -752,7 +770,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
