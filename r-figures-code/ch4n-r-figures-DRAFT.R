@@ -521,7 +521,7 @@ model <- function(t, state, parms) {
 ## Using base2
 png('media/ch4n/fig-ch4n-img11-old-59.png', width = 8, height = 5, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
-par(mar=c(4,4,1,2))
+par(mfrow=c(2,2))
 # Set parameter values and run the model:
 p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
 s <- c(X = 0.01, Y = 0.01)
@@ -794,7 +794,7 @@ antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
     labs(y = 'Density', x = 'Time', color = '', shape = '', ...) +
     theme_minimal() + theme1+
     theme(legend.position = 'none', ...)
-  if(line) pl <- p + geom_line(aes(time, val, group = par),color = ncolors[4], linewidth = lsize, ...)
+  if(line) pl <- p + geom_line(aes(time, val, group = par),color = 'black', linewidth = lsize, ...)
   ifelse(line, return(pl), return(p))
 }
 pl <- antiRuntmp(dat)
@@ -803,10 +803,16 @@ pl1 <- pl + geom_line(data = data.frame(
   time = 1:100,
   val = b0_i,
   par = "b0_i"
-), aes(x = time, y = val), color = "black", size = .4, linetype = "dotted")
+), aes(x = time, y = val), color = "black", size = .4, linetype = "dotted")+
+  theme( axis.title.x = element_text(size = 60),
+         axis.title.y = element_text(size = 60),
+         axis.text.x  = element_text(size = 60),
+         axis.text.y  = element_text(size = 60),
+         legend.text  = element_text(size = 40),
+         legend.title = element_text(size = 40))
 
-pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 9, family = cfont) +
-  annotate("text", x = 80, y = -0.5, label = 'Attention', size = 9, family = cfont)
+pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 14, family = cfont) +
+  annotate("text", x = 80, y = -0.5, label = 'Attention', size = 14, family = cfont)
 pl2
 ggsave('media/ch4n/fig-ch4n-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
 

@@ -229,7 +229,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.jpg){#fig-ch4n-img2-old-50 width="900"}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.png){#fig-ch4n-img2-old-50 width="15cm"}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
@@ -329,7 +329,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54}
+![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54 width="15cm"}
 
 The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s, or m/s^2^). One can also have dimension-free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. This hampers the quantitative test of models.
 
@@ -341,7 +341,7 @@ In this section, I present an overview of dynamical systems models in psychology
 
 Many dynamic models have been proposed in the study of speeded decision-making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (@fig-ch4n-img7-old-55). [Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.]{.aside}
 
-![A stochastic accumulator model of speeded decision-making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="800"}
+![A stochastic accumulator model of speeded decision-making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="15cm"}
 
 One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model (DDM), with $I$ as the stimulus-driven input:
 
@@ -399,7 +399,7 @@ Note that these are all linear dynamical systems that do not exhibit complex beh
 
 The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift-diffusion mode can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006].](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="800"}
+![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006].](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="15cm"}
 
 ### Dyadic models {#sec-Dyadic-models}
 
@@ -450,7 +450,7 @@ run(ymin=-.2,legend=F)
 plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 ```
 
-![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="900"}
+![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="16cm"}
 
 The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. [Nullclines are the curves for which the time derivatives of the behavioral variables $R$ and $J$ are 0.]{.aside} In linear dynamical system, nullclines are straight lines. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines, we get a fixed point (first two cases), a limit cycle (last case), or divergence (not shown).
 
@@ -517,7 +517,7 @@ for (i in 1:100)
 
 This results in @fig-ch4n-img10-old-58.
 
-![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first (top), they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second (middle) , the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case (bottom), the response to low positive or negative moods is close to 0 but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="900"}
+![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first (top), they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second (middle) , the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case (bottom), the response to low positive or negative moods is close to 0 but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="16cm"}
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
@@ -558,7 +558,7 @@ run(tmax = 1500, method = "euler", tstep = 1)
 plane(portrait = TRUE,grid=4)
 ```
 
-![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist; in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="900"}
+![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist; in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="15cm"}
 
 So, there are basically two outcomes: either both grow, or one grows and suppresses the other (see @fig-ch4n-img11-old-59). Note that the method is set to "Euler" to simulate difference equations.
 
@@ -625,7 +625,7 @@ continue(start,x="alpha",y="T",xmin=-1,xmax=20,ymax=1,add=T)
 
 In @robinaughAdvancingNetworkTheory2019, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.
 
-![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at $A = T = 1$.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61 width="800"}
+![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at $A = T = 1$.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61 width="15cm"}
 
 ### Neural models: Van der Pol and different time scales {#sec-Neural-models-van-der-Pol-and-different-time-scales}
 
@@ -652,7 +652,7 @@ run(ymin=-1.5,main='b = 1',legend=F)
 plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 ```
 
-![Two runs of the van der Pol oscillator. For high b, this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="800"}
+![Two runs of the van der Pol oscillator. For high b, this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="15cm"}
 
 The plots (@fig-ch4n-img15-old-63) illustrate this behavior. For $b < 0$, $X$ converges to a fixed point. For $b > 0$, we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form:
 
@@ -764,7 +764,7 @@ run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
 
 The last three lines of this code show the Kadyrov oscillator (@fig-ch4n-img17-old-65).
 
-![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65 width="800"}
+![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65 width="15cm"}
 
 If we simplify this analysis a bit to stable fixed points only, we see three regimes:
 
@@ -847,11 +847,11 @@ text(80,-.5,'Attention')
 
 which gives @fig-ch4n-img19-old-67.
 
-![The multifigure Necker cube simulation. Initially, attention is low and the percept is close to 0, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At $t = 60$, it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67 width="900"}
+![The multifigure Necker cube simulation. Initially, attention is low and the percept is close to 0, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At $t = 60$, it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67 width="15cm"}
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch4n-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to switch independently ($a_{ij} = 0)$. You can verify this introspectively. (Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>)](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to switch independently ($a_{ij} = 0)$. You can verify this introspectively. (Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>)](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68 width="15cm"}
 
 ## Causal-loop diagrams {#sec-Causal-loop-diagrams}
 
