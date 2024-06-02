@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 I was even more stunned to see that it is possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Game of Life implementation of the Turing machine is shown in @fig-ch5n-img4-old-42. This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section on neural networks).
 
-![The Turing machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="20cm"}
+![The Turing machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="14cm"}
 
 Another root of complex-systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. [Cybernetics studies circular causal and feedback mechanisms in complex systems, focusing on how systems regulate themselves, process information, and adapt to changes in their environment.]{.aside} To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: "Gestalt and Universals," "Cybernetics and Psychopathology," "On Learning and Self-Reproducing Machines," and, finally, "Brainwaves and Self-Organization." And this was written in 1948!
 

@@ -6,7 +6,7 @@ Common-cause theories are widely accepted in psychology. High scores on cognitiv
 
 The study of psychological networks is perhaps the most thriving area of complex-systems research in psychology today. This chapter is about this new line of research. The paper on the mutualism model of general intelligence [@vandermaasDynamicalModelGeneral2006] can be seen as the root of this approach, but it took off, as shown in @fig-ch6-img1-old-70, when it was applied to clinical psychology [@borsboomNetworkTheoryMental2017; @borsboomPsychometricPerspectivesDiagnostic2008; @cramerComorbidityNetworkPerspective2010], especially when the theoretical work was backed up with psychometric tools [@epskampEstimatingPsychologicalNetworks2018; @epskampQgraphNetworkVisualizations2012; @marsmanGuestEditorsIntroduction2022].
 
-![The number of papers in Google Scholar on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="18cm"}
+![The number of papers in Google Scholar on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="14cm"}
 
 In this chapter I will present and discuss these theoretical and psychometric lines of research, accompanied by practical examples. First, I will begin with an introduction to network theory.
 
@@ -47,7 +47,9 @@ edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))# now .2
 centralityPlot(qgraph(adj)) # note centrality() gives more indices
 ```
 
-![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="18cm"}
+![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="14cm"}
+
+![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){width="18cm"}
 
 ### Network types {#sec-Network-types}
 
@@ -158,7 +160,7 @@ hist(cor(data)[cor(data)<1],main='positive manifold',
      col='lightgreen') # positive manifold
 ```
 
-![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="801"}
+![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="14cm"}
 
 #### Abnormal development {#sec-Abnormal-development}
 
@@ -285,7 +287,7 @@ data <- IsingSampler(N, W, nIter=100, thresholds,
 hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 ```
 
-![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81 width="18cm"}
+![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81 width="14cm"}
 
 In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds (@fig-ch6-img13-old-82). Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
@@ -306,7 +308,9 @@ dat <- c(dat,sum(thresholds*apply(data,2,sum))) # measure of alignment
 plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
 ```
 
-![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){#fig-ch6-img13-old-82 width="18cm"}
+![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){#fig-ch6-img13-old-82 width="14cm"}
+
+![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){width="18cm"}
 
 We see that for medium attention, the agreement with the thresholds is highest. When attention is 0 or very low, nodes behave randomly and do not correlate with the thresholds. When attention is very high, the effects of node-specific thresholds are masked by the collective effects of other nodes. The principal problem of implicit measurement is that for low to medium attention, the network is quite noisy and measurement reliability will be low. This is why this paper is called "Accurate by Being Noisy."
 
@@ -451,7 +455,7 @@ centralityPlot(fit$PDC)
 
 The results are shown in @fig-ch6-img16-old-85. Only the time-series approach provides useful information about possible causal effects.
 
-![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important node. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="21cm"}
+![The top figure is based on cross-sectional data and incorrectly suggests that node V2 is the most important node. The bottom figure is based on the time series of one individual and correctly shows that V2 is central because it is influenced by other nodes, while V1 is central because it influences other nodes and is therefore more important.](media/ch6/fig-ch6-img16-old-85.png){#fig-ch6-img16-old-85 width="15cm"}
 
 The M-matrix can take different forms. The typical multifactor structure can be achieved with a block structure.
 
@@ -470,7 +474,7 @@ M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 
 In JASP, you can perform network and confirmatory factor analysis. In the latter case, select "3 factors" in the first window and select "assume uncorrelated factors" in the model options. The resulting plots should look like @fig-ch6-img17-old-86.
 
-![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.jpg){#fig-ch6-img17-old-86}
+![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.jpg){#fig-ch6-img17-old-86 width="15cm"}
 
 ### Fitting Ising models {#sec-Fitting-Ising-models}
 
@@ -498,7 +502,7 @@ plot(thresholds,type='p',bty='n',xlab='node',
      ylab='Threshold',cex=2,cex.lab=1.5);lines(fit[[2]],lwd=2)
 ```
 
-![The true (original) and the estimated Ising model are in good agreement. The thresholds are also well estimated from the data.](media/ch6/fig-ch6-img18-old-87.png){#fig-ch6-img18-old-87 width="21cm"}
+![The true (original) and the estimated Ising model are in good agreement. The thresholds are also well estimated from the data.](media/ch6/fig-ch6-img18-old-87.png){#fig-ch6-img18-old-87 width="15cm"}
 
 An empirical example is provided in @dalege2017. The open-access data ($N = 5728$) come from the American National Election Study of 2012 on evaluative reactions toward Barack Obama. The items and abbreviations are:
 
@@ -532,7 +536,7 @@ qgraph(ObamaFit$weiadj, layout = 'spring',
 
 @Fig-ch6-img19-old-88 shows the network. The red nodes represent negative feelings toward Barack Obama; the green nodes represent positive feelings; the light blue nodes represent judgments primarily related to interpersonal warmth; and the purple nodes represent judgments related to Obama's competence. This community structure is consistent with the postulate of the Ising attitude model that similar evaluative responses cluster [@dalegeFormalizedAccountAttitudes2016]. @finnemann2021 present additional examples and applications of other packages.
 
-![The attitude toward Obama.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88 width="15cm"}
+![The attitude toward Obama.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88 width="14cm"}
 
 ## Challenges {#sec-Challenges}
 
