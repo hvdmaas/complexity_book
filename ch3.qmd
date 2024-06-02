@@ -76,7 +76,7 @@ $$ {#eq-ch3-3-old-7}
 
 This function has a degenerate critical (bifurcation) point at $X = 0, a = 0$, because at this point $V^{'}(X) = - a + 3X^{2} = 0$ and $V^{''}(X) = 6X = 0$, so both the first and second derivative are 0. What makes this point so special? This is illustrated in @fig-ch3-img4-old-16.
 
-![A bifurcation at $a = 0$: the equilibria change qualitatively. For $a<0$ there is no equilibrium; for $a>0$ we have a minimum and a maximum.](media/ch3/fig-ch3-img4-old-16.jpg){#fig-ch3-img4-old-16}
+![A bifurcation at $a = 0$: the equilibria change qualitatively. For $a<0$ there is no equilibrium; for $a>0$ we have a minimum and a maximum.](media/ch3/fig-ch3-img4-old-16.png){#fig-ch3-img4-old-16}
 
 ```{r eval = FALSE}
 layout(t(1:3))
@@ -92,7 +92,7 @@ The middle figure depicts the case just in between these two cases. Here the equ
 
 Another way to visualize this is by making a bifurcation diagram as we did for the logistic map in @sec-ch2. On the x-axis we put $a$, from $-1$ to $2$. On the y-axis we plot $X^{*}$, the fixed points of @eq-ch3-3-old-7. We use lines for stable fixed points and dashed lines for unstable points. The diagram is shown in @fig-ch3-img5-old-17. [Note that the fold is not accompanied by sudden jumps in behavior. It is an example of a second-order phase transition.]{.aside}
 
-![The bifurcation diagram of the fold catastrophe. Similar to what's shown in @fig-ch3-img4-old-16 , when $a=0$, there is a dramatic change in the equilibrium landscape. Suddenly, both a stable and an unstable equilibrium emerge, seemingly from nowhere.](media/ch3/fig-ch3-img5-old-17.jpg){#fig-ch3-img5-old-17 width="10cm"}
+![The bifurcation diagram of the fold catastrophe. Similar to what's shown in @fig-ch3-img4-old-16 , when $a=0$, there is a dramatic change in the equilibrium landscape. Suddenly, both a stable and an unstable equilibrium emerge, seemingly from nowhere.](media/ch3/fig-ch3-img5-old-17.png){#fig-ch3-img5-old-17 width="10cm"}
 
 This bifurcation diagram may not look as spectacular as the logistic map, but its importance cannot be overstated. The fold is everywhere! In a fascinating book, *The Seduction of Curves*, Allen @mcrobieSeductionCurvesLines2017 shows that whenever we see an edge, we see a fold. @Fig-ch3-img6-old-18 is from the book, where he demonstrates how different catastrophes appear in art. I also recommend his YouTube lecture.[^ch3-4]
 
@@ -462,7 +462,7 @@ text(-.5,800, 'no hysteresis',cex=1.5)
 text(.5,800, 'hysteresis',cex=1.5)
 ```
 
-![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.jpg){#fig-ch3-img23-old-35 width="800"}
+![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.png){#fig-ch3-img23-old-35 width="800"}
 
 #### Empirical examples {#sec-Empirical-examples}
 
