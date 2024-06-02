@@ -464,8 +464,6 @@ text(.5,800, 'hysteresis',cex=1.5)
 
 ![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.png){#fig-ch3-img23-old-35 width="15cm"}
 
-![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.png){width="5cm"}
-
 #### Empirical examples {#sec-Empirical-examples}
 
 In @grasman2009, we present several examples with real data. As another example, we use Stoufer's data, which we used as an example of divergence before (see @fig-ch3-img21-old-33).
