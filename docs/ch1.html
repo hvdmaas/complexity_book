@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -270,12 +270,12 @@ window.Quarto = {
 <div class="page-columns page-full"><p> Complex systems are made up of many smaller interacting subsystems, such as atoms, molecules, cells, neurons, and even entire organisms. I like the term <em>subsystems</em> because the lower-level elements can themselves be complex systems.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The interactions between subsystems can be of different kinds, but they are generally local, fast, and nonlinear. These interactions result in emergent behavior. The emergent processes usually operate on a slower time scale. A typical example, which will be discussed in more detail later, is the traffic jam. Cars react mainly to cars in their vicinity, which can lead to global patterns of congestion. Another example is magnetism which is not present in any of the atoms of the magnet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Complex systems exhibit emergent behavior, meaning that the interactions between the units of the system result in global patterns or properties that do not occur in the units themselves.</span></div></div>
 <div class="page-columns page-full"><p>In general, these patterns emerge through self-organization.  An example is ants building an ant nest: no one ant oversees or directs this process. Rather, it emerges from the local interactions between many ants.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> I will explain this in more detail in <a href="ch5n.html" class="quarto-xref"><span>Chapter 5</span></a>, but in a completely closed system, self-organization would not be possible. The emergent patterns in a complex system may be stable for some time, but often change suddenly. The study of phase transitions or tipping points is therefore central to the study of complex systems. They may also exhibit chaotic behavior, implying that they can be fundamentally unpredictable, the weather being a notorious example. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Self-organization is a process in which some form of overall order or coordination develops from the local interactions between the parts of an initially disordered system.</span><span class="margin-aside">Complex systems are open systems, meaning that they use energy that they have absorbed for the environment.</span></div></div>
 <div class="page-columns page-full"><p>Let’s look at one famous case, the flocking of birds (<a href="#fig-ch1-img1" class="quarto-xref">figure&nbsp;<span>1.1</span></a>). Flocks of birds move in a beautiful choreography as they glide through the air, their formations shifting and morphing as they twist and turn across the sky. Flocks are well understood and easy to simulate, as we will see in <a href="ch5n.html" class="quarto-xref"><span>Chapter 5</span></a>. Flocks fulfill all the criteria of a complex system <span class="citation" data-cites="parisi2023">(see <a href="references.html#ref-parisi2023" role="doc-biblioref">Parisi 2023</a> for an extended analysis)</span>. They are open systems, as birds use energy to fly. Each bird responds only to birds in its local neighborhood. They follow roughly three rules: they try to fly in the same direction as their neighbors, stay close to their neighbors, and avoid collisions. These are fast and local interactions. If you watch some videos of flocks of birds on the internet, you will see globally organized behavior. This is a prime example of self-organization. There is evidently no one bird in control ordering other birds to change direction.  What you can also see in these movies is that stable patterns, say an oval shape, can suddenly change. The birds may change direction or split up. Such bifurcations or catastrophes (to be explained in <a href="ch3.html" class="quarto-xref"><span>Chapter 3</span></a>) are typical of complex systems. You can also see that the behavior of these flocks is rather unpredictable. Flocks, and swarms in general, are well understood and can be easily simulated on a computer, but this does not mean that we can always predict these systems, an issue that will be discussed further in <a href="ch2.html" class="quarto-xref"><span>Chapter 2</span></a>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">This globally organized behavior of a flock is a form of spontaneous order.</span></div></div>
-<div id="fig-ch1-img1" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch1-img1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch1-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch1/image1.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch1-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch1-img1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.1: A flock of birds.
 </figcaption>
 </figure>
@@ -291,12 +291,12 @@ Figure&nbsp;1.1: A flock of birds.
 <div class="page-columns page-full"><p>This fundamental principle of emergence is what allows disciplines like psychology to exist as distinct and independent fields of science <span class="citation" data-cites="fodorSpecialSciencesDisunity1974">(<a href="references.html#ref-fodorSpecialSciencesDisunity1974" role="doc-biblioref">Fodor 1974</a>)</span>.  The concept of level is central to Herbert Simon’s architecture of complexity, in which each subsystem is itself a complex structure made up of smaller parts, and this pattern is repeated at multiple levels.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> According to Simon, these nested structures are ubiquitous in the natural world and in human-made systems because they are robust and adaptable. For an in-depth discussion of this level concept I refer to <span class="citation" data-cites="wimsatt1994">Wimsatt (<a href="references.html#ref-wimsatt1994" role="doc-biblioref">1994</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">“In the face of complexity, an in-principle reductionist may be at the same time a pragmatic holist” <span class="citation" data-cites="simon1962">(<a href="references.html#ref-simon1962" role="doc-biblioref">Simon 1962</a>)</span>.</span></div></div>
 <div class="page-columns page-full"><p>The second, more controversial, question is whether emergent phenomena have an independent causal role (strong emergence) or mainly have descriptive value (weak emergence). Strong emergence is often associated with downward causation <span class="citation" data-cites="chalmersStrongWeakEmergence2006 flackCoarsegrainingDownwardCausation2017 kimEmergenceCoreIdeas2006">(<a href="references.html#ref-chalmersStrongWeakEmergence2006" role="doc-biblioref">Chalmers 2006</a>; <a href="references.html#ref-flackCoarsegrainingDownwardCausation2017" role="doc-biblioref">Flack 2017</a>; <a href="references.html#ref-kimEmergenceCoreIdeas2006" role="doc-biblioref">Kim 2006</a>)</span>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Downward or circular causation is the idea that higher-level entities or properties can influence the behavior of lower-level entities or properties.</span></div></div>
 <p>I like to link this to the flocking example. Flocks of birds are emergent phenomena that do not determine the behavior of the individual birds. The birds only follow the local rules. Flocking is an example of weak emergence. However, when predators enter the scene, things change. Predators get confused by flocks of prey, not by the behavior of individual birds. So the flock has some causal power. Moreover, the birds react to the predator’s movements. This could be seen as an example of downward causation and thus strong emergence (<a href="#fig-ch1-img4" class="quarto-xref">figure&nbsp;<span>1.2</span></a>). Recent work attempts to quantify such causal emergence effects <span class="citation" data-cites="hoelQuantifyingCausalEmergence2013">(see, e.g., <a href="references.html#ref-hoelQuantifyingCausalEmergence2013" role="doc-biblioref">Hoel, Albantakis, and Tononi 2013</a>)</span>.</p>
-<div id="fig-ch1-img4" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch1-img4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch1-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch1/image4.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch1-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch1-img4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.2: An illustration of downward or circular causation in flocks due to a predator responding to the emerging patterns of the flock and subsequently influencing the flight of individual birds. (Adapted from <a href="https://arxiv.org/abs/1108.1682" class="uri">https://arxiv.org/abs/1108.1682</a>)
 </figcaption>
 </figure>
@@ -314,12 +314,12 @@ Figure&nbsp;1.2: An illustration of downward or circular causation in flocks due
 <div class="page-columns page-full"><p>We also have no choice; we must make progress. Personally, I feel a strong tension between our struggle to elevate the behavioral and social sciences as a science, on the one hand, and the enormous expectations of society to deliver, on the other. Our most pressing global problems—climate change, overpopulation, war and violence, poverty, inequality, infectious diseases, addiction, to name but a few—are unsolvable without breakthroughs in the behavioral and social sciences. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">J. Doyne Farmer: “We have an increasing need to model ourselves” <span class="citation" data-cites="thurner2016">(<a href="references.html#ref-thurner2016" role="doc-biblioref">Thurner 2016</a>)</span>.</span></div></div>
 <div class="page-columns page-full"><p>The realization that the human mind in its social context is an amazingly complex system also offers opportunities. Despite their obvious differences, complex systems show remarkable similarities. A predecessor of complex-systems theory, general-systems theory <span class="citation" data-cites="bertalanffyGeneralSystemTheory1969">(<a href="references.html#ref-bertalanffyGeneralSystemTheory1969" role="doc-biblioref">Bertalanffy 1969</a>)</span>, explicitly assumed that all systems share important characteristics. . This is the primary reason for providing numerous modeling examples in this book that originate from disciplines beyond psychology.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Certain mechanisms and phenomena seem to operate and to occur in similar ways at all possible levels of description <span class="citation" data-cites="simon1962">(<a href="references.html#ref-simon1962" role="doc-biblioref">Simon 1962</a>)</span>.</span></div></div>
 <p>An inspiring example for me comes from the study of shallow lakes <span class="citation" data-cites="schefferEcologyShallowLakes2004">(<a href="references.html#ref-schefferEcologyShallowLakes2004" role="doc-biblioref">Scheffer 2004</a>)</span>. Shallow lakes tend to be either in a “healthy” state, with clear water and a diverse population of fish and plants, or in an “unhealthy” turbid state. I like to compare these complex lake systems in the turbid state to a person suffering from depression. This turbid state usually occurs suddenly. There is a critical phosphorus load at which the system turns over from being healthy to complete dominance by algae and bream. Typical of this type of transition is the hysteresis effect (<a href="#fig-ch1-img2" class="quarto-xref">figure&nbsp;<span>1.3</span></a>). This means that the turning point from clear to turbid and from turbid to clear does not occur at the same phosphorus load. The turning point to clear water only occurs at much lower phosphorus loads. These tipping points may be so far apart that reducing the cause, the phosphorus load, is not a viable option. Of course, all sorts of interventions have been studied, such as supplemental oxygen, chemicals, sunscreens, and stocking predatory fish. These interventions have not been very successful, or only successful in specific cases. The fact that they had some level of success brings to mind the partial effectiveness of clinical interventions, such as those used in the treatment of major depressive disorder.</p>
-<div id="fig-ch1-img2" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch1-img2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch1-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch1/image2.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch1-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch1-img2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1.3: The transitions between clear and turbid states of shallow lakes do not occur at the same phosphorus load. This delay in jumps is called hysteresis. Hysteresis explains why transitions are often difficult to reverse. This concept is discussed in detail in <a href="ch3.html" class="quarto-xref"><span>Chapter 3</span></a>.
 </figcaption>
 </figure>
@@ -640,6 +640,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -674,7 +692,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

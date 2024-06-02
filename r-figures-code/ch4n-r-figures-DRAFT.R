@@ -605,7 +605,7 @@ urnsgg <- ggdraw() + draw_image(urns_png)
 # Plot + image
 plot_grid(urnsgg, p1, p2, ncol = 3)
 
-ggsave('media/ch4n/fig-ch4n-img12-old-60.png', width = 9, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img12-old-60_latest.png', width = 9, height = 3, units = 'in', dpi = 300)
 
 # fig 4n.13 ----------------------------------------------------------------
 png('media/ch4n/fig-ch4n-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
@@ -718,7 +718,7 @@ bif_diagram_gg <- ggdraw() + draw_image(bif_diagram)
 # Plot + image
 plot_grid( bif_diagram_gg, four_cases_gg,ncol = 2, rel_widths = c(2/5, 3/5))
 
-ggsave('media/ch4n/fig-ch4n-img16-old-64.png', width = 10, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img16-old-64_latest.png', width = 10, height = 4, units = 'in', dpi = 300)
 
 # fig 4n.17 --------------------------------------------------------------------
 png('media/ch4n/fig-ch4n-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)

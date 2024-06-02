@@ -67,7 +67,7 @@ The scale-free and small-world networks are predominantly associated with the co
 
 This nesting seems to be crucial for understanding complex systems and is a central theme in Herbert Simon's influential architecture of complexity [@simon1962]. He introduced the concept of near decomposability to describe the interaction within these nested hierarchies. Typically, interactions within each subsystem are stronger and more frequent than those between subsystems. Although the HSBM simplifies reality, where levels can intermingle and low-level interference might occasionally escalate to higher levels, it often serves as a useful framework for conceptualizing complex networks, including in the field of psychology.
 
-![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. The code for this figure is available in the online software repository of the book.](media/ch6/fig-ch6-extra.png){#fig-ch6-extra width="16cm"}
+![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. The code for this figure is available in the online software repository of the book.](media/ch6/fig-ch6-extra-bw.jpeg){#fig-ch6-extra}
 
 ### Network dynamics {#sec-Network-dynamics}
 
@@ -225,7 +225,7 @@ The connection to resilience is interesting. In dynamic terms, resilience is ass
 
 This suggests a distinction between perturbations and interventions. With interventions, we change the equilibrium landscape to allow a sustainable change to a healthy state. Perturbations (a brief intervention or a positive or negative event) can have a permanent or temporary effect, depending on which state is more resilient. In the situation shown in the top panel of @fig-ch6-img10-old-79, any perturbation, whether it is a treatment or an alternative (or even being on the waiting list), will work. In the situation on the bottom left, no intervention would have a lasting effect. This analysis of resilience may help to understand the inconsistent results of studies of intervention effects. Monitoring the resilience of the unhealthy state (with catastrophe flags such as anomalous variance) may also be important for timing interventions [@hayesComplexSystemsApproach2020]. Failed interventions, such as an attempt to quit smoking, are likely to reinforce the unhealthy state [@vangeliPredictorsAttemptsStop2011].
 
-![Resilience from a complex-systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/image10.jpg){#fig-ch6-img10-old-79 width="20cm"}
+![Resilience from a complex-systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/ch6-11-may31.png){#fig-ch6-img10-old-79}
 
 ### Ising attitude model {#sec-Ising-attitude-model}
 
