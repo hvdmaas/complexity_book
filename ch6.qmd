@@ -310,8 +310,6 @@ plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
 
 ![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){#fig-ch6-img13-old-82 width="14cm"}
 
-![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){width="18cm"}
-
 We see that for medium attention, the agreement with the thresholds is highest. When attention is 0 or very low, nodes behave randomly and do not correlate with the thresholds. When attention is very high, the effects of node-specific thresholds are masked by the collective effects of other nodes. The principal problem of implicit measurement is that for low to medium attention, the network is quite noisy and measurement reliability will be low. This is why this paper is called "Accurate by Being Noisy."
 
 #### Learning {#sec-Learning}
