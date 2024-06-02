@@ -29,7 +29,7 @@ return(list(m,group))
 }
 
 clusters=c(4,4,4,4,4);strengths = c(1,.3,.1,.02,.005)
-clusters=c(4,4,4,4);strengths = c(.7,.1,.04,.008)
+clusters=c(4,4,4,4);strengths = c(.8,.1,.04,.008)
 
 
 h=hsbm(clusters,strengths)
@@ -39,9 +39,6 @@ group=h[[2]]
 name2=paste('network',paste0(clusters,collapse=''),'.jpeg',sep='',col='')
 jpeg(name2,width = 5, height = 3, units = 'in', res = 300)
 layout(t(1))
-#qgraph(m,groups=group, layout="spring",labels=F,
-#       vsize=1,edge.width=.4, bg=adjustcolor("white", alpha.f=0)) 
-grayscale_colors <- colorRampPalette(c("black", "white"))(63)
-qgraph(m,groups = group,layout = "spring",labels = FALSE,vsize = 1,edge.width = 0.4,bg = "white",color = grayscale_colors,border.color = "black",edge.color = "darkgray",label.color = "black") 
-
+#qgraph(m,groups=group, layout="spring",labels=F,vsize=1,edge.width=.4, bg=adjustcolor("white", alpha.f=0)) # collor version
+qgraph(m,groups = group,layout = "spring",labels = FALSE,vsize = 1,edge.width = 0.4,bg = "white",palette='grey',border.color = "black",edge.color = "gray",label.color = "black",edge.width=.5) 
 dev.off()

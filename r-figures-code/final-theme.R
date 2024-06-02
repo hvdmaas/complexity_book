@@ -10,7 +10,8 @@ library(sysfonts)
 library(patchwork)
 # -------------------------------------------------------------------------
 # Download and import the font into R using the lines below
-font_add(family = "CMU-bright", regular = "cmunbmr.ttf")
+#font_add(family = "CMU-bright", regular = "cmunbmr.ttf")
+font_add(family = "CMU-bright", regular = "r-figures-code/cmunbmr.ttf") # Han added  r-figures-code/
 #font_add_google('EB Garamond')
 showtext_auto()
 #Check if font was added

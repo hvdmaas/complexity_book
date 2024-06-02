@@ -98,8 +98,10 @@ dev.off()
  for (i in 1:(n - 1))
    y[i + 1] <- r * y[i] * (1 - y[i])
  ggplot(tibble(time = rep(1:n), x = x, y=y))+
-   geom_line(aes(x = time, y = x), color = ncolors[4])+
-   geom_line(aes(x = time, y = y), color = 'grey10', linetype = 'dotted')+
+#   geom_line(aes(x = time, y = x), color = ncolors[4])+
+#   geom_line(aes(x = time, y = y), color = 'grey10', linetype = 'dotted')+
+   geom_line(aes(x = time, y = x), color = ncolors[1])+
+   geom_line(aes(x = time, y = y), color = ncolors[2], linetype = 'dotted')+
    #geom_point(shape = 21, fill = ncolors[4], size = 1.5, stroke = 0.75, color = 'white')+
    labs(title = paste0('r = ',r), x= 'Time') + scale_x_continuous(breaks=seq(0,n,5))+
    theme_minimal() + theme1 
@@ -128,7 +130,8 @@ Time_plots <- ggplot(x %>%
   labs(title = 'Time plots', x= 'Time', y = 'x') + 
   scale_x_continuous(breaks=seq(100,n,n/10))+
   scale_y_continuous(limits = (0:1))+
-  scale_color_manual(values = ncolors)+
+  #scale_color_manual(values = ncolors)+
+  scale_color_manual(values = rep(1,3))+
   facet_wrap(~name)+
   theme_minimal() + theme1 + theme(legend.position = 'none')
 
@@ -150,7 +153,8 @@ phase_data_joined <- cbind(phase_data_X, phase_data_Xt)
 Phase_plots <- ggplot(phase_data_joined, aes(x = Xt, y = `Xt+1`, color = name)) +
   geom_point(alpha = .7, shape = 1) +
   xlim(0, 1) + ylim(0, 1) +
-  scale_color_manual(values = ncolors)+
+  #scale_color_manual(values = ncolors)+
+  scale_color_manual(values = rep(1,3))+
   labs(title = 'Phase plots', x = "Xt", y = "Xt+1") +
   facet_wrap(~name)+
   theme_minimal() + theme1 + theme(legend.position = 'none')

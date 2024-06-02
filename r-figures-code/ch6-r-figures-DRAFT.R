@@ -96,20 +96,39 @@ plot(sample_pa(20),main="sample_pa (preferential attachment)",
 dev.off()
 
 # fig 6.6 -----------------------------------------------------------------
+# png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
+# set.seed(1)
+# layout(1)
+# par(mar=c(4,4,4,4))
+# M <- matrix(rnorm(8^2,0.1,0.0),8,8)
+# M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.4,.6)),8,8)
+# M[diag(8)==1] <-  -.1
+# qgraph(M,diag=T,layout='circle',labels=paste('x',1:8,sep='',col=''), 
+#        edge.color = ifelse(M > 0, ncolors[5], ncolors[6]), 
+#        edge.width = .75,negDashed=T,
+#        mar = c(5,5,5,5))
+# text(-.3,.3,'M',cex=3, family = cfont)
+# text(-.7,1.1,expression(a*X*(1-X/K)),cex=1.5)
+# dev.off()
+
 png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
 set.seed(1)
 layout(1)
 par(mar=c(4,4,4,4))
 M <- matrix(rnorm(8^2,0.1,0.0),8,8)
-M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.4,.6)),8,8)
+M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.6,.4)),8,8)
 M[diag(8)==1] <-  -.1
-qgraph(M,diag=T,layout='circle',labels=paste('x',1:8,sep='',col=''), 
-       edge.color = ifelse(M > 0, ncolors[5], ncolors[6]), 
-       edge.width = .75,
-       mar = c(5,5,5,5))
-text(-.3,.3,'M',cex=3, family = cfont)
-text(-.7,1.1,expression(a*X*(1-X/K)),cex=1.5)
+g=graph_from_adjacency_matrix(M,mode = "directed", weighted = TRUE, diag = TRUE)
+plot(g, vertex.label=paste('x',1:8,sep='',col=''),
+     layout= layout_in_circle(g),
+     vertex.label.color = "black",
+     vertex.size=30,
+     edge.arrow.size = .7,edge.arrow.width = .7,
+     edge.color = ifelse(E(g)$weight < 0, "red", "black"),edge.lty = ifelse(E(g)$weight < 0, 3,1),vertex.color = 'white')
+text(-.15,.18,'M',cex=2, family = cfont)
+text(.86,1.01,expression(a*X*(1-X/K)),cex=1.2)
 dev.off()
+
 
 # fig 6.7 -----------------------------------------------------------------
 
@@ -227,12 +246,15 @@ glauber_step <- function(x,n,t,w,beta)
 
 png('media/ch6/fig-ch6-img14-old-83.png', width = 7, height = 4, units = 'in', res = 300)
 layout(t(1:2))
+set.seed(1)
 epsilon <- .002;lambda <- .002 # low values = slow time scale
 n <- 10
-W <- matrix(rnorm(n^2,0,.1),n,n); W <- pmax(W,t(W)) # to make W symmetric
+W <- matrix(rnorm(n^2,.0,.1),n,n); 
+W <- (W + t(W)) / 2 # make symmetric
+
 diag(W) <- 0
 qgraph(W, edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
-       mar = c(3,3,5,3))
+       mar = c(3,3,5,3),negDashed=T,edge.width=.4)
 title('Before learning', family = cfont)
 thresholds <- rep(.2, n)
 x <- sample(c(-1,1),n,replace=T)
@@ -242,11 +264,17 @@ for(i in 1:500)
   W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W # Hebbian learning
   diag(W) <- 0
 }
-round(W,2)
+
+# label switching
+W=x*t(x*W)
+#  t=x*t
+x=x*x
+
 qgraph(W, edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
-       mar = c(3,3,5,3))
+       mar = c(3,3,5,3),negDashed=T,edge.width=.4)
 title('After learning', family = cfont)
 dev.off()
+
 
 # fig 6.15 ----------------------------------------------------------------
 
@@ -299,7 +327,7 @@ cormat <- cor_auto(data) #cor matrix
 nw <- EBICglasso(cormat, nrow(data),gamma = 0.5) #EBIC
 
 png('media/ch6/fig-ch6-img16-old-85A1.png', width = 4, height = 4, units = 'in', res = 300)
-qnw <- qgraph(nw, layout = 'spring',
+qnw <- qgraph(nw, layout = 'spring',labels= paste0("X", 1:12),
        edge.color = ifelse(nw > 0, ncolors[5], ncolors[6]))
 dev.off()
 
@@ -360,13 +388,15 @@ library(IsingSampler)
 library(IsingFit)
 set.seed(1)
 n <- 8
-W <- matrix(runif(n^2,0.5,2),n,n); # random positive matrix
-W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),replace=T),n,n) # delete 90% of nodes
+W <- matrix(runif(n^2,0,1),n,n); # random positive matrix
+W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),replace=T),n,n) # delete 80% of nodes
 W <- pmax(W,t(W)) # make symmetric 
 diag(W) <- 0
-ndata <- 1000
-thresholds <- rnorm(n,0,1) 
-data <- IsingSampler(ndata, W, thresholds, beta = .5, responses = c(-1, 1))
+ndata <- 5000
+thresholds <- rnorm(n,-1,.5) 
+
+data <- IsingSampler(ndata, W, thresholds,
+                     beta = 1)
 fit <- IsingFit(data,family='binomial', plot=FALSE)
 png('media/ch6/fig-ch6-img18-old-87.png', width = 8, height = 4, units = 'in', res = 300)
 layout(t(1:3))

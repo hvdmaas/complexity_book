@@ -367,7 +367,7 @@ Suppose we have a network of conservative but low-attentive agents into which we
 
 What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. [The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in their original position.]{.aside} Without a cusp for the individual opinion dynamics, this form of polarization would not occur.
 
-![The visualization of persuasion paradox. Activism initially spreads quickly but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves. (Reprinted from @vandermaas2020 wih permission)](media/ch7/image11.jpg){#fig-ch7-img11-old-99}
+![The visualization of persuasion paradox. Activism initially spreads quickly but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves. (Reprinted from @vandermaas2020 with permission)](media/ch7/image11.jpg){#fig-ch7-img11-old-99}
 
 #### A counterintuitive prediction {#sec-A-counterintuitive-prediction}
 
@@ -377,7 +377,7 @@ The scenario, simulated in @vandermaas2020, consists of a majority of low-involv
 
 Now some attentive vegetarians will be perturbed into the meat-eating position. This is a metastable state. This state is somewhat stable, although they may jump back after a few iterations. But while the vegetarians are in this metastable meat-eating state, they can communicate with the less involved meat-eaters and spread vegetarian information. This proves effective (see @fig-ch7-img12-old-100). This scenario is also implemented in the NetLogo model.
 
-![The meat-eating vegetarian. The left panels show equal initial states. In the top panels, bounded confidence prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the bottom panels, some vegetarians are perturbed toward meat eating. These perturbed agents have $I < 0$ and $O > 0$, which is possible because $A > 0$ (hysteresis). Since $O > 0$, these agents can exchange information with meat-eaters, leading to the spread of vegetarianism. (Reprinted from in @vandermaas2020 wih permission)](media/ch7/image12.jpg){#fig-ch7-img12-old-100}
+![The meat-eating vegetarian. The left panels show equal initial states. In the top panels, bounded confidence prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the bottom panels, some vegetarians are perturbed toward meat eating. These perturbed agents have $I < 0$ and $O > 0$, which is possible because $A > 0$ (hysteresis). Since $O > 0$, these agents can exchange information with meat-eaters, leading to the spread of vegetarianism. (Reprinted from in @vandermaas2020 with permission)](media/ch7/image12.jpg){#fig-ch7-img12-old-100}
 
 #### Variants of the HIOM {#sec-Variants-of-the-HIOM}
 

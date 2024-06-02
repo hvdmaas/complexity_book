@@ -114,7 +114,7 @@ $$ {#eq-ch6-1-old-42}
 
 Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
 
-![The mutualism model. The self-loops, depicted in red, have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="18cm"}
+![The mutualism model. The self-loops have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="18cm"}
 
 When $M$ contains mostly negative values, the model is known as a competitive Lotka—Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka—Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
 
@@ -337,7 +337,8 @@ glauber_step = function(x,n,t,w,beta)
 layout(t(1:2))
 epsilon <- .002;lambda <- .002 # low values = slow time scale
 n <- 10
-W <- matrix(rnorm(n^2,0,.1),n,n); W <- pmax(W,t(W)) # to make W symmetric
+W <- matrix(rnorm(n^2,.0,.4),n,n); 
+W <- (W + t(W)) / 2 # make symmetric
 diag(W) <- 0
 qgraph(W); title('before learning')
 thresholds <- rep(.2, n)
@@ -348,7 +349,8 @@ x <- glauber_step(x,n,thresholds,W,beta=2)
 W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W # Hebbian learning
 diag(W) <- 0
 }
-round(W,2)
+# label switching (scale all nodes to positive)
+W <- x*t(x*W);x <- x*x
 qgraph(W);title('after learning')
 ```
 
@@ -481,15 +483,14 @@ library("IsingSampler")
 library("IsingFit")
 set.seed(1)
 n <- 8
-W <- matrix(runif(n^2,0.5,2),n,n); # random positive matrix
+W <- matrix(runif(n^2,0,1),n,n); # random positive matrix
 W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),
-        replace=T),n,n) # delete 90% of nodes
+                       replace=T),n,n) # delete 80% of nodes
 W <- pmax(W,t(W)) # make symmetric 
 diag(W) <- 0
-ndata <- 1000
-thresholds <- rnorm(n,0,1) 
-data <- IsingSampler(ndata, W, thresholds,
-        beta = .5, responses = c(-1, 1))
+ndata <- 5000
+thresholds <- rnorm(n,-1,.5) 
+data <- IsingSampler(ndata, W, thresholds,beta = 1)
 fit <- IsingFit(data,family='binomial', plot=FALSE)
 layout(t(1:3))
 qgraph(W,fade = FALSE);title("Original network",cex.main=2)
