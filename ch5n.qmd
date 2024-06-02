@@ -20,7 +20,7 @@ One physical example of self-organization is the laser. An important founder of 
 
 [The Ising model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences.]{.aside} Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. In the standard 2D version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. When the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet: the temperature of the magnet and the external magnetic field. The lower the temperature, the more the spins align. [At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect.]{.aside} The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). The external field could be caused another magnet.
 
-![Schematic picture of the magnet. Spins can be up or down. At lower temperatures, the spins tend to align with neighboring spins and the external field, resulting in magnetism.](media/ch5n/ch5n-1__figure39.png){#fig-ch5n-img1-old-39}
+![Schematic picture of the magnet. Spins can be up or down. At lower temperatures, the spins tend to align with neighboring spins and the external field, resulting in magnetism.](media/ch5n/ch5n-1-Han.png){#fig-ch5n-img1-old-39}
 
 The main model equations of the Ising model are:
 
