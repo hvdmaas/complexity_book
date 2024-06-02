@@ -26,16 +26,19 @@ book:
     - ch7.qmd
     - ch8.qmd
     - references.qmd
-
+crossref:
+  chapters: true
+  fig-prefix: figure
+  sec-prefix: section
+  eq-prefix: equation
 
 bibliography: [referencesBBT.bib]
 csl: chicago-author-date.csl
-fig-cap-location: margin
+#fig-cap-location: margin
 
 monofont: 'Monaco'
 monofontoptions: 
   - Scale=0.7
-
 
 format:
   html:
@@ -44,11 +47,11 @@ format:
     toc-depth: 8
     code-copy: true
     number-sections: true
-    crossref:
-      chapters: true
-      fig-prefix: figure
-      sec-prefix: section
-      eq-prefix: equation
+    #crossref:
+    #  chapters: true
+    #  fig-prefix: figure
+    #  sec-prefix: section
+    #  eq-prefix: equation
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
@@ -81,11 +84,11 @@ format:
     #  - right=45mm  # Add this line to set the right margin
     #  - bottom=25mm # Add this line to set the bottom margin
     # - heightrounded
-    crossref:
-      chapters: true
-      fig-prefix: figure
-      sec-prefix: section
-      eq-prefix: equation
+    #crossref:
+    #  chapters: true
+    #  fig-prefix: figure
+    #  sec-prefix: section
+    #  eq-prefix: equation
       
 editor: visual
 
