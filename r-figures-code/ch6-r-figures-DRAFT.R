@@ -430,12 +430,14 @@ qgraph(ObamaFit$weiadj,
        layout = 'spring', 
        cut = .8, groups = communities(ObamaCom), 
        legend = FALSE,
-       edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
+ #      edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),  # Tasso this goes wrong ( it a color scale)
        color = c('white',
                  ncolors[7],
                  ncolors[3],
                  ncolors[8]),
-       negDashed = FALSE)
+       negDashed = T)
+
+
 dev.off()
 
 # extra network -----------------------------------------------------------
