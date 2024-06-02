@@ -54,7 +54,7 @@ for (i in 1:(n - 1))
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
-![The $r=2$ case.](media/ch2/fig-ch2-img2.jpg){#fig-ch2-img2 width="8cm"}
+![The $r=2$ case. The population converges to a stable state at $X=0.5$.](media/ch2/fig-ch2-img2.jpg){#fig-ch2-img2 width="8cm"}
 
 This is the simple case. The population initially develops exponentially but then levels off and reaches a stable state at $X = .5$. We need to understand a bit more about it. What you see here is that we have gone from an unstable initial state to a stable state, a point attractor. The next code shows that this point attractor attracts from a wide range of initial values, but not all.
 

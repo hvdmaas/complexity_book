@@ -859,7 +859,7 @@ One popular approach to dynamical systems modeling that I haven't touched on is 
 
 Insightmaker [@fortmann-roeInsightMakerGeneralpurpose2014] is a simple free online tool that provides a graphical model construction interface for dynamical systems modeling and agent-based modeling. As such, it can be used to implement the models of this and the previous chapter. A Lotka—Volterra example is shown in @fig-ch4n-img21-old-69. Insightmaker is easy to use. Studying some examples, found with "Explore Insights," may suffice. I have added some models to Insightmaker discussed in this chapter with the tag "vdmaas."
 
-![Some screenshots of the Lotka—Volterra model in Insightmaker.](media/ch4n/image21.jpg){#fig-ch4n-img21-old-69}
+![Screenshots of the Lotka—Volterra model in Insightmaker.](media/ch4n/image21.jpg){#fig-ch4n-img21-old-69}
 
 Insightmaker has many powerful built-in functions and allows sensitivity testing as well as some sort of optimization. Personally, I prefer the approach of writing the equations and implementing them in R for several reasons. One is that this is how you communicate models in papers. Another is that the equations help you think about analytical results, which are always preferable to simulations. Finally, we can use Grind or deBif to go beyond simple simulations and classify equilibria and perform bifurcation analysis. But for building causal-loop diagrams of larger models to concretize theorizing without the direct goal of running them, Insightmaker is a great tool.
 
