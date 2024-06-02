@@ -49,8 +49,6 @@ centralityPlot(qgraph(adj)) # note centrality() gives more indices
 
 ![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="14cm"}
 
-![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){width="18cm"}
-
 ### Network types {#sec-Network-types}
 
 Simple networks do not have cycles. An example of an undirected acyclic graph is one with nodes on a line (but not a circle). Connected undirected acyclic graphs are trees; if they are partially unconnected, they are forests. Directed acyclic graphs, such as family trees and citation networks, are called DAGs. Most current neural networks are feedforward networks without cycles, but so-called recurrent networks have cycles.
