@@ -219,7 +219,7 @@ Since thresholds are generally negative (the 0 state of nodes is the default sta
 
 A similar approach was used by @lunanskyInterveningPsychopathologyNetworks2022 in order to define resilience and evaluate intervention targets. [Resilience is the ability of a system to recover from perturbations and maintain its current equilibrium.]{.aside} You can see this in the NetLogo "Vulnerability to Depression" model (see @fig-ch6-img9-old-78). Another relevant network modeling approach, based on causal loop diagrams, is proposed in @wittenbornDepressionSystemicSyndrome2016.
 
-![The Vulnerability to Depression model in NetLogo.](media/ch6/image9.jpg){#fig-ch6-img9-old-78 width="20cm"}
+![The Vulnerability to Depression model in NetLogo.](media/ch6/image9.png){#fig-ch6-img9-old-78 width="20cm"}
 
 The connection to resilience is interesting. In dynamic terms, resilience is associated not with the healthy or unhealthy state but with the stability of these states [@kalisch2019]. In @sec-The-cusp-catastrophe the less deep minimum is called the metastable state. These states have less resilience than the globally stable state (@fig-ch6-img10-old-79).
 

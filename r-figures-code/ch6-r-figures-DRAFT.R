@@ -119,7 +119,7 @@ M <- matrix(rnorm(8^2,0.1,0.0),8,8)
 M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.6,.4)),8,8)
 M[diag(8)==1] <-  -.1
 g=graph_from_adjacency_matrix(M,mode = "directed", weighted = TRUE, diag = TRUE)
-plot(g, vertex.label=paste('x',1:8,sep='',col=''),
+plot(g, vertex.label=paste('X',1:8,sep='',col=''),
      layout= layout_in_circle(g),
      vertex.label.color = "black",
      vertex.size=30,

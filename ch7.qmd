@@ -357,7 +357,7 @@ The ${decay}_{A}$ has a special role in the current implementation of the HIOM. 
 
 There is no obvious stop criterion, but in practice some type of convergence happens over time.
 
-![The interface of the HIOM NetLogo model. All model parameters can be adjusted with sliders. With `add-activists` and `perturbate-activists,` the key effects of HIOM can be reproduced. The graphs on the right show the distribution of opinion, attention, and information and the change in the means of these variables.](media/ch7/image10.jpg){#fig-ch7-img10-old-98}
+![The interface of the HIOM NetLogo model. All model parameters can be adjusted with sliders. With `add-activists` and `perturbate-activists,` the key effects of HIOM can be reproduced. The graphs on the right show the distribution of opinion, attention, and information and the change in the means of these variables.](media/ch7/image10.png){#fig-ch7-img10-old-98}
 
 In the standard setup, you can see that high attention (set `%active-agent` high) leads to polarization. If you decrease the difference in information (set `decay_I` to .5), the polarization remains even if the difference in underlying information is 0. Only if you also decrease attention (set `%active-agents` low) does the polarization disappear. This is the first simulation described in @vandermaas2020. The second and third simulation are described in the next two sections.
 
