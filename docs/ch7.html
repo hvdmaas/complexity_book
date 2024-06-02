@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -339,12 +339,12 @@ window.Quarto = {
 <div class="page-columns page-full"><p>The most famous computational model for studying segregation is Schelling’s model <span class="citation" data-cites="schellingDynamicModelsSegregation1971">(<a href="references.html#ref-schellingDynamicModelsSegregation1971" role="doc-biblioref">Schelling 1971</a>)</span>. The simplified version of this model assumes a two-dimensional space, a cellular automaton as in NetLogo, where each location or cell is occupied by one of two types of agents or is empty. The density parameter determines how many locations are occupied. Agents stay at their location if a certain percentage of their eight neighbors, <span class="math inline">\(B\)</span>, are of the same type as the agent. So, if <span class="math inline">\(B = 0\%\)</span>, nobody moves. For values of B close to 100%, everybody moves all the time. What Schelling showed with his model was that even low levels of intolerance, near 30%, lead to segregation. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Even if people can accept up to 70% of “foreign” neighbors, segregation still occurs.</span></div></div>
 <p>The NetLogo model Segregation (Social Science sample model) demonstrates this model. Especially at high densities, transitions between the unsegregated state, the segregated state, and a mixed state where agents keep moving can be seen <span class="citation" data-cites="gauvinPhaseDiagramSchelling2009">(<a href="references.html#ref-gauvinPhaseDiagramSchelling2009" role="doc-biblioref">Gauvin, Vannimenus, and Nadal 2009</a>)</span>. Instead of playing around with the sliders, we can also use the BehavioralSpace option. <a href="#fig-ch7-img1-old-89" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> shows the settings for this option, the R code, and the results. Note that without visualizations NetLogo is pretty fast.</p>
 <div class="page-columns page-full"><p>One concept we saw in Chapter 5, <a href="ch5n.html#sec-Motor-action" class="quarto-xref"><span>Section 5.3.4</span></a>, in the context of Haken’s work, was that of the order parameter. The order parameter literally measures the order in the system.  We look for an order parameter that captures the qualitative phenomena in the model, such as sudden changes and hysteresis. In the NetLogo simulation, I used the percentage of similar neighbors. <span class="citation" data-cites="gauvinPhaseDiagramSchelling2009">Gauvin, Vannimenus, and Nadal (<a href="references.html#ref-gauvinPhaseDiagramSchelling2009" role="doc-biblioref">2009</a>)</span> propose two, probably better, order parameters: a segregation coefficient, which requires the identification of clusters, and the density of unwanted locations, which better distinguishes between the three states of the system.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Finding an appropriate order parameter is not always easy, and multiple definitions are often possible.</span></div></div>
-<div id="fig-ch7-img1-old-89" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img1-old-89" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img1-old-89-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/image1.jpg" class="img-fluid figure-img" style="width:13cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img1-old-89-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img1-old-89-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.1: BehaviorSpace settings and R code to visualize the effects of intolerance on segregation.
 </figcaption>
 </figure>
@@ -354,12 +354,12 @@ Figure&nbsp;7.1: BehaviorSpace settings and R code to visualize the effects of i
 <section id="sec-The-evolution-of-language-The-naming-game" class="level3 page-columns page-full" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="sec-The-evolution-of-language-The-naming-game"><span class="header-section-number">7.2.2</span> The evolution of language: The naming game</h3>
 <p>Languages are complex systems that emerge in a self-organizing cultural process <span class="citation" data-cites="steelsSelfOrganizingSpatialVocabulary1995">(<a href="references.html#ref-steelsSelfOrganizingSpatialVocabulary1995" role="doc-biblioref">Steels 1995</a>)</span>. Steels developed the naming game (<a href="#fig-ch7-img2-old-90" class="quarto-xref">figure&nbsp;<span>7.2</span></a>) to study the evolution of language. For a review I refer to <span class="citation" data-cites="chenNamingGameModels2019">Chen and Lou (<a href="references.html#ref-chenNamingGameModels2019" role="doc-biblioref">2019</a>)</span>. <span class="citation" data-cites="castellanoStatisticalPhysicsSocial2009">Castellano, Fortunato, and Loreto (<a href="references.html#ref-castellanoStatisticalPhysicsSocial2009" role="doc-biblioref">2009</a>)</span> provide a brief review.</p>
-<div id="fig-ch7-img2-old-90" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img2-old-90" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img2-old-90-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch7/ch7-2__figure92.png" class="img-fluid figure-img" style="width:12cm">
+<img src="media/ch7/ch7-2-may31.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img2-old-90-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img2-old-90-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.2: The naming game. The speaker chooses the highlighted word. If the listener does not know the word (failure), she adds it to her inventory. In case of success, both agents delete their inventories, keeping only the spoken word. (Adapted from Castellano et al., 2009)
 </figcaption>
 </figure>
@@ -395,12 +395,12 @@ Figure&nbsp;7.2: The naming game. The speaker chooses the highlighted word. If t
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(total_unique_words,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(<span class="fu">unlist</span>(x)) <span class="co"># winning word</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which results in <a href="#fig-ch7-img3-old-91" class="quarto-xref">figure&nbsp;<span>7.3</span></a>.</p>
-<div id="fig-ch7-img3-old-91" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img3-old-91" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img3-old-91-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img3-old-91.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img3-old-91-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img3-old-91-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.3: The order parameter, the total number of unique words, undergoes a phase transition to a state where everyone uses the same word for the object (compare Castellano et al., 2009, fig.2).
 </figcaption>
 </figure>
@@ -438,12 +438,12 @@ Figure&nbsp;7.3: The order parameter, the total number of unique words, undergoe
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(uniques[<span class="dv">1</span><span class="sc">:</span>i],<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">'time'</span>,</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">'# unique cultures'</span>, <span class="at">bty=</span><span class="st">'n'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste</span>(<span class="st">'Axelrod model with F = '</span>,F, <span class="st">', Q = '</span>, Q))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch7-img4-old-92" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img4-old-92" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img4-old-92-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img4-old-92.png" class="img-fluid figure-img" style="width:12cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img4-old-92-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img4-old-92-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.4: Two runs of Axelrod’s model. For four features with four possible values, only one culture remains. For the second case (<span class="math inline">\(F = 2, Q = 10\)</span>), multiple unique cultures, different in all features, emerge.
 </figcaption>
 </figure>
@@ -465,16 +465,16 @@ Figure&nbsp;7.4: Two runs of Axelrod’s model. For four features with four poss
 <p>Another approach has been proposed by <span class="citation" data-cites="martinsContinuousOpinionsDiscrete2008">Martins (<a href="references.html#ref-martinsContinuousOpinionsDiscrete2008" role="doc-biblioref">2008</a>)</span>. The Continuous Opinions and Discrete Actions (CODA) model combines discrete and continuous aspects of opinion dynamics. Agents act discretely but update their continuous opinions based on observations of other agents’ discrete actions.</p>
 <p>In CODA, there are two choice options, A and B, and agent <span class="math inline">\(i\)</span> has some subjective probability <span class="math inline">\(p_{i}\)</span> that A is the best option, and <span class="math inline">\({1 - p}_{i}\)</span> for B. The actual choice is made according to <span class="math inline">\(sgn\left( p_{i} - .5 \right)\)</span>, so A is chosen when <span class="math inline">\(p_{i} &gt; .5\)</span>. Next, the agent observes other agents. Agents assume that other agents make rational choices, that is, choose A when A is the best option with a probability <span class="math inline">\(a\)</span> that is larger than .5. In running the model, it is convenient to work with the log-odds of probabilities, <span class="math inline">\(v_{i} = ln({p_{i}}/({1 - p_{i}}))\)</span>. Using Bayes’s theorem, we can update <span class="math inline">\(v_{i}\)</span> to <span class="math inline">\(v_{i} + a\)</span> when agent j chooses A and to <span class="math inline">\(v_{i} - a\)</span> if the choice is B. <span class="citation" data-cites="martinsContinuousOpinionsDiscrete2008">Martins (<a href="references.html#ref-martinsContinuousOpinionsDiscrete2008" role="doc-biblioref">2008</a>)</span> integrates these decision rules with the voter model, showing extreme forms of polarization, that is, a strongly bimodal distribution of opinions.</p>
 </section>
-<section id="sec-More-discrete-opinion-models-majority-type-models" class="level4 page-columns page-full" data-number="7.3.1.2">
+<section id="sec-More-discrete-opinion-models-majority-type-models" class="level4" data-number="7.3.1.2">
 <h4 data-number="7.3.1.2" class="anchored" data-anchor-id="sec-More-discrete-opinion-models-majority-type-models"><span class="header-section-number">7.3.1.2</span> More discrete opinion models: Majority type models</h4>
 <p>In the voter and Axelrod models, interactions are limited to two agents. When multiple neighbors have an impact on each agent, many new options arise. One option is the Ising model <span class="citation" data-cites="galamSociophysicsNewApproach1982">(<a href="references.html#ref-galamSociophysicsNewApproach1982" role="doc-biblioref">Galam, Gefen, and Shapir 1982</a>)</span>. Agents switch sides with a probability that depends on the states of their neighbors. The temperature variable in the Ising model is translated into randomness in the model. The external field is now interpreted as an external social field. In this way, one can explain phase transitions and hysteresis in opinion dynamics.</p>
 <p>Another deeply analyzed option is the majority model <span class="citation" data-cites="galamSociophysicsReviewGalam2008 rednerRealityinspiredVoterModels2019">(<a href="references.html#ref-galamSociophysicsReviewGalam2008" role="doc-biblioref">Galam 2008</a>; <a href="references.html#ref-rednerRealityinspiredVoterModels2019" role="doc-biblioref">Redner 2019</a>)</span>. Here, a random group of voters is selected, and all voters in this group adopt the local majority opinion. This process can be repeated until convergence to one opinion is reached (which will always happen in a finite population). <span class="citation" data-cites="galamSociophysicsReviewGalam2008">Galam (<a href="references.html#ref-galamSociophysicsReviewGalam2008" role="doc-biblioref">2008</a>)</span> sets up this process in a hierarchical fashion (see <a href="#fig-ch7-img5-old-93" class="quarto-xref">figure&nbsp;<span>7.5</span></a>). Alternatively, only one voter could be influenced by the majority vote in its neighborhood. This corresponds to the Ising model with 0 temperature.</p>
-<div id="fig-ch7-img5-old-93" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img5-old-93" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img5-old-93-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/ch7-5__figure95.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img5-old-93-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img5-old-93-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.5: Bottom-up voting in hierarchical systems in the Galam model.
 </figcaption>
 </figure>
@@ -491,12 +491,12 @@ Figure&nbsp;7.5: Bottom-up voting in hierarchical systems in the Galam model.
 <p><span id="eq-ch7-SI-b"><span class="math display">\[X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack \tag{7.3}\]</span></span></p>
 <p>Thus, opinion of agents become <span class="math inline">\(-1\)</span> if <span class="math inline">\(X(t)I_{i}(t) + H\)</span> is negative, and vice versa. <span class="citation" data-cites="lewensteinStatisticalMechanicsSocial1992">Lewenstein, Nowak, and Latané (<a href="references.html#ref-lewensteinStatisticalMechanicsSocial1992" role="doc-biblioref">1992</a>)</span> present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. A NetLogo implementation of the model is available in the software repository of this book.</p>
 <div class="page-columns page-full"><p>In the presence of individual fields, some minority opinions can become metastable.  These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (<a href="#fig-ch7-img6-old-94" class="quarto-xref">figure&nbsp;<span>7.6</span></a>). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for a long time, against all odds <span class="citation" data-cites="douglasPsychologyConspiracyTheories2017">(<a href="references.html#ref-douglasPsychologyConspiracyTheories2017" role="doc-biblioref">Douglas, Sutton, and Cichocka 2017</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters.</span></div></div>
-<div id="fig-ch7-img6-old-94" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img6-old-94" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img6-old-94-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img6-old-94.jpg" class="img-fluid figure-img" style="width:19cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img6-old-94-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img6-old-94-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.6: Five runs of the social impact model with <span class="math inline">\(\alpha = 5\)</span>, <span class="math inline">\(p\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(H\)</span> sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact model can be found in the online NetLogo models and in the software repository of this book.
 </figcaption>
 </figure>
@@ -506,7 +506,7 @@ Figure&nbsp;7.6: Five runs of the social impact model with <span class="math inl
 </section>
 <section id="sec-Continuous-opinion-models" class="level3 page-columns page-full" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="sec-Continuous-opinion-models"><span class="header-section-number">7.3.2</span> Continuous opinion models</h3>
-<section id="sec-Classic-models" class="level4 page-columns page-full" data-number="7.3.2.1">
+<section id="sec-Classic-models" class="level4" data-number="7.3.2.1">
 <h4 data-number="7.3.2.1" class="anchored" data-anchor-id="sec-Classic-models"><span class="header-section-number">7.3.2.1</span> Classic models</h4>
 <p>Another line of research, with its own history, starts from the assumption that opinions are continuous variables <span class="citation" data-cites="noorazarRecentAdvancesOpinion2020">(for a review, see <a href="references.html#ref-noorazarRecentAdvancesOpinion2020" role="doc-biblioref">Noorazar 2020</a>)</span>. They will have values between 0 and 1, for instance. A classical model is the DeGroot model, where agents are connected in a weighted network. At each iteration, an agent’s opinion is set equal to the weighted average of all connected agents in the network. In this way, opinions tend to converge (<a href="#fig-ch7-img7-old-95" class="quarto-xref">figure&nbsp;<span>7.7</span></a>). The Friedkin—Johnson model <span class="citation" data-cites="friedkinSocialInfluenceOpinions1990">(<a href="references.html#ref-friedkinSocialInfluenceOpinions1990" role="doc-biblioref">Friedkin and Johnsen 1990</a>)</span> is an extension that includes a confidence level for each agent. This agent’s confidence in their own opinion reduces the effect of others. Clustering or polarization in these linear models can only occur if parts of the network are unconnected. The Friedkin—Johnson model can be efficiently simulated with Grind (using the <code>method='euler'</code> option) by:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>FJ <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parms){</span>
@@ -523,12 +523,12 @@ Figure&nbsp;7.6: Five runs of the social impact model with <span class="math inl
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">runif</span>(n,<span class="dv">0</span>,<span class="dv">1</span>)</span>
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> x0;p  <span class="ot">&lt;-</span> <span class="fu">c</span>() </span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">run</span>(<span class="at">odes=</span>FJ,<span class="at">method=</span><span class="st">'euler'</span>,<span class="at">tmax=</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch7-img7-old-95" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img7-old-95" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img7-old-95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img7-old-95.png" class="img-fluid figure-img" style="width:19cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img7-old-95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img7-old-95-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.7: Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.
 </figcaption>
 </figure>
@@ -558,12 +558,12 @@ Figure&nbsp;7.7: Convergence of opinion in the Friedkin—Johnson model in a con
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matplot</span>(dat,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">col=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="st">''</span>,</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylab=</span><span class="st">'opinion'</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">'bound = '</span>,bound))</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-ch7-img8-old-96" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img8-old-96" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img8-old-96-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img8-old-96.png" class="img-fluid figure-img" style="width:21cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img8-old-96-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img8-old-96-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.8: Four example runs of the Deffuant model with four different boundaries. Lower bounds of confidence lead to polarization.
 </figcaption>
 </figure>
@@ -573,12 +573,12 @@ Figure&nbsp;7.8: Four example runs of the Deffuant model with four different bou
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>accepted <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">outer</span>(X,X,<span class="st">'-'</span>)) <span class="sc">&lt;</span> bound <span class="co"># acceptable neighbors</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> accepted <span class="sc">*</span> M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>after the <code>X &lt;- state[1:n]</code> line and adding bound = .1 (<a href="#fig-ch7-img9-old-97" class="quarto-xref">figure&nbsp;<span>7.9</span></a>).</p>
-<div id="fig-ch7-img9-old-97" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img9-old-97" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img9-old-97-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/fig-ch7-img9-old-97.png" class="img-fluid figure-img" style="width:19cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img9-old-97-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img9-old-97-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.9: Clustering in the Hegselmann—Krause model.
 </figcaption>
 </figure>
@@ -639,7 +639,7 @@ I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I
 \end{array} \tag{7.9}\]</span></span></p>
 <p>If <span class="math inline">\(m_{I} \neq 0\)</span> and <span class="math inline">\(s_{I} = 0\)</span>, a constant external field is active. If <span class="math inline">\(decay_I &lt; 1\)</span> , information gradually shrinks to 0.</p>
 </section>
-<section id="sec-Algorithm" class="level4 page-columns page-full" data-number="7.4.1.3">
+<section id="sec-Algorithm" class="level4" data-number="7.4.1.3">
 <h4 data-number="7.4.1.3" class="anchored" data-anchor-id="sec-Algorithm"><span class="header-section-number">7.4.1.3</span> Algorithm</h4>
 <p>The model is now in place and can be simulated by following the steps below:</p>
 <ul>
@@ -662,12 +662,12 @@ I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I
 </ul>
 <p>The <span class="math inline">\({decay}_{A}\)</span> has a special role in the current implementation of the HIOM. Instead of being fixed, it depends on the difference between the percentage of agents in the “active” set and the desired percentage of active agents (<span class="math inline">\(%active_agents\)</span>), which is controlled by one of the sliders in the NetLogo model (<a href="#fig-ch7-img10-old-98" class="quarto-xref">figure&nbsp;<span>7.10</span></a>). This allows us to manipulate the general interest (attention) in the opinion object.</p>
 <p>There is no obvious stop criterion, but in practice some type of convergence happens over time.</p>
-<div id="fig-ch7-img10-old-98" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img10-old-98" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img10-old-98-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/image10.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img10-old-98-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img10-old-98-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.10: The interface of the HIOM NetLogo model. All model parameters can be adjusted with sliders. With <code>add-activists</code> and <code>perturbate-activists,</code> the key effects of HIOM can be reproduced. The graphs on the right show the distribution of opinion, attention, and information and the change in the means of these variables.
 </figcaption>
 </figure>
@@ -678,28 +678,28 @@ Figure&nbsp;7.10: The interface of the HIOM NetLogo model. All model parameters 
 <h4 data-number="7.4.1.4" class="anchored" data-anchor-id="sec-The-persuasion-paradox"><span class="header-section-number">7.4.1.4</span> The persuasion paradox</h4>
 <p>Suppose we have a network of conservative but low-attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists’ opinion to spread quickly. They initiate all interactions (according to <a href="#eq-ch7-4-old-53" class="quarto-xref">equation&nbsp;<span>7.6</span></a>) and have much more impact on their interaction partners than vice versa (<a href="#eq-ch7-6-old-55" class="quarto-xref">equation&nbsp;<span>7.8</span></a>). However, this is not what happens. This scenario leads to polarization. The attention of some conservatives is too quickly raised, and people get a strong opinion against the activists. <a href="#fig-ch7-img11-old-99" class="quarto-xref">Figure&nbsp;<span>7.11</span></a> shows this effect which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selecting <code>setup-black-pete</code> and <code>add-activists</code>. Activists can now be added by clicking in the world. Vary persuasion <span class="math inline">\(p\)</span> and <span class="math inline">\(d_{A}\ (\)</span>da) to see different effects.</p>
 <div class="page-columns page-full"><p>What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox.  Without a cusp for the individual opinion dynamics, this form of polarization would not occur.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in their original position.</span></div></div>
-<div id="fig-ch7-img11-old-99" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img11-old-99" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img11-old-99-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/image11.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img11-old-99-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img11-old-99-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.11: The visualization of persuasion paradox in <span class="citation" data-cites="vandermaas2020">van der Maas, Dalege, and Waldorp (<a href="references.html#ref-vandermaas2020" role="doc-biblioref">2020</a>)</span>. Activism initially spreads quickly but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="sec-A-counterintuitive-prediction" class="level4 page-columns page-full" data-number="7.4.1.5">
+<section id="sec-A-counterintuitive-prediction" class="level4" data-number="7.4.1.5">
 <h4 data-number="7.4.1.5" class="anchored" data-anchor-id="sec-A-counterintuitive-prediction"><span class="header-section-number">7.4.1.5</span> A counterintuitive prediction</h4>
 <p>In continuous-opinion models, the main reason for polarization is bounded confidence. We can easily add this to the HIOM: when <span class="math inline">\(\left| O_{i} - O_{j} \right| &gt; \epsilon,\)</span> there is no interaction (no increase in attention and no exchange of information). This would even increase the polarization in the HIOM. However, since opinion and information can have opposite signs due to hysteresis, there is a way out. An example would be a meat-eating vegetarian, a person with a vegetarian point of view who actually eats meat. I claim to be such a vegetarian, but this position is not generally accepted in my local environment.</p>
 <p>The scenario, simulated in <span class="citation" data-cites="vandermaas2020">van der Maas, Dalege, and Waldorp (<a href="references.html#ref-vandermaas2020" role="doc-biblioref">2020</a>)</span>, consists of a majority of low-involved meat eaters and highly involved vegetarians. The meat eaters refuse to talk to the vegetarians due to bounded confidence, leading to increased polarization.</p>
 <p>Now some attentive vegetarians will be perturbed into the meat-eating position. This is a metastable state. This state is somewhat stable, although they may jump back after a few iterations. But while the vegetarians are in this metastable meat-eating state, they can communicate with the less involved meat-eaters and spread vegetarian information. This proves effective (see <a href="#fig-ch7-img12-old-100" class="quarto-xref">figure&nbsp;<span>7.12</span></a>). This scenario is also implemented in the NetLogo model.</p>
-<div id="fig-ch7-img12-old-100" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch7-img12-old-100" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch7-img12-old-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch7/image12.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch7-img12-old-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch7-img12-old-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;7.12: The meat-eating vegetarian. The left panels show equal initial states. In the top panels, bounded confidence prevents the vegetarian (red) and the meat-eater (blue) from interacting. This leads to polarization. In the bottom panels, some vegetarians are perturbed toward meat eating. These perturbed agents have <span class="math inline">\(I &lt; 0\)</span> and <span class="math inline">\(O &gt; 0\)</span>, which is possible because <span class="math inline">\(A &gt; 0\)</span> (hysteresis). Since <span class="math inline">\(O &gt; 0\)</span>, these agents can exchange information with meat-eaters, leading to the spread of vegetarianism. For simulation details, see <span class="citation" data-cites="vandermaas2020">van der Maas, Dalege, and Waldorp (<a href="references.html#ref-vandermaas2020" role="doc-biblioref">2020</a>)</span>.
 </figcaption>
 </figure>
@@ -1018,6 +1018,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1052,7 +1070,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -334,12 +334,12 @@ window.Quarto = {
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="sec-Physics"><span class="header-section-number">5.1.1</span> Physics</h3>
 <div class="page-columns page-full"><p>One physical example of self-organization is the laser. An important founder of complex-systems theory is Hermann Haken <span class="citation" data-cites="hakenSynergetics1977">(<a href="references.html#ref-hakenSynergetics1977" role="doc-biblioref">1977</a>)</span>. He developed synergetics, a specific approach to the study of self-organization and complexity in systems that is also popular in psychology. Synergetics originated in Haken’s work on lasers. We will not discuss lasers in detail here, but the phenomenon is fascinating. Light from an ordinary lamp is irregular (unsynchronized). By increasing the energy in a laser, a transition to powerful coherent light occurs. In the field of synergetics, the order parameter is the term used to describe the coherent laser light wave that emerges.  The individual atoms within this system move in a manner consistent with this emergent property, which is, unfortunately, called enslavement. Interestingly, the motion of these atoms contributes to the formation of the order parameter, that is, the laser light wave. Conversely, the laser light wave dominates the movement of the individual atoms. This interaction exhibits a cyclical cause-and-effect relationship or strong emergence (cf. <a href="ch1.html#fig-ch1-img4" class="quarto-xref">fig.&nbsp;<span>1.2</span></a>). Synergetics has been applied, as we will see, to perception <span class="citation" data-cites="hakenSynergeticsPsychology1992">(<a href="references.html#ref-hakenSynergeticsPsychology1992" role="doc-biblioref">Haken 1992</a>)</span> and coordinated human movement <span class="citation" data-cites="fuchsCoordinationDynamicsSynergetics2018">(<a href="references.html#ref-fuchsCoordinationDynamicsSynergetics2018" role="doc-biblioref">Fuchs and Kelso 2018</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">An order parameter is a quantitative measure to describe the degree of order within a system, especially in the context of phase transitions.</span></div></div>
 <div class="page-columns page-full"><p> Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. In the standard 2D version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. When the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet: the temperature of the magnet and the external magnetic field. The lower the temperature, the more the spins align.  The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). The external field could be caused another magnet.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The Ising model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences.</span><span class="margin-aside">At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect.</span></div></div>
-<div id="fig-ch5n-img1-old-39" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img1-old-39" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img1-old-39-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-1__figure39.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5n-1-Han.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img1-old-39-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img1-old-39-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1: Schematic picture of the magnet. Spins can be up or down. At lower temperatures, the spins tend to align with neighboring spins and the external field, resulting in magnetism.
 </figcaption>
 </figure>
@@ -373,12 +373,12 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{ 1 + e^{- \beta\left( H\lef
 <div class="page-columns page-full"><p>A neat example of the role of self-organization in evolution is the work on spiral wave structures in prebiotic evolution by <span class="citation" data-cites="boerlijstSpiralWaveStructure1991">Boerlijst and Hogeweg (<a href="references.html#ref-boerlijstSpiralWaveStructure1991" role="doc-biblioref">1991</a>)</span>. This work builds on Eigen and Schuster’s <span class="citation" data-cites="eigenHypercycle1979">(<a href="references.html#ref-eigenHypercycle1979" role="doc-biblioref">1979</a>)</span> classic work on the information threshold. Evolution requires the copying of long molecules. But in a system of self-replicating molecules, the length of the molecules is limited by the accuracy of replication, which is related to the mutation rate. Eigen and Schuster showed that this threshold can be overcome if such molecules are organized in a hypercycle in which each molecule catalyzes its nearest neighbor.  However, the hypercycle was shown to be vulnerable to parasites. These are molecules that benefit from one neighbor but do not help another. This molecule will outcompete the others, and we are back to the limited one-molecule system.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A hypercycle is a network of self-replicating molecules or entities that mutually support each other’s production, leading to an increase in complexity and stability beyond what individual entities could achieve alone.</span></div></div>
 <div class="page-columns page-full"><p>What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular automaton. In the hypercycle simulation, cells could be empty (dead) or filled with one of several colors. Colors die with some probability but are also copied to empty cells with a probability that depends on whether there is a catalyzing color in the local neighborhood. One of the colors is a parasite, catalyzed by one color but not catalyzing any other colors. The effect, which you will see later using NetLogo, is that moving global spirals emerge that isolate the parasites so that a stable hypercycle prevails. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">A cellular automaton (CA) is usually a two-dimensional grid of cells, where cells interact with their neighbors, as in the 2D Ising model, but this can be generalized to more or less dimensions.</span></div></div>
 <p>Many examples of self-organization come from ecosystem biology. We will see a simulation of flocking in NetLogo later, but I also want to highlight the collective behavior of ants (<a href="#fig-ch5n-img2-old-40" class="quarto-xref">figure&nbsp;<span>5.2</span></a>).</p>
-<div id="fig-ch5n-img2-old-40" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img2-old-40" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img2-old-40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/image2b.jpeg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img2-old-40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img2-old-40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.2: The ant bridge is an example of collective behavior.
 </figcaption>
 </figure>
@@ -389,12 +389,12 @@ Figure&nbsp;5.2: The ant bridge is an example of collective behavior.
 <section id="sec-Computer-science" class="level3 page-columns page-full" data-number="5.1.4">
 <h3 data-number="5.1.4" class="anchored" data-anchor-id="sec-Computer-science"><span class="header-section-number">5.1.4</span> Computer science</h3>
 <p>Another important source of self-organization research is computer science. A simple but utterly amazing example is the work on John Conways’ Game of Life <span class="citation" data-cites="berlekampWinningWaysYour2004">(<a href="references.html#ref-berlekampWinningWaysYour2004" role="doc-biblioref">Berlekamp, Conway, and Guy 2004</a>)</span>. The rules are depicted in <a href="#fig-ch5n-img3-old-41" class="quarto-xref">figure&nbsp;<span>5.3</span></a>.</p>
-<div id="fig-ch5n-img3-old-41" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img3-old-41" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img3-old-41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/ch5n-3.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img3-old-41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img3-old-41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.3: The rules of the Game of Life.
 </figcaption>
 </figure>
@@ -403,12 +403,12 @@ Figure&nbsp;5.3: The rules of the Game of Life.
 <p>A great tool for playing around with the Game of Life is Golly, a freely available application for computers and mobile phones. I ask you to download and open Golly, draw some random lines, press Enter, and see what happens. Often you will see it converging to a stable state (with oscillating subpatterns). Occasionally you will see walkers or gliders (zoom out). These are patterns that move around the field.</p>
 <div class="page-columns page-full"><p>Random initial patterns rarely lead to anything remarkable, but by choosing special initial states, surprising results can be achieved. First, take a look at the Life within Patterns folder. Take, for example, the line-puffer superstable or the spaceship types. One of my favorites is the metapixel galaxy in the HashLife folder. Note that you can use the + and — buttons to speed up and slow down the simulation. What this does is simulate the game of life in the game of life! Zoom in and out to see what really happens. I’ve seen this many times, and I’m still baffled.  A childish but fun experiment is to disturb the metapixel galaxy in a few cells. This leads to a big disturbance and a collapse of the pattern.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The Turing machine is a theoretical machine developed by Alan Turing in 1936, that despite its simplicity can implement any computer algorithm, including, of course, the Game of Life!</span></div></div>
 <p>I was even more stunned to see that it is possible to create the (universal) Turing machine in the Game of Life <span class="citation" data-cites="rendellGameLifeUniversal2016">(<a href="references.html#ref-rendellGameLifeUniversal2016" role="doc-biblioref">Rendell 2016</a>)</span>. The Game of Life implementation of the Turing machine is shown in <a href="#fig-ch5n-img4-old-42" class="quarto-xref">figure&nbsp;<span>5.4</span></a>. This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section on neural networks).</p>
-<div id="fig-ch5n-img4-old-42" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img4-old-42" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img4-old-42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/image4.jpg" class="img-fluid figure-img" style="width:20cm">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img4-old-42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img4-old-42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.4: The Turing machine built in the Game of Life.
 </figcaption>
 </figure>
@@ -426,12 +426,12 @@ Figure&nbsp;5.4: The Turing machine built in the Game of Life.
 <p>Modern large language models, like GPT, differ from traditional backpropagation networks in terms of their architecture, training objective, pre-training process, scale, and application. Large language models use transformer architectures, undergo unsupervised pre-training followed by supervised fine-tuning, are trained on massive amounts of unlabeled data, are much larger in size, and are primarily used for natural language-processing tasks.</p>
 <div class="page-columns page-full"><p>Another important distinction is between feedforward and recurrent neural networks.  An interesting recurrent unsupervised model is the Boltzmann machine. It is basically an Ising model (see <a href="#sec-Physics" class="quarto-xref"><span>Section 5.1.1</span></a>) where the connections between nodes have continuous values. These connections or weights can be updated according to the Hebb rule. A simple setup of the Boltzmann machine is to take a network of connected artificial neurons and present the inputs to be learned in some sequence by setting the states of these neurons equal to the input. The Hebb rule should change the weights between neurons so that the Boltzmann machine builds a memory for these input states.  This is the training phase. In the test phase, we present partial states by setting some, but not all, nodes to the values of a particular learned input pattern. By the Glauber dynamics, we update the remaining states that should take on the values belonging to the pattern. This pattern completion task is typical for ANNs.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Feedforward neural networks process information in a single forward pass, while recurrent neural networks have directed cycles, allowing them to capture temporal dependencies.</span><span class="margin-aside">The Hebb rule states neurons that fire together wire together.</span></div></div>
 <p>This setup is called the general or unrestricted Boltzmann machine, where any node can be connected to any other node and each node is an input node. The restricted Boltzmann machine (RBM) is much more popular because of its computational efficiency. In an RBM, nodes are organized in layers, with connections between layers but not within layers. In a deep RBM, we stack many of these layers, which can be trained in pairs (<a href="#fig-ch5n-img5-old-43" class="quarto-xref">figure&nbsp;<span>5.5</span></a>).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Other prominent approaches are the Kohonen self-organizing maps and the Hopfield neural network.</p>
-<div id="fig-ch5n-img5-old-43" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img5-old-43" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img5-old-43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/ch5n-5__figure43.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img5-old-43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img5-old-43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.5: The deep learning restricted Boltzmann machine.
 </figcaption>
 </figure>
@@ -567,12 +567,12 @@ Figure&nbsp;5.5: The deep learning restricted Boltzmann machine.
 <div class="page-columns page-full"><p>From the earliest days of psychology as a scientific discipline, researchers were interested in the organizational properties of perception. Gestalt psychologists such as Wertheimer and Koffka claimed that we perceive whole patterns or configurations, not just individual components.  The Gestalt psychologist formulated a number of Gestalt principles such as grouping, proximity, similarity, and continuity. A review of a century of research and an analysis of their current role in vision research is provided by <span class="citation" data-cites="wagemansCenturyGestaltPsychology2012">Wagemans et al. (<a href="references.html#ref-wagemansCenturyGestaltPsychology2012" role="doc-biblioref">2012</a>)</span>. Much of the modeling of the self-organizing processes in perception has been done in the tradition of synergetics. Excellent sources are <span class="citation" data-cites="kelsoDynamicPatternsSelforganization1995">Kelso (<a href="references.html#ref-kelsoDynamicPatternsSelforganization1995" role="doc-biblioref">1995</a>)</span> and <span class="citation" data-cites="kruseAmbiguityMindNature2012">Kruse and Stadler (<a href="references.html#ref-kruseAmbiguityMindNature2012" role="doc-biblioref">2012</a>)</span>. <span class="citation" data-cites="grossbergNeuralDynamicsGestalt2012">Grossberg and Pinna (<a href="references.html#ref-grossbergNeuralDynamicsGestalt2012" role="doc-biblioref">2012</a>)</span> discuss neural implementations of the Gestalt principles.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">One might say that visual perception was one of the first applications of self-organization, even before anything like complexity science existed.</span></div></div>
 <div class="page-columns page-full"><p>Another related approach is the ecological approach to visual perception by <span class="citation" data-cites="gibsonEcologicalApproachVisual2014">Gibson (<a href="references.html#ref-gibsonEcologicalApproachVisual2014" role="doc-biblioref">2014</a>)</span>. In Gibson’s approach, perception is not just a process of analyzing sensory input but an active process that involves the perceiver’s relationship to the environment, including the perception of affordances (i.e., opportunities for action) in the environment that guide and shape perception. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The ecological approach highlights how perception is directly informed by the actionable properties of the environment without the need for complex internal processes.</span></div></div>
 <p>A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The “Optical Illusion model” in NetLogo’s Model Library illustrates some of them. Check out the codes for each illusion—they are extremely short and elegant (<a href="#fig-ch5n-img6-old-44" class="quarto-xref">figure&nbsp;<span>5.6</span></a>).</p>
-<div id="fig-ch5n-img6-old-44" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img6-old-44" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img6-old-44-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/ch5n-6.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img6-old-44-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img6-old-44-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.6: The Kindergarten illusion from The Optical Illusion model in NetLogo.
 </figcaption>
 </figure>
@@ -582,12 +582,12 @@ Figure&nbsp;5.6: The Kindergarten illusion from The Optical Illusion model in Ne
 <section id="sec-Motor-action" class="level3 page-columns page-full" data-number="5.3.4">
 <h3 data-number="5.3.4" class="anchored" data-anchor-id="sec-Motor-action"><span class="header-section-number">5.3.4</span> Motor action</h3>
 <div class="page-columns page-full"><p>Many body motions are periodic in nature—think of walking, swimming, dancing, and galloping.  A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. <a href="#fig-ch5n-img7-old-45" class="quarto-xref">Figure&nbsp;<span>5.7</span></a> explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Key to these complex motions is the synchronization of the movements of body parts.</span></div></div>
-<div id="fig-ch5n-img7-old-45" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img7-old-45" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img7-old-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/image7.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img7-old-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img7-old-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.7: The finger-movement task. Two fingers move up and down (x<sub>1</sub> and x<sub>2</sub>). They can move in phase or out of phase with a phase difference of 0 and <span class="math inline">\(\pi\)</span> (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference<span class="math inline">\(\ \varphi\)</span> of 0 or <span class="math inline">\(\pi\)</span>; <span class="math inline">\(- \pi\)</span> is the same state) or only one stable state (a phase difference of 0). Coupling strength, <span class="math inline">\(b/a\)</span>, and heterogeneity, <span class="math inline">\(\Delta w\)</span>, are control variables. <span class="citation" data-cites="hakenTheoreticalModelPhase1985 kelsoHakenKelsoBunz2021">(Adapted from <a href="references.html#ref-hakenTheoreticalModelPhase1985" role="doc-biblioref">Haken, Kelso, and Bunz 1985</a>; <a href="references.html#ref-kelsoHakenKelsoBunz2021" role="doc-biblioref">Kelso 2021</a>)</span>
 </figcaption>
 </figure>
@@ -605,12 +605,12 @@ V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}, \tag{5.4}\]</sp
 <h3 data-number="5.3.5" class="anchored" data-anchor-id="sec-Robotics"><span class="header-section-number">5.3.5</span> Robotics</h3>
 <div class="page-columns page-full"><p>A major challenge in robotics is to build walking robots. Bipedal robots have evolved from clumsy mechanical walkers to flexible dynamic walkers and runners. Current legged robots can walk on uneven natural terrain, jump, do backflips, recover from rear shocks, and dance (see some videos on humanoid robots such as Atlas and Asimo). These successes are based on a combination of new technologies, but the principles of self-organization play a key role <span class="citation" data-cites="pavlusClumsyQuestPerfect2016">(<a href="references.html#ref-pavlusClumsyQuestPerfect2016" role="doc-biblioref">Pavlus 2016</a>)</span>. An important concept is dynamic stability. In old-school robots, the path and momentum of each step had to be precisely calculated in advance to keep the robot’s center of mass continuously balanced at every point. Modern robots use sensory feedback systems to balance and adjust their movements on the fly, making them more adaptable to different and changing environments. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">A dynamically stable robot maintains balance the same way a human does: by catching itself midfall with each step.</span></div></div>
 <p>An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply <span class="citation" data-cites="mcgeerPassiveWalkingKnees1990 reherDynamicWalkingAgile2021">(<a href="references.html#ref-mcgeerPassiveWalkingKnees1990" role="doc-biblioref">McGeer 1990</a>; <a href="references.html#ref-reherDynamicWalkingAgile2021" role="doc-biblioref">Reher and Ames 2021</a>)</span>. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork <em>Strandbeest</em> by Theo Jansen (<a href="#fig-ch5n-img8-old-46" class="quarto-xref">figure&nbsp;<span>5.8</span></a>). Inspired by another great book about self-organization, <em>The Blind Watchmaker</em> <span class="citation" data-cites="dawkins1986">(<a href="references.html#ref-dawkins1986" role="doc-biblioref">Dawkins 1986</a>)</span>, Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals. His YouTube videos are strongly recommended.</p>
-<div id="fig-ch5n-img8-old-46" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img8-old-46" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img8-old-46-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/strandbeest_Han_perm.jpg" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img8-old-46-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img8-old-46-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.8: Beach Beast (source www.strandbeest.com)
 </figcaption>
 </figure>
@@ -665,12 +665,12 @@ Figure&nbsp;5.8: Beach Beast (source www.strandbeest.com)
 <section id="sec-Game-theory" class="level3 page-columns page-full" data-number="5.3.10">
 <h3 data-number="5.3.10" class="anchored" data-anchor-id="sec-Game-theory"><span class="header-section-number">5.3.10</span> Game theory</h3>
 <div class="page-columns page-full"><p>Game theory consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner’s dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to talk. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix, <a href="#fig-ch5n-img9-old-47" class="quarto-xref">figure&nbsp;<span>5.9</span></a>). In this game, loyalty to one’s friend is irrational, an outcome related to the tragedy of the commons <span class="citation" data-cites="hardinTragedyCommons1968">(<a href="references.html#ref-hardinTragedyCommons1968" role="doc-biblioref">Hardin 1968</a>)</span>.  The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The tragedy of the commons occurs when individuals, acting in their own self-interest, overexploit a shared resource, leading to a depletion that undermines everyone’s long-term interests, including their own.</span></div></div>
-<div id="fig-ch5n-img9-old-47" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img9-old-47" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img9-old-47-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/ch5n-10__figure48.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img9-old-47-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img9-old-47-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.9: The prisoner’s dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.
 </figcaption>
 </figure>
@@ -683,12 +683,12 @@ Figure&nbsp;5.9: The prisoner’s dilemma. If both A and B remain silent, they e
 <p>A concrete modeling example is the team assembly model by <span class="citation" data-cites="guimeraTeamAssemblyMechanisms2005">Guimerà et al. (<a href="references.html#ref-guimeraTeamAssemblyMechanisms2005" role="doc-biblioref">2005</a>)</span>. They study how the way creative teams self-assemble determines the structure of collaboration networks. The idea is that effective teams find a balance between being large enough to allow for specialization and efficient division of labor among members, and small enough to avoid excessive costs associated with coordinating group efforts. Agents in the model have only a few basic characteristics that influence their behavior: whether they are a newcomer or incumbent and what previous connections they have with other agents if they are incumbents.</p>
 <p>Three parameters can be adjusted to influence behavior in the baseline assembly model: the team size, the probability of choosing an incumbent (<span class="math inline">\(p\)</span>), and the probability of choosing a previous collaborator (<span class="math inline">\(q\)</span>). The two probability parameters signify assumptions about agent motivations for team member selection. Low incumbent probability leads to preference for newcomers and new ideas, while high incumbent probability means a focus on experience. Low collaborator probability prioritizes experienced strangers, and high collaborator probability prioritizes previous collaborators. The model is part of the built-in NetLogo Model Library (“team assembly”). By simulating the model, it can be shown that the emergence of a large, connected community of practitioners can be described as a phase transition (<a href="#fig-ch5n-img10-old-48" class="quarto-xref">figure&nbsp;<span>5.10</span></a>).</p>
 <p><span class="citation" data-cites="guimeraTeamAssemblyMechanisms2005">Guimerà et al. (<a href="references.html#ref-guimeraTeamAssemblyMechanisms2005" role="doc-biblioref">2005</a>)</span> estimated the parameters <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only astronomy had a very dense collaboration structure. In the other fields, the estimates of <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> of teams publishing in certain journals correlated well with impact factor. Interestingly, <span class="math inline">\(p\)</span> correlates positively and <span class="math inline">\(q\)</span> negatively with impact.</p>
-<div id="fig-ch5n-img10-old-48" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div id="fig-ch5n-img10-old-48" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img10-old-48-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="media/ch5n/image10.jpg" class="img-fluid figure-img" width="454">
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-ch5n-img10-old-48-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img10-old-48-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.10: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.
 </figcaption>
 </figure>
@@ -1182,6 +1182,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1216,7 +1234,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
