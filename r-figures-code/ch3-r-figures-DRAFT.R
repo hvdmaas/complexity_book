@@ -73,12 +73,12 @@ if(length(e1$cluster) == nrow(x)){
 x %>% 
   ggplot(aes(x = week, y = dep, color = cluster))+
   geom_line(color = 'black', linewidth = .4) +
-  geom_point(aes( fill = cluster), shape = 21, stroke = .5, color = 'black')+
+  geom_point(aes( fill = cluster), size = 1.5, shape = 21, stroke = .5, color = 'black')+
   scale_fill_gradient(low = 'white', high = colors[4])+
   labs(x = 'Week', y = 'SLC-90')+
   theme_minimal()+
   theme1 + theme(legend.position = 'none')
-ggsave('media/ch3/fig-ch3-img19-old-31.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img19-old-31.png', width = 3, height = 1.5, units = 'in', dpi = 300)
 
 
 # fig 3.20 ----------------------------------------------------------------
@@ -138,8 +138,8 @@ plotdat <- bind_cols(b = dat[,1], linear = dat[,4], cusp = dat[,5])
 p <- plotdat %>% 
   pivot_longer(2:3,names_to = 'mod', values_to = 'bic') %>% 
   ggplot(aes(x = b, y = bic))+
-  geom_line(aes(color = mod, linetype = mod))+
-  geom_point(aes(color = mod, shape = mod))+
+  geom_line(aes(color = mod, linetype = mod), linewidth = .3)+
+  geom_point(aes(color = mod, shape = mod), size = 1.5)+
   geom_vline(xintercept = 0, linetype = 'dotted')+
   ylim(600, 1400) +
   scale_x_continuous(n.breaks = 6) +
@@ -149,13 +149,13 @@ p <- plotdat %>%
         color = '', 
         shape = '', linetype = '')+
   theme_minimal()+
-  theme1 + theme()
+  theme1 + theme(legend.position = 'right')
 p + annotate("text", x=-.5, y=800, label="no hysteresis",
             color="grey20", size = 7) +
   annotate("text", x=.5, y=800, label="hysteresis",
            color="grey20", size = 7) 
 
-ggsave('media/ch3/fig-ch3-img23-old-35.jpg', width = 6, height = 3.5, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img23-old-35.jpg', width = 3.5, height = 2, units = 'in', dpi = 300)
 
 # fig 3.24 ----------------------------------------------------------------
 

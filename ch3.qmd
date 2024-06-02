@@ -270,7 +270,7 @@ In the following subsections, I will define the flags and illustrate their appli
 
 [The sudden jump is a large fast change in equilibrium behavior.]{.aside} Although the sudden jump is not sufficient (it could be due to an acceleration), demonstrating a sudden jump in time series is useful (also in relation to other flags). Statistical detection of sudden jumps is possible using a number of techniques. @Fig-ch3-img19-old-31 presents raw weekly measurements of depressive symptoms using the SCL-90-R depression subscale of a patient who gradually stopped antidepressant medication during the study. The participant and researchers were blind to the dose reduction scheme [@wichersCriticalSlowingPersonalized2016]. One question was whether this reduction led to a sudden jump to the depressed state. Using a change point detection method [@jamesEcpPackageNonparametric2014], we found a jump at 18 weeks with a bootstrapped $p$-value of .005 (with the null hypothesis of no change point).
 
-![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.jpg){#fig-ch3-img19-old-31 width="900"}
+![A sudden jump to depression (score at the SLC-90) in a patient who gradually quit antidepressant medication during the study.](media/ch3/fig-ch3-img19-old-31.png){#fig-ch3-img19-old-31}
 
 Many methods for change point analysis have been developed and compared in @burgEvaluationChangePoint2022.
 
@@ -502,7 +502,7 @@ plot(fit)
 
 This is supported by results of the cusp fit. You can verify that a model with beta \~ 1 fits better according to the AIC and BIC.
 
-![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.jpg){#fig-ch3-img25-old-37 width="900"}
+![The Bentler conservation data.](media/ch3/fig-ch3-img25-old-37.png){#fig-ch3-img25-old-37}
 
 A great exercise we have often used in the classroom is to build a Zeeman machine, collect data with it, and fit the cusp model to the data [see @grasman2009 for details]. Zeeman invented this machine to demonstrate the properties of the cusp. Our students were rewarded for the quality of the model and the artistic value of their Zeeman machine (@fig-ch3-img26-old-38).
 
