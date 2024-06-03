@@ -420,7 +420,7 @@ Three parameters can be adjusted to influence behavior in the baseline assembly 
 
 @guimeraTeamAssemblyMechanisms2005 estimated the parameters $p$ and $q$ for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only astronomy had a very dense collaboration structure. In the other fields, the estimates of $p$ and $q$ of teams publishing in certain journals correlated well with impact factor. Interestingly, $p$ correlates positively and $q$ negatively with impact.
 
-![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="454"}
+![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges. (Adapted from @guimeraTeamAssemblyMechanisms2005 with permission)](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="454"}
 
 ## Zooming out {#sec-Zooming-out}
 
