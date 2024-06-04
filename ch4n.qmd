@@ -399,7 +399,7 @@ Note that these are all linear dynamical systems that do not exhibit complex beh
 
 The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift-diffusion mode can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006].](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="15cm"}
+![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006]](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="15cm"}
 
 ### Dyadic models {#sec-Dyadic-models}
 
