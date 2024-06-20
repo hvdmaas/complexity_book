@@ -337,10 +337,10 @@ window.Quarto = {
 <div id="fig-ch5n-img1-old-39" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img1-old-39-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-1-Han.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5-1-june14.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img1-old-39-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.1: Schematic picture of the magnet. Spins can be up or down. At lower temperatures, the spins tend to align with neighboring spins and the external field, resulting in magnetism.
+Figure&nbsp;5.1: Schematic picture of the magnet. Spins, <span class="math inline">\(x\)</span>, can be left (<span class="math inline">\(1\)</span>) or right (<span class="math inline">\(-1\)</span>). At lower temperatures, <span class="math inline">\(T\)</span>, the spins tend to align with neighboring spins and the external field, <span class="math inline">\(\tau\)</span>, resulting in magnetism.
 </figcaption>
 </figure>
 </div>
@@ -350,7 +350,7 @@ H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{&lt; i,j &gt;}^{
 <p><span id="eq-ch5n-2-old-18"><span class="math display">\[
 P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}. \tag{5.2}\]</span></span></p>
 <p>The first equation defines the energy of a given state vector <span class="math inline">\(\mathbf{x}\)</span> (for <span class="math inline">\(n\)</span> spins with states —1 and 1). The notation <span class="math inline">\(&lt; i,j &gt;\)</span> in the summation means that we sum over all neighboring, or linked, pairs. Vectors and matrices are represented using bold font.</p>
-<div class="page-columns page-full"><p> The external field and temperature are <span class="math inline">\(\tau\)</span> and <span class="math inline">\(1/\beta\)</span>, respectively. The first equation simply states that nodes congruent with the external field lower the energy. Also, neighboring nodes with equal spins lower the energy. Suppose we have only four connected positive spins (top row of <a href="#fig-ch5n-img1-old-39" class="quarto-xref">figure&nbsp;<span>5.1</span></a>) and no external field, then we have <span class="math inline">\(\mathbf{x} = (1,1,1,1)\)</span> and <span class="math inline">\(H = - 6\)</span>. This is also the case for <span class="math inline">\(\mathbf{x} = ( - 1, - 1, - 1, - 1)\)</span>, but any other state has a higher energy.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">With an external field we can force the spins to be all up or all down.</span></div></div>
+<div class="page-columns page-full"><p> The external field and temperature are <span class="math inline">\(\tau\)</span> and <span class="math inline">\(T\)</span> (<span class="math inline">\(1/\beta\)</span>), respectively. The first equation simply states that nodes congruent with the external field lower the energy. Also, neighboring nodes with equal spins lower the energy. Suppose we have only four connected positive spins (top row of <a href="#fig-ch5n-img1-old-39" class="quarto-xref">figure&nbsp;<span>5.1</span></a>) and no external field, then we have <span class="math inline">\(\mathbf{x} = (1,1,1,1)\)</span> and <span class="math inline">\(H = - 6\)</span>. This is also the case for <span class="math inline">\(\mathbf{x} = ( - 1, - 1, - 1, - 1)\)</span>, but any other state has a higher energy.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">With an external field we can force the spins to be all up or all down.</span></div></div>
 <p>The second equation defines the probability of a certain state (e.g., all spins up). This probability requires a normalization, <span class="math inline">\(Z\)</span>, to ensure that the probabilities over all possible states sum up to 1. For large systems (<span class="math inline">\(N &gt; 20\)</span>), the computation of <span class="math inline">\(Z\)</span> is a substantive issue as the number of possible states grows exponentially. If the temperature is very high, that is, <span class="math inline">\(\beta\)</span> is close to 0, <span class="math inline">\(\exp\left( - \beta H\left( \mathbf{x} \right) \right)\)</span> will be 1 for all possible states, and the spins will behave randomly. The differences in energy between states do not matter anymore.</p>
 <div class="page-columns page-full"><p> The randomness of the behavior is captured by the concept of entropy. To explain this a bit better, we need to distinguish the micro- and macrostate of an Ising system. The Boltzmann entropy is a function of the number of ways (<span class="math inline">\(W\)</span>) in which a particular macrostate can be realized. For <span class="math inline">\(\sum_{}^{}x = 4\)</span>, there is only one way (<span class="math inline">\(\mathbf{x} = 1,1,1,1)\)</span>. But for <span class="math inline">\(\sum_{}^{}x = 0\)</span>, there are six ways (<span class="math inline">\(W = 6\)</span>). The Boltzmann entropies (<span class="math inline">\(\ln W)\)</span> for these two cases are 0 and 1.79, respectively. The concept of entropy will be important in later discussions. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Entropy is a measure of the degree of disorder or randomness in a system.</span><span class="margin-aside">The microstate is defined by the configuration <span class="math inline">\(\mathbf{x}\)</span> of spins, while the macrostate is determined by the sum of spins (similar to how magnetization is defined).</span></div></div>
 <p>In the simulation of this model, we take a random spin and calculate the energy of the current <span class="math inline">\(\mathbf{x}\)</span> and the <span class="math inline">\(\mathbf{x}\)</span> with that particular spin flipped. The difference in energy determines the probability of a flip:</p>
@@ -376,7 +376,7 @@ P\left( x_{i} \rightarrow - x_{i} \right) = \frac{1}{ 1 + e^{- \beta\left( H\lef
 <div id="fig-ch5n-img2-old-40" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img2-old-40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/image2b.jpeg" class="img-fluid figure-img">
+<img src="media/ch5n/ch5-2-june14.jpg" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img2-old-40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.2: The ant bridge is an example of collective behavior.
@@ -392,7 +392,7 @@ Figure&nbsp;5.2: The ant bridge is an example of collective behavior.
 <div id="fig-ch5n-img3-old-41" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img3-old-41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-3.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5n-3.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img3-old-41-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.3: The rules of the Game of Life.
@@ -406,7 +406,7 @@ Figure&nbsp;5.3: The rules of the Game of Life.
 <div id="fig-ch5n-img4-old-42" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img4-old-42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/image4.jpg" class="img-fluid figure-img" style="width:14cm">
+<img src="media/ch5n/image4.jpg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img4-old-42-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.4: The Turing machine built in the Game of Life.
@@ -429,7 +429,7 @@ Figure&nbsp;5.4: The Turing machine built in the Game of Life.
 <div id="fig-ch5n-img5-old-43" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img5-old-43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-5__figure43.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5n-5__figure43.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img5-old-43-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.5: The deep learning restricted Boltzmann machine.
@@ -570,7 +570,7 @@ Figure&nbsp;5.5: The deep learning restricted Boltzmann machine.
 <div id="fig-ch5n-img6-old-44" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img6-old-44-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-6.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5n-6.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img6-old-44-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.6: The Kindergarten illusion from The Optical Illusion model in NetLogo.
@@ -585,7 +585,7 @@ Figure&nbsp;5.6: The Kindergarten illusion from The Optical Illusion model in Ne
 <div id="fig-ch5n-img7-old-45" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img7-old-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/image7.jpg" class="img-fluid figure-img">
+<img src="media/ch5n/image7.jpg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img7-old-45-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.7: The finger-movement task. Two fingers move up and down (x<sub>1</sub> and x<sub>2</sub>). They can move in phase or out of phase with a phase difference of 0 and <span class="math inline">\(\pi\)</span> (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference<span class="math inline">\(\ \varphi\)</span> of 0 or <span class="math inline">\(\pi\)</span>; <span class="math inline">\(- \pi\)</span> is the same state) or only one stable state (a phase difference of 0). Coupling strength, <span class="math inline">\(b/a\)</span>, and heterogeneity, <span class="math inline">\(\Delta w\)</span>, are control variables. <span class="citation" data-cites="hakenTheoreticalModelPhase1985 kelsoHakenKelsoBunz2021">(Adapted from <a href="references.html#ref-hakenTheoreticalModelPhase1985" role="doc-biblioref">Haken, Kelso, and Bunz 1985</a>; <a href="references.html#ref-kelsoHakenKelsoBunz2021" role="doc-biblioref">Kelso 2021</a>)</span>
@@ -604,14 +604,14 @@ V(\varphi) = - \Delta w\varphi - b\cos\varphi - a\cos{2\varphi}, \tag{5.4}\]</sp
 <section id="sec-Robotics" class="level3 page-columns page-full" data-number="5.3.5">
 <h3 data-number="5.3.5" class="anchored" data-anchor-id="sec-Robotics"><span class="header-section-number">5.3.5</span> Robotics</h3>
 <div class="page-columns page-full"><p>A major challenge in robotics is to build walking robots. Bipedal robots have evolved from clumsy mechanical walkers to flexible dynamic walkers and runners. Current legged robots can walk on uneven natural terrain, jump, do backflips, recover from rear shocks, and dance (see some videos on humanoid robots such as Atlas and Asimo). These successes are based on a combination of new technologies, but the principles of self-organization play a key role <span class="citation" data-cites="pavlusClumsyQuestPerfect2016">(<a href="references.html#ref-pavlusClumsyQuestPerfect2016" role="doc-biblioref">Pavlus 2016</a>)</span>. An important concept is dynamic stability. In old-school robots, the path and momentum of each step had to be precisely calculated in advance to keep the robot’s center of mass continuously balanced at every point. Modern robots use sensory feedback systems to balance and adjust their movements on the fly, making them more adaptable to different and changing environments. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">A dynamically stable robot maintains balance the same way a human does: by catching itself midfall with each step.</span></div></div>
-<p>An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply <span class="citation" data-cites="mcgeerPassiveWalkingKnees1990 reherDynamicWalkingAgile2021">(<a href="references.html#ref-mcgeerPassiveWalkingKnees1990" role="doc-biblioref">McGeer 1990</a>; <a href="references.html#ref-reherDynamicWalkingAgile2021" role="doc-biblioref">Reher and Ames 2021</a>)</span>. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork <em>Strandbeest</em> by Theo Jansen (<a href="#fig-ch5n-img8-old-46" class="quarto-xref">figure&nbsp;<span>5.8</span></a>). Inspired by another great book about self-organization, <em>The Blind Watchmaker</em> <span class="citation" data-cites="dawkins1986">(<a href="references.html#ref-dawkins1986" role="doc-biblioref">Dawkins 1986</a>)</span>, Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals. His YouTube videos are strongly recommended.</p>
+<p>An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply <span class="citation" data-cites="mcgeerPassiveWalkingKnees1990 reherDynamicWalkingAgile2021">(<a href="references.html#ref-mcgeerPassiveWalkingKnees1990" role="doc-biblioref">McGeer 1990</a>; <a href="references.html#ref-reherDynamicWalkingAgile2021" role="doc-biblioref">Reher and Ames 2021</a>)</span>. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork <em>Strandbeest</em> by Theo Jansen (<a href="#fig-ch5n-img8-old-46" class="quarto-xref">figure&nbsp;<span>5.8</span></a>). Inspired by another great book about self-organization, <em>The Blind Watchmaker</em> <span class="citation" data-cites="dawkins1986">(<a href="references.html#ref-dawkins1986" role="doc-biblioref">Dawkins 1986</a>)</span>, Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals. His YouTube videos are recommended.</p>
 <div id="fig-ch5n-img8-old-46" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img8-old-46-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/strandbeest_Han_perm.jpg" class="img-fluid figure-img">
+<img src="media/ch5n/strandbeest_Han_perm.jpg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img8-old-46-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.8: Beach Beast (source www.strandbeest.com)
+Figure&nbsp;5.8: Beach Beast © Theo Jansen, Umerus 2009, c/o Pictoright Amsterdam 2024
 </figcaption>
 </figure>
 </div>
@@ -668,7 +668,7 @@ Figure&nbsp;5.8: Beach Beast (source www.strandbeest.com)
 <div id="fig-ch5n-img9-old-47" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img9-old-47-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/ch5n-10__figure48.png" class="img-fluid figure-img">
+<img src="media/ch5n/ch5n-10__figure48.png" class="img-fluid figure-img" style="width:45.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img9-old-47-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.9: The prisoner’s dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.
@@ -686,10 +686,10 @@ Figure&nbsp;5.9: The prisoner’s dilemma. If both A and B remain silent, they e
 <div id="fig-ch5n-img10-old-48" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ch5n-img10-old-48-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="media/ch5n/image10.jpg" class="img-fluid figure-img" width="454">
+<img src="media/ch5n/image10.jpg" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ch5n-img10-old-48-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.10: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges.
+Figure&nbsp;5.10: Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges. (Adapted from <span class="citation" data-cites="guimeraTeamAssemblyMechanisms2005">Guimerà et al. (<a href="references.html#ref-guimeraTeamAssemblyMechanisms2005" role="doc-biblioref">2005</a>)</span> with permission)
 </figcaption>
 </figure>
 </div>
