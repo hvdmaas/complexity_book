@@ -649,7 +649,7 @@ dev.off()
 #antiRun(dat, line = TRUE, psize = .4)
 #ggsave('media/ch4n/fig-ch4n-img13-old-61_2of2.png', width = 5, height = 2.5, units = 'in', dpi = 300)
 
-# 5.14 --------------------------------------------------------------------
+# 4.14 --------------------------------------------------------------------
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     dX <-  a + b*X - X^3        # cusp
@@ -691,7 +691,7 @@ dev.off()
 #plane2(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 #dev.off()
 
-# 5. 16 -------------------------------------------------------------------
+# 4. 16 -------------------------------------------------------------------
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- a*Y + b*X - X^3 
