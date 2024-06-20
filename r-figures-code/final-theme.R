@@ -75,5 +75,8 @@ theme1 <- theme(# GENERAL
   #  hjust = .5,                     # Horizontal adjustment
   #  vjust = 1,                     # Vertical adjustment
   #  margin = margin(0, 0, 5, 0)) # Margins (t, r, b, l)
+  
+  # Facet gap (JUNE 2024 update)
+  panel.spacing = unit(1, "cm")
 )
 

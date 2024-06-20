@@ -20,7 +20,7 @@ ptmp <- function(a, point.x , point.y){
   v <- function(x,a) -a*x + x^3
   ggplot(data.frame(x = c(-3, 3)), aes(x = x)) +
     stat_function(fun = v, args = list(a = a), geom = "line", linewidth = .5) + 
-    geom_point(data = data.frame(x = point.x, y = point.y), aes(x, y), shape = 16, size = 2.5, color = "black")+
+    geom_point(data = data.frame(x = point.x, y = point.y), aes(x, y), shape = 16, size = 5, color = "black")+
     
     labs(y = expression(paste('V(X) = -', alpha, 'x + ',x^{3})),
          title = bquote(alpha == .(a)))+
@@ -34,7 +34,7 @@ p2 <- ptmp(a = 0, point.x = 0, point.y = 1.1)
 p3 <- ptmp(a = 2, point.x = 0.8, point.y = -.2)
 p <- p1 + p2 + p3
 p
-ggsave('media/ch3/fig-ch3-img4-old-16.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img4-old-16.png', width = 10, height = 5, units = 'in', dpi = 300)
 
 
 # fig 3.5 -----------------------------------------------------------------
@@ -48,15 +48,15 @@ f <- function(a, sign) sign*sqrt(pmax(0, a/3))
 p1 <- data.frame(a = seq(0, 2, by = 0.01)) %>% 
   filter(a >1) %>% 
   ggplot(aes(x = a)) +
-  stat_function(fun = f, args = list(sign = 1), linewidth = .5) +
+  stat_function(fun = f, args = list(sign = 1), linewidth = .75) +
   ylim(-1, 1) +
   xlim(0, 2) +
   labs( x=expression(alpha),y='X*')+
   theme_minimal()+
   theme1 + theme(legend.position = 'none')
 p1
-p1 + stat_function(fun = f, args = list(sign = -1), linetype = 'dotted')
-ggsave('media/ch3/fig-ch3-img5-old-17.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+p1 + stat_function(fun = f, args = list(sign = -1), linetype = 'dotted', linewidth = .75)
+ggsave('media/ch3/fig-ch3-img5-old-17.png', width = 10, height = 6, units = 'in', dpi = 300)
 
 
 # fig 3.19 -----------------------------------------------------------------
@@ -79,11 +79,12 @@ x %>%
   theme_minimal()+
   theme1 + theme(
     legend.position = 'none',
-    axis.title.x = element_text(size = 60),
-    axis.title.y = element_text(size = 60),
-    axis.text.x  = element_text(size = 60),
-    axis.text.y  = element_text(size = 60))
-ggsave('media/ch3/fig-ch3-img19-old-31.png', width = 8, height = 4, units = 'in', dpi = 300)
+    #axis.title.x = element_text(size = 60),
+    #axis.title.y = element_text(size = 60),
+    #axis.text.x  = element_text(size = 60),
+    #axis.text.y  = element_text(size = 60)
+    )
+ggsave('media/ch3/fig-ch3-img19-old-31.png', width = 10, height = 6, units = 'in', dpi = 300)
 
 
 # fig 3.20 ----------------------------------------------------------------
@@ -156,18 +157,19 @@ p <- plotdat %>%
   theme_minimal()+
   theme1 + theme1 + theme(
     legend.position = 'right',
-    axis.title.x = element_text(size = 60),
-    axis.title.y = element_text(size = 60),
-    axis.text.x  = element_text(size = 60),
-    axis.text.y  = element_text(size = 60),
-    legend.text  = element_text(size = 40),
-    legend.title = element_text(size = 40))
+    #axis.title.x = element_text(size = 60),
+    #axis.title.y = element_text(size = 60),
+    #axis.text.x  = element_text(size = 60),
+    #axis.text.y  = element_text(size = 60),
+    #legend.text  = element_text(size = 40),
+    #legend.title = element_text(size = 40)
+    )
 p + annotate("text", x=-.5, y=800, label="no hysteresis",
             color="grey20", size = 20) +
   annotate("text", x=.5, y=800, label="hysteresis",
            color="grey20", size = 20) 
 
-ggsave('media/ch3/fig-ch3-img23-old-35.png', width = 8, height = 5, units = 'in', dpi = 300)
+ggsave('media/ch3/fig-ch3-img23-old-35.png', width = 10, height = 6, units = 'in', dpi = 300)
 
 # fig 3.24 ----------------------------------------------------------------
 
@@ -189,12 +191,8 @@ x %>%
   geom_bar(aes(score), fill = colors[4])+ coord_flip()+
   facet_wrap(~age_range, nrow = 1)+
   scale_x_continuous(breaks=seq(0,12,1))+
-  labs(x = '', y = '')+
+  labs(x = 'sumscore', y = '')+
   theme_minimal()+
   theme1 + theme(axis.text.x = element_blank(),
-                 strip.text = element_text(colour = "grey10", size = 25))
-ggsave('media/ch3/fig-ch3-img25-old-37.jpg', width = 7, height = 3.5, units = 'in', dpi = 300)
-
-
-
-
+                 strip.text = element_text(colour = "grey10", size = 38))
+ggsave('media/ch3/fig-ch3-img25-old-37.png', width = 11, height = 6, units = 'in', dpi = 300)
