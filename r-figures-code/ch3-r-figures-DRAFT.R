@@ -196,3 +196,4 @@ x %>%
   theme1 + theme(axis.text.x = element_blank(),
                  strip.text = element_text(colour = "grey10", size = 38))
 ggsave('media/ch3/fig-ch3-img25-old-37.png', width = 11, height = 6, units = 'in', dpi = 300)
+
