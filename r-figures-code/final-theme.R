@@ -30,14 +30,14 @@ cfont <- "CMU-bright"
 # Values to test ----------------------------------------------------------
 
 ## These are the values you can play around to check the output (V1-V8)
-V1 <- 26 #Text size in facets. orig-10.    didn't change anything in these plots.
-V2 <- 26 # Plot title size. orig-15.       didn't change anything in these plots.
+V1 <- 80 #Text size in facets. orig-10.    didn't change anything in these plots.
+V2 <- 80 # Plot title size. orig-15.       didn't change anything in these plots.
 V3 <- .05 # grid line width
-V4 <- 22 # Axes text size. orig-13 --OK
-V5 <- 26 # Axes title size. orig-20
-V6 <- .25 #Axes linewidth
-V7 <- 22 # Legend title size. orig-14
-V8 <- 16 # Legend text size. orig-11
+V4 <- 80 # Axes text size. orig-13 --OK
+V5 <- 80 # Axes title size. orig-20
+V6 <- .50 #Axes linewidth
+V7 <- 50 # Legend title size. orig-14
+V8 <- 40 # Legend text size. orig-11
 
 ## RUN it, NOT CHANGE IT
 theme1 <- theme(# GENERAL

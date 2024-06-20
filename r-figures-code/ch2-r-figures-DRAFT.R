@@ -16,11 +16,11 @@ for (i in 1:(n - 1))
 
 ggplot(tibble(x), aes(x = row_number(x), y = x))+
   geom_line()+
-  geom_point(shape = 21, fill = ncolors[4], size = 2, stroke = 1, color = 'white')+
+  geom_point(shape = 21, fill = ncolors[4], size = 4, stroke = 1, color = 'white')+
   labs(x= 'Time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
 
-ggsave('media/ch2/fig-ch2-img1.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img1.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 dev.off()
 # Fig 2.2 -----------------------------------------------------------------
 
@@ -32,14 +32,14 @@ for (i in 1:(n - 1)){
 #plot(x, type = 'b', xlab = 'time', bty = 'n')
 ggplot(tibble(time = rep(1:n), x = x), aes(x = time, y = x))+
   geom_line()+
-  geom_point(shape = 21, fill = ncolors[4], size = 2, stroke = 1, color = 'white')+
+  geom_point(shape = 21, fill = ncolors[4], size = 4, stroke = 1, color = 'white')+
   labs(x= 'Time') + scale_x_continuous(breaks=seq(1,15,1))+
   theme_minimal() + theme1 
-ggsave('media/ch2/fig-ch2-img2.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img2.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 dev.off()
 # -------------------------------------------------------------------------
 # Fig 2.3 -----------------------------------------------------------------
-
+library(ggmatplot)
 n <- 30
 r <- 2
 x <- matrix(0, n, length(seq(0, 0.7, by = 0.01)))
@@ -53,10 +53,10 @@ for (i in 1:length(init)) {
 
 
 ggmatplot(x,plot_type = "line", color = 'black',
-          linewidth = .2, linetype = 1, xlab = "Time",ylab = 'x')+ theme_minimal()+
+          linewidth = .4, linetype = 1, xlab = "Time",ylab = 'x')+ theme_minimal()+
   theme1 + theme(legend.position = 'none')
 
-ggsave('media/ch2/fig-ch2-img3.jpg', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img3.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 dev.off()
 
 
@@ -71,20 +71,20 @@ tmpFun <- function(r, n){
   }
   ggplot(tibble(time = rep(1:n), x = x), aes(x = time, y = x))+
     geom_line()+
-    geom_point(shape = 21, fill = ncolors[4], size = 1.5, stroke = 0.75, color = 'white')+
+    geom_point(shape = 21, fill = ncolors[4], size = 2.5, stroke = 1, color = 'white')+
     labs(title = paste0('r = ',r), x= 'Time') + scale_x_continuous(breaks=seq(0,n,5))+
-    theme_minimal() + theme1 
+    theme_minimal() + theme1 +theme(plot.margin = unit(c(0.1, 0.1, 0.5, 0.1), "cm"))
 }
 r2_9 <- tmpFun(r = 2.9, n = 30); r3_1 <- tmpFun(r = 3.1, n = 30)
 r3_3 <- tmpFun(r = 3.3, n = 30); r3_5 <- tmpFun(r = 3.5, n = 30)
 
 p <- (r2_9 + r3_1) / (r3_3 + r3_5)
-ggsave(plot = p, 'media/ch2/fig-ch2-img4.jpg', width = 7, height = 5, units = 'in', dpi = 300)
+ggsave(plot = p, 'media/ch2/fig-ch2-img4.jpg', width = 11, height = 7.7, units = 'in', dpi = 300)
 dev.off()
 
 # fig 2.5 -----------------------------------------------------------------
  tmpFun(r = 4, n = 100)
- ggsave('media/ch2/fig-ch2-img5.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ ggsave('media/ch2/fig-ch2-img5.jpg', width = 12, height = 5.5, units = 'in', dpi = 300)
  dev.off()
 
 # fig 2.6 -----------------------------------------------------------------
@@ -100,12 +100,12 @@ dev.off()
  ggplot(tibble(time = rep(1:n), x = x, y=y))+
 #   geom_line(aes(x = time, y = x), color = ncolors[4])+
 #   geom_line(aes(x = time, y = y), color = 'grey10', linetype = 'dotted')+
-   geom_line(aes(x = time, y = x), color = ncolors[1])+
-   geom_line(aes(x = time, y = y), color = ncolors[2], linetype = 'dotted')+
+   geom_line(aes(x = time, y = x), color = ncolors[1], linewidth = 0.75)+
+   geom_line(aes(x = time, y = y), color = ncolors[2], linetype = 'dotted', linewidth = 0.75)+
    #geom_point(shape = 21, fill = ncolors[4], size = 1.5, stroke = 0.75, color = 'white')+
    labs(title = paste0('r = ',r), x= 'Time') + scale_x_continuous(breaks=seq(0,n,5))+
    theme_minimal() + theme1 
- ggsave('media/ch2/fig-ch2-img6.jpg', width = 5, height = 2.5, units = 'in', dpi = 300)
+ ggsave('media/ch2/fig-ch2-img6.jpg', width = 10, height = 6, units = 'in', dpi = 300)
  dev.off()
 
 
@@ -133,7 +133,9 @@ Time_plots <- ggplot(x %>%
   #scale_color_manual(values = ncolors)+
   scale_color_manual(values = rep(1,3))+
   facet_wrap(~name)+
-  theme_minimal() + theme1 + theme(legend.position = 'none')
+  theme_minimal() + theme1 + theme(legend.position = 'none',
+                                   panel.spacing = unit(1, "cm"), # gap betwenn facets
+                                   plot.margin = unit(c(0.1, 0.1, 0.5, 0.1), "cm")) 
 
   ## Phase plots
   
@@ -151,16 +153,18 @@ phase_data_joined <- cbind(phase_data_X, phase_data_Xt)
 
 # Create the scatterplot using ggplot2
 Phase_plots <- ggplot(phase_data_joined, aes(x = Xt, y = `Xt+1`, color = name)) +
-  geom_point(alpha = .7, shape = 1) +
+  geom_point(alpha = .7, shape = 1, size = 3) +
   xlim(0, 1) + ylim(0, 1) +
   #scale_color_manual(values = ncolors)+
   scale_color_manual(values = rep(1,3))+
   labs(title = 'Phase plots', x = "Xt", y = "Xt+1") +
   facet_wrap(~name)+
-  theme_minimal() + theme1 + theme(legend.position = 'none')
+  theme_minimal() + theme1 + theme(legend.position = 'none',
+                                   panel.spacing = unit(1.2, "cm"), # gap betwenn facets
+                                   plot.margin = unit(c(0.1, 0.1, 0.5, 0.1), "cm")) # gap between plots
 
 Time_n_Phase <- Time_plots / Phase_plots
-ggsave('media/ch2/fig-ch2-img7.jpg', width = 6, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img7.jpg', width = 13, height = 10.4, units = 'in', dpi = 300)
 dev.off()
 
 
@@ -173,11 +177,11 @@ f <- function(r, x, n, m){
 r.range <- seq(0, 2.5, by=0.01) 
 r.range <- c(r.range,seq(2.5, 4, by=0.001)) 
 n <- 200; m <-100 
-equilibria <- as.vector(sapply(r.range, f,  x=0.1, n=n, m=m-1))
+Equilibria <- as.vector(sapply(r.range, f,  x=0.1, n=n, m=m-1))
 r <- sort(rep(r.range, m))
 #plot(equilibria ~ r, pch=19,cex=.01,bty='n')
-ggplot(tibble(equilibria, r), aes( x= r, y = equilibria)) +
+ggplot(tibble(Equilibria, r), aes( x= r, y = Equilibria)) +
   geom_point( alpha = .1, shape = 20, size = .01)+
   theme_minimal() + theme1 
-ggsave('media/ch2/fig-ch2-img8.jpg', width = 8, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch2/fig-ch2-img8.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 dev.off()
