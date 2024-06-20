@@ -20,7 +20,7 @@ One physical example of self-organization is the laser. An important founder of 
 
 [The Ising model (replaced by more advanced models of magnetism in modern physics) has found applications in many sciences.]{.aside} Another famous example, which will be very important for psychological modeling later, is the Ising model of magnetism. In the standard 2D version of the model, atoms are locations on a two-dimensional grid. Atoms have up or down spins. When the spins are aligned (all up or all down), we have an effective magnet. If they are not aligned, the effect of the individual spins is canceled out. Two variables control the behavior of the magnet: the temperature of the magnet and the external magnetic field. The lower the temperature, the more the spins align. [At high temperatures, all the atoms behave randomly, and the magnet loses its magnetic effect.]{.aside} The temperature at which the magnet loses its magnetic force is called the Curie point (see YouTube for some fun demonstrations). The external field could be caused another magnet.
 
-![Schematic picture of the magnet. Spins, $x$, can be left ($1$) or right ($-1$). At lower temperatures, $T$, the spins tend to align with neighboring spins and the external field, $\tau$, resulting in magnetism.](media/ch5n/ch5n-1-Han.png){#fig-ch5n-img1-old-39}
+![Schematic picture of the magnet. Spins, $x$, can be left ($1$) or right ($-1$). At lower temperatures, $T$, the spins tend to align with neighboring spins and the external field, $\tau$, resulting in magnetism.](media/ch5n/ch5-1-june14.png){#fig-ch5n-img1-old-39 width="100%"}
 
 The main model equations of the Ising model are:
 
@@ -71,7 +71,7 @@ What Boerlijst and Hogeweg did was to implement the hypercycle in a cellular aut
 
 Many examples of self-organization come from ecosystem biology. We will see a simulation of flocking in NetLogo later, but I also want to highlight the collective behavior of ants (@fig-ch5n-img2-old-40).
 
-![The ant bridge is an example of collective behavior.](media/ch5n/image2b.jpeg){#fig-ch5n-img2-old-40}
+![The ant bridge is an example of collective behavior.](media/ch5n/ch5-2-june14.jpg){#fig-ch5n-img2-old-40 width="80%"}
 
 Ants exhibit amazing forms of globally organized behavior. They build bridges, nests, and rafts, and they fight off predators. They even relocate nests. Ant colonies use pheromones and swarm intelligence to relocate. Scouts search for potential sites, leaving pheromone trails. If a promising location is found, more ants follow the trail, reinforcing the signal. Unsuitable sites result in fading trails. Once a decision is made, the colony collectively moves to the chosen site, transporting their brood and establishing a new nest.
 
@@ -81,7 +81,7 @@ It is not a strange idea to think of an ant society as a living organism. Note t
 
 Another important source of self-organization research is computer science. A simple but utterly amazing example is the work on John Conways' Game of Life [@berlekampWinningWaysYour2004]. The rules are depicted in @fig-ch5n-img3-old-41.
 
-![The rules of the Game of Life.](media/ch5n/ch5n-3.png){#fig-ch5n-img3-old-41}
+![The rules of the Game of Life.](media/ch5n/ch5n-3.png){#fig-ch5n-img3-old-41 width="100%"}
 
 For each cell, given the states of its neighbors, the next state for all cells is computed. This is called synchronous updating.[^ch5n-2] It is hard to predict what will happen if we start from a random initial state. But you can easily verify that a block of four squares is stable, and a line of three blocks will oscillate between a horizontal and a vertical line.
 
@@ -93,7 +93,7 @@ Random initial patterns rarely lead to anything remarkable, but by choosing spec
 
 I was even more stunned to see that it is possible to create the (universal) Turing machine in the Game of Life [@rendellGameLifeUniversal2016]. The Game of Life implementation of the Turing machine is shown in @fig-ch5n-img4-old-42. This raises the question of whether we can build self-organizing intelligent systems using elementary interactions between such simple elements. Actually, we can to some extent, but by using a different setup, based on brain-like mechanisms (see the next section on neural networks).
 
-![The Turing machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="14cm"}
+![The Turing machine built in the Game of Life.](media/ch5n/image4.jpg){#fig-ch5n-img4-old-42 width="100%"}
 
 Another root of complex-systems theory and the role of self-organization in computational systems is cybernetics [@ashbyIntroductionCybernetics1956; @wienerCyberneticsControlCommunication2019]. [Cybernetics studies circular causal and feedback mechanisms in complex systems, focusing on how systems regulate themselves, process information, and adapt to changes in their environment.]{.aside} To give you an idea of this highly original work, I will only mention the titles of a few chapters of Norman Wiener's book, originally published in 1948: "Gestalt and Universals," "Cybernetics and Psychopathology," "On Learning and Self-Reproducing Machines," and, finally, "Brainwaves and Self-Organization." And this was written in 1948!
 
@@ -119,7 +119,7 @@ This setup is called the general or unrestricted Boltzmann machine, where any no
 
 [^ch5n-3]: I recommend Timo Matzen's R package for a hands-on explanation (<https://github.com/TimoMatzen/RBM>).
 
-![The deep learning restricted Boltzmann machine.](media/ch5n/ch5n-5__figure43.png){#fig-ch5n-img5-old-43}
+![The deep learning restricted Boltzmann machine.](media/ch5n/ch5n-5__figure43.png){#fig-ch5n-img5-old-43 width="100%"}
 
 The waves of popularity of neural networks are closely related to the development of supervised learning algorithms, where the connections between artificial neurons are updated based on the difference between the output and the desired or expected output of the network. The first supervised ANN, the perceptron, consisted of multiple input nodes and one output node and was able to classify input patterns from linearly separable classes. This included the OR and AND relation but excluded the XOR relation. [In the XOR pattern, the combinations of 00 and 11 are false, 01 and 10 are true.]{.aside} In the XOR, the sum of the two bits is not useful for classification. By adding a hidden layer to the perceptron, the XOR can be solved, but it took many years to develop a backpropagation rule for multilayer networks such that they can learn this nonlinear classification from examples. We will do a simple simulation in NetLogo later. Although they are extremely powerful, it is debatable whether backprop networks are self-organizing systems. Self-organizing systems are characterized by their ability to adapt to their environment without explicit instructions. Unsupervised neural networks are more interesting in this respect.
 
@@ -308,7 +308,7 @@ Another related approach is the ecological approach to visual perception by @gib
 
 A combination of Gestalt principles, when acting in opposite directions, can lead to all kinds of perceptual illusions. The "Optical Illusion model" in NetLogo's Model Library illustrates some of them. Check out the codes for each illusion—they are extremely short and elegant (@fig-ch5n-img6-old-44).
 
-![The Kindergarten illusion from The Optical Illusion model in NetLogo.](media/ch5n/ch5n-6.png){#fig-ch5n-img6-old-44}
+![The Kindergarten illusion from The Optical Illusion model in NetLogo.](media/ch5n/ch5n-6.png){#fig-ch5n-img6-old-44 width="100%"}
 
 In @sec-ch3, I provided several examples of sudden jumps and hysteresis in multistable perception. NetLogo is also a great tool for experimenting with these effects. Download "Motion Quartet" from the NetLogo community website (or from this book's software repository) and explore hysteresis in your own perception.
 
@@ -316,7 +316,7 @@ In @sec-ch3, I provided several examples of sudden jumps and hysteresis in multi
 
 Many body motions are periodic in nature—think of walking, swimming, dancing, and galloping. [Key to these complex motions is the synchronization of the movements of body parts.]{.aside} A famous paradigm for studying coordinative movement patterns is the finger movement task, in which one has to move both index fingers up and down (or right and left), either in phase or out of phase. @Fig-ch5n-img7-old-45 explains the setup and data showing the transition between two in-phase or out-of-phase oscillations.
 
-![The finger-movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$; $- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength, $b/a$, and heterogeneity, $\Delta w$, are control variables. [Adapted from @hakenTheoreticalModelPhase1985; @kelsoHakenKelsoBunz2021]](media/ch5n/image7.jpg){#fig-ch5n-img7-old-45}
+![The finger-movement task. Two fingers move up and down (x~1~ and x~2~). They can move in phase or out of phase with a phase difference of 0 and $\pi$ (bottom left figures). The model is shown on the right side. The potential function either has two stable states (a phase difference$\ \varphi$ of 0 or $\pi$; $- \pi$ is the same state) or only one stable state (a phase difference of 0). Coupling strength, $b/a$, and heterogeneity, $\Delta w$, are control variables. [Adapted from @hakenTheoreticalModelPhase1985; @kelsoHakenKelsoBunz2021]](media/ch5n/image7.jpg){#fig-ch5n-img7-old-45 width="100%"}
 
 The Haken—Kelso—Bunz (HKB) model, developed in the tradition of synergetics, explains the phase transition between in-phase and anti-phase motions in a way we saw in @sec-Phenomenological-models. They set up a potential function in the form of
 
@@ -339,7 +339,7 @@ A major challenge in robotics is to build walking robots. Bipedal robots have ev
 
 An intriguing application is called passive dynamics, which refers to robotic walking without external energy supply [@mcgeerPassiveWalkingKnees1990; @reherDynamicWalkingAgile2021]. The idea is that truly dynamic locomotion should be based on the nonlinear dynamics in natural walking systems. An amazing demonstration is the artwork *Strandbeest* by Theo Jansen (@fig-ch5n-img8-old-46). Inspired by another great book about self-organization, *The Blind Watchmaker* [@dawkins1986], Jansen created generations of kinetic sculptures made of PVC piping, wood, fabric wings, and zip ties that can move across the sand, resembling walking animals. His YouTube videos are recommended.
 
-![Beach Beast © Theo Jansen, Umerus 2009, c/o Pictoright Amsterdam 2024](media/ch5n/strandbeest_Han_perm.jpg){#fig-ch5n-img8-old-46}
+![Beach Beast © Theo Jansen, Umerus 2009, c/o Pictoright Amsterdam 2024](media/ch5n/strandbeest_Han_perm.jpg){#fig-ch5n-img8-old-46 width="100%"}
 
 ### Developmental processes {#sec-Developmental-processes}
 
@@ -406,7 +406,7 @@ However, there is a fine line between the wisdom of the crowd and the stupidity 
 
 Game theory consists of mathematical models of strategic interactions among rational agents. A great historical overview can be found at Wikipedia. One of the most famous paradigms is the prisoner's dilemma. You and your buddy are arrested, and you both independently talk to the police. The options are to remain silent or to talk. The dilemma is that remaining silent is the best option if you both choose it, but the worst option if your friend betrays you (see the payoff matrix, @fig-ch5n-img9-old-47). In this game, loyalty to one's friend is irrational, an outcome related to the tragedy of the commons [@hardinTragedyCommons1968]. [The tragedy of the commons occurs when individuals, acting in their own self-interest, overexploit a shared resource, leading to a depletion that undermines everyone's long-term interests, including their own.]{.aside} The tragedy of the commons can be studied in the hubnet extension of NetLogo, where multiple users can participate in NetLogo simulations.
 
-![The prisoner's dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.](media/ch5n/ch5n-10__figure48.png){#fig-ch5n-img9-old-47}
+![The prisoner's dilemma. If both A and B remain silent, they each face a two-year sentence. If one talks and the other does not, the informer is released and the silent partner gets a decade behind bars. If both betray, they serve five years.](media/ch5n/ch5n-10__figure48.png){#fig-ch5n-img9-old-47 width="45%"}
 
 A major topic in game theory is altruism. In many cases, individualistic choices lead to an unsatisfactory Nash equilibrium. [A Nash equilibrium is a set of strategies in which no player can improve their payoff by unilaterally changing their strategy, given the strategies of the other players.]{.aside} The public-goods game is a good example. In this game, everyone invests some money, which is then multiplied by an external party (the government). Then everyone gets an equal share of the multiplied total. The problem is that free riders, who do not invest, win the most, which in iterated public-goods games leads to a situation where no one invests and no one wins. Punishment (shaming and blaming) is known to help combat free riding. But punishment also requires investment. I like to tell my students, when they are working in groups on an assignment, that the problem of this one student doing nothing happens because nice, hardworking students refuse to betray their fellow students. These nice, hardworking students are what are called second-order free riders [@fowlerSecondorderFreeridingProblem2005]. Just so you know.
 
@@ -420,7 +420,7 @@ Three parameters can be adjusted to influence behavior in the baseline assembly 
 
 @guimeraTeamAssemblyMechanisms2005 estimated the parameters $p$ and $q$ for the community formation in four scientific disciplines (social psychology, economics, ecology, and astronomy). Only astronomy had a very dense collaboration structure. In the other fields, the estimates of $p$ and $q$ of teams publishing in certain journals correlated well with impact factor. Interestingly, $p$ correlates positively and $q$ negatively with impact.
 
-![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges. (Adapted from @guimeraTeamAssemblyMechanisms2005 with permission)](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="454"}
+![Team assembly model. Newcomers and incumbents are added to growing networks based on probabilities p and q. If p is sufficiently high, a dense network emerges. (Adapted from @guimeraTeamAssemblyMechanisms2005 with permission)](media/ch5n/image10.jpg){#fig-ch5n-img10-old-48 width="100%"}
 
 ## Zooming out {#sec-Zooming-out}
 
