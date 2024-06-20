@@ -11,12 +11,12 @@ library(igraph);library(qgraph)
 library(readxl)
 scholar_statistics <- read_excel("r-figures-code/scholar statistics.xlsx")
 scholar_statistics %>% ggplot()+
-  geom_line(aes(Year, Citations), linewidth = .5,color = 'grey15')+
-  geom_point(aes(Year, Citations), size = 2, shape = 21, stroke = 1, 
+  geom_line(aes(Year, Citations), linewidth = .75,color = 'grey15')+
+  geom_point(aes(Year, Citations), size = 4, shape = 21, stroke = 1.5, 
              color = 'white', fill = 'grey15')+
   scale_x_continuous(breaks = scholar_statistics$Year)+
-  theme_minimal()+theme1
-ggsave('media/ch6/fig-ch6-img1-old-70.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+  theme_minimal()+theme1 + theme(axis.text.x = element_text(angle = 30, hjust = 1))
+ggsave('media/ch6/fig-ch6-img1-old-70.jpg', width = 12, height = 6, units = 'in', dpi = 300)
 
 # fig 6.2 -----------------------------------------------------------------
 
@@ -33,7 +33,7 @@ set.seed(1)
 adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
 adj <- adj*sample(0:1,100,replace=T,prob=c(.8,.2)) # set 80% to 0
 
-png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 4, height = 3, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 3, height = 3, units = 'in', res = 300)
 qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6])
        #,negDashed = TRUE #remove dashed line or not?
        )
@@ -45,11 +45,20 @@ library(gridExtra)
 p1 <- readPNG("media/ch6/fig-ch6-img2-old-71_1of2.png")
 p1g <- rasterGrob(p1)
 
-p2 <- centralityPlot(qgraph(adj)) + theme_minimal() + theme1 +
-  theme(axis.text.x = element_text(size = 15))
+p2 <- centralityPlot(qgraph(adj)) + theme_minimal() +
+  theme(axis.text = element_text(size = 20) ,
+        text = element_text(family = cfont, color = "grey10"), # color of all text in the plot 
+        strip.text = element_text(colour = "grey10", size = 30), # specs of the text inside plot
+        plot.title = element_text(hjust = 0.5, color = "grey10", size = 30, face = "bold"),
+        panel.grid.major.x = element_line(linewidth = 0.25), # change the grid layout
+        panel.grid.major.y = element_line(linewidth = 0.25), # change the grid layout
+        panel.grid.minor.x = element_blank(), # remove the grid layout
+        panel.grid.minor.y = element_blank(), # remove the grid layout
+        panel.spacing = unit(1, "cm")
+  )
 p2
-png('media/ch6/fig-ch6-img2-old-71.png', width = 14, height = 7, units = 'in', res = 300)
-grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(3/5, 2/5)))
+png('media/ch6/fig-ch6-img2-old-71.png', width = 12, height = 7.23, units = 'in', res = 300)
+grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(2/4, 2/4)))
 dev.off()
 
 # -------------------------------------------------------------------------
@@ -166,7 +175,7 @@ pplist[[1]] # One person all Time points (61) all abilities (12)
 dat1 <- pplist[[1]] %>% 
   pivot_longer(colnames(.)[-1], names_to = 'ab', values_to = 'val') %>% 
   ggplot() +
-  geom_line(aes(time, val, group = ab), color = 'grey5',linewidth = .25) +
+  geom_line(aes(time, val, group = ab), color = 'grey5',linewidth = .50) +
   labs(y = 'Density', x = 'Time', color = '', linetype = '', shape = '') +
   ylim(c(NA,30))+
   theme_minimal() + theme1+
@@ -182,7 +191,7 @@ histplot <- tibble('x' = cor(dataT)[cor(dataT)<1]) %>%
   theme(legend.position = 'none')
 histplot
 dat1+histplot
-ggsave('media/ch6/fig-ch6-img7-old-76.jpg', width = 6, height = 3.5, units = 'in', dpi = 300)
+ggsave('media/ch6/fig-ch6-img7-old-76.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 
 # 6.12 --------------------------------------------------------------------
 
@@ -209,7 +218,7 @@ hist2 <- tibble(x = apply(dat2,1,sum)) %>%
   theme(legend.position = 'none')
 hist2
 hist1 + hist2
-ggsave('media/ch6/fig-ch6-img12-old-81.jpg', width = 6, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch6/fig-ch6-img12-old-81.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 
 # fig 6.13 ----------------------------------------------------------------
 layout(1)
@@ -227,11 +236,11 @@ for(beta in beta.range)
 
 tibble(x = beta.range, y = dat) %>% 
   ggplot() +
-  geom_point(aes(x = x, y = y), shape = 1, size = 1)+
+  geom_point(aes(x = x, y = y), shape = 1, size = 3)+
   labs(x = 'Beta', 
        y = 'Alignment with thresholds')+
   theme_minimal() + theme1
-ggsave('media/ch6/fig-ch6-img13-old-82.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch6/fig-ch6-img13-old-82.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 
 # fig 6.14 ------------------------------------------------------------------
 hamiltonian <- function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
@@ -326,7 +335,7 @@ cormat <- cor_auto(data) #cor matrix
 
 nw <- EBICglasso(cormat, nrow(data),gamma = 0.5) #EBIC
 
-png('media/ch6/fig-ch6-img16-old-85A1.png', width = 4, height = 4, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img16-old-85A1.png', width = 5, height = 5, units = 'in', res = 300)
 qnw <- qgraph(nw, layout = 'spring',labels= paste0("X", 1:12),
        edge.color = ifelse(nw > 0, ncolors[5], ncolors[6]))
 dev.off()
@@ -335,9 +344,16 @@ A1 <- readPNG("media/ch6/fig-ch6-img16-old-85A1.png")
 A1g <- rasterGrob(A1)
 A2 <- centralityPlot(qnw,include = c( "Betweenness","Closeness","Strength", "ExpectedInfluence"),
                      scale = "z-scores") + scale_x_continuous(breaks = c(0,1,2,3))+
-  theme_minimal() + theme1 + theme(axis.text = element_text(size = 14),
-                                   strip.text = element_text(size = 11), 
-                                   plot.margin = unit(c(0.1,0.1,0.1,0), "cm"))
+  theme_minimal() + theme(axis.text = element_text(size = 20) ,
+                                   text = element_text(family = cfont, color = "grey10"), # color of all text in the plot 
+                                   strip.text = element_text(colour = "grey10", size = 12), # specs of the text inside plot
+                                   plot.title = element_text(hjust = 0.5, color = "grey10", size = 30, face = "bold"),
+                                   panel.grid.major.x = element_line(linewidth = 0.25), # change the grid layout
+                                   panel.grid.major.y = element_line(linewidth = 0.25), # change the grid layout
+                                   panel.grid.minor.x = element_blank(), # remove the grid layout
+                                   panel.grid.minor.y = element_blank(), # remove the grid layout
+                          panel.spacing = unit(1.2, "cm"), 
+                          plot.margin = unit(c(0.2,0.5,0.2,0.2), "cm"))
 A2
 A<- grid.arrange(arrangeGrob(A1g, A2, ncol = 2, widths = c(2/5, 3/5)))
 ## Time series
@@ -348,7 +364,7 @@ data <- data[,-1]
 colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
 fit <- graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
 
-png('media/ch6/fig-ch6-img16-old-85B1.png', width = 4, height = 4, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img16-old-85B1.png', width = 5, height = 5, units = 'in', res = 300)
 par(mar=c(3,3,3,3))
 plot(fit,"PDC", titles = FALSE,
      edge.color = ncolors[5],
@@ -360,12 +376,19 @@ B1 <- readPNG("media/ch6/fig-ch6-img16-old-85B1.png")
 B1g <- rasterGrob(B1)
 
 B2 <- centralityPlot(fit$PDC) +
-  theme_minimal() + theme1 + theme(axis.text = element_text(size = 14),
-                                   strip.text = element_text(size = 11), 
-                                   plot.margin = unit(c(0.1,0.1,0.1,0.1), "cm"))
+  theme_minimal() + theme(axis.text = element_text(size = 20) ,
+                            text = element_text(family = cfont, color = "grey10"), # color of all text in the plot 
+                            strip.text = element_text(colour = "grey10", size = 15), # specs of the text inside plot
+                            plot.title = element_text(hjust = 0.5, color = "grey10", size = 30, face = "bold"),
+                            panel.grid.major.x = element_line(linewidth = 0.25), # change the grid layout
+                            panel.grid.major.y = element_line(linewidth = 0.25), # change the grid layout
+                            panel.grid.minor.x = element_blank(), # remove the grid layout
+                            panel.grid.minor.y = element_blank(), # remove the grid layout
+                            panel.spacing = unit(1.2, "cm"), 
+                            plot.margin = unit(c(0.2,0.5,0.2,0.2), "cm"))
 B <- grid.arrange(arrangeGrob(B1g, B2, ncol = 2, widths = c(2/5, 3/5)))
 
-png('media/ch6/fig-ch6-img16-old-85.png', width = 10, height = 8, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img16-old-85.png', width = 12.5, height = 8, units = 'in', res = 300)
 grid.arrange(A, B)
 dev.off()
 # fig 6.17 --------------------------------------------------------------------
@@ -398,7 +421,7 @@ thresholds <- rnorm(n,-1,.5)
 data <- IsingSampler(ndata, W, thresholds,
                      beta = 1)
 fit <- IsingFit(data,family='binomial', plot=FALSE)
-png('media/ch6/fig-ch6-img18-old-87.png', width = 8, height = 4, units = 'in', res = 300)
+png('media/ch6/fig-ch6-img18-old-87.png', width = 8, height = 5, units = 'in', res = 300)
 layout(t(1:3))
 qgraph(W,fade = FALSE,
        edge.color = ifelse(W > 0, ncolors[5], ncolors[6]),
@@ -413,8 +436,8 @@ plot(thresholds,
      type='p',bty='n',
      xlab='node',ylab='Threshold',
      cex=2,cex.lab=1.5, axes = FALSE, family = cfont)
-axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont)  # custom axis
-axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1, family = cfont) 
+axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1.5, family = cfont)  # custom axis
+axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1.5, family = cfont) 
 lines(fit[[2]],lwd=1.5)
 dev.off()
 
