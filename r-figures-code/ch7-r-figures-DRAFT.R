@@ -79,12 +79,12 @@ x <- read.csv('r-figures-code/Social impact theory experiment-table.csv',skip=6 
 library(ggmatplot)
 x <- x[order(x$X.step),]
 ggmatplot(x=x$X.step,y=x$magnetization,group = x$X.run.number,
-          plot_type = "line",xlab = 'Time',ylab='Proportion', linewidth = .4)+
+          plot_type = "line",xlab = 'Time',ylab='Proportion', linewidth = .75)+
   theme_minimal() + theme1
-ggsave('media/ch7/fig-ch7-img6-old-94.jpg', width = 6, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch7/fig-ch7-img6-old-94.jpg', width = 10, height = 6, units = 'in', dpi = 300)
 
 # fig 7.7  ----------------------------------------------------------------
-png('media/ch7/fig-ch7-img7-old-95.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch7/fig-ch7-img7-old-95-new.png', width = 7, height = 4.22, units = 'in', res = 300)
 
 FJ <- function(t, state, parms){
   with(as.list(c(state,parms)),{
@@ -100,10 +100,10 @@ g <- 0.95 # if g  = 0 => DeGroot model
 x0 <- runif(n,0,1)
 s <- x0;p  <- c() 
 layout(1)
-run2(odes=FJ,method='euler', tmax=100, legend = FALSE)
+run2(odes=FJ,method='euler',col='black', tmax=100, legend = FALSE)
 dev.off()
 # fig 7.8 -----------------------------------------------------------------
-png('media/ch7/fig-ch7-img8-old-96.png', width = 8, height = 6, units = 'in', res = 300)
+png('media/ch7/fig-ch7-img8-old-96-new.png', width = 8, height = 5, units = 'in', res = 300)
 
 set.seed(20)
 layout(matrix(1:4, 2, 2))
