@@ -190,7 +190,7 @@ barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
 
 This results in @fig-ch4n-img1-old-49.
 
-![Fit of the Lotka—Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49}
+![Fit of the Lotka—Volterra model on three types of data. The lines represent the fitted curves. In the stochastic case, noise is part of the system that affects the computation of the state at the next time step. In the error case, noise is a measurement error that does not affect the dynamics.](media/ch4n/fig-ch4n-img1-old-49.png){#fig-ch4n-img1-old-49 width="100%"}
 
 Note that the error dataset looks very similar to the deterministic dataset because it contains only the measurement error ($X$ is true score + error). The error does not affect the dynamics itself. In the stochastic case, the error (noise) is added to the states after each time step, which affects the dynamics. In @fig-ch4n-img1-old-49, you can see that the positions of the waves change. In this well-chosen case, the fit is quite good in all three cases, and the parameter estimates are all quite close to the true values. Unfortunately, these results are quite unstable. You can do some testing yourself.
 
@@ -229,7 +229,7 @@ plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 ```
 
-![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.png){#fig-ch4n-img2-old-50 width="15cm"}
+![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.png){#fig-ch4n-img2-old-50 width="100%"}
 
 ### Bifurcation analysis {#sec-Bifurcation-analysis}
 
@@ -246,7 +246,7 @@ high <- newton(s=c(X=1)) # again starting from X = 1
 continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
 ```
 
-![Hysteresis plot made with `newton()` and `continue()`. The function `newton()` finds an equilibrium, which is used in `continue()` to vary the normal variable a until a bifurcation point is found.](media/ch4n/ch4n-2__figure51.png){#fig-ch4n-img3-old-51}
+![Hysteresis plot made with `newton()` and `continue()`. The function `newton()` finds an equilibrium, which is used in `continue()` to vary the normal variable a until a bifurcation point is found.](media/ch4n/ch4-3-june14.png){#fig-ch4n-img3-old-51 width="80%"}
 
 Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is an R Shiny application that uses the same model specification and allows for a more interactive investigation. Given our previous model and the definition of $s$ and $p$, we can run:
 
@@ -268,7 +268,7 @@ bifurcation(model,s,p)
 
 You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
 
-![Output from Shiny app deBif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/ch4n-4__figure53.png){#fig-ch4n-img4-old-52}
+![Output from Shiny app deBif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/ch4n-4__figure53.png){#fig-ch4n-img4-old-52 width="100%"}
 
 ### Spruce budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
@@ -288,7 +288,7 @@ bifurcation(spruce, state, parms)
 
 Note that this predator-prey model consists of only one equation. There is no separate dynamic equation for the birds. The reason is that these budworm outbreaks happen in a few weeks. Birds do not reproduce on this time scale. The variables are reparametrized (see @sec-Mechanistic-models). The predation term, in the original parametrization $- BN^{2}/(A^{2} + N^{2})$, also has a logistic form that starts to accelerate at $N = A$ up to the maximum level $B$. The slow start $A$ is used because birds only switch their diet to budworms when this population reaches a certain level [@ludwig1978]. The fixed number of birds can only eat $B$ budworms. This specific predation term is called the Holling type III model. All Holling types and their formulas are shown in @fig-ch4n-img5-old-53.
 
-![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/ch4-5-may31.png){#fig-ch4n-img5-old-53}
+![The Holling functional response models. Type III is used in the spruce budworm model.](media/ch4n/ch4-5-may31.png){#fig-ch4n-img5-old-53 width="100%"}
 
 ### Evaluation of ecological modeling {#sec-Evaluation-of-ecological-modelling}
 
@@ -329,7 +329,7 @@ data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 
-![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54 width="15cm"}
+![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54 width="80%"}
 
 The result of this simulation is shown in @fig-ch4n-img6-old-54. Understanding the reasoning behind the differential equation is not so easy, but I want to make another point. The Wikipedia page gives parameters values with units (s, m/s, or m/s^2^). One can also have dimension-free parameters (the acceleration exponent). [Dimensional analysis involves analyzing the dimensions of quantities to derive relationships and scaling laws, ensuring that the equations are consistent.]{.aside} This dimensional analysis is a crucial step in modeling in physics but a weak point in biological and especially psychological applications. This hampers the quantitative test of models.
 
@@ -341,7 +341,7 @@ In this section, I present an overview of dynamical systems models in psychology
 
 Many dynamic models have been proposed in the study of speeded decision-making [@bogaczPhysicsOptimalDecision2006]. The best-studied case is the two-alternative forced-choice task, where a stimulus is presented, and a choice must be made between two alternatives as quickly as possible. The stimulus could be an arrow pointing left or right. Most popular are accumulator models (@fig-ch4n-img7-old-55). [Accumulator models assume that noisy information is accumulated over time until a decision bound is reached and a motor response is initiated.]{.aside}
 
-![A stochastic accumulator model of speeded decision-making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="15cm"}
+![A stochastic accumulator model of speeded decision-making. Evidence accumulates in stochastic steps biased by the drift rate $I$ (stimulus related). When one of the bounds is reached, a response is generated that may be incorrect if the bounds are too low.](media/ch4n/fig-ch4n-img7-old-55.png){#fig-ch4n-img7-old-55 width="100%"}
 
 One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model (DDM), with $I$ as the stimulus-driven input:
 
@@ -399,7 +399,7 @@ Note that these are all linear dynamical systems that do not exhibit complex beh
 
 The relations between different accumulator models are summarized in [@fig-ch4n-img8-old-56; @bogaczPhysicsOptimalDecision2006]. It shows that convenient models such as the drift-diffusion mode can be derived by constraints on the parameters from more biologically realistic models, such as the pooled and mutual inhibition model.
 
-![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006]](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="15cm"}
+![Relations between the main evidence accumulator models of decision-making. DDM is the drift-diffusion model which can be derived from the mutual inhibition model by setting $w = k$ and $w + k$ to a large value. [Adapted from @bogaczPhysicsOptimalDecision2006]](media/ch4n/ch4n-8__figure57.png){#fig-ch4n-img8-old-56 width="100%"}
 
 ### Dyadic models {#sec-Dyadic-models}
 
@@ -450,7 +450,7 @@ run(ymin=-.2,legend=F)
 plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
 ```
 
-![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="16cm"}
+![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="100%"}
 
 The lines in the phase plots in @fig-ch4n-img9-old-57 are the nullclines. [Nullclines are the curves for which the time derivatives of the behavioral variables $R$ and $J$ are 0.]{.aside} In linear dynamical system, nullclines are straight lines. Where they intersect, stable or unstable fixed points can occur. Depending on the angle between the nullclines, we get a fixed point (first two cases), a limit cycle (last case), or divergence (not shown).
 
@@ -517,7 +517,7 @@ for (i in 1:100)
 
 This results in @fig-ch4n-img10-old-58.
 
-![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first (top), they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second (middle) , the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case (bottom), the response to low positive or negative moods is close to 0 but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="16cm"}
+![Qualitative difference marriage equilibrium landscapes depending on the form of the influence function. In the first (top), they simply have no influence and both partners converge to their uninfluenced steady states of mood. In the second (middle) , the response to the partner's mood is extreme, resulting in either a positive or negative mutual state. In the last case (bottom), the response to low positive or negative moods is close to 0 but extreme at higher levels. Now there are three stable states.](media/ch4n/fig-ch4n-img10-old-58.png){#fig-ch4n-img10-old-58 width="100%"}
 
 The three influence functions are shown in the first column, the nullclines in the second, and a series of runs from random initial states in the third. The first case shows that the moods converge to $W_{e}$ and $H_{e}$, when there is no mutual influence. The second has two equilibria, with an unstable fixed point in the middle, while the last case has five fixed points, three of which are stable.
 
@@ -558,7 +558,7 @@ run(tmax = 1500, method = "euler", tstep = 1)
 plane(portrait = TRUE,grid=4)
 ```
 
-![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist; in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="15cm"}
+![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist; in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="100%"}
 
 So, there are basically two outcomes: either both grow, or one grows and suppresses the other (see @fig-ch4n-img11-old-59). Note that the method is set to "Euler" to simulate difference equations.
 
@@ -570,7 +570,7 @@ A simple, and in my opinion insightful, dynamical model for this effect is the P
 
 My intuition was simply wrong, and in my experience, this is true for the vast majority of people. What happens is shown in @fig-ch4n-img12-old-60. Each time you run the process, $p(blue)$ reaches a stable state, but the value of that state is random. What happens is that early (random) samples have a huge influence on the long-term dynamics. This creates a Matthew effect. [The Matthew effect says that the rich get richer and the poor get poorer.]{.aside}
 
-![The Pólya urn model. A random marble is sampled and placed back with an extra marble of the same color. The evolution of the probability of picking a blue marble is unpredictable and converges to a random number. This mechanism may play a role in the Matthew effect.](media/ch4n/fig-ch4n-img12-old-60_latest.png){#fig-ch4n-img12-old-60}
+![The Pólya urn model. A random marble is sampled and placed back with an extra marble of the same color. The evolution of the probability of picking a blue marble is unpredictable and converges to a random number. This mechanism may play a role in the Matthew effect.](media/ch4n/fig-ch4n-img12-old-60_above.png){#fig-ch4n-img12-old-60 width="80%"}
 
 @saviWiringIntelligence2019 provide a developmental interpretation. Imagine a child receives a tennis racket for her birthday. First, she practices the backhand twice at home, but incorrectly. Then, during her first tennis lesson, her trainer demonstrates the correct backhand. She now has three experiences, two incorrect and one correct. Now, suppose her backhand development is based on a very simple learning schema. Whenever a backhand return is required, she samples from her earlier experiences, and the sampled backhand is then added to the set of earlier experiences. Thus the cumulation of experiences follows the Pólya urn scheme. While she has the potential to become a tennis master, her twin sister, who had less fortunate initial experiences, decides to quit tennis lessons within the first year. This model is consistent with many developmental theories (e.g., the critical period hypothesis), but these theories lack a formal approach.
 
@@ -625,7 +625,7 @@ continue(start,x="alpha",y="T",xmin=-1,xmax=20,ymax=1,add=T)
 
 In @robinaughAdvancingNetworkTheory2019, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.
 
-![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at $A = T = 1$.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61 width="15cm"}
+![The panic model. Arousal is set high between time is 20 and 30, but panic persists due to the hysteresis effect. Eventually, due to noise, it escapes from the metastable attractor at $A = T = 1$.](media/ch4n/fig-ch4n-img13-old-61.png){#fig-ch4n-img13-old-61 width="80%"}
 
 ### Neural models: Van der Pol and different time scales {#sec-Neural-models-van-der-Pol-and-different-time-scales}
 
@@ -652,7 +652,7 @@ run(ymin=-1.5,main='b = 1',legend=F)
 plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 ```
 
-![Two runs of the van der Pol oscillator. For high b, this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="15cm"}
+![Two runs of the van der Pol oscillator. For high b, this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="100%"}
 
 The plots (@fig-ch4n-img15-old-63) illustrate this behavior. For $b < 0$, $X$ converges to a fixed point. For $b > 0$, we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form:
 
@@ -674,7 +674,7 @@ $$
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback. $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in @fig-ch4n-img15-old-63.
 
-![The dynamics of the FitzHugh—Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The $V$-nullcline (where $dV/dt = 0$) and the $W$-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest, potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4-15-may31.png){#fig-ch4n-img15-old-63}
+![The dynamics of the FitzHugh—Nagumo model. The horizontal axis represents the membrane potential ($V$), which is the voltage across the membrane of a neuron. The vertical axis represents the recovery variable ($W$). The $V$-nullcline (where $dV/dt = 0$) and the $W$-nullcline (where $dW/dt = 0$) cross at the unstable resting point. The lines with arrows represent typical trajectories. In the depolarized state, the membrane potential is higher than at rest, potentially leading to an action potential. In the hyperpolarized state, the membrane potential is lower than at rest. In the self-excitatory and regenerative phases, the system can increase its own activity without external input. The active region refers to a state in which the neuron is actively firing. Absolute and relative refractory are periods following an action potential when a neuron cannot fire again.](media/ch4n/ch4-15-may31.png){#fig-ch4n-img15-old-63 width="100%"}
 
 This model is for a single neuron. Crucial is that second equation is a slow process. Time-scale effects also play an important role in learning in neural networks. In most neural networks, there is a fast equation for updating neuron activities and a much slower equation for updating the connection strengths.
 
@@ -737,7 +737,7 @@ model <- function(t, state, parms) {  
 
 Depending on the choice of the parameters and initial values, many different things can happen. @abrahamComputationalUnfoldingDoublecusp1991 created bifurcation diagrams to summarize the qualitatively different regimes. We will restrict ourselves to the case where $b = d = 1$, and $a$ and $c$ are varied. The bifurcation diagrams and associated phase planes are shown in @fig-ch4n-img16-old-64.
 
-![On the left the bifurcation diagram for the double cusp ($b = d = 1$) is shown. The figures on the right show the phase planes associated with the four different cases in the bifurcation diagram. Case a has 9 fixed points, 4 of which are stable. Case b has 5 fixed points, 2 of which are stable. Case c has 3 fixed points, 2 of which are stable. Case d is special because it has a limit cycle, the Kadyrov oscillator.](media/ch4n/fig-ch4n-img16-old-64_latest.png){#fig-ch4n-img16-old-64}
+![On the left the bifurcation diagram for the double cusp ($b = d = 1$) is shown. The figures on the right show the phase planes associated with the four different cases in the bifurcation diagram. Case a has 9 fixed points, 4 of which are stable. Case b has 5 fixed points, 2 of which are stable. Case c has 3 fixed points, 2 of which are stable. Case d is special because it has a limit cycle, the Kadyrov oscillator.](media/ch4n/fig-ch4n-img16-old-64_above.png){#fig-ch4n-img16-old-64 width="80%"}
 
 The phase planes of @fig-ch4n-img16-old-64 can be made with:
 
@@ -764,7 +764,7 @@ run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
 
 The last three lines of this code show the Kadyrov oscillator (@fig-ch4n-img17-old-65).
 
-![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65 width="15cm"}
+![The Kadyrov oscillator. Y attracts X to its state (as $d = 1$), but X pushes Y away (as $c = - 1$), resulting in oscillations.](media/ch4n/fig-ch4n-img17-old-65.png){#fig-ch4n-img17-old-65 width="80%"}
 
 If we simplify this analysis a bit to stable fixed points only, we see three regimes:
 
@@ -798,7 +798,7 @@ I will give a psychological example of this multivariate model, concerning perce
 
 Take a look at @fig-ch4n-img18-old-66. This is a special case of multistable perception, which I call multifigure multistable perception.
 
-![Multifigure multistable perception. Verify three phenomena: (1) some attention or focus is required to see three-dimensional cubes, (2) spontaneous transitions in the perception of cubes occur, (3) such transitions affect the perception of neighboring cubes.](media/ch4n/image18.jpg){#fig-ch4n-img18-old-66}
+![Multifigure multistable perception. Verify three phenomena: (1) some attention or focus is required to see three-dimensional cubes, (2) spontaneous transitions in the perception of cubes occur, (3) such transitions affect the perception of neighboring cubes.](media/ch4n/image18.jpg){#fig-ch4n-img18-old-66 width="100%"}
 
 We can build a dynamical systems model of these perceptual phenomena by using the cascading transition model setup. We define $X$ as the percept of the cube. $X = 0$ means that no cubes are perceived, only lines and colored parallelograms. $X > 0$ represents the "front" view, and $X < 0$ the "back" view (cf. [fig. @fig-ch3-img2-old-14]). The cusp model for one cube is $\frac{dX}{dt} = {a + bX - X}^{3}$ , where $a$ is the bias parameter and $b$ is the attention parameter. If $a = 0$ and $b > 1$ (no bias and some attention to the figure), we get bistable percepts and spontaneous switches in perception (assuming we add some noise; see @fig-ch4n-img2-old-50).
 
@@ -847,11 +847,11 @@ text(80,-.5,'Attention')
 
 which gives @fig-ch4n-img19-old-67.
 
-![The multifigure Necker cube simulation. Initially, attention is low and the percept is close to 0, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At $t = 60$, it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67 width="15cm"}
+![The multifigure Necker cube simulation. Initially, attention is low and the percept is close to 0, representing the absence of three-dimensional perception. At $t = 30$, the attention intercept to one cube is increased to 1. At $t = 60$, it is set back to its initial low value. However, this one cube is now perceived as a cube, and the perception spreads to other cubes. They also increase overall attention, so that the perception of cubes continues after $t = 60$.](media/ch4n/fig-ch4n-img19-old-67.png){#fig-ch4n-img19-old-67 width="80%"}
 
 There is much more to be said about this model and its empirical validation. One idea is to look at different stimuli like the one in @fig-ch4n-img20-old-68.
 
-![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to switch independently ($a_{ij} = 0)$. You can verify this introspectively. (Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>)](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68 width="15cm"}
+![Two embedded Necker cubes. The one on the left seems to have a positive coupling $a_{ij} > 0$, while the one on the right seems to switch independently ($a_{ij} = 0)$. You can verify this introspectively. (Adapted from <https://royalsocietypublishing.org/doi/10.1098/rstb.2011.0365>)](media/ch4n/ch4n-20__figure69.png){#fig-ch4n-img20-old-68 width="80%"}
 
 ## Causal-loop diagrams {#sec-Causal-loop-diagrams}
 
@@ -859,7 +859,7 @@ One popular approach to dynamical systems modeling that I haven't touched on is 
 
 Insightmaker [@fortmann-roeInsightMakerGeneralpurpose2014] is a simple free online tool that provides a graphical model construction interface for dynamical systems modeling and agent-based modeling. As such, it can be used to implement the models of this and the previous chapter. A Lotka—Volterra example is shown in @fig-ch4n-img21-old-69. Insightmaker is easy to use. Studying some examples, found with "Explore Insights," may suffice. I have added some models to Insightmaker discussed in this chapter with the tag "vdmaas."
 
-![Screenshots of the Lotka—Volterra model in Insightmaker.](media/ch4n/image21.jpg){#fig-ch4n-img21-old-69}
+![Screenshots of the Lotka—Volterra model in Insightmaker.](media/ch4n/ch4-21-june14.png){#fig-ch4n-img21-old-69 width="100%"}
 
 Insightmaker has many powerful built-in functions and allows sensitivity testing as well as some sort of optimization. Personally, I prefer the approach of writing the equations and implementing them in R for several reasons. One is that this is how you communicate models in papers. Another is that the equations help you think about analytical results, which are always preferable to simulations. Finally, we can use Grind or deBif to go beyond simple simulations and classify equilibria and perform bifurcation analysis. But for building causal-loop diagrams of larger models to concretize theorizing without the direct goal of running them, Insightmaker is a great tool.
 

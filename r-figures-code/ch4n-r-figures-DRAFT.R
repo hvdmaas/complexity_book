@@ -37,7 +37,7 @@ LV <- function(t, state, parms) {
   })
 }
 
-png('media/ch4n/fig-ch4n-img1-old-49.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img1-old-49.png', width = 8, height = 4.82, units = 'in', res = 300)
 
 ## base 2
 set.seed(1)
@@ -62,7 +62,7 @@ pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
 pars <- rbind(pars,c(summary(f_deter)$sigma,summary(f_stoch)$sigma,summary(f_error)$sigma))
 
 barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'), 
-        bty = 'n', family = "CMU-bright", axes = FALSE, cex.lab = 1.2,
+        bty = 'n', family = "CMU-bright", axes = FALSE,
         legend = c('deterministic','stochastic','error'), 
         args.legend=c( bty = 'n', x = 'top'))
 axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) 
@@ -152,14 +152,14 @@ dat <- run(table=T,tmax=1000,method='euler',tstep=.1,after="state<-state+
             rnorm(1,mean=0,sd=0.4)*sqrt(tstep)",ymax=2,ymin=-2,timeplot=F)
 p1 <- dat %>% 
   ggplot(aes(time, X))+
-  geom_line(linewidth = .1, color = ncolors[4]) +
+  geom_line(linewidth = .5, color = ncolors[4]) +
   scale_y_continuous(breaks = seq(-1.5, 1.5, .5))+
   labs(x='Time')+
   theme_minimal() + theme1
 #plot(data,type='l',bty='n')
 #barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
 p2 <- dat %>% dplyr::select(X) %>% ggplot() + 
-  geom_histogram(aes(X), fill = ncolors[4], color = 'white', linewidth = .2) +
+  geom_histogram(aes(X), fill = ncolors[4], color = 'white', linewidth = .5) +
   coord_flip() + labs(x = '', y='')+
   scale_y_continuous(breaks = c(1,1000))+
   labs(y = 'Frequency')+
@@ -170,7 +170,7 @@ combined_plot <- plot_grid(
   p1, p2, ncol = 2, rel_widths = c(3/4, 1/4))
 combined_plot
 
-ggsave('media/ch4n/fig-ch4n-img2-old-50.jpg', width = 5, height = 3, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img2-old-50.png', width = 10, height = 7, units = 'in', dpi = 300)
 
 # -------------------------------------------------------------------------
 
@@ -254,11 +254,11 @@ dat <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 #matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 library(ggmatplot)
 ggmatplot(dat[, 2:(n+1)], plot_type = "line", color = ncolors[4],
-          linewidth = .15, linetype = 1, xlab = "Time",ylab = 'x') + 
+          linewidth = .4, linetype = 1, xlab = "Time",ylab = 'x') + 
   theme_minimal() + theme1 +
   theme(legend.position = 'none')
 
-ggsave('media/ch4n/fig-ch4n-img6-old-54.png', width = 4, height = 2.5, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img6-old-54.png', width = 10, height = 6, units = 'in', dpi = 300)
 
 
 # fig 4n.7 -----------------------------------------------------------------
@@ -289,8 +289,8 @@ h1 <- h[h$response=='upper',]
 h2 <- h[h$response=='lower',]
 
 g1  <- ggplot(r, aes(x = time)) +
-  geom_line(aes(y = X1), color = ncolors[2]) +
-  geom_line(aes(y = X2), color = ncolors[2]) +
+  geom_line(aes(y = X1), color = ncolors[4]) +
+  geom_line(aes(y = X2), color = ncolors[4]) +
   geom_hline(yintercept = 1) +
   geom_hline(yintercept = -1) +
   geom_hline(yintercept = 0, linetype = 'dotted') +
@@ -309,20 +309,20 @@ g1  <- ggplot(r, aes(x = time)) +
 g1plus <- g1 + 
   annotate("segment", x = 0, xend = 42, y = 0, yend = 1,
            arrow = arrow(type = "closed", length = unit(0.1, "inches"))) +
-  annotate('text', x = 20, y = 0.8, label = "Drift Rate: I", size = 10)+
+  annotate('text', x = 20, y = 0.8, label = "Drift Rate: I", size = 20)+
   
   annotate("segment", x = 80, xend = 80, y = 0, yend = 1,
            arrow = arrow(ends='both',type = "closed", length = unit(0.1, "inches")))+
-  annotate('text', x = 90, y = 0.5, label = "Bound: b", size = 10)+
+  annotate('text', x = 90, y = 0.5, label = "Bound: b", size = 20)+
   
-  annotate("segment", x = 120, xend = 130, y = 0, yend = 0,
+  annotate("segment", x = 110, xend = 125, y = 0, yend = 0,
            arrow = arrow(type = "closed", length = unit(0.1, "inches")))+
-  annotate('text', x = 125, y = -0.1, label = "Decision Time", size = 10) 
+  annotate('text', x = 115, y = -0.1, label = "Decision Time", size = 20) 
 g1plus
 
 g2 <- ggplot(h1,aes(x=rt)) +
   geom_histogram(binwidth = 5,fill = ncolors[4],color = "white", alpha = 0.7)+
-  xlim(0,130)+
+  xlim(0,180)+
   theme_minimal()+
   theme(axis.line = element_blank(),
         axis.title=element_blank(),
@@ -334,7 +334,7 @@ g2 <- ggplot(h1,aes(x=rt)) +
 
 g3 <-  ggplot(h2,aes(x=rt)) +
   geom_histogram(binwidth = 5,fill = ncolors[4],color = "white", alpha = 0.7)+
-  xlim(0,130)+
+  xlim(0,180)+
   theme_minimal()+
   scale_y_reverse()+
   theme(axis.line = element_blank(),
@@ -348,7 +348,7 @@ g3 <-  ggplot(h2,aes(x=rt)) +
 gfinal <- g2/g1plus/g3 + plot_layout(heights = c(1, 5,1))
 gfinal
 
-ggsave('media/ch4n/fig-ch4n-img7-old-55.png', width = 8, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img7-old-55.png', width = 10, height = 6, units = 'in', dpi = 300)
 
 # fig 4n.9 -----------------------------------------------------------------
 model <- function(t, state, parms) {
@@ -360,7 +360,7 @@ model <- function(t, state, parms) {
 }
 
 # Using base2 -------------------------------------------------------------
-png('media/ch4n/fig-ch4n-img9-old-57.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img9-old-57.png', width = 6, height = 5.45, units = 'in', res = 300)
 layout(matrix(1:6,3,2,byrow=T))
 par(mar=c(4.5,5,1,2)) #bott left top right
 p <- c(a=-1,b=1,c=.5,d=-1) # parameters
@@ -425,7 +425,7 @@ model <- function(t, state, parms) {
 }
 
 # using base2
-png('media/ch4n/fig-ch4n-img10-old-58.png', width = 7, height = 4.5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img10-old-58.png', width = 7, height = 6.36, units = 'in', res = 300)
 layout(matrix(1:9,3,3,byrow=T))
 par(mar=c(4,4,1,2))
 p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
@@ -519,7 +519,7 @@ model <- function(t, state, parms) {
 }
 
 ## Using base2
-png('media/ch4n/fig-ch4n-img11-old-59.png', width = 8, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img11-old-59.png', width = 8, height = 4.82, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 par(mfrow=c(2,2))
 # Set parameter values and run the model:
@@ -603,12 +603,19 @@ urns_png <- readPNG('media/ch4n/urns_new.png')
 library(cowplot)
 urnsgg <- ggdraw() + draw_image(urns_png)
 # Plot + image
-plot_grid(urnsgg, p1, p2, ncol = 3)
+combined_p1_p2 <- plot_grid(p1, p2, ncol = 2)
 
-ggsave('media/ch4n/fig-ch4n-img12-old-60_latest.png', width = 9, height = 3, units = 'in', dpi = 300)
+# Arrange urnsgg above the combined p1 and p2
+plot_grid(
+  urnsgg,
+  combined_p1_p2,
+  ncol = 1,
+  rel_heights = c(1.2, 0.8))
+
+ggsave('media/ch4n/fig-ch4n-img12-old-60_above.png', width = 10, height = 20, units = 'in', dpi = 300)
 
 # fig 4n.13 ----------------------------------------------------------------
-png('media/ch4n/fig-ch4n-img13-old-61.png', width = 7, height = 5, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img13-old-61.png', width = 7, height = 4.22, units = 'in', res = 300)
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dA <- -A + b*T  
@@ -694,7 +701,7 @@ model <- function(t, state, parms) {
 }
 
 s <- c(X=0,Y=0) 
-png('media/ch4n/fig-ch4n-img16-old-64b.png', width = 8, height = 6, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img16-old-64b.png', width = 8, height = 6.4, units = 'in', res = 300)
 layout(matrix(1:4,2,2))
 for(i in c('a','b','c','d'))
 {
@@ -716,12 +723,12 @@ library(cowplot)
 four_cases_gg <- ggdraw() + draw_image(four_cases)
 bif_diagram_gg <- ggdraw() + draw_image(bif_diagram)
 # Plot + image
-plot_grid( bif_diagram_gg, four_cases_gg,ncol = 2, rel_widths = c(2/5, 3/5))
+plot_grid( bif_diagram_gg, four_cases_gg,ncol = 1, rel_heights = c(2/5, 3/5))
 
-ggsave('media/ch4n/fig-ch4n-img16-old-64_latest.png', width = 10, height = 4, units = 'in', dpi = 300)
+ggsave('media/ch4n/fig-ch4n-img16-old-64_above.png', width = 8, height = 10, units = 'in', dpi = 300)
 
 # fig 4n.17 --------------------------------------------------------------------
-png('media/ch4n/fig-ch4n-img17-old-65.png', width = 6, height = 4, units = 'in', res = 300)
+png('media/ch4n/fig-ch4n-img17-old-65.png', width = 6, height = 3.62, units = 'in', res = 300)
 layout(1)
 s <- c(X=0.1,Y=.1) 
 p <- c(a=1,b=1,c=-1,d=1)
@@ -784,7 +791,7 @@ dat <- run(after="if(t==33)parms<-c(1,rep(-.3,N-1));
            state<-state+rnorm(N,mean=0,sd=0.05)",
            table=TRUE, timeplot = FALSE)
 
-antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
+antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .50, ...){
   dots <- list(...)
   p <- data %>% 
     pivot_longer(colnames(data)[-1], names_to = 'par', values_to = 'val') %>% 
@@ -794,7 +801,7 @@ antiRuntmp <- function(data, line = TRUE, psize = .4, lsize = .25, ...){
     labs(y = 'Density', x = 'Time', color = '', shape = '', ...) +
     theme_minimal() + theme1+
     theme(legend.position = 'none', ...)
-  if(line) pl <- p + geom_line(aes(time, val, group = par),color = 'black', linewidth = lsize, ...)
+  if(line) pl <- p + geom_line(aes(time, val, group = par),color = ncolors[1], linewidth = lsize, ...)
   ifelse(line, return(pl), return(p))
 }
 pl <- antiRuntmp(dat)
@@ -803,16 +810,11 @@ pl1 <- pl + geom_line(data = data.frame(
   time = 1:100,
   val = b0_i,
   par = "b0_i"
-), aes(x = time, y = val), color = "black", size = .4, linetype = "dotted")+
-  theme( axis.title.x = element_text(size = 60),
-         axis.title.y = element_text(size = 60),
-         axis.text.x  = element_text(size = 60),
-         axis.text.y  = element_text(size = 60),
-         legend.text  = element_text(size = 40),
-         legend.title = element_text(size = 40))
+), aes(x = time, y = val), color = ncolors[2], size = 1, linetype = "dotted")+
+  theme(
+    )
 
-pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 14, family = cfont) +
-  annotate("text", x = 80, y = -0.5, label = 'Attention', size = 14, family = cfont)
+pl2 <- pl1 + annotate("text", x = 80, y = 1.4, label = 'Percepts', size = 24, family = cfont) +
+  annotate("text", x = 80, y = -0.5, label = 'Attention', size = 24, family = cfont)
 pl2
-ggsave('media/ch4n/fig-ch4n-img19-old-67.png', width = 6, height = 3, units = 'in', dpi = 300)
-
+ggsave('media/ch4n/fig-ch4n-img19-old-67.png', width = 10, height = 5.5, units = 'in', dpi = 300)
