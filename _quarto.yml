@@ -40,6 +40,8 @@ monofont: 'Monaco'
 monofontoptions: 
   - Scale=0.7
 
+tbl-cap-location: bottom
+
 format:
   html:
     theme: cosmo
@@ -89,6 +91,6 @@ format:
     #  fig-prefix: figure
     #  sec-prefix: section
     #  eq-prefix: equation
-      
+  
 editor: visual
 

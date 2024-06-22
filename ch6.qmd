@@ -472,7 +472,7 @@ M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 
 In JASP, you can perform network and confirmatory factor analysis. In the latter case, select "3 factors" in the first window and select "assume uncorrelated factors" in the model options. The resulting plots should look like @fig-ch6-img17-old-86.
 
-![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.jpg){#fig-ch6-img17-old-86 width="100%"}
+![The block structure in the mutualism model can be represented as either a network or a factor model.](media/ch6/image17.png){#fig-ch6-img17-old-86 width="100%"}
 
 ### Fitting Ising models {#sec-Fitting-Ising-models}
 
@@ -517,7 +517,7 @@ An empirical example is provided in @dalege2017. The open-access data ($N = 5728
 |  "Afraid of him"                      | Afr              |
 |  "Proud"                              | Prd              |
 
-: Table 6.1: The abbreviation of items used in @fig-ch6-img19-old-88
+: The abbreviation of items used in @fig-ch6-img19-old-88. {#tbl-obama-table}
 
 We can use Isingfit and add community detection:
 
