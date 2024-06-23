@@ -67,7 +67,7 @@ unique(unlist(x)) # winning word
 
 Which results in @fig-ch7-img3-old-91.
 
-![The order parameter, the total number of unique words, undergoes a phase transition to a state where everyone uses the same word for the object (compare Castellano et al., 2009, fig.2).](media/ch7/fig-ch7-img3-old-91.png){#fig-ch7-img3-old-91 width="80%"}
+![The order parameter, the total number of unique words, undergoes a phase transition to a state where everyone uses the same word for the object (compare Castellano et al., 2009, fig.2).](media/ch7/fig-ch7-img3-old-91.png){#fig-ch7-img3-old-91 width="100%"}
 
 After a phase in which agents use lots of different words, a language consisting of just a single word emerges abruptly. A simplification would be the case that agents start with either word A, word B, or both words A and B. So no new words are invented. For this case we can write the time evolution in three differential equations:
 
@@ -191,7 +191,7 @@ s <- x0;p  <- c()
 run(odes=FJ,method='euler',tmax=100)
 ```
 
-![Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95 width="80%"}
+![Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95 width="100%"}
 
 With an additional bias mechanism, in which confirming evidence is weighted more heavily relative to disconfirming evidence, polarization can also occur in connected networks [@dandekarBiasedAssimilationHomophily2013].
 

@@ -132,7 +132,7 @@ For low $b$ there is one stable fixed point that becomes unstable. It splits up 
 
 Depicting the combined effects of $a$ and $b$ requires a three-dimensional plot, which combines the hysteresis and pitchfork diagrams (@fig-ch3-img10-old-22).
 
-![The cusp catastrophe combines hysteresis along the normal axis ($a$) and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (shaded gray).](media/ch3/ch3-10-june14.png){#fig-ch3-img10-old-22 width="80%"}
+![The cusp catastrophe combines hysteresis along the normal axis ($a$) and the pitchfork along the splitting axis ($b$). At the back of the cusp, changes in $a$ only lead to smooth changes in the equilibrium behavior $X^{*}$. At the front, sudden jumps occur when we cross the bifurcation lines. These jumps are typical of first order phase transitions. The area between the bifurcation lines is called the bifurcation set. In this area there are two stable and one unstable equilibrium (shaded gray).](media/ch3/ch3-10-june14.png){#fig-ch3-img10-old-22 width="60%"}
 
 The cusp diagram can be expressed mathematically by setting the first derivative to 0:
 
@@ -154,7 +154,7 @@ This equation defines the bifurcation lines where the first and second derivativ
 
 To illustrate the cusp, I always use the business card (@fig-ch3-img11-old-23). I recommend that you test this example (not with your credit card). You can play with two forces. $Fv$ is the vertical force and the splitting control variable ($b$) in the cusp. $Fh$ is the horizontal force and the normal variable ($a$) in the cusp. Note that you will only get smooth changes when $Fv = 0$, but sudden jumps and hysteresis when you employ vertical force. One very important phenomenon is that the card has no "memory" when $Fv = 0$. You can push the card to a position, but as soon as you release this force ($Fh$ back to 0), the card moves back to the center position. This is not the case with vertical pressure. If we force the card to the left or right position, it will stay there, even if we remove the horizontal force. The card has a memory.
 
-![A simple business card can be used to illustrate all the properties of the cusp (see main text).](media/ch3/ch3-11-may31.png){#fig-ch3-img11-old-23 width="100%"}
+![A simple business card can be used to illustrate all the properties of the cusp (see main text).](media/ch3/ch3-11-may31.png){#fig-ch3-img11-old-23 width="90%"}
 
 This seems simple, but the mathematical analysis of such elastic bending structures is a huge topic in itself [@postonCatastropheTheoryIts2014]. The freezing of water is also a cusp. As an approximation, we could say that the density of water is the behavioral variable, temperature is the normal variable, and pressure acts as a splitting variable (see chapter 14 of @postonCatastropheTheoryIts2014, for a more nuanced analysis). It is very instructive to study the full phase diagram of water (@fig-ch3-img12-old-24). It can be viewed as a map of the equilibria. This type of mapping would be extremely useful in psychology and the social sciences.
 
@@ -162,7 +162,7 @@ This seems simple, but the mathematical analysis of such elastic bending structu
 
 A psychological example of a cusp concerns sudden jumps in attitudes [@lataneAttitudesCatastrophesDimensions1994; @vandermaasSuddenTransitionsAttitudes2003]. Attitudes will be discussed in much more detail in later chapters. In general, we have relatively stable attitudes toward many things in life (politics, snakes, hamburgers, and sports), but sometimes they change, and in rare cases they change radically. For example, you may suddenly become a conspiracy theorist, an atheist, or a vegetarian. One example is the attitude toward abortion (@fig-ch3-img13-old-25).
 
-![The cusp model of attitudes (here toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/ch3-13-june14.png){#fig-ch3-img13-old-25 width="80%"}
+![The cusp model of attitudes (here toward abortion). Because of hysteresis, it is very difficult to persuade highly involved people with new information, but if they change it will be a sudden jump.](media/ch3/ch3-13-june14.png){#fig-ch3-img13-old-25 width="60%"}
 
 Cusp modeling begins by defining the states of the behavioral variable. In this case, the two states of the bistable cusp are the two opposing positions, pro-life[^ch3-6] and pro-choice. The other state associated with $a = 0, b = 0$ is the neutral state, an "I don't know" or "I don't care" position.
 

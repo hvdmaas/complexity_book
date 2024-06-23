@@ -6,7 +6,7 @@ Common-cause theories are widely accepted in psychology. High scores on cognitiv
 
 The study of psychological networks is perhaps the most thriving area of complex-systems research in psychology today. This chapter is about this new line of research. The paper on the mutualism model of general intelligence [@vandermaasDynamicalModelGeneral2006] can be seen as the root of this approach, but it took off, as shown in @fig-ch6-img1-old-70, when it was applied to clinical psychology [@borsboomNetworkTheoryMental2017; @borsboomPsychometricPerspectivesDiagnostic2008; @cramerComorbidityNetworkPerspective2010], especially when the theoretical work was backed up with psychometric tools [@epskampEstimatingPsychologicalNetworks2018; @epskampQgraphNetworkVisualizations2012; @marsmanGuestEditorsIntroduction2022].
 
-![The number of papers in Google Scholar on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="90%"}
+![The number of papers in Google Scholar on the combination of symptoms and "network analysis" grows exponentially.](media/ch6/fig-ch6-img1-old-70.jpg){#fig-ch6-img1-old-70 width="80%"}
 
 In this chapter I will present and discuss these theoretical and psychometric lines of research, accompanied by practical examples. First, I will begin with an introduction to network theory.
 
@@ -47,7 +47,7 @@ edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))# now .2
 centralityPlot(qgraph(adj)) # note centrality() gives more indices
 ```
 
-![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="100%"}
+![A weighted directed network with self-loops. Red arrows indicate negative effects. OutStrength and InStrength represent two types of centrality measures in directed networks.](media/ch6/fig-ch6-img2-old-71.png){#fig-ch6-img2-old-71 width="80%"}
 
 ### Network types {#sec-Network-types}
 
@@ -57,7 +57,7 @@ Igraph[^ch6-1] has an amazing number of functions for creating specific networks
 
 [^ch6-1]: <https://igraph.org>
 
-![Different network types generated with igraph.](media/ch6/fig-ch6-img3-old-72.png){#fig-ch6-img3-old-72 width="100%"}
+![Different network types generated with igraph.](media/ch6/fig-ch6-img3-old-72.png){#fig-ch6-img3-old-72 width="90%"}
 
 The last case in the figure, preferential attachment, is of particular interest because it is created dynamically. It starts with a node and then new nodes are added that prefer links to nodes that already have many links. In the NetLogo model "Preferential Attachment simple," you can see this growth process. Preferential attachment networks are often called complex because they exhibit nontrivial structural patterns. Preferential attachment networks are "scale-free," meaning that the degree distribution looks the same no matter the scale. [Scale-free networks have a degree distribution that follows a power law, with some nodes having many links but most having only a few.]{.aside} Scale-free networks are useful for studying the robustness and vulnerability of networks to targeted attacks on highly connected nodes. Removing hubs with high connectivity potentially split the network into disconnected components and impede the network's functionality. Because most nodes in the network have a small degree (few connections), randomly removing nodes tends not to disrupt the network's overall structure. Scale-free networks are believed to exist in various real-world scenarios, ranging from website connections to scientific collaborations. For a critical analysis, I refer to @broido2019.
 
@@ -67,7 +67,7 @@ The scale-free and small-world networks are predominantly associated with the co
 
 This nesting seems to be crucial for understanding complex systems and is a central theme in Herbert Simon's influential architecture of complexity [@simon1962]. He introduced the concept of near decomposability to describe the interaction within these nested hierarchies. Typically, interactions within each subsystem are stronger and more frequent than those between subsystems. Although the HSBM simplifies reality, where levels can intermingle and low-level interference might occasionally escalate to higher levels, it often serves as a useful framework for conceptualizing complex networks, including in the field of psychology.
 
-![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. The code for this figure is available in the online software repository of the book.](media/ch6/fig-ch6-extra-bw.jpeg){#fig-ch6-extra width="90%"}
+![A hierarchical stochastic block model with four levels of four units. Probabilities of links are higher within blocks than between blocks of nodes. This embedding of levels could be seen as an implementation of Simon's architecture of complexity. The code for this figure is available in the online software repository of the book.](media/ch6/fig-ch6-extra-bw.jpeg){#fig-ch6-extra width="100%"}
 
 ### Network dynamics {#sec-Network-dynamics}
 
@@ -114,7 +114,7 @@ $$ {#eq-ch6-1-old-42}
 
 where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
 
-![The mutualism model. The self-loops have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="100%"}
+![The mutualism model. The self-loops have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="75%"}
 
 When $M$ contains mostly negative values, the model is known as a competitive Lotka—Volterra model. In this case, limit cycles and other nonlinear phenomena may occur [@hirschSystemsDifferentialEquations1985]. For the mutualistic variant, with positive $M$, we see either convergence to a positive state or exponential growth. This exponential growth is an unfortunate aspect of the Lotka—Volterra mutualism model. Robert May famously described this effect as an orgy of mutual benefaction [@mayTheoreticalEcologyPrinciples2007], which is not what we see in nature, and all sorts of solutions have been proposed [@bascompteMutualisticNetworks2013].
 
@@ -158,7 +158,7 @@ hist(cor(data)[cor(data)<1],main='positive manifold',
      col='lightgreen') # positive manifold
 ```
 
-![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="100%"}
+![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="80%"}
 
 #### Abnormal development {#sec-Abnormal-development}
 
@@ -225,7 +225,7 @@ The connection to resilience is interesting. In dynamic terms, resilience is ass
 
 This suggests a distinction between perturbations and interventions. With interventions, we change the equilibrium landscape to allow a sustainable change to a healthy state. Perturbations (a brief intervention or a positive or negative event) can have a permanent or temporary effect, depending on which state is more resilient. In the situation shown in the top panel of @fig-ch6-img10-old-79, any perturbation, whether it is a treatment or an alternative (or even being on the waiting list), will work. In the situation on the bottom left, no intervention would have a lasting effect. This analysis of resilience may help to understand the inconsistent results of studies of intervention effects. Monitoring the resilience of the unhealthy state (with catastrophe flags such as anomalous variance) may also be important for timing interventions [@hayesComplexSystemsApproach2020]. Failed interventions, such as an attempt to quit smoking, are likely to reinforce the unhealthy state [@vangeliPredictorsAttemptsStop2011].
 
-![Resilience from a complex-systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/ch6-11-may31.png){#fig-ch6-img10-old-79 width="100%"}
+![Resilience from a complex-systems perspective. If the system is in a less resilient, metastable state, any perturbation will be effective. A perturbation to a metastable state will not last. Lasting interventions change the dynamic landscape of the system.](media/ch6/ch6-11-may31.png){#fig-ch6-img10-old-79 width="90%"}
 
 ### Ising attitude model {#sec-Ising-attitude-model}
 
@@ -239,7 +239,7 @@ In this section, I will discuss our network approach to attitudes using the Isin
 
 The Ising model was developed as an alternative to the tripartite factor model of attitudes, in which the attitude, a latent factor, consists of lower-order cognitive, affective, and behavioral factors that each explain observed responses, similar to the Cattell—Horn—Carroll model of general intelligence. [Attitudes are networks of feelings, beliefs, and behaviors toward an attitude object.]{.aside} The causal attitude model [@dalegeFormalizedAccountAttitudes2016] maintains this distinction in cognitive, affective, and behavioral components, but now conceptualizes them as clusters within a network. Nodes represent single feelings, beliefs, and behaviors. In @dalegeAttitudinalEntropyAE2018, this network model is formalized in the form of an Ising model with attention as the equivalent of (the inverse of) temperature. That is, high attention "freezes" the network and leads to consistent and stable positive or negative states of the attitude (the "mere thought effect"). [Attention is equated to (inverse) temperature.]{.aside}
 
-![The Ising attitude network model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields. The connections are weighted.](media/ch6/ch6-12.png){#fig-attitudenetwork width="80%"}
+![The Ising attitude network model. Feelings, beliefs, and behaviors toward an attitude object align when attended to. Nodes are also influenced by local and global external fields. The connections are weighted.](media/ch6/ch6-12.png){#fig-attitudenetwork width="60%"}
 
 #### Model setup {#sec-Model-setup}
 
@@ -259,7 +259,7 @@ Another difference from the original Ising model introduced in Chapter 5 is that
 
 As discussed in Chapter 5 (@sec-Physics), another approach to understanding the dynamics of Ising-type models is the mean-field approximation. This requires the assumption that the network is fully and uniformly connected with equal thresholds (known as the Curie—Weiss model). In this approximation $W_{ij} = c$ (all equal) and $x_{j}$ are replaced by their mean values, which greatly simplifies the energy function. It can be shown that the dynamics of the simple fully connected Ising model are well approximated by the cusp, with the external field as normal and the inverse temperature as the splitting variable.
 
-![The mean field approximation of the Ising attitude model is the cusp. Attention is the psychological equivalent of inverse temperature.](media/ch6/ch6-13.png){#fig-ch6-img11-old-80 width="80%"}
+![The mean field approximation of the Ising attitude model is the cusp. Attention is the psychological equivalent of inverse temperature.](media/ch6/ch6-13.png){#fig-ch6-img11-old-80 width="60%"}
 
 This is an important result because it makes the use of the cusp in attitude research (see @fig-ch3-img13-old-25) less phenomenological. The cusp is now derived from more basic principles (@fig-ch6-img11-old-80). Note that here we use attention as the splitting variable, whereas in Chapter 3 we used involvement. These are closely related concepts, the difference being the time scale. Attention can change in seconds or minutes, whereas involvement can change in weeks or months. I will use attention and involvement interchangeably.
 
