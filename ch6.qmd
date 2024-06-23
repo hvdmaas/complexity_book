@@ -533,7 +533,7 @@ qgraph(ObamaFit$weiadj, layout = 'spring',
 
 @Fig-ch6-img19-old-88 shows the network. The red nodes represent negative feelings toward Barack Obama; the green nodes represent positive feelings; the light blue nodes represent judgments primarily related to interpersonal warmth; and the purple nodes represent judgments related to Obama's competence. This community structure is consistent with the postulate of the Ising attitude model that similar evaluative responses cluster [@dalegeFormalizedAccountAttitudes2016]. @finnemann2021 present additional examples and applications of other packages.
 
-![The attitude toward Obama in 2012 represented as a network.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88 width="100%"}
+![The attitude toward Obama in 2012 represented as a network.](media/ch6/fig-ch6-img19-old-88.png){#fig-ch6-img19-old-88 width="90%"}
 
 ## Challenges {#sec-Challenges}
 

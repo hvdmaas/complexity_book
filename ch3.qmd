@@ -178,7 +178,7 @@ But if the underlying change in information is large enough, attitudes can show 
 
 Another psychological example of the cusp-like behavior is multistable perception. @stewartCatastropheTheoryModeling1983 proposed a model in which the perception of male face or female figure is used as a behavioral variable, the splitting variable is the amount of detail, and the normal variable is a change in detail related to the male/female distinction. The results are shown in @fig-ch3-img14-old-26.
 
-![Multistable perceptual stimuli positioned in the bifurcation set. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach. (Adapted from @stewartCatastropheTheoryModeling1983 with permission)](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="100%"}
+![Multistable perceptual stimuli positioned in the bifurcation set. The fitted bifurcation lines were calculated using Cobb's method, which is explained in @sec-Cobbs-maximum-likelihood-approach. (Adapted from @stewartCatastropheTheoryModeling1983 with permission)](media/ch3/image14.jpg){#fig-ch3-img14-old-26 width="90%"}
 
 ### Higher-order catastrophes {#sec-Higher-order-catastrophes}
 
@@ -320,7 +320,7 @@ It appeared that subjects solved the task by switching between the fast-guessing
 
 Divergence or the pitchfork bifurcation, the splitting up of an equilibrium, requires the manipulation of the splitting variable. In the case of attitudes, we hypothesize this to be involvement or some related variable. In @vandermaasSuddenTransitionsAttitudes2003, we reanalyzed a dataset from @stoufferAmericanSoldierAdjustment1949, which @lataneAttitudesCatastrophesDimensions1994 presented as evidence for the cusp model. The attitude concerned demobilization (from 0, unfavorable, to 6, favorable), and respondents were asked to indicate how strongly they felt about their answer (from intensity 0 to intensity 5). For low intensities of feeling, the data are normally distributed whereas for higher intensities, data are bimodally distributed (see @fig-ch3-img21-old-33). [After testing for multimodality, testing for divergence is a sensible next step.]{.aside}
 
-![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in @sec-Fitting-the-cusp-to-crosssectional-data.](media/ch3/ch3-21-may31.png){#fig-ch3-img21-old-33 width="100%"}
+![The pitchfork bifurcation in attitudes. The dotted lines represent the fit of the cusp model to these data. This technique will be discussed in @sec-Fitting-the-cusp-to-crosssectional-data.](media/ch3/ch3-21-may31.png){#fig-ch3-img21-old-33 width="80%"}
 
 #### Hysteresis {#sec-Hysteresis}
 
