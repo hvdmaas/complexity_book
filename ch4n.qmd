@@ -50,7 +50,7 @@ But for more complex models, such an analytical solution is out of scope and num
 
 The naive implementation of differential equations in R is risky. This would involve a for loop:
 
-``` r
+```{r eval = FALSE}
 x <- x0 <- .1  # initial value
 r <- .5 # growth rate
 dt <- .00001 # time step in simulation
@@ -69,14 +69,14 @@ where $dt$ must be chosen by hand. If you test some values of $dt$, you will see
 
 This is why we use solvers, numerical methods for ordinary differential equations. [Solvers are specialized algorithms designed to numerically approximate solutions to ODEs and handle the complexities of integrating these equations over time to predict the evolution of system states under different initial conditions and parameters.]{.aside} We will use the R package Grind, although many other methods are available in R. One could also directly use the R packages deSolve and rootSolve by @soetaert2010, on which the Grind package is based. Grind has to be installed from GitHub using:
 
-``` r
+```{r eval = FALSE}
 install.packages("remotes")
 remotes::install_github("hansschepers/grindr")
 ```
 
 The packages required are:
 
-``` r
+```{r eval = FALSE}
 library(deSolve)
 library(rootSolve)
 library(FME)
@@ -85,7 +85,7 @@ library(Grind)
 
 The code consists of defining the model, the parameters $p$, and the initial values $s$. Main functions are `run()`, `plane()`, `newton()`, `continue()`, and `fit()`. They will be introduced using examples. With `run()` we generate a time series for the model.
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- r*X            # the exponential model
@@ -130,7 +130,7 @@ where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ a
 
 To implement this model in Grind, we use:
 
-``` r
+```{r eval = FALSE}
 LV <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dN <- a*N - b*P*N
@@ -144,7 +144,7 @@ s <- c(N=10,P=10)             # 10 baboons and 10 cheetahs
 
 Some typical uses of Grind are:
 
-``` r
+```{r eval = FALSE}
 layout(1:2)
 data=run(odes=LV,tstep=.01,table=T) # set tstep to low value
 # phase plot for different starting values
@@ -163,7 +163,7 @@ Grind includes an option to fit dynamical systems models. With `fit()`, based on
 
 I will illustrate the use of `fit()` on three datasets created with the original Lotka—Volterra model from the previous section. The first dataset is the deterministic dataset, the data that follow directly from the code above. The second is created using a stochastic Lotka—Volterra model. I will explain how this works in the next section. The third is a deterministic dataset with measurement error. We will see that the last two cases are very different.
 
-``` r
+```{r eval = FALSE}
 set.seed(1)
 layout(matrix(1:4,2,2,byrow=T))
 p <- c(a=1.1,b=.4,c=.1,d=0.4) # p is a named vector of parameters
@@ -202,7 +202,7 @@ $$
 \frac{dX}{dt} = - V^{'}(X) = {a + bX - X}^{3}.
 $$ {#eq-ch4n-5-old-25}
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     dX <-  a + b*X - X^3        # cusp
@@ -219,7 +219,7 @@ A nicer way to demonstrate bistability in the time series is to make the system 
 
 As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous jumps between the two modes of the cusp. When noise or random fluctuations cause the entire equilibrium landscape of a dynamical system to become observable, it is often referred to as stochastic resonance. [Stochastic resonance is a notable example of how noise, which is often considered undesirable or disruptive, can actually play a constructive role in certain systems, helping to reveal hidden patterns and structures that might otherwise remain obscured.]{.aside} You can see this by comparing the figure with one generated with a standard deviation of .1 or less.
 
-``` r
+```{r eval = FALSE}
 layout(t(c(1,1,1,2)))
 data <- run(table=T,tmax=1000,method='euler',tstep=.1,
             after="state <- state + 
@@ -237,7 +237,7 @@ By combining the Grind functions `newton()` and `continue()`, we can perform bif
 
 It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create @fig-ch4n-img3-old-51 is:
 
-``` r
+```{r eval = FALSE}
 p <- c(a=0,b=1)
 low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
 # Continue this steady state varying a
@@ -252,7 +252,7 @@ Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is an R S
 
 [^ch4n-4]: <https://cran.r-project.org/web/packages/deBif/deBif.pdf>
 
-``` r
+```{r eval = FALSE}
 install.packages("deBif")
 library(deBif)
 phaseplane(model,s,p)
@@ -262,7 +262,7 @@ The `phaseplane()` function returns a time plot and the steady states. You can c
 
 With
 
-``` r
+```{r eval = FALSE}
 bifurcation(model,s,p)
 ```
 
@@ -274,7 +274,7 @@ You can create one- and two-parameter bifurcation diagrams (using the LP curve o
 
 In Chapter 3, @sec-Mechanistic-models, I introduced the spruce budworm outbreak model. We will use this model later as a model of addiction. The bifurcation diagram can be made with:
 
-``` r
+```{r eval = FALSE}
 spruce <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     du = r*u*(1 - u/q)-u^2/(1+u^2)
@@ -302,7 +302,7 @@ An additional problem is that empirically testing all these different models is 
 
 A case in which this is less of an issue is the traffic example that I introduced in Chapter 1. I asked you to play around with the online simulation. We now know the basics to better understand this model. The Wikipedia page on this model (Intelligent Driver Model) presents the equations, which are also coupled ordinary differential equations. The implementation in Grind of the simplest case looks like this:
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     x <- state[1:n]
@@ -355,7 +355,7 @@ The implementation of the model in Grind is quite simple. The trick is again in 
 
 [^ch4n-5]: Simulating this model correctly is more difficult than one might expect. I refer to @tuerlinckxComparisonFourMethods2001 for a discussion of methods.
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX = I
@@ -429,7 +429,7 @@ First note that the case of $b = c = 0$ resembles the exponential model with sol
 
 Juliet may have her own style, which leads to complicated interactions. @sprottDynamicalModelsLove2004 and other sources give an extended analytical treatment of this model. [Systems of linear differential equations can be solved analytically, and the behavior of the equilibria can be characterized by the eigenvalues. Some knowledge of matrix algebra is required to understand this.]{.aside} If you want to learn more about dynamical systems, you should study matrix algebra and its applications in linear dynamical systems. I have chosen to leave it out of this book because most psychological dynamical systems models are nonlinear. Here we just use Grind to test some cases. I give three examples with three different sets of parameter values. In the first case, the initial mutual interest fades; in the second case, the relationship fizzles out after some ups and downs; and in the third case, the couple ends up in a cycle of hate and love.
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dR <- a*R+b*J
@@ -491,7 +491,7 @@ Another more complex influence function ($a = - 8, b = 1$) assumes that only ext
 
 This is implemented with:
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dW <- influence(H,a,b)-rw*W+We
@@ -538,7 +538,7 @@ $$ {#eq-ch4n-13-old-33}
 
 This can be implemented as follows:
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- (a + b * Y) * X - a * X^2 / K
@@ -590,7 +590,7 @@ This looks a bit like the Romeo and Juliet model, but now the effect of perceive
 
 An implementation and simple illustration is:
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dA <- -A + b*T  
@@ -614,7 +614,7 @@ The $\beta$ parameter is set so that the nonpanic mode dominates, but the panic 
 
 This dynamic of this model is the cusp, as can be checked with (see @fig-ch4n-img15-old-63):
 
-``` r
+```{r eval = FALSE}
 p <- c(b=1,alpha=12,beta=-.5)
 start <- newton(s=c(A=.1,T=.1)) 
 continue(start,x="beta",y="T",xmin=-1,xmax=1,ymax=1) 
@@ -633,7 +633,7 @@ In the panic model, we touched on differences in time scales. [The difference in
 
 Imagine taking the cusp equation $dX/dt = {a + bX - X}^{3}$, with $b=1$, such that we have hysteresis. But now we make $a$, or actually $da/dt$, a function of $X$: $da/dt = - \varepsilon X$, where $\varepsilon$ is small constant. If we set $\varepsilon$ to .05, $a$ changes 20 times slower than $X$. What happens now is that with $X = 1$ and $a = 0$, $a$ decreases up to the point where $X$ jumps to a negative value. Now $a$ increases, resulting to a new jump to a positive value of $X$. And this loop will continue endlessly.
 
-``` r
+```{r eval = FALSE}
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     dX <-  a + b*X - X^3        # cusp
@@ -725,8 +725,8 @@ $$ {#eq-ch4n-18-old-38}
 
 This model, first proposed by Kadyrov, was analyzed in detail by @abrahamComputationalUnfoldingDoublecusp1991. We can study this model in Grind by specifying:
 
-``` r
-model <- function(t, state, parms) {   
+```{r eval = FALSE}
+model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
     dX <- a*Y + b*X - X^3 
     dY <- c*X + d*Y - Y^3
@@ -741,7 +741,7 @@ Depending on the choice of the parameters and initial values, many different thi
 
 The phase planes of @fig-ch4n-img16-old-64 can be made with:
 
-``` r
+```{r eval = FALSE}
 layout(matrix(1:4,2,2))
 s <- c(X=0,Y=0) 
 for(i in c('a','b','c','d'))
@@ -814,7 +814,7 @@ $$ {#eq-ch4n-21-old-41}
 
 The code to simulate this model is:
 
-``` r
+```{r eval = FALSE}
 set.seed(1)
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{

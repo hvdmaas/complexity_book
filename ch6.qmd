@@ -28,7 +28,7 @@ The degree distribution can take several forms. A random graph, where nodes are 
 
 There are many methods available in R for creating and visualizing networks and for computing properties of networks. The igraph and qgraph libraries are very useful. It is a good idea to experiment with this R code below by varying the parameter values. Some key concepts of networks are shown in @fig-ch6-img2-old-71.
 
-``` r
+```{r eval = FALSE}
 library(igraph);library(qgraph)
 g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
 plot(g1) # an undirected network with 3 nodes
@@ -120,7 +120,7 @@ When $M$ contains mostly negative values, the model is known as a competitive Lo
 
 The mutualism model in Grind is specified as follows:
 
-``` r
+```{r eval = FALSE}
 mutualism <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:nr_var]
@@ -132,7 +132,7 @@ mutualism <- function(t, state, parms){
 
 A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (tmax = 60) for each person. We can then compute the correlations and check if they are positive (@fig-ch6-img7-old-76). For each person, we resample $a$, $K$, and the initial values of $X$, but $M$ is the same across persons. Note that the $M$-values should not be set too high, otherwise we end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
 
-``` r
+```{r eval = FALSE}
 layout(matrix(1:2,1,2))
 nr_var <- 12 # number of tests, abilities (W)
 nr_of_pp <- 500
@@ -269,7 +269,7 @@ This mean-field approximation is very robust. In @vandermaas2020, we show via si
 
 The IsingSampler function runs the Metropolis—Hastings algorithm $nIter$ times and returns the last state. It can return multiple final states for $N$ runs. As input, it takes a matrix of links ($\mathbf{W}$), which for the Curie—Weiss model should be symmetric with 0s on the diagonal. The `thresholds` for each node should be equal. `Beta`, originally the inverse of the temperature ($1/T$), represents attention. The effect of varying `beta` (attention) is shown in @fig-ch6-img8-old-77.
 
-``` r
+```{r eval = FALSE}
 library("IsingSampler")
 n <- 10 # nodes
 W <- matrix(.1,n,n); diag(W)=0
@@ -289,7 +289,7 @@ hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
 
 In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit and explicit measures of attitude. The idea is that the individual thresholds contain information about the attitude that can only be detected when attention is moderately low. When attention is too high, the alignment between the nodes dominates the thresholds (@fig-ch6-img13-old-82). Indeed, in implicit (indirect) measures of attitude, attention is much lower than in explicit measures such as an interview. This can be simulated as follows:
 
-``` r
+```{r eval = FALSE}
 layout(1)
 N <- 400
 n <- 10
@@ -322,7 +322,7 @@ Weights will grow to $1$ if the nodes they connect are consistently either both 
 
 In R, this can be implemented as follows:
 
-``` r
+```{r eval = FALSE}
 library(qgraph)
 hamiltonian=function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
 glauber_step = function(x,n,t,w,beta)
@@ -418,7 +418,7 @@ Finally, I mention semantic network analysis again. A review of statistical appr
 
 In @sec-Mutualism-model, I provided code to simulate data. These data can be fitted using JASP. By rerunning the previous code and adding
 
-``` r
+```{r eval = FALSE}
 write.table(file='mutualism.txt',data,ro=F,sep='\t') # write data for JASP
 ```
 
@@ -430,7 +430,7 @@ Mutualism is an alternative explanation for the positive manifold, which means t
 
 As discussed, cross-sectional networks do not provide information about the direction of effects. We can illustrate this as follows.
 
-``` r
+```{r eval = FALSE}
 M[,1] <- .2 # strong influence of X1 on all others
 M[2,] <- .2 # strong influence on X2 by all others
 M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
@@ -438,7 +438,7 @@ M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 
 If we rerun the code and create a centrality plot in JASP, we will see the risks of centrality analysis in cross-sectional networks. Node 2 is the most central, but we know from the simulation that this is because it is influenced by all the others. The node with the most causal power (node 1) does not turn out to be an important central node. With time-series data, we can estimate the direction of the effects. We do this in R:
 
-``` r
+```{r eval = FALSE}
 library("graphicalVAR")
 # make time series for one persons with some stochastic effects
 data <- run(odes=mutualism, tmax=1000,table=T,
@@ -457,7 +457,7 @@ The results are shown in @fig-ch6-img16-old-85. Only the time-series approach pr
 
 The M-matrix can take different forms. The typical multifactor structure can be achieved with a block structure.
 
-``` r
+```{r eval = FALSE}
 set.seed(1)
 factors <- 3
 M <- matrix(0,nr_var,nr_var)
@@ -478,7 +478,7 @@ In JASP, you can perform network and confirmatory factor analysis. In the latter
 
 With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @Fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
 
-``` r
+```{r eval = FALSE}
 library("IsingSampler")
 library("IsingFit")
 set.seed(1)
@@ -521,7 +521,7 @@ An empirical example is provided in @dalege2017. The open-access data ($N = 5728
 
 We can use Isingfit and add community detection:
 
-``` r
+```{r eval = FALSE}
 Obama <- read.table("data/Obama.txt",header=T) # see book data folder
 ObamaFit <- IsingFit(Obama,plot=F)
 ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 

@@ -34,7 +34,7 @@ The game begins with blank lists for all agents. In the first round, the speaker
 
 The R code to simulate this process is:
 
-``` r
+```{r eval = FALSE}
 resample <- function(x, ...) x[sample.int(length(x), ...)]
 n <- 1000
 x <- vector("list", n)
@@ -87,7 +87,7 @@ The combination of interaction and homophily creates a self-reinforcing dynamic 
 
 The following R code of this model generates the first plot in @fig-ch7-img4-old-92 . You can play with the values to see different cases.
 
-``` r
+```{r eval = FALSE}
 resample <- function(x, ...) x[sample.int(length(x), ...)]
 n <- 100
 iter <- 50000
@@ -174,12 +174,12 @@ Extensions of this model include learning, leadership, external influences, and 
 
 Another line of research, with its own history, starts from the assumption that opinions are continuous variables [for a review, see @noorazarRecentAdvancesOpinion2020]. They will have values between 0 and 1, for instance. A classical model is the DeGroot model, where agents are connected in a weighted network. At each iteration, an agent's opinion is set equal to the weighted average of all connected agents in the network. In this way, opinions tend to converge (@fig-ch7-img7-old-95). The Friedkin—Johnson model [@friedkinSocialInfluenceOpinions1990] is an extension that includes a confidence level for each agent. This agent's confidence in their own opinion reduces the effect of others. Clustering or polarization in these linear models can only occur if parts of the network are unconnected. The Friedkin—Johnson model can be efficiently simulated with Grind (using the `method='euler'` option) by:
 
-``` r
+```{r eval = FALSE}
 FJ <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:n]
     M <- M/apply(M,1,sum) # weights sum to 1
-    dX <- (1-g) §* M %*% X  + g * X - X
+    dX <- (1-g) * M %*% X  + g * X - X
     return(list(dX))
   })
 }
@@ -209,7 +209,7 @@ So, if $\mu = .5$, they find each other in the middle. If $\mu = 1$, they take e
 
 [^ch7-1]: The second of this pair of equation is not implemented. This does not lead to different results as far as I know.
 
-``` r
+```{r eval = FALSE}
 set.seed(20)
 layout(matrix(1:4, 2, 2))
 iter <- 50; mu <- .5; n <- 200
