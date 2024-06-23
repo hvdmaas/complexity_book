@@ -47,7 +47,7 @@ Minima and maxima are called critical points, points where the first derivative 
 Thom's theorems are known to be highly complicated, but the basic concepts are not that difficult to grasp. The simplest potential function is
 
 $$
-V(X) = X^{2}
+V(X) = X^{2}.
 $$ {#eq-ch3-1-old-5}
 
 ![The quadratic potential function. A ball rolls to the minimum value of $V(X)$. Its change is defined by the negative of the derivative of the potential function $-V'(X)$.](media/ch3/ch3-3-may31.png){#fig-ch3-img3-old-15 width="60%"}
@@ -377,7 +377,7 @@ $$
 \begin{gathered}
 y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
 \alpha_{i} = a_{0} + a_{1}X_{i1} + a_{2}X_{i2} + \ldots + a_{q}X_{iq} \\
-\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}
+\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}.
 \end{gathered}
 $$ {#eq-ch3-12-old-16}
 

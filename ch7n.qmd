@@ -71,9 +71,9 @@ Which results in @fig-ch7-img3-old-91.
 
 After a phase in which agents use lots of different words, a language consisting of just a single word emerges abruptly. A simplification would be the case that agents start with either word A, word B, or both words A and B. So no new words are invented. For this case we can write the time evolution in three differential equations:
 
-$${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}$$ $${\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}$$
+$${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}},$$ $${\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}},$$
 
-$$\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}$$ {#eq-ch7-1-old-50}
+$$\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}.$$ {#eq-ch7-1-old-50}
 
 The first equation can be understood as follows: Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's random choice of A or B (${X}_{AB}X_{AB}/2$). If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: (1) If the initial proportion of A is greater than B, A wins; (2) if the initial proportion of B is greater than A, B wins; and (3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. [Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.]{.aside}
 
@@ -154,11 +154,11 @@ The last discrete model I mention here is the social impact model, which is base
 
 In this theory, opinion change depends on social impact $I$. Opinion $X$ is either -1 or 1. Social impact is a function of the persuasiveness ($p_{i}$) of opponents (connected agents with the opposite opinion), the supportiveness ($s_{i}$) of supporters (with the same opinion), and the distance ($d_{ij}$) to these agents. The effect of distance can be modified with $\alpha$. As the value of $\alpha$ increases, the influence of agents located farther away diminishes. All of these parameters are positive random values. The impact $I$ is defined as:
 
-$$I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack$$ {#eq-ch7-SI-a}
+$$I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack.$$ {#eq-ch7-SI-a}
 
 With $j$ we take the sum over the neighbors of agent $i$. Note that when $X_{i} = X_{j}$, $I^{P} = 0$ due to the $1 - X_{i}X_{j}$ term, and the same is true for $I^{S}$ when $X_{i} \neq X_{j}$. The effects of persuasiveness and supportiveness are reduced as the distance between agents increases. Setting $\alpha$ to values greater than 1 reduces the effect of distant neighbors. In addition to these forces, the theory assumes an external field $H$, as in the Ising model. The dynamic of opinion is:
 
-$$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack$$ {#eq-ch7-SI-b}
+$$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack.$$ {#eq-ch7-SI-b}
 
 Thus, opinion of agents become -1 if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. A NetLogo implementation of the model is available in the software repository of this book.
 
@@ -201,9 +201,9 @@ The bounded confidence mechanism has been extensively studied as the most effect
 
 A simple but very interesting model is the Deffuant model [@deffuantMixingBeliefsInteracting2000]. The initial opinions of *n* agents are randomly set to values between 0 and 1. At each step, two agents $i$ and $j$ meet. If $\left\lceil X_{i}(t) - X_{j,}(t) \right\rceil > \epsilon$ nothing happens because the difference in opinion exceeds the bound $\epsilon$. Otherwise, they exchange opinions according to:
 
-$$X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t))$$
+$$X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t)),$$
 
-$$X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right)$$ {#eq-ch7-2-old-51}
+$$X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right).$$ {#eq-ch7-2-old-51}
 
 So, if $\mu = .5$, they find each other in the middle. If $\mu = 1$, they take each other's position, as in the voter model. The value of $\mu$ does not make much difference, but the model converges fastest with $\mu = .5$. However, the choice of the bound $\epsilon$ makes a big difference. For $\epsilon = 0,$ all agents stick to their positions; for $\epsilon > .5$, they all converge to $X = .5$. For intermediate values, different forms of clustering occur (@fig-ch7-img8-old-96). It has been shown that the topology of the network does not make much difference [@fortunatoUniversalityThresholdComplete2004]. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: [^ch7n-1]
 
@@ -299,10 +299,10 @@ P_{i,t}(initiates\ interaction) = A_{i,t}.
 
 Second, it assumes that the attention or involvement slowly decreases over time. Attention or involvement is a limited resource; one cannot be involved in everything all the time. With the constant emergence of new interests or topics, attention to older topics tends to wane.
 
-Third, attention increases again through social interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is:
+Third, attention increases again through social interactions. If someone starts a conversation about genetically modified food, my interest in the topic is likely to increase. A simple way to implement this is
 
 $$\begin{array}{r}
-A_{i,t+1}={decay}_A(A_{i,t}+{d_Au}_{i,t})
+A_{i,t+1}={decay}_A(A_{i,t}+{d_Au}_{i,t}).
 \end{array}$$ {#eq-ch7-5-old-54}
 
 When the agent is involved in an interaction, we set $u_{i} = 1$; otherwise $u_{i} = 0$. The parameter $d_{A}$ determines the rate of change of $A$ due to interactions. The decay in attention, ${decay}_A$, is applied to all agents.

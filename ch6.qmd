@@ -106,13 +106,13 @@ To model this, we used the mutualistic Lotka—Volterra model:
 $$\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
 j = 1 \\
 j \neq i
-\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W$$
+\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W,$$
 
 $$
-K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i}
+K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i},
 $$ {#eq-ch6-1-old-42}
 
-Where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
+where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
 
 ![The mutualism model. The self-loops have an excitatory ($aX$) and an inhibitory part ($- aX^{2}K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="100%"}
 
@@ -168,10 +168,10 @@ In basic resource competition models in population biology [@tilmanPhytoplankton
 
 The growth of the resource $r_{j}$ consists of two parts. The first part models the growth by a concave function, which is determined by $r$ (i.e., the steepness of the concave function) up to $r_{\max}$. The second part is the depletion by consumption of resources by $X_{i}$ at rates $b_{ij}$. Two differential equations specify these dynamics [see the appendix of @ronGeneralModellingFramework2023 for the Grind code to study this model numerically]:
 
-$$\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}})$$
+$$\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}),$$
 
 $$
-\frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}
+\frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}.
 $$ {#eq-ch6-2-old-43}
 
 What has been shown for this and related models is that you will not get more species surviving than there are resources. Another famous quote from Robert May is "There is no comfortable theorem assuring that increased diversity and complexity beget enhanced community stability; rather, as a mathematical generality, the opposite is true. The task, then, is to elucidate the devious strategies which make for stability in enduring natural systems. There will be no one simple answer to these questions" (p.174, 2001 edition). Thus, given a limited number of resources (time, money, educational support), we should expect early specialization in only a few skills.
@@ -181,14 +181,14 @@ Biologists have proposed a number of mechanisms to deal with this problem [@meen
 We show that the combination of these mechanisms allows a balanced growth of several correlated abilities. Specially chosen parameter settings lead to different patterns of abnormal development (such as hyperspecialization and delayed development). The final model is:
 
 $$
-\frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}}
+\frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}},
 $$
 
 $$
 \frac{dR_{j}}{dt} = r\left( r_{\max} - R_{j} \right) - R_{j}\sum_{i = 1}^{W}{b_{ij}\frac{dX_{i}}{dt}}\ \left\{ \begin{array}{r}
 growth - dependent\  \\
 resource\ depletion
-\end{array} \right\} \\
+\end{array} \right\}. \\
 $$ {#eq-ch6-3-old-44}
 
 #### The wiring of intelligence {#sec-The-wiring-of-intelligence}
@@ -248,12 +248,12 @@ The basic assumptions of the Ising attitude model are that nodes are binary (e.g
 Given these simplifying assumptions, which can be relaxed in various ways, we arrive at the random field Ising model [@fytasReviewRecentDevelopments2018]. This model is not too different from the Ising model described in Chapter 5, @sec-Physics, except that the first term now has two components, a general external effect ($\tau$) and an effect of node-specific ($t_{i}$) thresholds ("I just really like the taste of chicken"). The random field Ising attitude model can then be defined as:
 
 $$\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{<ij>}^{}{{W_{ij}x}_{i}x_{j}}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{<ij>}^{}{{W_{ij}x}_{i}x_{j}},
 \end{array}$$ {#eq-ch6-4-old-45}
 
 $$\begin{array}{r}
 P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x} \right) \right)}{Z}
-\end{array}$$ {#eq-ch6-5-old-46}
+\end{array}.$$ {#eq-ch6-5-old-46}
 
 Another difference from the original Ising model introduced in Chapter 5 is that the interactions are now weighted and can even be negative. The main technical problem is the same. To compute the probability of a state, one has to compute $Z$, which is $\sum_{< \mathbf{x} >}^{}{exp(- AH\left( \mathbf{x} \right))}$, that is, a sum over all possible states ($2^{n}$). For large values of $n$, this is not feasible. One solution is to take a random initial state and use Glauber dynamics to update the states until an equilibrium state is reached. The Glauber algorithm does not require $Z$. There are faster but less intuitive algorithms, the most popular being the Metropolis—Hastings algorithm, which slightly modifies the Glauber dynamics presented in Chapter 5, @eq-ch5n-3-old-19.
 
@@ -315,7 +315,7 @@ We see that for medium attention, the agreement with the thresholds is highest. 
 The connectionist attitude models are capable of "learning," that is, adjusting the weights. This can also be done in the Ising attitude model by using Hebbian learning. Hebbian learning, or "what fires together, wires together," can be formulated as:
 
 $$\begin{array}{r}
-\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}
+\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}.
 \end{array}$$ {#eq-ch6-6-old-47}
 
 Weights will grow to $1$ if the nodes they connect are consistently either both $1$ or both $-1$. If they consistently differ in value, the weight grows to $-1$. If the nodes behave inconsistently, the weight shrinks to $0$, due to the last term.
@@ -369,7 +369,7 @@ To quantify the consistency of attitudes, we can compute the Gibbs entropy [prop
 [^ch6-3]: Assuming that all the attitude states (items) are re-encoded as positive (or negative) valued items.
 
 $$\begin{array}{r}
- - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}
+ - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}.
 \end{array}$$ {#eq-ch6-7-old-48}
 
 Note that we sum over all microstates ($2^{n})$. For small networks, this measure can be computed using the `IsingEntrophy()` function of the IsingSampler package. There is much more to say about the different entropy measures. For instance, Shannon entropy (a measure in information theory) and Gibbs entropy have the same mathematical definition but are derived from completely different lines of reasoning in different fields of science. An introduction to the discussion on entropy measures can be found at the Entropy page of Wikipedia.
@@ -379,7 +379,7 @@ Note that we sum over all microstates ($2^{n})$. For small networks, this measur
 A new direction of research concerns Ising-type models with trichotomic node values ($—1 ,0 , 1$). In physics this case is known as the tricritical Ising model or the Blume—Capel model [@saulTricriticalBehaviorBlumeCapel1974]. In physics, the states $-1$ and $1$ could represent the spin of a particle pointing up or down, while $0$ could represent a nonmagnetic or spinless state. In an attitude model, $-1$ and $1$ may represent pro and con beliefs, while $0$ represents a neutral belief. The Hamiltonian of the model includes a penalty for the $-1$ and $1$ states:
 
 $$\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}.
 \end{array}$$ {#eq-ch6-8-old-49}
 
 You can compare this to @eq-ch5n-1-old-17. The last term penalizes (increases the energy) of the $-1$ and $1$ states relative to the $0$ state.

@@ -43,7 +43,7 @@ The change in $X$ is a function of $X$ itself. The exponential growth term $rX$ 
 +-----------------------------------------------------+----------------------------------+
 
 $$
-\Longrightarrow X_{t} = {X_{0}e}^{rt}
+\Longrightarrow X_{t} = {X_{0}e}^{rt}.
 $$ {#eq-ch4n-2-old-22}
 
 But for more complex models, such an analytical solution is out of scope and numerical solutions (by simulation) are required. This is not the preferred choice. These simulations can be slow, they may accumulate rounding errors, and it can be difficult to search the entire parameter space, especially when multiple parameters are involved.
@@ -119,14 +119,14 @@ and using `method='euler'` in the `run()` function, you can simulate the discret
 Perhaps the best-known population models are the Lotka—Volterra equations [@murrayMathematicalBiology2002]. [The Lotka—Volterra models describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.]{.aside} These consist of coupled differential equations, one for the density of the prey and one for the density of the predator:
 
 $$
-\frac{dN}{dt} = aN - bPN
+\frac{dN}{dt} = aN - bPN,
 $$ {#eq-ch4n-3-old-23}
 
 $$
-\frac{dP}{dt} = cPN - dP
+\frac{dP}{dt} = cPN - dP,
 $$ {#eq-ch4n-4-old-24}
 
-Where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, and:they eat prey. We will follow the simple example provided by Wikipedia (on Lotka—Volterra equations).
+where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, and:they eat prey. We will follow the simple example provided by Wikipedia (on Lotka—Volterra equations).
 
 To implement this model in Grind, we use:
 
@@ -196,7 +196,7 @@ Note that the error dataset looks very similar to the deterministic dataset beca
 
 ### Back to the cusp {#sec-Back-to-the-cusp}
 
-To illustrate how Grind can be used to perform bifurcation analysis, we go back to the cusp. Recall that the differential equation for the cusp is:
+To illustrate how Grind can be used to perform bifurcation analysis, we go back to the cusp. Recall that the differential equation for the cusp is
 
 $$
 \frac{dX}{dt} = - V^{'}(X) = {a + bX - X}^{3}.
@@ -346,7 +346,7 @@ Many dynamic models have been proposed in the study of speeded decision-making [
 One way to model this process is with a single stochastic linear differential equation, called the drift-diffusion model (DDM), with $I$ as the stimulus-driven input:
 
 $$
-dX = Idt + \sigma dW
+dX = Idt + \sigma dW.
 $$ {#eq-ch4n-6-old-26}
 
 As before, $dt$ is moved to the left-hand side of the equation. $dW$ is white noise, normally distributed with 0 mean and with standard deviation $\sigma$ (set to .1 by default). We start at 0, $X_{t = 0} = 0$, assuming no bias for one of the choice alternatives.
@@ -374,15 +374,15 @@ The model explains observed response time and accuracy in terms of the underlyin
 A well-known extension of the drift-diffusion model is the Ornstein—Uhlenbeck model:
 
 $$
-dX = (\lambda x + I)dt + \sigma dW
+dX = (\lambda x + I)dt + \sigma dW.
 $$ {#eq-ch4n-7-old-27}
 
 For $\lambda < 0$ this process converges to $I/\lambda$ (assuming $\sigma = 0$), while for $\lambda > 0$ it diverges. For the psychological interpretation, I refer to @bogaczPhysicsOptimalDecision2006. The simplest two-dimensional model is the race model:
 
 $$
 \begin{gathered}
-dX_{1} = I_{1}dt + \sigma W_{1} \\
-dX_{2} = I_{2}dt + \sigma W_{2} 
+dX_{1} = I_{1}dt + \sigma W_{1}, \\
+dX_{2} = I_{2}dt + \sigma W_{2}. 
 \end{gathered}
 $$ {#eq-ch4n-8-old-28}
 
@@ -390,8 +390,8 @@ Now two independent processes run (race) to one positive bound. The first one to
 
 $$
 \begin{gathered}
-dX_{1} = (-k_{1}X_{1} - w_{1}X_{2} + I_{1})dt + \sigma W_{1} \\
-dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
+dX_{1} = (-k_{1}X_{1} - w_{1}X_{2} + I_{1})dt + \sigma W_{1}, \\
+dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}.
 \end{gathered}
 $$ {#eq-ch4n-9-old-29}
 
@@ -412,8 +412,8 @@ One type of model can be traced back to publications by @rapoportFightsGamesDeba
 The model is about the interactions between Romeo and Juliet, where $R$ and $J$ represent the feelings of Romeo and Juliet. The change in feelings is supposed to be a function of the feelings of both people:
 
 $$\begin{gathered}
-\frac{dR}{dt} = aR + bJ \\
-\frac{dJ}{dt} = cR + dJ
+\frac{dR}{dt} = aR + bJ, \\
+\frac{dJ}{dt} = cR + dJ.
 \end{gathered}
 $$ {#eq-ch4n-10-old-30}
 
@@ -531,8 +531,8 @@ Van Geert has proposed many different models, but I will give just one example. 
 
 $$
 \begin{gathered}
-X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K} \\
-Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
+X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K}, \\
+Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}.
 \end{gathered}
 $$ {#eq-ch4n-13-old-33}
 
@@ -580,10 +580,10 @@ In recent years, we have been working on a model of panic disorder [@robinaughAd
 
 We will further assume that the effect of perceived threat on changes in arousal is essentially linear while the causal effect of arousal on perceived threat is nonlinear (S-shaped). For the argument, see @robinaughAdvancingNetworkTheory2019. It could be argued that both are nonlinear, but this does not fundamentally change the qualitative behavior of the model. The central part of the model consists of two coupled differential equations:
 
-$$\frac{dT}{dt} = - T + bA$$
+$$\frac{dT}{dt} = - T + bA,$$
 
 $$
-\frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A
+\frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A.
 $$ {#eq-ch4n-14-old-34}
 
 This looks a bit like the Romeo and Juliet model, but now the effect of perceived threat $T$ on the change in arousal $A$ is a logistic function that starts at 0 and grows to 1. The location is determined by $\beta$, and the acceleration or steepness is determined by $\alpha$.
@@ -657,7 +657,7 @@ plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
 The plots (@fig-ch4n-img15-old-63) illustrate this behavior. For $b < 0$, $X$ converges to a fixed point. For $b > 0$, we see cyclic jumps up and down. This oscillator is basically the famous van der Pol oscillator, originally written in the form:
 
 $$
-\frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x
+\frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x.
 $$ {#eq-ch4n-15-old-35}
 
 Such a second-order differential equation can be rewritten in the form of a first-order system of multiple equations, which is the form required for Grind.[^ch4n-8] This model form is of (neuro)psychological interest because it relates to the FitzHugh—Nagumo model for neuronal excitability [@izhikevichFitzHughNagumoModel2006][^ch4n-9]:
@@ -668,8 +668,8 @@ Such a second-order differential equation can be rewritten in the form of a firs
 
 $$
 \begin{gathered}
-\frac{dV}{dt} = V - \frac{V^{3}}{3} - W + I \\ 
-\frac{dW}{dt} = .08(V + .7 - .8W)
+\frac{dV}{dt} = V - \frac{V^{3}}{3} - W + I, \\ 
+\frac{dW}{dt} = .08(V + .7 - .8W).
 \end{gathered}$$ {#eq-ch4n-16-old-36}
 
 The equation for $V$, the membrane potential, has a cubic nonlinearity that allows regenerative self-excitation via positive feedback. $W$, a recovery variable, provides linear negative feedback. $I$ represents the input. The main phenomena in this model are shown in @fig-ch4n-img15-old-63.
@@ -691,7 +691,7 @@ We have reviewed existing formal models of addiction in @vandenendeReviewMathema
 Instead of creating our own model, we look for well-studied models in other sciences, which led me to the spruce budworm model:
 
 $$
-\frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}
+\frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
 $$ {#eq-ch4n-17-old-37}
 
 But now we interpret the variables and parameters as follows. We first assume $N$ is the number of drinks you consume. The time scale is a day or an evening (depending on when you have your first beer). $K$ is the upper limit of drinks you can take, either because of lack of availability or, worse, because you just collapse. $r_{b}$ is the addiction sensitivity. If this is too low ($r_{b} < 0$), the 0 state is stable. The logistic function seems to be a reasonable choice. Drinking might start off slow, then accelerate, and level off at $K$. This happens when there is only an autonomous process. The second term, the predator term, is now interpreted as self-control. This is not something that changes on the time scale of a day, so, as in the case of the birds, a second equation is not required. $A$ (or actually $1/A$) is a responsiveness parameter, the number of drinks at which self-control is activated, which may not be at the first or second beer. $B$ is the maximum level of self-control. As in the original model, this term is a Holling type III form (see @fig-ch4n-img5-old-53). We could also insert a Holling type IV form, with the idea that self-control deteriorates after too many drinks. Depending on the values of the parameters, one may not drink at all ($r_{b} < 0$), drink at a recreational level, or have an "outbreak" to heavy use.
@@ -718,8 +718,8 @@ In @sec-Neural-models-van-der-Pol-and-different-time-scales, we studied the van 
 
 $$
 \begin{gathered}
-\frac{dX}{dt} = {aY + bX - X}^{3} \\
-\frac{dY}{dt} = {cX + dY - Y}^{3} 
+\frac{dX}{dt} = {aY + bX - X}^{3}, \\
+\frac{dY}{dt} = {cX + dY - Y}^{3}. 
 \end{gathered}
 $$ {#eq-ch4n-18-old-38}
 
@@ -776,16 +776,16 @@ If we simplify this analysis a bit to stable fixed points only, we see three reg
 
 @abrahamComputationalUnfoldingDoublecusp1991 generalize the model to:
 
-$$\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3}$$
+$$\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3},$$
 
 $$
-\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3}
+\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3},
 $$ {#eq-ch4n-19-old-39}
 
 such that now both the splitting and normal variable of the cusp are linear functions of the behavioral state of the other cusp. This can be further generalized to a system of $N$ cusps by:
 
 $$
-\frac{dX_{i}}{dt} = a_{0i} + \sum_{j\neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j\neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}
+\frac{dX_{i}}{dt} = a_{0i} + \sum_{j\neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j\neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}.
 $$ {#eq-ch4n-20-old-40}
 
 In this model, $a_{0i}$ is the intercept of the normal variable and the off-diagonal elements of matrix $a$ are the slopes of the effect of the other cusps on the normal variable. The diagonal elements of $a$ are set to 0. The $b_{0i}$ values are the intercepts of the splitting variable. The $b_{ij}$ values of matrix $b$ (with diagonal = 0) are the slopes of the effect of other cusps on the splitting variable value of $X_{i}$.
@@ -809,7 +809,7 @@ To make this model work, we need to make one adjustment. We replace $\sum_{j \ne
 [^ch4n-10]: We could also use $X_j^2$.
 
 $$
-\frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}\left| X_{j} \right|} - {X_{i}}^{3}
+\frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}\left| X_{j} \right|} - {X_{i}}^{3}.
 $$ {#eq-ch4n-21-old-41}
 
 The code to simulate this model is:

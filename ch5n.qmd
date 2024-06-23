@@ -25,7 +25,7 @@ One physical example of self-organization is the laser. An important founder of 
 The main model equations of the Ising model are:
 
 $$
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}$$ {#eq-ch5n-1-old-17}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}},$$ {#eq-ch5n-1-old-17}
 
 $$
 P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.$$ {#eq-ch5n-2-old-18}

@@ -12,10 +12,10 @@ In my opinion, the direct applicability of chaos theory to psychology and social
 
 Chaos theory consists of many deep mathematical results, but understanding the basics of chaos is not so hard. Below I will explain chaos in difference equations at a very basic level of mathematics and programming. The elementary example is the famous logistic map, usually introduced as a model of population growth, for instance, of rabbits. Suppose we have rabbits on an island, and they start to multiply. What would the mathematical model be for such a process?
 
-[Population growth is a typical example of a dynamical system, as it is a model of change.]{.aside} In general, in a dynamical system, the change or growth of a variable (say $X$) depends on the current state and some parameters. Time plays a very special role. We can use discrete or continuous time steps. In the first case, which is the focus of this chapter, we use difference equations; in the second case, we use differential equations. In the logistic map, time is discrete (population growth takes place in generations). The simplest dynamical model for the population growth of rabbits is:
+[Population growth is a typical example of a dynamical system, as it is a model of change.]{.aside} In general, in a dynamical system, the change or growth of a variable (say $X$) depends on the current state and some parameters. Time plays a very special role. We can use discrete or continuous time steps. In the first case, which is the focus of this chapter, we use difference equations; in the second case, we use differential equations. In the logistic map, time is discrete (population growth takes place in generations). The simplest dynamical model for the population growth of rabbits is
 
 $$
-X_{t + 1} = rX_{t}$$ {#eq-ch2-1}
+X_{t + 1} = rX_{t}.$$ {#eq-ch2-1}
 
 This says that the new value of $X$ is determined by the previous value of $X$, multiplied by $r$. In this equation $r$ is the growth rate. We can simulate this model by choosing a value for $r$, $r=2$, for instance. We also need an initial value, say $X_{0} = 1.$ If this is completely new to you, enter some values repeatedly. You will see exponential growth ($X_{1} = 2,\ X_{2} = 4,X_{3} = 8,X_{4} = 16,\ etc.)$. In R we can simulate this using a for loop (the result is shown in @fig-ch2-img1).
 
@@ -36,7 +36,7 @@ Note that we can find any $X_{t}$ given $X_{0}$ by iterating the model as we do 
 Note that the exponential model ignores the fact that population growth is limited by resources. At some point food will become scarce. One way of making the model, introduced by Verhulst in 1838, more realistic is to add a growth-limiting term:
 
 $$
-X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right)$$ {#eq-ch2-2}
+X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right).$$ {#eq-ch2-2}
 
 What is the effect of this addition to the equation? If $X$ is much smaller than the resource $K$, then the second term, $\left( 1 - {X_{t}}/{K} \right)$, is close to 1 and we will see exponential growth. But as $X$ approaches $K$, this term becomes very small, reducing the effect of exponential growth. $X$ does not actually grow up to $K$, but to a lower value, if it converges at all. We are going to see this in a moment. It also turns out that the actual value of $K$ is not of interest. Changing $K$ does not change the qualitative behavior. Therefore, $K$ is usually set to 1, scaling the population $X$ between 0 and 1. The only remaining parameter is $r$. Changing $r$, however, leads to a number of surprising behaviors.[^ch2-1]
 
@@ -86,7 +86,7 @@ $$
 X_{t + 1} = X_{t} = X^{*} \\
 X^{*} = rX^{*}( 1 - X^{*}) \\
 X^{*} = 0\ or\ 1 = r - rX^{*} \\
-X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r} \\
+X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}. \\
 \end{gathered}
 $$
 
@@ -136,7 +136,7 @@ We can see that a run with a slightly different initial value will at first foll
 [The Lyapunov coefficient quantifies chaos.]{.aside} The idea of the Lyapunov coefficient is to take two very close initial conditions with a difference of $\varepsilon$. In the next iteration, this difference might be smaller, the same, or bigger. In the last case, the time series diverge, which is typical for chaos. The Lyapunov coefficient is defined as:
 
 $$
-{\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}$$ {#eq-ch2-3}
+{\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}.$$ {#eq-ch2-3}
 
 where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambda_{L} > 0$ indicates chaos. You may verify in a simulation that $\lambda_{L} > 0$ for $r = 4$, indicating chaos.
 
