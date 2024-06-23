@@ -310,8 +310,9 @@ When the agent is involved in an interaction, we set $u_{i} = 1$; otherwise $u_{
 The fourth assumption is about information. We assume that the exchange of information is an averaging process weighted by attention. If agent $i$ is less attentive to the attitude object than agent $j$, agent $i$ will move more to the information position of $j$ than $j$ will move to $i$.
 
 This is formalized by: $$\begin{array}{r}
-I_{i,t+1}=r_{t}I_{i,t}+(1-r_{t}) I_{j,t},
-\\ where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
+I_{i,t+1}=r_{t}I_{i,t}+(1-r_{t}) I_{j,t},\\ 
+\\[0.2em]
+where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
 \end{array}$$ {#eq-ch7-6-old-55}
 
 $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$, the agents involved in the interaction. Resistance, $r$ in \[0,1\], determines the relative impact of agent $j$ on agent $i$. Resistance or stubbornness is a logistic function of the difference in attention between the agents. Thus, if $A_{i} \ll A_{j}$, $r$ will be close to 0 and the information in agent $i$ will change to the value of the information in agent $j$. The strength of this effect, persuasion, is determined by the steepness, $p$, of the logistic function. The parameter $r_{\min}$ determines the minimal value of $r$. If $r_{\min}$ is high, $r$ will be high and agents will stick to their information state.
@@ -319,8 +320,9 @@ $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$, the agents inv
 In some scenario's it is of interest to allow for decay in information especially in combination with a normally distributed, $N(m_{I},S_{I})$, noise term, $\epsilon$. The full equation for the update of information is:
 
 $$\begin{array}{r}
-I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),
-\\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
+I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),\\
+\\[0.2em]
+where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
 \end{array}$$ {#eq-ch7-6-old-55b}
 
 If $m_{I} \neq 0$ and $s_{I} = 0$, a constant external field is active. If $decay_I < 1$ , information gradually shrinks to 0.

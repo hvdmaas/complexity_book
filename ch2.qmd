@@ -219,8 +219,8 @@ There are many accessible sources on chaos theory. As always, Wikipedia is a gre
 
 $$
 \begin{gathered}
-X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
-Y_{t + 1} = bX_{t} 
+X_{t + 1} = 1 - aX_{t}^{2} + Y_{t}, \\
+Y_{t + 1} = bX_{t}. 
 \end{gathered}
 $$ {#eq-ch2-4}
 
