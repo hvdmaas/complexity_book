@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docs #for publishing in github pages
+  #output-dir: docs #for publishing in github pages
 book:
   title: "Complex systems research in Psychology"
   author: "Han L. J. van der Maas"
@@ -44,6 +44,7 @@ tbl-cap-location: bottom
 
 format:
   html:
+    output-dir: docs
     theme: cosmo
     number-depth: 4
     toc-depth: 8
@@ -57,6 +58,7 @@ format:
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
+    output-dir: pdf/Complex-systems-research-in-Psychology.pdf
     documentclass: scrreprt
     papersize: A4
     number-depth: 4
@@ -93,4 +95,3 @@ format:
     #  eq-prefix: equation
   
 editor: visual
-

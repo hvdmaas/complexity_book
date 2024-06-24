@@ -161,7 +161,7 @@
 \renewcommand{\marginnote}[1]{%
 \oldmarginnote{\setstretch{0.8}\selectfont#1}%
 }
-\KOMAoption{captions}{tableheading}
+\KOMAoption{captions}{tablesignature}
 \makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
@@ -216,7 +216,7 @@
 \@ifundefined{codebgcolor}{\definecolor{codebgcolor}{HTML}{F0F0F0}}{}
 \makeatother
 \makeatletter
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, frame hidden, colback={codebgcolor}, breakable, sharp corners, boxrule=0pt]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, breakable, sharp corners, enhanced, colback={codebgcolor}]}{\end{tcolorbox}}\fi
 \makeatother
 \makeatletter
 \@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
@@ -241,7 +241,7 @@
 
 \title{Complex systems research in Psychology}
 \author{Han L. J. van der Maas}
-\date{2024-06-02}
+\date{2024-06-24}
 
 \begin{document}
 \maketitle
@@ -291,8 +291,8 @@ Despite these challenges, applying complex-systems theory to the
 behavioral sciences is imperative. Whether we consider humans in
 isolation, the billions of interacting neurons in the brain, or the
 social networks in which we find ourselves, complexity is everywhere.
-Humans, with our complex brains embedded in various hierarchies of
-social systems, are the ultimate complex systems.
+We, with our complex brains embedded in various hierarchies of social
+systems, are the ultimate complex systems.
 
 I believe that we can only succeed in exploring the psychological system
 by understanding its complexity. We need to apply the tools of
@@ -449,11 +449,13 @@ Chapter~\ref{sec-ch2}.
 
 \centering{
 
-\includegraphics{media/ch1/image1.jpg}
+\includegraphics{media/ch1/ch1-1-june14.jpg}
 
 }
 
-\caption{\label{fig-ch1-img1}A flock of birds.}
+\caption{\label{fig-ch1-img1}A flock of birds is an example of a complex
+system in which global patterns emerge naturally from simple rules and
+local interactions.}
 
 \end{figure}%
 
@@ -546,14 +548,14 @@ causal emergence effects (see, e.g., Hoel, Albantakis, and Tononi 2013).
 
 \centering{
 
-\includegraphics{media/ch1/image4.jpg}
+\includegraphics{media/ch1/ch1-2-june14.png}
 
 }
 
 \caption{\label{fig-ch1-img4}An illustration of downward or circular
 causation in flocks due to a predator responding to the emerging
 patterns of the flock and subsequently influencing the flight of
-individual birds. (Adapted from \url{https://arxiv.org/abs/1108.1682})}
+individual birds.}
 
 \end{figure}%
 
@@ -648,7 +650,7 @@ predecessor of complex-systems theory, general-systems theory
 (Bertalanffy 1969), explicitly assumed that all systems share important
 characteristics. {\marginnote{\begin{footnotesize}Certain mechanisms and
 phenomena seem to operate and to occur in similar ways at all possible
-levels of description (Simon 1962).\end{footnotesize}}}. This is the
+levels of description (Simon 1962).\end{footnotesize}}} This is the
 primary reason for providing numerous modeling examples in this book
 that originate from disciplines beyond psychology.
 
@@ -676,7 +678,7 @@ used in the treatment of major depressive disorder.
 
 \centering{
 
-\includegraphics{media/ch1/image2.jpg}
+\includegraphics{media/ch1/ch1-3-june14.png}
 
 }
 
@@ -964,10 +966,10 @@ statistical techniques have been developed to investigate this network
 approach.
 
 The latest line of this research is the integrated study of
-psychological and social networks (van der Maas, Dalege, and Waldorp
-2020). Chapter~\ref{sec-ch7} deals with models in which psychological
-network models of attitudes are nested within social networks of opinion
-change. This model provides a new explanation of polarization.
+psychological and social networks (Maas, Dalege, and Waldorp 2020).
+Chapter~\ref{sec-ch7} deals with models in which psychological network
+models of attitudes are nested within social networks of opinion change.
+This model provides a new explanation of polarization.
 {\marginnote{\begin{footnotesize}In the process of polarization,
 nonlinear intrapersonal and interpersonal dynamics
 interact.\end{footnotesize}}}
@@ -1124,10 +1126,10 @@ the first case, which is the focus of this chapter, we use difference
 equations; in the second case, we use differential equations. In the
 logistic map, time is discrete (population growth takes place in
 generations). The simplest dynamical model for the population growth of
-rabbits is:
+rabbits is
 
 \begin{equation}\phantomsection\label{eq-ch2-1}{
-X_{t + 1} = rX_{t}}\end{equation}
+X_{t + 1} = rX_{t}.}\end{equation}
 
 This says that the new value of \(X\) is determined by the previous
 value of \(X\), multiplied by \(r\). In this equation \(r\) is the
@@ -1155,7 +1157,7 @@ figure~\ref{fig-ch2-img1}).
 
 \centering{
 
-\includegraphics[width=8cm,height=\textheight]{media/ch2/fig-ch2-img1.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img1.jpg}
 
 }
 
@@ -1178,7 +1180,7 @@ of making the model, introduced by Verhulst in 1838, more realistic is
 to add a growth-limiting term:
 
 \begin{equation}\phantomsection\label{eq-ch2-2}{
-X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right)}\end{equation}
+X_{t + 1} = f\left( X_{t} \right) = rX_{t}\left( 1 - \frac{X_{t}}{K} \right).}\end{equation}
 
 What is the effect of this addition to the equation? If \(X\) is much
 smaller than the resource \(K\), then the second term,
@@ -1217,11 +1219,12 @@ Let us study a ``boring'' case first, \(r = 2\)
 
 \centering{
 
-\includegraphics[width=8cm,height=\textheight]{media/ch2/fig-ch2-img2.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img2.jpg}
 
 }
 
-\caption{\label{fig-ch2-img2}The \(r=2\) case.}
+\caption{\label{fig-ch2-img2}The \(r=2\) case. The population converges
+to a stable state at \(X=0.5\).}
 
 \end{figure}%
 
@@ -1262,7 +1265,7 @@ unstable.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img3.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img3.jpg}
 
 }
 
@@ -1288,7 +1291,7 @@ yourself that:
 X_{t + 1} = X_{t} = X^{*} \\
 X^{*} = rX^{*}( 1 - X^{*}) \\
 X^{*} = 0\ or\ 1 = r - rX^{*} \\
-X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r} \\
+X^{*} = 0\ or\ X^{*} = \frac{r - 1}{r}. \\
 \end{gathered}
 \]
 
@@ -1321,7 +1324,7 @@ the code for figure~\ref{fig-ch2-img2}.
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img4.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch2/fig-ch2-img4.jpg}
 
 }
 
@@ -1354,7 +1357,7 @@ series looks for \(r = 4\).
 
 \centering{
 
-\includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img5.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img5.jpg}
 
 }
 
@@ -1386,7 +1389,7 @@ this? Let me illustrate.
 
 \centering{
 
-\includegraphics[width=10cm,height=\textheight]{media/ch2/fig-ch2-img6.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img6.jpg}
 
 }
 
@@ -1426,7 +1429,7 @@ smaller, the same, or bigger. In the last case, the time series diverge,
 which is typical for chaos. The Lyapunov coefficient is defined as:
 
 \begin{equation}\phantomsection\label{eq-ch2-3}{
-{\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}}\end{equation}
+{\lambda_{L} = \lim_{n \rightarrow \infty}}{\frac{1}{n}}{\sum_{i}^{n}{\ln\left| f^{'}\left( X_{i} \right) \right|}}.}\end{equation}
 
 where \(f^{'}\left( X_{i} \right) = r - 2rX_{i}\) for the logistic map
 and \(\lambda_{L} > 0\) indicates chaos. You may verify in a simulation
@@ -1471,7 +1474,7 @@ code for this figure is:
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img7.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch2/fig-ch2-img7.jpg}
 
 }
 
@@ -1536,7 +1539,7 @@ points for \(r < 3\), the period doubling of the limit cycles for
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch2/fig-ch2-img8.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch2/fig-ch2-img8.jpg}
 
 }
 
@@ -1619,8 +1622,8 @@ consists of two coupled difference equations:
 
 \begin{equation}\phantomsection\label{eq-ch2-4}{
 \begin{gathered}
-X_{t + 1} = 1 - aX_{t}^{2} + Y_{t} \\
-Y_{t + 1} = bX_{t} 
+X_{t + 1} = 1 - aX_{t}^{2} + Y_{t}, \\
+Y_{t + 1} = bX_{t}. 
 \end{gathered}
 }\end{equation}
 
@@ -1817,13 +1820,12 @@ is no discontinuous change in behavior
 
 \centering{
 
-\includegraphics{media/ch3/ch3-1-may31.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/ch3-1-may31.png}
 
 }
 
-\caption{\label{fig-ch3-img1-old-13}A first-order (discontinuous) and
-second-order (continuous) phase transition. (Adapted from
-\url{https://polymerdatabase.com/polymer\%20physics/ThemalTransitions.html})}
+\caption{\label{fig-ch3-img1-old-13}Examples of a first-order
+(discontinuous) and second-order (continuous) phase transition.}
 
 \end{figure}%
 
@@ -1845,7 +1847,7 @@ observed in psychological intervention studies.
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch3/ch3-02__figure14.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/ch3-02__figure14.png}
 
 }
 
@@ -1915,14 +1917,14 @@ concepts are not that difficult to grasp. The simplest potential
 function is
 
 \begin{equation}\phantomsection\label{eq-ch3-1-old-5}{
-V(X) = X^{2}
+V(X) = X^{2}.
 }\end{equation}
 
 \begin{figure}
 
 \centering{
 
-\includegraphics{media/ch3/ch3-3-may31.png}
+\includegraphics[width=0.4\textwidth,height=\textheight]{media/ch3/ch3-3-may31.png}
 
 }
 
@@ -1981,7 +1983,7 @@ figure~\ref{fig-ch3-img4-old-16}.
 
 \centering{
 
-\includegraphics{media/ch3/fig-ch3-img4-old-16.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/fig-ch3-img4-old-16.png}
 
 }
 
@@ -2029,7 +2031,7 @@ example of a second-order phase transition.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics[width=10cm,height=\textheight]{media/ch3/fig-ch3-img5-old-17.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/fig-ch3-img5-old-17.png}
 
 }
 
@@ -2053,13 +2055,13 @@ lecture.\footnote{\url{https://www.youtube.com/watch?v=6ZQKzcw9Ulk}}
 
 \centering{
 
-\includegraphics{media/ch3/ch3-6__figure18.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/ch3-6__figure18.png}
 
 }
 
-\caption{\label{fig-ch3-img6-old-18}The fold in drawings (from McRobie
-2017). The fold line separates the parts that can be seen from the parts
-that are hidden.}
+\caption{\label{fig-ch3-img6-old-18}The fold in drawings. The fold line
+separates the parts that can be seen from the parts that are hidden.
+(Adapted from from McRobie (2017) with permission)}
 
 \end{figure}%
 
@@ -2114,7 +2116,7 @@ other minimum.
 
 \centering{
 
-\includegraphics{media/ch3/ch3-7__figure19.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/ch3-7__figure19.png}
 
 }
 
@@ -2159,7 +2161,7 @@ increased (figure~\ref{fig-ch3-img8-old-20}).
 
 \centering{
 
-\includegraphics{media/ch3/ch3-8__figure20.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/ch3-8__figure20.png}
 
 }
 
@@ -2183,7 +2185,7 @@ or what is often called a pitchfork bifurcation
 
 \centering{
 
-\includegraphics{media/ch3/image9.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch3/image9.jpg}
 
 }
 
@@ -2204,7 +2206,7 @@ diagrams (figure~\ref{fig-ch3-img10-old-22}).
 
 \centering{
 
-\includegraphics{media/ch3/ch3-10__figure22.png}
+\includegraphics[width=0.6\textwidth,height=\textheight]{media/ch3/ch3-10-june14.png}
 
 }
 
@@ -2269,7 +2271,7 @@ remove the horizontal force. The card has a memory.
 
 \centering{
 
-\includegraphics{media/ch3/ch3-11-may31.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/ch3-11-may31.png}
 
 }
 
@@ -2293,7 +2295,7 @@ and the social sciences.
 
 \centering{
 
-\includegraphics{media/ch3/ch3-12-may31.png}
+\includegraphics[width=0.7\textwidth,height=\textheight]{media/ch3/ch3-12-may31.png}
 
 }
 
@@ -2316,14 +2318,14 @@ is the attitude toward abortion (figure~\ref{fig-ch3-img13-old-25}).
 
 \centering{
 
-\includegraphics{media/ch3/ch3-13.png}
+\includegraphics[width=0.6\textwidth,height=\textheight]{media/ch3/ch3-13-june14.png}
 
 }
 
-\caption{\label{fig-ch3-img13-old-25}The cusp model of attitudes (toward
-abortion). Because of hysteresis, it is very difficult to persuade
-highly involved people with new information, but if they change it will
-be a sudden jump.}
+\caption{\label{fig-ch3-img13-old-25}The cusp model of attitudes (here
+toward abortion). Because of hysteresis, it is very difficult to
+persuade highly involved people with new information, but if they change
+it will be a sudden jump.}
 
 \end{figure}%
 
@@ -2388,15 +2390,15 @@ The results are shown in figure~\ref{fig-ch3-img14-old-26}.
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch3/image14.jpg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/image14.jpg}
 
 }
 
 \caption{\label{fig-ch3-img14-old-26}Multistable perceptual stimuli
 positioned in the bifurcation set. The fitted bifurcation lines were
 calculated using Cobb's method, which is explained in
-section~\ref{sec-Cobbs-maximum-likelihood-approach}. (Adapted with
-permission from Stewart and Peregoy (1983))}
+section~\ref{sec-Cobbs-maximum-likelihood-approach}. (Adapted from
+Stewart and Peregoy (1983) with permission)}
 
 \end{figure}%
 
@@ -2445,7 +2447,7 @@ pitchfork (see figure~\ref{fig-ch3-img15-old-27}).
 
 \centering{
 
-\includegraphics{media/ch3/ch3-15-may31.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/ch3-15-may31.png}
 
 }
 
@@ -2525,12 +2527,13 @@ bifurcation lines of the cusp as in figure~\ref{fig-ch3-img16-old-28}.
 
 \centering{
 
-\includegraphics{media/ch3/ch3-16-may31.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/ch3-16-may31.png}
 
 }
 
 \caption{\label{fig-ch3-img16-old-28}The bifurcation diagram of the
-spruce budworm model.}
+spruce budworm model. In the bifurcation set, there are two alternative
+stable states: the normal population level and the outbreak level.}
 
 \end{figure}%
 
@@ -2581,7 +2584,7 @@ Zeeman's (1976) model of dog aggression
 
 \centering{
 
-\includegraphics{media/ch3/ch3-17__figure29.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/ch3-17-june14.png}
 
 }
 
@@ -2654,7 +2657,7 @@ and a sudden, discontinuous jump may look very similar
 
 \centering{
 
-\includegraphics{media/ch3/ch3-18-may31.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/ch3-18-may31.png}
 
 }
 
@@ -2708,7 +2711,7 @@ the null hypothesis of no change point).
 
 \centering{
 
-\includegraphics{media/ch3/fig-ch3-img19-old-31.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/fig-ch3-img19-old-31.png}
 
 }
 
@@ -2755,7 +2758,7 @@ equation model.
 
 \centering{
 
-\includegraphics{media/ch3/ch3-20.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/ch3-20.png}
 
 }
 
@@ -2850,7 +2853,7 @@ testing for divergence is a sensible next step.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics{media/ch3/ch3-21-may31.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/ch3-21-may31.png}
 
 }
 
@@ -2898,7 +2901,7 @@ parameter value the subject perceives a switch.
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch3/image22.jpg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch3/ch3-22-june14.png}
 
 }
 
@@ -3015,9 +3018,9 @@ related to the cusp variables as follows:
 
 \begin{equation}\phantomsection\label{eq-ch3-12-old-16}{
 \begin{gathered}
-y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip} \\
-\alpha_{i} = a_{0} + a_{1}X_{i1} + a_{2}X_{i2} + \ldots + a_{q}X_{iq} \\
-\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}
+y_{i} = w_{0} + w_{1}Y_{i1} + w_{2}Y_{i2} + \ldots + w_{p}Y_{ip}, \\
+\alpha_{i} = a_{0} + a_{1}X_{i1} + a_{2}X_{i2} + \ldots + a_{q}X_{iq}, \\
+\beta_{i} = b_{0} + b_{1}X_{i1} + b_{2}X_{i2} + \ldots + b_{q}X_{iq}.
 \end{gathered}
 }\end{equation}
 
@@ -3065,58 +3068,35 @@ both as function of \(X1\) and \(X2\).
 
 The table provides a summary:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2687}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1493}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1791}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1343}}
-  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2687}}@{}}
-\caption{Table 3.1: The parameter estimates including standard errors
-and p-values generated by the cusp package.}\tabularnewline
+\begin{longtable}[]{@{}lcccc@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Coefficients
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Estimate
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Std. Error
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-z-value
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Pr(\textgreater\textbar z\textbar)
-\end{minipage} \\
+Coefficients & Estimate & Std. Error & z-value &
+Pr(\textgreater\textbar z\textbar) \\
 \midrule\noalign{}
 \endfirsthead
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\raggedright
-Coefficients
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Estimate
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Std. Error
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-z-value
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-Pr(\textgreater\textbar z\textbar)
-\end{minipage} \\
+Coefficients & Estimate & Std. Error & z-value &
+Pr(\textgreater\textbar z\textbar) \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-a{[}(Intercept){]} & -2.13 & 0.19 & -11.0 & \textless{}
+a{[}Intercept{]} & -2.13 & 0.19 & -11.0 & \textless{}
 2e-16\textsuperscript{***} \\
 a{[}X1{]} & 3.11 & 0.22 & 14.2 & \textless{}
 2e-16\textsuperscript{***} \\
 a{[}X2{]} & 0.15 & 0.17 & 0.9 & 0.39 \\
-b{[}(Intercept){]} & -2.29 & 0.34 & -6.7 &
+b{[}Intercept{]} & -2.29 & 0.34 & -6.7 &
 2.66e-11\textsuperscript{***} \\
 b{[}X1{]} & -0.09 & 0.33 & -0.3 & 0.79 \\
 b{[}X2{]} & 4.40 & 0.27 & 16.5 & \textless{}
 2e-16\textsuperscript{***} \\
-w{[}(Intercept){]} & 1.98 & 0.07 & 27.6 & \textless{}
+w{[}Intercept{]} & 1.98 & 0.07 & 27.6 & \textless{}
 2e-16\textsuperscript{***} \\
 w{[}Y1{]} & 3.97 & 0.10 & 38.0 & \textless{}
 2e-16\textsuperscript{***} \\
+\caption{The parameter estimates including standard errors and p-values
+generated by the cusp package.}\label{tbl-par-estimates}\tabularnewline
 \end{longtable}
 
 Note that we fit a model with too many parameters. We also estimated
@@ -3146,9 +3126,6 @@ discourage overfitting and to promote model parsimony.
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1231}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1231}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1231}}@{}}
-\caption{Table 3.2: The comparative fit measures AIC, AICc, and BIC
-indicate that the reduced model should be the model of
-choice.}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3187,6 +3164,9 @@ BIC
 \endlastfoot
 Full model & 0.428 & -1058.7 & 8 & 2133.3 & 2133.5 & 2172.6 \\
 Reduced model & 0.426 & -1059.0 & 6 & 2130.0 & 2130.1 & 2159.5 \\
+\caption{The comparative fit measures AIC, AICc, and BIC indicate that
+the reduced model should be the model of
+choice.}\label{tbl-comparative-fit}\tabularnewline
 \end{longtable}
 
 The next simulation demonstrates that we can detect hysteresis using
@@ -3232,7 +3212,7 @@ results. Note that a lower BIC indicated the better-fitting model.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch3/fig-ch3-img23-old-35.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/fig-ch3-img23-old-35.png}
 
 }
 
@@ -3268,7 +3248,7 @@ bifurcation set (\texttt{plot(fit)}).
 
 \centering{
 
-\includegraphics{media/ch3/ch3-24__figure36.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch3/ch3-24__figure36.png}
 
 }
 
@@ -3316,7 +3296,9 @@ BIC.
 
 }
 
-\caption{\label{fig-ch3-img25-old-37}The Bentler conservation data.}
+\caption{\label{fig-ch3-img25-old-37}In the Bentler conservation data,
+the sumscore distribution is bimodal, and the weights of the modes shift
+with age.}
 
 \end{figure}%
 
@@ -3331,7 +3313,7 @@ value of their Zeeman machine (figure~\ref{fig-ch3-img26-old-38}).
 
 \centering{
 
-\includegraphics[width=8cm,height=\textheight]{media/ch3/image26.jpg}
+\includegraphics[width=0.5\textwidth,height=\textheight]{media/ch3/ch3-26-june14.png}
 
 }
 
@@ -3341,7 +3323,7 @@ band is attached to a fixed point and the strap point. The end of the
 other elastic (red dot) is moved by hand through the control plan. The
 strap point moves according to the cusp catastrophe. Data is gathered by
 collecting a set of X, Y, and Z values. Typically, 50 to 100 data points
-are sufficient to run cusp fit function in R.}
+are sufficient to apply the cusp fit function in R.}
 
 \end{figure}%
 
@@ -3637,7 +3619,7 @@ integration constant \\
 \end{longtable}
 
 \begin{equation}\phantomsection\label{eq-ch4n-2-old-22}{
-\Longrightarrow X_{t} = {X_{0}e}^{rt}
+\Longrightarrow X_{t} = {X_{0}e}^{rt}.
 }\end{equation}
 
 But for more complex models, such an analytical solution is out of scope
@@ -3767,21 +3749,21 @@ models}\label{sec-The-LotkaVolterra-models}
 
 Perhaps the best-known population models are the Lotka---Volterra
 equations (Murray 2002). {\marginnote{\begin{footnotesize}The
-Lotka\end{footnotesize}}}---{\marginnote{\begin{footnotesize}Volterra
-models describe the dynamics of biological systems in which two species
-interact, one as a predator and the other as prey.\end{footnotesize}}}
-These consist of coupled differential equations, one for the density of
-the prey and one for the density of the predator:
+Lotka---Volterra models describe the dynamics of biological systems in
+which two species interact, one as a predator and the other as
+prey.\end{footnotesize}}} These consist of coupled differential
+equations, one for the density of the prey and one for the density of
+the predator:
 
 \begin{equation}\phantomsection\label{eq-ch4n-3-old-23}{
-\frac{dN}{dt} = aN - bPN
+\frac{dN}{dt} = aN - bPN,
 }\end{equation}
 
 \begin{equation}\phantomsection\label{eq-ch4n-4-old-24}{
-\frac{dP}{dt} = cPN - dP
+\frac{dP}{dt} = cPN - dP,
 }\end{equation}
 
-Where \(N\) and \(P\) refer to the sizes of the prey and predator
+where \(N\) and \(P\) refer to the sizes of the prey and predator
 populations, \(a\) and \(c\) determine the growth rates, and \(b\) and
 \(d\) control the mortality rates. Note that the mortality rate of prey
 depends on both \(N\) and \(P\), while the mortality rate of predators
@@ -3901,7 +3883,7 @@ This results in figure~\ref{fig-ch4n-img1-old-49}.
 
 \centering{
 
-\includegraphics{media/ch4n/fig-ch4n-img1-old-49.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img1-old-49.png}
 
 }
 
@@ -3928,7 +3910,7 @@ testing yourself.
 
 To illustrate how Grind can be used to perform bifurcation analysis, we
 go back to the cusp. Recall that the differential equation for the cusp
-is:
+is
 
 \begin{equation}\phantomsection\label{eq-ch4n-5-old-25}{
 \frac{dX}{dt} = - V^{'}(X) = {a + bX - X}^{3}.
@@ -3993,7 +3975,7 @@ or less.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img2-old-50.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img2-old-50.png}
 
 }
 
@@ -4037,7 +4019,7 @@ figure~\ref{fig-ch4n-img3-old-51} is:
 
 \centering{
 
-\includegraphics{media/ch4n/ch4n-2__figure51.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/ch4-3-june14.png}
 
 }
 
@@ -4086,7 +4068,7 @@ deBif help pages (with \texttt{??deBif}) for further instructions.
 
 \centering{
 
-\includegraphics{media/ch4n/ch4n-4__figure53.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/ch4n-4__figure53.png}
 
 }
 
@@ -4136,7 +4118,7 @@ figure~\ref{fig-ch4n-img5-old-53}.
 
 \centering{
 
-\includegraphics{media/ch4n/ch4-5-may31.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/ch4-5-may31.png}
 
 }
 
@@ -4162,9 +4144,8 @@ change of the populations are proportional to their sizes, to name just
 a few. These assumptions are widely debated in the biological literature
 (Abrams et al. 2000), and modifying these assumptions may have
 significant consequences. {\marginnote{\begin{footnotesize}Hundreds of
-extensions and variants of the
-Lotka\end{footnotesize}}}---{\marginnote{\begin{footnotesize}Volterra
-model have been proposed and studied.\end{footnotesize}}}
+extensions and variants of the Lotka---Volterra model have been proposed
+and studied.\end{footnotesize}}}
 
 For example, the original Lotka---Volterra model has no stable points,
 only limit cycles. While these cycles have been observed in nature, they
@@ -4240,7 +4221,7 @@ implementation in Grind of the simplest case looks like this:
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img6-old-54.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img6-old-54.png}
 
 }
 
@@ -4291,7 +4272,7 @@ and a motor response is initiated.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img7-old-55.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img7-old-55.png}
 
 }
 
@@ -4308,7 +4289,7 @@ differential equation, called the drift-diffusion model (DDM), with
 \(I\) as the stimulus-driven input:
 
 \begin{equation}\phantomsection\label{eq-ch4n-6-old-26}{
-dX = Idt + \sigma dW
+dX = Idt + \sigma dW.
 }\end{equation}
 
 As before, \(dt\) is moved to the left-hand side of the equation. \(dW\)
@@ -4353,7 +4334,7 @@ A well-known extension of the drift-diffusion model is the
 Ornstein---Uhlenbeck model:
 
 \begin{equation}\phantomsection\label{eq-ch4n-7-old-27}{
-dX = (\lambda x + I)dt + \sigma dW
+dX = (\lambda x + I)dt + \sigma dW.
 }\end{equation}
 
 For \(\lambda < 0\) this process converges to \(I/\lambda\) (assuming
@@ -4363,8 +4344,8 @@ simplest two-dimensional model is the race model:
 
 \begin{equation}\phantomsection\label{eq-ch4n-8-old-28}{
 \begin{gathered}
-dX_{1} = I_{1}dt + \sigma W_{1} \\
-dX_{2} = I_{2}dt + \sigma W_{2} 
+dX_{1} = I_{1}dt + \sigma W_{1}, \\
+dX_{2} = I_{2}dt + \sigma W_{2}. 
 \end{gathered}
 }\end{equation}
 
@@ -4374,8 +4355,8 @@ inhibition. The equations of mutual inhibition model are:
 
 \begin{equation}\phantomsection\label{eq-ch4n-9-old-29}{
 \begin{gathered}
-dX_{1} = (-k_{1}X_{1} - w_{1}X_{2} + I_{1})dt + \sigma W_{1} \\
-dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}
+dX_{1} = (-k_{1}X_{1} - w_{1}X_{2} + I_{1})dt + \sigma W_{1}, \\
+dX_{2} = (-k_{2}X_{2} - w_{2}X_{1} + I_{2})dt + \sigma W_{2}.
 \end{gathered}
 }\end{equation}
 
@@ -4394,7 +4375,7 @@ and mutual inhibition model.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/ch4n-8__figure57.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/ch4n-8__figure57.png}
 
 }
 
@@ -4402,7 +4383,7 @@ and mutual inhibition model.
 accumulator models of decision-making. DDM is the drift-diffusion model
 which can be derived from the mutual inhibition model by setting
 \(w = k\) and \(w + k\) to a large value. (Adapted from Bogacz et al.
-2006).}
+2006)}
 
 \end{figure}%
 
@@ -4424,8 +4405,8 @@ The model is about the interactions between Romeo and Juliet, where
 in feelings is supposed to be a function of the feelings of both people:
 
 \begin{equation}\phantomsection\label{eq-ch4n-10-old-30}{\begin{gathered}
-\frac{dR}{dt} = aR + bJ \\
-\frac{dJ}{dt} = cR + dJ
+\frac{dR}{dt} = aR + bJ, \\
+\frac{dJ}{dt} = cR + dJ.
 \end{gathered}
 }\end{equation}
 
@@ -4498,7 +4479,7 @@ case, the couple ends up in a cycle of hate and love.
 
 \centering{
 
-\includegraphics[width=16cm,height=\textheight]{media/ch4n/fig-ch4n-img9-old-57.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img9-old-57.png}
 
 }
 
@@ -4627,7 +4608,7 @@ This results in figure~\ref{fig-ch4n-img10-old-58}.
 
 \centering{
 
-\includegraphics[width=16cm,height=\textheight]{media/ch4n/fig-ch4n-img10-old-58.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img10-old-58.png}
 
 }
 
@@ -4675,8 +4656,8 @@ depends on the level of another cognitive ability:
 
 \begin{equation}\phantomsection\label{eq-ch4n-13-old-33}{
 \begin{gathered}
-X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K} \\
-Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}
+X_{t + 1} = (a - bY_{t})X_{t} - \frac{aX_{t}^{2}}{K}, \\
+Y_{t + 1} = (c - dX_{t})Y_{t} - \frac{cY_{t}^{2}}{K}.
 \end{gathered}
 }\end{equation}
 
@@ -4708,7 +4689,7 @@ This can be implemented as follows:
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img11-old-59.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img11-old-59.png}
 
 }
 
@@ -4760,7 +4741,7 @@ get richer and the poor get poorer.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics{media/ch4n/fig-ch4n-img12-old-60_latest.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img12-old-60_above.png}
 
 }
 
@@ -4806,10 +4787,10 @@ this does not fundamentally change the qualitative behavior of the
 model. The central part of the model consists of two coupled
 differential equations:
 
-\[\frac{dT}{dt} = - T + bA\]
+\[\frac{dT}{dt} = - T + bA,\]
 
 \begin{equation}\phantomsection\label{eq-ch4n-14-old-34}{
-\frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A
+\frac{dA}{dt} = \frac{1}{1 + e^{- \alpha(T + \beta)}} - A.
 }\end{equation}
 
 This looks a bit like the Romeo and Juliet model, but now the effect of
@@ -4872,7 +4853,7 @@ different time scales.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img13-old-61.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img13-old-61.png}
 
 }
 
@@ -4931,7 +4912,7 @@ endlessly.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img14-old-62.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img14-old-62.png}
 
 }
 
@@ -4947,7 +4928,7 @@ cyclic jumps up and down. This oscillator is basically the famous van
 der Pol oscillator, originally written in the form:
 
 \begin{equation}\phantomsection\label{eq-ch4n-15-old-35}{
-\frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x
+\frac{d^{2}X}{dt^{2}} = \mu\left( 1 - X^{2} \right)\frac{dX}{dt} + x.
 }\end{equation}
 
 Such a second-order differential equation can be rewritten in the form
@@ -4963,8 +4944,8 @@ excitability (Izhikevich and FitzHugh 2006)\footnote{The
 
 \begin{equation}\phantomsection\label{eq-ch4n-16-old-36}{
 \begin{gathered}
-\frac{dV}{dt} = V - \frac{V^{3}}{3} - W + I \\ 
-\frac{dW}{dt} = .08(V + .7 - .8W)
+\frac{dV}{dt} = V - \frac{V^{3}}{3} - W + I, \\ 
+\frac{dW}{dt} = .08(V + .7 - .8W).
 \end{gathered}}\end{equation}
 
 The equation for \(V\), the membrane potential, has a cubic nonlinearity
@@ -4977,7 +4958,7 @@ figure~\ref{fig-ch4n-img15-old-63}.
 
 \centering{
 
-\includegraphics{media/ch4n/ch4-15-may31.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/ch4-15-may31.png}
 
 }
 
@@ -5039,7 +5020,7 @@ Instead of creating our own model, we look for well-studied models in
 other sciences, which led me to the spruce budworm model:
 
 \begin{equation}\phantomsection\label{eq-ch4n-17-old-37}{
-\frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}
+\frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
 }\end{equation}
 
 But now we interpret the variables and parameters as follows. We first
@@ -5120,8 +5101,8 @@ could also use a cusp. We then get:
 
 \begin{equation}\phantomsection\label{eq-ch4n-18-old-38}{
 \begin{gathered}
-\frac{dX}{dt} = {aY + bX - X}^{3} \\
-\frac{dY}{dt} = {cX + dY - Y}^{3} 
+\frac{dX}{dt} = {aY + bX - X}^{3}, \\
+\frac{dY}{dt} = {cX + dY - Y}^{3}. 
 \end{gathered}
 }\end{equation}
 
@@ -5130,7 +5111,7 @@ et al. (1991). We can study this model in Grind by specifying:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, state, parms) \{   }
+\NormalTok{model }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(t, state, parms) \{}
   \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(state,parms)), \{}
 \NormalTok{    dX }\OtherTok{\textless{}{-}}\NormalTok{ a}\SpecialCharTok{*}\NormalTok{Y }\SpecialCharTok{+}\NormalTok{ b}\SpecialCharTok{*}\NormalTok{X }\SpecialCharTok{{-}}\NormalTok{ X}\SpecialCharTok{\^{}}\DecValTok{3} 
 \NormalTok{    dY }\OtherTok{\textless{}{-}}\NormalTok{ c}\SpecialCharTok{*}\NormalTok{X }\SpecialCharTok{+}\NormalTok{ d}\SpecialCharTok{*}\NormalTok{Y }\SpecialCharTok{{-}}\NormalTok{ Y}\SpecialCharTok{\^{}}\DecValTok{3}
@@ -5151,7 +5132,7 @@ shown in figure~\ref{fig-ch4n-img16-old-64}.
 
 \centering{
 
-\includegraphics{media/ch4n/fig-ch4n-img16-old-64_latest.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img16-old-64_above.png}
 
 }
 
@@ -5197,7 +5178,7 @@ The last three lines of this code show the Kadyrov oscillator
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img17-old-65.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img17-old-65.png}
 
 }
 
@@ -5227,10 +5208,10 @@ three regimes:
 
 Abraham et al. (1991) generalize the model to:
 
-\[\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3}\]
+\[\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3},\]
 
 \begin{equation}\phantomsection\label{eq-ch4n-19-old-39}{
-\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3}
+\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3},
 }\end{equation}
 
 such that now both the splitting and normal variable of the cusp are
@@ -5238,7 +5219,7 @@ linear functions of the behavioral state of the other cusp. This can be
 further generalized to a system of \(N\) cusps by:
 
 \begin{equation}\phantomsection\label{eq-ch4n-20-old-40}{
-\frac{dX_{i}}{dt} = a_{0i} + \sum_{j\neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j\neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}
+\frac{dX_{i}}{dt} = a_{0i} + \sum_{j\neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j\neq i}^{}{b_{ij}X_{i}X_{j}} - {X_{i}}^{3}.
 }\end{equation}
 
 In this model, \(a_{0i}\) is the intercept of the normal variable and
@@ -5278,7 +5259,7 @@ perception.
 
 \centering{
 
-\includegraphics{media/ch4n/image18.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/image18.jpg}
 
 }
 
@@ -5324,7 +5305,7 @@ whether we perceive the front or the back view. Thus, the model for
 multifigure multistable perception is:
 
 \begin{equation}\phantomsection\label{eq-ch4n-21-old-41}{
-\frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}\left| X_{j} \right|} - {X_{i}}^{3}
+\frac{dX_{i}}{dt} = a_{0i} + \sum_{j \neq i}^{}{a_{ij}X_{j}} + b_{0i}X_{i} + \sum_{j \neq i}^{}{b_{ij}X_{i}\left| X_{j} \right|} - {X_{i}}^{3}.
 }\end{equation}
 
 The code to simulate this model is:
@@ -5368,7 +5349,7 @@ which gives figure~\ref{fig-ch4n-img19-old-67}.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/fig-ch4n-img19-old-67.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/fig-ch4n-img19-old-67.png}
 
 }
 
@@ -5391,7 +5372,7 @@ figure~\ref{fig-ch4n-img20-old-68}.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch4n/ch4n-20__figure69.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch4n/ch4n-20__figure69.png}
 
 }
 
@@ -5430,11 +5411,11 @@ chapter with the tag ``vdmaas.''
 
 \centering{
 
-\includegraphics{media/ch4n/image21.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch4n/ch4-21-june14.png}
 
 }
 
-\caption{\label{fig-ch4n-img21-old-69}Some screenshots of the
+\caption{\label{fig-ch4n-img21-old-69}Screenshots of the
 Lotka---Volterra model in Insightmaker.}
 
 \end{figure}%
@@ -5654,20 +5635,21 @@ demonstrations). The external field could be caused another magnet.
 
 \centering{
 
-\includegraphics{media/ch5n/ch5n-1-Han.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/ch5-1-june14.png}
 
 }
 
 \caption{\label{fig-ch5n-img1-old-39}Schematic picture of the magnet.
-Spins can be up or down. At lower temperatures, the spins tend to align
-with neighboring spins and the external field, resulting in magnetism.}
+Spins, \(x\), can be left (\(1\)) or right (\(-1\)). At lower
+temperatures, \(T\), the spins tend to align with neighboring spins and
+the external field, \(\tau\), resulting in magnetism.}
 
 \end{figure}%
 
 The main model equations of the Ising model are:
 
 \begin{equation}\phantomsection\label{eq-ch5n-1-old-17}{
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}}}\end{equation}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}},}\end{equation}
 
 \begin{equation}\phantomsection\label{eq-ch5n-2-old-18}{
 P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - \beta H\left( \mathbf{x} \right) \right)}{Z}.}\end{equation}
@@ -5679,14 +5661,14 @@ linked, pairs. Vectors and matrices are represented using bold font.
 
 {\marginnote{\begin{footnotesize}With an external field we can force the
 spins to be all up or all down.\end{footnotesize}}} The external field
-and temperature are \(\tau\) and \(1/\beta\), respectively. The first
-equation simply states that nodes congruent with the external field
-lower the energy. Also, neighboring nodes with equal spins lower the
-energy. Suppose we have only four connected positive spins (top row of
-figure~\ref{fig-ch5n-img1-old-39}) and no external field, then we have
-\(\mathbf{x} = (1,1,1,1)\) and \(H = - 6\). This is also the case for
-\(\mathbf{x} = ( - 1, - 1, - 1, - 1)\), but any other state has a higher
-energy.
+and temperature are \(\tau\) and \(T\) (\(1/\beta\)), respectively. The
+first equation simply states that nodes congruent with the external
+field lower the energy. Also, neighboring nodes with equal spins lower
+the energy. Suppose we have only four connected positive spins (top row
+of figure~\ref{fig-ch5n-img1-old-39}) and no external field, then we
+have \(\mathbf{x} = (1,1,1,1)\) and \(H = - 6\). This is also the case
+for \(\mathbf{x} = ( - 1, - 1, - 1, - 1)\), but any other state has a
+higher energy.
 
 The second equation defines the probability of a certain state (e.g.,
 all spins up). This probability requires a normalization, \(Z\), to
@@ -5852,7 +5834,7 @@ highlight the collective behavior of ants
 
 \centering{
 
-\includegraphics{media/ch5n/image2b.jpeg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch5n/ch5-2-june14.jpg}
 
 }
 
@@ -5892,7 +5874,7 @@ depicted in figure~\ref{fig-ch5n-img3-old-41}.
 
 \centering{
 
-\includegraphics{media/ch5n/ch5n-3.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/ch5n-3.png}
 
 }
 
@@ -5949,7 +5931,7 @@ extent, but by using a different setup, based on brain-like mechanisms
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch5n/image4.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/image4.jpg}
 
 }
 
@@ -6090,7 +6072,7 @@ are the Kohonen self-organizing maps and the Hopfield neural network.
 
 \centering{
 
-\includegraphics{media/ch5n/ch5n-5__figure43.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/ch5n-5__figure43.png}
 
 }
 
@@ -6611,7 +6593,7 @@ the codes for each illusion---they are extremely short and elegant
 
 \centering{
 
-\includegraphics{media/ch5n/ch5n-6.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/ch5n-6.png}
 
 }
 
@@ -6642,7 +6624,7 @@ oscillations.
 
 \centering{
 
-\includegraphics{media/ch5n/image7.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/image7.jpg}
 
 }
 
@@ -6753,18 +6735,18 @@ demonstration is the artwork \emph{Strandbeest} by Theo Jansen
 about self-organization, \emph{The Blind Watchmaker} (Dawkins 1986),
 Jansen created generations of kinetic sculptures made of PVC piping,
 wood, fabric wings, and zip ties that can move across the sand,
-resembling walking animals. His YouTube videos are strongly recommended.
+resembling walking animals. His YouTube videos are recommended.
 
 \begin{figure}
 
 \centering{
 
-\includegraphics{media/ch5n/strandbeest_Han_perm.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/strandbeest_Han_perm.jpg}
 
 }
 
-\caption{\label{fig-ch5n-img8-old-46}Beach Beast (source
-www.strandbeest.com)}
+\caption{\label{fig-ch5n-img8-old-46}Beach Beast © Theo Jansen, Umerus
+2009, c/o Pictoright Amsterdam 2024}
 
 \end{figure}%
 
@@ -7009,7 +6991,7 @@ NetLogo, where multiple users can participate in NetLogo simulations.
 
 \centering{
 
-\includegraphics{media/ch5n/ch5n-10__figure48.png}
+\includegraphics[width=0.45\textwidth,height=\textheight]{media/ch5n/ch5n-10__figure48.png}
 
 }
 
@@ -7088,13 +7070,14 @@ negatively with impact.
 
 \centering{
 
-\includegraphics[width=4.72917in,height=\textheight]{media/ch5n/image10.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch5n/image10.jpg}
 
 }
 
 \caption{\label{fig-ch5n-img10-old-48}Team assembly model. Newcomers and
 incumbents are added to growing networks based on probabilities p and q.
-If p is sufficiently high, a dense network emerges.}
+If p is sufficiently high, a dense network emerges. (Adapted from
+Guimerà et al. (2005) with permission)}
 
 \end{figure}%
 
@@ -7221,7 +7204,7 @@ psychometric tools (Epskamp, Borsboom, and Fried 2018; Epskamp et al.
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img1-old-70.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch6/fig-ch6-img1-old-70.jpg}
 
 }
 
@@ -7316,7 +7299,7 @@ networks are shown in figure~\ref{fig-ch6-img2-old-71}.
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img2-old-71.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch6/fig-ch6-img2-old-71.png}
 
 }
 
@@ -7324,18 +7307,6 @@ networks are shown in figure~\ref{fig-ch6-img2-old-71}.
 self-loops. Red arrows indicate negative effects. OutStrength and
 InStrength represent two types of centrality measures in directed
 networks.}
-
-\end{figure}%
-
-\begin{figure}[H]
-
-{\centering \includegraphics[width=18cm,height=\textheight]{media/ch6/fig-ch6-img2-old-71.png}
-
-}
-
-\caption{A weighted directed network with self-loops. Red arrows
-indicate negative effects. OutStrength and InStrength represent two
-types of centrality measures in directed networks.}
 
 \end{figure}%
 
@@ -7357,7 +7328,7 @@ figure~\ref{fig-ch6-img3-old-72}.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch6/fig-ch6-img3-old-72.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch6/fig-ch6-img3-old-72.png}
 
 }
 
@@ -7423,7 +7394,7 @@ including in the field of psychology.
 
 \centering{
 
-\includegraphics{media/ch6/fig-ch6-extra-bw.jpeg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/fig-ch6-extra-bw.jpeg}
 
 }
 
@@ -7535,7 +7506,7 @@ explained by the general, higher-order factor \(g\)
 
 \centering{
 
-\includegraphics{media/ch6/ch6_4__figure73.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/ch6_4__figure73.png}
 
 }
 
@@ -7580,7 +7551,7 @@ interpretations of the factor model.
 
 \centering{
 
-\includegraphics{media/ch6/ch6-5__figure74.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/ch6-5__figure74.png}
 
 }
 
@@ -7629,13 +7600,13 @@ To model this, we used the mutualistic Lotka---Volterra model:
 \[\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
 j = 1 \\
 j \neq i
-\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W\]
+\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W,\]
 
 \begin{equation}\phantomsection\label{eq-ch6-1-old-42}{
-K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i}
+K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i},
 }\end{equation}
 
-Where \(X_{i} \ldots X_{w}\) denote the cognitive processes,
+where \(X_{i} \ldots X_{w}\) denote the cognitive processes,
 \(\mathbf{a}\) the growth rates, \(\mathbf{K}\) the limited resources
 for each \(X_{i}\) (a weighted sum of a genetic (\(\mathbf{G}\)) and an
 environmental (\(\mathbf{E}\)) part), and \(\mathbf{M}\) the interaction
@@ -7651,13 +7622,12 @@ using twin data. Here we focus on the technical aspects.
 
 \centering{
 
-\includegraphics[width=18cm,height=\textheight]{media/ch6/fig-ch6-img6-old-75.png}
+\includegraphics[width=0.75\textwidth,height=\textheight]{media/ch6/fig-ch6-img6-old-75.png}
 
 }
 
-\caption{\label{fig-ch6-img6-old-75}The mutualism model. The self-loops,
-depicted in red, have an excitatory (\(aX\)) and an inhibitory part
-(\(- aX^{2}K\)).}
+\caption{\label{fig-ch6-img6-old-75}The mutualism model. The self-loops
+have an excitatory (\(aX\)) and an inhibitory part (\(- aX^{2}K\)).}
 
 \end{figure}%
 
@@ -7727,7 +7697,7 @@ data with this model and fit network and factor models.
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img7-old-76.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch6/fig-ch6-img7-old-76.jpg}
 
 }
 
@@ -7773,10 +7743,10 @@ The second part is the depletion by consumption of resources by
 dynamics (see the appendix of de Ron et al. 2023 for the Grind code to
 study this model numerically):
 
-\[\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}})\]
+\[\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}),\]
 
 \begin{equation}\phantomsection\label{eq-ch6-2-old-43}{
-\frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}
+\frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}.
 }\end{equation}
 
 What has been shown for this and related models is that you will not get
@@ -7808,14 +7778,14 @@ settings lead to different patterns of abnormal development (such as
 hyperspecialization and delayed development). The final model is:
 
 \[
-\frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}}
+\frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}},
 \]
 
 \begin{equation}\phantomsection\label{eq-ch6-3-old-44}{
 \frac{dR_{j}}{dt} = r\left( r_{\max} - R_{j} \right) - R_{j}\sum_{i = 1}^{W}{b_{ij}\frac{dX_{i}}{dt}}\ \left\{ \begin{array}{r}
 growth - dependent\  \\
 resource\ depletion
-\end{array} \right\} \\
+\end{array} \right\}. \\
 }\end{equation}
 
 \subsubsection{The wiring of
@@ -7884,13 +7854,14 @@ et al. 2014). And, again, no one seems to know what \(p\) might be.
 
 \centering{
 
-\includegraphics[width=20cm,height=\textheight]{media/ch6/image8.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/image8.jpg}
 
 }
 
 \caption{\label{fig-ch6-img8-old-77}The small world of psychopathology.
 Symptoms are represented as nodes and connected by an edge whenever they
-figure in the same disorder. (From Borsboom et al. 2011)}
+figure in the same disorder. (Adapted from Borsboom et al. (2011) with
+permission)}
 
 \end{figure}%
 
@@ -7955,7 +7926,7 @@ al. (2016).
 
 \centering{
 
-\includegraphics[width=20cm,height=\textheight]{media/ch6/image9.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/image9.png}
 
 }
 
@@ -7991,7 +7962,7 @@ reinforce the unhealthy state (Vangeli et al. 2011).
 
 \centering{
 
-\includegraphics{media/ch6/ch6-11-may31.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch6/ch6-11-may31.png}
 
 }
 
@@ -8066,7 +8037,7 @@ temperature.\end{footnotesize}}}
 
 \centering{
 
-\includegraphics{media/ch6/ch6-12.png}
+\includegraphics[width=0.6\textwidth,height=\textheight]{media/ch6/ch6-12.png}
 
 }
 
@@ -8097,12 +8068,12 @@ chicken''). The random field Ising attitude model can then be defined
 as:
 
 \begin{equation}\phantomsection\label{eq-ch6-4-old-45}{\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{<ij>}^{}{{W_{ij}x}_{i}x_{j}}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{(\tau + {t_{i})x}_{i}} - \sum_{<ij>}^{}{{W_{ij}x}_{i}x_{j}},
 \end{array}}\end{equation}
 
 \begin{equation}\phantomsection\label{eq-ch6-5-old-46}{\begin{array}{r}
 P\left( \mathbf{X} = \mathbf{x} \right) = \frac{\exp\left( - AH\left( \mathbf{x} \right) \right)}{Z}
-\end{array}}\end{equation}
+\end{array}.}\end{equation}
 
 Another difference from the original Ising model introduced in Chapter 5
 is that the interactions are now weighted and can even be negative. The
@@ -8132,7 +8103,7 @@ splitting variable.
 
 \centering{
 
-\includegraphics{media/ch6/ch6-13.png}
+\includegraphics[width=0.6\textwidth,height=\textheight]{media/ch6/ch6-13.png}
 
 }
 
@@ -8152,8 +8123,8 @@ Attention can change in seconds or minutes, whereas involvement can
 change in weeks or months. I will use attention and involvement
 interchangeably.
 
-This mean-field approximation is very robust. In van der Maas, Dalege,
-and Waldorp (2020), we show via simulation that networks with fewer
+This mean-field approximation is very robust. In Maas, Dalege, and
+Waldorp (2020), we show via simulation that networks with fewer
 connections and a distribution of weights, some of which are negative,
 are still well described by the cusp. This can be easily checked with
 some R code or in NetLogo. We will make use of the IsingSampler package
@@ -8192,7 +8163,7 @@ equal. \texttt{Beta}, originally the inverse of the temperature
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img12-old-81.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/fig-ch6-img12-old-81.jpg}
 
 }
 
@@ -8235,7 +8206,7 @@ such as an interview. This can be simulated as follows:
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img13-old-82.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch6/fig-ch6-img13-old-82.jpg}
 
 }
 
@@ -8264,7 +8235,7 @@ by using Hebbian learning. Hebbian learning, or ``what fires together,
 wires together,'' can be formulated as:
 
 \begin{equation}\phantomsection\label{eq-ch6-6-old-47}{\begin{array}{r}
-\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}
+\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}.
 \end{array}}\end{equation}
 
 Weights will grow to \(1\) if the nodes they connect are consistently
@@ -8290,7 +8261,8 @@ In R, this can be implemented as follows:
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{t}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{))}
 \NormalTok{epsilon }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{002}\NormalTok{;lambda }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{002} \CommentTok{\# low values = slow time scale}
 \NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{10}
-\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(n}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,}\DecValTok{0}\NormalTok{,.}\DecValTok{1}\NormalTok{),n,n); W }\OtherTok{\textless{}{-}} \FunctionTok{pmax}\NormalTok{(W,}\FunctionTok{t}\NormalTok{(W)) }\CommentTok{\# to make W symmetric}
+\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(n}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,.}\DecValTok{0}\NormalTok{,.}\DecValTok{4}\NormalTok{),n,n); }
+\NormalTok{W }\OtherTok{\textless{}{-}}\NormalTok{ (W }\SpecialCharTok{+} \FunctionTok{t}\NormalTok{(W)) }\SpecialCharTok{/} \DecValTok{2} \CommentTok{\# make symmetric}
 \FunctionTok{diag}\NormalTok{(W) }\OtherTok{\textless{}{-}} \DecValTok{0}
 \FunctionTok{qgraph}\NormalTok{(W); }\FunctionTok{title}\NormalTok{(}\StringTok{\textquotesingle{}before learning\textquotesingle{}}\NormalTok{)}
 \NormalTok{thresholds }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(.}\DecValTok{2}\NormalTok{, n)}
@@ -8301,7 +8273,8 @@ In R, this can be implemented as follows:
 \NormalTok{W }\OtherTok{\textless{}{-}}\NormalTok{ W}\SpecialCharTok{+}\NormalTok{epsilon}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\FunctionTok{abs}\NormalTok{(W))}\SpecialCharTok{*}\FunctionTok{outer}\NormalTok{(x,x,}\StringTok{"*"}\NormalTok{)}\SpecialCharTok{{-}}\NormalTok{lambda}\SpecialCharTok{*}\NormalTok{W }\CommentTok{\# Hebbian learning}
 \FunctionTok{diag}\NormalTok{(W) }\OtherTok{\textless{}{-}} \DecValTok{0}
 \NormalTok{\}}
-\FunctionTok{round}\NormalTok{(W,}\DecValTok{2}\NormalTok{)}
+\CommentTok{\# label switching (scale all nodes to positive)}
+\NormalTok{W }\OtherTok{\textless{}{-}}\NormalTok{ x}\SpecialCharTok{*}\FunctionTok{t}\NormalTok{(x}\SpecialCharTok{*}\NormalTok{W);x }\OtherTok{\textless{}{-}}\NormalTok{ x}\SpecialCharTok{*}\NormalTok{x}
 \FunctionTok{qgraph}\NormalTok{(W);}\FunctionTok{title}\NormalTok{(}\StringTok{\textquotesingle{}after learning\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -8312,7 +8285,7 @@ Figure~\ref{fig-ch6-img14-old-83} shows the result of this simulation.
 
 \centering{
 
-\includegraphics[width=18cm,height=\textheight]{media/ch6/fig-ch6-img14-old-83.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/fig-ch6-img14-old-83.png}
 
 }
 
@@ -8354,7 +8327,7 @@ probability distribution over the different microstates
 \(\mathbf{x}\).\end{footnotesize}}} It is defined as:
 
 \begin{equation}\phantomsection\label{eq-ch6-7-old-48}{\begin{array}{r}
- - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}
+ - \sum_{< \mathbf{x} >}^{}{P\left( \mathbf{x} \right)\ln{P\left( \mathbf{x} \right)}}.
 \end{array}}\end{equation}
 
 Note that we sum over all microstates (\(2^{n})\). For small networks,
@@ -8379,7 +8352,7 @@ belief. The Hamiltonian of the model includes a penalty for the \(-1\)
 and \(1\) states:
 
 \begin{equation}\phantomsection\label{eq-ch6-8-old-49}{\begin{array}{r}
-H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}
+H\left( \mathbf{x} \right) = - \sum_{i}^{n}{\tau x_{i}} - \sum_{< i,j >}^{}{x_{i}x_{j}} + D\sum_{i}^{n}{x_{i}}^{2}.
 \end{array}}\end{equation}
 
 You can compare this to equation~\ref{eq-ch5n-1-old-17}. The last term
@@ -8388,16 +8361,17 @@ to the \(0\) state.
 
 The dynamics of this model are more complicated. It resembles the
 butterfly catastrophe (Dattagupta 1981), which has a tricritical point.
-The potential function has three stable fixed points for specific
-combinations of values of parameters (see
-section~\ref{sec-Higher-order-catastrophes} and the exercise about the
-butterfly catastrophe in that chapter). This is relevant to the modeling
-of attitudes because it opens up the possibility of involved stable
-in-between attitude positions (see figure~\ref{fig-ch6-img15-old-84}).
-The Ising attitude model, excludes this.
-{\marginnote{\begin{footnotesize}In the Ising attitude model highly
-involved persons always radicalize, but more advanced spin models allow
-for involved nonpartisan positions.\end{footnotesize}}}
+The potential function,
+\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}\),
+has three stable fixed points for specific combinations of values of
+parameters (see section~\ref{sec-Higher-order-catastrophes} and the
+exercise about the butterfly catastrophe in that chapter). This is
+relevant to the modeling of attitudes because it opens up the
+possibility of involved stable in-between attitude positions (see
+figure~\ref{fig-ch6-img15-old-84}). The Ising attitude model, excludes
+this. {\marginnote{\begin{footnotesize}In the Ising attitude model
+highly involved persons always radicalize, but more advanced spin models
+allow for involved nonpartisan positions.\end{footnotesize}}}
 
 \begin{figure}
 
@@ -8407,11 +8381,10 @@ for involved nonpartisan positions.\end{footnotesize}}}
 
 }
 
-\caption{\label{fig-ch6-img15-old-84}The butterfly catastrophe,
-\(V(X) = {- aX - \frac{1}{2}bX^{2} - \frac{1}{3}cX^{3} - \frac{1}{4}dX^{4} + \frac{1}{6}X}^{6}\),
+\caption{\label{fig-ch6-img15-old-84}The butterfly catastrophe
 associated with the tricritical Ising model. The potential function can
-have three minima (\(a = c = 0, d = 5, b\) varies from \(1\) to
-\(-7\)).}
+have three minima. In the figure \(a = c = 0, d = 5, b\) varies from
+\(1\) to \(-7\).}
 
 \end{figure}%
 
@@ -8576,7 +8549,7 @@ effects.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch6/fig-ch6-img16-old-85.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/fig-ch6-img16-old-85.png}
 
 }
 
@@ -8616,7 +8589,7 @@ plots should look like figure~\ref{fig-ch6-img17-old-86}.
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch6/image17.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/image17.png}
 
 }
 
@@ -8638,15 +8611,14 @@ of the model. The code for this analysis is:
 \FunctionTok{library}\NormalTok{(}\StringTok{"IsingFit"}\NormalTok{)}
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{)}
 \NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{8}
-\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{runif}\NormalTok{(n}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,}\FloatTok{0.5}\NormalTok{,}\DecValTok{2}\NormalTok{),n,n); }\CommentTok{\# random positive matrix}
+\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{runif}\NormalTok{(n}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{),n,n); }\CommentTok{\# random positive matrix}
 \NormalTok{W }\OtherTok{\textless{}{-}}\NormalTok{ W }\SpecialCharTok{*} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{sample}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,n}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{,}\AttributeTok{prob=}\FunctionTok{c}\NormalTok{(.}\DecValTok{8}\NormalTok{,.}\DecValTok{2}\NormalTok{),}
-        \AttributeTok{replace=}\NormalTok{T),n,n) }\CommentTok{\# delete 90\% of nodes}
+                       \AttributeTok{replace=}\NormalTok{T),n,n) }\CommentTok{\# delete 80\% of nodes}
 \NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{pmax}\NormalTok{(W,}\FunctionTok{t}\NormalTok{(W)) }\CommentTok{\# make symmetric }
 \FunctionTok{diag}\NormalTok{(W) }\OtherTok{\textless{}{-}} \DecValTok{0}
-\NormalTok{ndata }\OtherTok{\textless{}{-}} \DecValTok{1000}
-\NormalTok{thresholds }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{) }
-\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{IsingSampler}\NormalTok{(ndata, W, thresholds,}
-        \AttributeTok{beta =}\NormalTok{ .}\DecValTok{5}\NormalTok{, }\AttributeTok{responses =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{ndata }\OtherTok{\textless{}{-}} \DecValTok{5000}
+\NormalTok{thresholds }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,.}\DecValTok{5}\NormalTok{) }
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{IsingSampler}\NormalTok{(ndata, W, thresholds,}\AttributeTok{beta =} \DecValTok{1}\NormalTok{)}
 \NormalTok{fit }\OtherTok{\textless{}{-}} \FunctionTok{IsingFit}\NormalTok{(data,}\AttributeTok{family=}\StringTok{\textquotesingle{}binomial\textquotesingle{}}\NormalTok{, }\AttributeTok{plot=}\ConstantTok{FALSE}\NormalTok{)}
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{t}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{))}
 \FunctionTok{qgraph}\NormalTok{(W,}\AttributeTok{fade =} \ConstantTok{FALSE}\NormalTok{);}\FunctionTok{title}\NormalTok{(}\StringTok{"Original network"}\NormalTok{,}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{)}
@@ -8660,7 +8632,7 @@ of the model. The code for this analysis is:
 
 \centering{
 
-\includegraphics[width=15cm,height=\textheight]{media/ch6/fig-ch6-img18-old-87.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch6/fig-ch6-img18-old-87.png}
 
 }
 
@@ -8676,8 +8648,6 @@ Study of 2012 on evaluative reactions toward Barack Obama. The items and
 abbreviations are:
 
 \begin{longtable}[]{@{}ll@{}}
-\caption{Table 6.1: The abbreviation of items used in
-figure~\ref{fig-ch6-img19-old-88}}\tabularnewline
 \toprule\noalign{}
 \textbf{Items tapping beliefs} & \textbf{Abbreviation} \\
 \midrule\noalign{}
@@ -8699,6 +8669,8 @@ figure~\ref{fig-ch6-img19-old-88}}\tabularnewline
  ``Hopeful'' & Hop \\
  ``Afraid of him'' & Afr \\
  ``Proud'' & Prd \\
+\caption{The abbreviation of items used in
+figure~\ref{fig-ch6-img19-old-88}.}\label{tbl-obama-table}\tabularnewline
 \end{longtable}
 
 We can use Isingfit and add community detection:
@@ -8729,11 +8701,12 @@ other packages.
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch6/fig-ch6-img19-old-88.png}
+\includegraphics[width=0.9\textwidth,height=\textheight]{media/ch6/fig-ch6-img19-old-88.png}
 
 }
 
-\caption{\label{fig-ch6-img19-old-88}The attitude toward Obama.}
+\caption{\label{fig-ch6-img19-old-88}The attitude toward Obama in 2012
+represented as a network.}
 
 \end{figure}%
 
@@ -9106,7 +9079,7 @@ system.
 
 \centering{
 
-\includegraphics[width=13cm,height=\textheight]{media/ch7/image1.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/ch7-1-june14.jpg}
 
 }
 
@@ -9138,7 +9111,7 @@ Loreto (2009) provide a brief review.
 
 \centering{
 
-\includegraphics{media/ch7/ch7-2-may31.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch7/ch7-2-may31.png}
 
 }
 
@@ -9201,7 +9174,7 @@ Which results in figure~\ref{fig-ch7-img3-old-91}.
 
 \centering{
 
-\includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img3-old-91.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/fig-ch7-img3-old-91.png}
 
 }
 
@@ -9218,10 +9191,10 @@ would be the case that agents start with either word A, word B, or both
 words A and B. So no new words are invented. For this case we can write
 the time evolution in three differential equations:
 
-\[{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}\]
-\[{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}\]
+\[{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}},\]
+\[{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}},\]
 
-\begin{equation}\phantomsection\label{eq-ch7-1-old-50}{\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-1-old-50}{\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}.}\end{equation}
 
 The first equation can be understood as follows: Speakers B talking to
 listeners A turn listeners A into AB agents. The loss in A agents is
@@ -9306,7 +9279,7 @@ different cases.
 
 \centering{
 
-\includegraphics[width=12cm,height=\textheight]{media/ch7/fig-ch7-img4-old-92.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch7/fig-ch7-img4-old-92.png}
 
 }
 
@@ -9443,7 +9416,7 @@ temperature.
 
 \centering{
 
-\includegraphics{media/ch7/ch7-5__figure95.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/ch7-5__figure95.png}
 
 }
 
@@ -9490,7 +9463,7 @@ effect of distance can be modified with \(\alpha\). As the value of
 diminishes. All of these parameters are positive random values. The
 impact \(I\) is defined as:
 
-\begin{equation}\phantomsection\label{eq-ch7-SI-a}{I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-SI-a}{I_{i} = I_{i}^{P} - I_{i}^{S} = \left\lbrack \sum_{j = 1}^{N}{\frac{p_{j}}{d_{ij}^{\alpha}}\left( 1 - X_{i}X_{j} \right)} \right\rbrack - \left\lbrack \sum_{j = 1}^{N}{\frac{s_{j}}{d_{ij}^{\alpha}}\left( 1 + X_{i}X_{j} \right)} \right\rbrack.}\end{equation}
 
 With \(j\) we take the sum over the neighbors of agent \(i\). Note that
 when \(X_{i} = X_{j}\), \(I^{P} = 0\) due to the \(1 - X_{i}X_{j}\)
@@ -9501,7 +9474,7 @@ reduces the effect of distant neighbors. In addition to these forces,
 the theory assumes an external field \(H\), as in the Ising model. The
 dynamic of opinion is:
 
-\begin{equation}\phantomsection\label{eq-ch7-SI-b}{X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-SI-b}{X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack.}\end{equation}
 
 Thus, opinion of agents become \(-1\) if \(X(t)I_{i}(t) + H\) is
 negative, and vice versa. Lewenstein, Nowak, and Latané (1992) present
@@ -9526,7 +9499,7 @@ Cichocka 2017).
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/fig-ch7-img6-old-94.jpg}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch7/fig-ch7-img6-old-94.jpg}
 
 }
 
@@ -9569,7 +9542,7 @@ simulated with Grind (using the
   \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(state,parms)),\{}
 \NormalTok{    X }\OtherTok{\textless{}{-}}\NormalTok{ state[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n]}
 \NormalTok{    M }\OtherTok{\textless{}{-}}\NormalTok{ M}\SpecialCharTok{/}\FunctionTok{apply}\NormalTok{(M,}\DecValTok{1}\NormalTok{,sum) }\CommentTok{\# weights sum to 1}
-\NormalTok{    dX }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{g) §}\SpecialCharTok{*}\NormalTok{ M }\SpecialCharTok{\%*\%}\NormalTok{ X  }\SpecialCharTok{+}\NormalTok{ g }\SpecialCharTok{*}\NormalTok{ X }\SpecialCharTok{{-}}\NormalTok{ X}
+\NormalTok{    dX }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{g) }\SpecialCharTok{*}\NormalTok{ M }\SpecialCharTok{\%*\%}\NormalTok{ X  }\SpecialCharTok{+}\NormalTok{ g }\SpecialCharTok{*}\NormalTok{ X }\SpecialCharTok{{-}}\NormalTok{ X}
     \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(dX))}
 \NormalTok{  \})}
 \NormalTok{\}}
@@ -9586,7 +9559,7 @@ simulated with Grind (using the
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/fig-ch7-img7-old-95.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/fig-ch7-img7-old-95.png}
 
 }
 
@@ -9615,9 +9588,9 @@ If \(\left\lceil X_{i}(t) - X_{j,}(t) \right\rceil > \epsilon\) nothing
 happens because the difference in opinion exceeds the bound
 \(\epsilon\). Otherwise, they exchange opinions according to:
 
-\[X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t))\]
+\[X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t)),\]
 
-\begin{equation}\phantomsection\label{eq-ch7-2-old-51}{X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right)}\end{equation}
+\begin{equation}\phantomsection\label{eq-ch7-2-old-51}{X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right).}\end{equation}
 
 So, if \(\mu = .5\), they find each other in the middle. If \(\mu = 1\),
 they take each other's position, as in the voter model. The value of
@@ -9658,7 +9631,7 @@ entirely accurate code to simulate this model is: \footnote{The second
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/fig-ch7-img8-old-96.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/fig-ch7-img8-old-96-new.png}
 
 }
 
@@ -9704,7 +9677,7 @@ after the \texttt{X\ \textless{}-\ state{[}1:n{]}} line and adding bound
 
 \centering{
 
-\includegraphics[width=14cm,height=\textheight]{media/ch7/fig-ch7-img9-old-97.png}
+\includegraphics[width=0.8\textwidth,height=\textheight]{media/ch7/fig-ch7-img9-old-97.png}
 
 }
 
@@ -9763,8 +9736,8 @@ stubbornness, cognitive dissonance, and confidence (Castellano,
 Fortunato, and Loreto 2009). All of these parameters are used to modify
 the interactions between agents.
 
-Here I will discuss the model proposed in van der Maas, Dalege, and
-Waldorp (2020), which uses three dynamic variables to describe agents:
+Here I will discuss the model proposed in Maas, Dalege, and Waldorp
+(2020), which uses three dynamic variables to describe agents:
 information, involvement, and opinion. Individual agents are described
 by the cusp catastrophe as shown in figure~\ref{fig-ch3-img13-old-25}.
 This is somewhat similar to the work of Sobkowicz (2012), who used the
@@ -9821,8 +9794,8 @@ topology of the network, (b) the interactions between agents, and (c)
 the definition of opinion.
 
 The qualitative results of the HIOM do not depend on the topology of the
-social network. In van der Maas, Dalege, and Waldorp (2020), the results
-are replicated for different topologies (e.g., 2D§ lattices, stochastic
+social network. In Maas, Dalege, and Waldorp (2020), the results are
+replicated for different topologies (e.g., 2D§ lattices, stochastic
 block models). However, as in other opinion models, more subtle results
 (e.g., convergence speed) are likely to depend on the network topology.
 For (b), the interactions between agents, specific assumptions are made,
@@ -9852,8 +9825,7 @@ for directed effects. Third, attitude networks should be reasonably
 balanced (see
 section~\ref{sec-The-stability-of-attitudes-and-entropy-measures}). To
 some extent, these assumptions can be relaxed without breaking the link
-to the cusp (see the appendix of van der Maas, Dalege, and Waldorp
-2020).
+to the cusp (see the appendix of Maas, Dalege, and Waldorp 2020).
 
 In the HIOM, information and attention are updated based on interactions
 between agents. Information and attention are two orthogonal axes in the
@@ -9900,7 +9872,7 @@ starts a conversation about genetically modified food, my interest in
 the topic is likely to increase. A simple way to implement this is:
 
 \begin{equation}\phantomsection\label{eq-ch7-5-old-54}{\begin{array}{r}
-A_{i,t+1}={decay}_A(A_{i,t}+{d_Au}_{i,t})
+A_{i,t+1}={decay}_A(A_{i,t}+{d_Au}_{i,t}).
 \end{array}}\end{equation}
 
 When the agent is involved in an interaction, we set \(u_{i} = 1\);
@@ -9916,8 +9888,9 @@ will move to \(i\).
 
 This is formalized by:
 \begin{equation}\phantomsection\label{eq-ch7-6-old-55}{\begin{array}{r}
-I_{i,t+1}=r_{t}I_{i,t}+(1-r_{t}) I_{j,t},
-\\ where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
+I_{i,t+1}=r_{t}I_{i,t}+(1-r_{t}) I_{j,t},\\ 
+\\[0.2em]
+where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
 \end{array}}\end{equation}
 
 \(I_{i}\) and \(I_{j}\) denote the information of agents \(i\) and
@@ -9938,8 +9911,9 @@ especially in combination with a normally distributed,
 update of information is:
 
 \begin{equation}\phantomsection\label{eq-ch7-6-old-55b}{\begin{array}{r}
-I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),
-\\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
+I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),\\
+\\[0.2em]
+where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
 \end{array}}\end{equation}
 
 If \(m_{I} \neq 0\) and \(s_{I} = 0\), a constant external field is
@@ -10006,7 +9980,7 @@ convergence happens over time.
 
 \centering{
 
-\includegraphics{media/ch7/image10.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/image10.png}
 
 }
 
@@ -10025,8 +9999,8 @@ difference in information (set \texttt{decay\_I} to .5), the
 polarization remains even if the difference in underlying information is
 0. Only if you also decrease attention (set \texttt{\%active-agents}
 low) does the polarization disappear. This is the first simulation
-described in van der Maas, Dalege, and Waldorp (2020). The second and
-third simulation are described in the next two sections.
+described in Maas, Dalege, and Waldorp (2020). The second and third
+simulation are described in the next two sections.
 
 \subsubsection{The persuasion paradox}\label{sec-The-persuasion-paradox}
 
@@ -10059,17 +10033,18 @@ polarization would not occur.
 
 \centering{
 
-\includegraphics{media/ch7/image11.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/ch7-11-june14.png}
 
 }
 
 \caption{\label{fig-ch7-img11-old-99}The visualization of persuasion
-paradox in van der Maas, Dalege, and Waldorp (2020). Activism initially
-spreads quickly but also increases the attention of conservative agents
-(see second and third panel). Over time, opinion polarizes. Red nodes
-are activists and blue nodes are conservatives. The size of the nodes
-represents attention. The last panel explains why some conservatives
-become (anti-)activists themselves.}
+paradox. Activism initially spreads quickly but also increases the
+attention of conservative agents (see second and third panel). Over
+time, opinion polarizes. Red nodes are activists and blue nodes are
+conservatives. The size of the nodes represents attention. The last
+panel explains why some conservatives become (anti-)activists
+themselves. (Reprinted from Maas, Dalege, and Waldorp (2020) with
+permission)}
 
 \end{figure}%
 
@@ -10087,10 +10062,10 @@ vegetarian point of view who actually eats meat. I claim to be such a
 vegetarian, but this position is not generally accepted in my local
 environment.
 
-The scenario, simulated in van der Maas, Dalege, and Waldorp (2020),
-consists of a majority of low-involved meat eaters and highly involved
-vegetarians. The meat eaters refuse to talk to the vegetarians due to
-bounded confidence, leading to increased polarization.
+The scenario, simulated in Maas, Dalege, and Waldorp (2020), consists of
+a majority of low-involved meat eaters and highly involved vegetarians.
+The meat eaters refuse to talk to the vegetarians due to bounded
+confidence, leading to increased polarization.
 
 Now some attentive vegetarians will be perturbed into the meat-eating
 position. This is a metastable state. This state is somewhat stable,
@@ -10105,7 +10080,7 @@ in the NetLogo model.
 
 \centering{
 
-\includegraphics{media/ch7/image12.jpg}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch7/ch7-12-june14.png}
 
 }
 
@@ -10116,8 +10091,8 @@ interacting. This leads to polarization. In the bottom panels, some
 vegetarians are perturbed toward meat eating. These perturbed agents
 have \(I < 0\) and \(O > 0\), which is possible because \(A > 0\)
 (hysteresis). Since \(O > 0\), these agents can exchange information
-with meat-eaters, leading to the spread of vegetarianism. For simulation
-details, see van der Maas, Dalege, and Waldorp (2020).}
+with meat-eaters, leading to the spread of vegetarianism. (Reprinted
+from in Maas, Dalege, and Waldorp (2020) with permission)}
 
 \end{figure}%
 
@@ -12295,6 +12270,12 @@ Betzel, Michael Breakspear, Shella Kheilholz, Aaron Kucyi, et al. 2020.
 Connectivity in Resting {fMRI}.''} \emph{Network Neuroscience} 4 (1):
 30--69. \url{https://doi.org/10.1162/netn_a_00116}.
 
+\bibitem[\citeproctext]{ref-vandermaas2020}
+Maas, Han L. J. van der, Jonas Dalege, and Lourens J. Waldorp. 2020.
+{``The Polarization Within and Across Individuals: The Hierarchical
+Ising Opinion Model.''} \emph{Journal of Complex Networks} 8 (2):
+cnaa010. \url{https://doi.org/10.1093/comnet/cnaa010}.
+
 \bibitem[\citeproctext]{ref-macyWhatSustainsStable2006}
 Macy, M. W., A. Flache, and K. Takacs. 2006. {``What {Sustains Stable
 Cultural Diversity} and {What Undermines It}? {Axelrod} and Beyond.
@@ -13103,12 +13084,6 @@ Development} 10.
 ---------. 2022. {``Spiegeloog - A Dialogue on Consciousness.''}
 \emph{Spiegeloog}, January.
 \url{https://www.spiegeloog.amsterdam/a-dialogue-on-consciousness/}.
-
-\bibitem[\citeproctext]{ref-vandermaas2020}
-van der Maas, Han L. J., Jonas Dalege, and Lourens J. Waldorp. 2020.
-{``The Polarization Within and Across Individuals: The Hierarchical
-Ising Opinion Model.''} \emph{Journal of Complex Networks} 8 (2):
-cnaa010. \url{https://doi.org/10.1093/comnet/cnaa010}.
 
 \bibitem[\citeproctext]{ref-vandermaasDynamicalModelGeneral2006}
 van der Maas, Han L. J., Conor V. Dolan, Raoul P. P. P. Grasman, Jelte
