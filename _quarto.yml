@@ -58,7 +58,6 @@ format:
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
-    output-dir: pdf/Complex-systems-research-in-Psychology.pdf
     documentclass: scrreprt
     papersize: A4
     number-depth: 4
