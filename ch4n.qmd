@@ -268,7 +268,7 @@ bifurcation(model,s,p)
 
 You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
 
-![Output from Shiny app deBif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/ch4n-4__figure53.png){#fig-ch4n-img4-old-52 width="100%"}
+![Output from Shiny app deBif. The last plot is a two-dimensional bifurcation diagram showing the bifurcation lines of the cusp in the $a$, $b$ plane. This plot cannot be made with Grind.](media/ch4n/ch4n-4-june24.png){#fig-ch4n-img4-old-52 width="100%"}
 
 ### Spruce budworm outbreak model {#sec-Spruce-Budworm-outbreak-model}
 
