@@ -32,4 +32,4 @@ for(i in 1:length(QMDS)) {
   numbering <- paste(chapter, 1:length(img_names), sep='_')
   names[[i]] <- cbind(numbering, img_names)
 }
-write.csv(do.call(rbind, names), file = paste0('figure_names-', format(Sys.Date(), "%d-%b-%Y"),'.csv'), row.names = TRUE)
+write.csv(do.call(rbind, names), file = paste0('r-figures-code/figure_names-', format(Sys.Date(), "%d-%b-%Y"),'.csv'), row.names = TRUE)
