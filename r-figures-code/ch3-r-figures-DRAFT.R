@@ -22,7 +22,9 @@ ptmp <- function(a, point.x , point.y){
     stat_function(fun = v, args = list(a = a), geom = "line", linewidth = .5) + 
     geom_point(data = data.frame(x = point.x, y = point.y), aes(x, y), shape = 16, size = 5, color = "black")+
     
-    labs(y = expression(paste('V(X) = -', alpha, 'x + ',x^{3})),
+    labs(
+      #y = expression(paste('V(X) = -', alpha, 'x + ',x^{3})),
+      y = expression(paste('V(X)')),
          title = bquote(alpha == .(a)))+
     theme_minimal()+
     theme1 + theme(legend.position = 'none')
