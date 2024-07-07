@@ -58,7 +58,7 @@ format:
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
-    latex-output-dir: pdf
+    #latex-output-dir: pdf
     documentclass: scrreprt
     papersize: A4
     number-depth: 4
