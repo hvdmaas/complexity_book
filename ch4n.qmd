@@ -146,7 +146,7 @@ Some typical uses of Grind are:
 
 ```{r eval = FALSE}
 layout(1:2)
-data=run(odes=LV,tstep=.01,table=T) # set tstep to low value
+data <- run(odes=LV,tstep=.01,table=T) # set tstep to low value
 # phase plot for different starting values
 plane(odes=LV,portrait = TRUE, ymax=17, xmax=50, tstep=0.1,grid=4)
 ```
@@ -176,10 +176,10 @@ data_error <- run(odes=LV,n,table=T,timeplot =F)
 data_error[,2:3] <- data_error[,2:3]+
   matrix(rnorm(2*n,0,2),,2) # measurement error 
 #fit & plot
-s<- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
-f_deter<- fit(odes=LV,data_deterministic,main='deterministic')
-f_stoch<- fit(odes=LV,data_stochastic,main='stochastic')
-f_error<- fit(odes=LV,data_error,main='error')
+s <- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
+f_deter <- fit(odes=LV,data_deterministic,main='deterministic')
+f_stoch <- fit(odes=LV,data_stochastic,main='stochastic')
+f_error <- fit(odes=LV,data_error,main='error')
 pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
 pars <- rbind(pars,c(summary(f_deter)$sigma,
                      summary(f_stoch)$sigma,summary(f_error)$sigma))
@@ -210,7 +210,7 @@ model <- function(t, state, parms){
   })
 }
 p <- c(a=0,b=1); s <- c(X=.1); run(ymin=-1)
-s[1] <- -.1; run(add=T)
+s[1] <- -.1; run(add=TRUE)
 ```
 
 This code simulates two runs demonstrating bistability for $a = 0$ and $b = 1$.
@@ -221,12 +221,10 @@ As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous
 
 ```{r eval = FALSE}
 layout(t(c(1,1,1,2)))
-data <- run(table=T,tmax=1000,method='euler',tstep=.1,
-            after="state <- state + 
-            rnorm(1,mean=0,sd=0.4) * sqrt(tstep)",
-            ymax=2,ymin=-2,timeplot=F)
+data <- run(table=TRUE, tmax=1000, method='euler',
+            tstep=.1, after="state <- state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)", ymax=2,ymin=-2,timeplot=F)
 plot(data,type='l',bty='n')
-barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=T)
+barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=TRUE)
 ```
 
 ![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Conversely, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.png){#fig-ch4n-img2-old-50 width="80%"}
@@ -317,7 +315,7 @@ model <- function(t, state, parms){
   })
 }
 
-n=50
+n <- 50
 p <- c(l=5,v0=30,T=1.5,a=.73,b=1.67,delta=4,s0=2)
 x_init <- (0:(n-1))*(p['s0']+p['l'])
 v_init <- rep(0,n)
@@ -325,7 +323,7 @@ s <- c(x_init,v_init)
 
 m <- diag(1, n, n); m= rbind(m[-1,],0) # order cars
 # simulation with front car suddenly breaking at t = 150
-data=run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
+data <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
 

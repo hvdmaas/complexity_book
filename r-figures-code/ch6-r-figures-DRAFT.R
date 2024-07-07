@@ -19,15 +19,6 @@ scholar_statistics %>% ggplot()+
 ggsave('media/ch6/fig-ch6-img1-old-70.jpg', width = 12, height = 6, units = 'in', dpi = 300)
 
 # fig 6.2 -----------------------------------------------------------------
-
-
-#g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
-#plot(g1) # an undirected network with 3 nodes
-#g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
-#plot(g2) # an directed network with self-excitation on node 3
-#get.adjacency(g2) # weight matrix
-#fcn <- make_full_graph(10) # a fully connected network
-#plot(fcn, vertex.size=10, vertex.label=NA)
 layout(1)
 set.seed(1)
 adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
@@ -105,21 +96,6 @@ plot(sample_pa(20),main="sample_pa (preferential attachment)",
 dev.off()
 
 # fig 6.6 -----------------------------------------------------------------
-# png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
-# set.seed(1)
-# layout(1)
-# par(mar=c(4,4,4,4))
-# M <- matrix(rnorm(8^2,0.1,0.0),8,8)
-# M <- M*matrix(sample(0:1,8^2,replace=T,prob=c(.4,.6)),8,8)
-# M[diag(8)==1] <-  -.1
-# qgraph(M,diag=T,layout='circle',labels=paste('x',1:8,sep='',col=''), 
-#        edge.color = ifelse(M > 0, ncolors[5], ncolors[6]), 
-#        edge.width = .75,negDashed=T,
-#        mar = c(5,5,5,5))
-# text(-.3,.3,'M',cex=3, family = cfont)
-# text(-.7,1.1,expression(a*X*(1-X/K)),cex=1.5)
-# dev.off()
-
 png('media/ch6/fig-ch6-img6-old-75.png', width = 6, height = 5, units = 'in', res = 300)
 set.seed(1)
 layout(1)
@@ -137,7 +113,6 @@ plot(g, vertex.label=paste('X',1:8,sep='',col=''),
 text(-.15,.18,'M',cex=2, family = cfont)
 text(.86,1.01,expression(a*X*(1-X/K)),cex=1.2)
 dev.off()
-
 
 # fig 6.7 -----------------------------------------------------------------
 
@@ -502,11 +477,9 @@ h=hsbm(clusters,strengths)
 m <- h[[1]]
 group=h[[2]]
 
-#name2=paste('network',paste0(clusters,collapse=''),'.jpg',sep='',col='')
 png('media/ch6/fig-ch6-extra.png',width = 5, height = 3, units = 'in', res = 300)
 layout(t(1))
 qgraph(m,groups=group, layout="spring",labels=F,
        vsize=1.5,edge.width=.4, bg=adjustcolor("white", alpha.f=0),
        mar = c(1,1,1,1)) 
 dev.off()
-

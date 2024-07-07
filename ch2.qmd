@@ -22,10 +22,11 @@ This says that the new value of $X$ is determined by the previous value of $X$, 
 ```{r eval = FALSE}
 n <- 15
 r <- 2
-x <- rep(0,n)
+x <- rep(0, n)
 x[1] <- 2 # initial state X0 = 1 and thus X1 = 2
-for (i in 1:(n - 1))
+for (i in 1:(n - 1)) {
   x[i + 1] <- r * x[i]
+}
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
@@ -47,10 +48,13 @@ What is the effect of this addition to the equation? If $X$ is much smaller than
 Let us study a "boring" case first, $r = 2$ (@fig-ch2-img2).
 
 ```{r eval = FALSE}
-n <- 15; r <- 2; x <- rep(0,n)
+n <- 15
+r <- 2
+x <- rep(0, n)
 x[1] <- .01 # initial state
-for (i in 1:(n - 1))
+for (i in 1:(n - 1)) {
   x[i + 1] = r * x[i] * (1 - x[i])
+}
 plot(x, type = 'b', xlab = 'time', bty = 'n')
 ```
 
@@ -60,12 +64,12 @@ This is the simple case. The population initially develops exponentially but the
 
 ```{r eval = FALSE}
 n <- 30; r <- 2; x <- rep(0,n)
-for (init in seq(0, .7, by = .01))
+for (init in seq(0, .7, by = .01)){
   # start from different initial values
-{ 
   x[1] <- init
-  for (i in 1:(n - 1))
+  for (i in 1:(n - 1)){
     x[i + 1] <- r * x[i] * (1 - x[i])
+  }
   if (x[i] == 0)
     plot(x,type = 'l',xlab = 'time',bty = 'n',ylim = c(0, .8),col = 'red')
   else
@@ -117,13 +121,15 @@ There seems to be no regularity. This is what we call deterministic chaos. This 
 ```{r eval = FALSE}
 r <- 4;  n <- 50; x <- rep(0,n)
 x[1] <- .001
-for (i in 1:(n - 1))
+for (i in 1:(n - 1)){
   x[i + 1] <- r * x[i] * (1 - x[i])
+}
 plot(x, type = 'l', xlab = 'time', bty = 'n')
 x[1] <- .0010001
 # restart with sightly different initial state
-for (i in 1:(n - 1))
+for (i in 1:(n - 1)){
   x[i + 1] <- r * x[i] * (1 - x[i])
+}
 lines(x, col = 'red')
 ```
 
@@ -148,16 +154,20 @@ where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambd
 layout(matrix(1:6,2,3))
 r <- 3.3; n <- 200; x <- rep(0,n)
 x[1] <- .001
-for(i in 1:(n-1)) x[i+1] = r*x[i]*(1-x[i])
+for(i in 1:(n-1)) {
+  x[i+1] = r*x[i]*(1-x[i])
+}
 x <- x[-1:-100]
-plot(x,type='l',xlab='time',bty='n', main=paste('r = ',r),
-     ylim=0:1,cex.main=2) 
+plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r),
+     ylim=0:1, cex.main=2) 
 plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
 r <- 4; x[1] <- .001;
-for(i in 1:(n-1)) x[i+1] <- r*x[i]*(1-x[i])
+for(i in 1:(n-1)){
+  x[i+1] <- r*x[i]*(1-x[i])  
+}
 x <- x[-1:-100]
-plot(x,type='l',xlab='time',bty='n',main=paste('r = ',r),cex.main=2) 
-plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
+plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r), cex.main=2) 
+plot(x[-length(x)], x[-1], xlim=0:1, ylim=0:1, xlab='Xt', ylab='Xt+1', bty='n')
 x <- runif(200,0,1)
 x <- x[-1:-100]
 plot(x,type='l',xlab='time',bty='n',main='random noise',cex.main=2) 

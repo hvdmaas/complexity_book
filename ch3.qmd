@@ -296,9 +296,9 @@ An example is shown in @fig-ch3-img20-old-32. These data come from a conservatio
 The code is:
 
 ```{r eval = FALSE}
-x=unlist(read.table('data/conservation_anticipation_item3.txt'))
+x <- unlist(read.table('data/conservation_anticipation_item3.txt'))
 library(mixtools) # if error: install.packages('mixtools')
-result=normalmixEM(x)
+result <- normalmixEM(x)
 plot(result,whichplot=2,breaks=30)
 ```
 
@@ -441,8 +441,7 @@ a0 <- 0; a1 <- 2; b0 <- 2 # to be estimated parameters
 b0s <- seq(-1,2,by=.25)
 i <- 0
 dat <- matrix(0,length(b0s),7)
-for (b0 in b0s)
-{
+for (b0 in b0s){
   i <- i + 1
   Y1 <- Vectorize(rcusp)(1, a1 * X1, b0)
   data <- data.frame(X1, Y1) # collect ‘measured’ variables in data
@@ -487,8 +486,7 @@ x <- read.table('data/bentler.txt',header=T)
 layout(t(1:8))
 age <- c('age 4 to 4.5','age 4.5 to 5','age 5 to 5.5','age 5.5 to 6',
          'age 6 to 6.5','age 6.5 to 7','age 7 to 7.5','age 7.5 to 8')
-for(i in 1:8)
-{
+for(i in 1:8){
   if(i==1) {par(mar=c(4,3,2,1));names=0:12} else 
     {names='';par(mar=c(4,1,2,1))}
   barplot(table(factor(x[x[,1]==i,2],levels=0:12)),horiz=T,axes=F,
@@ -561,10 +559,10 @@ However, there is room for improvement. Phenomenological models have limited exp
 7)  What is the best fitting cusp model (according to the BIC) for this tricky dataset created with this R code? Why? (\*\*)
 
     ```{r eval = FALSE}
-    n=500
-    z = Vectorize(rcusp)(1, .7*rnorm(n), 2+2*rnorm(n)) # sample z 
-    x = rnorm(n) 
-    y = rnorm(n) 
+    n <- 500
+    z <- Vectorize(rcusp)(1, .7*rnorm(n), 2+2*rnorm(n)) # sample z 
+    x <- rnorm(n) 
+    y <- rnorm(n) 
     data <- data.frame(z,x,y) # collect variables in data
     ```
 

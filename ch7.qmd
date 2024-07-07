@@ -40,9 +40,8 @@ n <- 1000
 x <- vector("list", n)
 iter <- 100000
 n_possible_words <- 1000000 # should be very high
-total_words <- total_unique_words  <-  numeric(iter)
-for(i in 1:iter)
-{
+total_words <- total_unique_words <- numeric(iter)
+for(i in 1:iter){
   j <- sample(1:n,1) # speaker
   k <- sample((1:n)[-i],1) # hearer
   # if speaker has no words, make one up (actually just number)
@@ -95,8 +94,7 @@ F <- 4 # features
 Q <- 4 # nominal levels per feature
 uniques <- numeric(iter)
 x <- matrix(sample(1:Q,replace=T,n*F),n,F)
-for(i in 1:iter)
-{
+for(i in 1:iter){
   j <- sample(1:n,1)       # agent 1
   k <- sample((1:n)[-j],1) # agent 2
   w <- sum(x[j,]==x[k,])/F # agreement
@@ -213,12 +211,10 @@ So, if $\mu = .5$, they find each other in the middle. If $\mu = 1$, they take e
 set.seed(20)
 layout(matrix(1:4, 2, 2))
 iter <- 50; mu <- .5; n <- 200
-for (bound in c(.1, .2, .3, .5))
-{
+for (bound in c(.1, .2, .3, .5)){
   x <- runif(n, 0, 1)
   dat <- matrix(0, iter, n)
-  for (i in 1:iter)
-  {
+  for (i in 1:iter){
     y <- sample(x, n, replace = T) # find an partner for every agent
     x <- ifelse(abs(x - y) < bound, x + mu * (y - x), x)
     dat[i, ] = x

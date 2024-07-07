@@ -6,15 +6,7 @@ source("r-figures-code/final-theme.R")
 
 # fig 3.4 -----------------------------------------------------------------
 
-#layout(t(1:3))
 v=function(x,a) -a*x + x^3
-#curve(v(x,a=-2),-3,3,bty='n')
-#points(-1,-1.5,pch=16,cex=3,col =1)
-#arrows(-1,-1.5,-1.5,-5,length=.1)
-#curve(v(x,a=0),-3,3,bty='n')
-#points(0,1.1,pch=16,cex=3,col =1)
-#curve(v(x,a=2),-3,3,bty='n')
-#points(.8,-.1,pch=16,cex=3,col =1)
 
 ptmp <- function(a, point.x , point.y){
   v <- function(x,a) -a*x + x^3
@@ -136,12 +128,7 @@ for (b0 in b0s){
   sf <- summary(fit)
   dat[i, ] <- c(b0, sf$r2lin.r.squared[1], sf$r2cusp.r.squared[1],sf$r2lin.bic[1], sf$r2cusp.bic[1],sf$r2lin.aic[1], sf$r2cusp.aic[1])
 }
-#par(mar=c(4,5,1,1))
-#matplot(dat[,1],,ylab='Bic',xlab='b0',bty='n',type='b',pch=1:2,cex.lab=1.5)
-#legend('right',legend=c('linear','cusp'),lty=1:2,pch=1:2,col=1:2,cex=1.5)
-#abline(v=0,lty=3)
-#text(-.5,800, 'no hysteresis',cex=1.5)
-#text(.5,800, 'hysteresis',cex=1.5)
+
 plotdat <- bind_cols(b = dat[,1], linear = dat[,4], cusp = dat[,5]) 
 p <- plotdat %>% 
   pivot_longer(2:3,names_to = 'mod', values_to = 'bic') %>% 
@@ -158,13 +145,7 @@ p <- plotdat %>%
         shape = '', linetype = '')+
   theme_minimal()+
   theme1 + theme1 + theme(
-    legend.position = 'right',
-    #axis.title.x = element_text(size = 60),
-    #axis.title.y = element_text(size = 60),
-    #axis.text.x  = element_text(size = 60),
-    #axis.text.y  = element_text(size = 60),
-    #legend.text  = element_text(size = 40),
-    #legend.title = element_text(size = 40)
+    legend.position = 'right'
     )
 p + annotate("text", x=-.5, y=800, label="no hysteresis",
             color="grey20", size = 20) +

@@ -30,7 +30,7 @@ There are many methods available in R for creating and visualizing networks and 
 
 ```{r eval = FALSE}
 library(igraph);library(qgraph)
-g1 <- graph( edges=c(1,2, 2,3, 3,1), n=3, directed=F ) 
+g1 <- graph(edges=c(1,2, 2,3, 3,1), n=3, directed=FALSE) 
 plot(g1) # an undirected network with 3 nodes
 g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
 plot(g2) # an directed network with self-excitation on node 3
@@ -140,8 +140,7 @@ data <- matrix(0,nr_of_pp,nr_var) # to collect the data in the simulation
 M <- matrix(.05,nr_var,nr_var)
 M[diag(nr_var)==1] <- 0 # set diagonal of M to 0
 
-for(i in 1:nr_of_pp)
-{
+for(i in 1:nr_of_pp){
   # sample a,K, starting values X from normal 
   # distributions for each person separately
   # note M is constant over persons.
@@ -155,7 +154,7 @@ for(i in 1:nr_of_pp)
 }
 hist(cor(data)[cor(data)<1],main='positive manifold',
      xlab='between test correlations',
-     col='lightgreen') # positive manifold
+     col='grey50') # positive manifold
 ```
 
 ![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="80%"}
@@ -272,7 +271,7 @@ The IsingSampler function runs the Metropolis—Hastings algorithm $nIter$ times
 ```{r eval = FALSE}
 library("IsingSampler")
 n <- 10 # nodes
-W <- matrix(.1,n,n); diag(W)=0
+W <- matrix(.1,n,n); diag(W) <- 0
 tau <- 0
 N <- 1000 # replications
 thresholds <- rep(tau, n)
@@ -324,14 +323,13 @@ In R, this can be implemented as follows:
 
 ```{r eval = FALSE}
 library(qgraph)
-hamiltonian=function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
-glauber_step = function(x,n,t,w,beta)
-{
-  i = sample(1:n,size=1) # take a random node
-  x_new=x;x_new[i]=x_new[i]*-1 # construct new state with flipped node
+hamiltonian <- function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
+glauber_step  <-  function(x,n,t,w,beta){
+  i <- sample(1:n,size=1) # take a random node
+  x_new <- x; x_new[i] <- x_new[i]*-1 # construct new state with flipped node
   # update probability
-  p=1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  
-  if(runif(1)<p) x=x_new # update state
+  p <- 1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  
+  if(runif(1)<p) x <- x_new # update state
   return(x)
 }
 layout(t(1:2))
@@ -446,7 +444,7 @@ data <- run(odes=mutualism, tmax=1000,table=T,
         after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
 data <- data[,-1]
 colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
-fit=graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
+fit <- graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
 plot(fit,"PDC")
 centralityPlot(fit$PDC)
 ```
@@ -464,9 +462,14 @@ M <- matrix(0,nr_var,nr_var)
 low <- .0;high <- .1 # interaction between and within factors
 # loop to create M
 cat <- cut(1:nr_var,factors)
-for(i in 1:nr_var)
-  for(j in 1:nr_var)
-    if(cat[i]==cat[j]) M[i,j] <- high else M[i,j] <- low
+for(i in 1:nr_var) {
+  for (j in 1:nr_var) {
+    if (cat[i] == cat[j])
+      M[i, j] <- high
+    else
+      M[i, j] <- low
+  }
+}
 M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
 ```
 
@@ -589,11 +592,11 @@ In the next chapter, we take the step to modeling social interactions using soci
 
 5)  Compute the Gibbs entropy for the Learning Ising Attitude model during the learning process (see @sec-The-stability-of-attitudes-and-entropy-measures). Show in a plot that learning minimizes the Gibbs entropy. (\*\*)
 
-6)  Install and open JASP (jasp-stats.org). Open the data library: "6. Factor." Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
+6)  Install and open JASP ([jasp-stats.org](jasp-stats.org)). Open the data library: "6. Factor." Read all the output and add a confirmatory factor analysis. What is the *standardized* factor loading of Residual Pitch in the confirmatory one-factor model? (\*)
 
 7)  Read the blog "How to Perform a Network Analysis in JASP"[^ch6-7] Reproduce the top plots of @fig-ch6-img16-old-85. Generate the data using the R code in @sec-Fitting-the-mutualism-model, import the data into JASP, and perform the network analysis. (\*)
 
-8)  Study the R code for the case where the M-matrix consists of three blocks (@sec-Fitting-the-mutualism-model). Generate the data and import into JASP. Apply exploratory factor analysis, check the fit for 1 to 3 factors, and report the $p$-values. Fit the confirmatory 3-factor model. Does it fit? Add V1 to the second instead of the first factor. How do you see the misfit? (\*)
+8)  Study the R code for the case where the **M**-matrix consists of three blocks (@sec-Fitting-the-mutualism-model). Generate the data and import into JASP. Apply exploratory factor analysis, check the fit for 1 to 3 factors, and report the $p$-values. Fit the confirmatory 3-factor model. Does it fit? Add V1 to the second instead of the first factor. How do you see the misfit? (\*)
 
 9)  How can you generate data for a higher-order factor model using the mutualism model? What should be changed in the code of the **M**-matrix for the case of three blocks? Show that the three-factor solution (assuming uncorrelated factors) does not fit the resulting data. Fit a higher-order factor model and report the $p$-value of the goodness of fit. How does the network plot change? (\*\*)
 
