@@ -158,9 +158,9 @@ With $j$ we take the sum over the neighbors of agent $i$. Note that when $X_{i} 
 
 $$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack.$$ {#eq-ch7-SI-b}
 
-Thus, opinion of agents become $-1$ if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant. A NetLogo implementation of the model is available in the software repository of this book.
+Thus, opinion of agents become $-1$ if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant.
 
-In the presence of individual fields, some minority opinions can become metastable. [Metastable opinions may persist for some time, but eventually, due to noise or other factors, they may suddenly shrink to smaller clusters.]{.aside} These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for a long time, against all odds [@douglasPsychologyConspiracyTheories2017].
+In the presence of individual fields, some minority opinions can become metastable. [Metastable opinions may persist for some time, but eventually, due to noise or other factors, they suddenly shrink to smaller clusters.]{.aside} These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for a long time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
 ![Five runs of the social impact model with $\alpha = 5$, $p$, $s$, and $H$ sampled from uniform distributions between 0 and 100, and a lattice of 10 by 10. For example, the line at the top shows staircase-like behavior around time 320 and at the end of the time series. The Social Impact model can be found in the online NetLogo models and in the software repository of this book.](media/ch7/fig-ch7-img6-old-94.jpg){#fig-ch7-img6-old-94 width="80%"}
 
@@ -205,7 +205,7 @@ $$X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right).$$ {#eq-ch7-2-
 
 So, if $\mu = .5$, they find each other in the middle. If $\mu = 1$, they take each other's position, as in the voter model. The value of $\mu$ does not make much difference, but the model converges fastest with $\mu = .5$. However, the choice of the bound $\epsilon$ makes a big difference. For $\epsilon = 0,$ all agents stick to their positions; for $\epsilon > .5$, they all converge to $X = .5$. For intermediate values, different forms of clustering occur (@fig-ch7-img8-old-96). It has been shown that the topology of the network does not make much difference [@fortunatoUniversalityThresholdComplete2004]. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: [^ch7-1]
 
-[^ch7-1]: The second of this pair of equation is not implemented. This does not lead to different results as far as I know.
+[^ch7-1]: The second of the two equations is not implemented. This does not lead to different results as far as I know.
 
 ```{r eval = FALSE}
 set.seed(20)
@@ -217,7 +217,7 @@ for (bound in c(.1, .2, .3, .5)){
   for (i in 1:iter){
     y <- sample(x, n, replace = T) # find an partner for every agent
     x <- ifelse(abs(x - y) < bound, x + mu * (y - x), x)
-    dat[i, ] = x
+    dat[i, ] <- x
   }
   matplot(dat,type='l',col=1,lty=1,bty='n',xlab='',
           ylab='opinion',main=paste('bound = ',bound))
@@ -239,13 +239,15 @@ after the `X <- state[1:n]` line and adding bound = .1 (@fig-ch7-img9-old-97).
 
 ![Clustering in the Hegselmann—Krause model.](media/ch7/fig-ch7-img9-old-97.png){#fig-ch7-img9-old-97 width="80%"}
 
-Again, many extensions have been studied. A recent paper studies the case where the network topology is a function of cognitive dissonance in opinions [@liOpinionDynamicsModel2020]. @baumannModelingEchoChambers2020 present a continuous opinion model of echo chambers. Of particular interest is the multidimensional case [@lorenzContinuousOpinionDynamics2007]. When agents accept interaction based on the minimum distance along one dimension, consensus can be reached more easily. The idea of bounded confidence has been associated with the concept of the latitude of acceptance as proposed in social judgment theory [@sherifSocialJudgmentAssimilation1961]. This theory also proposes a latitude of rejectance. There are two bounds, a lower and an upper bound. Below the lower bound, agents reduce their differences; between the bounds they ignore each other; and if they differ more than the upper bound, they increase their differences. This scenario has been investigated in @jagerUniformityBipolarizationPluriformity2005.
+Again, many extensions have been studied. A recent paper studies the case where the network topology is a function of cognitive dissonance in opinions [@liOpinionDynamicsModel2020]. @baumannModelingEchoChambers2020 present a continuous opinion model of echo chambers. Of particular interest is the multidimensional case [@lorenzContinuousOpinionDynamics2007]. When agents accept interaction based on the minimum distance along one dimension, consensus can be reached more easily. The idea of bounded confidence has been associated with the concept of the latitude of acceptance as proposed in social judgment theory [@sherifSocialJudgmentAssimilation1961]. This theory also proposes a latitude of rejection. There are two bounds, a lower and an upper bound. Below the lower bound, agents reduce their differences; between the bounds they ignore each other; and if they differ more than the upper bound, they increase their differences. This scenario has been investigated in @jagerUniformityBipolarizationPluriformity2005.
 
 In the online library of NetLogo you can find the model "BC", which simulates both the standard Deffuant and the Hegselmann—Krause model.
 
 ### Empirical verification {#sec-Empirical-verification}
 
 @castellanoStatisticalPhysicsSocial2009 note a striking imbalance between empirical evidence and theoretical models, in favor of the latter. It is not that there are no empirical data on the dynamics of opinions. Data come from studies on voting behavior, multicountry panel surveys, social media, and laboratory studies [for a review, see @peraltaOpinionDynamicsSocial2022]. The problem seems to be that these data do not discriminate between models. Most of the data fit all opinion models, supporting the general modeling approach but not specific models. This relates to the point that current opinion models are difficult to falsify because they lack specificity and are too flexibility. @flacheModelsSocialInfluence2017 argue that the field suffers from a lack of systematic comparison of competing models. The theory-construction approach outlined by @borsboomTheoryConstructionMethodology2021 may be helpful here. We need a list of generally agreed-upon phenomena that all models are supposed to explain.
+
+But another perspective is worth considering. In physics, models can be distinguished by their ability to make precise quantitative predictions. By contrast, in other fields there are often multiple models that roughly explain the same phenomenon, which can be advantageous. For example, Schelling's segregation model and its various iterations consistently predict that segregation occurs even when individuals are tolerant of different groups, demonstrating a robust prediction. Similarly, different models of traffic congestion tend to predict the same key phenomena. In addition, opinion models consistently show that zealots increase polarization, regardless of the specific model used. This convergence among different models may be the most reliable form of prediction we can achieve in these areas.
 
 ## Psychosocial models {#sec-Psychosocial-models}
 
@@ -267,9 +269,9 @@ The HIOM model can be found in the online NetLogo models (HIOM.nlogo) and in the
 
 Like other opinion models, the HIOM makes assumptions about (a) the topology of the network, (b) the interactions between agents, and (c) the definition of opinion.
 
-The qualitative results of the HIOM do not depend on the topology of the social network. In @vandermaas2020, the results are replicated for different topologies (e.g., 2D§ lattices, stochastic block models). However, as in other opinion models, more subtle results (e.g., convergence speed) are likely to depend on the network topology. For (b), the interactions between agents, specific assumptions are made, which are explained in the next section.
+The qualitative results of the HIOM do not depend on the topology of the social network. In @vandermaas2020, the results are replicated for different topologies (e.g., 2D lattices, stochastic block models). However, as in other opinion models, more subtle results (e.g., convergence speed) are likely to depend on the network topology. For (b), the interactions between agents, specific assumptions are made, which are explained in the next section.
 
-Regarding (c), the definition of opinion, the HIOM is special. Opinion is defined as a cusp. In the review of opinion models, I distinguished between discrete and continuous opinion models. Interestingly, the cusp behaves continuously for low values and discretely for high values of the splitting variable.[^ch7-2] [Whether opinion behaves discretely or continuously depends on another continuous variable (attention or involvement).]{.aside} In this way, the HIOM bridges these two modeling traditions.
+Regarding (c), the definition of opinion, the HIOM is special. Opinion is defined as a cusp. In the review of opinion models, I distinguished between discrete and continuous opinion models. Interestingly, the cusp behaves continuously for low values and discretely for high values of the splitting variable.[^ch7-2] [Whether opinion behaves discretely or continuously depends on another continuous variable (attention).]{.aside} In this way, the HIOM bridges these two modeling traditions.
 
 [^ch7-2]: This is highly relevant to the discussion in psychology about type and continua, that is, whether psychological traits are typological or continuous constructs (Borsboom, et al., 2016). They can be both!
 
@@ -316,7 +318,7 @@ $I_{i}$ and $I_{j}$ denote the information of agents $i$ and $j$, the agents inv
 In some scenario's it is of interest to allow for decay in information especially in combination with a normally distributed, $N(m_{I},S_{I})$, noise term, $\epsilon$. The full equation for the update of information is:
 
 $$\begin{array}{r}
-I_{i,t+1}=decay{_I} \left((1-u_{i,t} )*I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),\\
+I_{i,t+1}=decay{_I} \left((1-u_{i,t} )I_{i,t}+u_{i,t} (r_{t}I_{i,t}+(1-r_{t}) I_{j,t})+\epsilon_{i,t+1}\right),\\
 \\[0.2em]
 where\ r_{t} = r_{\min} + \frac{1 - r_{\min}}{1 + e^{- p\left( A_{i,t} - A_{j,t} \right)}}. \\
 \end{array}$$ {#eq-ch7-6-old-55b}
@@ -351,7 +353,7 @@ The model is now in place and can be simulated by following the steps below:
 
     -   Update opinion $O$ in all agents (@eq-ch7-3-old-52).
 
-The ${decay}_{A}$ has a special role in the current implementation of the HIOM. Instead of being fixed, it depends on the difference between the percentage of agents in the "active" set and the desired percentage of active agents ($%active_agents$), which is controlled by one of the sliders in the NetLogo model (@fig-ch7-img10-old-98). This allows us to manipulate the general interest (attention) in the opinion object.
+The ${decay}_{A}$ has a special role in the current implementation of the HIOM. Instead of being fixed, it depends on the difference between the percentage of agents in the "active" set and the desired percentage of active agents ($\%active\_agents$), which is controlled by one of the sliders in the NetLogo model (@fig-ch7-img10-old-98). This allows us to manipulate the general interest (attention) in the opinion object.
 
 There is no obvious stop criterion, but in practice some type of convergence happens over time.
 
@@ -363,7 +365,7 @@ In the standard setup, you can see that high attention (set `%active-agent` high
 
 Suppose we have a network of conservative but low-attentive agents into which we add a few highly attentive activists with the opposite information and opinion. At first glance, one would expect the activists' opinion to spread quickly. They initiate all interactions (according to @eq-ch7-4-old-53) and have much more impact on their interaction partners than vice versa (@eq-ch7-6-old-55). However, this is not what happens. This scenario leads to polarization. The attention of some conservatives is too quickly raised, and people get a strong opinion against the activists. @Fig-ch7-img11-old-99 shows this effect which of course, depends on some parameter settings. If attention increases more slowly, activism may spread better. You can test this scenario in the NetLogo model by selecting `setup-black-pete` and `add-activists`. Activists can now be added by clicking in the world. Vary persuasion $p$ and $d_{A}\ ($da) to see different effects.
 
-What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. [The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in their original position.]{.aside} Without a cusp for the individual opinion dynamics, this form of polarization would not occur.
+What is new in this model? It shows a new mechanism for polarization, namely hysteresis within agents, leading to the persuasion paradox. [The persuasion paradox describes how efforts to persuade can backfire, causing the other person to become even more entrenched in their original position. This is due to the effect of social interaction on attention.]{.aside} Without a cusp for the individual opinion dynamics, this form of polarization would not occur.
 
 ![The visualization of persuasion paradox. Activism initially spreads quickly but also increases the attention of conservative agents (see second and third panel). Over time, opinion polarizes. Red nodes are activists and blue nodes are conservatives. The size of the nodes represents attention. The last panel explains why some conservatives become (anti-)activists themselves. (Reprinted from @vandermaas2020 with permission)](media/ch7/ch7-11-june14.png){#fig-ch7-img11-old-99 width="100%"}
 
@@ -383,7 +385,7 @@ What appeals to me about the HIOM is its ability to incorporate a greater degree
 
 What is also unique about this model is the role of attention/involvement. It shows the risks of too-low and too-high values of this variable. Too-high values lead to extreme hysteresis effects in agents, making a change of opinion impossible. This is clearly a dilemma for activists. But too little involvement is also risky. [Talking to a person with very low involvement may have a positive short-term effect, but no long-term effect.]{.aside} The moment you stop influencing such agents, the attitude nodes start behaving randomly again, and they will move back to the neutral opinion at the back of the cusp. The persuasion paradox and the involvement dilemma need further study, but they seem important.
 
-What I like less is that the HIOM is perhaps too complex, which makes it difficult to study its behavior. One solution might be to rewrite the HIOM in terms of only differential equations (@eq-ch7-6-old-55 is not). Another idea is to make attention a network parameter. An attentive agent simply has many connections to other agents. As attention decreases, this translates into fewer connections.
+What I like less is that the HIOM is perhaps too complex, which makes it difficult to study its behavior. One idea is to make attention a network parameter. An attentive agent simply has many connections to other agents. As attention decreases, this translates into fewer connections.
 
 A more radical simplification that still uses the attention/involvement idea is a voter model with three votes (leftist, centrist, and rightist), as in the constrained three-state voter model [@rednerRealityinspiredVoterModels2019]. Leftists and rightists don't talk to each other (bounded confidence), but they do talk to the centrists. What we can add to this model is attention. Extremists (left and right) have high attention, while centrists have low attention. As in the HIOM, more attentive agents are more persuasive, so centrists tend to become more extreme due to interactions. On the other hand, attention is costly, and there is a probability that extremists spontaneously decay to the centrist position. Such a model can be studied analytically. This voter-type model has no within-subject hysteresis and will show less interesting behavior.
 
@@ -397,7 +399,7 @@ A possible way out is to start from the tricritical Ising or Blume—Capel model
 
 We have now seen two psychological models of cascading transitions. The first was the model for multifigure multistable perception (@sec-Cascading-transitions-in-multifigure-multistable-perception). This was a within-person model. The second is the HIOM. But many other processes in psychosocial systems come to mind. One example is addiction. At the psychological level, the dynamics of addiction are often sudden (e.g., quitting and relapse), while at the social level there are sudden outbreaks of substance abuse (e.g., the heroin epidemic).
 
-To model this cascading process, we could follow the same approach as in the HIOM. Instead of the cusp, we could use the spruce budworm model as a model of individual substance use. Interactions in the network affect the parameters $r_{b}, K, A,$ and $B$ parameters. A similar approach is possible with the panic model (@sec-The-panic-model). In future work, we will also apply this model to collective learning processes.
+To model this cascading process, we could follow the same approach as in the HIOM. Instead of the cusp, we could use the spruce budworm model as a model of individual substance use. Interactions in the network affect the parameters $r_{b}, K, A,$ and $B$ parameters (@bootIntegratingDualProcessInpreparation). A similar approach is possible with the panic model (@sec-The-panic-model). In future work, we will also apply this model to collective learning processes.
 
 ## Psychosociophysics {#sec-Psychosociophysics}
 
