@@ -372,29 +372,28 @@ Figure&nbsp;7.2: The naming game. The speaker chooses the highlighted word. If t
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, n)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>iter <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n_possible_words <span class="ot">&lt;-</span> <span class="dv">1000000</span> <span class="co"># should be very high</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>total_words <span class="ot">&lt;-</span> total_unique_words  <span class="ot">&lt;-</span>  <span class="fu">numeric</span>(iter)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">1</span>) <span class="co"># speaker</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">sample</span>((<span class="dv">1</span><span class="sc">:</span>n)[<span class="sc">-</span>i],<span class="dv">1</span>) <span class="co"># hearer</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if speaker has no words, make one up (actually just number)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(x[[j]])<span class="sc">==</span><span class="dv">0</span>) x[[j]][<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n_possible_words,<span class="dv">1</span>) <span class="cf">else</span> </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    spoken_word <span class="ot">&lt;-</span> <span class="fu">resample</span>(x[[j]],<span class="dv">1</span>) <span class="co"># choose a word (actually just number)</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">any</span>(x[[k]]<span class="sc">%in%</span>spoken_word)) <span class="co"># hearer knows the word</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    {</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      x[[j]] <span class="ot">&lt;-</span> spoken_word <span class="co"># erase list except spoken_word</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      x[[k]] <span class="ot">&lt;-</span> spoken_word <span class="co"># erase list except spoken_word</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="co"># hearer does not know the word</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>      x[[k]] <span class="ot">&lt;-</span> <span class="fu">c</span>(x[[k]],spoken_word)  <span class="co"># add word to list</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  } </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  total_words[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unlist</span>(x))</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  total_unique_words[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(x)))</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(total_words,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(total_unique_words,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(<span class="fu">unlist</span>(x)) <span class="co"># winning word</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>total_words <span class="ot">&lt;-</span> total_unique_words <span class="ot">&lt;-</span> <span class="fu">numeric</span>(iter)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter){</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">1</span>) <span class="co"># speaker</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">sample</span>((<span class="dv">1</span><span class="sc">:</span>n)[<span class="sc">-</span>i],<span class="dv">1</span>) <span class="co"># hearer</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if speaker has no words, make one up (actually just number)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">length</span>(x[[j]])<span class="sc">==</span><span class="dv">0</span>) x[[j]][<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n_possible_words,<span class="dv">1</span>) <span class="cf">else</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    spoken_word <span class="ot">&lt;-</span> <span class="fu">resample</span>(x[[j]],<span class="dv">1</span>) <span class="co"># choose a word (actually just number)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">any</span>(x[[k]]<span class="sc">%in%</span>spoken_word)) <span class="co"># hearer knows the word</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      x[[j]] <span class="ot">&lt;-</span> spoken_word <span class="co"># erase list except spoken_word</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      x[[k]] <span class="ot">&lt;-</span> spoken_word <span class="co"># erase list except spoken_word</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> <span class="co"># hearer does not know the word</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      x[[k]] <span class="ot">&lt;-</span> <span class="fu">c</span>(x[[k]],spoken_word)  <span class="co"># add word to list</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  total_words[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unlist</span>(x))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  total_unique_words[i] <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">unlist</span>(x)))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(total_words,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(total_unique_words,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">xlab=</span><span class="st">'time'</span>,<span class="at">bty=</span><span class="st">'n'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(<span class="fu">unlist</span>(x)) <span class="co"># winning word</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Which results in <a href="#fig-ch7-img3-old-91" class="quarto-xref">figure&nbsp;<span>7.3</span></a>.</p>
 <div id="fig-ch7-img3-old-91" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -426,21 +425,20 @@ Figure&nbsp;7.3: The order parameter, the total number of unique words, undergoe
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># nominal levels per feature</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>uniques <span class="ot">&lt;-</span> <span class="fu">numeric</span>(iter)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>Q,<span class="at">replace=</span>T,n<span class="sc">*</span>F),n,F)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">1</span>)       <span class="co"># agent 1</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">sample</span>((<span class="dv">1</span><span class="sc">:</span>n)[<span class="sc">-</span>j],<span class="dv">1</span>) <span class="co"># agent 2</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[j,]<span class="sc">==</span>x[k,])<span class="sc">/</span>F <span class="co"># agreement</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(w<span class="sc">&lt;</span><span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">runif</span>(<span class="dv">1</span>)<span class="sc">&lt;</span>w) {</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    f <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="fu">which</span>(x[j,]<span class="sc">!=</span>x[k,]),<span class="dv">1</span>) </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># which (unequal) feature to update</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    x[j,f] <span class="ot">&lt;-</span> x[k,f] <span class="co"># update</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  uniques[i] <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">unique</span>(x))</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(uniques[<span class="dv">1</span><span class="sc">:</span>i],<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">'time'</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">'# unique cultures'</span>, <span class="at">bty=</span><span class="st">'n'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste</span>(<span class="st">'Axelrod model with F = '</span>,F, <span class="st">', Q = '</span>, Q))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter){</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  j <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n,<span class="dv">1</span>)       <span class="co"># agent 1</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">sample</span>((<span class="dv">1</span><span class="sc">:</span>n)[<span class="sc">-</span>j],<span class="dv">1</span>) <span class="co"># agent 2</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="fu">sum</span>(x[j,]<span class="sc">==</span>x[k,])<span class="sc">/</span>F <span class="co"># agreement</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(w<span class="sc">&lt;</span><span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">runif</span>(<span class="dv">1</span>)<span class="sc">&lt;</span>w) {</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    f <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="fu">which</span>(x[j,]<span class="sc">!=</span>x[k,]),<span class="dv">1</span>) </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># which (unequal) feature to update</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    x[j,f] <span class="ot">&lt;-</span> x[k,f] <span class="co"># update</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  uniques[i] <span class="ot">&lt;-</span> <span class="fu">nrow</span>(<span class="fu">unique</span>(x))</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(uniques[<span class="dv">1</span><span class="sc">:</span>i],<span class="at">type=</span><span class="st">'l'</span>,<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">xlab=</span><span class="st">'time'</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">'# unique cultures'</span>, <span class="at">bty=</span><span class="st">'n'</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">80</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="fu">paste</span>(<span class="st">'Axelrod model with F = '</span>,F, <span class="st">', Q = '</span>, Q))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch7-img4-old-92" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -552,19 +550,17 @@ Figure&nbsp;7.7: Convergence of opinion in the Friedkin—Johnson model in a con
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>iter <span class="ot">&lt;-</span> <span class="dv">50</span>; mu <span class="ot">&lt;-</span> .<span class="dv">5</span>; n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (bound <span class="cf">in</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">5</span>))</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, iter, n)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, n, <span class="at">replace =</span> T) <span class="co"># find an partner for every agent</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y) <span class="sc">&lt;</span> bound, x <span class="sc">+</span> mu <span class="sc">*</span> (y <span class="sc">-</span> x), x)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    dat[i, ] <span class="ot">=</span> x</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matplot</span>(dat,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">col=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="st">''</span>,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylab=</span><span class="st">'opinion'</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">'bound = '</span>,bound))</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (bound <span class="cf">in</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">5</span>)){</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(n, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  dat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, iter, n)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>iter){</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="fu">sample</span>(x, n, <span class="at">replace =</span> T) <span class="co"># find an partner for every agent</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">abs</span>(x <span class="sc">-</span> y) <span class="sc">&lt;</span> bound, x <span class="sc">+</span> mu <span class="sc">*</span> (y <span class="sc">-</span> x), x)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    dat[i, ] <span class="ot">=</span> x</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matplot</span>(dat,<span class="at">type=</span><span class="st">'l'</span>,<span class="at">col=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">'n'</span>,<span class="at">xlab=</span><span class="st">''</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylab=</span><span class="st">'opinion'</span>,<span class="at">main=</span><span class="fu">paste</span>(<span class="st">'bound = '</span>,bound))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-ch7-img8-old-96" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
