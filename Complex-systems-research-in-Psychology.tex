@@ -216,7 +216,7 @@
 \@ifundefined{codebgcolor}{\definecolor{codebgcolor}{HTML}{F0F0F0}}{}
 \makeatother
 \makeatletter
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, enhanced, frame hidden, sharp corners, colback={codebgcolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, boxrule=0pt, frame hidden, enhanced, colback={codebgcolor}]}{\end{tcolorbox}}\fi
 \makeatother
 \makeatletter
 \@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
@@ -241,7 +241,7 @@
 
 \title{Complex systems research in Psychology}
 \author{Han L. J. van der Maas}
-\date{2024-06-25}
+\date{2024-07-07}
 
 \begin{document}
 \maketitle
@@ -678,7 +678,7 @@ used in the treatment of major depressive disorder.
 
 \centering{
 
-\includegraphics{media/ch1/ch1-3-june14.png}
+\includegraphics[width=1\textwidth,height=\textheight]{media/ch1/ch1-3.png}
 
 }
 
@@ -1145,10 +1145,11 @@ figure~\ref{fig-ch2-img1}).
 \begin{Highlighting}[]
 \NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{15}
 \NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{2}
-\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, n)}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{2} \CommentTok{\# initial state X0 = 1 and thus X1 = 2}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)) \{}
 \NormalTok{  x[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ x[i]}
+\NormalTok{\}}
 \FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{, }\AttributeTok{bty =} \StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1207,10 +1208,13 @@ Let us study a ``boring'' case first, \(r = 2\)
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{15}\NormalTok{; r }\OtherTok{\textless{}{-}} \DecValTok{2}\NormalTok{; x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{15}
+\NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{2}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, n)}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{01} \CommentTok{\# initial state}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)) \{}
 \NormalTok{  x[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{=}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ x[i] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x[i])}
+\NormalTok{\}}
 \FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{, }\AttributeTok{bty =} \StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1238,12 +1242,12 @@ initial values, but not all.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{30}\NormalTok{; r }\OtherTok{\textless{}{-}} \DecValTok{2}\NormalTok{; x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
-\ControlFlowTok{for}\NormalTok{ (init }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, .}\DecValTok{7}\NormalTok{, }\AttributeTok{by =}\NormalTok{ .}\DecValTok{01}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (init }\ControlFlowTok{in} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, .}\DecValTok{7}\NormalTok{, }\AttributeTok{by =}\NormalTok{ .}\DecValTok{01}\NormalTok{))\{}
   \CommentTok{\# start from different initial values}
-\NormalTok{\{ }
 \NormalTok{  x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ init}
-  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))\{}
 \NormalTok{    x[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ x[i] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x[i])}
+\NormalTok{  \}}
   \ControlFlowTok{if}\NormalTok{ (x[i] }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)}
     \FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type =} \StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab =} \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty =} \StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{ylim =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, .}\DecValTok{8}\NormalTok{),}\AttributeTok{col =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
   \ControlFlowTok{else}
@@ -1374,13 +1378,15 @@ this? Let me illustrate.
 \begin{Highlighting}[]
 \NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{4}\NormalTok{;  n }\OtherTok{\textless{}{-}} \DecValTok{50}\NormalTok{; x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{001}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))\{}
 \NormalTok{  x[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ x[i] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x[i])}
+\NormalTok{\}}
 \FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type =} \StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab =} \StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{, }\AttributeTok{bty =} \StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{0010001}
 \CommentTok{\# restart with sightly different initial state}
-\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))}
+\ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{))\{}
 \NormalTok{  x[i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r }\SpecialCharTok{*}\NormalTok{ x[i] }\SpecialCharTok{*}\NormalTok{ (}\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ x[i])}
+\NormalTok{\}}
 \FunctionTok{lines}\NormalTok{(x, }\AttributeTok{col =} \StringTok{\textquotesingle{}red\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1453,16 +1459,20 @@ code for this figure is:
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{))}
 \NormalTok{r }\OtherTok{\textless{}{-}} \FloatTok{3.3}\NormalTok{; n }\OtherTok{\textless{}{-}} \DecValTok{200}\NormalTok{; x }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
 \NormalTok{x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{001}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)) x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{=}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)) \{}
+\NormalTok{  x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{=}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])}
+\NormalTok{\}}
 \NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ x[}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{100}\NormalTok{]}
-\FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r),}
-     \AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
+\FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{, }\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r),}
+     \AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{, }\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
 \FunctionTok{plot}\NormalTok{(x[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(x)],x[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{],}\AttributeTok{xlim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}Xt\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}Xt+1\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \NormalTok{r }\OtherTok{\textless{}{-}} \DecValTok{4}\NormalTok{; x[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{001}\NormalTok{;}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{)) x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{))\{}
+\NormalTok{  x[i}\SpecialCharTok{+}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ r}\SpecialCharTok{*}\NormalTok{x[i]}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{x[i])  }
+\NormalTok{\}}
 \NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ x[}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{100}\NormalTok{]}
-\FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r),}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
-\FunctionTok{plot}\NormalTok{(x[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(x)],x[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{],}\AttributeTok{xlim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}Xt\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}Xt+1\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
+\FunctionTok{plot}\NormalTok{(x, }\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{, }\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{, }\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{, }\AttributeTok{main=}\FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}r = \textquotesingle{}}\NormalTok{,r), }\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
+\FunctionTok{plot}\NormalTok{(x[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(x)], x[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{], }\AttributeTok{xlim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{, }\AttributeTok{ylim=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{1}\NormalTok{, }\AttributeTok{xlab=}\StringTok{\textquotesingle{}Xt\textquotesingle{}}\NormalTok{, }\AttributeTok{ylab=}\StringTok{\textquotesingle{}Xt+1\textquotesingle{}}\NormalTok{, }\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)}
 \NormalTok{x }\OtherTok{\textless{}{-}}\NormalTok{ x[}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{:{-}}\DecValTok{100}\NormalTok{]}
 \FunctionTok{plot}\NormalTok{(x,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{main=}\StringTok{\textquotesingle{}random noise\textquotesingle{}}\NormalTok{,}\AttributeTok{cex.main=}\DecValTok{2}\NormalTok{) }
@@ -2772,9 +2782,9 @@ The code is:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{x}\OtherTok{=}\FunctionTok{unlist}\NormalTok{(}\FunctionTok{read.table}\NormalTok{(}\StringTok{\textquotesingle{}data/conservation\_anticipation\_item3.txt\textquotesingle{}}\NormalTok{))}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(}\FunctionTok{read.table}\NormalTok{(}\StringTok{\textquotesingle{}data/conservation\_anticipation\_item3.txt\textquotesingle{}}\NormalTok{))}
 \FunctionTok{library}\NormalTok{(mixtools) }\CommentTok{\# if error: install.packages(\textquotesingle{}mixtools\textquotesingle{})}
-\NormalTok{result}\OtherTok{=}\FunctionTok{normalmixEM}\NormalTok{(x)}
+\NormalTok{result }\OtherTok{\textless{}{-}} \FunctionTok{normalmixEM}\NormalTok{(x)}
 \FunctionTok{plot}\NormalTok{(result,}\AttributeTok{whichplot=}\DecValTok{2}\NormalTok{,}\AttributeTok{breaks=}\DecValTok{30}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -3186,8 +3196,7 @@ results. Note that a lower BIC indicated the better-fitting model.
 \NormalTok{b0s }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\AttributeTok{by=}\NormalTok{.}\DecValTok{25}\NormalTok{)}
 \NormalTok{i }\OtherTok{\textless{}{-}} \DecValTok{0}
 \NormalTok{dat }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{length}\NormalTok{(b0s),}\DecValTok{7}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{ (b0 }\ControlFlowTok{in}\NormalTok{ b0s)}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{ (b0 }\ControlFlowTok{in}\NormalTok{ b0s)\{}
 \NormalTok{  i }\OtherTok{\textless{}{-}}\NormalTok{ i }\SpecialCharTok{+} \DecValTok{1}
 \NormalTok{  Y1 }\OtherTok{\textless{}{-}} \FunctionTok{Vectorize}\NormalTok{(rcusp)(}\DecValTok{1}\NormalTok{, a1 }\SpecialCharTok{*}\NormalTok{ X1, b0)}
 \NormalTok{  data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(X1, Y1) }\CommentTok{\# collect ‘measured’ variables in data}
@@ -3270,8 +3279,7 @@ bimodal and to move along the normal axis (van der Maas and Molenaar
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{t}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{))}
 \NormalTok{age }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}age 4 to 4.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 4.5 to 5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 5 to 5.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 5.5 to 6\textquotesingle{}}\NormalTok{,}
          \StringTok{\textquotesingle{}age 6 to 6.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 6.5 to 7\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 7 to 7.5\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}age 7.5 to 8\textquotesingle{}}\NormalTok{)}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{)}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\DecValTok{8}\NormalTok{)\{}
   \ControlFlowTok{if}\NormalTok{(i}\SpecialCharTok{==}\DecValTok{1}\NormalTok{) \{}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{));names}\OtherTok{=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{12}\NormalTok{\} }\ControlFlowTok{else} 
 \NormalTok{    \{names}\OtherTok{=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{;}\FunctionTok{par}\NormalTok{(}\AttributeTok{mar=}\FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))\}}
   \FunctionTok{barplot}\NormalTok{(}\FunctionTok{table}\NormalTok{(}\FunctionTok{factor}\NormalTok{(x[x[,}\DecValTok{1}\NormalTok{]}\SpecialCharTok{==}\NormalTok{i,}\DecValTok{2}\NormalTok{],}\AttributeTok{levels=}\DecValTok{0}\SpecialCharTok{:}\DecValTok{12}\NormalTok{)),}\AttributeTok{horiz=}\NormalTok{T,}\AttributeTok{axes=}\NormalTok{F,}
@@ -3499,10 +3507,10 @@ similar to the cusp model proposed for the attitude toward abortion.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{n}\OtherTok{=}\DecValTok{500}
-\NormalTok{z }\OtherTok{=} \FunctionTok{Vectorize}\NormalTok{(rcusp)(}\DecValTok{1}\NormalTok{, .}\DecValTok{7}\SpecialCharTok{*}\FunctionTok{rnorm}\NormalTok{(n), }\DecValTok{2}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\FunctionTok{rnorm}\NormalTok{(n)) }\CommentTok{\# sample z }
-\NormalTok{x }\OtherTok{=} \FunctionTok{rnorm}\NormalTok{(n) }
-\NormalTok{y }\OtherTok{=} \FunctionTok{rnorm}\NormalTok{(n) }
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{500}
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{Vectorize}\NormalTok{(rcusp)(}\DecValTok{1}\NormalTok{, .}\DecValTok{7}\SpecialCharTok{*}\FunctionTok{rnorm}\NormalTok{(n), }\DecValTok{2}\SpecialCharTok{+}\DecValTok{2}\SpecialCharTok{*}\FunctionTok{rnorm}\NormalTok{(n)) }\CommentTok{\# sample z }
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n) }
+\NormalTok{y }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(n) }
 \NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(z,x,y) }\CommentTok{\# collect variables in data}
 \end{Highlighting}
 \end{Shaded}
@@ -3793,7 +3801,7 @@ Some typical uses of Grind are:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{layout}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{)}
-\NormalTok{data}\OtherTok{=}\FunctionTok{run}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,}\AttributeTok{tstep=}\NormalTok{.}\DecValTok{01}\NormalTok{,}\AttributeTok{table=}\NormalTok{T) }\CommentTok{\# set tstep to low value}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{run}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,}\AttributeTok{tstep=}\NormalTok{.}\DecValTok{01}\NormalTok{,}\AttributeTok{table=}\NormalTok{T) }\CommentTok{\# set tstep to low value}
 \CommentTok{\# phase plot for different starting values}
 \FunctionTok{plane}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,}\AttributeTok{portrait =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{ymax=}\DecValTok{17}\NormalTok{, }\AttributeTok{xmax=}\DecValTok{50}\NormalTok{, }\AttributeTok{tstep=}\FloatTok{0.1}\NormalTok{,}\AttributeTok{grid=}\DecValTok{4}\NormalTok{)}
 \end{Highlighting}
@@ -3864,10 +3872,10 @@ will see that the last two cases are very different.
 \NormalTok{data\_error[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{3}\NormalTok{] }\OtherTok{\textless{}{-}}\NormalTok{ data\_error[,}\DecValTok{2}\SpecialCharTok{:}\DecValTok{3}\NormalTok{]}\SpecialCharTok{+}
   \FunctionTok{matrix}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{n,}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{),,}\DecValTok{2}\NormalTok{) }\CommentTok{\# measurement error }
 \CommentTok{\#fit \& plot}
-\NormalTok{s}\OtherTok{\textless{}{-}}\NormalTok{ s}\SpecialCharTok{*}\FunctionTok{abs}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{));s; p}\OtherTok{\textless{}{-}}\NormalTok{ p}\SpecialCharTok{*}\FunctionTok{abs}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{));p    }\CommentTok{\# start values}
-\NormalTok{f\_deter}\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_deterministic,}\AttributeTok{main=}\StringTok{\textquotesingle{}deterministic\textquotesingle{}}\NormalTok{)}
-\NormalTok{f\_stoch}\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_stochastic,}\AttributeTok{main=}\StringTok{\textquotesingle{}stochastic\textquotesingle{}}\NormalTok{)}
-\NormalTok{f\_error}\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_error,}\AttributeTok{main=}\StringTok{\textquotesingle{}error\textquotesingle{}}\NormalTok{)}
+\NormalTok{s }\OtherTok{\textless{}{-}}\NormalTok{ s}\SpecialCharTok{*}\FunctionTok{abs}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{));s; p}\OtherTok{\textless{}{-}}\NormalTok{ p}\SpecialCharTok{*}\FunctionTok{abs}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.1}\NormalTok{));p    }\CommentTok{\# start values}
+\NormalTok{f\_deter }\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_deterministic,}\AttributeTok{main=}\StringTok{\textquotesingle{}deterministic\textquotesingle{}}\NormalTok{)}
+\NormalTok{f\_stoch }\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_stochastic,}\AttributeTok{main=}\StringTok{\textquotesingle{}stochastic\textquotesingle{}}\NormalTok{)}
+\NormalTok{f\_error }\OtherTok{\textless{}{-}} \FunctionTok{fit}\NormalTok{(}\AttributeTok{odes=}\NormalTok{LV,data\_error,}\AttributeTok{main=}\StringTok{\textquotesingle{}error\textquotesingle{}}\NormalTok{)}
 \NormalTok{pars }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(f\_deter}\SpecialCharTok{$}\NormalTok{par[}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{],f\_stoch}\SpecialCharTok{$}\NormalTok{par[}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{],f\_error}\SpecialCharTok{$}\NormalTok{par[}\DecValTok{3}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]),,}\DecValTok{3}\NormalTok{)}
 \NormalTok{pars }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(pars,}\FunctionTok{c}\NormalTok{(}\FunctionTok{summary}\NormalTok{(f\_deter)}\SpecialCharTok{$}\NormalTok{sigma,}
                      \FunctionTok{summary}\NormalTok{(f\_stoch)}\SpecialCharTok{$}\NormalTok{sigma,}\FunctionTok{summary}\NormalTok{(f\_error)}\SpecialCharTok{$}\NormalTok{sigma))}
@@ -3925,7 +3933,7 @@ is
 \NormalTok{  \})}
 \NormalTok{\}}
 \NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{a=}\DecValTok{0}\NormalTok{,}\AttributeTok{b=}\DecValTok{1}\NormalTok{); s }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{X=}\NormalTok{.}\DecValTok{1}\NormalTok{); }\FunctionTok{run}\NormalTok{(}\AttributeTok{ymin=}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{)}
-\NormalTok{s[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\NormalTok{.}\DecValTok{1}\NormalTok{; }\FunctionTok{run}\NormalTok{(}\AttributeTok{add=}\NormalTok{T)}
+\NormalTok{s[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\NormalTok{.}\DecValTok{1}\NormalTok{; }\FunctionTok{run}\NormalTok{(}\AttributeTok{add=}\ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3962,12 +3970,10 @@ or less.
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{t}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{)))}
-\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{run}\NormalTok{(}\AttributeTok{table=}\NormalTok{T,}\AttributeTok{tmax=}\DecValTok{1000}\NormalTok{,}\AttributeTok{method=}\StringTok{\textquotesingle{}euler\textquotesingle{}}\NormalTok{,}\AttributeTok{tstep=}\NormalTok{.}\DecValTok{1}\NormalTok{,}
-            \AttributeTok{after=}\StringTok{"state \textless{}{-} state + }
-\StringTok{            rnorm(1,mean=0,sd=0.4) * sqrt(tstep)"}\NormalTok{,}
-            \AttributeTok{ymax=}\DecValTok{2}\NormalTok{,}\AttributeTok{ymin=}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\AttributeTok{timeplot=}\NormalTok{F)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{run}\NormalTok{(}\AttributeTok{table=}\ConstantTok{TRUE}\NormalTok{, }\AttributeTok{tmax=}\DecValTok{1000}\NormalTok{, }\AttributeTok{method=}\StringTok{\textquotesingle{}euler\textquotesingle{}}\NormalTok{,}
+            \AttributeTok{tstep=}\NormalTok{.}\DecValTok{1}\NormalTok{, }\AttributeTok{after=}\StringTok{"state \textless{}{-} state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)"}\NormalTok{, }\AttributeTok{ymax=}\DecValTok{2}\NormalTok{,}\AttributeTok{ymin=}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{,}\AttributeTok{timeplot=}\NormalTok{F)}
 \FunctionTok{plot}\NormalTok{(data,}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{)}
-\FunctionTok{barplot}\NormalTok{(}\FunctionTok{hist}\NormalTok{(data[,}\DecValTok{2}\NormalTok{],}\DecValTok{30}\NormalTok{,}\AttributeTok{plot=}\NormalTok{F)}\SpecialCharTok{$}\NormalTok{counts,}\AttributeTok{xlab=}\StringTok{"X"}\NormalTok{,}\AttributeTok{hor=}\NormalTok{T)}
+\FunctionTok{barplot}\NormalTok{(}\FunctionTok{hist}\NormalTok{(data[,}\DecValTok{2}\NormalTok{],}\DecValTok{30}\NormalTok{,}\AttributeTok{plot=}\NormalTok{F)}\SpecialCharTok{$}\NormalTok{counts,}\AttributeTok{xlab=}\StringTok{"X"}\NormalTok{,}\AttributeTok{hor=}\ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4204,7 +4210,7 @@ implementation in Grind of the simplest case looks like this:
 \NormalTok{  \})}
 \NormalTok{\}}
 
-\NormalTok{n}\OtherTok{=}\DecValTok{50}
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{50}
 \NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{l=}\DecValTok{5}\NormalTok{,}\AttributeTok{v0=}\DecValTok{30}\NormalTok{,}\AttributeTok{T=}\FloatTok{1.5}\NormalTok{,}\AttributeTok{a=}\NormalTok{.}\DecValTok{73}\NormalTok{,}\AttributeTok{b=}\FloatTok{1.67}\NormalTok{,}\AttributeTok{delta=}\DecValTok{4}\NormalTok{,}\AttributeTok{s0=}\DecValTok{2}\NormalTok{)}
 \NormalTok{x\_init }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{0}\SpecialCharTok{:}\NormalTok{(n}\DecValTok{{-}1}\NormalTok{))}\SpecialCharTok{*}\NormalTok{(p[}\StringTok{\textquotesingle{}s0\textquotesingle{}}\NormalTok{]}\SpecialCharTok{+}\NormalTok{p[}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{])}
 \NormalTok{v\_init }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n)}
@@ -4212,7 +4218,7 @@ implementation in Grind of the simplest case looks like this:
 
 \NormalTok{m }\OtherTok{\textless{}{-}} \FunctionTok{diag}\NormalTok{(}\DecValTok{1}\NormalTok{, n, n); m}\OtherTok{=} \FunctionTok{rbind}\NormalTok{(m[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,],}\DecValTok{0}\NormalTok{) }\CommentTok{\# order cars}
 \CommentTok{\# simulation with front car suddenly breaking at t = 150}
-\NormalTok{data}\OtherTok{=}\FunctionTok{run}\NormalTok{(}\AttributeTok{tmax=}\DecValTok{300}\NormalTok{,}\AttributeTok{timeplot =}\NormalTok{ F,}\AttributeTok{table=}\NormalTok{T,}\AttributeTok{after =} \StringTok{\textquotesingle{}if (t==150) state[2*n] = 0\textquotesingle{}}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{run}\NormalTok{(}\AttributeTok{tmax=}\DecValTok{300}\NormalTok{,}\AttributeTok{timeplot =}\NormalTok{ F,}\AttributeTok{table=}\NormalTok{T,}\AttributeTok{after =} \StringTok{\textquotesingle{}if (t==150) state[2*n] = 0\textquotesingle{}}\NormalTok{)}
 \FunctionTok{matplot}\NormalTok{(data[,}\DecValTok{2}\SpecialCharTok{:}\NormalTok{(n}\SpecialCharTok{+}\DecValTok{1}\NormalTok{)],}\AttributeTok{type=}\StringTok{\textquotesingle{}l\textquotesingle{}}\NormalTok{,}\AttributeTok{bty=}\StringTok{\textquotesingle{}n\textquotesingle{}}\NormalTok{,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab =} \StringTok{\textquotesingle{}x\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -6912,10 +6918,9 @@ this effect:
 \NormalTok{dancers }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,n) }\CommentTok{\# nobody dances}
 \NormalTok{dancers[}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{1} \CommentTok{\# but one guy}
 \NormalTok{number\_of\_dancers }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,interations) }\CommentTok{\# keep track of number of dancers}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{interations)}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{interations)\{}
 \NormalTok{  number\_of\_dancers[i] }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(dancers) }\CommentTok{\# keep track of number of dancers}
-\NormalTok{  dancers[threshold}\SpecialCharTok{\textless{}}\NormalTok{(number\_of\_dancers[i]}\SpecialCharTok{/}\NormalTok{n)] }\OtherTok{\textless{}{-}} \DecValTok{1} 
+\NormalTok{  dancers[threshold }\SpecialCharTok{\textless{}}\NormalTok{ (number\_of\_dancers[i]}\SpecialCharTok{/}\NormalTok{n)] }\OtherTok{\textless{}{-}} \DecValTok{1} 
 \CommentTok{\# if my threshold \textless{} proportion of dancers, I dance}
 \NormalTok{\}}
 \FunctionTok{plot}\NormalTok{(number\_of\_dancers,}\AttributeTok{xlab=}\StringTok{\textquotesingle{}time\textquotesingle{}}\NormalTok{,}\AttributeTok{ylab=}\StringTok{\textquotesingle{}\#dancers\textquotesingle{}}\NormalTok{,}
@@ -7277,7 +7282,7 @@ networks are shown in figure~\ref{fig-ch6-img2-old-71}.
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(igraph);}\FunctionTok{library}\NormalTok{(qgraph)}
-\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{n=}\DecValTok{3}\NormalTok{, }\AttributeTok{directed=}\NormalTok{F ) }
+\NormalTok{g1 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{(}\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{n=}\DecValTok{3}\NormalTok{, }\AttributeTok{directed=}\ConstantTok{FALSE}\NormalTok{) }
 \FunctionTok{plot}\NormalTok{(g1) }\CommentTok{\# an undirected network with 3 nodes}
 \NormalTok{g2 }\OtherTok{\textless{}{-}} \FunctionTok{graph}\NormalTok{( }\AttributeTok{edges=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{), }\AttributeTok{n=}\DecValTok{3}\NormalTok{, }\AttributeTok{directed=}\NormalTok{T ) }
 \FunctionTok{plot}\NormalTok{(g2) }\CommentTok{\# an directed network with self{-}excitation on node 3}
@@ -7674,8 +7679,7 @@ data with this model and fit network and factor models.
 \NormalTok{M }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(.}\DecValTok{05}\NormalTok{,nr\_var,nr\_var)}
 \NormalTok{M[}\FunctionTok{diag}\NormalTok{(nr\_var)}\SpecialCharTok{==}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{0} \CommentTok{\# set diagonal of M to 0}
 
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_of\_pp)}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_of\_pp)\{}
   \CommentTok{\# sample a,K, starting values X from normal }
   \CommentTok{\# distributions for each person separately}
   \CommentTok{\# note M is constant over persons.}
@@ -7689,7 +7693,7 @@ data with this model and fit network and factor models.
 \NormalTok{\}}
 \FunctionTok{hist}\NormalTok{(}\FunctionTok{cor}\NormalTok{(data)[}\FunctionTok{cor}\NormalTok{(data)}\SpecialCharTok{\textless{}}\DecValTok{1}\NormalTok{],}\AttributeTok{main=}\StringTok{\textquotesingle{}positive manifold\textquotesingle{}}\NormalTok{,}
      \AttributeTok{xlab=}\StringTok{\textquotesingle{}between test correlations\textquotesingle{}}\NormalTok{,}
-     \AttributeTok{col=}\StringTok{\textquotesingle{}lightgreen\textquotesingle{}}\NormalTok{) }\CommentTok{\# positive manifold}
+     \AttributeTok{col=}\StringTok{\textquotesingle{}grey50\textquotesingle{}}\NormalTok{) }\CommentTok{\# positive manifold}
 \end{Highlighting}
 \end{Shaded}
 
@@ -8145,7 +8149,7 @@ equal. \texttt{Beta}, originally the inverse of the temperature
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(}\StringTok{"IsingSampler"}\NormalTok{)}
 \NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{10} \CommentTok{\# nodes}
-\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(.}\DecValTok{1}\NormalTok{,n,n); }\FunctionTok{diag}\NormalTok{(W)}\OtherTok{=}\DecValTok{0}
+\NormalTok{W }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(.}\DecValTok{1}\NormalTok{,n,n); }\FunctionTok{diag}\NormalTok{(W) }\OtherTok{\textless{}{-}} \DecValTok{0}
 \NormalTok{tau }\OtherTok{\textless{}{-}} \DecValTok{0}
 \NormalTok{N }\OtherTok{\textless{}{-}} \DecValTok{1000} \CommentTok{\# replications}
 \NormalTok{thresholds }\OtherTok{\textless{}{-}} \FunctionTok{rep}\NormalTok{(tau, n)}
@@ -8248,14 +8252,13 @@ In R, this can be implemented as follows:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{library}\NormalTok{(qgraph)}
-\NormalTok{hamiltonian}\OtherTok{=}\ControlFlowTok{function}\NormalTok{(x,n,t,w) }\SpecialCharTok{{-}}\FunctionTok{sum}\NormalTok{(t}\SpecialCharTok{*}\NormalTok{x)}\SpecialCharTok{{-}}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\%*\%}\FunctionTok{t}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
-\NormalTok{glauber\_step }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x,n,t,w,beta)}
-\NormalTok{\{}
-\NormalTok{  i }\OtherTok{=} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n,}\AttributeTok{size=}\DecValTok{1}\NormalTok{) }\CommentTok{\# take a random node}
-\NormalTok{  x\_new}\OtherTok{=}\NormalTok{x;x\_new[i]}\OtherTok{=}\NormalTok{x\_new[i]}\SpecialCharTok{*{-}}\DecValTok{1} \CommentTok{\# construct new state with flipped node}
+\NormalTok{hamiltonian }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x,n,t,w) }\SpecialCharTok{{-}}\FunctionTok{sum}\NormalTok{(t}\SpecialCharTok{*}\NormalTok{x)}\SpecialCharTok{{-}}\FunctionTok{sum}\NormalTok{(w}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\%*\%}\FunctionTok{t}\NormalTok{(x)}\SpecialCharTok{/}\DecValTok{2}\NormalTok{)}
+\NormalTok{glauber\_step  }\OtherTok{\textless{}{-}}  \ControlFlowTok{function}\NormalTok{(x,n,t,w,beta)\{}
+\NormalTok{  i }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n,}\AttributeTok{size=}\DecValTok{1}\NormalTok{) }\CommentTok{\# take a random node}
+\NormalTok{  x\_new }\OtherTok{\textless{}{-}}\NormalTok{ x; x\_new[i] }\OtherTok{\textless{}{-}}\NormalTok{ x\_new[i]}\SpecialCharTok{*{-}}\DecValTok{1} \CommentTok{\# construct new state with flipped node}
   \CommentTok{\# update probability}
-\NormalTok{  p}\OtherTok{=}\DecValTok{1}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{+}\FunctionTok{exp}\NormalTok{(beta}\SpecialCharTok{*}\NormalTok{(}\FunctionTok{hamiltonian}\NormalTok{(x\_new,n,t,w)}\SpecialCharTok{{-}}\FunctionTok{hamiltonian}\NormalTok{(x,n,t,w))))  }
-  \ControlFlowTok{if}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{)}\SpecialCharTok{\textless{}}\NormalTok{p) x}\OtherTok{=}\NormalTok{x\_new }\CommentTok{\# update state}
+\NormalTok{  p }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1}\SpecialCharTok{+}\FunctionTok{exp}\NormalTok{(beta}\SpecialCharTok{*}\NormalTok{(}\FunctionTok{hamiltonian}\NormalTok{(x\_new,n,t,w)}\SpecialCharTok{{-}}\FunctionTok{hamiltonian}\NormalTok{(x,n,t,w))))  }
+  \ControlFlowTok{if}\NormalTok{(}\FunctionTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{)}\SpecialCharTok{\textless{}}\NormalTok{p) x }\OtherTok{\textless{}{-}}\NormalTok{ x\_new }\CommentTok{\# update state}
   \FunctionTok{return}\NormalTok{(x)}
 \NormalTok{\}}
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{t}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{2}\NormalTok{))}
@@ -8535,7 +8538,7 @@ this in R:
         \AttributeTok{after=}\StringTok{"state\textless{}{-}state+rnorm(nr\_var,mean=0,sd=1);state[state\textless{}0]=.1"}\NormalTok{)}
 \NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data[,}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
 \FunctionTok{colnames}\NormalTok{(data) }\OtherTok{\textless{}{-}}\NormalTok{ vars }\OtherTok{\textless{}{-}} \FunctionTok{paste}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{,}\DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var,}\AttributeTok{sep=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,}\AttributeTok{col=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{)}
-\NormalTok{fit}\OtherTok{=}\FunctionTok{graphicalVAR}\NormalTok{(data[}\DecValTok{50}\SpecialCharTok{:}\DecValTok{1000}\NormalTok{,], }\AttributeTok{vars =}\NormalTok{ vars, }\AttributeTok{gamma=}\DecValTok{0}\NormalTok{, }\AttributeTok{nLambda =} \DecValTok{5}\NormalTok{)}
+\NormalTok{fit }\OtherTok{\textless{}{-}} \FunctionTok{graphicalVAR}\NormalTok{(data[}\DecValTok{50}\SpecialCharTok{:}\DecValTok{1000}\NormalTok{,], }\AttributeTok{vars =}\NormalTok{ vars, }\AttributeTok{gamma=}\DecValTok{0}\NormalTok{, }\AttributeTok{nLambda =} \DecValTok{5}\NormalTok{)}
 \FunctionTok{plot}\NormalTok{(fit,}\StringTok{"PDC"}\NormalTok{)}
 \FunctionTok{centralityPlot}\NormalTok{(fit}\SpecialCharTok{$}\NormalTok{PDC)}
 \end{Highlighting}
@@ -8573,9 +8576,14 @@ can be achieved with a block structure.
 \NormalTok{low }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{0}\NormalTok{;high }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{1} \CommentTok{\# interaction between and within factors}
 \CommentTok{\# loop to create M}
 \NormalTok{cat }\OtherTok{\textless{}{-}} \FunctionTok{cut}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var,factors)}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var)}
-  \ControlFlowTok{for}\NormalTok{(j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var)}
-    \ControlFlowTok{if}\NormalTok{(cat[i]}\SpecialCharTok{==}\NormalTok{cat[j]) M[i,j] }\OtherTok{\textless{}{-}}\NormalTok{ high }\ControlFlowTok{else}\NormalTok{ M[i,j] }\OtherTok{\textless{}{-}}\NormalTok{ low}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var) \{}
+  \ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{nr\_var) \{}
+    \ControlFlowTok{if}\NormalTok{ (cat[i] }\SpecialCharTok{==}\NormalTok{ cat[j])}
+\NormalTok{      M[i, j] }\OtherTok{\textless{}{-}}\NormalTok{ high}
+    \ControlFlowTok{else}
+\NormalTok{      M[i, j] }\OtherTok{\textless{}{-}}\NormalTok{ low}
+\NormalTok{  \}}
+\NormalTok{\}}
 \NormalTok{M[}\FunctionTok{diag}\NormalTok{(nr\_var)}\SpecialCharTok{==}\DecValTok{1}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{0} \CommentTok{\# set diagonal of m to 0}
 \end{Highlighting}
 \end{Shaded}
@@ -8945,10 +8953,10 @@ polarization.
   section~\ref{sec-The-stability-of-attitudes-and-entropy-measures}).
   Show in a plot that learning minimizes the Gibbs entropy. (**)
 \item
-  Install and open JASP (jasp-stats.org). Open the data library: ``6.
-  Factor.'' Read all the output and add a confirmatory factor analysis.
-  What is the \emph{standardized} factor loading of Residual Pitch in
-  the confirmatory one-factor model? (*)
+  Install and open JASP (\url{jasp-stats.org}). Open the data library:
+  ``6. Factor.'' Read all the output and add a confirmatory factor
+  analysis. What is the \emph{standardized} factor loading of Residual
+  Pitch in the confirmatory one-factor model? (*)
 \item
   Read the blog ``How to Perform a Network Analysis in JASP''\footnote{\url{https://jasp-stats.org/2018/03/20/perform-network-analysis-jasp/}}
   Reproduce the top plots of figure~\ref{fig-ch6-img16-old-85}. Generate
@@ -8956,10 +8964,10 @@ polarization.
   section~\ref{sec-Fitting-the-mutualism-model}, import the data into
   JASP, and perform the network analysis. (*)
 \item
-  Study the R code for the case where the M-matrix consists of three
-  blocks (section~\ref{sec-Fitting-the-mutualism-model}). Generate the
-  data and import into JASP. Apply exploratory factor analysis, check
-  the fit for 1 to 3 factors, and report the \(p\)-values. Fit the
+  Study the R code for the case where the \textbf{M}-matrix consists of
+  three blocks (section~\ref{sec-Fitting-the-mutualism-model}). Generate
+  the data and import into JASP. Apply exploratory factor analysis,
+  check the fit for 1 to 3 factors, and report the \(p\)-values. Fit the
   confirmatory 3-factor model. Does it fit? Add V1 to the second instead
   of the first factor. How do you see the misfit? (*)
 \item
@@ -9142,9 +9150,8 @@ The R code to simulate this process is:
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{, n)}
 \NormalTok{iter }\OtherTok{\textless{}{-}} \DecValTok{100000}
 \NormalTok{n\_possible\_words }\OtherTok{\textless{}{-}} \DecValTok{1000000} \CommentTok{\# should be very high}
-\NormalTok{total\_words }\OtherTok{\textless{}{-}}\NormalTok{ total\_unique\_words  }\OtherTok{\textless{}{-}}  \FunctionTok{numeric}\NormalTok{(iter)}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)}
-\NormalTok{\{}
+\NormalTok{total\_words }\OtherTok{\textless{}{-}}\NormalTok{ total\_unique\_words }\OtherTok{\textless{}{-}} \FunctionTok{numeric}\NormalTok{(iter)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)\{}
 \NormalTok{  j }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n,}\DecValTok{1}\NormalTok{) }\CommentTok{\# speaker}
 \NormalTok{  k }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{((}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n)[}\SpecialCharTok{{-}}\NormalTok{i],}\DecValTok{1}\NormalTok{) }\CommentTok{\# hearer}
   \CommentTok{\# if speaker has no words, make one up (actually just number)}
@@ -9257,8 +9264,7 @@ different cases.
 \NormalTok{Q }\OtherTok{\textless{}{-}} \DecValTok{4} \CommentTok{\# nominal levels per feature}
 \NormalTok{uniques }\OtherTok{\textless{}{-}} \FunctionTok{numeric}\NormalTok{(iter)}
 \NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{Q,}\AttributeTok{replace=}\NormalTok{T,n}\SpecialCharTok{*}\NormalTok{F),n,F)}
-\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)\{}
 \NormalTok{  j }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n,}\DecValTok{1}\NormalTok{)       }\CommentTok{\# agent 1}
 \NormalTok{  k }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{((}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n)[}\SpecialCharTok{{-}}\NormalTok{j],}\DecValTok{1}\NormalTok{) }\CommentTok{\# agent 2}
 \NormalTok{  w }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(x[j,]}\SpecialCharTok{==}\NormalTok{x[k,])}\SpecialCharTok{/}\NormalTok{F }\CommentTok{\# agreement}
@@ -9611,12 +9617,10 @@ entirely accurate code to simulate this model is: \footnote{The second
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{20}\NormalTok{)}
 \FunctionTok{layout}\NormalTok{(}\FunctionTok{matrix}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{))}
 \NormalTok{iter }\OtherTok{\textless{}{-}} \DecValTok{50}\NormalTok{; mu }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{5}\NormalTok{; n }\OtherTok{\textless{}{-}} \DecValTok{200}
-\ControlFlowTok{for}\NormalTok{ (bound }\ControlFlowTok{in} \FunctionTok{c}\NormalTok{(.}\DecValTok{1}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{3}\NormalTok{, .}\DecValTok{5}\NormalTok{))}
-\NormalTok{\{}
+\ControlFlowTok{for}\NormalTok{ (bound }\ControlFlowTok{in} \FunctionTok{c}\NormalTok{(.}\DecValTok{1}\NormalTok{, .}\DecValTok{2}\NormalTok{, .}\DecValTok{3}\NormalTok{, .}\DecValTok{5}\NormalTok{))\{}
 \NormalTok{  x }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(n, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
 \NormalTok{  dat }\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{, iter, n)}
-  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)}
-\NormalTok{  \{}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{iter)\{}
 \NormalTok{    y }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(x, n, }\AttributeTok{replace =}\NormalTok{ T) }\CommentTok{\# find an partner for every agent}
 \NormalTok{    x }\OtherTok{\textless{}{-}} \FunctionTok{ifelse}\NormalTok{(}\FunctionTok{abs}\NormalTok{(x }\SpecialCharTok{{-}}\NormalTok{ y) }\SpecialCharTok{\textless{}}\NormalTok{ bound, x }\SpecialCharTok{+}\NormalTok{ mu }\SpecialCharTok{*}\NormalTok{ (y }\SpecialCharTok{{-}}\NormalTok{ x), x)}
 \NormalTok{    dat[i, ] }\OtherTok{=}\NormalTok{ x}
