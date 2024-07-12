@@ -99,8 +99,8 @@ for(i in 1:iter){
   k <- sample((1:n)[-j],1) # agent 2
   w <- sum(x[j,]==x[k,])/F # agreement
   if(w<1 & runif(1)<w) {
+    # which (unequal) feature to update:
     f <- resample(which(x[j,]!=x[k,]),1) 
-    # which (unequal) feature to update
     x[j,f] <- x[k,f] # update
     }
   uniques[i] <- nrow(unique(x))
