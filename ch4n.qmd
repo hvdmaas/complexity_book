@@ -51,15 +51,13 @@ But for more complex models, such an analytical solution is out of scope and num
 The naive implementation of differential equations in R is risky. This would involve a for loop:
 
 ```{r eval = FALSE}
-x <- x0 <- .1  # initial value
+x <- x0 <- .1 # initial value
 r <- .5 # growth rate
 dt <- .00001 # time step in simulation
 t <- 10  # Nt, time we want to know the value of x
 timesteps <- t/dt # required time steps given t and dt
 for(i in 2:timesteps) # note the 2 to use the starting value
-{
   x[i] <- x[i-1] + r*x[i-1]*dt
-}
 x0*exp(r*timesteps*dt) # analytical solution
 x[timesteps] # compare
 timesteps # length of simulation
@@ -88,8 +86,8 @@ The code consists of defining the model, the parameters $p$, and the initial val
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
   with(as.list(c(state,parms)), {
-    dX <- r*X            # the exponential model
-      return(list(c(dX)))
+    dX <- r*X # the exponential model
+    return(list(c(dX)))
   })
 }
 p <- c(r=.5) # parameter r
@@ -147,7 +145,7 @@ Some typical uses of Grind are:
 ```{r eval = FALSE}
 layout(1:2)
 data <- run(odes=LV,tstep=.01,table=T) # set tstep to low value
-# phase plot for different starting values
+# phase plot for different starting values:
 plane(odes=LV,portrait = TRUE, ymax=17, xmax=50, tstep=0.1,grid=4)
 ```
 
@@ -174,9 +172,9 @@ data_stochastic <- run(odes=LV,n,table=T,after="state<-state+rnorm(2,0,.1)",
                        timeplot =F) # add stochasticity
 data_error <- run(odes=LV,n,table=T,timeplot =F)
 data_error[,2:3] <- data_error[,2:3]+
-  matrix(rnorm(2*n,0,2),,2) # measurement error 
+    matrix(rnorm(2*n,0,2),,2) # measurement error 
 #fit & plot
-s <- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p    # start values
+s <- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p # start values
 f_deter <- fit(odes=LV,data_deterministic,main='deterministic')
 f_stoch <- fit(odes=LV,data_stochastic,main='stochastic')
 f_error <- fit(odes=LV,data_error,main='error')
@@ -184,8 +182,7 @@ pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
 pars <- rbind(pars,c(summary(f_deter)$sigma,
                      summary(f_stoch)$sigma,summary(f_error)$sigma))
 barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
-        legend.text=c('deterministic','stochastic','error'),
-        args.legend=c(x=13))
+        legend.text=c('deterministic','stochastic','error'),args.legend=c(x=13))
 ```
 
 This results in @fig-ch4n-img1-old-49.
@@ -205,7 +202,7 @@ $$ {#eq-ch4n-5-old-25}
 ```{r eval = FALSE}
 model <- function(t, state, parms){
   with(as.list(c(state,parms)),{
-    dX <-  a + b*X - X^3        # cusp
+    dX <-  a + b*X - X^3 # cusp
     return(list(dX))
   })
 }
@@ -221,8 +218,9 @@ As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous
 
 ```{r eval = FALSE}
 layout(t(c(1,1,1,2)))
-data <- run(table=TRUE, tmax=1000, method='euler',
-            tstep=.1, after="state <- state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)", ymax=2,ymin=-2,timeplot=F)
+data <- run(table=TRUE, tmax=1000, method='euler',tstep=.1, 
+            after="state <- state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)", 
+            ymax=2,ymin=-2,timeplot=F)
 plot(data,type='l',bty='n')
 barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=TRUE)
 ```
@@ -322,7 +320,7 @@ v_init <- rep(0,n)
 s <- c(x_init,v_init)
 
 m <- diag(1, n, n); m= rbind(m[-1,],0) # order cars
-# simulation with front car suddenly breaking at t = 150
+# simulation with front car suddenly breaking at t = 150:
 data <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
 matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
 ```
@@ -364,7 +362,8 @@ p <- c(I=.01); s <- c(X=0)
 bound <- 1
 run(table=T,method='euler', tstep=.1,
     tmax=500,after="state<-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);
-    if(abs(state)>bound) break",ymin=-bound,ymax=bound)
+    if(abs(state)>bound) break", # stop at bound
+    ymin=-bound,ymax=bound)
 ```
 
 The model explains observed response time and accuracy in terms of the underlying process parameters, drift rate, and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. [Accumulator models such as the drift-diffusion model explain the speed-accuracy trade-off. If we set our confidence bound higher, we are slower but more accurate.]{.aside}

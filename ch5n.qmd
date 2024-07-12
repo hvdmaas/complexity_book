@@ -381,11 +381,12 @@ threshold <- rbeta(n,1,2) # sample individual thresholds for dancing
 hist(threshold,col='grey')
 dancers <- rep(0,n) # nobody dances
 dancers[1] <- 1 # but one guy
-number_of_dancers <- rep(0,interations) # keep track of number of dancers
+number_of_dancers <- rep(0,interations) 
 for(i in 1:interations){
-  number_of_dancers[i] <- sum(dancers) # keep track of number of dancers
+  # keep track of number of dancers:
+  number_of_dancers[i] <- sum(dancers) 
+  # if my threshold < proportion of dancers, I dance:
   dancers[threshold < (number_of_dancers[i]/n)] <- 1 
-# if my threshold < proportion of dancers, I dance
 }
 plot(number_of_dancers,xlab='time',ylab='#dancers',
      ylim=c(0,1000),type='b',bty='n')

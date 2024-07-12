@@ -126,7 +126,8 @@ The mutualism model in Grind is specified as follows:
 mutualism <- function(t, state, parms){
   with(as.list(c(state,parms)),{
     X <- state[1:nr_var]
-    dX <- a*X*(1-X/k) + a*(X * M %*% X)/k # using matrix multiplication
+    # using matrix multiplication:
+    dX <- a*X*(1-X/k) + a*(X * M %*% X)/k 
     return(list(dX))
   })
 }
@@ -150,9 +151,9 @@ for(i in 1:nr_of_pp){
   k <- rnorm(nr_var,10,2)
   x0 <- rnorm(nr_var,2,0.1) # initial state of X
   s  <- x0;p <- c() # required for grind
+  # collect data (end points) and plot person 1 only:
   data[i,] <- run(odes=mutualism ,tmax=60, 
-      timeplot = (i==1),legend=F) # collect data (end points)
-  #plot person 1 only
+      timeplot = (i==1),legend=F) 
 }
 hist(cor(data)[cor(data)<1],main='positive manifold',
      xlab='between test correlations',
@@ -301,7 +302,7 @@ beta.range <- seq(0,3,by=.05)
 for(beta in beta.range)
 {
   data <- IsingSampler(N, W, nIter = 100, thresholds, 
-                     beta = beta, responses = c(-1, 1))
+          beta = beta, responses = c(-1, 1))
   dat <- c(dat,sum(thresholds*apply(data,2,sum))) # measure of alignment
 }
 plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
@@ -316,10 +317,10 @@ We see that for medium attention, the agreement with the thresholds is highest. 
 The connectionist attitude models are capable of "learning," that is, adjusting the weights. This can also be done in the Ising attitude model by using Hebbian learning. Hebbian learning, or "what fires together, wires together," can be formulated as:
 
 $$\begin{array}{r}
-\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij}.
+\mathrm{\Delta}W_{ij} = \epsilon\left( 1 - \left| W_{ij} \right| \right)x_{i}x_{j} - \lambda W_{ij},
 \end{array}$$ {#eq-ch6-6-old-47}
 
-Weights will grow to $1$ if the nodes they connect are consistently either both $1$ or both $-1$. If they consistently differ in value, the weight grows to $-1$. If the nodes behave inconsistently, the weight shrinks to $0$, due to the last term.
+which defines the change in weights. Weights will grow to $1$ if the nodes they connect are consistently either both $1$ or both $-1$. If they consistently differ in value, the weight grows to $-1$. If the nodes behave inconsistently, the weight shrinks to $0$, due to the last term.
 
 In R, this can be implemented as follows:
 
@@ -328,7 +329,8 @@ library(qgraph)
 hamiltonian <- function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
 glauber_step  <-  function(x,n,t,w,beta){
   i <- sample(1:n,size=1) # take a random node
-  x_new <- x; x_new[i] <- x_new[i]*-1 # construct new state with flipped node
+  # construct new state with flipped node:
+  x_new <- x; x_new[i] <- x_new[i]*-1 
   # update probability
   p <- 1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  
   if(runif(1)<p) x <- x_new # update state
@@ -346,10 +348,11 @@ x <- sample(c(-1,1),n,replace=T)
 for(i in 1:500)
 {
   x <- glauber_step(x,n,thresholds,W,beta=2)
-  W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W # Hebbian learning
+  # Hebbian learning:
+  W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W 
   diag(W) <- 0
 }
-# label switching (scale all nodes to positive)
+# label switching (scale all nodes to positive):
 W <- x*t(x*W);x <- x*x
 qgraph(W);title('after learning')
 ```
@@ -419,7 +422,7 @@ Finally, I mention semantic network analysis again. A review of statistical appr
 In @sec-Mutualism-model, I provided code to simulate data. These data can be fitted using JASP. By rerunning the previous code and adding
 
 ```{r eval = FALSE}
-write.table(file='mutualism.txt',data,ro=F,sep='\t') # write data for JASP
+write.table(file='mutualism.txt',data,ro=F,sep='\t')
 ```
 
 we have a data file ready to analyze in JASP.
@@ -467,9 +470,7 @@ cat <- cut(1:nr_var,factors)
 for(i in 1:nr_var) {
   for (j in 1:nr_var) {
     if (cat[i] == cat[j])
-      M[i, j] <- high
-    else
-      M[i, j] <- low
+      M[i, j] <- high else M[i, j] <- low
   }
 }
 M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
@@ -490,7 +491,7 @@ set.seed(1)
 n <- 8
 W <- matrix(runif(n^2,0,1),n,n); # random positive matrix
 W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),
-                       replace=T),n,n) # delete 80% of nodes
+         replace=T),n,n) # delete 80% of nodes
 W <- pmax(W,t(W)) # make symmetric 
 diag(W) <- 0
 ndata <- 5000

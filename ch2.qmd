@@ -125,8 +125,8 @@ for (i in 1:(n - 1)){
   x[i + 1] <- r * x[i] * (1 - x[i])
 }
 plot(x, type = 'l', xlab = 'time', bty = 'n')
+# restart with sightly different initial state:
 x[1] <- .0010001
-# restart with sightly different initial state
 for (i in 1:(n - 1)){
   x[i + 1] <- r * x[i] * (1 - x[i])
 }
@@ -154,17 +154,13 @@ where $f^{'}\left( X_{i} \right) = r - 2rX_{i}$ for the logistic map and $\lambd
 layout(matrix(1:6,2,3))
 r <- 3.3; n <- 200; x <- rep(0,n)
 x[1] <- .001
-for(i in 1:(n-1)) {
-  x[i+1] = r*x[i]*(1-x[i])
-}
+for(i in 1:(n-1)) x[i+1] = r*x[i]*(1-x[i])
 x <- x[-1:-100]
 plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r),
      ylim=0:1, cex.main=2) 
 plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
 r <- 4; x[1] <- .001;
-for(i in 1:(n-1)){
-  x[i+1] <- r*x[i]*(1-x[i])  
-}
+for(i in 1:(n-1)) x[i+1] <- r*x[i]*(1-x[i])
 x <- x[-1:-100]
 plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r), cex.main=2) 
 plot(x[-length(x)], x[-1], xlim=0:1, ylim=0:1, xlab='Xt', ylab='Xt+1', bty='n')
