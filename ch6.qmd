@@ -183,14 +183,9 @@ Biologists have proposed a number of mechanisms to deal with this problem [@meen
 We show that the combination of these mechanisms allows a balanced growth of several correlated abilities. Specially chosen parameter settings lead to different patterns of abnormal development (such as hyperspecialization and delayed development). The final model is:
 
 $$
-\frac{dX_{i}}{dt} = X_{i}\left( \sum_{j = 1}^{V}{\mu_{ij}R_{j}\overset{\text{Logistic growth}}{\overbrace{\left( 1 - \frac{X_{i}}{K_{i}} \right)}}} - d_{i} \right) + \overset{\text{Mutualism}}{\overbrace{\sum_{j = 1}^{W}{M_{ij}X_{i}X_{j}\text{/}}K_{i}}},
-$$
-
-$$
-\frac{dR_{j}}{dt} = r\left( r_{\max} - R_{j} \right) - R_{j}\sum_{i = 1}^{W}{b_{ij}\frac{dX_{i}}{dt}}\ \left\{ \begin{array}{r}
-growth - dependent\  \\
-resource\ depletion
-\end{array} \right\}. \\
+\frac{dX_{i}}{dt} = X_{i} (\sum_{j=1}^{V} \mu_{ij} R_j \overbrace{(1- \frac{X_i}{K_i})}^{\text{Logistic growth}} -  d_i) + \overbrace{ \sum_{j=1}^{W} M_{ij} X_{i} X_{j} / K_{i} }^{\text{Mutualism}}
+$$ $$
+\frac{dR_{j}}{dt} = r(r_{max}-R_j)- R_j \sum_{i=1}^{W} b_{ij} \begin{cases} \frac{dX_{i}}{dt}, & \text{if growth-dependent depletion} \\  X_{i}, & \text{otherwise} \end{cases}
 $$ {#eq-ch6-3-old-44}
 
 #### The wiring of intelligence {#sec-The-wiring-of-intelligence}
