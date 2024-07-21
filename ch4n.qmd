@@ -57,8 +57,8 @@ dt <- .00001 # time step in simulation
 t <- 10  # Nt, time we want to know the value of x
 timesteps <- t/dt # required time steps given t and dt
 for(i in 2:timesteps) # note the 2 to use the starting value
-  x[i] <- x[i-1] + r*x[i-1]*dt
-x0*exp(r*timesteps*dt) # analytical solution
+  x[i] <- x[i-1] + r * x[i-1] * dt
+x0 * exp(r * timesteps * dt) # analytical solution
 x[timesteps] # compare
 timesteps # length of simulation
 ```
@@ -85,15 +85,15 @@ The code consists of defining the model, the parameters $p$, and the initial val
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dX <- r*X # the exponential model
+  with(as.list(c(state, parms)), {
+    dX <- r * X # the exponential model
     return(list(c(dX)))
   })
 }
-p <- c(r=.5) # parameter r
-s <- c(X=.1) # initial value
-run(tmax=5) # run until t = 5, numerical solution
-s['X']*exp(p['r']*5) # compare with analytical solution
+p <- c(r = .5) # parameter r
+s <- c(X = .1) # initial value
+run(tmax = 5) # run until t = 5, numerical solution
+s['X'] * exp(p['r'] * 5) # compare with analytical solution
 ```
 
 We don't have to worry about time steps anymore, and the numerical and analytical solutions converge. This is of course a trivial use of an ODE solver, but much more can be done.
@@ -107,7 +107,7 @@ The continuous-time implementation of the logistic function is somewhat boring c
 [^ch4n-3]: The $-X$ is added because the difference equation has the form $X_{t + 1} = f(X_{t})$, so the change $dX$ is thus $f(X_{t})-X_{t}$.
 
 ``` r
-dX <- r*X*(1-X) - X 
+dX <- r * X * (1-X) - X 
 ```
 
 and using `method='euler'` in the `run()` function, you can simulate the discrete-time logistic map. Check if you get chaos for $r = 4$. Use the Euler method only in special cases, as it is generally the least accurate approach.
@@ -130,23 +130,24 @@ To implement this model in Grind, we use:
 
 ```{r eval = FALSE}
 LV <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dN <- a*N - b*P*N
-    dP <- c*P*N - d*P
+  with(as.list(c(state, parms)), {
+    dN <- a * N - b * P * N
+    dP <- c * P * N - d * P
     return(list(c(dN, dP)))
   })
 }
-p <- c(a=1.1,b=.4,c=.1,d=0.4) # parameters
-s <- c(N=10,P=10)             # 10 baboons and 10 cheetahs
+p <- c(a = 1.1, b = .4, c = .1, d = 0.4) # parameters
+s <- c(N = 10, P = 10) # 10 baboons and 10 cheetahs
 ```
 
 Some typical uses of Grind are:
 
 ```{r eval = FALSE}
 layout(1:2)
-data <- run(odes=LV,tstep=.01,table=T) # set tstep to low value
+data <- run(odes = LV, tstep = .01, table = TRUE) # set tstep to low value
 # phase plot for different starting values:
-plane(odes=LV,portrait = TRUE, ymax=17, xmax=50, tstep=0.1,grid=4)
+plane(odes = LV, portrait = TRUE,
+      ymax = 17, xmax = 50, tstep = 0.1, grid = 4)
 ```
 
 The plane function makes a phase plot with $N$ and $P$ as axes. The black points are initial states. What we learn from this is that the equilibrium of the Lotka—Volterra equations is a limit cycle that depends on the choice of the initial conditions.
@@ -163,26 +164,26 @@ I will illustrate the use of `fit()` on three datasets created with the original
 
 ```{r eval = FALSE}
 set.seed(1)
-layout(matrix(1:4,2,2,byrow=T))
-p <- c(a=1.1,b=.4,c=.1,d=0.4) # p is a named vector of parameters
-s <- c(N=10,P=10)             # s is the state
+layout(matrix(1:4, 2, 2, byrow = TRUE))
+p <- c(a = 1.1, b = .4, c = .1, d = 0.4)# p is a named vector of parameters
+s <- c(N = 10, P = 10) # s is the state
 n <- 30
-data_deterministic <- run(odes=LV,n,table=T,timeplot =F) # deterministic data
-data_stochastic <- run(odes=LV,n,table=T,after="state<-state+rnorm(2,0,.1)",
-                       timeplot =F) # add stochasticity
-data_error <- run(odes=LV,n,table=T,timeplot =F)
+data_deterministic <- run(odes = LV, n, table = TRUE, timeplot = FALSE) # deterministic data
+data_stochastic <- run(odes = LV, n, table = TRUE, after="state<-state+rnorm(2,0,.1)", timeplot = FALSE) # add stochasticity
+data_error <- run(odes = LV, n, table = TRUE, timeplot = FALSE)
 data_error[,2:3] <- data_error[,2:3]+
-    matrix(rnorm(2*n,0,2),,2) # measurement error 
+    matrix(rnorm(2 * n, 0, 2), , 2) # measurement error 
 #fit & plot
-s <- s*abs(rnorm(2,1,0.1));s; p<- p*abs(rnorm(4,1,0.1));p # start values
-f_deter <- fit(odes=LV,data_deterministic,main='deterministic')
-f_stoch <- fit(odes=LV,data_stochastic,main='stochastic')
-f_error <- fit(odes=LV,data_error,main='error')
-pars <- matrix(c(f_deter$par[3:6],f_stoch$par[3:6],f_error$par[3:6]),,3)
-pars <- rbind(pars,c(summary(f_deter)$sigma,
-                     summary(f_stoch)$sigma,summary(f_error)$sigma))
-barplot(t(pars),beside=T,names=c('a','b','c','d','Residuals'),
-        legend.text=c('deterministic','stochastic','error'),args.legend=c(x=13))
+s <- s * abs(rnorm(2, 1, 0.1)); s # start values
+p <- p * abs(rnorm(4, 1, 0.1)); p # start values
+f_deter <- fit(odes = LV, data_deterministic, main = 'deterministic')
+f_stoch <- fit(odes = LV, data_stochastic ,main = 'stochastic')
+f_error <- fit(odes = LV, data_error, main = 'error')
+pars <- matrix(c(f_deter$par[3:6], f_stoch$par[3:6], f_error$par[3:6]), ,3)
+pars <- rbind(pars, c(summary(f_deter)$sigma, summary(f_stoch)$sigma,
+                      summary(f_error)$sigma))
+barplot(t(pars), beside = TRUE, names = c('a','b','c','d', 'Residuals'),
+        args.legend = c(x = 13), legend.text = c('deterministic', 'stochastic', 'error'))
 ```
 
 This results in @fig-ch4n-img1-old-49.
@@ -201,13 +202,13 @@ $$ {#eq-ch4n-5-old-25}
 
 ```{r eval = FALSE}
 model <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
-    dX <-  a + b*X - X^3 # cusp
+  with(as.list(c(state, parms)),{
+    dX <-  a + b * X - X^3 # cusp
     return(list(dX))
   })
 }
-p <- c(a=0,b=1); s <- c(X=.1); run(ymin=-1)
-s[1] <- -.1; run(add=TRUE)
+p <- c(a = 0, b = 1); s <- c(X = .1); run(ymin = -1)
+s[1] <- -.1; run(add = TRUE)
 ```
 
 This code simulates two runs demonstrating bistability for $a = 0$ and $b = 1$.
@@ -218,11 +219,11 @@ As can be seen in @fig-ch4n-img2-old-50, the stochastic force causes spontaneous
 
 ```{r eval = FALSE}
 layout(t(c(1,1,1,2)))
-data <- run(table=TRUE, tmax=1000, method='euler',tstep=.1, 
-            after="state <- state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)", 
-            ymax=2,ymin=-2,timeplot=F)
-plot(data,type='l',bty='n')
-barplot(hist(data[,2],30,plot=F)$counts,xlab="X",hor=TRUE)
+data <- run(table = TRUE, tmax = 1000, method = 'euler', tstep = .1, 
+            after = "state <- state + rnorm(1,mean=0,sd=0.4) * sqrt(tstep)", 
+            ymax = 2, ymin = -2, timeplot = FALSE)
+plot(data, type = 'l', bty = 'n')
+barplot(hist(data[,2], 30, plot = F)$counts, xlab = "X", hor = TRUE)
 ```
 
 ![Spontaneous jumps in the cusp due to stochastics (noise). Due to stochastic perturbations, the system occasionally jumps over the maxima that separate the minima. Interestingly, when the noise is reduced, the time series tends to become trapped in a single equilibrium. Thus, increased noise helps reveal the overall equilibrium landscape. This phenomenon is known as stochastic resonance.](media/ch4n/fig-ch4n-img2-old-50.png){#fig-ch4n-img2-old-50 width="80%"}
@@ -234,12 +235,12 @@ By combining the Grind functions `newton()` and `continue()`, we can perform bif
 It is often necessary to run the combination of these two functions repeatedly, starting from different initial states. The code to create @fig-ch4n-img3-old-51 is:
 
 ```{r eval = FALSE}
-p <- c(a=0,b=1)
-low <- newton(s=c(X=-1)) # finds a minimum starting from X = -1
+p <- c(a = 0, b = 1)
+low <- newton(s = c(X = -1)) # finds a minimum starting from X = -1
 # Continue this steady state varying a
-continue(low,x="a",y="X",xmin=-2,xmax=2,ymax=2) 
-high <- newton(s=c(X=1)) # again starting from X = 1
-continue(high,x="a",y="X",xmin=-2,xmax=2,ymax=2,add=T)
+continue(low, x = "a", y = "X", xmin = -2, xmax = 2, ymax = 2) 
+high <- newton(s = c(X = 1)) # again starting from X = 1
+continue(high, x = "a", y = "X", xmin = -2, xmax = 2, ymax = 2, add = TRUE)
 ```
 
 ![Hysteresis plot made with `newton()` and `continue()`. The function `newton()` finds an equilibrium, which is used in `continue()` to vary the normal variable a until a bifurcation point is found.](media/ch4n/ch4-3-june14.png){#fig-ch4n-img3-old-51 width="80%"}
@@ -251,7 +252,7 @@ Another great tool in R is the deBif package by de Roos.[^ch4n-4] This is an R S
 ```{r eval = FALSE}
 install.packages("deBif")
 library(deBif)
-phaseplane(model,s,p)
+phaseplane(model, s, p)
 ```
 
 The `phaseplane()` function returns a time plot and the steady states. You can change parameters and initial states on the left side, and plot parameters on the upper right side (click on the two gears). The Steady States option is very useful as it shows the stable and unstable fixed points. Make sure that the minima and maxima of the plot axes are set correctly.
@@ -259,7 +260,7 @@ The `phaseplane()` function returns a time plot and the steady states. You can c
 With
 
 ```{r eval = FALSE}
-bifurcation(model,s,p)
+bifurcation(model, s, p)
 ```
 
 You can create one- and two-parameter bifurcation diagrams (using the LP curve option, see @fig-ch4n-img4-old-52). The two-parameter bifurcation diagram (bottom left) cannot be created in Grind. See the deBif help pages (with `??deBif`) for further instructions.
@@ -272,8 +273,8 @@ In Chapter 3, @sec-Mechanistic-models, I introduced the spruce budworm outbreak 
 
 ```{r eval = FALSE}
 spruce <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    du = r*u*(1 - u/q)-u^2/(1+u^2)
+  with(as.list(c(state, parms)), {
+    du = r * u * (1 - u/q) - u^2 / (1 + u^2)
     return(list(c(du)))
   })
 }
@@ -300,29 +301,29 @@ A case in which this is less of an issue is the traffic example that I introduce
 
 ```{r eval = FALSE}
 model <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
+  with(as.list(c(state, parms)),{
     x <- state[1:n]
     v <- state[(n+1):(2*n)]
     dx <-  v # change in distance = speed
-    delta_v <- v- m %*% v # difference in speed to next car
-    s_alpha <- m %*% x - x -l #  distance to next car
+    delta_v <- v - m %*% v # difference in speed to next car
+    s_alpha <- m %*% x - x - l #  distance to next car
     s_alpha[n] <- 100 # front car has no car in front
-    s_star <- s0 + v * T + v * delta_v / (2*sqrt(a*b))
+    s_star <- s0 + v * T + v * delta_v / (2 * sqrt(a * b))
     dv <- a * (1 - (v/v0)^delta - (s_star/s_alpha)^2) # change in speed
-    return(list(c(dx,dv)))
+    return(list(c(dx, dv)))
   })
 }
 
 n <- 50
-p <- c(l=5,v0=30,T=1.5,a=.73,b=1.67,delta=4,s0=2)
-x_init <- (0:(n-1))*(p['s0']+p['l'])
-v_init <- rep(0,n)
-s <- c(x_init,v_init)
-
-m <- diag(1, n, n); m= rbind(m[-1,],0) # order cars
+p <- c(l = 5, v0 = 30, T = 1.5, a = .73, b= 1.67 , delta = 4, s0 = 2)
+x_init <- (0:(n-1)) * (p['s0'] + p['l'])
+v_init <- rep(0, n)
+s <- c(x_init, v_init)
+m <- diag(1, n, n); m <- rbind(m[-1,], 0) # order cars
 # simulation with front car suddenly breaking at t = 150:
-data <- run(tmax=300,timeplot = F,table=T,after = 'if (t==150) state[2*n] = 0')
-matplot(data[,2:(n+1)],type='l',bty='n',xlab='time',ylab = 'x')
+data <- run(tmax = 300, timeplot = FALSE, table = TRUE,
+            after = 'if (t==150) state[2*n] = 0')
+matplot(data[,2:(n + 1)], type = 'l', bty = 'n', xlab = 'time', ylab = 'x')
 ```
 
 ![The traffic jam simulation. The top line represents the front car, which moves off immediately. Other cars are waiting for their turn. At $t = 150$, the first car suddenly breaks off, creating a traffic jam for the later cars. The effect of this disturbance is greater for the last car than for the first car. This simulated graph resembles the real data very well [see for example figure 9 in @jusup2022].](media/ch4n/fig-ch4n-img6-old-54.png){#fig-ch4n-img6-old-54 width="80%"}
@@ -353,17 +354,17 @@ The implementation of the model in Grind is quite simple. The trick is again in 
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
+  with(as.list(c(state, parms)), {
     dX = I
     return(list(c(dX)))
   })
 }
-p <- c(I=.01); s <- c(X=0)
+p <- c(I = .01); s <- c(X = 0)
 bound <- 1
-run(table=T,method='euler', tstep=.1,
-    tmax=500,after="state<-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);
+run(table = TRUE, method = 'euler', tstep = .1,
+    tmax = 500, after = "state<-state+rnorm(1,mean=0,sd=0.1)*sqrt(tstep);
     if(abs(state)>bound) break", # stop at bound
-    ymin=-bound,ymax=bound)
+    ymin = -bound, ymax = bound)
 ```
 
 The model explains observed response time and accuracy in terms of the underlying process parameters, drift rate, and confidence bound. By fitting the model to the data, we can determine whether slow responses are due to a low drift rate (low skill or difficult task) or a conservatively chosen bound. [Accumulator models such as the drift-diffusion model explain the speed-accuracy trade-off. If we set our confidence bound higher, we are slower but more accurate.]{.aside}
@@ -428,23 +429,26 @@ Juliet may have her own style, which leads to complicated interactions. @sprottD
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dR <- a*R+b*J
-    dJ <- c*R+d*J
+  with(as.list(c(state, parms)), {
+    dR <- a * R + b * J
+    dJ <- c * R + d * J
     return(list(c(dR, dJ)))
   })
 }
-layout(matrix(1:6,3,2,byrow=T))
-p <- c(a=-1,b=1,c=.5,d=-1) # parameters
-s <- c(R=0.1,J=.1) 
+layout(matrix(1:6, 3, 2, byrow = TRUE))
+p <- c(a = -1, b = 1, c = .5, d = -1) # parameters
+s <- c(R = 0.1, J = .1) 
 run()
-plane(portrait=T,ymin=-1,xmin=-1,grid=3,vector=T,legend=F)
-p <- c(a=-.2,b=-1,c=1,d=0) # parameters
-run(ymin=-.2,legend=F)
-plane(portrait=T,ymin=-1,xmin=-1,grid=2,tstep=.001,legend=F)
-p <- c(a=-.1,b=-1,c=1,d=0.1) # parameters
-run(ymin=-.2,legend=F)
-plane(portrait=T,ymin=-1,xmin=-1,grid=3,tstep=.001,legend=F)
+plane(portrait = TRUE, ymin = -1, xmin = -1, grid = 3,
+      vector = TRUE, legend = FALSE)
+p <- c(a = -.2, b = -1, c = 1, d = 0) # parameters
+run(ymin = -.2, legend = FALSE)
+plane(portrait = TRUE, ymin = -1, xmin = -1, grid = 2,
+      tstep = .001, legend = FALSE)
+p <- c(a = -.1, b = -1, c = 1, d = 0.1) # parameters
+run(ymin = -.2, legend = FALSE)
+plane(portrait = TRUE, ymin = -1, xmin = -1, grid = 3,
+      tstep = .001, legend = FALSE)
 ```
 
 ![Three different love affairs between Romeo and Juliet.](media/ch4n/fig-ch4n-img9-old-57.png){#fig-ch4n-img9-old-57 width="100%"}
@@ -490,25 +494,26 @@ This is implemented with:
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dW <- influence(H,a,b)-rw*W+We
-    dH <- influence(W,a,b)-rh*H+He
-    return(list(c(dW,dH)))
+  with(as.list(c(state, parms)), {
+    dW <- influence(H,a,b) - rw * W + We
+    dH <- influence(W,a,b) - rh * H + He
+    return(list(c(dW, dH)))
   })
 }
-layout(matrix(1:9,3,3,byrow=T))
+layout(matrix(1:9, 3, 3, byrow = TRUE))
 par(mar=c(4,4,1,2))
-influence <- function(x,a=-8,b=1) sign(x)/(1+exp(a*(abs(x)-b)))
-p <- c(rw=.6,rh=.6,We=.18,He=-.18,a=-8,b=Inf)
-s <- c(W=0,H=0)
-for(b in c(Inf,0,1)){
-p['b'] <- b
-curve(influence(x,-8,b),-3,3,xlab='W',ylab='H',lwd=2)
-plane(xmin=-2.5,xmax=2.5,ymin=-2,ymax=2,legend=F)
-for(i in seq(-2,2,by=.25)) newton(s=c(W=i,H=i),plot=T)
-for (i in 1:100)
-  run(state=c(W=rnorm(1,0,.5),H=rnorm(1,0,1)), tmax=50,ymin=-2,
-      ymax=2,add=(i>1),legend=F)
+influence <- function(x, a = -8, b = 1)
+  sign(x) / (1 + exp(a * (abs(x) - b)))
+p <- c(rw = .6, rh = .6, We = .18, He = -.18, a = -8, b = Inf)
+s <- c(W = 0, H = 0)
+for(b in c(Inf, 0, 1)){
+  p['b'] <- b
+  curve(influence(x, -8, b), -3, 3, xlab = 'W', ylab = 'H', lwd = 2)
+  plane(xmin = -2.5, xmax = 2.5, ymin = -2, ymax = 2, legend = FALSE)
+  for(i in seq(-2, 2, by = .25)) newton(s = c(W = i, H = i), plot = TRUE)
+  for (i in 1:100)
+    run(state = c(W = rnorm(1,0,.5), H = rnorm(1,0,1)), tmax = 50, ymin = -2,
+        ymax = 2, add = (i>1), legend = FALSE)
 }
 ```
 
@@ -537,7 +542,7 @@ This can be implemented as follows:
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
+  with(as.list(c(state, parms)), {
     dX <- (a + b * Y) * X - a * X^2 / K
     dY <- (c + d * X) * Y - c * Y^2 / K
     return(list(c(dX, dY)))
@@ -545,14 +550,14 @@ model <- function(t, state, parms) {
 
 layout(matrix(1:4,2,2))
 # Set parameter values and run the model:
-p <- c(K = 1, a = 0.4, b = -0.05, c=.4, d = -0.15)
+p <- c(K = 1, a = 0.4, b = -0.05, c = .4, d = -0.15)
 s <- c(X = 0.01, Y = 0.01)
 run(method = "euler", tstep = 1)
-plane(portrait = TRUE,grid=4)
+plane(portrait = TRUE, grid=4)
 p <- c(K = 1, a = 0.05, b = -0.1,  c = 0.05, d = -0.09)
 s <- c(X = 0.0126, Y = 0.01)
 run(tmax = 1500, method = "euler", tstep = 1)
-plane(portrait = TRUE,grid=4)
+plane(portrait = TRUE, grid = 4)
 ```
 
 ![The development of two interrelated cognitive abilities in one of the van Geert models. In the left case they coexist; in the right case one ability suppresses the other.](media/ch4n/fig-ch4n-img11-old-59.png){#fig-ch4n-img11-old-59 width="100%"}
@@ -589,21 +594,21 @@ An implementation and simple illustration is:
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dA <- -A + b*T  
-    dT <- -T + 1/(1+exp(-alpha*(A+beta)))
+  with(as.list(c(state, parms)), {
+    dA <- -A + b * T  
+    dT <- -T + 1/(1 + exp(-alpha * (A + beta)))
     return(list(c(dA, dT)))
   })
 }
-p <- c(b=1, alpha=12, beta=-.7) 
-s <- c(A=0, T=0) 
+p <- c(b = 1, alpha = 12, beta = -.7) 
+s <- c(A = 0, T = 0) 
 # arousal increase for time t in 20:30, leads to panic, 
 # which after some time ('30 min') disappears
 layout(1:2)
-plane(vector=T,xmin=0,ymin=0,xmax=1,ymax=1.1,legend=F) 
-newton(s=c(A=0,T=0),plot=T)
-newton(s=c(A=0.8,T=.8),plot=T)
-newton(s=c(A=1,T=1),plot=T);
+plane(vector = TRUE, xmin = 0, ymin = 0, xmax = 1, ymax = 1.1, legend = FALSE) 
+newton(s = c(A = 0, T = 0), plot = TRUE)
+newton(s = c(A = 0.8, T = .8), plot = TRUE)
+newton(s = c(A = 1, T = 1), plot = TRUE);
 run(after="if(t>20&t<30)state[1]<-1;state<-state+rnorm(2,mean=0,sd=0.1)")
 ```
 
@@ -612,12 +617,12 @@ The $\beta$ parameter is set so that the nonpanic mode dominates, but the panic 
 This dynamic of this model is the cusp, as can be checked with (see @fig-ch4n-img15-old-63):
 
 ```{r eval = FALSE}
-p <- c(b=1,alpha=12,beta=-.5)
-start <- newton(s=c(A=.1,T=.1)) 
-continue(start,x="beta",y="T",xmin=-1,xmax=1,ymax=1) 
-continue(start,x="alpha",y="T",xmin=-1,xmax=20,ymax=1) 
-start <- newton(s=c(A=1,T=1)) # finds a minimum starting from X = -1
-continue(start,x="alpha",y="T",xmin=-1,xmax=20,ymax=1,add=T) 
+p <- c(b = 1, alpha = 12, beta = -.5)
+start <- newton(s = c(A = .1,  T= .1)) 
+continue(start, x = "beta", y = "T", xmin = -1, xmax = 1, ymax = 1) 
+continue(start, x = "alpha", y = "T", xmin = -1, xmax = 20, ymax = 1) 
+start <- newton(s = c(A = 1, T = 1)) # finds a minimum starting from X = -1
+continue(start, x = "alpha", y = "T", xmin = -1, xmax = 20, ymax = 1, add = TRUE) 
 ```
 
 In @robinaughAdvancingNetworkTheory2019, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.
@@ -632,21 +637,23 @@ Imagine taking the cusp equation $dX/dt = {a + bX - X}^{3}$, with $b=1$, such th
 
 ```{r eval = FALSE}
 model <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
-    dX <-  a + b*X - X^3        # cusp
-    da <- -e*X
-    return(list(c(dX,da)))
+  with(as.list(c(state, parms)),{
+    dX <-  a + b * X - X^3 # cusp
+    da <- -e * X
+    return(list(c(dX, da)))
   })
 }
 
-s <- c(X=.1,a=0); # initial state and parameter values
-layout(matrix(1:4,2,2,byrow=T))
-p <- c(e=.05,b=-.5)
-run(ymin=-.1,main='b = -.5',legend=F)
-plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = -.5')
-p <- c(e=.05,b=1)
-run(ymin=-1.5,main='b = 1',legend=F)
-plane(xmax=2,ymin=-1,ymax=2,xmin=-2,portrait=T,grid=2,main='b = 1')
+s <- c(X = .1, a = 0) # initial state and parameter values
+layout(matrix(1:4, 2, 2, byrow = TRUE))
+p <- c(e = .05, b = -.5)
+run(ymin = -.1, main = 'b = -.5', legend = FALSE)
+plane(xmax = 2, ymin = -1, ymax = 2, xmin = -2,
+      portrait = TRUE, grid = 2, main= 'b = -.5')
+p <- c(e = .05, b = 1)
+run(ymin = -1.5, main = 'b = 1', legend = FALSE)
+plane(xmax = 2, ymin = -1, ymax = 2, xmin = -2,
+      portrait = TRUE, grid = 2, main= 'b = 1')
 ```
 
 ![Two runs of the van der Pol oscillator. For high b, this system oscillates between the two stables states of the cusp. The black dots represent different initial states.](media/ch4n/fig-ch4n-img14-old-62.png){#fig-ch4n-img14-old-62 width="100%"}
@@ -722,9 +729,9 @@ This model, first proposed by Kadyrov, was analyzed in detail by @abrahamComputa
 
 ```{r eval = FALSE}
 model <- function(t, state, parms) {
-  with(as.list(c(state,parms)), {
-    dX <- a*Y + b*X - X^3 
-    dY <- c*X + d*Y - Y^3
+  with(as.list(c(state, parms)), {
+    dX <- a * Y + b * X - X^3 
+    dY <- c * X + d * Y - Y^3
     return(list(c(dX, dY))) 
   })
 }
@@ -737,24 +744,25 @@ Depending on the choice of the parameters and initial values, many different thi
 The phase planes of @fig-ch4n-img16-old-64 can be made with:
 
 ```{r eval = FALSE}
-layout(matrix(1:4,2,2))
-s <- c(X=0,Y=0) 
+layout(matrix(1:4, 2, 2))
+s <- c(X = 0, Y = 0) 
 for(i in c('a','b','c','d'))
 {
-  if (i == 'a') p <- c(a=.3,b=1,c=.3,d=1)
-  if (i == 'b') p <- c(a=.6,b=1,c=.6,d=1)
-  if (i == 'c') p <- c(a=1,b=1,c=1,d=1)
-  if (i == 'd') p <- c(a=1,b=1,c=-1,d=1)
-  plane(tstep=0.5,portrait=(i=='d'),xmin=-2,ymin=-2,
-        xmax=2,ymax=2, legend=F,grid=2,
-        main = paste("Case ",i)) # make a phase portrait (Fig 1c)
-  if (i != 'd') for(i in 1:200) newton(c(X=runif(1,-2,2),
-        Y=runif(1,-2,2)),plot=T) else
-    newton(c(X=0,Y=0),plot=T)
+  if (i == 'a') p <- c(a = .3, b = 1, c = .3, d = 1)
+  if (i == 'b') p <- c(a = .6, b = 1, c = .6, d = 1)
+  if (i == 'c') p <- c(a = 1, b = 1, c = 1, d = 1)
+  if (i == 'd') p <- c(a = 1, b = 1, c = -1, d = 1)
+  plane(tstep = 0.5, portrait = (i == 'd'), xmin = -2, ymin = -2,
+        xmax = 2, ymax = 2, legend = FALSE, grid = 2,
+        main = paste("Case ", i)) # make a phase portrait (Fig 1c)
+  if (i != 'd') for(i in 1:200) 
+    newton(c(X = runif(1, -2, 2), 
+             Y = runif(1, -2, 2)), plot = TRUE) 
+  else newton(c(X = 0, Y = 0), plot = TRUE)
 }
-s <- c(X=0.1,Y=.1) 
-p <- c(a=1,b=1,c=-1,d=1)
-run(tmax=20,tstep=0.1,ymin=-2,ymax=2) # Kadyrov oscillator
+s <- c(X = 0.1, Y = .1) 
+p <- c(a = 1, b = 1, c = -1, d = 1)
+run(tmax = 20, tstep = 0.1, ymin = -2, ymax = 2) # Kadyrov oscillator
 ```
 
 The last three lines of this code show the Kadyrov oscillator (@fig-ch4n-img17-old-65).
@@ -812,7 +820,7 @@ The code to simulate this model is:
 ```{r eval = FALSE}
 set.seed(1)
 model <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
+  with(as.list(c(state, parms)),{
     X <- state[1:N]
     b0_i <- parms[1:N]
     dX <- -X^3 + a0_i + a_ij %*% X + b0_i*X + 
@@ -820,24 +828,24 @@ model <- function(t, state, parms){
     return(list(dX))
   })
 }
-N=10 # 10 necker cubes
-X <- runif(N,-0.1,0.1) # initial state of X
-a0_i <- rep(0,N) # no  bias in percepts
-a_ij <- matrix(.02,N,N) # small couplings (normal)
+N <- 10 # 10 necker cubes
+X <- runif(N, -0.1, 0.1) # initial state of X
+a0_i <- rep(0, N) # no  bias in percepts
+a_ij <- matrix(.02, N, N) # small couplings (normal)
 diag(a_ij) <-  0 # set diagonal of a to 0
-b0_i <- rep(-.3,N) # attention initially low
-b_ij <- matrix(.2,N,N) # some spread of attention (splitting)
+b0_i <- rep(-.3, N) # attention initially low
+b_ij <- matrix(.2, N, N) # some spread of attention (splitting)
 diag(b_ij) <- 0 # set diagonal of b to 0
 
-s <- X;p <- c(b0_i) # required for grind
-run(after="if(t==33)parms<-c(1,rep(-.3,N-1));
-           if(t==66)parms<-rep(-.3,N);
-           state<-state+rnorm(N,mean=0,sd=0.05)",ymin=-1,ymax=2.5,
-            main='',ylab='X',legend=FALSE)
-b0_i <- rep(-.3,100); b0_i[34:66]=1 # for plotting attention
-lines(b0_i,lwd=2,lty=3)
-text(80,1.4,'Percepts')
-text(80,-.5,'Attention')
+s <- X; p <- c(b0_i) # required for grind
+run(after = "if(t == 33) parms <- c(1, rep(-.3, N-1));
+            if(t == 66) parms <- rep(-.3, N);
+            state <- state + rnorm(N, mean = 0, sd = 0.05)",
+    ymin = -1, ymax = 2.5, main = '', ylab = 'X', legend = FALSE)
+b0_i <- rep(-.3, 100); b0_i[34:66] = 1 # for plotting attention
+lines(b0_i, lwd = 2, lty = 3)
+text(80, 1.4, 'Percepts')
+text(80, -.5, 'Attention')
 ```
 
 which gives @fig-ch4n-img19-old-67.
