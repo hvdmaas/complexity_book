@@ -1,4 +1,4 @@
-# Foreword {.unnumbered}
+# Prologue {.unnumbered}
 
 This book is intended for psychologists and social scientists interested in modeling psychological processes using the tools of complex-systems research.
 
