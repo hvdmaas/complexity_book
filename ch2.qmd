@@ -156,18 +156,21 @@ r <- 3.3; n <- 200; x <- rep(0,n)
 x[1] <- .001
 for(i in 1:(n-1)) x[i+1] = r*x[i]*(1-x[i])
 x <- x[-1:-100]
-plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r),
-     ylim=0:1, cex.main=2) 
-plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
+plot(x, type = 'l', xlab = 'time', bty = 'n', main = paste('r = ', r),
+     ylim = 0:1, cex.main = 2) 
+plot(x[-length(x)], x[-1], 
+     xlim=0:1, ylim=0:1, xlab='Xt', ylab='Xt+1', bty='n')
 r <- 4; x[1] <- .001;
-for(i in 1:(n-1)) x[i+1] <- r*x[i]*(1-x[i])
+for(i in 1:(n-1)) x[i+1] <- r * x[i] * (1-x[i])
 x <- x[-1:-100]
-plot(x, type='l', xlab='time', bty='n', main=paste('r = ',r), cex.main=2) 
-plot(x[-length(x)], x[-1], xlim=0:1, ylim=0:1, xlab='Xt', ylab='Xt+1', bty='n')
+plot(x, type = 'l', xlab = 'time', bty = 'n', main = paste('r = ',r),
+     cex.main = 2) 
+plot(x[-length(x)], x[-1], xlim = 0:1, ylim = 0:1, xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 x <- runif(200,0,1)
 x <- x[-1:-100]
-plot(x,type='l',xlab='time',bty='n',main='random noise',cex.main=2) 
-plot(x[-length(x)],x[-1],xlim=0:1,ylim=0:1,xlab='Xt',ylab='Xt+1',bty='n')
+plot(x, type = 'l', xlab = 'time', bty = 'n', main = 'random noise',
+     cex.main = 2) 
+plot(x[-length(x)],x[-1], xlim = 0:1, ylim = 0:1, xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 ```
 
 ![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7 width="100%"}
@@ -184,15 +187,15 @@ A clever way to do this is to use the `sapply` function in R.
 layout(1)
 f <- function(r, x, n, m){
   x <- rep(x,n)
-  for(i in 1:(n-1)) x[i+1] <- r*x[i]*(1-x[i])
+  for(i in 1:(n-1)) x[i+1] <- r * x[i] * (1-x[i])
   x[c((n-m):n)] # only return last m iterations
 }
-r.range <- seq(0, 2.5, by=0.01) 
-r.range <- c(r.range,seq(2.5, 4, by=0.001)) 
+r.range <- seq(0, 2.5, by = 0.01) 
+r.range <- c(r.range,seq(2.5, 4, by = 0.001)) 
 n <- 200; m <-100 
-equilibria <- as.vector(sapply(r.range, f,  x=0.1, n=n, m=m-1))
+equilibria <- as.vector(sapply(r.range, f,  x = 0.1, n = n, m = m-1))
 r <- sort(rep(r.range, m))
-plot(equilibria ~ r, pch=19,cex=.01,bty='n')
+plot(equilibria ~ r, pch = 19, cex = .01, bty = 'n')
 ```
 
 This results in @fig-ch2-img8. We see indeed fixed stable points for $r < 3$, the period doubling of the limit cycles for $r > 3$, followed by chaos.
