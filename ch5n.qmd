@@ -376,20 +376,20 @@ Also famous is the work of the sociologist Mark Granovetter [-@granovetterStreng
 ```{r eval = FALSE}
 layout(1:2)
 n <- 1000 # number of persons
-interations <- 50
-threshold <- rbeta(n,1,2) # sample individual thresholds for dancing
-hist(threshold,col='grey')
-dancers <- rep(0,n) # nobody dances
+iterations <- 50
+threshold <- rbeta(n, 1, 2) # sample individual thresholds for dancing
+hist(threshold, col = 'grey')
+dancers <- rep(0, n) # nobody dances
 dancers[1] <- 1 # but one guy
-number_of_dancers <- rep(0,interations) 
+number_of_dancers <- rep(0, iterations) 
 for(i in 1:interations){
   # keep track of number of dancers:
   number_of_dancers[i] <- sum(dancers) 
   # if my threshold < proportion of dancers, I dance:
   dancers[threshold < (number_of_dancers[i]/n)] <- 1 
 }
-plot(number_of_dancers,xlab='time',ylab='#dancers',
-     ylim=c(0,1000),type='b',bty='n')
+plot(number_of_dancers, xlab = 'time', ylab = '#dancers',
+     ylim = c(0,1000), type = 'b', bty = 'n')
 ```
 
 Depending on the parameters of the beta distribution, you will see a phase transition to collective dancing. This basic setup can be extended in many ways.
