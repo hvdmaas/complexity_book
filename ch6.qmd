@@ -27,21 +27,23 @@ The degree distribution can take several forms. A random graph, where nodes are 
 There are many methods available in R for creating and visualizing networks and for computing properties of networks. The igraph and qgraph libraries are very useful. It is a good idea to experiment with this R code below by varying the parameter values. Some key concepts of networks are shown in @fig-ch6-img2-old-71.
 
 ```{r eval = FALSE}
-library(igraph);library(qgraph)
-g1 <- graph(edges=c(1,2, 2,3, 3,1), n=3, directed=FALSE) 
+library(igraph); library(qgraph)
+g1 <- graph(edges = c(1,2, 2,3, 3,1),
+            n = 3, directed = FALSE) 
 plot(g1) # an undirected network with 3 nodes
-g2 <- graph( edges=c(1,2, 2,3, 3,1, 1,3, 3,3), n=3, directed=T ) 
+g2 <- graph(edges=c(1,2, 2,3, 3,1, 1,3, 3,3),
+            n = 3, directed=TRUE)
 plot(g2) # an directed network with self-excitation on node 3
 get.adjacency(g2) # weight matrix
 fcn <- make_full_graph(10) # a fully connected network
-plot(fcn, vertex.size=10, vertex.label=NA)
+plot(fcn, vertex.size = 10, vertex.label = NA)
 layout(1)
 set.seed(1)
-adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
-adj <- adj*sample(0:1,100,replace=T,prob=c(.8,.2)) # set 80% to 0
+adj <- matrix(rnorm(100, 0, .2), 10, 10) # a weighted adjacency matrix
+adj <- adj * sample(0:1, 100, replace = TRUE, prob = c(.8, .2)) # set 80% to 0
 qgraph(adj) # plot in qgraph
 edge_density(fcn) # indeed 1
-edge_density(graph_from_adjacency_matrix(adj,weighted=TRUE))# now .2
+edge_density(graph_from_adjacency_matrix(adj, weighted=TRUE))# now .2
 centralityPlot(qgraph(adj)) # note centrality() gives more indices
 ```
 
@@ -124,40 +126,40 @@ The mutualism model in Grind is specified as follows:
 
 ```{r eval = FALSE}
 mutualism <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
+  with(as.list(c(state, parms)),{
     X <- state[1:nr_var]
     # using matrix multiplication:
-    dX <- a*X*(1-X/k) + a*(X * M %*% X)/k 
+    dX <- a * X * (1 - X/k) + a * (X * M %*% X)/k 
     return(list(dX))
   })
 }
 ```
 
-A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (tmax = 60) for each person. We can then compute the correlations and check if they are positive (@fig-ch6-img7-old-76). For each person, we resample $a$, $K$, and the initial values of $X$, but $M$ is the same across persons. Note that the $M$-values should not be set too high, otherwise we end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
+A simulation of the positive manifold requires us to run this model for multiple people and collect the $X$-values after some time points (`tmax = 60`) for each person. We can then compute the correlations and check if they are positive (@fig-ch6-img7-old-76). For each person, we resample $a$, $K$, and the initial values of $X$, but $M$ is the same across persons. Note that the $M$-values should not be set too high, otherwise we end up in May's orgy of mutual benefaction. In the second part of this chapter, we will generate more data with this model and fit network and factor models.
 
 ```{r eval = FALSE}
-layout(matrix(1:2,1,2))
+layout(matrix(1:2, 1, 2))
 nr_var <- 12 # number of tests, abilities (W)
 nr_of_pp <- 500
-data <- matrix(0,nr_of_pp,nr_var) # to collect the data in the simulation
-M <- matrix(.05,nr_var,nr_var)
-M[diag(nr_var)==1] <- 0 # set diagonal of M to 0
+data <- matrix(0, nr_of_pp, nr_var) # to collect the data in the simulation
+M <- matrix(.05, nr_var, nr_var)
+M[diag(nr_var) == 1] <- 0 # set diagonal of M to 0
 
 for(i in 1:nr_of_pp){
   # sample a,K, starting values X from normal 
   # distributions for each person separately
   # note M is constant over persons.
-  a <- rnorm(nr_var,.2,.05) 
-  k <- rnorm(nr_var,10,2)
-  x0 <- rnorm(nr_var,2,0.1) # initial state of X
-  s  <- x0;p <- c() # required for grind
+  a <- rnorm(nr_var, .2, .05) 
+  k <- rnorm(nr_var, 10, 2)
+  x0 <- rnorm(nr_var, 2, 0.1) # initial state of X
+  s  <- x0; p <- c() # required for grind
   # collect data (end points) and plot person 1 only:
-  data[i,] <- run(odes=mutualism ,tmax=60, 
-      timeplot = (i==1),legend=F) 
+  data[i,] <- run(odes = mutualism , tmax = 60, 
+      timeplot = (i==1), legend = FALSE) 
 }
-hist(cor(data)[cor(data)<1],main='positive manifold',
-     xlab='between test correlations',
-     col='grey50') # positive manifold
+hist(cor(data)[cor(data) < 1], main = 'positive manifold',
+     xlab = 'between test correlations',
+     col = 'grey50') # positive manifold
 ```
 
 ![A typical run of the mutualism model for one subject and the distribution of correlations between $X$-values across subjects.](media/ch6/fig-ch6-img7-old-76.jpg){#fig-ch6-img7-old-76 width="80%"}
@@ -269,17 +271,17 @@ The IsingSampler function runs the Metropolis—Hastings algorithm $nIter$ times
 ```{r eval = FALSE}
 library("IsingSampler")
 n <- 10 # nodes
-W <- matrix(.1,n,n); diag(W) <- 0
+W <- matrix(.1, n, n); diag(W) <- 0
 tau <- 0
 N <- 1000 # replications
 thresholds <- rep(tau, n)
 layout(t(1:2))
-data <- IsingSampler(N, W, nIter=100, thresholds, 
+data <- IsingSampler(N, W, nIter = 100, thresholds, 
             beta = .1, responses = c(-1, 1))
-hist(apply(data,1,sum),main="beta = .1",xlab='sum of x')
-data <- IsingSampler(N, W, nIter=100, thresholds, 
+hist(apply(data, 1, sum), main = "beta = .1", xlab = 'sum of x')
+data <- IsingSampler(N, W, nIter = 100, thresholds, 
             beta = 2, responses = c(-1, 1))
-hist(apply(data,1,sum), main="beta = 2",xlab='sum of x')
+hist(apply(data, 1, sum), main = "beta = 2", xlab = 'sum of x')
 ```
 
 ![The equilibrium distribution of the attitude values (sum of node values) at low and high attention, respectively. This simple simulation demonstrates the mere thought effect [@tesserSelfGeneratedAttitude1978].](media/ch6/fig-ch6-img12-old-81.jpg){#fig-ch6-img12-old-81 width="100%"}
@@ -288,19 +290,17 @@ In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit a
 
 ```{r eval = FALSE}
 layout(1)
-N <- 400
-n <- 10
-W <- matrix(.1,n,n); diag(W) <- 0
-thresholds <- sample(c(-.2,.2),n,replace=T) # a random pattern of thresholds
+N <- 400; n <- 10
+W <- matrix(.1, n, n); diag(W) <- 0
+thresholds <- sample(c(-.2, .2), n, replace = TRUE) # a random pattern of thresholds
 dat <- numeric(0)
-beta.range <- seq(0,3,by=.05)
-for(beta in beta.range)
-{
+beta.range <- seq(0, 3, by = .05)
+for(beta in beta.range){
   data <- IsingSampler(N, W, nIter = 100, thresholds, 
-          beta = beta, responses = c(-1, 1))
-  dat <- c(dat,sum(thresholds*apply(data,2,sum))) # measure of alignment
+                       beta = beta, responses = c(-1, 1))
+  dat <- c(dat, sum(thresholds * apply(data,2,sum))) # measure of alignment
 }
-plot(beta.range,dat,xlab='beta',ylab='alignment with thresholds',bty='n')
+plot(beta.range, dat, xlab = 'beta', ylab = 'alignment with thresholds', bty = 'n')
 ```
 
 ![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){#fig-ch6-img13-old-82 width="80%"}
@@ -321,42 +321,43 @@ In R, this can be implemented as follows:
 
 ```{r eval = FALSE}
 library(qgraph)
-hamiltonian <- function(x,n,t,w) -sum(t*x)-sum(w*x%*%t(x)/2)
-glauber_step  <-  function(x,n,t,w,beta){
-  i <- sample(1:n,size=1) # take a random node
+hamiltonian <- function(x, n, t, w){
+    -sum(t * x) - sum(w * x %*% t(x)/2)
+}
+glauber_step  <-  function(x, n, t, w, beta){
+  i <- sample(1:n, size = 1) # take a random node
   # construct new state with flipped node:
-  x_new <- x; x_new[i] <- x_new[i]*-1 
+  x_new <- x; x_new[i] <- x_new[i] * -1 
   # update probability
-  p <- 1/(1+exp(beta*(hamiltonian(x_new,n,t,w)-hamiltonian(x,n,t,w))))  
-  if(runif(1)<p) x <- x_new # update state
+  p <- 1/(1 + exp(beta * (hamiltonian(x_new, n, t, w) - 
+                            hamiltonian(x, n, t, w))))  
+  if(runif(1) < p) x <- x_new # update state
   return(x)
 }
 layout(t(1:2))
-epsilon <- .002;lambda <- .002 # low values = slow time scale
-n <- 10
-W <- matrix(rnorm(n^2,.0,.4),n,n); 
+epsilon <- .002; lambda <- .002 # low values = slow time scale
+n <- 10; W <- matrix(rnorm(n^2, .0, .4), n, n)
 W <- (W + t(W)) / 2 # make symmetric
 diag(W) <- 0
 qgraph(W); title('before learning')
 thresholds <- rep(.2, n)
-x <- sample(c(-1,1),n,replace=T)
-for(i in 1:500)
-{
-  x <- glauber_step(x,n,thresholds,W,beta=2)
+x <- sample(c(-1, 1), n, replace = TRUE)
+for(i in 1:500){
+  x <- glauber_step(x, n, thresholds, W, beta = 2)
   # Hebbian learning:
-  W <- W+epsilon*(1-abs(W))*outer(x,x,"*")-lambda*W 
+  W <- W + epsilon * (1 - abs(W)) * outer(x, x, "*") - lambda * W 
   diag(W) <- 0
 }
 # label switching (scale all nodes to positive):
-W <- x*t(x*W);x <- x*x
-qgraph(W);title('after learning')
+W <- x * t(x * W); x <- x * x
+qgraph(W); title('after learning')
 ```
 
 @Fig-ch6-img14-old-83 shows the result of this simulation.
 
 ![Through Hebbian learning, a random (unbalanced) network becomes balanced.](media/ch6/fig-ch6-img14-old-83.png){#fig-ch6-img14-old-83 width="100%"}
 
-In this case we want to update the nodes values using the Glauber dynamics (@eq-ch5n-3-old-19), which use the computation of the energy of a particular state. Both functions (glauber_step and hamiltonian) are added to the R code.
+In this case we want to update the nodes values using the Glauber dynamics (@eq-ch5n-3-old-19), which use the computation of the energy of a particular state. Both functions (`glauber_step()` and `hamiltonian()`) are added to the R code.
 
 Due to Hebbian learning, a network evolves from an unbalanced network (random connections) to a consistently balanced network. [Developing strong, balanced attitudinal networks has a clear advantage: they do not require much attention to be consistent.]{.aside} Without learning, we need high attention to make the attitude network behave consistently. In the learning Ising attitude model (LIAM), weights increase during periods of high attention. The advantage is that in later instances, less attention is required for consistent network behavior [@smalLearningIsingAttitudesubmitted]. In this way we can develop stable attitudes that do not require much attention to be consistent.
 
@@ -417,7 +418,7 @@ Finally, I mention semantic network analysis again. A review of statistical appr
 In @sec-Mutualism-model, I provided code to simulate data. These data can be fitted using JASP. By rerunning the previous code and adding
 
 ```{r eval = FALSE}
-write.table(file='mutualism.txt',data,ro=F,sep='\t')
+write.table(file='mutualism.txt', data, row.names = FALSE, sep='\t')
 ```
 
 we have a data file ready to analyze in JASP.
@@ -431,7 +432,7 @@ As discussed, cross-sectional networks do not provide information about the dire
 ```{r eval = FALSE}
 M[,1] <- .2 # strong influence of X1 on all others
 M[2,] <- .2 # strong influence on X2 by all others
-M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
+M[diag(nr_var) == 1] <- 0 # set diagonal of m to 0
 ```
 
 If we rerun the code and create a centrality plot in JASP, we will see the risks of centrality analysis in cross-sectional networks. Node 2 is the most central, but we know from the simulation that this is because it is influenced by all the others. The node with the most causal power (node 1) does not turn out to be an important central node. With time-series data, we can estimate the direction of the effects. We do this in R:
@@ -439,13 +440,14 @@ If we rerun the code and create a centrality plot in JASP, we will see the risks
 ```{r eval = FALSE}
 library("graphicalVAR")
 # make time series for one persons with some stochastic effects
-data <- run(odes=mutualism, tmax=1000,table=T,
-        timeplot = (i==1),legend=F, 
-        after="state<-state+rnorm(nr_var,mean=0,sd=1);state[state<0]=.1")
+data <- run(odes = mutualism, tmax = 1000, table = TRUE,
+        timeplot = (i == 1), legend = FALSE, 
+        after = "state<-state+rnorm(nr_var,mean=0,sd=1);
+                state[state<0]=.1")
 data <- data[,-1]
-colnames(data) <- vars <- paste('X',1:nr_var,sep='',col='')
-fit <- graphicalVAR(data[50:1000,], vars = vars, gamma=0, nLambda = 5)
-plot(fit,"PDC")
+colnames(data) <- vars <- paste('X', 1:nr_var, sep = '', col = '')
+fit <- graphicalVAR(data[50:1000,], vars = vars, gamma = 0, nLambda = 5)
+plot(fit, "PDC")
 centralityPlot(fit$PDC)
 ```
 
@@ -458,17 +460,17 @@ The M-matrix can take different forms. The typical multifactor structure can be 
 ```{r eval = FALSE}
 set.seed(1)
 factors <- 3
-M <- matrix(0,nr_var,nr_var)
-low <- .0;high <- .1 # interaction between and within factors
+M <- matrix(0, nr_var, nr_var)
+low <- .0; high <- .1 # interaction between and within factors
 # loop to create M
-cat <- cut(1:nr_var,factors)
+cat <- cut(1:nr_var, factors)
 for(i in 1:nr_var) {
   for (j in 1:nr_var) {
     if (cat[i] == cat[j])
       M[i, j] <- high else M[i, j] <- low
   }
 }
-M[diag(nr_var)==1] <- 0 # set diagonal of m to 0
+M[diag(nr_var) == 1] <- 0 # set diagonal of m to 0
 ```
 
 In JASP, you can perform network and confirmatory factor analysis. In the latter case, select "3 factors" in the first window and select "assume uncorrelated factors" in the model options. The resulting plots should look like @fig-ch6-img17-old-86.
@@ -480,24 +482,24 @@ In JASP, you can perform network and confirmatory factor analysis. In the latter
 With IsingFit we can easily fit cross-sectional data generated with the Ising attitude model. @Fig-ch6-img18-old-87 shows a good fit of the model. The code for this analysis is:
 
 ```{r eval = FALSE}
-library("IsingSampler")
-library("IsingFit")
+library("IsingSampler"); library("IsingFit")
 set.seed(1)
 n <- 8
-W <- matrix(runif(n^2,0,1),n,n); # random positive matrix
-W <- W * matrix(sample(0:1,n^2,prob=c(.8,.2),
-         replace=T),n,n) # delete 80% of nodes
-W <- pmax(W,t(W)) # make symmetric 
+W <- matrix(runif(n^2, 0, 1), n, n); # random positive matrix
+W <- W * matrix(sample(0:1, n^2, prob = c(.8, .2),
+         replace = TRUE), n, n) # delete 80% of nodes
+W <- pmax(W, t(W)) # make symmetric 
 diag(W) <- 0
 ndata <- 5000
-thresholds <- rnorm(n,-1,.5) 
-data <- IsingSampler(ndata, W, thresholds,beta = 1)
-fit <- IsingFit(data,family='binomial', plot=FALSE)
+thresholds <- rnorm(n, -1, .5) 
+data <- IsingSampler(ndata, W, thresholds, beta = 1)
+fit <- IsingFit(data, family = 'binomial', plot = FALSE)
 layout(t(1:3))
-qgraph(W,fade = FALSE);title("Original network",cex.main=2)
-qgraph(fit$weiadj,fade = FALSE);title("Estimated network",cex.main=2)
-plot(thresholds,type='p',bty='n',xlab='node',
-     ylab='Threshold',cex=2,cex.lab=1.5);lines(fit[[2]],lwd=2)
+qgraph(W, fade = FALSE); title("Original network", cex.main = 2)
+qgraph(fit$weiadj, fade = FALSE); title("Estimated network", cex.main = 2)
+plot(thresholds, type = 'p', bty = 'n', xlab = 'node',
+     ylab = 'Threshold', cex = 2, cex.lab = 1.5)
+lines(fit[[2]], lwd = 2)
 ```
 
 ![The true (original) and the estimated Ising model are in good agreement. The thresholds are also well estimated from the data.](media/ch6/fig-ch6-img18-old-87.png){#fig-ch6-img18-old-87 width="100%"}
@@ -523,10 +525,10 @@ An empirical example is provided in @dalege2017. The open-access data ($N = 5728
 We can use Isingfit and add community detection:
 
 ```{r eval = FALSE}
-Obama <- read.table("data/Obama.txt",header=T) # see book data folder
-ObamaFit <- IsingFit(Obama,plot=F)
-ObamaiGraph<- graph_from_adjacency_matrix(abs (ObamaFit$weiadj), 
-        'undirected', weighted = TRUE,     add.colnames = FALSE)
+Obama <- read.table("data/Obama.txt", header = TRUE) # see book data folder
+ObamaFit <- IsingFit(Obama, plot = FALSE)
+ObamaiGraph<- graph_from_adjacency_matrix(abs(ObamaFit$weiadj), 
+        'undirected', weighted = TRUE, add.colnames = FALSE)
 ObamaCom <- cluster_walktrap(ObamaiGraph)
 qgraph(ObamaFit$weiadj, layout = 'spring', 
          cut = .8, groups = communities(ObamaCom), legend = FALSE)
