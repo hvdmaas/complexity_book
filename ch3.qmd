@@ -81,9 +81,9 @@ This function has a degenerate critical (bifurcation) point at $X = 0, a = 0$, b
 ```{r eval = FALSE}
 layout(t(1:3))
 V <- function(X,a) -a * X + X^3 
-curve(V(x,a=-2),-3,3,bty='n')
-curve(V(x,a=0),-3,3,bty='n')
-curve(V(x,a=2),-3,3,bty='n')
+curve(V(x, a = -2), -3, 3, bty = 'n')
+curve(V(x, a = 0), -3, 3, bty = 'n')
+curve(V(x, a = 2), -3, 3, bty = 'n')
 ```
 
 In the left plot, $a < 0$ and there is no fixed point; the ball rolls away to minus infinity. This can be checked by setting the first derivative to zero, which gives $X = \pm \sqrt{{a}/{3}}$. For negative $a$ there is no solution. A positive value of $a$ gives two solutions, as shown on the right for $a = 2$. The positive solution $X = \sqrt{2/3}$ is a stable fixed point because the second derivative in this point is positive. The negative solution $X = - \sqrt{2/3}$ is an unstable fixed point because the second derivative in this point is negative.
@@ -275,12 +275,12 @@ Many methods for change point analysis have been developed and compared in @burg
 The code for this figure is:
 
 ```{r eval = FALSE}
-layout(t(1)); par(mar=c(4,4,1,1))
-x <- read.table('data/PNAS_patient_data.txt',header=T)
+layout(t(1)); par(mar = c(4,4,1,1))
+x <- read.table('data/PNAS_patient_data.txt', header = TRUE)
 library(ecp) # if error: install.packages('ecp')
-e1 <- e.divisive(matrix(x$dep,,1),sig=.01,min.size=10)
-plot(x$week,x$dep,type='b',pch=(e1$cluster-1)*16+1,xlab='Week',
-     ylab='SLC-90',bty='n',main='Jump to depression')
+e1 <- e.divisive(matrix(x$dep, , 1), sig = .01, min.size = 10)
+plot(x$week, x$dep, type = 'b', pch = (e1$cluster-1) * 16 + 1, xlab = 'Week',
+     ylab = 'SLC-90', bty = 'n', main = 'Jump to depression')
 ```
 
 #### Multimodality {#sec-Multimodality}
@@ -297,7 +297,7 @@ The code is:
 x <- unlist(read.table('data/conservation_anticipation_item3.txt'))
 library(mixtools) # if error: install.packages('mixtools')
 result <- normalmixEM(x)
-plot(result,whichplot=2,breaks=30)
+plot(result, whichplot = 2, breaks = 30)
 ```
 
 There is a whole field in statistics focused on multimodality, mixtures, and clustering. There are some blogs that present overviews of the relevant R packages [@arnaudMixtureModellingScratch2021]. Several detailed examples from psychology, using hidden Markov models, are presented in @visserMixtureHiddenMarkov2022.
@@ -389,7 +389,7 @@ X2 <- runif(1000) # independent variable 2
 # to be estimated parameters:
 w0 <- 2; w1 <- 4; a0 <- -2; a1 <- 3; b0 <- -2; b1 <- 4 
 # sample Y1 according to cusp using rcusp and the parameter values:
-Y1 <- -w0/w1 + (1/w1) * Vectorize(rcusp)(1, a0+a1*X1, b0+b1*X2) 
+Y1 <- -w0/w1 + (1/w1) * Vectorize(rcusp)(1, a0 + a1 * X1, b0 + b1 * X2) 
 data <- data.frame(X1, X2, Y1) # collect ‘measured’ variables in data
 ```
 
@@ -434,11 +434,11 @@ The next simulation demonstrates that we can detect hysteresis using this approa
 ```{r eval = FALSE}
 set.seed(10)
 n <- 500
-X1 <- seq(-1,1,le=n) # independent variable 1
+X1 <- seq(-1, 1, le = n) # independent variable 1
 a0 <- 0; a1 <- 2; b0 <- 2 # to be estimated parameters
-b0s <- seq(-1,2,by=.25)
+b0s <- seq(-1, 2, by = .25)
 i <- 0
-dat <- matrix(0,length(b0s),7)
+dat <- matrix(0, length(b0s), 7)
 for (b0 in b0s){
   i <- i + 1
   Y1 <- Vectorize(rcusp)(1, a1 * X1, b0)
@@ -446,17 +446,17 @@ for (b0 in b0s){
   fit <- cusp(y ~ Y1, alpha ~ X1, beta ~ 1, data)
   sf <- summary(fit)
   dat[i, ] <- c(b0, sf$r2lin.r.squared[1], sf$r2cusp.r.squared[1],
-                sf$r2lin.bic[1],sf$r2cusp.bic[1],
+                sf$r2lin.bic[1], sf$r2cusp.bic[1],
                 sf$r2lin.aic[1], sf$r2cusp.aic[1])
 }
-par(mar=c(4,5,1,1))
-matplot(dat[,1],dat[,4:5],ylab='Bic',xlab='b0',bty='n',type='b',
-        pch=1:2,cex.lab=1.5)
-legend('right',legend=c('linear','cusp'),lty=1:2,pch=1:2,
-       col=1:2,cex=1.5)
-abline(v=0,lty=3)
-text(-.5,800, 'no hysteresis',cex=1.5)
-text(.5,800, 'hysteresis',cex=1.5)
+par(mar = c(4,5,1,1))
+matplot(dat[,1], dat[,4:5], ylab = 'Bic', xlab = 'b0', bty = 'n', type = 'b',
+        pch = 1:2, cex.lab = 1.5)
+legend('right', legend = c('linear','cusp'), lty = 1:2, pch = 1:2,
+       col = 1:2, cex = 1.5)
+abline(v = 0, lty = 3)
+text(-.5, 800, 'no hysteresis', cex = 1.5)
+text(.5, 800, 'hysteresis', cex = 1.5)
 ```
 
 ![At the back of the cusp (low $b_0$), the cusp is approximately linear, the BIC favors this simpler model (dotted line) over the cusp mode (solid line).](media/ch3/fig-ch3-img23-old-35.png){#fig-ch3-img23-old-35 width="80%"}
@@ -467,7 +467,7 @@ In @grasman2009, we present several examples with real data. As another example,
 
 ```{r eval = FALSE}
 x <- read.table('data/stoufer.txt')
-colnames(x) <- c('IntensityofFeeling','Attitude')
+colnames(x) <- c('IntensityofFeeling', 'Attitude')
 fit <- cusp(y ~ Attitude, alpha ~ IntensityofFeeling, 
             beta ~ IntensityofFeeling, x)
 summary(fit)
@@ -480,16 +480,17 @@ Inspection of the parameter estimates shows that, as expected, intensity of feel
 Another example is the conservation dataset of @bentlerEvidenceRegardingStages1970, which contains the scores on a 12-item test from a conservation test of 560 children from eight different age groups (@fig-ch3-img25-old-37). These data are expected to be bimodal and to move along the normal axis [@vandermaas1992].
 
 ```{r eval = FALSE}
-x <- read.table('data/bentler.txt',header=T)
+x <- read.table('data/bentler.txt', header = TRUE)
 layout(t(1:8))
 age <- c('age 4 to 4.5','age 4.5 to 5','age 5 to 5.5','age 5.5 to 6',
          'age 6 to 6.5','age 6.5 to 7','age 7 to 7.5','age 7.5 to 8')
 for(i in 1:8){
-  if(i==1) {par(mar=c(4,3,2,1));names=0:12} else 
-    {names='';par(mar=c(4,1,2,1))}
-  barplot(table(factor(x[x[,1]==i,2],levels=0:12)),horiz=T,axes=F,
-          main=age[i],xlab='',
-          names=names,cex.main=1.5,cex.names=1.5)
+  if(i == 1) {par(mar = c(4,3,2,1)); names = 0:12} else 
+    {names = ''; par(mar = c(4,1,2,1))}
+  barplot(table(factor(x[x[,1] == i,2], levels = 0:12)), 
+          horiz = TRUE, axes = FALSE,
+          main = age[i], xlab = '',
+          names = names, cex.main = 1.5, cex.names = 1.5)
 }
 fit <- cusp(y ~ score, alpha ~ age_range, beta ~ age_range, x)
 summary(fit)
@@ -542,7 +543,7 @@ However, there is room for improvement. Phenomenological models have limited exp
 
 ## Exercises {#sec-Exercises-ch3}
 
-1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can can be checked by setting the first derivative to 0. Show this. (\*)
+1)  The equilibria of the fold are $X = \pm \sqrt{\frac{a}{3}}$. This can be checked by setting the first derivative to 0. Show this. (\*)
 
 2)  In Zeeman's dog aggression model, fear and rage are "rotated" control variables. How can we translate this to a model with unrotated axes? Provide the equations that specify the normal and splitting axis as function of fear and rage. (\*)
 
@@ -558,10 +559,10 @@ However, there is room for improvement. Phenomenological models have limited exp
 
     ```{r eval = FALSE}
     n <- 500
-    z <- Vectorize(rcusp)(1, .7*rnorm(n), 2+2*rnorm(n)) # sample z 
+    z <- Vectorize(rcusp)(1, .7 * rnorm(n), 2 + 2 * rnorm(n)) # sample z 
     x <- rnorm(n) 
     y <- rnorm(n) 
-    data <- data.frame(z,x,y) # collect variables in data
+    data <- data.frame(z, x, y) # collect variables in data
     ```
 
 8)  Build a Zeeman machine, collect data, and fit the cusp [see Example III of @grasman2009]. What is your best fitting model? Provide a plot of the data in the bifurcation set and a picture of your Zeeman machine. (\*\*)
