@@ -36,31 +36,30 @@ The R code to simulate this process is:
 
 ```{r eval = FALSE}
 resample <- function(x, ...) x[sample.int(length(x), ...)]
-n <- 1000
+n <- 1000; iter <- 100000
 x <- vector("list", n)
-iter <- 100000
 n_possible_words <- 1000000 # should be very high
 total_words <- total_unique_words <- numeric(iter)
 for(i in 1:iter){
-  j <- sample(1:n,1) # speaker
-  k <- sample((1:n)[-i],1) # hearer
+  j <- sample(1:n, 1) # speaker
+  k <- sample((1:n)[-i], 1) # hearer
   # if speaker has no words, make one up (actually just number)
-  if(length(x[[j]])==0) x[[j]][1] <- sample(1:n_possible_words,1) else 
+  if(length(x[[j]]) == 0) x[[j]][1] <- sample(1:n_possible_words, 1) else 
   {
-    spoken_word <- resample(x[[j]],1) # choose a word (actually just number)
+    spoken_word <- resample(x[[j]], 1) # choose a word (actually just number)
     if(any(x[[k]]%in%spoken_word)) # hearer knows the word
     {
       x[[j]] <- spoken_word # erase list except spoken_word
       x[[k]] <- spoken_word # erase list except spoken_word
     } else # hearer does not know the word
-      x[[k]] <- c(x[[k]],spoken_word)  # add word to list
+      x[[k]] <- c(x[[k]], spoken_word)  # add word to list
   } 
   total_words[i] <- length(unlist(x))
   total_unique_words[i] <- length(unique(unlist(x)))
 }
 layout(1:2)
-plot(total_words,type='l',xlab='time',bty='n')
-plot(total_unique_words,type='l',xlab='time',bty='n')
+plot(total_words, type = 'l', xlab = 'time', bty = 'n')
+plot(total_unique_words, type = 'l', xlab = 'time', bty = 'n')
 unique(unlist(x)) # winning word
 ```
 
@@ -88,26 +87,25 @@ The following R code of this model generates the first plot in @fig-ch7-img4-old
 
 ```{r eval = FALSE}
 resample <- function(x, ...) x[sample.int(length(x), ...)]
-n <- 100
-iter <- 50000
+n <- 100; iter <- 50000
 F <- 4 # features
 Q <- 4 # nominal levels per feature
 uniques <- numeric(iter)
-x <- matrix(sample(1:Q,replace=T,n*F),n,F)
+x <- matrix(sample(1:Q, replace = TRUE, n * F), n, F)
 for(i in 1:iter){
-  j <- sample(1:n,1)       # agent 1
-  k <- sample((1:n)[-j],1) # agent 2
-  w <- sum(x[j,]==x[k,])/F # agreement
-  if(w<1 & runif(1)<w) {
+  j <- sample(1:n, 1)       # agent 1
+  k <- sample((1:n)[-j], 1) # agent 2
+  w <- sum(x[j,] == x[k,])/F # agreement
+  if(w < 1 & runif(1) < w) {
     # which (unequal) feature to update:
-    f <- resample(which(x[j,]!=x[k,]),1) 
+    f <- resample(which(x[j,] != x[k,]), 1) 
     x[j,f] <- x[k,f] # update
     }
   uniques[i] <- nrow(unique(x))
 }
-plot(uniques[1:i],type='l',lwd=2,xlab='time',
-     ylab='# unique cultures', bty='n',ylim=c(0,80),
-     main=paste('Axelrod model with F = ',F, ', Q = ', Q))
+plot(uniques[1:i], type = 'l', lwd = 2, xlab = 'time',
+     ylab = '# unique cultures', bty = 'n', ylim = c(0, 80),
+     main = paste0('Axelrod model with F = ', F, ', Q = ', Q))
 ```
 
 ![Two runs of Axelrod's model. For four features with four possible values, only one culture remains. For the second case ($F = 2, Q = 10$), multiple unique cultures, different in all features, emerge.](media/ch7/fig-ch7-img4-old-92.png){#fig-ch7-img4-old-92 width="80%"}
@@ -174,19 +172,19 @@ Another line of research, with its own history, starts from the assumption that 
 
 ```{r eval = FALSE}
 FJ <- function(t, state, parms){
-  with(as.list(c(state,parms)),{
+  with(as.list(c(state, parms)),{
     X <- state[1:n]
-    M <- M/apply(M,1,sum) # weights sum to 1
-    dX <- (1-g) * M %*% X  + g * X - X
+    M <- M / apply(M, 1, sum) # weights sum to 1
+    dX <- (1 - g) * M %*% X  + g * X - X
     return(list(dX))
   })
 }
 n <- 100
-M <- matrix(runif(n^2,0,1),n,n)
+M <- matrix(runif(n^2, 0, 1), n, n)
 g <- .95 # if g  = 0 => DeGroot model
-x0 <- runif(n,0,1)
-s <- x0;p  <- c() 
-run(odes=FJ,method='euler',tmax=100)
+x0 <- runif(n, 0, 1)
+s <- x0; p <- c() 
+run(odes = FJ, method = 'euler', tmax = 100)
 ```
 
 ![Convergence of opinion in the Friedkin—Johnson model in a connected network of agents.](media/ch7/fig-ch7-img7-old-95.png){#fig-ch7-img7-old-95 width="100%"}
@@ -215,12 +213,12 @@ for (bound in c(.1, .2, .3, .5)){
   x <- runif(n, 0, 1)
   dat <- matrix(0, iter, n)
   for (i in 1:iter){
-    y <- sample(x, n, replace = T) # find an partner for every agent
+    y <- sample(x, n, replace = TRUE) # find an partner for every agent
     x <- ifelse(abs(x - y) < bound, x + mu * (y - x), x)
     dat[i, ] <- x
   }
-  matplot(dat,type='l',col=1,lty=1,bty='n',xlab='',
-          ylab='opinion',main=paste('bound = ',bound))
+  matplot(dat, type = 'l', col = 1, lty = 1, bty = 'n', xlab = '',
+          ylab = 'opinion', main = paste('bound = ',bound))
 }
 ```
 
@@ -231,7 +229,7 @@ With this code you can explore many scenarios and variants. One interesting opti
 Another well-known model is the Hegselmann—Krause model [@rainerOpinionDynamicsBounded2002]. This model is very similar to the Deffuant model, but instead of communicating with one other agent, they communicate with all connected agents, but only if the difference in opinion with these agents is sufficiently small. Thus, agents average the opinion of all connected agents for which the difference in opinion is less than the bound. This model is an extension of the DeGroot model and can be simulated by adding two lines to the Friedkin—Johnson code,
 
 ``` r
-accepted <- abs(outer(X,X,'-')) < bound # acceptable neighbors
+accepted <- abs(outer(X, X, '-')) < bound # acceptable neighbors
 M <- accepted * M
 ```
 
