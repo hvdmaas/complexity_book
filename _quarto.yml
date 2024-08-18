@@ -15,7 +15,6 @@ book:
     #background: light
   chapters:
     - index.qmd
-    #- call-outs-TEST.qmd
     - ch1.qmd
     - ch2.qmd
     - ch3.qmd
@@ -55,6 +54,7 @@ format:
     #  fig-prefix: figure
     #  sec-prefix: section
     #  eq-prefix: equation
+    cover-image: sfi_cover.png #added 18/8/24
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
