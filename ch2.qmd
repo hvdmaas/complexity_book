@@ -81,7 +81,7 @@ If we start exactly at 0, $X$ stays at 0. So, 0 is an equilibrium too, but a spe
 
 ![Illustration of stable and unstable fixed points. For many initial values, $X = .5$ is an attractor. $X = 0$ is an unstable fixed point. Only if we start exactly at 0 do we stay there.](media/ch2/fig-ch2-img3.jpg){#fig-ch2-img3 width="80%"}
 
-This concept of equilibrium, stable or unstable, is crucial for later chapters. The essence of the next chapter is to change a control parameter, here $r$, and study how the pattern of equilibria (the equilibrium landscape) changes. You can easily do this yourself by rerunning the simulation with $r$-values just below and above 1. For $r < 1$, there is only stable attractor (0).
+This concept of equilibrium, stable or unstable, is crucial for later chapters. The essence of the next chapter is to change a control parameter, here $r$, and study how the pattern of equilibria (the equilibrium landscape) changes. You can easily do this yourself by rerunning the simulation with $r$-values just below and above 1. For $r < 1$, there is only one stable attractor (0).
 
 Simulating this is not really necessary. One has to realize that a fixed point ($X^{*}$) is found when $X_{t + 1} = X_{t} = X^{*}$. See for yourself that:
 
