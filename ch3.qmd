@@ -219,7 +219,7 @@ The first part is the logistic growth equation. $N$ will grow to $K$ at a rate $
 The analytical approach to this model is to reparametrize the model so that it takes the form of a cusp. Such reparameterizations are not so easy to do yourself. The idea is to create a smaller set of new variables that are functions of the model parameters. For this model a convenient reparameterization is
 
 $$
-r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
+r = \frac{A\ r_{b}}{B}\text{ and}\ q = \frac{K}{A}.
 $$ {#eq-ch3-8-old-12}
 
 Using these two "constructed" control variables, we can depict the bifurcation lines of the cusp as in @fig-ch3-img16-old-28.

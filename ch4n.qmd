@@ -117,12 +117,11 @@ and using `method='euler'` in the `run()` function, you can simulate the discret
 Perhaps the best-known population models are the Lotka—Volterra equations [@murrayMathematicalBiology2002]. [The Lotka—Volterra models describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.]{.aside} These consist of coupled differential equations, one for the density of the prey and one for the density of the predator:
 
 $$
-\frac{dN}{dt} = aN - bPN,
+\begin{gathered}
+\frac{dN}{dt} = aN - bPN, \\
+\frac{dP}{dt} = cPN - dP, 
+\end{gathered}
 $$ {#eq-ch4n-3-old-23}
-
-$$
-\frac{dP}{dt} = cPN - dP,
-$$ {#eq-ch4n-4-old-24}
 
 where $N$ and $P$ refer to the sizes of the prey and predator populations, $a$ and $c$ determine the growth rates, and $b$ and $d$ control the mortality rates. Note that the mortality rate of prey depends on both $N$ and $P$, while the mortality rate of predators depends only on $P$. Similarly, the growth terms are also asymmetric, predators increase as a function of both $N$ and $P$, as they eat prey. We will follow the simple example provided by Wikipedia (on Lotka—Volterra equations).
 
@@ -582,10 +581,11 @@ In recent years, we have been working on a model of panic disorder [@robinaughAd
 
 We will further assume that the effect of perceived threat on changes in arousal is essentially linear while the causal effect of arousal on perceived threat is nonlinear (S-shaped). For the argument, see @robinaughAdvancingNetworkTheory2019. It could be argued that both are nonlinear, but this does not fundamentally change the qualitative behavior of the model. The central part of the model consists of two coupled differential equations:
 
-$$\frac{dA}{dt} = - A + bT,$$
-
 $$
+\begin{gathered}
+\frac{dA}{dt} = - A + bT, \\
 \frac{dT}{dt} = \frac{1}{1 + e^{- \alpha(A + \beta)}} - T.
+\end{gathered}
 $$ {#eq-ch4n-14-old-34}
 
 This looks a bit like the Romeo and Juliet model, but now the effect of arousal $A$ on the change in perceived threat $T$ is a logistic function that starts at 0 and grows to 1. The location is determined by $\beta$, and the acceleration or steepness is determined by $\alpha$.
@@ -779,11 +779,12 @@ If we simplify this analysis a bit to stable fixed points only, we see three reg
 
 @abrahamComputationalUnfoldingDoublecusp1991 generalize the model to:
 
-$$\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3},$$
-
 $$
-\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3},
-$$ {#eq-ch4n-19-old-39}
+\begin{gathered}
+\frac{dX}{dt} = {a_{0} + a_{1}Y + (b_{0} + b_{1}Y)X - X}^{3}, \\
+\frac{dY}{dt} = {c_{0} + c_{1}X + \left( d_{0} + d_{1}X \right)Y - Y}^{3}. 
+\end{gathered}
+$$ {#eq-ch4n-18-old-39}
 
 such that now both the splitting and normal variable of the cusp are linear functions of the behavioral state of the other cusp. This can be further generalized to a system of $N$ cusps by:
 

@@ -107,14 +107,16 @@ In @vandermaasDynamicalModelGeneral2006, we proposed an alternative model that i
 
 To model this, we used the mutualistic Lotka—Volterra model:
 
-$$\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
+$$
+\begin{gathered}
+\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
 j = 1 \\
 j \neq i
-\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W,$$
-
-$$
+\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W, \\
 K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i},
+\end{gathered}
 $$ {#eq-ch6-1-old-42}
+
 
 where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
 
@@ -172,10 +174,11 @@ In basic resource competition models in population biology [@tilmanPhytoplankton
 
 The growth of the resource $R_{j}$ consists of two parts. The first part models the growth by a concave function, which is determined by $r$ (i.e., the steepness of the concave function) up to $r_{\max}$. The second part is the depletion by consumption of resources by $X_{i}$ at rates $b_{ij}$. Two differential equations specify these dynamics [see the appendix of @ronGeneralModellingFramework2023 for the Grind code to study this model numerically]:
 
-$$\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}),$$
-
 $$
+\begin{gathered}
+\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}), \\
 \frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}.
+\end{gathered}
 $$ {#eq-ch6-2-old-43}
 
 What has been shown for this and related models is that you will not get more species surviving than there are resources. Another famous quote from Robert May is "There is no comfortable theorem assuring that increased diversity and complexity beget enhanced community stability; rather, as a mathematical generality, the opposite is true. The task, then, is to elucidate the devious strategies which make for stability in enduring natural systems. There will be no one simple answer to these questions" (p.174, 2001 edition). Thus, given a limited number of resources (time, money, educational support), we should expect early specialization in only a few skills.
@@ -185,9 +188,10 @@ Biologists have proposed a number of mechanisms to deal with this problem [@meen
 We show that the combination of these mechanisms allows a balanced growth of several correlated abilities. Specially chosen parameter settings lead to different patterns of abnormal development (such as hyperspecialization and delayed development). The final model is:
 
 $$
-\frac{dX_{i}}{dt} = X_{i} (\sum_{j=1}^{V} \mu_{ij} R_j \overbrace{(1- \frac{X_i}{K_i})}^{\text{Logistic growth}} -  d_i) + \overbrace{ \sum_{l=1}^{W} M_{il} X_{i} X_{l} / K_{i} }^{\text{Mutualism}}
-$$ $$
-\frac{dR_{j}}{dt} = r(r_{max}-R_j)- R_j \sum_{i=1}^{W} b_{ij} \begin{cases} \frac{dX_{i}}{dt}, & \text{if growth-dependent depletion} \\  X_{i}, & \text{otherwise} \end{cases}
+\begin{gathered}
+\frac{dX_{i}}{dt} = X_{i} (\sum_{j=1}^{V} \mu_{ij} R_j \overbrace{(1- \frac{X_i}{K_i})}^{\text{Logistic growth}} -  d_i) + \overbrace{ \sum_{l=1}^{W} M_{il} X_{i} X_{l} / K_{i} }^{\text{Mutualism}}, \\
+\frac{dR_{j}}{dt} = r(r_{max}-R_j)- R_j \sum_{i=1}^{W} b_{ij} \begin{cases} \frac{dX_{i}}{dt}, & \text{if growth-dependent depletion} \\  X_{i}, & \text{otherwise} \end{cases} 
+\end{gathered}
 $$ {#eq-ch6-3-old-44}
 
 #### The wiring of intelligence {#sec-The-wiring-of-intelligence}

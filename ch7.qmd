@@ -69,9 +69,13 @@ Which results in @fig-ch7-img3-old-91.
 
 After a phase in which agents use lots of different words, a language consisting of just a single word emerges abruptly. A simplification would be the case that agents start with either word A, word B, or both words A and B. So no new words are invented. For this case we can write the time evolution in three differential equations:
 
-$${\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}},$$ $${\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}},$$
-
-$$\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}.$$ {#eq-ch7-1-old-50}
+$$
+\begin{gathered}
+{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}, \\
+{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}, \\
+\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}.
+\end{gathered}
+$$ {#eq-ch7-1-old-50}
 
 The first equation can be understood as follows: Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is ${- X}_{B}X_{A}$. AB agents talking to AB agents become A or B agents, depending on the speaker's random choice of A or B (${X}_{AB}X_{AB}/2$). If speaker A talks to an AB agent, the latter becomes an A agent ($X_{A}X_{AB})$. These three terms together define the change in $X_{A}.$ The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: (1) If the initial proportion of A is greater than B, A wins; (2) if the initial proportion of B is greater than A, B wins; and (3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. [Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.]{.aside}
 
