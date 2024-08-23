@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -439,8 +439,13 @@ Figure&nbsp;7.3: The order parameter, the total number of unique words, undergoe
 </figure>
 </div>
 <p>After a phase in which agents use lots of different words, a language consisting of just a single word emerges abruptly. A simplification would be the case that agents start with either word A, word B, or both words A and B. So no new words are invented. For this case we can write the time evolution in three differential equations:</p>
-<p><span class="math display">\[{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}},\]</span> <span class="math display">\[{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}},\]</span></p>
-<p><span id="eq-ch7-1-old-50"><span class="math display">\[\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}. \tag{7.1}\]</span></span></p>
+<p><span id="eq-ch7-1-old-50"><span class="math display">\[
+\begin{gathered}
+{\frac{{dX}_{A}}{dt} = {- X}_{B}X_{A} + {\frac{1}{2}}X_{AB}X_{AB} + X_{A}X_{AB}}, \\
+{\frac{{dX}_{B}}{dt} = {- X}_{A}X_{B} + {\frac{1}{2}}X_{AB}X_{AB} + X_{B}X_{AB}}, \\
+\frac{{dX}_{AB}}{dt} = {2X}_{A}X_{B} - X_{AB}X_{AB} - (X_{A}+ X_{B})X_{AB}.
+\end{gathered}
+\tag{7.1}\]</span></span></p>
 <div class="page-columns page-full"><p>The first equation can be understood as follows: Speakers B talking to listeners A turn listeners A into AB agents. The loss in A agents is <span class="math inline">\({- X}_{B}X_{A}\)</span>. AB agents talking to AB agents become A or B agents, depending on the speaker’s random choice of A or B (<span class="math inline">\({X}_{AB}X_{AB}/2\)</span>). If speaker A talks to an AB agent, the latter becomes an A agent (<span class="math inline">\(X_{A}X_{AB})\)</span>. These three terms together define the change in <span class="math inline">\(X_{A}.\)</span> The other equation follow the same logic. It is easy to implement this in Grind. There are three possible outcomes: (1) If the initial proportion of A is greater than B, A wins; (2) if the initial proportion of B is greater than A, B wins; and (3) if these proportions are exactly equal, all three options A, B, and AB coexist, but this equilibrium is unstable. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Although extremely simplified, the naming game illustrates that coexistence of languages is difficult in a fully connected network.</span></div></div>
 </section>
 <section id="sec-Cultural-dynamics-The-Axelrod-model" class="level3 page-columns page-full" data-number="7.2.3">
@@ -574,8 +579,12 @@ Figure&nbsp;7.7: Convergence of opinion in the Friedkin—Johnson model in a con
 <h4 data-number="7.3.2.2" class="anchored" data-anchor-id="sec-Bounded-confidence"><span class="header-section-number">7.3.2.2</span> Bounded confidence</h4>
 <p>The bounded confidence mechanism has been extensively studied as the most effective way to generate divergence of opinions in continuous opinion models. It assumes that individuals have a limited willingness to accept and consider opinions that differ from their own and will only update their opinions if they are within a certain range or “bound” of similarity.</p>
 <p>A simple but very interesting model is the Deffuant model <span class="citation" data-cites="deffuantMixingBeliefsInteracting2000">(<a href="references.html#ref-deffuantMixingBeliefsInteracting2000" role="doc-biblioref">Deffuant et al. 2000</a>)</span>. The initial opinions of <em>n</em> agents are randomly set to values between 0 and 1. At each step, two agents <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> meet. If <span class="math inline">\(\left\lceil X_{i}(t) - X_{j,}(t) \right\rceil &gt; \epsilon\)</span> nothing happens because the difference in opinion exceeds the bound <span class="math inline">\(\epsilon\)</span>. Otherwise, they exchange opinions according to:</p>
-<p><span class="math display">\[X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t)),\]</span></p>
-<p><span id="eq-ch7-2-old-51"><span class="math display">\[X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right). \tag{7.4}\]</span></span></p>
+<p><span id="eq-ch7-2-old-51"><span class="math display">\[
+\begin{gathered}
+X_{i}(t + 1) = X_{i}(t) + \mu(X_{j}(t) - X_{i}(t)),\\
+X_{j}(t + 1) = X_{j}(t) + \mu\left( X_{i}(t) - X_{j}(t) \right).
+\end{gathered}
+\tag{7.4}\]</span></span></p>
 <p>So, if <span class="math inline">\(\mu = .5\)</span>, they find each other in the middle. If <span class="math inline">\(\mu = 1\)</span>, they take each other’s position, as in the voter model. The value of <span class="math inline">\(\mu\)</span> does not make much difference, but the model converges fastest with <span class="math inline">\(\mu = .5\)</span>. However, the choice of the bound <span class="math inline">\(\epsilon\)</span> makes a big difference. For <span class="math inline">\(\epsilon = 0,\)</span> all agents stick to their positions; for <span class="math inline">\(\epsilon &gt; .5\)</span>, they all converge to <span class="math inline">\(X = .5\)</span>. For intermediate values, different forms of clustering occur (<a href="#fig-ch7-img8-old-96" class="quarto-xref">figure&nbsp;<span>7.8</span></a>). It has been shown that the topology of the network does not make much difference <span class="citation" data-cites="fortunatoUniversalityThresholdComplete2004">(<a href="references.html#ref-fortunatoUniversalityThresholdComplete2004" role="doc-biblioref">Fortunato 2004</a>)</span>. A drawback of this model is that it converges slowly. A fast but not entirely accurate code to simulate this model is: <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
@@ -1059,24 +1068,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/example\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1111,11 +1102,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

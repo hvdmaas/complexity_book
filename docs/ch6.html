@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -490,12 +490,14 @@ Figure&nbsp;6.6: The reflective and formative interpretations of the factor mode
 <h4 data-number="6.3.1.2" class="anchored" data-anchor-id="sec-Mutualism-model"><span class="header-section-number">6.3.1.2</span> Mutualism model</h4>
 <div class="page-columns page-full"><p>In <span class="citation" data-cites="vandermaasDynamicalModelGeneral2006">van der Maas et al. (<a href="references.html#ref-vandermaasDynamicalModelGeneral2006" role="doc-biblioref">2006</a>)</span>, we proposed an alternative model that is consistent with the formative interpretation of the factor model. The idea is that our cognitive system consists of many functions that develop over time in an autocatalytic process based on experience and training but also due to weak positive reciprocal interactions between developing cognitive functions (<a href="#fig-ch6-img6-old-75" class="quarto-xref">figure&nbsp;<span>6.7</span></a>).  Examples of such mutualistic interactions are those between short-term memory and cognitive strategies, language and cognition (syntactic and semantic bootstrapping), cognition and metacognition, action and perception, and performance and motivation <span class="citation" data-cites="vandermaasNetworkModelsCognitive2017">(<a href="references.html#ref-vandermaasNetworkModelsCognitive2017" role="doc-biblioref">van der Maas et al. 2017</a>)</span>. For example, babies learn to grasp objects by repeatedly reaching out, coordinating their hand and finger movements, and adjusting their grip. Through these actions, they gather sensory feedback, refining their perception and improving their grasping skills in a reciprocal learning process <span class="citation" data-cites="needhamHowBabiesUse2023">(<a href="references.html#ref-needhamHowBabiesUse2023" role="doc-biblioref">Needham and Nelson 2023</a>)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">These mutualistic interactions can create correlations that are typically associated with factor models.</span></div></div>
 <p>To model this, we used the mutualistic Lotka—Volterra model:</p>
-<p><span class="math display">\[\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
+<p><span id="eq-ch6-1-old-42"><span class="math display">\[
+\begin{gathered}
+\frac{dX_{i}}{dt} = a_{i}X_{i}\left( 1 - \frac{X_{i}}{K_{i}} \right) + a_{i}\sum_{\begin{array}{r}
 j = 1 \\
 j \neq i
-\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W,\]</span></p>
-<p><span id="eq-ch6-1-old-42"><span class="math display">\[
+\end{array}}^{W}\frac{M_{ij}X_{i}X_{j}}{K_{i}}\ \ \ for\ i = 1..W, \\
 K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i},
+\end{gathered}
 \tag{6.1}\]</span></span></p>
 <p>where <span class="math inline">\(X_{i} \ldots X_{w}\)</span> denote the cognitive processes, <span class="math inline">\(\mathbf{a}\)</span> the growth rates, <span class="math inline">\(\mathbf{K}\)</span> the limited resources for each <span class="math inline">\(X_{i}\)</span> (a weighted sum of a genetic (<span class="math inline">\(\mathbf{G}\)</span>) and an environmental (<span class="math inline">\(\mathbf{E}\)</span>) part), and <span class="math inline">\(\mathbf{M}\)</span> the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age <span class="citation" data-cites="vandermaasDynamicalModelGeneral2006">(see <a href="references.html#ref-vandermaasDynamicalModelGeneral2006" role="doc-biblioref">van der Maas et al. 2006</a>)</span>. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in <span class="citation" data-cites="vandermaasNetworkModelsCognitive2017">van der Maas et al. (<a href="references.html#ref-vandermaasNetworkModelsCognitive2017" role="doc-biblioref">2017</a>)</span>. <span class="citation" data-cites="knyspelComparingFactorNetwork2024">Knyspel and Plomin (<a href="references.html#ref-knyspelComparingFactorNetwork2024" role="doc-biblioref">2024</a>)</span> compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.</p>
 <div id="fig-ch6-img6-old-75" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -561,17 +563,20 @@ Figure&nbsp;6.8: A typical run of the mutualism model for one subject and the di
 <div class="page-columns page-full"><p>In <span class="citation" data-cites="vandermaasNetworkModelsCognitive2017">van der Maas et al. (<a href="references.html#ref-vandermaasNetworkModelsCognitive2017" role="doc-biblioref">2017</a>)</span>, this model is applied in several ways, for example, by incorporating Cattell’s idea of investment of fluid skills in crystalized abilities (discussed in <a href="ch4n.html#sec-Closing-Remarks" class="quarto-xref"><span>Section 4.4</span></a>). In a recent paper, <span class="citation" data-cites="ronGeneralModellingFramework2023">de Ron et al. (<a href="references.html#ref-ronGeneralModellingFramework2023" role="doc-biblioref">2023</a>)</span> extend the mutualism model with resource competition to explain different patterns of abnormal development.  In the process of modeling, we came to an interesting insight. Assuming that there is competition for scarce resources (time, money, educational support), hyperspecialization might be the default outcome, and thus it is “normal” development that needs to be explained. The reason is an insight from mathematical biology: ecosystem diversity is often unstable.  An example we have already seen is hypercycle instability due to parasites (<a href="ch5n.html#sec-Biology" class="quarto-xref"><span>Section 5.1.3</span></a>). This is normally studied in resource competition models.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">One pattern of abnormal development is hyperspecialization, which is associated with rare variants of autism.</span><span class="margin-aside">Ecosystem diversity is often unstable.</span></div></div>
 <p>In basic resource competition models in population biology <span class="citation" data-cites="tilmanPhytoplanktonCommunityEcology1982">(<a href="references.html#ref-tilmanPhytoplanktonCommunityEcology1982" role="doc-biblioref">Tilman, Kilham, and Kilham 1982</a>)</span>, the growth of a species (<span class="math inline">\(1...W\)</span>) is determined by its current size <span class="math inline">\(X_{i}\)</span> and the sum over resources <span class="math inline">\(R_{j} (1...V)\)</span>. The parameters <span class="math inline">\(\mu_{ij}\)</span> determine how much species <span class="math inline">\(i\)</span> benefits from the resource <span class="math inline">\(j\)</span>. If no resources are available, <span class="math inline">\(X_{i}\)</span> dies out with death rate <span class="math inline">\(d_{i}\)</span>.</p>
 <p>The growth of the resource <span class="math inline">\(R_{j}\)</span> consists of two parts. The first part models the growth by a concave function, which is determined by <span class="math inline">\(r\)</span> (i.e., the steepness of the concave function) up to <span class="math inline">\(r_{\max}\)</span>. The second part is the depletion by consumption of resources by <span class="math inline">\(X_{i}\)</span> at rates <span class="math inline">\(b_{ij}\)</span>. Two differential equations specify these dynamics <span class="citation" data-cites="ronGeneralModellingFramework2023">(see the appendix of <a href="references.html#ref-ronGeneralModellingFramework2023" role="doc-biblioref">de Ron et al. 2023</a> for the Grind code to study this model numerically)</span>:</p>
-<p><span class="math display">\[\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}),\]</span></p>
 <p><span id="eq-ch6-2-old-43"><span class="math display">\[
+\begin{gathered}
+\frac{dX_{i}}{dt} = X_{i}(\sum_{j = 1}^{V}{\mu_{ij}R_{j} - d_{i}}), \\
 \frac{dR_{j}}{dt} = {r\left( r_{\max} - R_{j} \right) - R}_{j}\sum_{i = 1}^{W}{b_{ij}X_{i}}.
+\end{gathered}
 \tag{6.2}\]</span></span></p>
 <p>What has been shown for this and related models is that you will not get more species surviving than there are resources. Another famous quote from Robert May is “There is no comfortable theorem assuring that increased diversity and complexity beget enhanced community stability; rather, as a mathematical generality, the opposite is true. The task, then, is to elucidate the devious strategies which make for stability in enduring natural systems. There will be no one simple answer to these questions” (p.174, 2001 edition). Thus, given a limited number of resources (time, money, educational support), we should expect early specialization in only a few skills.</p>
 <p>Biologists have proposed a number of mechanisms to deal with this problem <span class="citation" data-cites="meenaEmergentStabilityComplex2023">(<a href="references.html#ref-meenaEmergentStabilityComplex2023" role="doc-biblioref">Meena et al. 2023</a>)</span>. In <span class="citation" data-cites="ronGeneralModellingFramework2023">de Ron et al. (<a href="references.html#ref-ronGeneralModellingFramework2023" role="doc-biblioref">2023</a>)</span>, we added three mechanisms: density-dependent growth (see <a href="ch4n.html#sec-The-LotkaVolterra-models" class="quarto-xref"><span>Section 4.1.2</span></a>) of the abilities <span class="math inline">\(X\)</span> with a logistic term; mutualism between abilities as in the mutualism model; and growth-dependent depletion of resources. The idea of the latter is that the growth of abilities costs a lot of resources, but the maintenance much less. Learning arithmetic or chess requires a lot of effort, but once a certain level of mastery is reached, it remains roughly at that level without further training (unfortunately, this is not the case with physical condition).</p>
 <p>We show that the combination of these mechanisms allows a balanced growth of several correlated abilities. Specially chosen parameter settings lead to different patterns of abnormal development (such as hyperspecialization and delayed development). The final model is:</p>
-<p><span class="math display">\[
-\frac{dX_{i}}{dt} = X_{i} (\sum_{j=1}^{V} \mu_{ij} R_j \overbrace{(1- \frac{X_i}{K_i})}^{\text{Logistic growth}} -  d_i) + \overbrace{ \sum_{j=1}^{W} M_{ij} X_{i} X_{j} / K_{i} }^{\text{Mutualism}}
-\]</span> <span id="eq-ch6-3-old-44"><span class="math display">\[
+<p><span id="eq-ch6-3-old-44"><span class="math display">\[
+\begin{gathered}
+\frac{dX_{i}}{dt} = X_{i} (\sum_{j=1}^{V} \mu_{ij} R_j \overbrace{(1- \frac{X_i}{K_i})}^{\text{Logistic growth}} -  d_i) + \overbrace{ \sum_{l=1}^{W} M_{il} X_{i} X_{l} / K_{i} }^{\text{Mutualism}}, \\
 \frac{dR_{j}}{dt} = r(r_{max}-R_j)- R_j \sum_{i=1}^{W} b_{ij} \begin{cases} \frac{dX_{i}}{dt}, &amp; \text{if growth-dependent depletion} \\  X_{i}, &amp; \text{otherwise} \end{cases}
+\end{gathered}
 \tag{6.3}\]</span></span></p>
 </section>
 <section id="sec-The-wiring-of-intelligence" class="level4 page-columns page-full" data-number="6.3.1.4">
@@ -1146,7 +1151,7 @@ Dalege, Jonas, Denny Borsboom, Frenk van Harreveld, and Han L. J. van der Maas. 
 Dalege, Jonas, and Han L. J. van der Maas. 2020. <span>“Accurate by Being Noisy: <span>A</span> Formal Network Model of Implicit Measures of Attitudes.”</span> <em>Social Cognition</em> 38 (Suppl): S26–41. <a href="https://doi.org/10.1521/soco.2020.38.supp.s26">https://doi.org/10.1521/soco.2020.38.supp.s26</a>.
 </div>
 <div id="ref-dattaguptaTricriticalPointQualitative1981" class="csl-entry" role="listitem">
-Dattagupta, S. 1981. <span>“The Tricritical Point - - a Qualitative Review.”</span> <em>Bull Mat Sci</em> 3 (2): 133–39. <a href="https://doi.org/10.1007/BF02908488">https://doi.org/10.1007/BF02908488</a>.
+Dattagupta, S. 1981. <span>“The Tricritical Point - a Qualitative Review.”</span> <em>Bull Mat Sci</em> 3 (2): 133–39. <a href="https://doi.org/10.1007/BF02908488">https://doi.org/10.1007/BF02908488</a>.
 </div>
 <div id="ref-ronGeneralModellingFramework2023" class="csl-entry" role="listitem">
 de Ron, Jill, Marie Deserno, Donald J. Robinaugh, Denny Borsboom, and Han L. J. van der Maas. 2023. <span>“Towards a <span>General Modelling Framework</span> of <span>Resource Competition</span> in <span>Cognitive Development</span>.”</span> <span>OSF Preprints</span>. <a href="https://doi.org/10.31219/osf.io/sh6w7">https://doi.org/10.31219/osf.io/sh6w7</a>.
@@ -1445,24 +1450,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/example\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1497,11 +1484,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

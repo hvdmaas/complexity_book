@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -560,8 +560,8 @@ Figure&nbsp;5.5: The deep learning restricted Boltzmann machine.
 <p>To do a synchronous update, we need to store the updated <code>state</code> in a temporary variable called <code>new-state</code>. Put this line at the top of your code:</p>
 <p><span class="green">patches-own</span> <span class="text">[new-state]</span></p>
 <p>In the <code>go</code> function, we add the life rules.</p>
-<p><span class="blue">ask</span> <span class="purple">patches</span> <span class="text">[</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">&gt;</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">] <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span></span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">&lt;</span> <span class="val">2</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">] <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span></span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">=</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">blue</span> <span class="text">] <br> <span class="text">]</span></span></p>
-<p><span class="blue">ask</span> <span class="purple">patches</span> [ <span class="text"></span><span class="blue">set</span> <span class="purple">pcolor</span> <span class="text">new-state</span> <span class="text">]</span></p>
+<p><span class="blue">ask</span> <span class="purple">patches</span> <span class="text">[</span> <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">&gt;</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">] <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span></span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">&lt;</span> <span class="val">2</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">white</span> <span class="text">] <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">if</span> <span class="text">(</span> <span class="purple">neighbors with</span> <span class="text">[</span></span><span class="purple">pcolor =</span> <span class="val">blue</span> <span class="text">]) <span class="purple">=</span> <span class="val">3</span> <span class="text">)</span> <span class="text">[</span></span><span class="blue">set</span> <span class="text">new-state</span> <span class="val">blue</span> <span class="text">] <br> <span class="text">]</span><br>
+<span class="blue">ask</span> <span class="purple">patches</span> [ <span class="text"></span></span><span class="blue">set</span> <span class="purple">pcolor</span> <span class="text">new-state</span> <span class="text">]</span></p>
 <p>The last line updates the <code>state</code> to the <code>new-state</code>. That is all! We built a Game of Life simulation. Use <code>setting</code> to create a larger world. Take a look at the code of the Game of Life program in the Model Library to see some extensions to this code. In the Help menu, you will find the very useful NetLogo dictionary. Just reading through this dictionary will teach you a lot of useful tricks. NetLogo is similar to R in that you should use the built-in functions as much as possible.</p>
 </section>
 <section id="sec-The-Ising-model" class="level4" data-number="5.2.2.2">
@@ -1215,24 +1215,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/example\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1267,11 +1249,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

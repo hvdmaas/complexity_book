@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -625,7 +625,7 @@ Figure&nbsp;3.15: Perturbed pitchfork bifurcation (<span class="math inline">\(a
 <p>The first part is the logistic growth equation. <span class="math inline">\(N\)</span> will grow to <span class="math inline">\(K\)</span> at a rate <span class="math inline">\(r_{b}\)</span>. Note that this is a differential equation, not a difference equation. There is no chaos in logistic growth in continuous time. The second part is the predation function and has an increasing shape flattening out at <span class="math inline">\(B\)</span>. The curvature of this function is determined by <span class="math inline">\(A\)</span>. High <span class="math inline">\(A\)</span> makes the function less steep, meaning that predation reacts rather slowly to the increase in budworms (more about the construction of this model later).</p>
 <p>The analytical approach to this model is to reparametrize the model so that it takes the form of a cusp. Such reparameterizations are not so easy to do yourself. The idea is to create a smaller set of new variables that are functions of the model parameters. For this model a convenient reparameterization is</p>
 <p><span id="eq-ch3-8-old-12"><span class="math display">\[
-r = \frac{A\ r_{b}}{B}\ and\ q = \frac{K}{A}.
+r = \frac{A\ r_{b}}{B}\text{ and}\ q = \frac{K}{A}.
 \tag{3.8}\]</span></span></p>
 <p>Using these two “constructed” control variables, we can depict the bifurcation lines of the cusp as in <a href="#fig-ch3-img16-old-28" class="quarto-xref">figure&nbsp;<span>3.16</span></a>.</p>
 <div id="fig-ch3-img16-old-28" class="quarto-figure quarto-figure-center quarto-float anchored">
@@ -1361,24 +1361,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/example\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1413,11 +1395,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
