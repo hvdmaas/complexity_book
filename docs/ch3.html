@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -617,7 +617,7 @@ Figure&nbsp;3.15: Perturbed pitchfork bifurcation (<span class="math inline">\(a
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="sec-Mechanistic-models"><span class="header-section-number">3.4.1</span> Mechanistic models</h3>
 <div class="page-columns page-full"><p>The model of the attitude toward abortion is called a phenomenological model, as opposed to a mechanistic model. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">In phenomenological models, we assume the presence of a cusp, and make hypotheses about the involved variables. In a mechanistic approach, the cusp is derived from basic assumptions or first principles.</span></div></div>
 <p>The mechanistic approach is much more common in the physical and life sciences. An example is the phase transition in water described by the van der Waals equation. <span class="citation" data-cites="postonCatastropheTheoryIts2014">Poston and Stewart (<a href="references.html#ref-postonCatastropheTheoryIts2014" role="doc-biblioref">2014</a>)</span> show how the van der Waal equation can be reparametrized to take the form of the cusp equation. The advantage is that we learn how temperature and pressure are related to the control variables of the cusp. This gives us a full understanding of the dynamics of this phase transition.</p>
-<p>One model that I will use as a psychological model in Chapter 4, <a href="ch4n.html#sec-Analogical-modeling-Budworms-and-Beers" class="quarto-xref"><span>Section 4.2.7</span></a>, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees <span class="citation" data-cites="ludwig1978">(<a href="references.html#ref-ludwig1978" role="doc-biblioref">Ludwig, Jones, and Holling 1978</a>)</span>. The model is</p>
+<p>One model that I will use as a psychological model in Chapter 4, <a href="ch4n.html#sec-Analogical-modeling-Budworms-and-Beers" class="quarto-xref"><span>Section 4.3.7</span></a>, is the model of the spruce budworm outbreak, which occurs every 30 to 40 years and results in the defoliation of tens of millions of hectares of trees <span class="citation" data-cites="ludwig1978">(<a href="references.html#ref-ludwig1978" role="doc-biblioref">Ludwig, Jones, and Holling 1978</a>)</span>. The model is</p>
 <p><span id="eq-ch3-7-old-11"><span class="math display">\[
 \frac{dN}{dt} = r_{b}N\left( 1 - \frac{N}{K} \right) - \frac{BN^{2}}{A^{2} + N^{2}}.
 \tag{3.7}\]</span></span></p>
@@ -732,7 +732,7 @@ Figure&nbsp;3.20: Bimodality in the expected heights of water when it is poured 
 <h4 data-number="3.5.1.3" class="anchored" data-anchor-id="sec-Inaccessibility"><span class="header-section-number">3.5.1.3</span> Inaccessibility</h4>
 <div class="page-columns page-full"><p>Inaccessibility means that certain values of the behavioral variable are unstable. The business card is a good example. Given some vertical pressure, we can try what we want but we cannot force the card to stay in the middle position; it is unstable. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Inaccessibility is relevant to reject the alternative hypothesis that the sudden jump and bimodality are due to an acceleration.</span></div></div>
 <p>In Experiment 2 of <span class="citation" data-cites="dutilhPhaseTransitionModel2011">Dutilh et al. (<a href="references.html#ref-dutilhPhaseTransitionModel2011" role="doc-biblioref">2011</a>)</span>, we focused on this flag. Our hypothesis was that in simple choice response tasks there is a phase transition between a fast-guessing state and a slower stimulus-driven response state. The idea is that if we force subjects to speed up, there will be a catastrophic decline in performance (from almost 100% correct to 50% correct).</p>
-<p>We created a game in which subjects responded to a series of simple choice items (a lexical decision task). The length of the series was not known to the subject. At the end of a series, they were rewarded according to how close their percentage correct was to 75%. Speed was also rewarded, but much less. So, we asked the subject to be in the inaccessible state. The alternative hypothesis, based on information accumulation models, was that there was no phase transition and that responding with 75% accuracy required the correct setting of a boundary (see <a href="ch4n.html#sec-Response-time-models" class="quarto-xref"><span>Section 4.2.1</span></a>).</p>
+<p>We created a game in which subjects responded to a series of simple choice items (a lexical decision task). The length of the series was not known to the subject. At the end of a series, they were rewarded according to how close their percentage correct was to 75%. Speed was also rewarded, but much less. So, we asked the subject to be in the inaccessible state. The alternative hypothesis, based on information accumulation models, was that there was no phase transition and that responding with 75% accuracy required the correct setting of a boundary (see <a href="ch4n.html#sec-Response-time-models" class="quarto-xref"><span>Section 4.3.1</span></a>).</p>
 <p>It appeared that subjects solved the task by switching between the fast-guessing mode and the slower stimulus-controlled mode, even when instructed according to the alternative model. Thus, the 75% intermediate state appeared to be unstable.</p>
 </section>
 <section id="sec-Divergence" class="level4 page-columns page-full" data-number="3.5.1.4">
@@ -1361,6 +1361,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1395,7 +1413,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
