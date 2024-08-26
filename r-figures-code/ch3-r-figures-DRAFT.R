@@ -133,8 +133,8 @@ plotdat <- bind_cols(b = dat[,1], linear = dat[,4], cusp = dat[,5])
 p <- plotdat %>% 
   pivot_longer(2:3,names_to = 'mod', values_to = 'bic') %>% 
   ggplot(aes(x = b, y = bic))+
-  geom_line(aes(color = mod, linetype = mod), linewidth = .6)+
-  geom_point(aes(color = mod, shape = mod), size = 3)+
+  geom_line(aes(color = mod, linetype = mod), linewidth = .8)+
+  geom_point(aes(color = mod, shape = mod), size = 4)+
   geom_vline(xintercept = 0, linetype = 'dotted')+
   ylim(600, 1400) +
   scale_x_continuous(n.breaks = 6) +
@@ -144,13 +144,14 @@ p <- plotdat %>%
         color = '', 
         shape = '', linetype = '')+
   theme_minimal()+
-  theme1 + theme1 + theme(
-    legend.position = 'right'
+  theme1 + theme(
+    legend.position = 'right',
+    legend.text=element_text(size=70)
     )
 p + annotate("text", x=-.5, y=800, label="no hysteresis",
-            color="grey20", size = 20) +
+            color="grey20", size = 25) +
   annotate("text", x=.5, y=800, label="hysteresis",
-           color="grey20", size = 20) 
+           color="grey20", size = 25) 
 
 ggsave('media/ch3/fig-ch3-img23-old-35.png', width = 10, height = 6, units = 'in', dpi = 300)
 
