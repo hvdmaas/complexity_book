@@ -51,11 +51,12 @@ plane2 <- function (xmin = 0, xmax = 1.1, ymin = 0, ymax = 1.1, log = "",
   if (!add) {
     do.call("plot", c(list(1, 1, type = "n", xlim = c(xmin, 
                                                       xmax), ylim = c(ymin, ymax), xlab = xvar, ylab = yvar, 
-                           log = log, font.main = font.main, font.sub = font.sub, bty = 'n',  cex.lab = 1.2, family = "CMU-bright", axes = FALSE), 
+                           log = log, font.main = font.main, font.sub = font.sub, bty = 'n',  cex.lab = 1.4, 
+                           family = "CMU-bright", axes = FALSE, cex.main = 1.5), 
                       dots[names(dots) %in% args_plot]))
     
-    axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) # custom x
-    axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1) # custom y
+    axis(1, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1.1) # custom x
+    axis(2, at = NULL, labels = TRUE, tcl = 0, cex.axis = 1.1) # custom y
     if (legend) 
       legend("topright", legend = names(state)[ishows], 
              col = ncolors[ishows],lwd = lwd, cex = sizeLegend, 
