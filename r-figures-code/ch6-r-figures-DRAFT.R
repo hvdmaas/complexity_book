@@ -14,7 +14,8 @@ scholar_statistics %>% ggplot()+
   geom_line(aes(Year, Citations), linewidth = .75,color = 'grey15')+
   geom_point(aes(Year, Citations), size = 4, shape = 21, stroke = 1.5, 
              color = 'white', fill = 'grey15')+
-  scale_x_continuous(breaks = scholar_statistics$Year)+
+  scale_x_continuous(breaks = scholar_statistics$Year,
+                     labels = c("2006", "","","", "2010", "","","", "2014" , "","","", "2018" , "","","", "2022"))+
   theme_minimal()+theme1 + theme(axis.text.x = element_text(angle = 30, hjust = 1))
 ggsave('media/ch6/fig-ch6-img1-old-70.jpg', width = 12, height = 6, units = 'in', dpi = 300)
 

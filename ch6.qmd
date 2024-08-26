@@ -117,7 +117,6 @@ K_{i} = c_{i}G_{i} + \left( 1 - c_{i} \right)E_{i},
 \end{gathered}
 $$ {#eq-ch6-1-old-42}
 
-
 where $X_{i} \ldots X_{w}$ denote the cognitive processes, $\mathbf{a}$ the growth rates, $\mathbf{K}$ the limited resources for each $X_{i}$ (a weighted sum of a genetic ($\mathbf{G}$) and an environmental ($\mathbf{E}$) part), and $\mathbf{M}$ the interaction matrix. The second equation, assuming simple linear effects of genetics and environment, is sufficient to explain some typical phenomena in twin research, such as the increase in heritability with age [see @vandermaasDynamicalModelGeneral2006]. Criticisms and tests of the mutualism models, as well as alternatives, are discussed in @vandermaasNetworkModelsCognitive2017. @knyspelComparingFactorNetwork2024 compare the mutualism model with the factor model using twin data. Here we focus on the technical aspects.
 
 ![The mutualism model. The self-loops have an excitatory ($aX$) and an inhibitory part ($- aX^{2}/K$).](media/ch6/fig-ch6-img6-old-75.png){#fig-ch6-img6-old-75 width="75%"}
