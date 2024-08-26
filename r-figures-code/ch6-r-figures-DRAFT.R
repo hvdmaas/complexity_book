@@ -25,9 +25,11 @@ set.seed(1)
 adj <- matrix(rnorm(100,0,.2),10,10) # a weighted adjacency matrix
 adj <- adj*sample(0:1,100,replace=T,prob=c(.8,.2)) # set 80% to 0
 
-png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 3, height = 3, units = 'in', res = 300)
-qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6])
-       #,negDashed = TRUE #remove dashed line or not?
+png('media/ch6/fig-ch6-img2-old-71_1of2.png', width = 4, height = 4, units = 'in', res = 300)
+qgraph(adj, edge.color = ifelse(adj > 0, ncolors[5], ncolors[6]),
+       #negDashed = TRUE, #remove dashed line or not?
+       label.cex = 1.5, edge.width = 1.5, 
+       lty = ifelse(adj > 0, 1, 3), vsize = 8
        )
 dev.off()
 
@@ -40,8 +42,8 @@ p1g <- rasterGrob(p1)
 p2 <- centralityPlot(qgraph(adj)) + theme_minimal() +
   theme(axis.text = element_text(size = 20) ,
         text = element_text(family = cfont, color = "grey10"), # color of all text in the plot 
-        strip.text = element_text(colour = "grey10", size = 30), # specs of the text inside plot
-        plot.title = element_text(hjust = 0.5, color = "grey10", size = 30, face = "bold"),
+        strip.text = element_text(colour = "grey10", size = 25), # specs of the text inside plot
+        plot.title = element_text(hjust = 0.5, color = "grey10", size = 25, face = "bold"),
         panel.grid.major.x = element_line(linewidth = 0.25), # change the grid layout
         panel.grid.major.y = element_line(linewidth = 0.25), # change the grid layout
         panel.grid.minor.x = element_blank(), # remove the grid layout
@@ -50,7 +52,7 @@ p2 <- centralityPlot(qgraph(adj)) + theme_minimal() +
   )
 p2
 png('media/ch6/fig-ch6-img2-old-71.png', width = 12, height = 7.23, units = 'in', res = 300)
-grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(2/4, 2/4)))
+grid.arrange(arrangeGrob(p1g, p2, ncol = 2, widths = c(3/5, 2/5)))
 dev.off()
 
 # -------------------------------------------------------------------------
