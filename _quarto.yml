@@ -2,7 +2,7 @@ project:
   type: book
   output-dir: docs #for publishing in github pages
 book:
-  title: "Complex systems research in Psychology"
+  title: "Complex Systems Research in Psychology"
   author: "Han L. J. van der Maas"
   date: last-modified
   search: true
@@ -22,11 +22,13 @@ book:
       href: https://amazon.com    
     - icon: cart
       href: https://amazon.com  
+      
   page-footer: 
     left: '<a href="https://www.sfipress.org/"><img src="SFIpress.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
-    center: '© 2024'
-    right: 'CC BY-NC-SA 4.0'
-    
+    center: '© Han L. J. van der Maas, 2024'
+    right: '<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank">CC BY-SA 4.0</a>'
+    border: true
+  
   chapters:
     - index.qmd
     - ch1.qmd
@@ -69,7 +71,7 @@ format:
     #  fig-prefix: figure
     #  sec-prefix: section
     #  eq-prefix: equation
-    cover-image: sfi_cover.png 
+    #cover-image: sfi_cover.png 
     favicon: sfi_cover.png 
     fontsize: '13.5pt' 
     grid:
