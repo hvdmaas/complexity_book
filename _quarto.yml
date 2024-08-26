@@ -6,14 +6,27 @@ book:
   author: "Han L. J. van der Maas"
   date: last-modified
   search: true
-  repo-url: https://github.com/tasospsy/complexity_book
+  repo-url: https://github.com/SantaFeInstitute/ComplexPsych/tree/master
   #repo-actions: [edit]
-  downloads: [pdf, epub]
-  sharing: [twitter, linkedin]
+  downloads: [pdf]
+  #sharing: [twitter, linkedin]
   #site-url: https://example.com
+    
+            
   sidebar:
-    style: docked
-    #background: dark
+    #style: docked
+    #background: primary
+    logo: sfi_cover.png
+    tools: 
+    - icon: book
+      href: https://amazon.com    
+    - icon: cart
+      href: https://amazon.com  
+  page-footer: 
+    left: '<a href="https://www.sfipress.org/"><img src="SFIpress.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
+    center: '© 2024'
+    right: 'CC BY-NC-SA 4.0'
+    
   chapters:
     - index.qmd
     - ch1.qmd
@@ -26,6 +39,7 @@ book:
     - ch7.qmd
     - ch8.qmd
     - references.qmd
+    
 crossref:
   chapters: true
   fig-prefix: figure
@@ -45,7 +59,7 @@ tbl-cap-location: bottom
 format:
   html:
     output-dir: docs
-    theme: cosmo
+    theme: cerulean
     number-depth: 4
     toc-depth: 8
     code-copy: true
@@ -55,8 +69,11 @@ format:
     #  fig-prefix: figure
     #  sec-prefix: section
     #  eq-prefix: equation
-    cover-image: sfi_cover.png #added 18/8/24
-    favicon: sfi_cover.png # same
+    cover-image: sfi_cover.png 
+    favicon: sfi_cover.png 
+    fontsize: '13.5pt' 
+    grid:
+      sidebar-width: '300px'
   docx: 
     reference-doc: my-doc-style.docx
   pdf:
