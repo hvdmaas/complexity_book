@@ -24,7 +24,7 @@ book:
       href: https://amazon.com  
       
   page-footer: 
-    left: '<a href="https://www.sfipress.org/"><img src="SFIpress.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
+    left: '<a href="https://www.sfipress.org/"><img src="csrp-online-press-logo.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
     center: '© Han L. J. van der Maas, 2024'
     right: '<a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank">CC BY-SA 4.0</a>'
     border: true
