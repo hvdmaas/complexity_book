@@ -40,7 +40,8 @@ plot(fcn, vertex.size = 10, vertex.label = NA)
 layout(1)
 set.seed(1)
 adj <- matrix(rnorm(100, 0, .2), 10, 10) # a weighted adjacency matrix
-adj <- adj * sample(0:1, 100, replace = TRUE, prob = c(.8, .2)) # set 80% to 0
+adj <- adj * sample(0:1, 100, replace = TRUE, 
+                    prob = c(.8, .2)) # set 80% to 0
 qgraph(adj) # plot in qgraph
 edge_density(fcn) # indeed 1
 edge_density(graph_from_adjacency_matrix(adj, weighted=TRUE))# now .2
@@ -295,7 +296,8 @@ In @dalegeAccurateBeingNoisy2020, we simulated the difference between implicit a
 layout(1)
 N <- 400; n <- 10
 W <- matrix(.1, n, n); diag(W) <- 0
-thresholds <- sample(c(-.2, .2), n, replace = TRUE) # a random pattern of thresholds
+thresholds <- sample(c(-.2, .2), n, 
+            replace = TRUE) # a random pattern of thresholds
 dat <- numeric(0)
 beta.range <- seq(0, 3, by = .05)
 for(beta in beta.range){
@@ -303,7 +305,8 @@ for(beta in beta.range){
                        beta = beta, responses = c(-1, 1))
   dat <- c(dat, sum(thresholds * apply(data,2,sum))) # measure of alignment
 }
-plot(beta.range, dat, xlab = 'beta', ylab = 'alignment with thresholds', bty = 'n')
+plot(beta.range, dat, xlab = 'beta', ylab = 'alignment with thresholds', 
+     bty = 'n')
 ```
 
 ![At low levels of attention (but not too low), the node values are determined by the thresholds. At higher levels of attention, they are overridden by the collective effect of other nodes. This may explain the difference between implicit and explicit attitude measures.](media/ch6/fig-ch6-img13-old-82.jpg){#fig-ch6-img13-old-82 width="80%"}

@@ -169,8 +169,11 @@ layout(matrix(1:4, 2, 2, byrow = TRUE))
 p <- c(a = 1.1, b = .4, c = .1, d = 0.4)# p is a named vector of parameters
 s <- c(N = 10, P = 10) # s is the state
 n <- 30
-data_deterministic <- run(odes = LV, n, table = TRUE, timeplot = FALSE) # deterministic data
-data_stochastic <- run(odes = LV, n, table = TRUE, after="state<-state+rnorm(2,0,.1)", timeplot = FALSE) # add stochasticity
+data_deterministic <- run(odes = LV, n, table = TRUE,
+        timeplot = FALSE) # deterministic data
+data_stochastic <- run(odes = LV, n, table = TRUE, 
+        after="state<-state+rnorm(2,0,.1)", timeplot =
+        FALSE) # add stochasticity
 data_error <- run(odes = LV, n, table = TRUE, timeplot = FALSE)
 data_error[,2:3] <- data_error[,2:3]+
     matrix(rnorm(2 * n, 0, 2), , 2) # measurement error 
@@ -184,7 +187,8 @@ pars <- matrix(c(f_deter$par[3:6], f_stoch$par[3:6], f_error$par[3:6]), ,3)
 pars <- rbind(pars, c(summary(f_deter)$sigma, summary(f_stoch)$sigma,
                       summary(f_error)$sigma))
 barplot(t(pars), beside = TRUE, names = c('a','b','c','d', 'Residuals'),
-        args.legend = c(x = 13), legend.text = c('deterministic', 'stochastic', 'error'))
+        args.legend = c(x = 13), 
+        legend.text = c('deterministic', 'stochastic', 'error'))
 ```
 
 This results in @fig-ch4n-img1-old-49.
@@ -607,7 +611,8 @@ s <- c(A = 0, T = 0)
 # arousal increase for time t in 20:30, leads to panic, 
 # which after some time ('30 min') disappears
 layout(1:2)
-plane(vector = TRUE, xmin = 0, ymin = 0, xmax = 1, ymax = 1.1, legend = FALSE) 
+plane(vector = TRUE, xmin = 0, ymin = 0, xmax = 1, 
+      ymax = 1.1, legend = FALSE) 
 newton(s = c(A = 0, T = 0), plot = TRUE)
 newton(s = c(A = 0.8, T = .8), plot = TRUE)
 newton(s = c(A = 1, T = 1), plot = TRUE);
@@ -624,7 +629,8 @@ start <- newton(s = c(A = .1,  T= .1))
 continue(start, x = "beta", y = "T", xmin = -1, xmax = 1, ymax = 1) 
 continue(start, x = "alpha", y = "T", xmin = -1, xmax = 20, ymax = 1) 
 start <- newton(s = c(A = 1, T = 1)) # finds a minimum starting from X = -1
-continue(start, x = "alpha", y = "T", xmin = -1, xmax = 20, ymax = 1, add = TRUE) 
+continue(start, x = "alpha", y = "T", xmin = -1, xmax = 20,
+        ymax = 1, add = TRUE) 
 ```
 
 In @robinaughAdvancingNetworkTheory2019, this model is extended with other processes, such as arousal and escape schemes, that operate on the parameters of the basic model. These are slower processes that are modeled on different time scales.
@@ -645,7 +651,6 @@ model <- function(t, state, parms){
     return(list(c(dX, da)))
   })
 }
-
 s <- c(X = .1, a = 0) # initial state and parameter values
 layout(matrix(1:4, 2, 2, byrow = TRUE))
 p <- c(e = .05, b = -.5)

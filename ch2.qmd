@@ -156,7 +156,8 @@ r <- 3.3; n <- 200; x <- rep(0,n)
 x[1] <- .001
 for(i in 1:(n-1)) x[i+1] = r*x[i]*(1-x[i])
 x <- x[-1:-100]
-plot(x, type = 'l', xlab = 'time', bty = 'n', main = paste('r = ', r),
+plot(x, type = 'l', xlab = 'time', bty = 'n', 
+     main = paste('r = ', r),
      ylim = 0:1, cex.main = 2) 
 plot(x[-length(x)], x[-1], 
      xlim=0:1, ylim=0:1, xlab='Xt', ylab='Xt+1', bty='n')
@@ -165,10 +166,12 @@ for(i in 1:(n-1)) x[i+1] <- r * x[i] * (1-x[i])
 x <- x[-1:-100]
 plot(x, type = 'l', xlab = 'time', bty = 'n', main = paste('r = ',r),
      cex.main = 2) 
-plot(x[-length(x)], x[-1], xlim = 0:1, ylim = 0:1, xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
+plot(x[-length(x)], x[-1], xlim = 0:1, ylim = 0:1, 
+     xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 x <- runif(200,0,1)
 x <- x[-1:-100]
-plot(x, type = 'l', xlab = 'time', bty = 'n', main = 'random noise',
+plot(x, type = 'l', xlab = 'time', bty = 'n',
+     main = 'random noise',
      cex.main = 2) 
 plot(x[-length(x)],x[-1], xlim = 0:1, ylim = 0:1, xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 ```
