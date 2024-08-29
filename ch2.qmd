@@ -164,8 +164,8 @@ plot(x[-length(x)], x[-1],
 r <- 4; x[1] <- .001;
 for(i in 1:(n-1)) x[i+1] <- r * x[i] * (1-x[i])
 x <- x[-1:-100]
-plot(x, type = 'l', xlab = 'time', bty = 'n', main = paste('r = ',r),
-     cex.main = 2) 
+plot(x, type = 'l', xlab = 'time', bty = 'n',
+     main = paste('r = ',r), cex.main = 2) 
 plot(x[-length(x)], x[-1], xlim = 0:1, ylim = 0:1, 
      xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 x <- runif(200,0,1)
@@ -173,7 +173,8 @@ x <- x[-1:-100]
 plot(x, type = 'l', xlab = 'time', bty = 'n',
      main = 'random noise',
      cex.main = 2) 
-plot(x[-length(x)],x[-1], xlim = 0:1, ylim = 0:1, xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
+plot(x[-length(x)],x[-1], xlim = 0:1, ylim = 0:1, 
+     xlab = 'Xt', ylab = 'Xt+1', bty = 'n')
 ```
 
 ![Time (top) and phase (bottom) plots for three cases. Chaos and random noise can be distinguished using the phase plots.](media/ch2/fig-ch2-img7.jpg){#fig-ch2-img7 width="100%"}
