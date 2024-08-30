@@ -16,7 +16,9 @@ This book requires study. New theoretical concepts are illustrated with simulati
 
 I assume only pre-university knowledge of mathematics. An important prerequisite is a basic knowledge of the programming language R. The book uses R for the simulations and exercises. There are many online resources for learning the basics of R. In addition to R, we will use NetLogo, but no prior knowledge of NetLogo is expected. NetLogo is a dedicated programming language for simulating complex natural and social phenomena. It is freely available for all major computer platforms.
 
-This book has been made available as open access courtesy of the Santa Fe Institute Press, a non-profit publisher. Consistent with this approach, I often cite open sources such as Wikipedia rather than proprietary ones. It should be noted that open sources such as Wikipedia have the potential for content changes, although this is unlikely in the contexts I've referenced. I also use only open-source software for the examples and exercises.
+This book has been made available as open access courtesy of the Santa Fe Institute Press, a non-profit publisher.[^index-1] Consistent with this approach, I often cite open sources such as Wikipedia rather than proprietary ones. It should be noted that open sources such as Wikipedia have the potential for content changes, although this is unlikely in the contexts I've referenced. I also use only open-source software for the examples and exercises.
+
+[^index-1]: I would like to express my gratitude to Sienna Latham, Zato Hebbert, Rachel Fudge, David Krakauer, and Tasos Psychogyiopoulos for their invaluable contributions to the online and print versions of the book. I would also like to thank Robert Goldstone, Mirta Galesic, Henrik Olsen, and John Miller for their valuable reviews of the preliminary version of the book.
 
 It should also say that this book is more a book for psychologists who have very limited knowledge of complex systems research than the other way around. Experts in complex systems who wonder how it can be applied in psychology may have to wait for another text.
 
