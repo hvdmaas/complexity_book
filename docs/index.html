@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Han L. J. van der Maas">
-<meta name="dcterms.date" content="2024-08-27">
+<meta name="dcterms.date" content="2024-08-30">
 
 <title>Complex Systems Research in Psychology</title>
 <style>
@@ -212,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 27, 2024</p>
+      <p class="date">August 30, 2024</p>
     </div>
   </div>
   
@@ -234,12 +234,18 @@ ul.task-list li input[type="checkbox"] {
 <p>I believe that we can only succeed in exploring the psychological system by understanding its complexity. We need to apply the tools of complexity science to psychology, which is in desperate need of breakthroughs. After all, the modern world revolves around human beings who, through language and thought, have created an unimaginably complex world. The greatest danger now are humans ourselves, and progress in the field of psychology is necessary and urgent.</p>
 <p>This book requires study. New theoretical concepts are illustrated with simulations and examples. Running the simulations, studying the examples, and solving the exercises will contribute to a deeper understanding of the material. I have used the book’s content in a master’s course for research-minded students in psychology. Readers should have some background in psychology and its research methods.</p>
 <p>I assume only pre-university knowledge of mathematics. An important prerequisite is a basic knowledge of the programming language R. The book uses R for the simulations and exercises. There are many online resources for learning the basics of R. In addition to R, we will use NetLogo, but no prior knowledge of NetLogo is expected. NetLogo is a dedicated programming language for simulating complex natural and social phenomena. It is freely available for all major computer platforms.</p>
-<p>This book has been made available as open access courtesy of the Santa Fe Institute Press, a non-profit publisher. Consistent with this approach, I often cite open sources such as Wikipedia rather than proprietary ones. It should be noted that open sources such as Wikipedia have the potential for content changes, although this is unlikely in the contexts I’ve referenced. I also use only open-source software for the examples and exercises.</p>
+<p>This book has been made available as open access courtesy of the Santa Fe Institute Press, a non-profit publisher.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Consistent with this approach, I often cite open sources such as Wikipedia rather than proprietary ones. It should be noted that open sources such as Wikipedia have the potential for content changes, although this is unlikely in the contexts I’ve referenced. I also use only open-source software for the examples and exercises.</p>
 <p>It should also say that this book is more a book for psychologists who have very limited knowledge of complex systems research than the other way around. Experts in complex systems who wonder how it can be applied in psychology may have to wait for another text.</p>
 <p>I have written this book based on thirty-five years of scientific work in collaboration with fantastic colleagues and coauthors of many papers. I’m part of the ecosystem of the psychology department, especially the wonderful methods section, of the University of Amsterdam. Also important is the Institute for Advanced Study in Amsterdam, which has complex-systems research as a central theme. In recent years, I’ve also been an external faculty member at the renowned Santa Fe Institute in New Mexico. I am indebted to all of them and to many other colleagues around the world. In my citations, I’ve made an effort to acknowledge the extensive contributions to this vast field. Nevertheless, I recognize that there may be omissions, for which I apologize.</p>
 <p>Han L. J. van der Maas, Amsterdam 2024</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>I would like to express my gratitude to Sienna Latham, Zato Hebbert, Rachel Fudge, David Krakauer, and Tasos Psychogyiopoulos for their invaluable contributions to the online and print versions of the book. I would also like to thank Robert Goldstone, Mirta Galesic, Henrik Olsson, and John Miller for their valuable reviews of the preliminary version of the book.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -322,24 +328,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -374,11 +362,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
