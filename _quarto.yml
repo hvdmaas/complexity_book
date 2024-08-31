@@ -6,7 +6,7 @@ book:
   author: "Han L. J. van der Maas"
   date: last-modified
   search: true
-  repo-url: https://github.com/SantaFeInstitute/ComplexPsych/tree/master
+  #repo-url: https://github.com/SantaFeInstitute/ComplexPsych
   #repo-actions: [edit]
   downloads: [pdf]
   #sharing: [twitter, linkedin]
