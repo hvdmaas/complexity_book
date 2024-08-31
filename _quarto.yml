@@ -22,7 +22,7 @@ book:
        - icon: filetype-pdf
          menu: 
            - text: Download PDF
-             url:  "Complex-Systems-Research-in-Psychology.pdf"
+             url:  "Complex-systems-research-in-Psychology.pdf"
  
     # button menu version:
     #logo: sfi_cover.png
