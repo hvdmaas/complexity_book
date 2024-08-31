@@ -6,12 +6,9 @@ book:
   author: "Han L. J. van der Maas"
   date: last-modified
   search: true
-  #repo-url: https://github.com/SantaFeInstitute/ComplexPsych
   #repo-actions: [edit]
   downloads: [pdf]
   #sharing: [twitter, linkedin]
-  #site-url: https://example.com
-    
             
   sidebar:
     #style: docked
@@ -21,7 +18,7 @@ book:
     - icon: book
       href: https://amazon.com    
     - icon: cart
-      href: https://amazon.com  
+      href: https://a.co/d/aXyHRoK
       
   page-footer: 
     left: '<a href="https://www.sfipress.org/"><img src="csrp-online-press-logo.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
