@@ -7,19 +7,26 @@ book:
   date: last-modified
   search: true
   #repo-actions: [edit]
-  downloads: [pdf]
+  #downloads: [pdf]
   #sharing: [twitter, linkedin]
   repo-url: https://github.com/hvdmaas/complexity_book
   
   sidebar:
+    logo: sfi_cover.png
+    pinned: true
+    tools:
+          - icon: save
+            menu:
+              - text: Download PDF
+                url:  "Complex-Systems-Research-in-Psychology.pdf"
     #style: docked
     #background: primary
-    logo: sfi_cover.png
-    tools: 
-    - icon: book
-      href: https://www.sfipress.org/books/
-    - icon: cart
-      href: https://a.co/d/aXyHRoK
+    #logo: sfi_cover.png
+    #tools: 
+    #- icon: book
+    #  href: https://www.sfipress.org/books/
+    #- icon: cart
+    #  href: https://a.co/d/aXyHRoK
       
   page-footer: 
     left: '<a href="https://www.sfipress.org/"><img src="csrp-online-press-logo.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
