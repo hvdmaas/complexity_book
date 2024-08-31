@@ -9,14 +9,15 @@ book:
   #repo-actions: [edit]
   downloads: [pdf]
   #sharing: [twitter, linkedin]
-            
+  repo-url: https://github.com/hvdmaas/complexity_book
+  
   sidebar:
     #style: docked
     #background: primary
     logo: sfi_cover.png
     tools: 
     - icon: book
-      href: https://amazon.com    
+      href: https://www.sfipress.org/books/
     - icon: cart
       href: https://a.co/d/aXyHRoK
       
