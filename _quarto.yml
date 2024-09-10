@@ -8,7 +8,7 @@ book:
   search: true
   repo-url: https://github.com/SantaFeInstitute/ComplexPsych/tree/master
   #repo-actions: [edit]
-  downloads: [pdf]
+  #downloads: [pdf]
   #sharing: [twitter, linkedin]
   #site-url: https://example.com
     
@@ -18,10 +18,14 @@ book:
     #background: primary
     logo: sfi_cover.png
     tools: 
-    - icon: book
-      href: https://amazon.com    
-    - icon: cart
-      href: https://amazon.com  
+       - icon: book
+         href: https://www.sfipress.org/books/
+       - icon: cart
+         href: https://a.co/d/aXyHRoK
+       - icon: filetype-pdf
+         menu: 
+           - text: Download PDF
+             url:  "Complex-systems-research-in-Psychology.pdf"
       
   page-footer: 
     left: '<a href="https://www.sfipress.org/"><img src="csrp-online-press-logo.png" alt="Santa Fe Institute press" style="height:45px;"></a>'
