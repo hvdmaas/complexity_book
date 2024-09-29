@@ -59,7 +59,7 @@ Other founders of self-organizing systems research are Ilya Prigogine and Isabel
 
 Stengers and Prigogine authored the influential book *Order Out of Chaos* in (1978). This work significantly influenced the scientific community, particularly through their formulation of the second law of thermodynamics. [The second law of thermodynamics states that the total entropy of an isolated system always increases over time and never decreases, meaning that spontaneous processes in nature tend to move toward a state of increasing disorder or randomness.]{.aside} One way of stating the second law is that heat flows spontaneously from hot objects to cold objects, and not the other way around, unless external work is applied to the system. A more appealing example might be the student room that never naturally becomes clean and tidy, but rather the opposite.
 
-@stengersOrderOutChaos1978 argued that while entropy may indeed decrease in a closed system, the process of self-organization in such systems can create ordered structures that compensate for the entropy increase, resulting in a net increase in what they called "local entropy." Prigogine and Stengers placed particular emphasis on irreversible transitions, highlighting their importance in understanding complex systems. While the catastrophe models we previously discussed exhibited symmetrical transitions (sudden jumps in the business card are symmetric), Prigogine's research revealed that this symmetry does not always hold true. [Irreversible transitions refer to changes in a system that cannot be reversed by simply reversing the conditions that caused the change, often resulting in a permanent change in the state or structure of the system.]{.aside}
+@stengersOrderOutChaos1978 argued that while entropy indeed increases in closed systems, the process of self-organization in open systems can create ordered structures, resulting in a net decrease in what they referred to as "local entropy." Prigogine and Stengers placed particular emphasis on irreversible transitions, highlighting their importance in understanding complex systems. While the catastrophe models we previously discussed exhibited symmetrical transitions (sudden jumps in the business card are symmetric), Prigogine's research revealed that this symmetry does not always hold true. [Irreversible transitions refer to changes in a system that cannot be reversed by simply reversing the conditions that caused the change, often resulting in a permanent change in the state or structure of the system.]{.aside}
 
 To illustrate this point, consider the analogy of frying an egg. The process of transforming raw eggs into a fried form represents a phase transition, but it is impossible to reverse this change and unfry the egg. Prigogine linked these irreversible transitions to a profound question regarding the direction of time, commonly known as the arrow of time. Although it is a fascinating topic in itself, we will not explore it further here.
 
@@ -383,7 +383,7 @@ hist(threshold, col = 'grey')
 dancers <- rep(0, n) # nobody dances
 dancers[1] <- 1 # but one guy
 number_of_dancers <- rep(0, iterations) 
-for(i in 1:interations){
+for(i in 1:iterations){
   # keep track of number of dancers:
   number_of_dancers[i] <- sum(dancers) 
   # if my threshold < proportion of dancers, I dance:
