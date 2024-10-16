@@ -199,7 +199,7 @@ With an additional bias mechanism, in which confirming evidence is weighted more
 
 The bounded confidence mechanism has been extensively studied as the most effective way to generate divergence of opinions in continuous opinion models. It assumes that individuals have a limited willingness to accept and consider opinions that differ from their own and will only update their opinions if they are within a certain range or "bound" of similarity.
 
-A simple but very interesting model is the Deffuant model [@deffuantMixingBeliefsInteracting2000]. The initial opinions of *n* agents are randomly set to values between 0 and 1. At each step, two agents $i$ and $j$ meet. If $\left\lceil X_{i}(t) - X_{j,}(t) \right\rceil > \epsilon$ nothing happens because the difference in opinion exceeds the bound $\epsilon$. Otherwise, they exchange opinions according to:
+A simple but very interesting model is the Deffuant model [@deffuantMixingBeliefsInteracting2000]. The initial opinions of *n* agents are randomly set to values between 0 and 1. At each step, two agents $i$ and $j$ meet. If $\left\lceil X_{i}(t) - X_{j}(t) \right\rceil > \epsilon$ nothing happens because the difference in opinion exceeds the bound $\epsilon$. Otherwise, they exchange opinions according to:
 
 $$
 \begin{gathered}
