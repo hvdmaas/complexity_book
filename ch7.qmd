@@ -160,7 +160,7 @@ With $j$ we take the sum over the neighbors of agent $i$. Note that when $X_{i} 
 
 $$X_{i}(t + 1) = - sgn\lbrack X(t)I_{i}(t) + H\rbrack.$$ {#eq-ch7-SI-b}
 
-Thus, opinion of agents become $-1$ if $X(t)I_{i}(t) + H$ is negative, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant.
+Thus, opinion of agents become $-1$ if $X(t)I_{i}(t) + H$ is positive, and vice versa. @lewensteinStatisticalMechanicsSocial1992 present analytical mean-field solutions for fully connected networks. Without individual fields, the model ends up with an infinite number of stationary opinion states, one of which is usually dominant.
 
 In the presence of individual fields, some minority opinions can become metastable. [Metastable opinions may persist for some time, but eventually, due to noise or other factors, they suddenly shrink to smaller clusters.]{.aside} These smaller minority clusters can also persist for a long time before shrinking again, and the process repeats itself, resulting in what is called staircase behavior (@fig-ch7-img6-old-94). Such a model can explain why small minority groups (such as flat-earth beliefs) often persist for a long time, against all odds [@douglasPsychologyConspiracyTheories2017].
 
